@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-19T06:25:23.000Z</updated>
+  <updated>2017-09-18T21:25:23.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,43 +17,101 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>(2015) Unsupervised representation learning with deep convolutional generative adversarial networks</title>
-    <link href="http://yoursite.com/2017/09/19/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/"/>
-    <id>http://yoursite.com/2017/09/19/Unsupervised representation learning with deep convolutional generative adversarial networks/</id>
-    <published>2017-09-19T06:25:23.000Z</published>
-    <updated>2017-09-19T06:25:23.000Z</updated>
+    <title>(CVPR 2017 Best Paper) Densely connected convolutional networks</title>
+    <link href="http://yoursite.com/2017/09/19/Densely%20connected%20convolutional%20networks/"/>
+    <id>http://yoursite.com/2017/09/19/Densely connected convolutional networks/</id>
+    <published>2017-09-18T21:25:23.000Z</published>
+    <updated>2017-09-18T21:25:23.000Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;Radford A, Metz L, Chintala S. Unsupervised representation learning with deep convolutional generative adversarial networks[J]. arXiv preprint arXiv:1511.06434, 2015.&lt;/p&gt;
+&lt;p&gt;Huang G, Liu Z, Van Der Maaten L, et al. Densely connected convolutional networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 4700-4708.&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
     
     
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+      <category term="DenseNet" scheme="http://yoursite.com/tags/DenseNet/"/>
     
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
     
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
     
-      <category term="Scene" scheme="http://yoursite.com/tags/Scene/"/>
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) Deep feature flow for video recognition</title>
+    <link href="http://yoursite.com/2017/09/19/Deep%20feature%20flow%20for%20video%20recognition/"/>
+    <id>http://yoursite.com/2017/09/19/Deep feature flow for video recognition/</id>
+    <published>2017-09-18T20:25:23.000Z</published>
+    <updated>2017-09-18T20:25:23.000Z</updated>
     
-      <category term="DCGAN" scheme="http://yoursite.com/tags/DCGAN/"/>
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhu X, Xiong Y, Dai J, et al. Deep feature flow for video recognition[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2349-2358.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+    
+    
+      <category term="Video" scheme="http://yoursite.com/tags/Video/"/>
+    
+      <category term="Optical Flow" scheme="http://yoursite.com/tags/Optical-Flow/"/>
+    
+      <category term="FlowNet" scheme="http://yoursite.com/tags/FlowNet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(MICCAI 2015) U-net:Convolutional networks for biomedical image segmentation</title>
+    <link href="http://yoursite.com/2017/09/19/U-net:%20Convolutional%20networks%20for%20biomedical%20image%20segmentation/"/>
+    <id>http://yoursite.com/2017/09/19/U-net: Convolutional networks for biomedical image segmentation/</id>
+    <published>2017-09-18T19:25:23.000Z</published>
+    <updated>2017-09-18T19:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Ronneberger O, Fischer P, Brox T. U-net: Convolutional networks for biomedical image segmentation[C]//International Conference on Medical image computing and computer-assisted intervention. Springer, Cham, 2015: 234-241.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Medical/Segmentation/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Cell" scheme="http://yoursite.com/tags/Cell/"/>
+    
+      <category term="UNet" scheme="http://yoursite.com/tags/UNet/"/>
+    
+      <category term="ISBI" scheme="http://yoursite.com/tags/ISBI/"/>
     
   </entry>
   
   <entry>
     <title>(2015) Unsupervised representation learning with deep convolutional generative adversarial networks</title>
-    <link href="http://yoursite.com/2017/09/19/test/"/>
-    <id>http://yoursite.com/2017/09/19/test/</id>
-    <published>2017-09-19T06:25:23.000Z</published>
-    <updated>2017-09-19T06:25:23.000Z</updated>
+    <link href="http://yoursite.com/2017/09/19/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/"/>
+    <id>http://yoursite.com/2017/09/19/Unsupervised representation learning with deep convolutional generative adversarial networks/</id>
+    <published>2017-09-18T18:25:23.000Z</published>
+    <updated>2017-09-18T18:25:23.000Z</updated>
     
     <summary type="html">
     
