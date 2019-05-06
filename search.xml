@@ -1,16 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(2015) Unsupervised representation learning with deep convolutional generative adversarial networks]]></title>
+    <url>%2F2017%2F09%2F19%2FUnsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks%2F</url>
+    <content type="text"><![CDATA[Radford A, Metz L, Chintala S. Unsupervised representation learning with deep convolutional generative adversarial networks[J]. arXiv preprint arXiv:1511.06434, 2015. 该篇论文提出Deep Convolutional GANs结构 (Figure 1)，使用一些方法来提高train稳定性，并通过实验验证 D的性能 可视化D的特征图 G的Walking in the Latent Space、遗忘性和Vector Arithmetic. 提高训练稳定性的方法 Stride Conv 替代 Pooling Eliminate FC层（相对于GAN中的FC而言） BN层，除G的输出层和D的输入层外，否则导致不稳定 G使用ReLU，输出层使用Tanh。D使用LeakyReLU** 验证D的性能 使用D作为Feature Extractor来classify CIFAR-10和SVHN。 D特征图可视化 不同特征图activate on 不同objects (Figure 5) 。 Walking in the Latent Space G的遗忘性 G能学到不同object的表达,在second highest Conv层(倒数第二层)的特征上，利用logistic regression 预测activate窗户的filters，比较drop out窗户相关filters与否的生成结果。在drop out窗户filter的生成结果中，一些图片去掉了窗户,一些图片生成相似的其他object，如门、镜子 (Figure 6)。 Vector Arithmetic of Z 类似于Word2vec of Mikolov (Figure 7)。Single sample per concept were unstable. Average Z of 3 sample show consistence andstable. Train DCGAN on MNIST We found that removing the scale and bias parameters from batchnorm produced better results for both models. Noise introduced by batchnorm helps the generative models to better explore and generate from the underlying data distribution. Code Code comes from github AaronYALai/Generative_Adversarial_Networks_PyTorch. Code of GAN Code of DCGAN]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Face</tag>
+        <tag>Scene</tag>
+        <tag>DCGAN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2015) Unsupervised representation learning with deep convolutional generative adversarial networks]]></title>
+    <url>%2F2017%2F09%2F19%2Ftest%2F</url>
+    <content type="text"><![CDATA[Radford A, Metz L, Chintala S. Unsupervised representation learning with deep convolutional generative adversarial networks[J]. arXiv preprint arXiv:1511.06434, 2015. 该篇论文提出Deep Convolutional GANs结构 (Figure 1)，使用一些方法来提高train稳定性，并通过实验验证 D的性能 可视化D的特征图 G的Walking in the Latent Space、遗忘性和Vector Arithmetic. 提高训练稳定性的方法 Stride Conv 替代 Pooling Eliminate FC层（相对于GAN中的FC而言） BN层，除G的输出层和D的输入层外，否则导致不稳定 G使用ReLU，输出层使用Tanh。D使用LeakyReLU** 验证D的性能 使用D作为Feature Extractor来classify CIFAR-10和SVHN。 D特征图可视化 不同特征图activate on 不同objects (Figure 5) 。 Walking in the Latent Space G的遗忘性 G能学到不同object的表达,在second highest Conv层(倒数第二层)的特征上，利用logistic regression 预测activate窗户的filters，比较drop out窗户相关filters与否的生成结果。在drop out窗户filter的生成结果中，一些图片去掉了窗户,一些图片生成相似的其他object，如门、镜子 (Figure 6)。 Vector Arithmetic of Z 类似于Word2vec of Mikolov (Figure 7)。Single sample per concept were unstable. Average Z of 3 sample show consistence andstable. Train DCGAN on MNIST We found that removing the scale and bias parameters from batchnorm produced better results for both models. Noise introduced by batchnorm helps the generative models to better explore and generate from the underlying data distribution. Code Code comes from github AaronYALai/Generative_Adversarial_Networks_PyTorch. Code of GAN Code of DCGAN]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Face</tag>
+        <tag>Scene</tag>
+        <tag>DCGAN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(CVPR 2017) Convolutional Neural Network Architecture for Geometric Matching]]></title>
     <url>%2F2017%2F09%2F19%2FConvolutional%20neural%20network%20architecture%20for%20geometric%20matching%2F</url>
     <content type="text"><![CDATA[Rocco I, Arandjelovic R, Sivic J. Convolutional neural network architecture for geometric matching[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 6148-6157. 该篇论文 提出CNN结构mimic传统机器学习中的geometric matching算法 (Figure 1):feature extraction, matching, simultaneous inlier detection, model parameter estimation. 使用合成数据进行训练模型，不需人工标注数据（几何变换参数） 模型结构 (Figure 2)模型包含Feature extraction, Matching network和Regression network.图中两个Feature extraction CNN共享同样的参数，即用同一个网络提取A和B的特征。 Feature extraction Use VGG16 network cropped at the pool4 layer (before the ReLU unit), followed by per-feature L2-normalization. Matching network 采用Correlation map computation with CNN feature (Figure 3). 对于特征图A中的某个空间点，计算特征图B中每个空间点与其的相关性（模拟几何变换机器学习算法）。此外，使用channel-wise normalization和ReLu操作amplify the score of the match. 论文中将该方法与常用的Concatenation和Subtraction方法进行比较(Table 2)，证明该方法效果更好。原因是 后续的Regression Network是由一系列Conv层组成，unable to detect long-range matches. 对于相同几何变换的不同图像pair而言，Concatenation和Subtraction会产生不同的输出，会增加Regression Network的难度。 此外，对correlation map进行normalization能够提升4个百分点。 Regression Network 考虑到参数、内存和计算量的问题，Regression Network (Figure 4)采用具有局部感知特性的Conv层，而非FC层。这种方法能够Work是因为对于AB相关性特征图上的某个空间点而言，它包含了B特征图中该点与A特征图中所有空间点的相似性得分，因此虽然使用局部性的Conv，但仍然具有全局性。 Hierarchy of transformations 为了得到更精确的结果，论文提出了一个hierarchy模型 (Figure 5)。该模型包含2个stage。 第一阶段estimate 6 parameters的affine transformation. 第二阶段estimate 18 parameters的thin plate spline transformation. Loss Function gi为uniform grid[-1, 1]，计算变换后的网格之间的距离平方。 Dateset Generate each example by sampling image A from a public image dataset, and generating image B by applying a random transformation TθGT to image A.]]></content>
       <categories>
         <category>Paper Note</category>
-        <category>Image</category>
+        <category>Image Processing</category>
       </categories>
       <tags>
         <tag>geometric matching</tag>
         <tag>Image Transformation</tag>
+        <tag>Image Generation</tag>
       </tags>
   </entry>
 </search>

@@ -17,11 +17,75 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>(2015) Unsupervised representation learning with deep convolutional generative adversarial networks</title>
+    <link href="http://yoursite.com/2017/09/19/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/"/>
+    <id>http://yoursite.com/2017/09/19/Unsupervised representation learning with deep convolutional generative adversarial networks/</id>
+    <published>2017-09-19T06:25:23.000Z</published>
+    <updated>2017-09-19T06:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Radford A, Metz L, Chintala S. Unsupervised representation learning with deep convolutional generative adversarial networks[J]. arXiv preprint arXiv:1511.06434, 2015.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
+      <category term="Scene" scheme="http://yoursite.com/tags/Scene/"/>
+    
+      <category term="DCGAN" scheme="http://yoursite.com/tags/DCGAN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2015) Unsupervised representation learning with deep convolutional generative adversarial networks</title>
+    <link href="http://yoursite.com/2017/09/19/test/"/>
+    <id>http://yoursite.com/2017/09/19/test/</id>
+    <published>2017-09-19T06:25:23.000Z</published>
+    <updated>2017-09-19T06:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Radford A, Metz L, Chintala S. Unsupervised representation learning with deep convolutional generative adversarial networks[J]. arXiv preprint arXiv:1511.06434, 2015.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
+      <category term="Scene" scheme="http://yoursite.com/tags/Scene/"/>
+    
+      <category term="DCGAN" scheme="http://yoursite.com/tags/DCGAN/"/>
+    
+  </entry>
+  
+  <entry>
     <title>(CVPR 2017) Convolutional Neural Network Architecture for Geometric Matching</title>
     <link href="http://yoursite.com/2017/09/19/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/"/>
     <id>http://yoursite.com/2017/09/19/Convolutional neural network architecture for geometric matching/</id>
-    <published>2017-09-19T06:25:23.000Z</published>
-    <updated>2017-09-19T06:25:23.000Z</updated>
+    <published>2017-09-18T17:25:23.000Z</published>
+    <updated>2017-09-18T17:25:23.000Z</updated>
     
     <summary type="html">
     
@@ -33,12 +97,14 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Image" scheme="http://yoursite.com/categories/Paper-Note/Image/"/>
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
     
     
       <category term="geometric matching" scheme="http://yoursite.com/tags/geometric-matching/"/>
     
       <category term="Image Transformation" scheme="http://yoursite.com/tags/Image-Transformation/"/>
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
     
   </entry>
   
