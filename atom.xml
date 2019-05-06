@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Alex Hex</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-09-19T06:25:23.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Alex Hex</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(CVPR 2017) Convolutional Neural Network Architecture for Geometric Matching</title>
+    <link href="http://yoursite.com/2017/09/19/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/"/>
+    <id>http://yoursite.com/2017/09/19/Convolutional neural network architecture for geometric matching/</id>
+    <published>2017-09-19T06:25:23.000Z</published>
+    <updated>2017-09-19T06:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Rocco I, Arandjelovic R, Sivic J. Convolutional neural network architecture for geometric matching[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 6148-6157.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image" scheme="http://yoursite.com/categories/Paper-Note/Image/"/>
+    
+    
+      <category term="geometric matching" scheme="http://yoursite.com/tags/geometric-matching/"/>
+    
+      <category term="Image Transformation" scheme="http://yoursite.com/tags/Image-Transformation/"/>
+    
+  </entry>
+  
+</feed>
