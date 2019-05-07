@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-18T21:25:23.000Z</updated>
+  <updated>2017-12-18T22:25:11.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,478 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(CVPR 2018 Best Paper) Non-local Neural Networks</title>
+    <link href="http://yoursite.com/2017/12/19/Non-local%20Neural%20Networks/"/>
+    <id>http://yoursite.com/2017/12/19/Non-local Neural Networks/</id>
+    <published>2017-12-18T22:25:11.000Z</published>
+    <updated>2017-12-18T22:25:11.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Wang X, Girshick R, Gupta A, et al. Non-local neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7794-7803.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
+    
+      <category term="Non-local" scheme="http://yoursite.com/tags/Non-local/"/>
+    
+      <category term="Video Classification" scheme="http://yoursite.com/tags/Video-Classification/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>条件随机场&amp;非局部均值去噪&amp;双边滤波</title>
+    <link href="http://yoursite.com/2017/12/19/%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BA&amp;%E9%9D%9E%E5%B1%80%E9%83%A8%E5%9D%87%E5%80%BC%E5%8E%BB%E5%99%AA&amp;%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2/"/>
+    <id>http://yoursite.com/2017/12/19/条件随机场&amp;非局部均值去噪&amp;双边滤波/</id>
+    <published>2017-12-18T22:25:06.000Z</published>
+    <updated>2019-05-07T08:51:12.372Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/55755fc649b1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何轻松愉快地理解条件随机场（CRF）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/u010839382/article/details/48229579&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;非局部均值去噪（NL-means）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.cnblogs.com/helloforworld/p/5303422.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;图像非局部均值滤波的原理&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/bugrunner/article/details/7170471&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bilateral Filtering(双边滤波) for SSAO&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Knowledge Note" scheme="http://yoursite.com/categories/Knowledge-Note/"/>
+    
+    
+      <category term="Non-local Means" scheme="http://yoursite.com/tags/Non-local-Means/"/>
+    
+      <category term="CRF" scheme="http://yoursite.com/tags/CRF/"/>
+    
+      <category term="Bilateral Filtering" scheme="http://yoursite.com/tags/Bilateral-Filtering/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2015) Spatial transformer networks</title>
+    <link href="http://yoursite.com/2017/12/19/Spatial%20transformer%20networks/"/>
+    <id>http://yoursite.com/2017/12/19/Spatial transformer networks/</id>
+    <published>2017-12-18T22:25:03.000Z</published>
+    <updated>2017-12-18T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Jaderberg M, Simonyan K, Zisserman A. Spatial transformer networks[C]//Advances in neural information processing systems. 2015: 2017-2025.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="STN" scheme="http://yoursite.com/tags/STN/"/>
+    
+      <category term="Fine-Grained Classification" scheme="http://yoursite.com/tags/Fine-Grained-Classification/"/>
+    
+      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
+    
+      <category term="Localization" scheme="http://yoursite.com/tags/Localization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Transformation</title>
+    <link href="http://yoursite.com/2017/12/19/Transformation/"/>
+    <id>http://yoursite.com/2017/12/19/Transformation/</id>
+    <published>2017-12-18T22:25:01.000Z</published>
+    <updated>2019-05-07T07:50:34.262Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/houkai/p/6660272.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;仿射变换与投影变换&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/VictoriaW/article/details/70161180&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数值方法——薄板样条插值（Thin-Plate Spline）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/iverson_49/article/details/38160081&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;薄板样条函数(Thin plate splines)的讨论与分析&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/swimmingfish2004/article/details/7666087&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;关于Thin Plate Spline （薄板样条函数）&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Knowledge Note" scheme="http://yoursite.com/categories/Knowledge-Note/"/>
+    
+    
+      <category term="Transformation" scheme="http://yoursite.com/tags/Transformation/"/>
+    
+      <category term="Thin-Plate Spline (TPS)" scheme="http://yoursite.com/tags/Thin-Plate-Spline-TPS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) Understanding Matrix capsules with EM Routing</title>
+    <link href="http://yoursite.com/2017/12/18/Understanding%20Matrix%20capsules%20with%20EM%20Routing/"/>
+    <id>http://yoursite.com/2017/12/18/Understanding Matrix capsules with EM Routing/</id>
+    <published>2017-12-17T22:25:08.000Z</published>
+    <updated>2017-12-17T22:25:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Hui J. Understanding Matrix capsules with EM Routing[J]. Blog.​ Nov, 2017.&lt;br&gt;&lt;a href=&quot;https://jhui.github.io/2017/11/14/Matrix-Capsules-with-EM-routing-Capsule-Network/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;“Understanding Matrix capsules with EM Routing (Based on Hinton’s Capsule Networks)”&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Capsules" scheme="http://yoursite.com/categories/Paper-Note/Capsules/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Cognitive Neuroscience" scheme="http://yoursite.com/tags/Cognitive-Neuroscience/"/>
+    
+      <category term="EM Algorithm" scheme="http://yoursite.com/tags/EM-Algorithm/"/>
+    
+      <category term="CapsulesNet" scheme="http://yoursite.com/tags/CapsulesNet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>EM Algorithm</title>
+    <link href="http://yoursite.com/2017/12/18/EM%20Algorithm/"/>
+    <id>http://yoursite.com/2017/12/18/EM Algorithm/</id>
+    <published>2017-12-17T22:25:04.000Z</published>
+    <updated>2017-12-17T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/hechenghai/article/details/41896213&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;EM算法学习(Expectation Maximization Algorithm)&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Knowledge Note" scheme="http://yoursite.com/categories/Knowledge-Note/"/>
+    
+    
+      <category term="EM Algorithm" scheme="http://yoursite.com/tags/EM-Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2017) Dynamic Routing Between Capsules</title>
+    <link href="http://yoursite.com/2017/12/18/Dynamic%20Routing%20Between%20Capsules/"/>
+    <id>http://yoursite.com/2017/12/18/Dynamic Routing Between Capsules/</id>
+    <published>2017-12-17T22:25:02.000Z</published>
+    <updated>2017-12-17T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Sabour S, Frosst N, Hinton G E. Dynamic routing between capsules[C]//Advances in neural information processing systems. 2017: 3856-3866.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Capsules" scheme="http://yoursite.com/categories/Paper-Note/Capsules/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Cognitive Neuroscience" scheme="http://yoursite.com/tags/Cognitive-Neuroscience/"/>
+    
+      <category term="CapsulesNet" scheme="http://yoursite.com/tags/CapsulesNet/"/>
+    
+      <category term="Image Reconstruction" scheme="http://yoursite.com/tags/Image-Reconstruction/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Capsule Extension</title>
+    <link href="http://yoursite.com/2017/12/18/Capsule%20Extension/"/>
+    <id>http://yoursite.com/2017/12/18/Capsule Extension/</id>
+    <published>2017-12-17T22:25:01.000Z</published>
+    <updated>2017-12-17T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/30970675&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CapsulesNet 的解析及整理&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Knowledge Note" scheme="http://yoursite.com/categories/Knowledge-Note/"/>
+    
+    
+      <category term="Capsule" scheme="http://yoursite.com/tags/Capsule/"/>
+    
+      <category term="Cerebral Cortex" scheme="http://yoursite.com/tags/Cerebral-Cortex/"/>
+    
+      <category term="Cognitive Neuroscience" scheme="http://yoursite.com/tags/Cognitive-Neuroscience/"/>
+    
+      <category term="CNN Limitation" scheme="http://yoursite.com/tags/CNN-Limitation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) Image-to-image translation with conditional adversarial networks</title>
+    <link href="http://yoursite.com/2017/11/03/Image-to-Image%20Translation%20with%20Conditional%20Adversarial%20Networks/"/>
+    <id>http://yoursite.com/2017/11/03/Image-to-Image Translation with Conditional Adversarial Networks/</id>
+    <published>2017-11-02T22:25:27.000Z</published>
+    <updated>2017-11-02T22:25:27.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Isola P, Zhu J Y, Zhou T, et al. Image-to-image translation with conditional adversarial networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 1125-1134.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Conditional GAN" scheme="http://yoursite.com/tags/Conditional-GAN/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+      <category term="Map to Aerial" scheme="http://yoursite.com/tags/Map-to-Aerial/"/>
+    
+      <category term="Reality Enhancement" scheme="http://yoursite.com/tags/Reality-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2017) Unsupervised Image-to-Image Translation Networks</title>
+    <link href="http://yoursite.com/2017/11/03/Unsupervised%20Image-to-Image%20Translation%20Networks/"/>
+    <id>http://yoursite.com/2017/11/03/Unsupervised Image-to-Image Translation Networks/</id>
+    <published>2017-11-02T22:25:25.000Z</published>
+    <updated>2017-11-02T22:25:25.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Liu M Y, Breuel T, Kautz J. Unsupervised image-to-image translation networks[C]//Advances in Neural Information Processing Systems. 2017: 700-708.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+      <category term="Map to Aerial" scheme="http://yoursite.com/tags/Map-to-Aerial/"/>
+    
+      <category term="Reality Enhancement" scheme="http://yoursite.com/tags/Reality-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+      <category term="UNIT" scheme="http://yoursite.com/tags/UNIT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2017) Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks</title>
+    <link href="http://yoursite.com/2017/11/03/Unpaired%20Image-to-Image%20Translation%20using%20Cycle-Consistent%20Adversarial%20Networks/"/>
+    <id>http://yoursite.com/2017/11/03/Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks/</id>
+    <published>2017-11-02T22:25:24.000Z</published>
+    <updated>2017-11-02T22:25:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhu J Y, Park T, Isola P, et al. Unpaired image-to-image translation using cycle-consistent adversarial networks[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2223-2232.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+      <category term="Map to Aerial" scheme="http://yoursite.com/tags/Map-to-Aerial/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+      <category term="CycleGAN" scheme="http://yoursite.com/tags/CycleGAN/"/>
+    
+      <category term="Label to Photo" scheme="http://yoursite.com/tags/Label-to-Photo/"/>
+    
+      <category term="Edge to Photo" scheme="http://yoursite.com/tags/Edge-to-Photo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2013) Auto-Encoding Variational Bayes</title>
+    <link href="http://yoursite.com/2017/11/03/Auto-Encoding%20Variational%20Bayes/"/>
+    <id>http://yoursite.com/2017/11/03/Auto-Encoding Variational Bayes/</id>
+    <published>2017-11-02T22:25:23.000Z</published>
+    <updated>2017-11-02T22:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Kingma D P, Welling M. Auto-encoding variational bayes[J]. arXiv preprint arXiv:1312.6114, 2013.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="VAE" scheme="http://yoursite.com/tags/VAE/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(AAAI 2017) Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction</title>
+    <link href="http://yoursite.com/2017/10/05/Deep%20Spatio-Temporal%20Residual%20Networks%20for%20Citywide%20Crowd%20Flows%20Prediction/"/>
+    <id>http://yoursite.com/2017/10/05/Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction/</id>
+    <published>2017-10-04T22:25:23.000Z</published>
+    <updated>2017-10-04T22:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhang J, Zheng Y, Qi D. Deep spatio-temporal residual networks for citywide crowd flows prediction[C]//Thirty-First AAAI Conference on Artificial Intelligence. 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Prediction" scheme="http://yoursite.com/categories/Paper-Note/Prediction/"/>
+    
+    
+      <category term="Prediction" scheme="http://yoursite.com/tags/Prediction/"/>
+    
+      <category term="Citywide Crowd Flows" scheme="http://yoursite.com/tags/Citywide-Crowd-Flows/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2016) Automated Inference on Criminality using Face Images</title>
+    <link href="http://yoursite.com/2017/10/03/Automated%20Inference%20on%20Criminality%20using%20Face%20Images/"/>
+    <id>http://yoursite.com/2017/10/03/Automated Inference on Criminality using Face Images/</id>
+    <published>2017-10-02T22:25:23.000Z</published>
+    <updated>2017-10-02T22:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Wu X, Zhang X. Automated inference on criminality using face images[J]. arXiv preprint arXiv:1611.04135, 2016: 4038-4052.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2012) Imagenet classification with deep convolutional neural networks</title>
+    <link href="http://yoursite.com/2017/09/29/ImageNet%20classification%20with%20deep%20convolutional%20neural%20networks/"/>
+    <id>http://yoursite.com/2017/09/29/ImageNet classification with deep convolutional neural networks/</id>
+    <published>2017-09-29T00:25:23.000Z</published>
+    <updated>2017-09-29T00:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="AlexNet" scheme="http://yoursite.com/tags/AlexNet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017 Best Paper) Learning from simulated and unsupervised images through adversarial training</title>
+    <link href="http://yoursite.com/2017/09/19/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/"/>
+    <id>http://yoursite.com/2017/09/19/Learning from simulated and unsupervised images through adversarial training/</id>
+    <published>2017-09-18T22:25:23.000Z</published>
+    <updated>2017-09-18T22:25:23.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Shrivastava A, Pfister T, Tuzel O, et al. Learning from simulated and unsupervised images through adversarial training[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2107-2116.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Reality Enhancement" scheme="http://yoursite.com/tags/Reality-Enhancement/"/>
+    
+      <category term="SimGAN" scheme="http://yoursite.com/tags/SimGAN/"/>
+    
+      <category term="Eye" scheme="http://yoursite.com/tags/Eye/"/>
+    
+  </entry>
   
   <entry>
     <title>(CVPR 2017 Best Paper) Densely connected convolutional networks</title>
@@ -36,11 +508,11 @@
       <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
     
     
-      <category term="DenseNet" scheme="http://yoursite.com/tags/DenseNet/"/>
-    
       <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
     
       <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="DenseNet" scheme="http://yoursite.com/tags/DenseNet/"/>
     
   </entry>
   
@@ -126,43 +598,15 @@
       <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
     
     
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
       <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
     
       <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
     
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
       <category term="Scene" scheme="http://yoursite.com/tags/Scene/"/>
     
       <category term="DCGAN" scheme="http://yoursite.com/tags/DCGAN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) Convolutional Neural Network Architecture for Geometric Matching</title>
-    <link href="http://yoursite.com/2017/09/19/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/"/>
-    <id>http://yoursite.com/2017/09/19/Convolutional neural network architecture for geometric matching/</id>
-    <published>2017-09-18T17:25:23.000Z</published>
-    <updated>2017-09-18T17:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Rocco I, Arandjelovic R, Sivic J. Convolutional neural network architecture for geometric matching[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 6148-6157.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="geometric matching" scheme="http://yoursite.com/tags/geometric-matching/"/>
-    
-      <category term="Image Transformation" scheme="http://yoursite.com/tags/Image-Transformation/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
     
   </entry>
   

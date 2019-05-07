@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Isola P, Zhu J Y, Zhou T, et al. Image-to-image translation with conditional adversarial networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 1125-1134.">
+<meta name="keywords" content="Image Generation,GAN,Conditional GAN,Image Enhancement,Map to Aerial,Reality Enhancement,Style Transfer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(CVPR 2017) Image-to-image translation with conditional adversarial networks">
+<meta property="og:url" content="http://yoursite.com/2017/11/03/Image-to-Image Translation with Conditional Adversarial Networks/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Isola P, Zhu J Y, Zhou T, et al. Image-to-image translation with conditional adversarial networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 1125-1134.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/11.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/12.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/13.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/14.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/15.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/16.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/17.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/18.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/19.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/20.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/21.jpg?raw=true">
+<meta property="og:updated_time" content="2017-11-02T22:25:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(CVPR 2017) Image-to-image translation with conditional adversarial networks">
+<meta name="twitter:description" content="Isola P, Zhu J Y, Zhou T, et al. Image-to-image translation with conditional adversarial networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 1125-1134.">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/1.jpg?raw=true">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2017/11/03/Image-to-Image Translation with Conditional Adversarial Networks/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>(CVPR 2017) Image-to-image translation with conditional adversarial networks | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/03/Image-to-Image Translation with Conditional Adversarial Networks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">(CVPR 2017) Image-to-image translation with conditional adversarial networks
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-11-03 06:25:27" itemprop="dateCreated datePublished" datetime="2017-11-03T06:25:27+08:00">2017-11-03</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Image Processing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Isola P, Zhu J Y, Zhou T, et al. Image-to-image translation with conditional adversarial networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 1125-1134.</p>
+</blockquote>
+<a id="more"></a>
+<p>本篇论文提出<strong>conditionnal GAN (supervised)</strong>结构</p>
+<ul>
+<li>学习input image到output image之间的映射。</li>
+<li><strong>学习特定的loss function</strong>用于训练映射，即单独使用L1 loss (或L2 loss)会产生<strong>blur现象</strong>，而再此基础上进一步使用<strong>adversarial loss</strong>能够学习到适合特定数据集的loss function, 从而<strong>sharpen</strong>生成的图像 (<strong>判别器D能够判断blurry image为fake</strong>)。<br>因此，针对不同任务 <strong>(Figure 1)</strong>，该方法具有<strong>通用性</strong>。</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/1.jpg?raw=true" alt><br></div>
+
+<h1 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h1><hr>
+<ul>
+<li>针对不同任务，cGAN具有通用性。</li>
+<li>Achieve good result, 并分析cGAN结构中的一些重要部分</li>
+</ul>
+<h1 id="Relative-Work"><a href="#Relative-Work" class="headerlink" title="Relative Work"></a>Relative Work</h1><hr>
+<h2 id="Loss类型"><a href="#Loss类型" class="headerlink" title="Loss类型"></a>Loss类型</h2><ul>
+<li><strong>Structured loss</strong> 每个像素点<strong>独立考虑</strong>. per-pixel classification loss, regression.</li>
+<li><strong>Unstructured loss</strong> penalize the <strong>joint</strong> configuration of the output, 如conditional random fields. cGAN的unstructured loss是学习到的。</li>
+</ul>
+<h2 id="cGAN"><a href="#cGAN" class="headerlink" title="cGAN"></a>cGAN</h2><ul>
+<li>前人也apply GANs in conditional seting, 但是针对特定应用的，而本论文的cGAN提出的是<strong>通用框架</strong>。</li>
+<li>本论文的cGAN使用到了<strong>U-Net和PatchGAN</strong>.</li>
+</ul>
+<h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><hr>
+<ul>
+<li>GAN<ul>
+<li>z-&gt;G-&gt;y</li>
+<li>y-&gt;D-&gt;true or fake</li>
+</ul>
+</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/2.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>cGAN (Figure 2) <ul>
+<li>{x, z}-&gt;G-&gt;y</li>
+<li>{x, y}-&gt;D-&gt;true or fake</li>
+</ul>
+</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/3.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/4.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>使用L2会产生更严重的blur.</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/5.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>最终的目标函数</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/6.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>没有噪声z的网络会产生一个特定的输出，<strong>无法match any distribution</strong>, 因此cGAN加入噪声z，但在本篇论文实验中发现，G能够学习到如何<strong>ignore 噪声</strong>，从而在模型的<strong>test阶段</strong>也使用<strong>dropout产生noise.</strong></li>
+</ul>
+<h1 id="Network-architectures"><a href="#Network-architectures" class="headerlink" title="Network architectures"></a>Network architectures</h1><hr>
+<h2 id="Skip-connection-of-G"><a href="#Skip-connection-of-G" class="headerlink" title="Skip connection of G"></a>Skip connection of G</h2><ul>
+<li>在auto-encoder结构中，<strong>input的所有信息会在所有layers传输</strong>。为了避免这种方法，在AE的基础上添加skip connection, 即U-Net <strong>(Figure 3).</strong></li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/7.jpg?raw=true" alt><br></div>
+
+<h2 id="Markovian-D-PatchGAN"><a href="#Markovian-D-PatchGAN" class="headerlink" title="Markovian D (PatchGAN)"></a>Markovian D (PatchGAN)</h2><ul>
+<li>L1 loss和L2 loss能够<strong>capture low frequencies</strong>, 因此需要约束D能够<strong>capture high frequency structure</strong>，即<strong>PatchGAN (N X N patches)</strong>. D effectively models the image as <strong>a Markov random field</strong>. </li>
+</ul>
+<h2 id="Optimization-and-inference"><a href="#Optimization-and-inference" class="headerlink" title="Optimization and inference"></a>Optimization and inference</h2><ul>
+<li>在<strong>test阶段</strong>，使用<strong>dropout</strong>, BN使用<strong> the statistics of the test batch</strong>, rather than aggregated statistics of the training batch.</li>
+<li><strong>instance normalization</strong>在图像生成任务上很有效。(<strong>batch size为1</strong>，使用the statistics of the test batch)</li>
+</ul>
+<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<ul>
+<li>L1产生blur.</li>
+<li>cGAN sharp imaged，但是存在artifacts.</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/8.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>(Table 1) cGAN优于GAN，加上L1 loss后，cGAN也相对较优。</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/9.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Colorfulness<br>当不确定edge的位置时，L1会产生<strong>blur</strong>和<strong>averrage</strong> ( L1 will be minimized by choosing the <strong>median</strong> of of the conditional probability density function over possible colors.) 从而导致<strong>narrower distribution</strong> than the ground truth <strong>(Figure 7)</strong>.</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/10.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Analysis of the G (Figure5)</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/11.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Analysis of the D (Figure 6, Table 2)<ul>
+<li><strong>Pixel GAN</strong> output 1x1 of D.</li>
+<li><strong>Image GAN</strong> output 256x256(full image size) D.</li>
+<li><strong>Patch GAN</strong> output 70x70(在本实验中) D.</li>
+<li>Fully-convolutional translation. Patch GAN由于不包含FC层，D和G都可应用与<strong>任何大小的图片</strong>。<strong>(Figure 8)</strong>中的G在<strong>train阶段</strong>使用256x256图片，在<strong>test阶段</strong>使用512x512图片。</li>
+</ul>
+</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/12.jpg?raw=true" alt><br></div>
+
+
+<ul>
+<li>Perceptual validation</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/13.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Semantic segmentation<br>GAN一般用于图像生成，本论文尝试<strong>将cGAN用于做segmentation任务</strong>，但<strong>最终效果并不好</strong>。<strong>(Figure 10, Table 5)</strong>从实验结果可以看出， reconstruction losses like L1 are mostly sufficient.</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/14.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Semantic labels↔photo<br>Cityscapes dataset</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/15.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Architectural labels→photo<br>CMP Facades dataset</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/16.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Map↔aerial photo<br>Google Maps</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/17.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>BW→color photos</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/18.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Edges→photonary</li>
+<li>Sketch→photo</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/19.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Day→night</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/20.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Failure case</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/21.jpg?raw=true" alt><br></div>
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Image-Generation/" rel="tag"># Image Generation</a>
+          
+            <a href="/tags/GAN/" rel="tag"># GAN</a>
+          
+            <a href="/tags/Conditional-GAN/" rel="tag"># Conditional GAN</a>
+          
+            <a href="/tags/Image-Enhancement/" rel="tag"># Image Enhancement</a>
+          
+            <a href="/tags/Map-to-Aerial/" rel="tag"># Map to Aerial</a>
+          
+            <a href="/tags/Reality-Enhancement/" rel="tag"># Reality Enhancement</a>
+          
+            <a href="/tags/Style-Transfer/" rel="tag"># Style Transfer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/03/Unsupervised Image-to-Image Translation Networks/" rel="next" title="(NIPS 2017) Unsupervised Image-to-Image Translation Networks">
+                <i class="fa fa-chevron-left"></i> (NIPS 2017) Unsupervised Image-to-Image Translation Networks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/18/Capsule Extension/" rel="prev" title="Capsule Extension">
+                Capsule Extension <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+            
+              <p class="site-author-name" itemprop="name">Alex Hex</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:378344082@qq.com" title="E-Mail &rarr; mailto:378344082@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Contribution"><span class="nav-number">1.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Relative-Work"><span class="nav-number">2.</span> <span class="nav-text">Relative Work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss类型"><span class="nav-number">2.1.</span> <span class="nav-text">Loss类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cGAN"><span class="nav-number">2.2.</span> <span class="nav-text">cGAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Objective"><span class="nav-number">3.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-architectures"><span class="nav-number">4.</span> <span class="nav-text">Network architectures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Skip-connection-of-G"><span class="nav-number">4.1.</span> <span class="nav-text">Skip connection of G</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markovian-D-PatchGAN"><span class="nav-number">4.2.</span> <span class="nav-text">Markovian D (PatchGAN)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimization-and-inference"><span class="nav-number">4.3.</span> <span class="nav-text">Optimization and inference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">5.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

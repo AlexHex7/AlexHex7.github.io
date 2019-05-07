@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="CapsulesNet 的解析及整理">
+<meta name="keywords" content="Capsule,Cerebral Cortex,Cognitive Neuroscience,CNN Limitation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Capsule Extension">
+<meta property="og:url" content="http://yoursite.com/2017/12/18/Capsule Extension/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="CapsulesNet 的解析及整理">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/11.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/12.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/13.jpg?raw=true">
+<meta property="og:updated_time" content="2017-12-17T22:25:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Capsule Extension">
+<meta name="twitter:description" content="CapsulesNet 的解析及整理">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/1.jpg?raw=true">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2017/12/18/Capsule Extension/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Capsule Extension | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/Capsule Extension/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Capsule Extension
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-12-18 06:25:01" itemprop="dateCreated datePublished" datetime="2017-12-18T06:25:01+08:00">2017-12-18</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Knowledge-Note/" itemprop="url" rel="index"><span itemprop="name">Knowledge Note</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p><a href="https://zhuanlan.zhihu.com/p/30970675" target="_blank" rel="noopener">CapsulesNet 的解析及整理</a></p>
+</blockquote>
+<a id="more"></a>
+<h1 id="大脑皮层微柱"><a href="#大脑皮层微柱" class="headerlink" title="大脑皮层微柱"></a>大脑皮层微柱</h1><hr>
+<blockquote>
+<p><a href="http://www.intsci.ac.cn/brainscience/column.html" target="_blank" rel="noopener">功能柱</a></p>
+</blockquote>
+<ul>
+<li>人的大脑皮层厚度为3～4mm，包含28x10^9神经元和相同数量胶质细胞。<strong>纵向垂直于皮层表面的细胞</strong>组织成<strong>微柱</strong>，穿越II-VI层，形成一个个结构功能单元。</li>
+<li>灵长类的微柱包含80～100个神经元，形成30～50mm直径，深度2～4mm的<strong>柱状结构</strong>。</li>
+<li>在视觉区的纹状皮层，<strong>每个柱内神经元数目大约200～250个</strong>。<strong>十个左右微柱组成一个功能柱</strong>。因此，一个功能柱直径大约300～600mm。不同物种的脑容量相差很大(10^3)，但功能柱大小接近。</li>
+<li>芒卡斯尔认为<strong>功能柱</strong>是<strong>大脑皮层的基本的结构和功能单元</strong>，他有时也把它称为一个微型组件(module).</li>
+</ul>
+<h1 id="Max-Pooling"><a href="#Max-Pooling" class="headerlink" title="Max Pooling"></a>Max Pooling</h1><hr>
+<p>Max pooling丢弃固定大小感知域中(n<em>m-1)/n</em>m的信息。随着层级的增加不断进行max pooling操作，相当于逐步增加感知区域，丢弃的范围逐步增大，丢弃的信息也不断增多，最终只有image整体中各object特征被激活，而位置信息(位置信息针对一些任务并不需要，如分类)被丢弃。</p>
+<h1 id="CNN局限性"><a href="#CNN局限性" class="headerlink" title="CNN局限性"></a>CNN局限性</h1><hr>
+<blockquote>
+<p><a href="https://hackernoon.com/capsule-networks-are-shaking-up-ai-heres-how-to-use-them-c233a0971952" target="_blank" rel="noopener">Capsule Networks Are Shaking up AI — Here’s How to Use Them</a><br><a href="https://kndrck.co/posts/capsule_networks_explained/" target="_blank" rel="noopener">Capsule Networks Explained</a></p>
+</blockquote>
+<h2 id="不具有平移同变性"><a href="#不具有平移同变性" class="headerlink" title="不具有平移同变性"></a>不具有平移同变性</h2><p>CNN具有<strong>translation invariant (平移不变性)</strong>, 无论如何平移图像中的obj，都能检测到。不变性是通过Pooling下采样实现。但CNN不具有<strong>translation equivariance (平移同变性)</strong>,  无法检测到obj平移的距离方向等变化，即。</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/1.jpg?raw=true" alt><br></div>
+
+<p>由于CNN无法识别各sub-obj之间的相对位置关系，以致下图都被识别为Face。</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/2.jpg?raw=true" alt><br></div>
+
+<p>CNNs work by accumulating sets of features at each layer. It starts of by finding <strong>edges, then shapes, then actual objects</strong>. However,<strong> the spatial relationship information of all these features is lost</strong>. 导致下图均被识别为peroson.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/3.jpg?raw=true" alt><br></div>
+
+<p>CNN is also easily confused when viewing an image in a <strong>different orientation</strong>. 下图被识别为coal black color.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/4.jpg?raw=true" alt><br></div>
+
+<p>CNN与CapsuleNet在识别上图人脸的区别</p>
+<ul>
+<li>CNN</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/5.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>CapsuleNet</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/6.jpg?raw=true" alt><br></div>
+
+<h2 id="易受白盒对抗攻击"><a href="#易受白盒对抗攻击" class="headerlink" title="易受白盒对抗攻击"></a>易受白盒对抗攻击</h2><h2 id="需要大量数据进行泛化"><a href="#需要大量数据进行泛化" class="headerlink" title="需要大量数据进行泛化"></a>需要大量数据进行泛化</h2><p>In order for the ConvNets to be translation invariant, it has to learn different filters for each different viewpoints, and in doing so it requires a lot of data.</p>
+<h2 id="CNN无法很好地表示人类视觉系统"><a href="#CNN无法很好地表示人类视觉系统" class="headerlink" title="CNN无法很好地表示人类视觉系统"></a>CNN无法很好地表示人类视觉系统</h2><p>CNN利用filter从low level visual data提取high level information. 而对于人类系统而言，当触发视觉刺激时，大脑的内建机制会将low level visual data route到大脑某些部分。</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/7.jpg?raw=true" alt><br></div>
+
+<p>此外，人类视觉系统会对obj建立coordinate frames，并选择一个参考点，旋转obj.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/8.jpg?raw=true" alt><br></div>
+
+<h1 id="ConvNet与CapsuleNet区别"><a href="#ConvNet与CapsuleNet区别" class="headerlink" title="ConvNet与CapsuleNet区别"></a>ConvNet与CapsuleNet区别</h1><hr>
+<p>CapsuleNet (mimics the human vision system) <strong>strives for translation equivariance</strong> instead of translation invariance, allowing it to generalize to a greater degree from different view points with less training data.</p>
+<h1 id="Inverse-Graphics"><a href="#Inverse-Graphics" class="headerlink" title="Inverse Graphics"></a>Inverse Graphics</h1><hr>
+<h2 id="图像渲染过程"><a href="#图像渲染过程" class="headerlink" title="图像渲染过程"></a>图像渲染过程</h2><p>To go from a mesh object onto pixels on a screen, it takes the <strong>pose of the whole object</strong>, and <strong>multiplies it by a transformation matrix</strong>. This outputs the pose of the object’s part in a <strong>lower dimension (2D)</strong>.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/9.jpg?raw=true" alt><br></div>)<br><br>## 图像逆过程<br>lower dimension –&gt; whole object<br><br><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/10.jpg?raw=true" alt><br></div>
+
+<h2 id="权重矩阵"><a href="#权重矩阵" class="headerlink" title="权重矩阵"></a>权重矩阵</h2><p>因此，可用权重矩阵表示两者之间的关系。这些权重是<strong>viewpoint invariant</strong>. Meaning that however much the pose of the part has changed we can get back the pose of the whole using the same matrix of weights.</p>
+<p><strong>利用reconstruction得到该权重矩阵</strong></p>
+<h1 id="矢量神经元"><a href="#矢量神经元" class="headerlink" title="矢量神经元"></a>矢量神经元</h1><hr>
+<p><a href="https://www.zhihu.com/question/67287444" target="_blank" rel="noopener">知乎: 如何看待Hinton的论文《Dynamic Routing Between Capsules》</a></p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/11.jpg?raw=true" alt><br></div>
+
+
+<h1 id="Hinton对CNN的思考"><a href="#Hinton对CNN的思考" class="headerlink" title="Hinton对CNN的思考"></a>Hinton对CNN的思考</h1><hr>
+<h2 id="生物神经系统的思考"><a href="#生物神经系统的思考" class="headerlink" title="生物神经系统的思考"></a>生物神经系统的思考</h2><ul>
+<li>解剖学上并未发现神经系统存在反向传播及求导的结构。</li>
+<li>神经系统具有分层结构，但层数不多。生物系统传导在ms量级，GPU在us量级，同步出现问题。</li>
+<li>大脑皮层存在微柱结构(Cortical minicolumn)，其内部含有上百个神经元，并存在内部分层结构，比NN的一层结构更为复杂。</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/12.jpg?raw=true" alt><br></div>
+
+<h2 id="认知神经科学的思考"><a href="#认知神经科学的思考" class="headerlink" title="认知神经科学的思考"></a>认知神经科学的思考</h2><p>人会不自觉根据物体形状建立坐标框架(coordinate frame), 并通过对坐标框架旋转。</p>
+<ul>
+<li>坐标框架的不同会影响人的认知。</li>
+<li>坐标框架参与到物体识别过程中，识别过程手空间概念的支配。</li>
+<li>CNN不存在坐标框架。<br>Hinton提出猜想：物体与观察者之间的关系（如物体姿态），应该由一整套激活的神经元表示，而不是由单个神经元，或者一组粗编码（coarse-coded，一层中并没有经过精细地组织）的神经元表示。这样才能有效表达坐标框架的先验知识。</li>
+</ul>
+<h2 id="CNN的局限性"><a href="#CNN的局限性" class="headerlink" title="CNN的局限性"></a>CNN的局限性</h2><ul>
+<li>不变性<br>物体不随变化而变化。如空间不变性。</li>
+<li><p>同变性<br>用变化矩阵进行转换后，物体表示依旧不变。是对物体内容的变换。</p>
+</li>
+<li><p>CNN对旋转没有不变性。可采用数据增强方式达到旋转不变性。</p>
+</li>
+<li>CNN的不变性通过Pooling实现。</li>
+<li>平移和旋转不变性舍弃了坐标框架。</li>
+<li>虽然CNN准确率高，但是最终目标应该是对内容的良好表示，从而达到理解内容。</li>
+</ul>
+<h1 id="Hinton提出的Capsule"><a href="#Hinton提出的Capsule" class="headerlink" title="Hinton提出的Capsule"></a>Hinton提出的Capsule</h1><hr>
+<h2 id="Capsule需具备的性质"><a href="#Capsule需具备的性质" class="headerlink" title="Capsule需具备的性质"></a>Capsule需具备的性质</h2><ul>
+<li>一层中具有复杂的内部结构。</li>
+<li>能表达坐标框架</li>
+<li>实现同变性</li>
+</ul>
+<h2 id="Capsule神经元"><a href="#Capsule神经元" class="headerlink" title="Capsule神经元"></a>Capsule神经元</h2><p>Capsule用一组神经元代表一个实体，仅且代表一个实体。</p>
+<ul>
+<li>模长代表某个实体（物体或其一部分）出现的概率。</li>
+<li>方向/位置代表实体的一般姿态(generalized pose)，报货位置、方向、尺寸、速度、颜色等。</li>
+</ul>
+<h2 id="视角变换矩阵"><a href="#视角变换矩阵" class="headerlink" title="视角变换矩阵"></a>视角变换矩阵</h2><p>CapsuleNet用视角变换矩阵处理场景中两物体间的关联，不改变它们的相对关系。</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Capsule Extension/13.jpg?raw=true" alt><br></div>
+
+<h2 id="两种同变性"><a href="#两种同变性" class="headerlink" title="两种同变性"></a>两种同变性</h2><ul>
+<li><strong>位置编码 (place-coded)</strong><br>视觉中的内容位置发生较大变化，由不同Capsule表示其内容。</li>
+<li><strong>速率编码 (rate-coded)</strong><br>视觉中的内容位置发生较小变化，由相同capsule表示其内容，但是内容有所改变。</li>
+</ul>
+<p><strong>高层的capsule有更广的域(domain)，所以低层的place-coded信息到高层会变成rate-coded.</strong></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Capsule/" rel="tag"># Capsule</a>
+          
+            <a href="/tags/Cerebral-Cortex/" rel="tag"># Cerebral Cortex</a>
+          
+            <a href="/tags/Cognitive-Neuroscience/" rel="tag"># Cognitive Neuroscience</a>
+          
+            <a href="/tags/CNN-Limitation/" rel="tag"># CNN Limitation</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/03/Image-to-Image Translation with Conditional Adversarial Networks/" rel="next" title="(CVPR 2017) Image-to-image translation with conditional adversarial networks">
+                <i class="fa fa-chevron-left"></i> (CVPR 2017) Image-to-image translation with conditional adversarial networks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/18/Dynamic Routing Between Capsules/" rel="prev" title="(NIPS 2017) Dynamic Routing Between Capsules">
+                (NIPS 2017) Dynamic Routing Between Capsules <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+            
+              <p class="site-author-name" itemprop="name">Alex Hex</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:378344082@qq.com" title="E-Mail &rarr; mailto:378344082@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大脑皮层微柱"><span class="nav-number">1.</span> <span class="nav-text">大脑皮层微柱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Max-Pooling"><span class="nav-number">2.</span> <span class="nav-text">Max Pooling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CNN局限性"><span class="nav-number">3.</span> <span class="nav-text">CNN局限性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不具有平移同变性"><span class="nav-number">3.1.</span> <span class="nav-text">不具有平移同变性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#易受白盒对抗攻击"><span class="nav-number">3.2.</span> <span class="nav-text">易受白盒对抗攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要大量数据进行泛化"><span class="nav-number">3.3.</span> <span class="nav-text">需要大量数据进行泛化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN无法很好地表示人类视觉系统"><span class="nav-number">3.4.</span> <span class="nav-text">CNN无法很好地表示人类视觉系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ConvNet与CapsuleNet区别"><span class="nav-number">4.</span> <span class="nav-text">ConvNet与CapsuleNet区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inverse-Graphics"><span class="nav-number">5.</span> <span class="nav-text">Inverse Graphics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图像渲染过程"><span class="nav-number">5.1.</span> <span class="nav-text">图像渲染过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权重矩阵"><span class="nav-number">5.2.</span> <span class="nav-text">权重矩阵</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#矢量神经元"><span class="nav-number">6.</span> <span class="nav-text">矢量神经元</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hinton对CNN的思考"><span class="nav-number">7.</span> <span class="nav-text">Hinton对CNN的思考</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#生物神经系统的思考"><span class="nav-number">7.1.</span> <span class="nav-text">生物神经系统的思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#认知神经科学的思考"><span class="nav-number">7.2.</span> <span class="nav-text">认知神经科学的思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN的局限性"><span class="nav-number">7.3.</span> <span class="nav-text">CNN的局限性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hinton提出的Capsule"><span class="nav-number">8.</span> <span class="nav-text">Hinton提出的Capsule</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule需具备的性质"><span class="nav-number">8.1.</span> <span class="nav-text">Capsule需具备的性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule神经元"><span class="nav-number">8.2.</span> <span class="nav-text">Capsule神经元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视角变换矩阵"><span class="nav-number">8.3.</span> <span class="nav-text">视角变换矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两种同变性"><span class="nav-number">8.4.</span> <span class="nav-text">两种同变性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

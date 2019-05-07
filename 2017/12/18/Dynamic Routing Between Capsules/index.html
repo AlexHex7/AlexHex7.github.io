@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Sabour S, Frosst N, Hinton G E. Dynamic routing between capsules[C]//Advances in neural information processing systems. 2017: 3856-3866.">
+<meta name="keywords" content="Classification,Cognitive Neuroscience,CapsulesNet,Image Reconstruction">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(NIPS 2017) Dynamic Routing Between Capsules">
+<meta property="og:url" content="http://yoursite.com/2017/12/18/Dynamic Routing Between Capsules/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Sabour S, Frosst N, Hinton G E. Dynamic routing between capsules[C]//Advances in neural information processing systems. 2017: 3856-3866.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/11.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/12.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/13.jpg?raw=true">
+<meta property="og:updated_time" content="2017-12-17T22:25:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(NIPS 2017) Dynamic Routing Between Capsules">
+<meta name="twitter:description" content="Sabour S, Frosst N, Hinton G E. Dynamic routing between capsules[C]//Advances in neural information processing systems. 2017: 3856-3866.">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/1.jpg?raw=true">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2017/12/18/Dynamic Routing Between Capsules/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>(NIPS 2017) Dynamic Routing Between Capsules | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/Dynamic Routing Between Capsules/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">(NIPS 2017) Dynamic Routing Between Capsules
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-12-18 06:25:02" itemprop="dateCreated datePublished" datetime="2017-12-18T06:25:02+08:00">2017-12-18</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Capsules/" itemprop="url" rel="index"><span itemprop="name">Capsules</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Sabour S, Frosst N, Hinton G E. Dynamic routing between capsules[C]//Advances in neural information processing systems. 2017: 3856-3866.</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<p>基于<strong>认知神经科学</strong>领域中<strong>芒卡斯尔</strong>(V.B. Mountcastle)发现的<strong>大脑皮层功能柱结构(功能柱-微柱)</strong>，论文提出<strong>capsule</strong>概念。</p>
+<h2 id="Capsule定义"><a href="#Capsule定义" class="headerlink" title="Capsule定义"></a>Capsule定义</h2><ul>
+<li>Capsule是<strong>一组神经元</strong>，其activity vector表示一个特定实体(entity)类型(object or object part)的实例化参数(instantiation parameters). </li>
+<li>Activity vector的<strong>长度</strong>表示entity存在的<strong>概率</strong>，<strong>方向</strong>表示<strong>instaniation parameters</strong>. </li>
+<li>Instantiation parameters includes pose (position, size, orientation), deformation, velocity (速度), albedo (反照率), hue, texture etc.</li>
+</ul>
+<h2 id="Capsule机制"><a href="#Capsule机制" class="headerlink" title="Capsule机制"></a>Capsule机制</h2><p>L level的activity $capsule_i$ 通过transformation matrices <strong>predict</strong> L+1 level $capsules_j$的<strong>instantiation parameters</strong>. </p>
+<p>当多个predictions agree, L+1层中某个$capsule_j$ become active. (即高层$capsule_j$代表了低层$capsule_i$的组合，如数字2的多个低层特征由多个$capsule_i$表示，同时满足这些特征时，某个代表这些特征组合的高层$capsule_j$被激活)</p>
+<p>在CapsNet中使用了<strong>iterative routing-by-agreement</strong>机制：对于L+1 level中某个$capsule_j$的 activity vectors ($v_j$)和L level中的一个$capsule_i$对其作出的prediction ($\hat{u_{j|i}}$)而言，两者scalar product ($\hat{u_{j|i}} · v_j$)越大, A越倾向于将其output发送给这个$capsule_j$. </p>
+<p>CapsNet在MNIST数据集上优于CNN，最高达到99.75%左右。</p>
+<hr>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><hr>
+<h2 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h2><ul>
+<li>假设，人类的多层视觉系统会在每个fixation上建立一个类似<strong>parse tree</strong>的东西。</li>
+<li>假设，对于一个fixation，parse tree可以通过对一个固定的<strong>多层神经网络</strong>carve (类似于<strong>剪枝</strong>)得到。</li>
+</ul>
+<p>每层会被划分为<strong>多个神经元组(capsule)</strong>, parse tree中每个node都会对应一个active capsule (即parse tree中每个node代表一层神经网络中的<strong>一组神经元</strong>，该组神经元可称为capsule). </p>
+<p>通过iterative routing机制，每个active capsule都会选择上一层中的某个capsule作为parent node. 对于higher level视觉系统，iterative routing机制将用于<strong>解决物体部分组合到整体的过程</strong>。</p>
+<h2 id="存在性表示方法"><a href="#存在性表示方法" class="headerlink" title="存在性表示方法"></a>存在性表示方法</h2><ol>
+<li><strong>logistic</strong> unit.</li>
+<li><strong>length</strong> of the vector of instantiation parameters (squashing function, 论文采用).</li>
+</ol>
+<h2 id="Dynamic-Routing"><a href="#Dynamic-Routing" class="headerlink" title="Dynamic Routing"></a>Dynamic Routing</h2><ul>
+<li>由于capsule输出的是<strong>向量</strong>，用<strong>dynamic routing机制能够确保capsule的输出send to合适的parent node</strong>. </li>
+<li>对于L level的capsule A和L+1 level的capsule B. A首先计算prediction vector (A的output乘以weight matrix), 然后计算prediction vector与B ouput的<strong>scalar product</strong>, 反馈给AB之间的<strong>coupling coefficient</strong>. </li>
+<li>scalar product越大，对AB之间coupling coefficient的反馈越大，即-AB之间的coupling coefficient增加，A与其他parents之间的coupling coefficients减小<strong>(softmax function).</strong></li>
+</ul>
+<h2 id="分割重叠数字"><a href="#分割重叠数字" class="headerlink" title="分割重叠数字"></a>分割重叠数字</h2><ul>
+<li>由于<strong>max pooling</strong>的routing机制会<strong>忽略local pool中大部分active feature detectors</strong>. 而routing by agreement more effective不存在这样的问题，因此能够分割<strong>高度重叠的object</strong>.</li>
+<li>Max pooling <strong>throw away information about the precise position of the entity within the region.</strong></li>
+</ul>
+<h2 id="相比于CNN的改进"><a href="#相比于CNN的改进" class="headerlink" title="相比于CNN的改进"></a>相比于CNN的改进</h2><ul>
+<li>使用<strong>vector output capsule</strong>代替CNN中的scalar output feature detectors.</li>
+<li>使用<strong>routing by agreement</strong>代替max pooling.</li>
+</ul>
+<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><ul>
+<li>For <strong>low level</strong> capsules, location information is <strong>place coded</strong> by which capsule is active. </li>
+<li>As we ascend the hierarchy more and more of the positional information is <strong>rate coded</strong> in the real valued components of the output vector of a capsule.</li>
+<li>从place coding到rate coding表明higher level capsule用更高自由度represent更复杂的entities, 即capsule的<strong>维度随着层级的增加而增加</strong>。</li>
+</ul>
+<hr>
+<h1 id="Capsule计算"><a href="#Capsule计算" class="headerlink" title="Capsule计算"></a>Capsule计算</h1><hr>
+<h2 id="Squashing-function"><a href="#Squashing-function" class="headerlink" title="Squashing function"></a>Squashing function</h2><p>(L level $capsule_i$, L+1 level $capsule_j$)</p>
+<ul>
+<li>使得较短向量长度缩放为0，较长向量长度缩放为1.</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/1.jpg?raw=true" alt><br></div>
+
+<p><strong>$v_j$.</strong> capsule_j的输出向量。<br><strong>$s_j$.</strong> $capsule_j$的总输入向量。 即L level中所有$capsule_is$到L+1 level中特定一个$capsule_j$的<strong>prediction vector加权和。</strong></p>
+<h2 id="Total-input-amp-prediction-vectors"><a href="#Total-input-amp-prediction-vectors" class="headerlink" title="Total input &amp; prediction vectors"></a>Total input &amp; prediction vectors</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/2.jpg?raw=true" alt><br></div>
+
+<p><strong>$u_i$.</strong> capsule_i的输出向量。<br><strong>$w_{ij}$.</strong> weight matrix.<br><strong>$u_{j|i}$.</strong> prediction value from a $capsule_i$ to a $capsule_j$.<br><strong>$c_{ij}$.</strong> coupling coefficients between a $capsule_i$ and a $capsule_j$.</p>
+<h2 id="Coupling-coefficients"><a href="#Coupling-coefficients" class="headerlink" title="Coupling coefficients"></a>Coupling coefficients</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/3.jpg?raw=true" alt><br></div>
+
+<p><strong>$b_{ij}$.</strong> the log priors probabilities that $capsule_i$ should be coupled to $capsule_j$. 由两个capsule (i和j)的location和type决定，而非当前input image决定。</p>
+<p>通过测量$v_j$和$u_j|i$之间的agreement迭代refine $c_{ij}$.</p>
+<h2 id="Agreement"><a href="#Agreement" class="headerlink" title="Agreement"></a>Agreement</h2><p>This agreement is treated as if it were a log likelihood and is added to the initial logit, $b_{ij}$. </p>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/4.jpg?raw=true" alt><br></div>
+
+<hr>
+<h1 id="Margin-Loss"><a href="#Margin-Loss" class="headerlink" title="Margin Loss"></a>Margin Loss</h1><hr>
+<p>SVM损失函数</p>
+<ul>
+<li>$m^{+}=0.9$, $m^{-}=0.1$</li>
+<li>$T_c=1$, iff a digit present</li>
+<li>suggest $λ=0.5$</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/5.jpg?raw=true" alt><br></div>
+
+<hr>
+<h1 id="CapsNet结构-Figure-1"><a href="#CapsNet结构-Figure-1" class="headerlink" title="CapsNet结构 (Figure 1)"></a>CapsNet结构 (Figure 1)</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/6.jpg?raw=true" alt><br></div>
+
+<h2 id="Conv1"><a href="#Conv1" class="headerlink" title="Conv1"></a>Conv1</h2><p>256 kernels, 9x9, 1 stride, ReLu.</p>
+<ul>
+<li><strong>输入维度</strong> . (batch_size, 1, 28, 28)</li>
+<li><strong>输出维度</strong>. (batch_size, 256, 20, 20)</li>
+</ul>
+<h2 id="PrimaryCapsules"><a href="#PrimaryCapsules" class="headerlink" title="PrimaryCapsules"></a>PrimaryCapsules</h2><ul>
+<li><strong>输入维度</strong> . (batch_size, 256, 20, 20)</li>
+<li><strong>输出维度</strong>. (batch_size, 32, 6, 6, 8)</li>
+</ul>
+<p><strong>激活primary capsule过程可看作是图像render的逆过程。</strong></p>
+<ul>
+<li>PrimaryCapsules is a convolutional capsule layer, 包含<strong>32个通道</strong>，<strong>每个通道含有一个convolutional 8D capsules</strong>. 即<strong>每个primary capsule包含8个(9x9, 2 stride) conv unit</strong>. </li>
+<li>PrimaryCapsule共有<strong>(32, 6, 6)个capsule输出</strong>，每个输出是一个<strong>8维向量</strong>。 (6x6) grid中的capsule <strong>share weights</strong>，与CCN的卷积核原理相同。<strong>每个capsule输出a grid of vectors</strong>，而不是single vector output.</li>
+</ul>
+<h2 id="DigitCaps"><a href="#DigitCaps" class="headerlink" title="DigitCaps"></a>DigitCaps</h2><ul>
+<li><strong>输入维度</strong>. (batch_size, 32<em>6</em>6,  8)</li>
+<li><p><strong>输出维度</strong>. (batch_size, 10, 16)</p>
+</li>
+<li><p>10个16维的capsule. </p>
+</li>
+<li>CapsNet中，只在PrimaryCapsules和DigitCaps层之间routing. 由于Conv1输出是1D, <strong>不存在orientation to agree on</strong>, 因此不在Conv1和PrimaryCapsules层之间routing.</li>
+</ul>
+<p>使用<strong>Adam</strong> optimizer, routing logit $b_ij$初始化为0.</p>
+<h2 id="Reconstruction-Figure-2"><a href="#Reconstruction-Figure-2" class="headerlink" title="Reconstruction (Figure 2)"></a>Reconstruction (Figure 2)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/7.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><strong>输入维度</strong> . (batch_size, 10*16) 或 (batch_size, 16)</li>
+<li><p><strong>输出维度</strong>. (batch_size, 28* 28)</p>
+</li>
+<li><p><strong>Encourage</strong> the digit capsules to <strong>encode the instantiation parameters</strong> of the input digit.</p>
+</li>
+<li>在<strong>训练阶段</strong>，<strong>mask除了ground truth对应capsule之外</strong>的所有capsule. </li>
+<li>而<strong>测试阶段</strong>，<strong>mask除了length最大的capsule之外</strong>的所有capsule.</li>
+<li><p>目标为最小化<strong>sum</strong> of squared differences.  Reconstruction loss乘以<strong>0.0005系数</strong>。</p>
+</li>
+<li><p>To summarize, by using the reconstruction loss as a regularizer, the Capsule Network is able to learn a <strong>global linear manifold</strong> between a whole object and the pose of the object as a <strong>matrix of weights</strong> via <strong>unsupervised learning</strong>.</p>
+</li>
+<li>As such, the <strong>translation invariance</strong> is encapsulated in the <strong>matrix of weights</strong>, and not during <strong>neural activity, making the neural network translation equivariance</strong>. </li>
+<li>Therefore, we are in some sense, performing a ‘mental rotation and translation’ of the image when it gets multiplied by the global linear manifold.</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/8.jpg?raw=true" alt><br></div>
+
+<hr>
+<h1 id="Capsules-on-MNIST"><a href="#Capsules-on-MNIST" class="headerlink" title="Capsules on MNIST"></a>Capsules on MNIST</h1><hr>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/9.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>使用routing和reconstruction regularizer能够<strong>提升性能</strong>。</li>
+<li>CNN: <strong>24.56M</strong> parameters.</li>
+<li>CapsNet: <strong>11.36M</strong> parameters.</li>
+</ul>
+<h2 id="Capsule单个维度代表的意义-Figure-4"><a href="#Capsule单个维度代表的意义-Figure-4" class="headerlink" title="Capsule单个维度代表的意义 (Figure 4)"></a>Capsule单个维度代表的意义 (Figure 4)</h2><p>variations包括厚度、斜度和宽度。16维中几乎总有一维代表数字的<strong>宽度</strong>，一些维度代表combinations of global variation, 其他一些代表localized part of digit.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/10.jpg?raw=true" alt><br></div>
+
+<h2 id="Robustness-to-Affine-Transformations"><a href="#Robustness-to-Affine-Transformations" class="headerlink" title="Robustness to Affine Transformations"></a>Robustness to Affine Transformations</h2><p>由于<strong>natural variance</strong> in skew, rotation, style, etc in hand written digits, 使用CapsNet具有<strong>健壮性</strong>。</p>
+<ul>
+<li><strong>训练集 MNIST</strong><br>digit placed randomly on a black background <strong>(平移)</strong>.</li>
+<li><strong>测试集 affNIST</strong><br>MNIST digit with a random small <strong>affine transformation</strong></li>
+</ul>
+<p>CapsNet stop when $train_{acc}=99.23%$, $test_{acc}=79%$.<br>CNN stop when $train_{acc}=99.22%$, $test_{acc}=66%$.</p>
+<h1 id="Segmenting-Highly-Overlapping-Digit"><a href="#Segmenting-Highly-Overlapping-Digit" class="headerlink" title="Segmenting Highly Overlapping Digit"></a>Segmenting Highly Overlapping Digit</h1><hr>
+<h2 id="Routing可看做Attention机制"><a href="#Routing可看做Attention机制" class="headerlink" title="Routing可看做Attention机制"></a>Routing可看做Attention机制</h2><ul>
+<li>Dynamic routing可以看做是<strong>并行的attention机制</strong>，L+1 level的每个capsule都会attend一些L level的activive capsules，忽略其他的。因此，在<strong>对象重叠的情况下，也能识别多个对象</strong>。</li>
+<li>The <strong>routing by agreement</strong> should make it possible to use a <strong>prior about shape of objects</strong> to help segmentation. </li>
+<li>It should <strong>obviate</strong> the need to make higher level segmentation decisions in the <strong>domain of pixels</strong>.</li>
+</ul>
+<h2 id="MultiMNIST-dataset"><a href="#MultiMNIST-dataset" class="headerlink" title="MultiMNIST dataset"></a>MultiMNIST dataset</h2><ul>
+<li>两张image<strong>各方向移动4个pixel</strong>，构成36x36 image.</li>
+<li>MultiMNIST result shows that <strong>each digit capsule</strong> can <strong>pick up the style and position</strong> from the votes it is receiving from PrimaryCapsules layer.</li>
+<li>选<strong>top 2 length</strong>的capsule分别输入decoder中，得到两张digit images.</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/11.jpg?raw=true" alt><br></div>
+
+<h1 id="Other-Datase"><a href="#Other-Datase" class="headerlink" title="Other Datase"></a>Other Datase</h1><hr>
+<h2 id="CIFAR10-3-channel"><a href="#CIFAR10-3-channel" class="headerlink" title="CIFAR10 (3 channel)"></a>CIFAR10 (3 channel)</h2><ul>
+<li>test_acc: 89.4%.</li>
+<li>drawback 由于CIFAR10 image的背景变化太大，很难model合理大小的网络，导致性能较差。</li>
+</ul>
+<h2 id="smallNORB"><a href="#smallNORB" class="headerlink" title="smallNORB"></a>smallNORB</h2><ul>
+<li>test_acc: 97.3%.</li>
+</ul>
+<h2 id="SVHN"><a href="#SVHN" class="headerlink" title="SVHN"></a>SVHN</h2><ul>
+<li>test_acc: 95.7%.</li>
+</ul>
+<h1 id="Discussion-and-previous-work"><a href="#Discussion-and-previous-work" class="headerlink" title="Discussion and previous work"></a>Discussion and previous work</h1><hr>
+<p>Capsule将<strong>pixel intensities</strong>转化为<strong>vectors</strong> of instantiation parameters of <strong>recognized fragments</strong>, 然后对fragments作<strong>transformation matrices</strong>, 进而预测 the instantiation parameters of <strong>larger fragments</strong>.</p>
+<h2 id="CNN不足之处"><a href="#CNN不足之处" class="headerlink" title="CNN不足之处"></a>CNN不足之处</h2><ul>
+<li>Convolutional nets have <strong>difficulty in generalizing to novel viewpoints</strong>.</li>
+<li>CNN具有<strong>translation (平移)不变性</strong>，但对于<strong>affine transformation</strong> (平移、旋转、缩放和斜切)<strong>不具有</strong>。因此，replicating feature detectors on a grid that grows exponentially with the number of dimensions, 或者指数级增加标注训练集。</li>
+</ul>
+<h2 id="Capsule"><a href="#Capsule" class="headerlink" title="Capsule"></a>Capsule</h2><ul>
+<li>Capsule作了一个非常强的<strong>假设</strong>：对于image中的each location, a capsule表示至多一个entity的instance.</li>
+<li>Capsule的神经元活动，会<strong>随着viewpoint (视角)的变化而变化(同变性equivariance)</strong>，而不是消除viewpoint带来的影响(如STN网络)。能够同时处理不同object(或object part)上的不同affine transformation.</li>
+</ul>
+<h2 id="Routing-iteration-times"><a href="#Routing-iteration-times" class="headerlink" title="Routing iteration times"></a>Routing iteration times</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/12.jpg?raw=true" alt><br></div>
+
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/13.jpg?raw=true" alt><br></div>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Classification/" rel="tag"># Classification</a>
+          
+            <a href="/tags/Cognitive-Neuroscience/" rel="tag"># Cognitive Neuroscience</a>
+          
+            <a href="/tags/CapsulesNet/" rel="tag"># CapsulesNet</a>
+          
+            <a href="/tags/Image-Reconstruction/" rel="tag"># Image Reconstruction</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/18/Capsule Extension/" rel="next" title="Capsule Extension">
+                <i class="fa fa-chevron-left"></i> Capsule Extension
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/18/EM Algorithm/" rel="prev" title="EM Algorithm">
+                EM Algorithm <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+            
+              <p class="site-author-name" itemprop="name">Alex Hex</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:378344082@qq.com" title="E-Mail &rarr; mailto:378344082@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule定义"><span class="nav-number">1.1.</span> <span class="nav-text">Capsule定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule机制"><span class="nav-number">1.2.</span> <span class="nav-text">Capsule机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#假设"><span class="nav-number">2.1.</span> <span class="nav-text">假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存在性表示方法"><span class="nav-number">2.2.</span> <span class="nav-text">存在性表示方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dynamic-Routing"><span class="nav-number">2.3.</span> <span class="nav-text">Dynamic Routing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割重叠数字"><span class="nav-number">2.4.</span> <span class="nav-text">分割重叠数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相比于CNN的改进"><span class="nav-number">2.5.</span> <span class="nav-text">相比于CNN的改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding"><span class="nav-number">2.6.</span> <span class="nav-text">Coding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capsule计算"><span class="nav-number">3.</span> <span class="nav-text">Capsule计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Squashing-function"><span class="nav-number">3.1.</span> <span class="nav-text">Squashing function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Total-input-amp-prediction-vectors"><span class="nav-number">3.2.</span> <span class="nav-text">Total input &amp; prediction vectors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coupling-coefficients"><span class="nav-number">3.3.</span> <span class="nav-text">Coupling coefficients</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agreement"><span class="nav-number">3.4.</span> <span class="nav-text">Agreement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">3.5.</span> <span class="nav-text">Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Margin-Loss"><span class="nav-number">4.</span> <span class="nav-text">Margin Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CapsNet结构-Figure-1"><span class="nav-number">5.</span> <span class="nav-text">CapsNet结构 (Figure 1)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Conv1"><span class="nav-number">5.1.</span> <span class="nav-text">Conv1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PrimaryCapsules"><span class="nav-number">5.2.</span> <span class="nav-text">PrimaryCapsules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DigitCaps"><span class="nav-number">5.3.</span> <span class="nav-text">DigitCaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reconstruction-Figure-2"><span class="nav-number">5.4.</span> <span class="nav-text">Reconstruction (Figure 2)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capsules-on-MNIST"><span class="nav-number">6.</span> <span class="nav-text">Capsules on MNIST</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">6.1.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule单个维度代表的意义-Figure-4"><span class="nav-number">6.2.</span> <span class="nav-text">Capsule单个维度代表的意义 (Figure 4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robustness-to-Affine-Transformations"><span class="nav-number">6.3.</span> <span class="nav-text">Robustness to Affine Transformations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Segmenting-Highly-Overlapping-Digit"><span class="nav-number">7.</span> <span class="nav-text">Segmenting Highly Overlapping Digit</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Routing可看做Attention机制"><span class="nav-number">7.1.</span> <span class="nav-text">Routing可看做Attention机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MultiMNIST-dataset"><span class="nav-number">7.2.</span> <span class="nav-text">MultiMNIST dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-Datase"><span class="nav-number">8.</span> <span class="nav-text">Other Datase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CIFAR10-3-channel"><span class="nav-number">8.1.</span> <span class="nav-text">CIFAR10 (3 channel)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#smallNORB"><span class="nav-number">8.2.</span> <span class="nav-text">smallNORB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVHN"><span class="nav-number">8.3.</span> <span class="nav-text">SVHN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discussion-and-previous-work"><span class="nav-number">9.</span> <span class="nav-text">Discussion and previous work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN不足之处"><span class="nav-number">9.1.</span> <span class="nav-text">CNN不足之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule"><span class="nav-number">9.2.</span> <span class="nav-text">Capsule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Routing-iteration-times"><span class="nav-number">9.3.</span> <span class="nav-text">Routing iteration times</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

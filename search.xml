@@ -1,6 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(CVPR 2018 Best Paper) Non-local Neural Networks]]></title>
+    <url>%2F2017%2F12%2F19%2FNon-local%20Neural%20Networks%2F</url>
+    <content type="text"><![CDATA[Wang X, Girshick R, Gupta A, et al. Non-local neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7794-7803. Overview convolutional和recurrent操作建立的block，每次只能处理一个局部区域，基于非局部均值滤波的思想，论文提出具有通用性的非局部组件，能够capture long range dependencies. 非局部组件通过计算所有点的特征加权和作为目标点的响应。非局部操作能够capture相距较远的点在时间和空间上的关系。 论文使用非局部模型（非局部-残差网络） 在Kinetics和Charades视频数据集上做classification任务，性能超过目前的冠军 在COCO数据集上做object detection/segmentation和pose estimation任务，性能有明显提高 Repeated 由于convolutional和recurrent建立的block每次只能处理一个局部区域，因此需要通过重复操作来实现long range dependencies. convolutional操作通过堆叠(stack) CNN层实现 recurrent操作通过记忆+循环实现 但repeated实现方式存在一些缺陷 效率低下 优化困难 信息很难在相距较远的点之间来回传递(multi-hop dependency modeling多跳依赖建模)。（例如，对于100*100的图像，左上角的点和右下角的点在前几层CNN中并无关联） 非局部操作优点 直接计算任意两点之间的关系来capture long range dependencies，忽略点之间的距离 非局部操作高效，仅使用少量的层就能达到betst result, 额外增加的计算量少 保持输入大小不变 能capture空间和时间维度，比3D CNN更高效 Related Work 非局部图像处理图形模型 CRF能够被用于segmentation, 而非局部操作具有通用性，可用于分类和检测。 Self-attention 通过所有点的加权平均计算当前点的响应。self-attention可看做是非局部均值的一种方式。 Interaction Networks 使用pairwise interaction。其变体Relation Network使用到所有pair of positions. Video Classification Architecture 最通常的做法是结合CNN和RNN，但是前馈模型使用3D CNN，将预训练权重的2D卷积核inflating成3D卷积核。此外，optical flow和trajectory能提高性能。 Non-local Neural Networks Formulation通用形式为 i 输出位置点 j 所有位置点 x 输入 y 输出 f pairwise function, 计算点i和点j之间关系，输出为标量 g 计算representation of 点j C 归一化因子 区别 非局部操作涉及到所有位置点，而convolutional操作只处理局部区域，recurrent操作通常只涉及到当前时间状态与最近时刻状态(j=i或j=i) 非局部操作基于不同点之间的关系计算响应，而fc的权重通过学习得到。 非局部操作能够适用不同大小的输入，并且能够任意加入到网络中，而fc的输入大小需要事先固定，且通常只放到网络的最后一层。 Instantiations g函数使用线性embedding 通过2D CNN（空间）或3D CNN（时空）实现。 Pairwise function f函数有多种选择 Gaussian Embedded Gaussian 可写成softmax形式 Dot Product N为x位置点的总数，与Embedded Gaussian的区别在于没有softmax操作。 Concatenation [,]表示concat操作，wf为权重向量，将concated向量投影为标量。 Non-local Block x为residual连接. Block可以任意插入到预训练模型中，并保持模型的初始行为，即将W_{z}权重初始化为0. 当block使用在high level的特征图上，计算量很少。例如，T=4， H=W=14或7. 减少计算量 Θ和φ网络channel数量设置为输入的一半 在g和φ网络后进行下采样，如连接max pooling 层 Video Classification Model 2D ConvNet (C2D) 输入维度为32帧224224，其本质为1kk的卷积核，直接使用ImageNet预训练权重初始化。残差block中的卷积层相当于逐帧处理操作（卷积核和步长在帧的维度上为1）。 Inflated 3D ConvNet (I3D) 2D kk卷积核inflate为3D tkk卷积核。将kk训练权重扩展到t plane，并乘以缩放因子1/t. 两种inflate方式 inflate残差block中的33卷积核为33*3 inflate残差block中第一个11卷积核为31*1 I3D模型优于CNN+LSTM. Non-local network将non-local网络插入到C2D和I3D网络中。 实现细节 Train阶段 ImageNet预训练权重初始化 输入为32帧clips，从原始视频中random crop连续64帧，并丢弃剩余其他帧 输入尺寸为224*224，通过random crop得到 迭代400k次，学习率初始为0.01，每150k迭代减少10% momentum 0.9，权重衰减0.0001，dropout 0.5 fine tune模型是不固定BN层，能够防止过拟合 仅在W_{z}层后插入BN层，scale参数初始化为0，可保持整个non local block为全等映射，即保持预训练模型的初始行为 Inference阶段 均匀地从一整段视频中抽取10个clip，计算softmax得分，最终预测结果为10个softmax得分的平均。 Experiments on Video Classification Kinetics数据集246k训练视频，20k验证视频，包含400个人类动作分类。 Instantiations比较不同类型的非局部操作，得出结论非局部操作类型的影响并不大，性能的提升主要是由于非局部操作，而非attention机制。因此实验中默认使用Embedded Gaussian. Stage to Add Non local Blockres5的空间大小为7*7，因此可能是因为没有足够准确的空间信息，导致准确度略微下降。 使用更多的非局部block一般而言，更多的非局部block能提升性能准确度，multiple非局部block能够实现long range multi-hop communication (多跳交流). 从5 block R50 73.8%与base R101 73.1%，可以看出准确率的提升并不是因为层数加深，而是因为非局部block. 此外，实验也将加入的非局部block替换为标准残差block，发现准确度并没有提升。 时空上的非局部操作 非局部2D ConvNet vs 3D ConvNet 非局部3DConvNet使用I3D_{311}模型 更长的序列将每个输入clips增加到128帧，所有模型的准确度都有提升。 与目前最好的结果比较非局部网络方法在没有使用optical flow和其他技巧的情况下，取得较好结果。 Charades数据集8k训练视频，1.8k验证视频，2k测试视频，包含157个人类动作分类。 Experiments on COCO Detection与Segmentation 在不同规模的模型中加入非局部block均能提高准确度，说明非局部依赖并没有通过增加层数堆叠充分capture. 此外，单层非局部block只增加了不到5%的计算量，使用更多的非局部block结果反而有所下降。 Keypoint Detection]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Classification</tag>
+        <tag>Attention</tag>
+        <tag>Non-local</tag>
+        <tag>Video Classification</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[条件随机场&非局部均值去噪&双边滤波]]></title>
+    <url>%2F2017%2F12%2F19%2F%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BA%26%E9%9D%9E%E5%B1%80%E9%83%A8%E5%9D%87%E5%80%BC%E5%8E%BB%E5%99%AA%26%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2%2F</url>
+    <content type="text"><![CDATA[如何轻松愉快地理解条件随机场（CRF）非局部均值去噪（NL-means）图像非局部均值滤波的原理Bilateral Filtering(双边滤波) for SSAO 条件随机场 对一系列连续时间段的照片分类时，为了提高分类器的性能，常常将相邻照片的标签信息考虑进来，而非单独考虑某张照片进行分类——条件随机场(CRF). 词性标注中的特征函数 考虑对标注序列评分问题。定义CRF中的特征函数，如 s 需要标注词性的句子 i 句子s中第i个单词 l_{i} 第i个单词标注的词性 l_{i-1} 第i-1个单词标注的词性 特征函数输入0或1，0表示标注序列不符合特征函数的特征。该特征函数仅考虑当前单词i的标签与其前一个单词i-1的标签来进行判断，因此称为线性链CRF。 特征函数到概率 定义好一组特征函数及其权重λ后，即可对标注序列进行评分。 第一个Σ 所有特征函数对某个标注序列的评分求和 第二个Σ 某个特征函数对某个标注序列中每个单词的评分求和 进行指数化和标准化即可得到标注序列的概率值（属于某类的概率） 特征函数例子 l_{i-1}是介词，l_{i}是名词，则为1 l_{i}为副词，且第i个单词以”ly”结尾，则为1 如果i=1，l_{i}为动词，且句子以”?”结尾，则为1 与逻辑回归比较CRF可看做逻辑回归的序列化版本。逻辑回归是用于分类的对数线性模型，CRF是用于序列化标注的对数线性模型。 与HMM比较 HMM也能解决词性标注问题，其思路是生成方式。即已知标注序列的情况下，判断生成该标注序列的概率。 p(l_{i} | l_{i-1}) 转移概率，如l_{i-1}=介词，l_{i}=名字，表示第i-1个词为介词，第i个词为名词的概率 p(w_{i} | l_{i}) 发射概率，如l_{i}=名词，w_{i}=”ball”，表示第i个词为名字，则该词为”ball”的概率 CRF比HMM强大，每个HMM模型都等价于某个CRF. 且CRF能解决许多HMM无法解决的问题。 对HMM取log 与CRF进行比较 如果把HMM中的概率看成CRF中的权重，可发现每个HMM转移概率能够定义成一个对应的CRF特征函数，并乘以权重（HMM的概率）。 HMM中的发射概率同理。 CRF优势 CRF可定义大量不同的特征函数 HMM具有局部性，只考虑当前单词i与其前一个单词i-1. CRF可定义具有全局性的特征函数 HMM中的log概率值小于等于0，即转换成CRF后，其权重受到限制。而CRF中每个特征函数的权重可是任意值 非局部均值去噪 基本思想：当前像素值的估计由图像中与其具有相似领域结构的像素加权平均得到。该算法能够在去噪的同时，最大程度保留图像细节特征。 算法实现 理论上，该算法应搜索整个图像范围，但实际考虑到效率问题，会设定两个固定大小窗口。 搜索窗口（搜索范围） 邻域窗口（y为中心） 邻域窗口在搜索窗口中滑动，根据邻域间相似性确定各像素y的权值w(x,y)。 含噪声图像为v，去噪后的图像为u，其计算方式为 权值计算方式为 V(y) 以y为中心的邻域. ||V(x) - V(y)||^2 两邻域间的距离 Z(x) 归一化系数 h 平滑参数，控制高斯函数的衰减成都，h越大，高斯函数变换越平缓，去噪水平越高，但图像越模糊。h取值应以图像中噪声水平作为依据 其中 Bilateral Filtering(双边滤波) 在滤波算法中，目标点的像素值通常由其周围邻域中的像素值所决定。 2D高斯滤波 2D高斯滤波算法是对其一定范围的邻域内像素值赋以不同高斯权重值，进行加权平均。权重因子基于两像素点之间的空间距离得到，即离目标像素点距离越近，对最终结果贡献越大。 ξ 邻域像素点坐标 x 目标像素点坐标 f 图像 c(ξ, x) 基于两像素点空间距离的权重 k_{d}(x) 单位化 但高斯滤波存在缺陷，只考虑了像素之间的空间位置关系，而没有考虑考虑像素值之间的相似程度，因此会导致边缘信息（图像中不同颜色的区域）丢失。 基于像素值关系的权重 Bilateral中加入了另一部分权重 s(f(ξ), f(x)) 为基于两像素点的像素值相似关系的权重。 Bilateral滤波 综合考虑有 其中 距离超过一定程度的像素点对目标像素点影响很小，可忽略。限定局部子区域后的离散化公式为 可视化 对于带有噪声的图片 蓝框中心为目标像素所在位置，则其对应的高斯权重为 双边权重为 可看出Bilateral加入的相似程度部分将图像左侧与目标像素点的像素值差值过大的点滤去，从而保持了边缘。 进一步可视化，双边滤波后的图像为 原图像为 高斯滤波后的图像为 可看出高斯滤波后的图像存在线性变化边缘，即边界的丢失。而双边滤波后的图像保持了边缘梯度。]]></content>
+      <categories>
+        <category>Knowledge Note</category>
+      </categories>
+      <tags>
+        <tag>Non-local Means</tag>
+        <tag>CRF</tag>
+        <tag>Bilateral Filtering</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2015) Spatial transformer networks]]></title>
+    <url>%2F2017%2F12%2F19%2FSpatial%20transformer%20networks%2F</url>
+    <content type="text"><![CDATA[Jaderberg M, Simonyan K, Zisserman A. Spatial transformer networks[C]//Advances in neural information processing systems. 2015: 2017-2025. Overview 虽然CNN的效果很好，但是仍然缺乏对数据的空间不变能力，从而限制了计算和参数的效率。因此，论文提出Spatial Transformer Network (STN)。 STN 在网络中对数据显式地进行空间操作（平移、旋转、缩放、裁剪、扭曲）。由于该操作可微，因此模型能够end to end训练。 根据输入数据，动态生成空间操作参数Θ。 网络参数直接通过loss回传进行学习。可直接添加到神经网络模型中，整个训练不需额外的监督信息加入。 空间操作后的数据是与后续特定任务高度相关的。另一方面，变换后的低分辨率数据比原始数据的计算效率更高。 通过对数据进行操作实现不变性，而不是对特征提取器（卷积核）。 适用的任务 classification co-localization spatial attention Spatial Transformers STN包含3部分 (Figure 2) localization network. grid generator. sampler. Localization Network 输入U(h, w, c) 输出空间变换参数Θ 网络可以是任何形式，如FCN、CNN等。仿射变换Θ的参数为6，投影变换参数为8，以及thin plate spline (TPS). 模型对最后一层的weight矩阵初始化为0，bias初始化为[[1, 0, 0], [0, 1, 0]]（仿射变换），即全等变换。 Parameterised Sampling Grid 首先根据采样网格大小（超参数）生成标准网格(t; x,y∈(-1, 1); (h, w, 2)). 利用空间变换参数Θ对其进行变换操作，生成采样网格(s; x,y∈(-1, 1); (h, w, 2)). Differentiable Image Sampling 通用的采样公式可写为 k为通用采样kernel; x, m, y, n为坐标点。Φ为kernel的参数。 对于整数采样kernel，公式简化为 取x+0.5下界整数，δ函数为Kronecker delta函数 对于双线性采样kernel，公式简化为 该公式可导 Spatial Transformer Networks 由于Θ显式地编码了变换，因此也可将Θ传入后续的网络，而非变换后的特征图（或图片）。 可用STN对特征图进行上采样或下采样。但是，用固定的、小空间支持的采样kernel（双线性kernel）进行下采样会造成影响。 STN可级联或并行在网络中。 Experiments Distorted MNIST 数据集distorted方式分为 R 旋转，±90°之间。 RTS 旋转+缩放+平移 P 投影 E 弹性形变（破坏性，不可逆） 所有模型都具有相同数量参数，分别使用3类变换操作：仿射变换(Aff)、投影变换(Proj)、薄板样条变换(TPS)。实验发现TPS最有效。 MNIST Addition 输入两张数字图片(h,w,2)，输出数字的和。 Street View House Numbers 每张图片有1～5个数字。因此，模型采用级联STN，并使用5个独立的softmax分类器，每个分类器包含一个空字符 Fine-Grained Classification CUB-200-2011数据集，模型采用并行STN结构。 Co-localization 使用半监督学习来定位图像中的物体。基于正确定位对象A与正确定位对象B之间的距离，比A与随机定位crop小的假设，构造hinge loss T表示crop，e为编码函数，α为margin，实验设置为1。数据集的构建操作为：将2828的数字图片放在8484背景中，并将从训练集中采样得到的16个随机6*6 crop放入背景中。当预测定位与ground-truth的交集大于0.5时，定义为预测正确。 Higher Dimensionnal Transformer 模型使用3D仿射变换和3D双线性插值操作。 另一种处理方法是：将3D空间投影到2D空间，例如]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Classification</tag>
+        <tag>STN</tag>
+        <tag>Fine-Grained Classification</tag>
+        <tag>Attention</tag>
+        <tag>Localization</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Transformation]]></title>
+    <url>%2F2017%2F12%2F19%2FTransformation%2F</url>
+    <content type="text"><![CDATA[仿射变换与投影变换数值方法——薄板样条插值（Thin-Plate Spline）薄板样条函数(Thin plate splines)的讨论与分析关于Thin Plate Spline （薄板样条函数） 仿射变换 6个参数 投影变换 8个参数. 通常采用z=1时的平面。 薄板样条函数 插值 已知函数y=f(x)在N+1个点x1, x2, x3, …上的函数值y1, y2, …，但是未知函数f(x). 可通过插值函数p(x)来逼近f(x). 常用的插值函数有 多项式函数 对于N次p(x)有N+1个参数，由于N+1个参数满足N+1个约束条件，因此可求出p(x). 但N阶多项式必有N-1个极值点，得到的插值函数摆动较大，类似过拟合现象。 样条函数 即分段函数，表示在相邻点x_{k}和x_{k+1}之间用低阶多项式S_{k}(x)进行插值。分段线性插值和三次样条插值都属于样条插值。 TPS (Thin plate splines) 寻找一个通过所有控制点的弯曲最小的光滑曲面 弯曲最小由能量函数定义 对于插值问题：自变量x是2维空间中的点，函数值y也是2维空间中的点，给定N个自变量x和对应函数值y，求插值函数 使得 即求两个插值函数φ。根据能量函数可得TPS插值函数形式 其中c是标量，向量a(2, 1)，向量w(N, 1)，函数向量 φ有N+3个参数，而目前只有N个约束（即y=φ(x)，N对数据）。因此，添加三个约束 有 已知N对数据，即已知X和Y，也就是第1个矩阵和第3个矩阵，求第二个矩阵（薄板样条插值函数的参数） 令 有 即可求得插值函数的参数。更进一步，可将x方向和y方向的插值函数φ通过一个矩阵运算计算 该逆矩阵称为弯曲能量矩阵 TPS应用在STN网络上 对于STN而言，已知 2维空间中的自变量x（第一个矩阵，根据尺寸超参数生成的标准网络中的点） 薄板样条（TPS）插值函数的参数（第二个矩阵，由Localization Network生成） 求 2维空间中的函数值y（第三个矩阵，标准网络经TPS变换后，得到的采样网格。即标准网格中的点映射到输入特征图或图像网格中的点）。]]></content>
+      <categories>
+        <category>Knowledge Note</category>
+      </categories>
+      <tags>
+        <tag>Transformation</tag>
+        <tag>Thin-Plate Spline (TPS)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Understanding Matrix capsules with EM Routing]]></title>
+    <url>%2F2017%2F12%2F18%2FUnderstanding%20Matrix%20capsules%20with%20EM%20Routing%2F</url>
+    <content type="text"><![CDATA[Hui J. Understanding Matrix capsules with EM Routing[J]. Blog.​ Nov, 2017.“Understanding Matrix capsules with EM Routing (Based on Hinton’s Capsule Networks)” Overview 向量capsule缺陷此前提出的capsule结构存在一些缺陷 利用pose向量的长度表示存在概率时，使用了squash函数将向量长度压缩至[0, 1]，这阻碍了一些有意义的目标函数的使用。 使用余弦角度测量两个pose向量之间的agreement，不能很好地区分quit good agreement和very good agreement. 而使用Gaussian cluster能使实现这点。 对于长度为n的pose向量，其变换矩阵有n*n个参数。而对于n个元素的pose矩阵，其变换矩阵只有n个参数。 矩阵capsule结构因此，本文提出一种新的capsule结构，其中包含 a logistic unit，表示该entity存在概率。 a 4*4 pose矩阵，通过学习表示entity与viewer之间的关系。 L层某个$capsule_i$的pose矩阵乘以viewpoint-invariant变换矩阵得到的结果为$capsule_i$对L+1层各$capsule_c$的pose矩阵的vote. Viewpoint-invariant变换矩阵通过学习能够表示part-whole关系。 每个vote都对应一个权重系数$r_i$,权重系数通过EM算法迭代更新。在本文中使用的迭代次数为3. 矩阵capsule结构在smallNORB数据集上相对于目前的state-of-the-art减小了45%的test errors. 并且更能够抵抗白盒对抗攻击。 Introduction Viewpoint与Pose矩阵 Viewpoint的改变会导致图像像素产生较大的变化，但对表示objet和viewer之间关系的pose矩阵而言，只会产生简单的线性影响。 随着viewpoint的改变，pose矩阵以一种协调的方式进行变化，因此不同部位votes的agreement保持恒定。 反向Attention由L+1层的所有$capsule_c$竞争L层的某个$capsule_i$，即权重系数和为1. 而正向Attention是由L层的所有$capsule_i$竞争L+1层的某个$capsule_c$。 EM迭代路由算法将L层各capsule_i看为一个data point，L+1层各$capsule_c$看为一个Gaussian模型。因L层各$capsule_i$的vote路由问题转化为对给定数量data point进行Gaussian聚类问题。例如，眼睛、鼻子、嘴巴的$capsule_i$都vote（聚成一个cluster） L+1层中某个$capsule_c$，即检测到人脸。 计算公式 cost表示某个$capsule_i$属于$caps_c$的一部分的概率。cost越低，则属于的可能性越大。 λ为超参数，b为描述$capsule_c$均值的cost，可学习。 EM路由算法 实验中设置的迭代次数为3. Capsule模型 ReLU+Conv1 5*5 kernel, 32 channel (A=32), stride 2. 输入: (b, c, 32, 32) 输出: (b, 32, 14, 14 ) PrimaryCaps 1*1 kernel, 32 channel (B=32), stride 1. 输入: (b, 32, 14, 14) 输出: (b, 32, 14, 14, 17) ConvCaps1 3*3 kernel (K=3), 32 channel (C=32), stride 2. 输入: (b, 32, 14, 14, 17) 输出: (b, 32, 6, 6, 17) ConvCaps2 3*3 kernel (K=3), 32 channel (D=32), stride 1. 输入: (b, 32, 6, 6, 17) 输出: (b, 32, 4, 4, 17) Class Capsule 可看做h*w kernel, 10 channel (分类类别), stride 1. 该层使用了Coordinate Addition方法，额外加入每个感知区域的xy坐标到vote的前两个元素中。 输入: (b, 32, 4, 4, 17) 输出: (b, 10, 17) Spread Loss 最大化目标类别的activation与其他类别activation的差值。m为margin，从0.2开始线性增长，避免dead capsule. Experiments samllNORB数据集包含5种类别的玩具图片：飞机、车、卡车 人类和动物。每种类别都有18个不同的视角(0-340), 9种高度和6种光照条件。图片大小为9696.实验中将其下采样为4848并做32*32 random crop操作。 更进一步，实验使用训练集不包含的viewpoint进行测试 对抗鲁棒性]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Capsules</category>
+      </categories>
+      <tags>
+        <tag>Classification</tag>
+        <tag>Cognitive Neuroscience</tag>
+        <tag>EM Algorithm</tag>
+        <tag>CapsulesNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[EM Algorithm]]></title>
+    <url>%2F2017%2F12%2F18%2FEM%20Algorithm%2F</url>
+    <content type="text"><![CDATA[EM算法学习(Expectation Maximization Algorithm) 凸函数 上凸函数 f[(a+b)/2] ≥ [f(a)+f(b)]/2 当a≠b时 f[(a+b)/2] &gt; [f(a)+f(b)]/2成立，那么称f(x)为严格的上凸函数，等号成立的条件当且仅当a=b,下凸函数与其类似。 Jensen不等式 如果f是上凸函数，X是随机变量，那么 f(E[X]) ≥ E[f(X)]. 如果f是严格上凸函数，那么 E[f(X)] = f(E[X]) 当且仅当p(X=E[X])，也就是说X是常量。 EM算法 Problem Definition 考虑一个参数估计问题，现有共n个训练样本，需有多个参数θ去拟合数据（高斯混合模型），那么这个log似然函数是 由于Θ中多个参数的某种关系，导致上面的log似然函数无法直接或梯度下降法求最大值时的Θ值。引入隐变量z，并使用Jensen不等式得到下界 (9)式紧下界为等号成立时，即随机变量 为常数。又因为 有 所以(9)成立的条件是 Q(zi)=P(zi|yi, Θ) 即后验概率。 Algorithm Step E步骤 已知（初始化）Θ和样本数据yi，计算Q(zi)。 M步骤 利用Q(zi)简化(9)中的多项式，从而可用梯度下降求偏导更新Θ值。 E步骤 根据Θ计算Q(zi). M步骤 根据Q(zi)更新Θ. … 迭代直至收敛。]]></content>
+      <categories>
+        <category>Knowledge Note</category>
+      </categories>
+      <tags>
+        <tag>EM Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2017) Dynamic Routing Between Capsules]]></title>
+    <url>%2F2017%2F12%2F18%2FDynamic%20Routing%20Between%20Capsules%2F</url>
+    <content type="text"><![CDATA[Sabour S, Frosst N, Hinton G E. Dynamic routing between capsules[C]//Advances in neural information processing systems. 2017: 3856-3866. Overview 基于认知神经科学领域中芒卡斯尔(V.B. Mountcastle)发现的大脑皮层功能柱结构(功能柱-微柱)，论文提出capsule概念。 Capsule定义 Capsule是一组神经元，其activity vector表示一个特定实体(entity)类型(object or object part)的实例化参数(instantiation parameters). Activity vector的长度表示entity存在的概率，方向表示instaniation parameters. Instantiation parameters includes pose (position, size, orientation), deformation, velocity (速度), albedo (反照率), hue, texture etc. Capsule机制L level的activity $capsule_i$ 通过transformation matrices predict L+1 level $capsules_j$的instantiation parameters. 当多个predictions agree, L+1层中某个$capsule_j$ become active. (即高层$capsule_j$代表了低层$capsule_i$的组合，如数字2的多个低层特征由多个$capsule_i$表示，同时满足这些特征时，某个代表这些特征组合的高层$capsule_j$被激活) 在CapsNet中使用了iterative routing-by-agreement机制：对于L+1 level中某个$capsule_j$的 activity vectors ($v_j$)和L level中的一个$capsule_i$对其作出的prediction ($\hat{u_{j|i}}$)而言，两者scalar product ($\hat{u_{j|i}} · v_j$)越大, A越倾向于将其output发送给这个$capsule_j$. CapsNet在MNIST数据集上优于CNN，最高达到99.75%左右。 Introduction 假设 假设，人类的多层视觉系统会在每个fixation上建立一个类似parse tree的东西。 假设，对于一个fixation，parse tree可以通过对一个固定的多层神经网络carve (类似于剪枝)得到。 每层会被划分为多个神经元组(capsule), parse tree中每个node都会对应一个active capsule (即parse tree中每个node代表一层神经网络中的一组神经元，该组神经元可称为capsule). 通过iterative routing机制，每个active capsule都会选择上一层中的某个capsule作为parent node. 对于higher level视觉系统，iterative routing机制将用于解决物体部分组合到整体的过程。 存在性表示方法 logistic unit. length of the vector of instantiation parameters (squashing function, 论文采用). Dynamic Routing 由于capsule输出的是向量，用dynamic routing机制能够确保capsule的输出send to合适的parent node. 对于L level的capsule A和L+1 level的capsule B. A首先计算prediction vector (A的output乘以weight matrix), 然后计算prediction vector与B ouput的scalar product, 反馈给AB之间的coupling coefficient. scalar product越大，对AB之间coupling coefficient的反馈越大，即-AB之间的coupling coefficient增加，A与其他parents之间的coupling coefficients减小(softmax function). 分割重叠数字 由于max pooling的routing机制会忽略local pool中大部分active feature detectors. 而routing by agreement more effective不存在这样的问题，因此能够分割高度重叠的object. Max pooling throw away information about the precise position of the entity within the region. 相比于CNN的改进 使用vector output capsule代替CNN中的scalar output feature detectors. 使用routing by agreement代替max pooling. Coding For low level capsules, location information is place coded by which capsule is active. As we ascend the hierarchy more and more of the positional information is rate coded in the real valued components of the output vector of a capsule. 从place coding到rate coding表明higher level capsule用更高自由度represent更复杂的entities, 即capsule的维度随着层级的增加而增加。 Capsule计算 Squashing function(L level $capsule_i$, L+1 level $capsule_j$) 使得较短向量长度缩放为0，较长向量长度缩放为1. $v_j$. capsule_j的输出向量。$s_j$. $capsule_j$的总输入向量。 即L level中所有$capsule_is$到L+1 level中特定一个$capsule_j$的prediction vector加权和。 Total input &amp; prediction vectors $u_i$. capsule_i的输出向量。$w_{ij}$. weight matrix.$u_{j|i}$. prediction value from a $capsule_i$ to a $capsule_j$.$c_{ij}$. coupling coefficients between a $capsule_i$ and a $capsule_j$. Coupling coefficients $b_{ij}$. the log priors probabilities that $capsule_i$ should be coupled to $capsule_j$. 由两个capsule (i和j)的location和type决定，而非当前input image决定。 通过测量$v_j$和$u_j|i$之间的agreement迭代refine $c_{ij}$. AgreementThis agreement is treated as if it were a log likelihood and is added to the initial logit, $b_{ij}$. Algorithm Margin Loss SVM损失函数 $m^{+}=0.9$, $m^{-}=0.1$ $T_c=1$, iff a digit present suggest $λ=0.5$ CapsNet结构 (Figure 1) Conv1256 kernels, 9x9, 1 stride, ReLu. 输入维度 . (batch_size, 1, 28, 28) 输出维度. (batch_size, 256, 20, 20) PrimaryCapsules 输入维度 . (batch_size, 256, 20, 20) 输出维度. (batch_size, 32, 6, 6, 8) 激活primary capsule过程可看作是图像render的逆过程。 PrimaryCapsules is a convolutional capsule layer, 包含32个通道，每个通道含有一个convolutional 8D capsules. 即每个primary capsule包含8个(9x9, 2 stride) conv unit. PrimaryCapsule共有(32, 6, 6)个capsule输出，每个输出是一个8维向量。 (6x6) grid中的capsule share weights，与CCN的卷积核原理相同。每个capsule输出a grid of vectors，而不是single vector output. DigitCaps 输入维度. (batch_size, 3266, 8) 输出维度. (batch_size, 10, 16) 10个16维的capsule. CapsNet中，只在PrimaryCapsules和DigitCaps层之间routing. 由于Conv1输出是1D, 不存在orientation to agree on, 因此不在Conv1和PrimaryCapsules层之间routing. 使用Adam optimizer, routing logit $b_ij$初始化为0. Reconstruction (Figure 2) 输入维度 . (batch_size, 10*16) 或 (batch_size, 16) 输出维度. (batch_size, 28* 28) Encourage the digit capsules to encode the instantiation parameters of the input digit. 在训练阶段，mask除了ground truth对应capsule之外的所有capsule. 而测试阶段，mask除了length最大的capsule之外的所有capsule. 目标为最小化sum of squared differences. Reconstruction loss乘以0.0005系数。 To summarize, by using the reconstruction loss as a regularizer, the Capsule Network is able to learn a global linear manifold between a whole object and the pose of the object as a matrix of weights via unsupervised learning. As such, the translation invariance is encapsulated in the matrix of weights, and not during neural activity, making the neural network translation equivariance. Therefore, we are in some sense, performing a ‘mental rotation and translation’ of the image when it gets multiplied by the global linear manifold. Capsules on MNIST 实验结果 使用routing和reconstruction regularizer能够提升性能。 CNN: 24.56M parameters. CapsNet: 11.36M parameters. Capsule单个维度代表的意义 (Figure 4)variations包括厚度、斜度和宽度。16维中几乎总有一维代表数字的宽度，一些维度代表combinations of global variation, 其他一些代表localized part of digit. Robustness to Affine Transformations由于natural variance in skew, rotation, style, etc in hand written digits, 使用CapsNet具有健壮性。 训练集 MNISTdigit placed randomly on a black background (平移). 测试集 affNISTMNIST digit with a random small affine transformation CapsNet stop when $train_{acc}=99.23%$, $test_{acc}=79%$.CNN stop when $train_{acc}=99.22%$, $test_{acc}=66%$. Segmenting Highly Overlapping Digit Routing可看做Attention机制 Dynamic routing可以看做是并行的attention机制，L+1 level的每个capsule都会attend一些L level的activive capsules，忽略其他的。因此，在对象重叠的情况下，也能识别多个对象。 The routing by agreement should make it possible to use a prior about shape of objects to help segmentation. It should obviate the need to make higher level segmentation decisions in the domain of pixels. MultiMNIST dataset 两张image各方向移动4个pixel，构成36x36 image. MultiMNIST result shows that each digit capsule can pick up the style and position from the votes it is receiving from PrimaryCapsules layer. 选top 2 length的capsule分别输入decoder中，得到两张digit images. Other Datase CIFAR10 (3 channel) test_acc: 89.4%. drawback 由于CIFAR10 image的背景变化太大，很难model合理大小的网络，导致性能较差。 smallNORB test_acc: 97.3%. SVHN test_acc: 95.7%. Discussion and previous work Capsule将pixel intensities转化为vectors of instantiation parameters of recognized fragments, 然后对fragments作transformation matrices, 进而预测 the instantiation parameters of larger fragments. CNN不足之处 Convolutional nets have difficulty in generalizing to novel viewpoints. CNN具有translation (平移)不变性，但对于affine transformation (平移、旋转、缩放和斜切)不具有。因此，replicating feature detectors on a grid that grows exponentially with the number of dimensions, 或者指数级增加标注训练集。 Capsule Capsule作了一个非常强的假设：对于image中的each location, a capsule表示至多一个entity的instance. Capsule的神经元活动，会随着viewpoint (视角)的变化而变化(同变性equivariance)，而不是消除viewpoint带来的影响(如STN网络)。能够同时处理不同object(或object part)上的不同affine transformation. Routing iteration times]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Capsules</category>
+      </categories>
+      <tags>
+        <tag>Classification</tag>
+        <tag>Cognitive Neuroscience</tag>
+        <tag>CapsulesNet</tag>
+        <tag>Image Reconstruction</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Capsule Extension]]></title>
+    <url>%2F2017%2F12%2F18%2FCapsule%20Extension%2F</url>
+    <content type="text"><![CDATA[CapsulesNet 的解析及整理 大脑皮层微柱 功能柱 人的大脑皮层厚度为3～4mm，包含28x10^9神经元和相同数量胶质细胞。纵向垂直于皮层表面的细胞组织成微柱，穿越II-VI层，形成一个个结构功能单元。 灵长类的微柱包含80～100个神经元，形成30～50mm直径，深度2～4mm的柱状结构。 在视觉区的纹状皮层，每个柱内神经元数目大约200～250个。十个左右微柱组成一个功能柱。因此，一个功能柱直径大约300～600mm。不同物种的脑容量相差很大(10^3)，但功能柱大小接近。 芒卡斯尔认为功能柱是大脑皮层的基本的结构和功能单元，他有时也把它称为一个微型组件(module). Max Pooling Max pooling丢弃固定大小感知域中(nm-1)/nm的信息。随着层级的增加不断进行max pooling操作，相当于逐步增加感知区域，丢弃的范围逐步增大，丢弃的信息也不断增多，最终只有image整体中各object特征被激活，而位置信息(位置信息针对一些任务并不需要，如分类)被丢弃。 CNN局限性 Capsule Networks Are Shaking up AI — Here’s How to Use ThemCapsule Networks Explained 不具有平移同变性CNN具有translation invariant (平移不变性), 无论如何平移图像中的obj，都能检测到。不变性是通过Pooling下采样实现。但CNN不具有translation equivariance (平移同变性), 无法检测到obj平移的距离方向等变化，即。 由于CNN无法识别各sub-obj之间的相对位置关系，以致下图都被识别为Face。 CNNs work by accumulating sets of features at each layer. It starts of by finding edges, then shapes, then actual objects. However, the spatial relationship information of all these features is lost. 导致下图均被识别为peroson. CNN is also easily confused when viewing an image in a different orientation. 下图被识别为coal black color. CNN与CapsuleNet在识别上图人脸的区别 CNN CapsuleNet 易受白盒对抗攻击需要大量数据进行泛化In order for the ConvNets to be translation invariant, it has to learn different filters for each different viewpoints, and in doing so it requires a lot of data. CNN无法很好地表示人类视觉系统CNN利用filter从low level visual data提取high level information. 而对于人类系统而言，当触发视觉刺激时，大脑的内建机制会将low level visual data route到大脑某些部分。 此外，人类视觉系统会对obj建立coordinate frames，并选择一个参考点，旋转obj. ConvNet与CapsuleNet区别 CapsuleNet (mimics the human vision system) strives for translation equivariance instead of translation invariance, allowing it to generalize to a greater degree from different view points with less training data. Inverse Graphics 图像渲染过程To go from a mesh object onto pixels on a screen, it takes the pose of the whole object, and multiplies it by a transformation matrix. This outputs the pose of the object’s part in a lower dimension (2D). )## 图像逆过程lower dimension –&gt; whole object 权重矩阵因此，可用权重矩阵表示两者之间的关系。这些权重是viewpoint invariant. Meaning that however much the pose of the part has changed we can get back the pose of the whole using the same matrix of weights. 利用reconstruction得到该权重矩阵 矢量神经元 知乎: 如何看待Hinton的论文《Dynamic Routing Between Capsules》 Hinton对CNN的思考 生物神经系统的思考 解剖学上并未发现神经系统存在反向传播及求导的结构。 神经系统具有分层结构，但层数不多。生物系统传导在ms量级，GPU在us量级，同步出现问题。 大脑皮层存在微柱结构(Cortical minicolumn)，其内部含有上百个神经元，并存在内部分层结构，比NN的一层结构更为复杂。 认知神经科学的思考人会不自觉根据物体形状建立坐标框架(coordinate frame), 并通过对坐标框架旋转。 坐标框架的不同会影响人的认知。 坐标框架参与到物体识别过程中，识别过程手空间概念的支配。 CNN不存在坐标框架。Hinton提出猜想：物体与观察者之间的关系（如物体姿态），应该由一整套激活的神经元表示，而不是由单个神经元，或者一组粗编码（coarse-coded，一层中并没有经过精细地组织）的神经元表示。这样才能有效表达坐标框架的先验知识。 CNN的局限性 不变性物体不随变化而变化。如空间不变性。 同变性用变化矩阵进行转换后，物体表示依旧不变。是对物体内容的变换。 CNN对旋转没有不变性。可采用数据增强方式达到旋转不变性。 CNN的不变性通过Pooling实现。 平移和旋转不变性舍弃了坐标框架。 虽然CNN准确率高，但是最终目标应该是对内容的良好表示，从而达到理解内容。 Hinton提出的Capsule Capsule需具备的性质 一层中具有复杂的内部结构。 能表达坐标框架 实现同变性 Capsule神经元Capsule用一组神经元代表一个实体，仅且代表一个实体。 模长代表某个实体（物体或其一部分）出现的概率。 方向/位置代表实体的一般姿态(generalized pose)，报货位置、方向、尺寸、速度、颜色等。 视角变换矩阵CapsuleNet用视角变换矩阵处理场景中两物体间的关联，不改变它们的相对关系。 两种同变性 位置编码 (place-coded)视觉中的内容位置发生较大变化，由不同Capsule表示其内容。 速率编码 (rate-coded)视觉中的内容位置发生较小变化，由相同capsule表示其内容，但是内容有所改变。 高层的capsule有更广的域(domain)，所以低层的place-coded信息到高层会变成rate-coded.]]></content>
+      <categories>
+        <category>Knowledge Note</category>
+      </categories>
+      <tags>
+        <tag>Capsule</tag>
+        <tag>Cerebral Cortex</tag>
+        <tag>Cognitive Neuroscience</tag>
+        <tag>CNN Limitation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Image-to-image translation with conditional adversarial networks]]></title>
+    <url>%2F2017%2F11%2F03%2FImage-to-Image%20Translation%20with%20Conditional%20Adversarial%20Networks%2F</url>
+    <content type="text"><![CDATA[Isola P, Zhu J Y, Zhou T, et al. Image-to-image translation with conditional adversarial networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 1125-1134. 本篇论文提出conditionnal GAN (supervised)结构 学习input image到output image之间的映射。 学习特定的loss function用于训练映射，即单独使用L1 loss (或L2 loss)会产生blur现象，而再此基础上进一步使用adversarial loss能够学习到适合特定数据集的loss function, 从而sharpen生成的图像 (判别器D能够判断blurry image为fake)。因此，针对不同任务 (Figure 1)，该方法具有通用性。 Contribution 针对不同任务，cGAN具有通用性。 Achieve good result, 并分析cGAN结构中的一些重要部分 Relative Work Loss类型 Structured loss 每个像素点独立考虑. per-pixel classification loss, regression. Unstructured loss penalize the joint configuration of the output, 如conditional random fields. cGAN的unstructured loss是学习到的。 cGAN 前人也apply GANs in conditional seting, 但是针对特定应用的，而本论文的cGAN提出的是通用框架。 本论文的cGAN使用到了U-Net和PatchGAN. Objective GAN z-&gt;G-&gt;y y-&gt;D-&gt;true or fake cGAN (Figure 2) {x, z}-&gt;G-&gt;y {x, y}-&gt;D-&gt;true or fake 使用L2会产生更严重的blur. 最终的目标函数 没有噪声z的网络会产生一个特定的输出，无法match any distribution, 因此cGAN加入噪声z，但在本篇论文实验中发现，G能够学习到如何ignore 噪声，从而在模型的test阶段也使用dropout产生noise. Network architectures Skip connection of G 在auto-encoder结构中，input的所有信息会在所有layers传输。为了避免这种方法，在AE的基础上添加skip connection, 即U-Net (Figure 3). Markovian D (PatchGAN) L1 loss和L2 loss能够capture low frequencies, 因此需要约束D能够capture high frequency structure，即PatchGAN (N X N patches). D effectively models the image as a Markov random field. Optimization and inference 在test阶段，使用dropout, BN使用 the statistics of the test batch, rather than aggregated statistics of the training batch. instance normalization在图像生成任务上很有效。(batch size为1，使用the statistics of the test batch) Experiments L1产生blur. cGAN sharp imaged，但是存在artifacts. (Table 1) cGAN优于GAN，加上L1 loss后，cGAN也相对较优。 Colorfulness当不确定edge的位置时，L1会产生blur和averrage ( L1 will be minimized by choosing the median of of the conditional probability density function over possible colors.) 从而导致narrower distribution than the ground truth (Figure 7). Analysis of the G (Figure5) Analysis of the D (Figure 6, Table 2) Pixel GAN output 1x1 of D. Image GAN output 256x256(full image size) D. Patch GAN output 70x70(在本实验中) D. Fully-convolutional translation. Patch GAN由于不包含FC层，D和G都可应用与任何大小的图片。(Figure 8)中的G在train阶段使用256x256图片，在test阶段使用512x512图片。 Perceptual validation Semantic segmentationGAN一般用于图像生成，本论文尝试将cGAN用于做segmentation任务，但最终效果并不好。(Figure 10, Table 5)从实验结果可以看出， reconstruction losses like L1 are mostly sufficient. Semantic labels↔photoCityscapes dataset Architectural labels→photoCMP Facades dataset Map↔aerial photoGoogle Maps BW→color photos Edges→photonary Sketch→photo Day→night Failure case]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Conditional GAN</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Map to Aerial</tag>
+        <tag>Reality Enhancement</tag>
+        <tag>Style Transfer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2017) Unsupervised Image-to-Image Translation Networks]]></title>
+    <url>%2F2017%2F11%2F03%2FUnsupervised%20Image-to-Image%20Translation%20Networks%2F</url>
+    <content type="text"><![CDATA[Liu M Y, Breuel T, Kautz J. Unsupervised image-to-image translation networks[C]//Advances in Neural Information Processing Systems. 2017: 700-708. 根据couple theory，基于joint分布可以很容易得到marginal分布，但利用marginal分布得出joint分布十分困难。 因此，本篇论文提出UNIT (UNsupervised Image-to-image Translation) 框架 (Figure 1)，利用shared-latent space假设协助从两个domain的marginal分布 ($p_{X1}(x1)$, $p_{X2}(x2)$)中学习它们之间的joint分布。 UNIT结构涉及到Coupled GAN、VAE、Cycle consistent、weight-sharing constraint. 此外，UNIT结构也能够应用到domain adaption任务上。 Assumptions Unsupervised Marginal $p_{X1}(x1), p_{X2}(x2)$ Supervised Joint $p_{X1,X2}(x1, x2)$ 假设存在shared-latent space，space中的shared latent code z能够同时用于恢复两个domain的图片。 确保满足$F_{1-&gt;2}=G2(E1(x1))$和$F_{2-&gt;1}=G1(E2(x2))$的一个必要条件是cycle consistent，即shared-latent space假设暗含了cycle consistent假设。 在shared-latent space的基础上，进一步假设shared intermediate representation $h$. $G1=G_{L1}*G_{L2}$ $G2=G_{L2}*G_{H}$ $G_{H}: z-&gt;h$, high level $G_{L}: h-&gt;x$, low level z可看作是场景的high-level representation (car in front, trees in back). h可看作是z的特定实现 (car occpy the following pixels). $G_{H,L}$可看作是actual image formation (tree lush green in sunny domain, dark green in rainy domain). Framework 6 subnetworks (Table 1) VAE Reparameterization Weight-sharing 基于shared-latent space假设，enforce weight-sharing约束到两个VAE上：last few layers of E, first few layers of G. 但weight-sharing约束并不能确保两个domain中对应的图片能得到相同的latent code. 因为对于unsupervised方式而言，两个domian中不存在对应的pair能够训练网络输出同样的latent code. 然而，能够通过对抗训练将两个domain中的pair映射到同样的latent code上。 Stream Translation stream $X1-&gt;z1-&gt;X2$ $X2-&gt;z2-&gt;X1$ Reconstruction stream $X1-&gt;z1-&gt;X1$ $X2-&gt;z2-&gt;X2$ GAN 只将对抗训练应用到translation stream上。 Cycle-consistent Cycle-reconstruction stream $X1-&gt;z1-&gt;X2’-&gt;z2-&gt;X1’$ $X2-&gt;z2-&gt;X1’-&gt;z1-&gt;X2’$ To further regularize the ill-posed unsupervised image-to-image translation problem. Loss 交替update 更新D1, D2 (adversarial loss) 更新G1, G2, E1, E2 (VAE loss + CC loss) VAE loss 用Laplacian分布model pG1,pG2. 最小化Negative log-likelihood等价于最小化image和reconstructed image绝对距离。 GAN loss CC loss Experiments Shallow D导致较差性能 (Figure 2b) Weight-sharing层数影响小 (Figure 2c) Negative log likelihood权重越大，acc越高 (Figure 2c) Ablation study (Figure 2d) Remove weight-sharing约束和reconstruction stream，结构变成CycleGAN. Remove cycle-consistent约束. Street image (Figure 3)Sunny to rainy, data to night, summery to snowy. Synthetic to real (Figure 3)Synthetic images SYNTHIA dataset.Real images Cityscape dataset. Dog breed conversion (Figure 4)ImageNet, 利用模板匹配算法extract head regions. Cat species conversion (Figure 5)ImageNet. Face attribute (Figure 6)CelebA dataset. With an attribute constituted the 1st domain, while those without the attribute constituted the 2nd domain. Domain Adaption 用一个domian中的labeled数据训练分类器，并用将该分类器应用到另一个domain数据集上，该数据的labeled在训练中没有使用到。 利用UNIT进行多任务学习: Translate between source domain and target domian. 利用source domain的D提取source domain数据的特征。 共享D1, D2 high-level层的权重。 最小化D1和D2 highest layer提取feature之间的L1 loss. 实验发现spatial context information useful (RGB+normalized xy coordinates). Network Architecture]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Face</tag>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Map to Aerial</tag>
+        <tag>Reality Enhancement</tag>
+        <tag>Style Transfer</tag>
+        <tag>UNIT</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks]]></title>
+    <url>%2F2017%2F11%2F03%2FUnpaired%20Image-to-Image%20Translation%20using%20Cycle-Consistent%20Adversarial%20Networks%2F</url>
+    <content type="text"><![CDATA[Zhu J Y, Park T, Isola P, et al. Unpaired image-to-image translation using cycle-consistent adversarial networks[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2223-2232. 论文提出Cycle GAN结构，基于unpaired data (Figure 2)，学习domain X到domain Y的映射关系 (Figure 1)。 Cycle GAN能够应用到不同任务上：style transfer, object transfiguration, attribute transfer, and photo enhancement等。 Cycle GAN包含adversarial loss, cycle consistency loss. 对于某些特定任务，Cycle GAN额外包含一个identity loss. 论文假设两个不同domain之间存在underlying relationships，Cycle GAN (Figure 3)从一个image collections X中学习到一些特征，并将这些特征转换到另一个image collections Y上。 仅使用adversarial loss，无法保证生成的图像是有意义的，例如，G可能生成rubbish fool D。此外，生成图像不一定是desired。另一方面，标准的GAN过程可能会导致mode collapse问题：所有输入图像都会被映射到同一个输出图像。因此，模型引入了cycle consistent loss. 对于painting-&gt;photo的任务，为了保留输入- painting的颜色 (Figure 9)，模型引入了identiy loss. Circle GAN可看作是两个auto-encoder：GF和FG。 Related work Image-to-Image Translation (CGAN) I. Goodfellow, J. Pouget-Abadie, M. Mirza, B. Xu, D. Warde-Farley, S. Ozair, A. Courville, and Y. Bengio. Generative adversarial nets. In NIPS, 2014 P. Isola, J.-Y. Zhu, T. Zhou, and A. A. Efros. Image-to-image translation with conditional adversarial networks. arXiv preprint arXiv:1611.07004, 2016. Unpaired Image-to-Image Translation (VAE+GAN) M.Y. Liu, T. Breuel, and J. Kautz. Unsupervised image-to-image translation networks. arXiv preprint arXiv:1703.00848, 2017. Neural Style Transfer学习两张特定图片之间的映射，Cycle GAN学习的是两个domain之间的映射。 Loss Adsersarial Loss Loss Identity Loss Implementation D使用70*70 PatchGAN：更少参数，能判别任意大小图像。 将adversarial loss从negative log likelihood改为least square loss. History Buffer of generated images. batch size 1 of scratch. Experiments CoGANM.-. Liu and O. Tuzel. Coupled generative adversarial networks. In NIPS, pages 469–477, 2016. Pixel loss + GANSimGAN (self-regularision loss). Feature loss + GANSimGAN (vgg16 feature loss, instead of RGB loss). BiGANV. Dumoulin, I. Belghazi, B. Poole, A. Lamb, M. Arjovsky, O. Mastropietro, and A. Courville. Adversarially learned inference. arXiv preprint arXiv 2016. Pix2pixCGAN. AMT FCN score (Cycle GAN用的是unsupervised, pix2pix用的是supervised) Pixel classification Ablation Dataset Labels-photo: Cityscapes dataset (Figure 5) Map-aerial photo: Google Maps (Figure 6) Labels-photo: CMP Facade database (Figure 8) Edges-shoes: UT Zappos50K dataset (Figure 8) Style transfer: Flickr, WikiArt (Figure 10) Object transfiguration&amp;season transfer: ImageNet, Flickr (Figure 13) Photo generation from paintings: Monet’s painting, Flickr (Figure 12) Photo enhancement:Flickr (Figure 14) Comparison with Gatys (Figure 15, 16) Failure cases (Figure 17)]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Map to Aerial</tag>
+        <tag>Style Transfer</tag>
+        <tag>CycleGAN</tag>
+        <tag>Label to Photo</tag>
+        <tag>Edge to Photo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2013) Auto-Encoding Variational Bayes]]></title>
+    <url>%2F2017%2F11%2F03%2FAuto-Encoding%20Variational%20Bayes%2F</url>
+    <content type="text"><![CDATA[Kingma D P, Welling M. Auto-encoding variational bayes[J]. arXiv preprint arXiv:1312.6114, 2013. (Figure 1) 由于通过(可观察的)变量X推断(不可观察) latent variables比较困难 (即后验概率分布p(z|x))，论文提出VAE (变分自编码器，variational auto-encoder)结构以及AEVB (自编码变分贝叶斯)算法，即通过SGVB (随机梯度变分贝叶斯，Stochastic Gradient Variational Bayes)估计使得构造的q(z|x)分布近似难以计算的p(z|x)分布。 Contribution 通过reparameterization方法确保梯度能够回传。 通过下界估计(变分贝叶斯推导得出)近似后验概率分布。 知识点延伸 相对熵D(P||Q)=交叉熵H(P, Q) - 熵H(Q). 熵：真实分布P的平均编码长度(大于等于0)。 交叉熵：非真实分布Q的平均编码长度(大于等于[熵])。 相对熵：[交叉熵]与[熵]的差，即多出的编码bit数(大于等于0)。 D(Q||P)优化结果：P(绿色)尽可能包含Q. D(P||Q)优化结果：P(绿色)尽可能包含Q. 变分法：推导得出泛函存在极值的必要条件：欧拉-拉格朗日方程。 平均场定理：利用概率模型Q(x1, x2, …, xn)=Q(x1)Q(x2)…Q(xn)近似所要求的概率模型P(x1, x2, …, xn)=P(x1)P(x2|x1)P(x3|x2, x1)…P(xn|xn-1, …, x1). 变分贝叶斯：结合平均场定理和变分法，求出近似P分布的Q分布。通过最小化目标函数KL(Q||P)，推导出最大化下界估计。利用平均场定理进一步推出需要满足 即 涉及到计算期望: 链接 VAE 链接 SGVB 基于变分贝叶斯推导得出的下界估计，利用平均场定理推出最终需要满足的条件(涉及到期望计算)，但分析期望相关的解仍然存在困难。 因此，论文通过reparameterization方法 (而非平均场定理) 简化下界估计，公式右边两项分别通过decoder和encoder计算得出。 同时，reparameterization能够使得下界估计可导 (即梯度能够回传)。 The Problem Scenario Intractability. 边缘似然p(x)=∫p(z)p(x|z)dz难以计算，导致真实后验概率分布p(z|x)=p(x|z)p(z)/p(x)难以计算(无法使用EM算法)，以及mean-field VB难以计算。另一方面，p(x|z)可通过神经网络非线性解决。 Minibatch训练时，使用Monte Carlo EM非常慢。 论文旨在解决以下3点困难: 近似参数θ. 近似posterior p(z|x). 近似marginal p(x). 即引入encoder q(z|x)近似p(z|x). encoder (构造概率分布φ): q(z|x). decoder (真实概率分布θ): p(x|z). 论文提出一种方法联合训练encoder参数φ和decoder参数θ. The Variational Bound 根据VB可得到公式 (1) L即为变分下界，可写成公式 (2,3) (公式3) 右边两项分别为q分布与真实分布p的差异、根据z重构x的误差。 SGVB estimator和AEVB algorithm 假设一个近似后验概率分布q(z|x)，当不假定条件x时，同样能应用于q(z)。 使用包含 (auxiliary) noise variable ε的可导变换g表示random variable z (公式4) 因此可以构造关于包含z~q(z|x)的函数f的Monte Carlo期望估计 (公式5)： (公式2) 可改写为 (公式6) 考虑到分布近似误差和重构误差，(公式2) 也可改写为 (公式7) 考虑到minibatches训练，可进一步改写为 (公式8) The Reparameterization Trick 假设z服从高斯分布 可写成合理形式 即 Example 假设z的先验分布服从标准正态分布 Experiments 增加latent variable维数不会导致过拟合。 y: loss, x: iteration. Solution of -D(q||p), Gaussian Case MLP’s as probabilistic encoders and decoders MLP (Multi-layer Perceptron)：神经网络。 encoder使用MLP with Gaussian output. decoder使用MLPs with Gaussian or Bernoulli outputs, depending on the type of data. Bernoulli Gaussian]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>VAE</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(AAAI 2017) Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction]]></title>
+    <url>%2F2017%2F10%2F05%2FDeep%20Spatio-Temporal%20Residual%20Networks%20for%20Citywide%20Crowd%20Flows%20Prediction%2F</url>
+    <content type="text"><![CDATA[Zhang J, Zheng Y, Qi D. Deep spatio-temporal residual networks for citywide crowd flows prediction[C]//Thirty-First AAAI Conference on Artificial Intelligence. 2017. 对于公共安全和交通管理而言，预测人群流动具有重要意义，但它受到事件、天气和区域间等复杂因素的影响，因此该篇论文提出一个基于深度学习的方法 (ST-ResNet, Figure 3)综合预测一个城市中各区域人群的流入 (inflow)与流出 (outflow) (Figure 1). ST-ResNet基于时间和空间数据 (spatio-temporal data)，对temprtaol closeness, period和trend 3阶段交通拥挤程度进行建模，并结合external factors对进行预测。论文基于两个数据集Beijing和New York City (NYC)进行实验，并与6个baseline进行对比。 Mobile phone signal of pedestrians. GPS trajectories of vehicles. Complex Factors Spatial dependencies. Region的inflow受到附近regions的outflow影响，甚至受更远的regions影响。同时region的inflow也会影响它自身的outflow. Temporal dependencies. Region的flows也受到近期时间段的影响。例如，8点的交通阻塞可能会影响到9点的交通情况；每个工作日的高峰期相似等。 External influence. 天气条件、事件等。 Contribution 使用Conv来model任意两region之间的spatial dependencies. 使用3个ResNet来model temporal closeness, period和trend的temporal dependencies. Assigning different weights to aggregate 3 outputs of ResNet, and then aggregate external factors. Outperform 6 baselines on Beijing and NYC dataset. Preliminaries Region. 将城市划分为grid map (Figure 2). Flow (2 channels). 归一化到[-1,1]. ST-ResNet (Figure 3) ST-ResNet Include temporal closeness (recent), period (near), trend (distant) and external 4个主要部分。 Temporal closeness (recent), period (near), trend (distant)的ResNet结构相同，其中包含2个Conv和L个Residual (Figure 4). 由于地铁或高速公路会导致两个很远的region具有很强的关联性，因此使用具有层级性的stack Conv来实现，并利用residual的形式来提高stack Conv的收敛性。Relu之前增加了ReLU层。 External通过两层FC. Regard as embedding layer + mapping layer (same shape as Xt). Fusion包含3个可学习的权重参数，乘以对应的3个ResNet输出后相加，其结果再与FC输出相加，经过tanh激活函数。 MSE loss, Adam. Algorithm p: one day. q: one-week. DataSet (Table 1) TaxiBJ. Taxicab GPS and moteorology data. 选择最近4周作为testing data. BikeNYC. NYC Bike system. 选择最近10天作为testing data. (Figure 5) 假期和天气会影响北京办公区的流量。 (Figure 6) recent时间段的相关性更大，办公区周末的流量较低，办公区流量呈现下降趋势，居住区呈现上升趋势。 Baseline HA. 历史inflow,outflow均值。 ARIMA. Auto-Regressive Integrated Moving Average. 用于预测时间序列的值。 SARIMA. Seasonal ARIMA. VAR. Vector Auto-Regressive(VAR), spatio-temporal model. ST-ANN. extracts spatial (nearby 8 regions’ values) and temporal (8 previous time intervals) features, then fed into an artificial neural network. DeepST. State-of-the-art. DNN for spatio-temporal data. 4 variants: DeepST-C, DeepST-CP, DeepST-CPT, and DeepST-CPTM. Focus on temporal dependencies and external factors. Experiments Theano&amp;Keras. Conv2: 2 filters. Evaluation Metric: Root MSE. Related Work Conv: capture spatial dependencies. RNN: capture temporal denpendencies. ConvLSTM: capture spatial and temporal denpendencies. But can not model very long-range temporal denpendencies(period and trend). Future Consider other types of flows: taxi, truck, bus, phone signal, metro card swiping.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Prediction</category>
+      </categories>
+      <tags>
+        <tag>Prediction</tag>
+        <tag>Citywide Crowd Flows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2016) Automated Inference on Criminality using Face Images]]></title>
+    <url>%2F2017%2F10%2F03%2FAutomated%20Inference%20on%20Criminality%20using%20Face%20Images%2F</url>
+    <content type="text"><![CDATA[Wu X, Zhang X. Automated inference on criminality using face images[J]. arXiv preprint arXiv:1611.04135, 2016: 4038-4052. 该篇论文利用supervised machine learning(logistic regression, KNN, SVM, CNN) 对criminal (C) 和non-criminal (N) 面部图像进行分类(准确度最高达到89.51%)，并进行一些实验分析C与N群体之间的区别： N群体内部的面部相似度更大，C群体内部的面部差异更大。 C和N是两个concentric(同心), distinctive的manifold(流形). The variation of C greater than N. 基于面部特征的人为判断会带有偏见、先决条件等，而CV算法并不会存在这些问题。 Data Preparation Dataset包含1856张照片 (1126N+730C, Figure 1). 照片标准: Chinese, male, between ages of 18 and 55, no facial hair, no facial scars, or other markings. N including waiters, construction workers, taxi and truck drivers, real estate agents, doctors, lawyers and professors; half have university degrees. C including the ministry of public security of China, the departments of public security for the provinces of Guangdong, Jiangsu, Liaoning, etc. And the City police department in China. C中 235人是violent crimes (murder, rape, assault, kidnap and robbery), 剩余536人是non-violent crimes (murder, rape, assault, kidnap and robbery). Only the region of the face and upper neck is extracted. 80 × 80 images. 将每张图像的直方图与整个数据集的平均直方图相匹配，从而使得灰度图归一化到同样的强度分布。 Methods 面部关键点特征能够避免signal level和variant of source cameras的影响。论文使用以下四种关键点: Facial landmark point. Facial feature vector, generated by modular PCA. Facial feature vector based on Local Binary Pattern (LBP) histograms. The concatenation of above three feature vectors. (Feature-driven classifiers (LR, SVM, KNN) 3 + Data-driven classifiers (CNN)) 10-fold cross validation = 130 cases Results 不同的source camera拍摄的照片可能会带有不同camera的signatures, 虽然已通过上述的landmark point解决，但在此进一步引入高斯噪声 (mean=0) 来overpower camera signatures. 实验结果与期望的一致: 性能不会出现很大的变化 (Figure 6,7;Table 2, 3). Discriminating Feature 使用Feature Generating Machine (FGM)进行分析与犯罪最相关的面部部位，得出这些特征位于眼角、嘴唇和额头部位 (Figure 8). ρ: 上嘴唇的曲度 d: 内眼角之间的距离 θ: 鼻尖到嘴唇两角的角度 使用Hellinger距离分别计算C和N两者之间的上述3个部位的距离，分别为0.3208, 0.2971, 0.3855. 因此，C和N是存在一定差异的. 按照论文分析结果 (Figure 8, Table 4)脑补了一个极端的罪犯例子 三个特征的直方图 Face Clustering on Manifold 通过平均脸并不能很好地得出C和N群体的区别 (Figure 10)，因此需要在更高维度 (manifold流形和聚类)上进行分析。 公式2分别为cross-class average manifold和in-class average manifold. 计算得到manifold后，使用Isomap进行降维可视化。]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Face</category>
+      </categories>
+      <tags>
+        <tag>Classification</tag>
+        <tag>Face</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2012) Imagenet classification with deep convolutional neural networks]]></title>
+    <url>%2F2017%2F09%2F29%2FImageNet%20classification%20with%20deep%20convolutional%20neural%20networks%2F</url>
+    <content type="text"><![CDATA[Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105. 该篇论文提出一种CNN结构 (AlexNet)，在ImageNet数据集ILSVRC-2010 (Table 1) 和ILSVRC-2012上进行实验验证其性能：top-1 and top-5 error (Figure 4, Left). 论文中AlexNet在双GPU上进行训练，使用 ReLU替代tanh activation function，提高收敛速度。 Local Response Normalization和Overlapping Pooling提高性能。 以及通过 Data Augmentation Dropout Layer 来Reduce overfitting. Dataset ImageNet数据集包含超过15 million labeled 高分辨率图像，图像可分为22,000 categories. Starting in 2010, as part of the Pascal Visual Object Challenge, an annual competition called the ImageNet Large-Scale Visual Recognition Challenge (ILSVRC) has been held. ILSVRC比赛使用ImageNet数据集中的一部分，大约包含1000个图像类别，每个类别大约1000张图片。数据集分为training、validation、testing. 评测指标分为top-1和top-5 error。之所以使用top-5 error指标是因为，有些图像可以同时分为好几个类别 (数据集的labele可能存在一定误差)。Top-5表示只要预测的类别在该图像前5个类别labele中，就算预测正确。 对数据集图像进行256$\times$256尺寸的下采样处理。由于图像尺寸大小不一，论文首先按照比例rescale图像，将图像shorter sied rescale到256大小，central crop 256$\times$256 patch. 此外，还对图像像素值进行去中心化操作(减均值) ReLU 用ReLU (non-saturating nonlinearities) 替代tanh(saturating nonlinearities) 能提高收敛速度(Figure 1) Local Response Normalization 对各空间点的卷积值在channel维度上作归一化(现在一般使用GoogleNet Version 2提出的Batch Normalization). Response normalization reduces our top-1 and top-5 error rates by 1.4% and 1.2%, respectively. Overlapping Pooling 即stride小于kernel size. This scheme(stride=2, kernel size=3 vs stride=2, kernel size=2) reduces the top-1 and top-5 error rates by 0.4% and 0.3%. 多GPU训练 GTX 580 3GB memory. 由于单块GPU显存太小，因此使用两块GPU训练。如今GTX Titan已到12G. AlexNet 8 layers=5 Conv+3 FC+Softmax (Figure 2). has 60 million parameters and 650,000 neurons. Data Augmentation (方法1) 先对256$\times$256图像进行horizontal reflection，再random crop 224$\times$244 patches，论文将数据集扩大2048倍。 (方法2) Altering the intensities of the RGB channels. 对RGB矩阵进行PCA得到特征值和特征向量(图1)，对特征值乘以一个系数α，α服从mean=0, std=0.1高斯分布。 Dropout Layer Combining the predictions of many different models is a very successful way to reduce test errors, but it appears to be too expensive for big neural networks that already take several days to train. 因此，利用dropout的随机性来改变模型training阶段的内部结构。 论文使用drop rate 0.5, 即50%几率将training阶段的输出设置为0，不参与本次forward和backward过程。 Dropout roughly doubles the number of iterations required to converge. 在testing阶段，将输出乘0.5 (如今的dropout方法，大多数不乘drop rate). 基于vector进行相似性检索 基于倒数第二层FC输出的4096维Vector，计算欧氏距离进行相似图片检索 (Figure 4, Right). 在pixel leve上基于L2进行图片相似检索显然不可行，但是在high-level可用L2进行检索。 此外，4096维vector的欧氏距离计算量太大，使用auto-encoder对vector进一步压缩后再进行相似度检索，能得到更好的效果。]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>Classification</tag>
+        <tag>AlexNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017 Best Paper) Learning from simulated and unsupervised images through adversarial training]]></title>
+    <url>%2F2017%2F09%2F19%2FLearning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training%2F</url>
+    <content type="text"><![CDATA[Shrivastava A, Pfister T, Tuzel O, et al. Learning from simulated and unsupervised images through adversarial training[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2107-2116. 该篇论文提出一种Unsupervised方法学习SimGAN model。该model能够使用大量unlabeled real images来增强labeled synthetic images真实性 (Figure 1). 显而易见，在real images和synthetic images之间存在一个gap，而实际上，Deep Learning做的事情就是学习两者之间的映射关系。 贡献点 使用unlabeled real data来refine synthetic images. 结合adversarial loss和self-regularization loss训练Refiner Network (R). 使用一些key modification来稳定train以及防止R产生artifacts. 分别使用synthetic和refined images训练CNN进行gaze estimation任务，并在MPIIGaze Dataset上测试，进行比较。 训练过程 SimGAN模型包含Refiner Network(R)和Discriminator Network(D) (Figure 2). (Algorithm 1) 对于每个training step，首先训练R $K_g$次，接着训练D $K_d$次。 训练网络的过程: Forward Input$\to$Calc Loss$\to$Backward Loss$\to$Optimize Parameters. Loss Function D包含两部分loss (Formula 2)： Refined images输入D判别为False的loss（输入与Ground-truth的cross entropy loss）。 Real images输入D判别为True的loss. R包含两部分loss (Formula 1,4)： Refined images输入D判断为True的loss（与D中判别其为False形成对抗Adversarial） Synthetic images与refined images之间的L1 loss，乘以权重系数λ(hyper-parameter). Self-regularazition loss Preserve the annoation information of the synthetic images. Local Adversarial Loss Output a probability map (Figure 3) instead of a vertor. Prevent R from over-emphasizing certain image features to fool the current discriminator network, leading to drifting and producing artifacts. History Buffer of Refined Images (Figure 4) Prevent D from only focusing on the latest refined images. 将refined images输入D之前，首先随机选择一半refined images放入Buffer中，再从Buffer中随机选择同样数目的refined images放回。 使用History Buffer的实验结果优于不使用 (Figure 10) Gaze Estimation Task 分别使用synthetic images和refined images训练简单的CNN(输出vector(x,y,z))，并在MPIIGaze Dataset上进行测试。 从实验结果 (Table 2) 能够看出，经过R增强的refined images的distribution更接近real images的distribution. Details R is a ResNet. λ=0.001, kd=1, kg=50. 1.2M synthetic images, 214K real images. More in here Github Tensorflow&amp;Keras：wayaai/SimGAN Pytorch：AlexHex7/SimGAN_pytorch]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Reality Enhancement</tag>
+        <tag>SimGAN</tag>
+        <tag>Eye</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(CVPR 2017 Best Paper) Densely connected convolutional networks]]></title>
     <url>%2F2017%2F09%2F19%2FDensely%20connected%20convolutional%20networks%2F</url>
     <content type="text"><![CDATA[Huang G, Liu Z, Van Der Maaten L, et al. Densely connected convolutional networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 4700-4708. 该篇论文提出一种网络结构DenseNet (Figure 2)，能够在提高性能的同时，大量降低模型的参数及占用内存 (Figure 3)。 DenseNet Block (Figure 1)结构中包含大量skip connection(shortcut)： 解决梯度消失问题 提高feature reusing和propagation. 降低Conv层的filter(kernel)数量，使网络变得更narrow.(由于存在shortcut，在通过网络的时候，不会出现信息丢失的情况。) DenseNet细节包含以下几个主要部分： Transition Layer Growth Rate Bottleneck Layer Compression Transition Layer (图1) 连接在两个Dense Block之间，包含：BN- (1x1) Conv- (2x2) Avg Pooling Growth Rate denoted by $k$. 即$H$层 (Figure 1)中 (3x3) Conv层的filter数量为$k$. Bottleneck Layer 为了降低特征图数量，在H层的头部加上Bottleneck Layer，包含：BN-ReLU-(1x1)Conv. 该Conv层的filter数量小于输入特征图数量，从而达到降低特征图数量的目的 Compression 为了进一步提高模型的紧凑性，可以在Transition Layer中降低特征图数量。即降低其中的 (1x1) Conv层filter数量。 假设输入特征图数量为$m$，存在一个hyper-parameter $θ$ (0&lt;$θ$&lt;1) 使得输出特征图数量降低至$θ_m$，则(1x1) Conv层有$θ_m$ filters.]]></content>
@@ -9,9 +245,9 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>DenseNet</tag>
         <tag>Network</tag>
         <tag>Classification</tag>
+        <tag>DenseNet</tag>
       </tags>
   </entry>
   <entry>
@@ -54,15 +290,15 @@
         <category>Image Processing</category>
       </categories>
       <tags>
+        <tag>Face</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Face</tag>
         <tag>Scene</tag>
         <tag>DCGAN</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[(CVPR 2017) Convolutional Neural Network Architecture for Geometric Matching]]></title>
+    <title><![CDATA[(CVPR 2017) Convolutional neural network architecture for geometric matching]]></title>
     <url>%2F2017%2F09%2F19%2FConvolutional%20neural%20network%20architecture%20for%20geometric%20matching%2F</url>
     <content type="text"><![CDATA[Rocco I, Arandjelovic R, Sivic J. Convolutional neural network architecture for geometric matching[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 6148-6157. 该篇论文 提出CNN结构mimic传统机器学习中的geometric matching算法 (Figure 1):feature extraction, matching, simultaneous inlier detection, model parameter estimation. 使用合成数据进行训练模型，不需人工标注数据（几何变换参数） 模型结构 (Figure 2)模型包含Feature extraction, Matching network和Regression network.图中两个Feature extraction CNN共享同样的参数，即用同一个网络提取A和B的特征。 Feature extraction Use VGG16 network cropped at the pool4 layer (before the ReLU unit), followed by per-feature L2-normalization. Matching network 采用Correlation map computation with CNN feature (Figure 3). 对于特征图A中的某个空间点，计算特征图B中每个空间点与其的相关性（模拟几何变换机器学习算法）。此外，使用channel-wise normalization和ReLu操作amplify the score of the match. 论文中将该方法与常用的Concatenation和Subtraction方法进行比较(Table 2)，证明该方法效果更好。原因是 后续的Regression Network是由一系列Conv层组成，unable to detect long-range matches. 对于相同几何变换的不同图像pair而言，Concatenation和Subtraction会产生不同的输出，会增加Regression Network的难度。 此外，对correlation map进行normalization能够提升4个百分点。 Regression Network 考虑到参数、内存和计算量的问题，Regression Network (Figure 4)采用具有局部感知特性的Conv层，而非FC层。这种方法能够Work是因为对于AB相关性特征图上的某个空间点而言，它包含了B特征图中该点与A特征图中所有空间点的相似性得分，因此虽然使用局部性的Conv，但仍然具有全局性。 Hierarchy of transformations 为了得到更精确的结果，论文提出了一个hierarchy模型 (Figure 5)。该模型包含2个stage。 第一阶段estimate 6 parameters的affine transformation. 第二阶段estimate 18 parameters的thin plate spline transformation. Loss Function $g_i$为uniform grid[-1, 1]，计算变换后的网格之间的距离平方。 Dateset Generate each example by sampling image A from a public image dataset, and generating image B by applying a random transformation $T_θ$GT to image A.]]></content>
       <categories>
@@ -73,6 +309,22 @@
         <tag>geometric matching</tag>
         <tag>Image Transformation</tag>
         <tag>Image Generation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Learning from simulated and unsupervised images through adversarial training]]></title>
+    <url>%2F2017%2F09%2F18%2Ftemplate%2F</url>
+    <content type="text"><![CDATA[Shrivastava A, Pfister T, Tuzel O, et al. Learning from simulated and unsupervised images through adversarial training[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2107-2116. 该篇论文 贡献点 贡献点 贡献点 贡献点 贡献点 贡献点 贡献点 贡献点]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Reality Enhancement</tag>
+        <tag>Eye</tag>
+        <tag>SIMNet</tag>
       </tags>
   </entry>
 </search>

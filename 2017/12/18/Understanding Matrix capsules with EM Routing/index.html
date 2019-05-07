@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Hui J. Understanding Matrix capsules with EM Routing[J]. Blog.​ Nov, 2017.“Understanding Matrix capsules with EM Routing (Based on Hinton’s Capsule Networks)”">
+<meta name="keywords" content="Classification,Cognitive Neuroscience,EM Algorithm,CapsulesNet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(2017) Understanding Matrix capsules with EM Routing">
+<meta property="og:url" content="http://yoursite.com/2017/12/18/Understanding Matrix capsules with EM Routing/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Hui J. Understanding Matrix capsules with EM Routing[J]. Blog.​ Nov, 2017.“Understanding Matrix capsules with EM Routing (Based on Hinton’s Capsule Networks)”">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/11.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/12.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/13.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/14.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/15.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/16.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/17.jpg?raw=true">
+<meta property="og:updated_time" content="2017-12-17T22:25:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2017) Understanding Matrix capsules with EM Routing">
+<meta name="twitter:description" content="Hui J. Understanding Matrix capsules with EM Routing[J]. Blog.​ Nov, 2017.“Understanding Matrix capsules with EM Routing (Based on Hinton’s Capsule Networks)”">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/1.jpg?raw=true">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2017/12/18/Understanding Matrix capsules with EM Routing/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>(2017) Understanding Matrix capsules with EM Routing | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/18/Understanding Matrix capsules with EM Routing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">(2017) Understanding Matrix capsules with EM Routing
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-12-18 06:25:08" itemprop="dateCreated datePublished" datetime="2017-12-18T06:25:08+08:00">2017-12-18</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Capsules/" itemprop="url" rel="index"><span itemprop="name">Capsules</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Hui J. Understanding Matrix capsules with EM Routing[J]. Blog.​ Nov, 2017.<br><a href="https://jhui.github.io/2017/11/14/Matrix-Capsules-with-EM-routing-Capsule-Network/" target="_blank" rel="noopener">“Understanding Matrix capsules with EM Routing (Based on Hinton’s Capsule Networks)”</a></p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h2 id="向量capsule缺陷"><a href="#向量capsule缺陷" class="headerlink" title="向量capsule缺陷"></a>向量capsule缺陷</h2><p>此前提出的capsule结构存在一些<strong>缺陷</strong></p>
+<ul>
+<li>利用pose向量的长度表示存在概率时，使用了squash函数将向量长度压缩至[0, 1]，这阻碍了一些有意义的目标函数的使用。</li>
+<li>使用余弦角度测量两个pose向量之间的agreement，不能很好地区分quit good agreement和very good agreement. 而使用<strong>Gaussian cluster</strong>能使实现这点。</li>
+<li>对于长度为n的pose向量，其变换矩阵有n*n个参数。而对于n个元素的<strong>pose矩阵</strong>，其变换矩阵只有<strong>n个参数</strong>。</li>
+</ul>
+<h2 id="矩阵capsule结构"><a href="#矩阵capsule结构" class="headerlink" title="矩阵capsule结构"></a>矩阵capsule结构</h2><p>因此，本文提出一种新的capsule结构，其中包含</p>
+<ul>
+<li><strong>a logistic unit</strong>，表示该entity存在概率。</li>
+<li><strong>a 4*4 pose矩阵</strong>，通过学习表示entity与viewer之间的关系。</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/1.jpg?raw=true" alt><br></div>
+
+
+<p>L层某个$capsule_i$的<strong>pose矩阵</strong>乘以<strong>viewpoint-invariant变换矩阵</strong>得到的结果为$capsule_i$对L+1层各$capsule_c$的pose矩阵的vote. Viewpoint-invariant变换矩阵通过学习能够表示part-whole关系。</p>
+<p>每个vote都对应一个权重系数$r_i$,权重系数通过EM算法迭代更新。在本文中使用的迭代次数为3.</p>
+<p>矩阵capsule结构在smallNORB数据集上相对于目前的state-of-the-art减小了45%的test errors. 并且更能够抵抗白盒对抗攻击。</p>
+<hr>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><hr>
+<h2 id="Viewpoint与Pose矩阵"><a href="#Viewpoint与Pose矩阵" class="headerlink" title="Viewpoint与Pose矩阵"></a>Viewpoint与Pose矩阵</h2><ul>
+<li>Viewpoint的改变会导致图像像素产生较大的变化，但对表示objet和viewer之间关系的pose矩阵而言，只会产生简单的线性影响。</li>
+<li>随着viewpoint的改变，pose矩阵以一种协调的方式进行变化，因此不同部位votes的agreement保持恒定。</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/2.jpg?raw=true" alt><br></div>
+
+<h2 id="反向Attention"><a href="#反向Attention" class="headerlink" title="反向Attention"></a>反向Attention</h2><p>由L+1层的所有$capsule_c$竞争L层的某个$capsule_i$，即权重系数和为1. 而正向Attention是由L层的所有$capsule_i$竞争L+1层的某个$capsule_c$。</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/3.jpg?raw=true" alt><br></div>
+
+
+<hr>
+<h1 id="EM迭代路由算法"><a href="#EM迭代路由算法" class="headerlink" title="EM迭代路由算法"></a>EM迭代路由算法</h1><p>将L层各capsule_i看为一个data point，L+1层各$capsule_c$看为一个Gaussian模型。因L层各$capsule_i$的vote路由问题转化为对给定数量data point进行Gaussian聚类问题。例如，眼睛、鼻子、嘴巴的$capsule_i$都vote（聚成一个cluster） L+1层中某个$capsule_c$，即检测到人脸。</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/4.jpg?raw=true" alt><br></div>
+
+<h2 id="计算公式"><a href="#计算公式" class="headerlink" title="计算公式"></a>计算公式</h2><p><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/5.jpg?raw=true" alt></p>
+<p>cost表示某个$capsule_i$属于$caps_c$的一部分的概率。cost越低，则属于的可能性越大。<br><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/6.jpg?raw=true" alt></p>
+<p>λ为超参数，b为描述$capsule_c$均值的cost，可学习。<br><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/7.jpg?raw=true" alt></p>
+<h2 id="EM路由算法"><a href="#EM路由算法" class="headerlink" title="EM路由算法"></a>EM路由算法</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/8.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>实验中设置的迭代次数为3.</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/10.jpg?raw=true" alt><br></div>
+
+
+<hr>
+<h1 id="Capsule模型"><a href="#Capsule模型" class="headerlink" title="Capsule模型"></a>Capsule模型</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/11.jpg?raw=true" alt><br></div>
+
+<h2 id="ReLU-Conv1"><a href="#ReLU-Conv1" class="headerlink" title="ReLU+Conv1"></a>ReLU+Conv1</h2><ul>
+<li>5*5 kernel, 32 channel (A=32), stride 2.</li>
+<li>输入: (b, c, 32, 32)</li>
+<li>输出: (b, 32, 14, 14 )</li>
+</ul>
+<h2 id="PrimaryCaps"><a href="#PrimaryCaps" class="headerlink" title="PrimaryCaps"></a>PrimaryCaps</h2><ul>
+<li>1*1 kernel, 32 channel (B=32),  stride 1.</li>
+<li>输入: (b, 32, 14, 14)</li>
+<li>输出: (b, 32, 14, 14, 17)</li>
+</ul>
+<h2 id="ConvCaps1"><a href="#ConvCaps1" class="headerlink" title="ConvCaps1"></a>ConvCaps1</h2><ul>
+<li>3*3 kernel (K=3), 32 channel (C=32), stride 2.</li>
+<li>输入: (b, 32, 14, 14, 17)</li>
+<li>输出: (b, 32,   6,   6, 17)</li>
+</ul>
+<h2 id="ConvCaps2"><a href="#ConvCaps2" class="headerlink" title="ConvCaps2"></a>ConvCaps2</h2><ul>
+<li>3*3 kernel (K=3), 32 channel (D=32), stride 1.</li>
+<li>输入: (b, 32, 6, 6, 17)</li>
+<li>输出: (b, 32, 4, 4, 17)</li>
+</ul>
+<h2 id="Class-Capsule"><a href="#Class-Capsule" class="headerlink" title="Class Capsule"></a>Class Capsule</h2><ul>
+<li>可看做h*w kernel, 10 channel (分类类别), stride 1. 该层使用了Coordinate Addition方法，额外加入每个感知区域的xy坐标到vote的前两个元素中。</li>
+<li>输入: (b, 32, 4, 4, 17)</li>
+<li>输出: (b, 10, 17)</li>
+</ul>
+<h2 id="Spread-Loss"><a href="#Spread-Loss" class="headerlink" title="Spread Loss"></a>Spread Loss</h2><p><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/12.jpg?raw=true" alt></p>
+<ul>
+<li>最大化目标类别的activation与其他类别activation的差值。m为margin，从0.2开始线性增长，避免dead capsule.</li>
+</ul>
+<hr>
+<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<ul>
+<li>samllNORB数据集包含5种类别的玩具图片：飞机、车、卡车</li>
+<li>人类和动物。每种类别都有18个不同的视角(0-340), 9种高度和6种光照条件。图片大小为96<em>96.实验中将其下采样为48</em>48并做32*32 random crop操作。</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/14.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>更进一步，实验使用训练集不包含的viewpoint进行测试</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/15.jpg?raw=true" alt><br></div>
+
+
+<hr>
+<h1 id="对抗鲁棒性"><a href="#对抗鲁棒性" class="headerlink" title="对抗鲁棒性"></a>对抗鲁棒性</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/16.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/17.jpg?raw=true" alt><br></div>
+
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Classification/" rel="tag"># Classification</a>
+          
+            <a href="/tags/Cognitive-Neuroscience/" rel="tag"># Cognitive Neuroscience</a>
+          
+            <a href="/tags/EM-Algorithm/" rel="tag"># EM Algorithm</a>
+          
+            <a href="/tags/CapsulesNet/" rel="tag"># CapsulesNet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/18/EM Algorithm/" rel="next" title="EM Algorithm">
+                <i class="fa fa-chevron-left"></i> EM Algorithm
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/19/Transformation/" rel="prev" title="Transformation">
+                Transformation <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+            
+              <p class="site-author-name" itemprop="name">Alex Hex</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:378344082@qq.com" title="E-Mail &rarr; mailto:378344082@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量capsule缺陷"><span class="nav-number">1.1.</span> <span class="nav-text">向量capsule缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵capsule结构"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵capsule结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Viewpoint与Pose矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">Viewpoint与Pose矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反向Attention"><span class="nav-number">2.2.</span> <span class="nav-text">反向Attention</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EM迭代路由算法"><span class="nav-number">3.</span> <span class="nav-text">EM迭代路由算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算公式"><span class="nav-number">3.1.</span> <span class="nav-text">计算公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EM路由算法"><span class="nav-number">3.2.</span> <span class="nav-text">EM路由算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capsule模型"><span class="nav-number">4.</span> <span class="nav-text">Capsule模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ReLU-Conv1"><span class="nav-number">4.1.</span> <span class="nav-text">ReLU+Conv1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PrimaryCaps"><span class="nav-number">4.2.</span> <span class="nav-text">PrimaryCaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConvCaps1"><span class="nav-number">4.3.</span> <span class="nav-text">ConvCaps1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConvCaps2"><span class="nav-number">4.4.</span> <span class="nav-text">ConvCaps2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-Capsule"><span class="nav-number">4.5.</span> <span class="nav-text">Class Capsule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spread-Loss"><span class="nav-number">4.6.</span> <span class="nav-text">Spread Loss</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">5.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对抗鲁棒性"><span class="nav-number">6.</span> <span class="nav-text">对抗鲁棒性</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
