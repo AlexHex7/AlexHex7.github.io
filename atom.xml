@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-13T02:32:21.501Z</updated>
+  <updated>2018-04-28T22:25:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,242 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(ICCV 2017) SO-Net:Self-Organizing Network for Point Cloud Analysi</title>
+    <link href="http://yoursite.com/2018/04/29/SO-Net:%20Self-Organizing%20Network%20for%20Point%20Cloud%20Analysi/"/>
+    <id>http://yoursite.com/2018/04/29/SO-Net: Self-Organizing Network for Point Cloud Analysi/</id>
+    <published>2018-04-28T22:25:08.000Z</published>
+    <updated>2018-04-28T22:25:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Li J, Chen B M, Hee Lee G. So-net: Self-organizing network for point cloud analysis[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 9397-9406.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/categories/Paper-Note/Point-Cloud/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/tags/Point-Cloud/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="SO-Net" scheme="http://yoursite.com/tags/SO-Net/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2017) Escape from cells:Deep kd-networks for the recognition of 3d point cloud models</title>
+    <link href="http://yoursite.com/2018/04/29/Escape%20from%20cells:%20Deep%20kd-networks%20for%20the%20recognition%20of%203d%20point%20cloud%20models/"/>
+    <id>http://yoursite.com/2018/04/29/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/</id>
+    <published>2018-04-28T22:25:07.000Z</published>
+    <updated>2018-04-28T22:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Klokov R, Lempitsky V. Escape from cells: Deep kd-networks for the recognition of 3d point cloud models[C]//2017 IEEE International Conference on Computer Vision (ICCV). IEEE, 2017: 863-872.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/categories/Paper-Note/Point-Cloud/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/tags/Point-Cloud/"/>
+    
+      <category term="Kd-Net" scheme="http://yoursite.com/tags/Kd-Net/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Frustum pointnets for 3d object detection from rgb-d data</title>
+    <link href="http://yoursite.com/2018/04/29/Frustum%20PointNets%20for%203D%20Object%20Detection%20from%20RGB-D%20Data/"/>
+    <id>http://yoursite.com/2018/04/29/Frustum PointNets for 3D Object Detection from RGB-D Data/</id>
+    <published>2018-04-28T22:25:06.000Z</published>
+    <updated>2018-04-28T22:25:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Qi C R, Liu W, Wu C, et al. Frustum pointnets for 3d object detection from rgb-d data[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 918-927.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/categories/Paper-Note/Point-Cloud/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/tags/Point-Cloud/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Localization" scheme="http://yoursite.com/tags/Localization/"/>
+    
+      <category term="Frustum PointNets" scheme="http://yoursite.com/tags/Frustum-PointNets/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2017) Pointnet++:Deep hierarchical feature learning on point sets in a metric space</title>
+    <link href="http://yoursite.com/2018/04/29/Pointnet++:%20Deep%20hierarchical%20feature%20learning%20on%20point%20sets%20in%20a%20metric%20space/"/>
+    <id>http://yoursite.com/2018/04/29/Pointnet++: Deep hierarchical feature learning on point sets in a metric space/</id>
+    <published>2018-04-28T22:25:05.000Z</published>
+    <updated>2018-04-28T22:25:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Qi C R, Yi L, Su H, et al. Pointnet++: Deep hierarchical feature learning on point sets in a metric space[C]//Advances in Neural Information Processing Systems. 2017: 5105-5114.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/categories/Paper-Note/Point-Cloud/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/tags/Point-Cloud/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Pointnet++" scheme="http://yoursite.com/tags/Pointnet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) Pointnet:Deep learning on point sets for 3d classification and segmentation</title>
+    <link href="http://yoursite.com/2018/04/29/Pointnet:%20Deep%20learning%20on%20point%20sets%20for%203d%20classification%20and%20segmentation/"/>
+    <id>http://yoursite.com/2018/04/29/Pointnet: Deep learning on point sets for 3d classification and segmentation/</id>
+    <published>2018-04-28T22:25:04.000Z</published>
+    <updated>2018-04-28T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Qi C R, Su H, Mo K, et al. Pointnet: Deep learning on point sets for 3d classification and segmentation[J]. Proc. Computer Vision and Pattern Recognition (CVPR), IEEE, 2017, 1(2): 4.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/categories/Paper-Note/Point-Cloud/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Point Cloud" scheme="http://yoursite.com/tags/Point-Cloud/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Pointnet" scheme="http://yoursite.com/tags/Pointnet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Cascaded Pyramid Network for Multi-Person Pose Estimation</title>
+    <link href="http://yoursite.com/2018/04/29/Cascaded%20Pyramid%20Network%20for%20Multi-Person%20Pose%20Estimation/"/>
+    <id>http://yoursite.com/2018/04/29/Cascaded Pyramid Network for Multi-Person Pose Estimation/</id>
+    <published>2018-04-28T22:25:03.000Z</published>
+    <updated>2018-04-28T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Chen Y, Wang Z, Peng Y, et al. Cascaded pyramid network for multi-person pose estimation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7103-7112.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Pose" scheme="http://yoursite.com/categories/Paper-Note/Pose/"/>
+    
+    
+      <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
+    
+      <category term="Human Body" scheme="http://yoursite.com/tags/Human-Body/"/>
+    
+      <category term="CPN" scheme="http://yoursite.com/tags/CPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) Annotating object instances with a polygon-rnn</title>
+    <link href="http://yoursite.com/2018/04/29/Annotating%20object%20instances%20with%20a%20polygon-rnn/"/>
+    <id>http://yoursite.com/2018/04/29/Annotating object instances with a polygon-rnn/</id>
+    <published>2018-04-28T22:25:02.000Z</published>
+    <updated>2018-04-28T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Castrejon L, Kundu K, Urtasun R, et al. Annotating object instances with a polygon-rnn[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 5230-5238.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Annotation" scheme="http://yoursite.com/categories/Paper-Note/Annotation/"/>
+    
+    
+      <category term="Annotation Algorithm" scheme="http://yoursite.com/tags/Annotation-Algorithm/"/>
+    
+      <category term="Semi-Automatic" scheme="http://yoursite.com/tags/Semi-Automatic/"/>
+    
+      <category term="Polygon-RNN" scheme="http://yoursite.com/tags/Polygon-RNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Shufflenet:An extremely efficient convolutional neural network for mobile devices</title>
+    <link href="http://yoursite.com/2018/04/29/Shufflenet:%20An%20extremely%20efficient%20convolutional%20neural%20network%20for%20mobile%20devices/"/>
+    <id>http://yoursite.com/2018/04/29/Shufflenet: An extremely efficient convolutional neural network for mobile devices/</id>
+    <published>2018-04-28T22:25:01.000Z</published>
+    <updated>2018-04-28T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhang X, Zhou X, Lin M, et al. Shufflenet: An extremely efficient convolutional neural network for mobile devices[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6848-6856.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
+    
+      <category term="Shufflenet" scheme="http://yoursite.com/tags/Shufflenet/"/>
+    
+  </entry>
   
   <entry>
     <title>(PAMI 2017) Segnet:A deep convolutional encoder-decoder architecture for image segmentation</title>
@@ -51,7 +287,7 @@
     <link href="http://yoursite.com/2018/02/25/Mobilenets:%20Efficient%20convolutional%20neural%20networks%20for%20mobile%20vision%20applications/"/>
     <id>http://yoursite.com/2018/02/25/Mobilenets: Efficient convolutional neural networks for mobile vision applications/</id>
     <published>2018-02-24T22:25:07.000Z</published>
-    <updated>2019-05-13T02:24:21.746Z</updated>
+    <updated>2019-05-13T06:08:29.956Z</updated>
     
     <summary type="html">
     
@@ -63,7 +299,7 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
     
     
       <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
@@ -361,232 +597,6 @@
       <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
     
       <category term="Multi-label Classification" scheme="http://yoursite.com/tags/Multi-label-Classification/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) Fatauva-net:An integrated deep learning framework for facial attribute recognition, action unit (au) detection, and valence-arousal estimation</title>
-    <link href="http://yoursite.com/2018/01/17/Fatauva-net:%20An%20integrated%20deep%20learning%20framework%20for%20facial%20attribute%20recognition,%20action%20unit%20(au)%20detection,%20and%20valence-arousal%20estimation/"/>
-    <id>http://yoursite.com/2018/01/17/Fatauva-net: An integrated deep learning framework for facial attribute recognition, action unit (au) detection, and valence-arousal estimation/</id>
-    <published>2018-01-16T22:25:02.000Z</published>
-    <updated>2018-01-16T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Chang W Y, Hsu S H, Chien J H. Fatauva-net: An integrated deep learning framework for facial attribute recognition, action unit (au) detection, and valence-arousal estimation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop. 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
-    
-    
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
-      <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
-    
-      <category term="Multi-label Classification" scheme="http://yoursite.com/tags/Multi-label-Classification/"/>
-    
-      <category term="Valence-Arousal space" scheme="http://yoursite.com/tags/Valence-Arousal-space/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) DeepCoder:Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding</title>
-    <link href="http://yoursite.com/2018/01/17/DeepCoder:%20Semi-Parametric%20Variational%20Autoencoders%20for%20Automatic%20Facial%20Action%20Coding/"/>
-    <id>http://yoursite.com/2018/01/17/DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding/</id>
-    <published>2018-01-16T22:25:01.000Z</published>
-    <updated>2018-01-16T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Linh Tran D, Walecki R, Eleftheriadis S, et al. DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 3190-3199.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
-    
-    
-      <category term="VAE" scheme="http://yoursite.com/tags/VAE/"/>
-    
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
-      <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
-    
-      <category term="Multi-label Classification" scheme="http://yoursite.com/tags/Multi-label-Classification/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ECCV 2016) Stacked hourglass networks for human pose estimation</title>
-    <link href="http://yoursite.com/2018/01/03/Stacked%20hourglass%20networks%20for%20human%20pose%20estimation/"/>
-    <id>http://yoursite.com/2018/01/03/Stacked hourglass networks for human pose estimation/</id>
-    <published>2018-01-02T22:25:03.000Z</published>
-    <updated>2018-01-02T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Newell A, Yang K, Deng J. Stacked hourglass networks for human pose estimation[C]//European Conference on Computer Vision. Springer International Publishing, 2016: 483-499.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Pose" scheme="http://yoursite.com/categories/Paper-Note/Pose/"/>
-    
-    
-      <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
-    
-      <category term="Human Body" scheme="http://yoursite.com/tags/Human-Body/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2016) Convolutional pose machines</title>
-    <link href="http://yoursite.com/2018/01/03/Convolutional%20pose%20machines/"/>
-    <id>http://yoursite.com/2018/01/03/Convolutional pose machines/</id>
-    <published>2018-01-02T22:25:02.000Z</published>
-    <updated>2018-01-02T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Wei S E, Ramakrishna V, Kanade T, et al. Convolutional pose machines[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 4724-4732.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Pose" scheme="http://yoursite.com/categories/Paper-Note/Pose/"/>
-    
-    
-      <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
-    
-      <category term="Human Body" scheme="http://yoursite.com/tags/Human-Body/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2017) Going deeper into action recognition:A survey</title>
-    <link href="http://yoursite.com/2018/01/03/Going%20deeper%20into%20action%20recognition:%20A%20survey/"/>
-    <id>http://yoursite.com/2018/01/03/Going deeper into action recognition: A survey/</id>
-    <published>2018-01-02T22:25:01.000Z</published>
-    <updated>2018-01-02T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Herath S, Harandi M, Porikli F. Going deeper into action recognition: A survey[J]. Image and Vision Computing, 2017, 60: 4-21.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Action Recognition" scheme="http://yoursite.com/categories/Paper-Note/Action-Recognition/"/>
-    
-    
-      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
-    
-      <category term="Action Recognition" scheme="http://yoursite.com/tags/Action-Recognition/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2016) Compact Bilinear Pooling</title>
-    <link href="http://yoursite.com/2017/12/30/Compact%20Bilinear%20Pooling/"/>
-    <id>http://yoursite.com/2017/12/30/Compact Bilinear Pooling/</id>
-    <published>2017-12-29T22:25:02.000Z</published>
-    <updated>2017-12-29T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Gao Y, Beijbom O, Zhang N, et al. Compact bilinear pooling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 317-326.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="Fine-Grained Classification" scheme="http://yoursite.com/tags/Fine-Grained-Classification/"/>
-    
-      <category term="Compact Bilinear Pooling" scheme="http://yoursite.com/tags/Compact-Bilinear-Pooling/"/>
-    
-      <category term="Few Shot Learning" scheme="http://yoursite.com/tags/Few-Shot-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2015) Bilinear CNN Models for Fine-grained</title>
-    <link href="http://yoursite.com/2017/12/30/Bilinear%20CNN%20Models%20for%20Fine-grained/"/>
-    <id>http://yoursite.com/2017/12/30/Bilinear CNN Models for Fine-grained/</id>
-    <published>2017-12-29T22:25:01.000Z</published>
-    <updated>2017-12-29T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Lin T Y, RoyChowdhury A, Maji S. Bilinear cnn models for fine-grained visual recognition[C]//Proceedings of the IEEE International Conference on Computer Vision. 2015: 1449-1457.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="Fine-Grained Classification" scheme="http://yoursite.com/tags/Fine-Grained-Classification/"/>
-    
-      <category term="Bilinear CNN" scheme="http://yoursite.com/tags/Bilinear-CNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Learning to segment every thing</title>
-    <link href="http://yoursite.com/2017/12/22/Learning%20to%20Segment%20Every%20Thing/"/>
-    <id>http://yoursite.com/2017/12/22/Learning to Segment Every Thing/</id>
-    <published>2017-12-21T22:25:06.000Z</published>
-    <updated>2017-12-21T22:25:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Hu R, Dollár P, He K, et al. Learning to segment every thing[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4233-4241.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Transfer Learning" scheme="http://yoursite.com/categories/Paper-Note/Transfer-Learning/"/>
-    
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-      <category term="Mask R-CNN" scheme="http://yoursite.com/tags/Mask-R-CNN/"/>
-    
-      <category term="Maskx R-CNN" scheme="http://yoursite.com/tags/Maskx-R-CNN/"/>
-    
-      <category term="Weight Transfer" scheme="http://yoursite.com/tags/Weight-Transfer/"/>
-    
-      <category term="Transfer Learning" scheme="http://yoursite.com/tags/Transfer-Learning/"/>
     
   </entry>
   
