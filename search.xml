@@ -45,20 +45,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[test]]></title>
-    <url>%2F2018%2F02%2F02%2Ftest%2F</url>
-    <content type="text"><![CDATA[一级标题二级标题三级标题三级标题二级标题二级标题一级标题二级标题二级标题]]></content>
-      <categories>
-        <category>Paper Note</category>
-        <category>Medical</category>
-        <category>Overview</category>
-      </categories>
-      <tags>
-        <tag>Overview</tag>
-        <tag>Medical</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[(2017) Deep Learning in Medical Imaging:General Overview]]></title>
     <url>%2F2018%2F02%2F02%2FDeep%20Learning%20in%20Medical%20Imaging%3A%20General%20Overview%2F</url>
     <content type="text"><![CDATA[Lee J G, Jun S, Cho Y W, et al. Deep Learning in Medical Imaging: General Overview[J]. Korean Journal of Radiology, 2017, 18(4): 570-584. Overview 论文综述了深度学习技术的历史、发展和应用（涉及到医学图像）。 AI三种方法 Symbolism Connectionism Bayesian 算法 分类. Bayesian模型、SVM、集成学习(结合不同分类算法) 回归. SVR ANN. DNN Unsupervised restricted Boltzmann machine. Hinton, 解决DNN的局部最优、过拟合问题。以无监督方式生成数据特征 CNN. RNN Trick Data Augmentation 预训练权重能够在100 cases per class得到较好地结果。 突破 ReLu Dropout Data augmentation 放射学应用 Segmentation lungs（肺） tumor（肿瘤） structure in brain biological cells（生物细胞） membranes（薄膜） tibial cartilage（胫骨软骨） bone tissue（骨组织） cell mitosis（细胞有丝分裂） Registration医学图像配准. 同一患者几幅图像放在一起分析时，首先要做图像严格对齐。医学图像配准是指对于一幅医学图像寻求一种 (或一系列 )空间变换，使它与另一幅医学图像上的对应点达到空间上的一致。 方法 Patch Based Entire Image Automatic Labeling and Captioning 数据集 Caption. Flickr8k, Flickr30k, MS COCO Publicly available radiology dataset of chest radiographs Reading Assistant and Automatic Dictation Automatic radiological dictation system. 深度学习应用到放射学的局限性 要求高质量数据，数据量太小容易过拟合 无法得到通用方法. 世界各地成像设备、协议以及疾病流行率的差异 法律伦理问题 事故责任承担问题]]></content>
@@ -110,8 +96,8 @@
         <category>Face</category>
       </categories>
       <tags>
-        <tag>VAE</tag>
         <tag>Face</tag>
+        <tag>VAE</tag>
         <tag>Facial Action Units</tag>
         <tag>Multi-label Classification</tag>
       </tags>
@@ -471,8 +457,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>Classification</tag>
+        <tag>Network</tag>
         <tag>AlexNet</tag>
       </tags>
   </entry>
@@ -501,8 +487,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>Classification</tag>
+        <tag>Network</tag>
         <tag>DenseNet</tag>
       </tags>
   </entry>

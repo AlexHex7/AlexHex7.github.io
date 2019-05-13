@@ -105,36 +105,6 @@
   </entry>
   
   <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2018/02/02/test/"/>
-    <id>http://yoursite.com/2018/02/02/test/</id>
-    <published>2018-02-01T22:25:02.000Z</published>
-    <updated>2018-02-01T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;一级标题&quot;&gt;&lt;a href=&quot;#一级标题&quot; class=&quot;headerlink&quot; title=&quot;一级标题&quot;&gt;&lt;/a&gt;一级标题&lt;/h1&gt;&lt;h2 id=&quot;二级标题&quot;&gt;&lt;a href=&quot;#二级标题&quot; class=&quot;headerlink
-      
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
-    
-      <category term="Overview" scheme="http://yoursite.com/categories/Paper-Note/Medical/Overview/"/>
-    
-    
-      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
-    
-      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
-    
-  </entry>
-  
-  <entry>
     <title>(2017) Deep Learning in Medical Imaging:General Overview</title>
     <link href="http://yoursite.com/2018/02/02/Deep%20Learning%20in%20Medical%20Imaging:%20General%20Overview/"/>
     <id>http://yoursite.com/2018/02/02/Deep Learning in Medical Imaging: General Overview/</id>
@@ -240,9 +210,9 @@
       <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
     
     
-      <category term="VAE" scheme="http://yoursite.com/tags/VAE/"/>
-    
       <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
+      <category term="VAE" scheme="http://yoursite.com/tags/VAE/"/>
     
       <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
     
@@ -583,6 +553,38 @@
       <category term="Non-local" scheme="http://yoursite.com/tags/Non-local/"/>
     
       <category term="Video Classification" scheme="http://yoursite.com/tags/Video-Classification/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2015) Spatial transformer networks</title>
+    <link href="http://yoursite.com/2017/12/19/Spatial%20transformer%20networks/"/>
+    <id>http://yoursite.com/2017/12/19/Spatial transformer networks/</id>
+    <published>2017-12-18T22:25:03.000Z</published>
+    <updated>2017-12-18T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Jaderberg M, Simonyan K, Zisserman A. Spatial transformer networks[C]//Advances in neural information processing systems. 2015: 2017-2025.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Fine-Grained Classification" scheme="http://yoursite.com/tags/Fine-Grained-Classification/"/>
+    
+      <category term="STN" scheme="http://yoursite.com/tags/STN/"/>
+    
+      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
+    
+      <category term="Localization" scheme="http://yoursite.com/tags/Localization/"/>
     
   </entry>
   
