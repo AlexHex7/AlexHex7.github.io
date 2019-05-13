@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(PAMI 2017) Segnet:A deep convolutional encoder-decoder architecture for image segmentation]]></title>
+    <url>%2F2018%2F02%2F25%2FSegnet%3A%20A%20deep%20convolutional%20encoder-decoder%20architecture%20for%20image%20segmentation%2F</url>
+    <content type="text"><![CDATA[Badrinarayanan V, Kendall A, Cipolla R. Segnet: A deep convolutional encoder-decoder architecture for image segmentation[J]. IEEE transactions on pattern analysis and machine intelligence, 2017, 39(12): 2481-2495. Overview Motivation Due to the lack the good encoding techniques (poor ability to delineate boundaries), existing method use CRF to increase accuracy In this paper. it proposed SegNet In decoder, using upsampling according to the pooling indices of the encoder’s corresponding max-pooling layer. Upsample. get sparse feature map Conv. get dense feature map Eliminate the need for learning to upsample Less memory in the inference time Comparison Traditional method DeepLab-LargeFOV DeconvNet Dataset CamVid road scenes SUN RGB-D indoor scenes Related Work Hand Engineered Feature DNN Random Forest Boosting Smooth classifier by CRF Region Proposal. do not exploit co-occurrence of object or other spatial-context RGBD segmentation CRF-RNN. using RNN mimic the charp boundary delineation capabilities of CRF; can be appended to any deep segmentation architecture Multi-scale. image or feature DeconvNet DecoupledNet SegNet is inspired by the unsupervised feature learning architecture proposed by Ranzato. Experiments Best performance is achieved when encoder feature maps are stored in full When memory during inference is constrained, the compressed form (dimensionality reduction, max-pooling indices) can improve performance Larger decoder increase performance for a given encoder]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>Segmentation</tag>
+        <tag>Pooling Indices</tag>
+        <tag>SegNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Mobilenets:Efficient convolutional neural networks for mobile vision applications]]></title>
+    <url>%2F2018%2F02%2F25%2FMobilenets%3A%20Efficient%20convolutional%20neural%20networks%20for%20mobile%20vision%20applications%2F</url>
+    <content type="text"><![CDATA[Howard A G, Zhu M, Chen B, et al. Mobilenets: Efficient convolutional neural networks for mobile vision applications[J]. arXiv preprint arXiv:1704.04861, 2017. Overview Motivation DNN become deeper and more complicated to achieve higher accuracy computational limited platform in reality In this paper, it proposed an efficient model called MobileNet split standard Conv into depthwise Conv and pointwise Conv introduce two hyperparameter to trade off between latency and accuracy experiment on object detection, finegrain classification, face attributes and large scale geo-localization Dataset Stanford Dogs YFCC100M (Yahoo Flickr Creative Commons 100 Million) Related Workmost work compress pretrained networks train small networks directly depthwise separable Conv Flattened Networks Factorized Network Xception Network SqueezeNet Structured Transform Networks Deep Fried Convnets hasing pruning, vector quantization and Huffman coding distillation. using large model train small model instead of gt low bit networks Convolution operations are Implemented by GEMM (general matrix multiply) which makes the kernel and input feature into two matrix and do matrix multiply. Link PlaNet. divide earth into a grid of geography cells, then do geolocation classification on images Architecture Depthwise Separable ConvStandard Conv There exists the interaction between N and K. K. kernel size F. feature size M. input channel N. output channel Depthwise Separable Depthwise Conv (KxKxM -&gt; FxFxM). one kernel for one feature map. Pointwise Conv (1x1xMxN * FxFxM). the whole pointwise kernel for the whole output feature map of depthwise conv. It breaks the interaction between the number of output channel and the size of the kernel. Comparison for 3x3 kernel, 8~9 time less. Structure Mose computation time are in 1x1 Conv Small model has less trouble with overfitting. It is important to put very little or no weight decay on depthwise filter. Hyperparameter Width Multiplier (α). Thinner Model (channel number) Resolution Multiplier (ρ). Reduced Representation (input size) Experiments Thinner or ShallowThinner is better than Shallow. Comparison Stanford Dogs Geolocalization Face AttributeDetection]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>Mobilenets</tag>
+        <tag>LightWeight</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) MentorNet:Regularizing Very Deep Neural Networks on Corrupted Labels]]></title>
+    <url>%2F2018%2F02%2F25%2FMentorNet%3A%20Regularizing%20Very%20Deep%20Neural%20Networks%20on%20Corrupted%20Labels%2F</url>
+    <content type="text"><![CDATA[Jiang L, Zhou Z, Leung T, et al. MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels[J]. arXiv preprint arXiv:1712.05055, 2017. Overview Motivation DNN can remember entire data which are labeled randomly DNN has more parameters than the number of training example Poor performance when overfit noise Curriculum Learning. gradually learn samples in a meaningful sequence In this paper, it proposed MentorNet and SPADE (SG-partial-D) algorithm first study to learn a curriculum (weighting schema) from data by neural network supervise the training of StudentNet, improve the generalization on corrupted training data learn time-varying weights for each example to train StudentNet, result in a curriculum that decide the timing and attention to learning each example Step pretrain MentorNet to approximate predefined weighting specified in labeled data finetune MentorNet on the third clean label dataset train StudenNet using fixed MentorNet StudenNet make prediction without MentorNet Related WorkModel Regularizer less effective on corrupted label. weight decay data augmentation dropout Data Regularizertackle in the data dimension. MentorNet. foucs on weighting example in corrupted labels. can understand and further analyzed existing weighting schemes (self-paced weighting, hard negative mining, focal loss). Weight Schemes Curriculum Learning Mine hard-negative example Training a network using clean data, coupled with a knowledge graph, to distill soft logits to the noisy data ModelGoal overcome overfitting by introducing a regularizer to weight example alternately minimize w and v (fix one, update another) Weighted Loss (WL) v (n samples x m classes). weight of examples L. loss g_{s}. StudentNet Explicit Data Regularizer (G). which contains two forms, both lead to same solution. explicit. analytic form of G(v) implicit. closed-form solution. v^{*} = argmin_{v} F(w, v) (F can be MentorNet) Weight Decay Algorithm Problems fix v update w. wasteful when v is far away from optimal point fix w update v. matrix v is too large for memory SPADEminimize w and v stochastically overmini-batches. (5) moving average on the p-th percentile (8) weight decay (9) SGD or other optim MentorNet Goal learn optimal Θ to compute the weight of example step. pretrain - finetune - fix and plug in Algorithm Architecture Input z label epoch absolute loss moving average Sampling Layer sample the weights v, without replacement, according to the normalized weight distribution only perform on trained MentorNet sampling rate. hyperparameter PretrainingDataset enumerate the input space of z, and annotate a weight for each data point weight can derived from any weight schemes Objective Function (5). explicit (6). converge fast converge to the same solution FinetuningThe weighting schemes may change along with the learning process of StudenNet. Dataset sample from dataset D binary label for whether learn this example Experiments Other network label weight according to different weighting schemes Other regularizer (b). Weighted loss converge to zero Representation of MentorNet similar images have less distance.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>MentorNet</tag>
+        <tag>StudentNet</tag>
+        <tag>SPADE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Data Distillation:Towards Omni-Supervised Learning]]></title>
+    <url>%2F2018%2F02%2F25%2FData%20Distillation%3A%20Towards%20Omni-Supervised%20Learning%2F</url>
+    <content type="text"><![CDATA[Radosavovic I, Dollár P, Girshick R, et al. Data distillation: Towards omni-supervised learning[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4119-4128. Overview Motivation Semi-supervised simulates labeled/unlabeled data (upper-bounded on full annotated data) Omni-supervised exploits extra unlabeled data (lower-bounded on full annotated data) Model distillation distills knowledge from the prediction of multiple model In this paper it proposed data distillation which ensembles prediction from multiple transformations of unlabeled data, using single model Do experiments on keypoint detection and object detection Knowledge Distillation Train teacher model on large amount of labeled data (A) Generate annotation on unlabeled data (B) based on teacher model Retrain student model on data (A+B) Problem. training model on its own prediction can not provide meaningful information Solution. ensembling the prediction of the different transformation of unlabeled data (flipping, scaling) Related Work Ensemble multiple model, Model Compression FitNet Cross modal distillation Multi-view geometry Auto-encoder (multiple capsule) Self-training can be used for training object detection Multiple views or perturbations of the data can provide useful signal for semi-supervised learningThe method of this paper are also based on multiple geometric ransformations. Data Distillation Step Train teacher model on labeled data (A) Apply teacher model to multiple transformation of unlabeled data (B) Ensemble the multiple prediction to get annotation Retrain student model on data (A+B) Multi-transform multi-crop multi-scaleIn the experiment of this paper, it used multi-scale and flipping. Ensemble Aggregated prediction generate new knowledge Aggregated prediction outperform any single prediction Ensemble way###Soft Label average class probability generate probability vector, not category label not suitablefor structure output space (pose, detection) Hard Label need task specific logic (NMS for merging multiple box) Detail of Pose Estimation Selecting PredictionGenerate annotation only from the prediction that are above a certain score threshold. And found that the average number of annotated instances per unlabeled image equal to labeled image’s (similar distribution) still work robust and well when not equal Retraining retraining is better than fine-tuning (which is in a poor optimum). Experiments Data split co-80. labeled co-35. labeled co-115. co-80 + co-35 un-120. unlabeled s1m-180 (sports-1M static frame). dissimilar distribution Amount of Annotated Data 1:ρ in minibach. Accuracy of Teacher Model Result]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Data Distillation</category>
+      </categories>
+      <tags>
+        <tag>Pose</tag>
+        <tag>Detection</tag>
+        <tag>Data Distillation</tag>
+        <tag>Omni-supervised Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Feature pyramid networks for object detection]]></title>
+    <url>%2F2018%2F02%2F25%2FFeature%20pyramid%20networks%20for%20object%20detection%2F</url>
+    <content type="text"><![CDATA[Lin T Y, Dollár P, Girshick R, et al. Feature pyramid networks for object detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2117-2125. Overview MotivationFeature pyramid are basic in detection, but expensive. In this paper, it proposed Feature Pyramid Network (FPN). fater-rcnn based on FPN run at 6 fps on GPU Forms Pyramidal Feature Hierarchy High-resolution maps have low-level feature. And it will harm representational capacity for detection. SDD build pyramid from high up in the network Feature Pyramid Network combine low-resolution (strong semantic) high-resolution (weak semantic) Related WorkHand-Engineered SIFT HOG Deep ConvNet OverFeat R-CNN SPPnet Using Multiple Layers FCN. sum partial scores over multi-scale Hypercolumns, HyperNet, ParseNet, ION. concat feature of multi-layers SSD, MS-CNN. predict at multi-layers without combining U-Net, Sharp-Mask. Recombinator, Hourglass, Laplacian pyramid. lateral/skip connection FPN Two Pathway bottom-up pathway top-down pathway and lateral connectionThe bottom-up map is lower-level semantics, more accuracy for localizing. Application RPN Head binary classification bounding box regression Attach head (shared) to each (P2, P3, P4, P5, P6) level of FPN. Each level single scale anchor 3 aspect ratios {1:2, 1:1, 2:1}Head shared mechanism is analogous to image pyramid mechanism with common head classifier. Fast R-CNNNo RPN, only RoI pooling. view feature pyramid as produced from image pyramid assign RoI (w,h) to level Pk of FPN 224 is the canonical ImageNet pre-training size k0 is the level of 224x224 RoI Shared headAnalogous to ResNet-based Faster R-CNN, set k0 = 4. The k of 112x112 RoI is 3 (k0 - log[112/224]). Experiments Ablation StudyUsing P2 have more proposal. Comparison Extension]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>Detection</tag>
+        <tag>FPN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Focal Loss for Dense Object Detection]]></title>
+    <url>%2F2018%2F02%2F25%2FFocal%20Loss%20for%20Dense%20Object%20Detection%2F</url>
+    <content type="text"><![CDATA[Lin T Y, Goyal P, Girshick R, et al. Focal loss for dense object detection[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2980-2988. Overview Motivation two-stage approach contains sparse set of candidate object location one-stage approach suffered from foreground-background class imbalance In this paper, it proposed focal loss function to deal with class imbalance of one-stage approach (foucs on hard example [large error]). Comparison Two-stage Proposal mechanism (1-2k proposals) Biased minibatchsampling (foreground:background=1:3) One-stage 100k proposals (densely) Most are easy negative which contribute no useful learning signal Easy negative overwhelm Related Work Two-Stage R-CNN series One-Stage OverFeat SSD YOLO Class Imbalance Hard Negative Mining. completely discard easy example Sampling Schemes Robust Estimation Huber Loss. reduce the contribution of outliers by down-weighting Focal Loss. Down-weighting inliers Focal Loss α. balance factor (inverse class frequency or hyperparameter setted by cross validation) improved accuracy over non-α form γ. focusing parameter, equal to 2 better for experiments When summed over a large number of easy examples, small loss values can overwhelm the rare class. InitializationIntroduce prior concept for the model estimation probability in the beginning. set final layer’s means that p = π when get through sigmoid function. (π = 0.01 in experiments) RainNet Detector Experiments Effect Ablation Study Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Loss Function</category>
+      </categories>
+      <tags>
+        <tag>Detection</tag>
+        <tag>Focal Loss</tag>
+        <tag>Loss Function</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2016) Coupled generative adversarial networks]]></title>
+    <url>%2F2018%2F02%2F25%2FCoupled%20generative%20adversarial%20networks%2F</url>
+    <content type="text"><![CDATA[Liu M Y, Tuzel O. Coupled generative adversarial networks[C]//Advances in neural information processing systems. 2016: 469-477. Overview In this paper, it proposed coupled GAN based on existence of shared high-level representation in the domains learn a joint distribution of multi-domain images unsupervised used in image transformation, domain adaption… Model Generator share the same high-level conceptDiscriminator sharing constraint can reduce parameters Loss Function Related Work VAE Attention Model Moment Matching Diffusion Process Cross-domian Image Generation GAN Laplacian Pyramid Conditional GAN Experiments Metric ratios of agreed pixels Digit [digit-edge], [digit-negative] without weight-sharing constraint, GAN generate unrelated image correlated to the weight sharing of G uncorrelated to D FaceColor and Depth Image Application Unsupervised Domain Adaption (UDA) [MNIST(labeled)-UDA(unlabeled)] attached a softmax layer c to last hidden layer of D, train on MNIST, predict on UDA Cross-Domain Image TransformationGiven x1 in domain 1, find corresponding image x2 in domain 2. As for CoGAN get the most suitable z* for x1 use z_* generate x2]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>coupleGAN</tag>
+        <tag>GAN</tag>
+        <tag>Image Enhancement</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(2017) Multi-scale dense convolutional networks for efficient prediction]]></title>
     <url>%2F2018%2F02%2F25%2FMulti-scale%20dense%20convolutional%20networks%20for%20efficient%20prediction%2F</url>
     <content type="text"><![CDATA[Huang G, Chen D, Li T, et al. Multi-scale dense convolutional networks for efficient prediction[J]. arXiv preprint arXiv:1703.09844, 2017, 2. Overview Motivation Small model can deal with easy example, but make mistake for hard Hard example need to be deal with by large model, but waste for easy last layer’s features for classification, early layer’s are not first layer for fine-scale, later layer for coarse-scale In this paper, Multi-Scale DenseNet (MSDNet) is proposed which automatically small for easy large for hardcontains two setting anytime classification budgeted batch classification (probability threshhold) has two feature multi-scale feature map + multi-classifier dense connectivity Contribution First deep learning architecture of its kind that allows dynamic resource adaptation with a single model First discover that dense connectivity is crucial to early-exit classifier SettingAnytime prediction stop at any time point (budget exhausted) return most recent predication nondeterministic budget, varies per test instance L. suitable loss function B. budget f. model x. input image Budget batch classification stop when sufficient confidence Less than B/M computation for easy example More than B/M computation for hard example Related Work Computation-efficient prune weights quantize weights compact model knowledge-distillation Resource-efficient FractalNet Adaptive computation time approach Visualization Future Work Extend to other task. segmentation Combine MSDNet with model compression, spatially adaptive computation, more efficient convolution operation Multi-Scale DenseNet Problem Lack of coarse-level feature Accuracy of the classifier is correlated with its position within the network Solution. multi-scale feature map Early classifier interfere with later classifier Solution. Dense connectivity Model Lazy EvaluationFiner feature map do not influence the prediction of classifier. Loss Function Empirically, $w_k$ = 1.]]></content>
@@ -96,8 +198,8 @@
         <category>Face</category>
       </categories>
       <tags>
-        <tag>Face</tag>
         <tag>VAE</tag>
+        <tag>Face</tag>
         <tag>Facial Action Units</tag>
         <tag>Multi-label Classification</tag>
       </tags>
@@ -223,8 +325,8 @@
         <category>Object Detection</category>
       </categories>
       <tags>
-        <tag>Fast R-CNN</tag>
         <tag>Detection</tag>
+        <tag>Fast R-CNN</tag>
         <tag>Segmentation</tag>
       </tags>
   </entry>
@@ -364,8 +466,8 @@
       <tags>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Conditional GAN</tag>
         <tag>Image Enhancement</tag>
+        <tag>Conditional GAN</tag>
         <tag>Map to Aerial</tag>
         <tag>Reality Enhancement</tag>
         <tag>Style Transfer</tag>
@@ -457,8 +559,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Classification</tag>
         <tag>Network</tag>
+        <tag>Classification</tag>
         <tag>AlexNet</tag>
       </tags>
   </entry>
@@ -487,8 +589,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Classification</tag>
         <tag>Network</tag>
+        <tag>Classification</tag>
         <tag>DenseNet</tag>
       </tags>
   </entry>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-12T12:52:34.768Z</updated>
+  <updated>2019-05-13T02:32:21.501Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,210 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(PAMI 2017) Segnet:A deep convolutional encoder-decoder architecture for image segmentation</title>
+    <link href="http://yoursite.com/2018/02/25/Segnet:%20A%20deep%20convolutional%20encoder-decoder%20architecture%20for%20image%20segmentation/"/>
+    <id>http://yoursite.com/2018/02/25/Segnet: A deep convolutional encoder-decoder architecture for image segmentation/</id>
+    <published>2018-02-24T22:25:08.000Z</published>
+    <updated>2019-05-13T02:32:21.501Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Badrinarayanan V, Kendall A, Cipolla R. Segnet: A deep convolutional encoder-decoder architecture for image segmentation[J]. IEEE transactions on pattern analysis and machine intelligence, 2017, 39(12): 2481-2495.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Pooling Indices" scheme="http://yoursite.com/tags/Pooling-Indices/"/>
+    
+      <category term="SegNet" scheme="http://yoursite.com/tags/SegNet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) Mobilenets:Efficient convolutional neural networks for mobile vision applications</title>
+    <link href="http://yoursite.com/2018/02/25/Mobilenets:%20Efficient%20convolutional%20neural%20networks%20for%20mobile%20vision%20applications/"/>
+    <id>http://yoursite.com/2018/02/25/Mobilenets: Efficient convolutional neural networks for mobile vision applications/</id>
+    <published>2018-02-24T22:25:07.000Z</published>
+    <updated>2019-05-13T02:24:21.746Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Howard A G, Zhu M, Chen B, et al. Mobilenets: Efficient convolutional neural networks for mobile vision applications[J]. arXiv preprint arXiv:1704.04861, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="Mobilenets" scheme="http://yoursite.com/tags/Mobilenets/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) MentorNet:Regularizing Very Deep Neural Networks on Corrupted Labels</title>
+    <link href="http://yoursite.com/2018/02/25/MentorNet:%20Regularizing%20Very%20Deep%20Neural%20Networks%20on%20Corrupted%20Labels/"/>
+    <id>http://yoursite.com/2018/02/25/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/</id>
+    <published>2018-02-24T22:25:06.000Z</published>
+    <updated>2019-05-13T02:08:35.921Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Jiang L, Zhou Z, Leung T, et al. MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels[J]. arXiv preprint arXiv:1712.05055, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="MentorNet" scheme="http://yoursite.com/tags/MentorNet/"/>
+    
+      <category term="StudentNet" scheme="http://yoursite.com/tags/StudentNet/"/>
+    
+      <category term="SPADE" scheme="http://yoursite.com/tags/SPADE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Data Distillation:Towards Omni-Supervised Learning</title>
+    <link href="http://yoursite.com/2018/02/25/Data%20Distillation:%20Towards%20Omni-Supervised%20Learning/"/>
+    <id>http://yoursite.com/2018/02/25/Data Distillation: Towards Omni-Supervised Learning/</id>
+    <published>2018-02-24T22:25:05.000Z</published>
+    <updated>2019-05-13T01:45:32.239Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Radosavovic I, Dollár P, Girshick R, et al. Data distillation: Towards omni-supervised learning[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4119-4128.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Data Distillation" scheme="http://yoursite.com/categories/Paper-Note/Data-Distillation/"/>
+    
+    
+      <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Data Distillation" scheme="http://yoursite.com/tags/Data-Distillation/"/>
+    
+      <category term="Omni-supervised Learning" scheme="http://yoursite.com/tags/Omni-supervised-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) Feature pyramid networks for object detection</title>
+    <link href="http://yoursite.com/2018/02/25/Feature%20pyramid%20networks%20for%20object%20detection/"/>
+    <id>http://yoursite.com/2018/02/25/Feature pyramid networks for object detection/</id>
+    <published>2018-02-24T22:25:04.000Z</published>
+    <updated>2019-05-13T01:25:52.228Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Lin T Y, Dollár P, Girshick R, et al. Feature pyramid networks for object detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2117-2125.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="FPN" scheme="http://yoursite.com/tags/FPN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2017) Focal Loss for Dense Object Detection</title>
+    <link href="http://yoursite.com/2018/02/25/Focal%20Loss%20for%20Dense%20Object%20Detection/"/>
+    <id>http://yoursite.com/2018/02/25/Focal Loss for Dense Object Detection/</id>
+    <published>2018-02-24T22:25:03.000Z</published>
+    <updated>2019-05-13T01:14:51.482Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Lin T Y, Goyal P, Girshick R, et al. Focal loss for dense object detection[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2980-2988.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Loss Function" scheme="http://yoursite.com/categories/Paper-Note/Loss-Function/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Focal Loss" scheme="http://yoursite.com/tags/Focal-Loss/"/>
+    
+      <category term="Loss Function" scheme="http://yoursite.com/tags/Loss-Function/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2016) Coupled generative adversarial networks</title>
+    <link href="http://yoursite.com/2018/02/25/Coupled%20generative%20adversarial%20networks/"/>
+    <id>http://yoursite.com/2018/02/25/Coupled generative adversarial networks/</id>
+    <published>2018-02-24T22:25:02.000Z</published>
+    <updated>2019-05-13T01:02:03.933Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Liu M Y, Tuzel O. Coupled generative adversarial networks[C]//Advances in neural information processing systems. 2016: 469-477.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+    
+      <category term="coupleGAN" scheme="http://yoursite.com/tags/coupleGAN/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+  </entry>
   
   <entry>
     <title>(2017) Multi-scale dense convolutional networks for efficient prediction</title>
@@ -210,9 +414,9 @@
       <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
     
     
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
       <category term="VAE" scheme="http://yoursite.com/tags/VAE/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
     
       <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
     
@@ -383,208 +587,6 @@
       <category term="Weight Transfer" scheme="http://yoursite.com/tags/Weight-Transfer/"/>
     
       <category term="Transfer Learning" scheme="http://yoursite.com/tags/Transfer-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017 Best Paper) Mask r-cnn</title>
-    <link href="http://yoursite.com/2017/12/22/Mask%20r-cnn/"/>
-    <id>http://yoursite.com/2017/12/22/Mask r-cnn/</id>
-    <published>2017-12-21T22:25:05.000Z</published>
-    <updated>2017-12-21T22:25:05.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;He K, Gkioxari G, Dollár P, et al. Mask r-cnn[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2961-2969.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
-    
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-      <category term="Mask R-CNN" scheme="http://yoursite.com/tags/Mask-R-CNN/"/>
-    
-      <category term="RoI Align" scheme="http://yoursite.com/tags/RoI-Align/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2015) Faster R-CNN:Towards real-time object detection with region proposal networks</title>
-    <link href="http://yoursite.com/2017/12/22/Faster%20R-CNN:%20Towards%20real-time%20object%20detection%20with%20region%20proposal%20networks/"/>
-    <id>http://yoursite.com/2017/12/22/Faster R-CNN: Towards real-time object detection with region proposal networks/</id>
-    <published>2017-12-21T22:25:03.000Z</published>
-    <updated>2017-12-21T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Ren S, He K, Girshick R, et al. Faster R-CNN: Towards real-time object detection with region proposal networks[C]//Advances in neural information processing systems. 2015: 91-99.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
-    
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-      <category term="Faster R-CNN" scheme="http://yoursite.com/tags/Faster-R-CNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2015) Fast r-cnn Segmentation</title>
-    <link href="http://yoursite.com/2017/12/22/Fast%20r-cnn/"/>
-    <id>http://yoursite.com/2017/12/22/Fast r-cnn/</id>
-    <published>2017-12-21T22:25:02.000Z</published>
-    <updated>2017-12-21T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Girshick R. Fast r-cnn[C]//Proceedings of the IEEE international conference on computer vision. 2015: 1440-1448.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
-    
-    
-      <category term="Fast R-CNN" scheme="http://yoursite.com/tags/Fast-R-CNN/"/>
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2014) Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation</title>
-    <link href="http://yoursite.com/2017/12/22/Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation/"/>
-    <id>http://yoursite.com/2017/12/22/Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation/</id>
-    <published>2017-12-21T22:25:01.000Z</published>
-    <updated>2017-12-21T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Girshick R, Donahue J, Darrell T, et al. Rich feature hierarchies for accurate object detection and semantic segmentation[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2014: 580-587.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
-    
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-      <category term="R-CNN" scheme="http://yoursite.com/tags/R-CNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>条件随机场&amp;非局部均值去噪&amp;双边滤波</title>
-    <link href="http://yoursite.com/2017/12/19/%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BA&amp;%E9%9D%9E%E5%B1%80%E9%83%A8%E5%9D%87%E5%80%BC%E5%8E%BB%E5%99%AA&amp;%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2/"/>
-    <id>http://yoursite.com/2017/12/19/条件随机场&amp;非局部均值去噪&amp;双边滤波/</id>
-    <published>2017-12-18T22:25:06.000Z</published>
-    <updated>2019-05-07T08:51:12.372Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.jianshu.com/p/55755fc649b1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何轻松愉快地理解条件随机场（CRF）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/u010839382/article/details/48229579&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;非局部均值去噪（NL-means）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://www.cnblogs.com/helloforworld/p/5303422.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;图像非局部均值滤波的原理&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/bugrunner/article/details/7170471&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Bilateral Filtering(双边滤波) for SSAO&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Knowledge Note" scheme="http://yoursite.com/categories/Knowledge-Note/"/>
-    
-    
-      <category term="Non-local Means" scheme="http://yoursite.com/tags/Non-local-Means/"/>
-    
-      <category term="CRF" scheme="http://yoursite.com/tags/CRF/"/>
-    
-      <category term="Bilateral Filtering" scheme="http://yoursite.com/tags/Bilateral-Filtering/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Non-local Neural Networks</title>
-    <link href="http://yoursite.com/2017/12/19/Non-local%20Neural%20Networks/"/>
-    <id>http://yoursite.com/2017/12/19/Non-local Neural Networks/</id>
-    <published>2017-12-18T22:25:04.000Z</published>
-    <updated>2017-12-18T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Wang X, Girshick R, Gupta A, et al. Non-local neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7794-7803.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
-    
-      <category term="Non-local" scheme="http://yoursite.com/tags/Non-local/"/>
-    
-      <category term="Video Classification" scheme="http://yoursite.com/tags/Video-Classification/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2015) Spatial transformer networks</title>
-    <link href="http://yoursite.com/2017/12/19/Spatial%20transformer%20networks/"/>
-    <id>http://yoursite.com/2017/12/19/Spatial transformer networks/</id>
-    <published>2017-12-18T22:25:03.000Z</published>
-    <updated>2017-12-18T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Jaderberg M, Simonyan K, Zisserman A. Spatial transformer networks[C]//Advances in neural information processing systems. 2015: 2017-2025.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="Fine-Grained Classification" scheme="http://yoursite.com/tags/Fine-Grained-Classification/"/>
-    
-      <category term="STN" scheme="http://yoursite.com/tags/STN/"/>
-    
-      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
-    
-      <category term="Localization" scheme="http://yoursite.com/tags/Localization/"/>
     
   </entry>
   
