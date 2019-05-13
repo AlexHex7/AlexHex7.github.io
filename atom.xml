@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-18T22:25:11.000Z</updated>
+  <updated>2019-05-12T12:52:34.768Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,16 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>(CVPR 2018 Best Paper) Non-local Neural Networks</title>
-    <link href="http://yoursite.com/2017/12/19/Non-local%20Neural%20Networks/"/>
-    <id>http://yoursite.com/2017/12/19/Non-local Neural Networks/</id>
-    <published>2017-12-18T22:25:11.000Z</published>
-    <updated>2017-12-18T22:25:11.000Z</updated>
+    <title>(2017) Multi-scale dense convolutional networks for efficient prediction</title>
+    <link href="http://yoursite.com/2018/02/25/Multi-scale%20dense%20convolutional%20networks%20for%20efficient%20prediction/"/>
+    <id>http://yoursite.com/2018/02/25/Multi-scale dense convolutional networks for efficient prediction/</id>
+    <published>2018-02-24T22:25:01.000Z</published>
+    <updated>2019-05-12T12:52:34.768Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;Wang X, Girshick R, Gupta A, et al. Non-local neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7794-7803.&lt;/p&gt;
+&lt;p&gt;Huang G, Chen D, Li T, et al. Multi-scale dense convolutional networks for efficient prediction[J]. arXiv preprint arXiv:1703.09844, 2017, 2.&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -36,13 +36,497 @@
       <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
     
     
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
     
-      <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
+      <category term="Multi-Scale DenseNet" scheme="http://yoursite.com/tags/Multi-Scale-DenseNet/"/>
     
-      <category term="Non-local" scheme="http://yoursite.com/tags/Non-local/"/>
+  </entry>
+  
+  <entry>
+    <title>(AAAI 2017) Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images</title>
+    <link href="http://yoursite.com/2018/02/02/Volumetric%20ConvNets%20with%20Mixed%20Residual%20Connections%20for%20Automated%20Prostate%20Segmentation%20from%203D%20MR%20Images/"/>
+    <id>http://yoursite.com/2018/02/02/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/</id>
+    <published>2018-02-01T22:25:03.000Z</published>
+    <updated>2018-02-01T22:25:03.000Z</updated>
     
-      <category term="Video Classification" scheme="http://yoursite.com/tags/Video-Classification/"/>
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Yu L, Yang X, Chen H, et al. Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images[C]//AAAI. 2017: 66-72&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
+    
+      <category term="Prostate" scheme="http://yoursite.com/categories/Paper-Note/Medical/Prostate/"/>
+    
+    
+      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Prostate" scheme="http://yoursite.com/tags/Prostate/"/>
+    
+      <category term="3D" scheme="http://yoursite.com/tags/3D/"/>
+    
+      <category term="MRI" scheme="http://yoursite.com/tags/MRI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) A survey on deep learning in medical image analysis</title>
+    <link href="http://yoursite.com/2018/02/02/A%20Survey%20On%20Deep%20Learning%20in%20Medical%20Image%20Analysis/"/>
+    <id>http://yoursite.com/2018/02/02/A Survey On Deep Learning in Medical Image Analysis/</id>
+    <published>2018-02-01T22:25:02.000Z</published>
+    <updated>2018-02-01T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Litjens G, Kooi T, Bejnordi B E, et al. A survey on deep learning in medical image analysis[J]. arXiv preprint arXiv:1702.05747, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
+    
+      <category term="Overview" scheme="http://yoursite.com/categories/Paper-Note/Medical/Overview/"/>
+    
+    
+      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2018/02/02/test/"/>
+    <id>http://yoursite.com/2018/02/02/test/</id>
+    <published>2018-02-01T22:25:02.000Z</published>
+    <updated>2018-02-01T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h1 id=&quot;一级标题&quot;&gt;&lt;a href=&quot;#一级标题&quot; class=&quot;headerlink&quot; title=&quot;一级标题&quot;&gt;&lt;/a&gt;一级标题&lt;/h1&gt;&lt;h2 id=&quot;二级标题&quot;&gt;&lt;a href=&quot;#二级标题&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
+    
+      <category term="Overview" scheme="http://yoursite.com/categories/Paper-Note/Medical/Overview/"/>
+    
+    
+      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) Deep Learning in Medical Imaging:General Overview</title>
+    <link href="http://yoursite.com/2018/02/02/Deep%20Learning%20in%20Medical%20Imaging:%20General%20Overview/"/>
+    <id>http://yoursite.com/2018/02/02/Deep Learning in Medical Imaging: General Overview/</id>
+    <published>2018-02-01T22:25:01.000Z</published>
+    <updated>2018-02-01T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Lee J G, Jun S, Cho Y W, et al. Deep Learning in Medical Imaging: General Overview[J]. Korean Journal of Radiology, 2017, 18(4): 570-584.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
+    
+      <category term="Overview" scheme="http://yoursite.com/categories/Paper-Note/Medical/Overview/"/>
+    
+    
+      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2016) Deep region and multi-label learning for facial action unit detection</title>
+    <link href="http://yoursite.com/2018/01/17/Deep%20region%20and%20multi-label%20learning%20for%20facial%20action%20unit%20detection/"/>
+    <id>http://yoursite.com/2018/01/17/Deep region and multi-label learning for facial action unit detection/</id>
+    <published>2018-01-16T22:25:03.000Z</published>
+    <updated>2018-01-16T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhao K, Chu W S, Zhang H. Deep region and multi-label learning for facial action unit detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 3391-3399.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
+    
+    
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
+      <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
+    
+      <category term="Multi-label Classification" scheme="http://yoursite.com/tags/Multi-label-Classification/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) Fatauva-net:An integrated deep learning framework for facial attribute recognition, action unit (au) detection, and valence-arousal estimation</title>
+    <link href="http://yoursite.com/2018/01/17/Fatauva-net:%20An%20integrated%20deep%20learning%20framework%20for%20facial%20attribute%20recognition,%20action%20unit%20(au)%20detection,%20and%20valence-arousal%20estimation/"/>
+    <id>http://yoursite.com/2018/01/17/Fatauva-net: An integrated deep learning framework for facial attribute recognition, action unit (au) detection, and valence-arousal estimation/</id>
+    <published>2018-01-16T22:25:02.000Z</published>
+    <updated>2018-01-16T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Chang W Y, Hsu S H, Chien J H. Fatauva-net: An integrated deep learning framework for facial attribute recognition, action unit (au) detection, and valence-arousal estimation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop. 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
+    
+    
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
+      <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
+    
+      <category term="Multi-label Classification" scheme="http://yoursite.com/tags/Multi-label-Classification/"/>
+    
+      <category term="Valence-Arousal space" scheme="http://yoursite.com/tags/Valence-Arousal-space/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2017) DeepCoder:Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding</title>
+    <link href="http://yoursite.com/2018/01/17/DeepCoder:%20Semi-Parametric%20Variational%20Autoencoders%20for%20Automatic%20Facial%20Action%20Coding/"/>
+    <id>http://yoursite.com/2018/01/17/DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding/</id>
+    <published>2018-01-16T22:25:01.000Z</published>
+    <updated>2018-01-16T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Linh Tran D, Walecki R, Eleftheriadis S, et al. DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 3190-3199.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
+    
+    
+      <category term="VAE" scheme="http://yoursite.com/tags/VAE/"/>
+    
+      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
+    
+      <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
+    
+      <category term="Multi-label Classification" scheme="http://yoursite.com/tags/Multi-label-Classification/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ECCV 2016) Stacked hourglass networks for human pose estimation</title>
+    <link href="http://yoursite.com/2018/01/03/Stacked%20hourglass%20networks%20for%20human%20pose%20estimation/"/>
+    <id>http://yoursite.com/2018/01/03/Stacked hourglass networks for human pose estimation/</id>
+    <published>2018-01-02T22:25:03.000Z</published>
+    <updated>2018-01-02T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Newell A, Yang K, Deng J. Stacked hourglass networks for human pose estimation[C]//European Conference on Computer Vision. Springer International Publishing, 2016: 483-499.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Pose" scheme="http://yoursite.com/categories/Paper-Note/Pose/"/>
+    
+    
+      <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
+    
+      <category term="Human Body" scheme="http://yoursite.com/tags/Human-Body/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2016) Convolutional pose machines</title>
+    <link href="http://yoursite.com/2018/01/03/Convolutional%20pose%20machines/"/>
+    <id>http://yoursite.com/2018/01/03/Convolutional pose machines/</id>
+    <published>2018-01-02T22:25:02.000Z</published>
+    <updated>2018-01-02T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Wei S E, Ramakrishna V, Kanade T, et al. Convolutional pose machines[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 4724-4732.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Pose" scheme="http://yoursite.com/categories/Paper-Note/Pose/"/>
+    
+    
+      <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
+    
+      <category term="Human Body" scheme="http://yoursite.com/tags/Human-Body/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) Going deeper into action recognition:A survey</title>
+    <link href="http://yoursite.com/2018/01/03/Going%20deeper%20into%20action%20recognition:%20A%20survey/"/>
+    <id>http://yoursite.com/2018/01/03/Going deeper into action recognition: A survey/</id>
+    <published>2018-01-02T22:25:01.000Z</published>
+    <updated>2018-01-02T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Herath S, Harandi M, Porikli F. Going deeper into action recognition: A survey[J]. Image and Vision Computing, 2017, 60: 4-21.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Action Recognition" scheme="http://yoursite.com/categories/Paper-Note/Action-Recognition/"/>
+    
+    
+      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
+    
+      <category term="Action Recognition" scheme="http://yoursite.com/tags/Action-Recognition/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2016) Compact Bilinear Pooling</title>
+    <link href="http://yoursite.com/2017/12/30/Compact%20Bilinear%20Pooling/"/>
+    <id>http://yoursite.com/2017/12/30/Compact Bilinear Pooling/</id>
+    <published>2017-12-29T22:25:02.000Z</published>
+    <updated>2017-12-29T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Gao Y, Beijbom O, Zhang N, et al. Compact bilinear pooling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 317-326.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Fine-Grained Classification" scheme="http://yoursite.com/tags/Fine-Grained-Classification/"/>
+    
+      <category term="Compact Bilinear Pooling" scheme="http://yoursite.com/tags/Compact-Bilinear-Pooling/"/>
+    
+      <category term="Few Shot Learning" scheme="http://yoursite.com/tags/Few-Shot-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2015) Bilinear CNN Models for Fine-grained</title>
+    <link href="http://yoursite.com/2017/12/30/Bilinear%20CNN%20Models%20for%20Fine-grained/"/>
+    <id>http://yoursite.com/2017/12/30/Bilinear CNN Models for Fine-grained/</id>
+    <published>2017-12-29T22:25:01.000Z</published>
+    <updated>2017-12-29T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Lin T Y, RoyChowdhury A, Maji S. Bilinear cnn models for fine-grained visual recognition[C]//Proceedings of the IEEE International Conference on Computer Vision. 2015: 1449-1457.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+    
+    
+      <category term="Fine-Grained Classification" scheme="http://yoursite.com/tags/Fine-Grained-Classification/"/>
+    
+      <category term="Bilinear CNN" scheme="http://yoursite.com/tags/Bilinear-CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Learning to segment every thing</title>
+    <link href="http://yoursite.com/2017/12/22/Learning%20to%20Segment%20Every%20Thing/"/>
+    <id>http://yoursite.com/2017/12/22/Learning to Segment Every Thing/</id>
+    <published>2017-12-21T22:25:06.000Z</published>
+    <updated>2017-12-21T22:25:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Hu R, Dollár P, He K, et al. Learning to segment every thing[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4233-4241.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Transfer Learning" scheme="http://yoursite.com/categories/Paper-Note/Transfer-Learning/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Mask R-CNN" scheme="http://yoursite.com/tags/Mask-R-CNN/"/>
+    
+      <category term="Maskx R-CNN" scheme="http://yoursite.com/tags/Maskx-R-CNN/"/>
+    
+      <category term="Weight Transfer" scheme="http://yoursite.com/tags/Weight-Transfer/"/>
+    
+      <category term="Transfer Learning" scheme="http://yoursite.com/tags/Transfer-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2017 Best Paper) Mask r-cnn</title>
+    <link href="http://yoursite.com/2017/12/22/Mask%20r-cnn/"/>
+    <id>http://yoursite.com/2017/12/22/Mask r-cnn/</id>
+    <published>2017-12-21T22:25:05.000Z</published>
+    <updated>2017-12-21T22:25:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;He K, Gkioxari G, Dollár P, et al. Mask r-cnn[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2961-2969.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Mask R-CNN" scheme="http://yoursite.com/tags/Mask-R-CNN/"/>
+    
+      <category term="RoI Align" scheme="http://yoursite.com/tags/RoI-Align/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2015) Faster R-CNN:Towards real-time object detection with region proposal networks</title>
+    <link href="http://yoursite.com/2017/12/22/Faster%20R-CNN:%20Towards%20real-time%20object%20detection%20with%20region%20proposal%20networks/"/>
+    <id>http://yoursite.com/2017/12/22/Faster R-CNN: Towards real-time object detection with region proposal networks/</id>
+    <published>2017-12-21T22:25:03.000Z</published>
+    <updated>2017-12-21T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Ren S, He K, Girshick R, et al. Faster R-CNN: Towards real-time object detection with region proposal networks[C]//Advances in neural information processing systems. 2015: 91-99.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Faster R-CNN" scheme="http://yoursite.com/tags/Faster-R-CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2015) Fast r-cnn Segmentation</title>
+    <link href="http://yoursite.com/2017/12/22/Fast%20r-cnn/"/>
+    <id>http://yoursite.com/2017/12/22/Fast r-cnn/</id>
+    <published>2017-12-21T22:25:02.000Z</published>
+    <updated>2017-12-21T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Girshick R. Fast r-cnn[C]//Proceedings of the IEEE international conference on computer vision. 2015: 1440-1448.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
+    
+    
+      <category term="Fast R-CNN" scheme="http://yoursite.com/tags/Fast-R-CNN/"/>
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2014) Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation</title>
+    <link href="http://yoursite.com/2017/12/22/Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation/"/>
+    <id>http://yoursite.com/2017/12/22/Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation/</id>
+    <published>2017-12-21T22:25:01.000Z</published>
+    <updated>2017-12-21T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Girshick R, Donahue J, Darrell T, et al. Rich feature hierarchies for accurate object detection and semantic segmentation[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2014: 580-587.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="R-CNN" scheme="http://yoursite.com/tags/R-CNN/"/>
     
   </entry>
   
@@ -73,16 +557,16 @@
   </entry>
   
   <entry>
-    <title>(NIPS 2015) Spatial transformer networks</title>
-    <link href="http://yoursite.com/2017/12/19/Spatial%20transformer%20networks/"/>
-    <id>http://yoursite.com/2017/12/19/Spatial transformer networks/</id>
-    <published>2017-12-18T22:25:03.000Z</published>
-    <updated>2017-12-18T22:25:03.000Z</updated>
+    <title>(CVPR 2018) Non-local Neural Networks</title>
+    <link href="http://yoursite.com/2017/12/19/Non-local%20Neural%20Networks/"/>
+    <id>http://yoursite.com/2017/12/19/Non-local Neural Networks/</id>
+    <published>2017-12-18T22:25:04.000Z</published>
+    <updated>2017-12-18T22:25:04.000Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;Jaderberg M, Simonyan K, Zisserman A. Spatial transformer networks[C]//Advances in neural information processing systems. 2015: 2017-2025.&lt;/p&gt;
+&lt;p&gt;Wang X, Girshick R, Gupta A, et al. Non-local neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7794-7803.&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -93,520 +577,12 @@
     
     
       <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="STN" scheme="http://yoursite.com/tags/STN/"/>
-    
-      <category term="Fine-Grained Classification" scheme="http://yoursite.com/tags/Fine-Grained-Classification/"/>
     
       <category term="Attention" scheme="http://yoursite.com/tags/Attention/"/>
     
-      <category term="Localization" scheme="http://yoursite.com/tags/Localization/"/>
+      <category term="Non-local" scheme="http://yoursite.com/tags/Non-local/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Transformation</title>
-    <link href="http://yoursite.com/2017/12/19/Transformation/"/>
-    <id>http://yoursite.com/2017/12/19/Transformation/</id>
-    <published>2017-12-18T22:25:01.000Z</published>
-    <updated>2019-05-07T07:50:34.262Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/houkai/p/6660272.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;仿射变换与投影变换&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/VictoriaW/article/details/70161180&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;数值方法——薄板样条插值（Thin-Plate Spline）&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/iverson_49/article/details/38160081&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;薄板样条函数(Thin plate splines)的讨论与分析&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.csdn.net/swimmingfish2004/article/details/7666087&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;关于Thin Plate Spline （薄板样条函数）&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Knowledge Note" scheme="http://yoursite.com/categories/Knowledge-Note/"/>
-    
-    
-      <category term="Transformation" scheme="http://yoursite.com/tags/Transformation/"/>
-    
-      <category term="Thin-Plate Spline (TPS)" scheme="http://yoursite.com/tags/Thin-Plate-Spline-TPS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2017) Understanding Matrix capsules with EM Routing</title>
-    <link href="http://yoursite.com/2017/12/18/Understanding%20Matrix%20capsules%20with%20EM%20Routing/"/>
-    <id>http://yoursite.com/2017/12/18/Understanding Matrix capsules with EM Routing/</id>
-    <published>2017-12-17T22:25:08.000Z</published>
-    <updated>2017-12-17T22:25:08.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Hui J. Understanding Matrix capsules with EM Routing[J]. Blog.​ Nov, 2017.&lt;br&gt;&lt;a href=&quot;https://jhui.github.io/2017/11/14/Matrix-Capsules-with-EM-routing-Capsule-Network/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;“Understanding Matrix capsules with EM Routing (Based on Hinton’s Capsule Networks)”&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Capsules" scheme="http://yoursite.com/categories/Paper-Note/Capsules/"/>
-    
-    
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="Cognitive Neuroscience" scheme="http://yoursite.com/tags/Cognitive-Neuroscience/"/>
-    
-      <category term="EM Algorithm" scheme="http://yoursite.com/tags/EM-Algorithm/"/>
-    
-      <category term="CapsulesNet" scheme="http://yoursite.com/tags/CapsulesNet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>EM Algorithm</title>
-    <link href="http://yoursite.com/2017/12/18/EM%20Algorithm/"/>
-    <id>http://yoursite.com/2017/12/18/EM Algorithm/</id>
-    <published>2017-12-17T22:25:04.000Z</published>
-    <updated>2017-12-17T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/hechenghai/article/details/41896213&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;EM算法学习(Expectation Maximization Algorithm)&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Knowledge Note" scheme="http://yoursite.com/categories/Knowledge-Note/"/>
-    
-    
-      <category term="EM Algorithm" scheme="http://yoursite.com/tags/EM-Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2017) Dynamic Routing Between Capsules</title>
-    <link href="http://yoursite.com/2017/12/18/Dynamic%20Routing%20Between%20Capsules/"/>
-    <id>http://yoursite.com/2017/12/18/Dynamic Routing Between Capsules/</id>
-    <published>2017-12-17T22:25:02.000Z</published>
-    <updated>2017-12-17T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Sabour S, Frosst N, Hinton G E. Dynamic routing between capsules[C]//Advances in neural information processing systems. 2017: 3856-3866.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Capsules" scheme="http://yoursite.com/categories/Paper-Note/Capsules/"/>
-    
-    
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="Cognitive Neuroscience" scheme="http://yoursite.com/tags/Cognitive-Neuroscience/"/>
-    
-      <category term="CapsulesNet" scheme="http://yoursite.com/tags/CapsulesNet/"/>
-    
-      <category term="Image Reconstruction" scheme="http://yoursite.com/tags/Image-Reconstruction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Capsule Extension</title>
-    <link href="http://yoursite.com/2017/12/18/Capsule%20Extension/"/>
-    <id>http://yoursite.com/2017/12/18/Capsule Extension/</id>
-    <published>2017-12-17T22:25:01.000Z</published>
-    <updated>2017-12-17T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/30970675&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;CapsulesNet 的解析及整理&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Knowledge Note" scheme="http://yoursite.com/categories/Knowledge-Note/"/>
-    
-    
-      <category term="Capsule" scheme="http://yoursite.com/tags/Capsule/"/>
-    
-      <category term="Cerebral Cortex" scheme="http://yoursite.com/tags/Cerebral-Cortex/"/>
-    
-      <category term="Cognitive Neuroscience" scheme="http://yoursite.com/tags/Cognitive-Neuroscience/"/>
-    
-      <category term="CNN Limitation" scheme="http://yoursite.com/tags/CNN-Limitation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) Image-to-image translation with conditional adversarial networks</title>
-    <link href="http://yoursite.com/2017/11/03/Image-to-Image%20Translation%20with%20Conditional%20Adversarial%20Networks/"/>
-    <id>http://yoursite.com/2017/11/03/Image-to-Image Translation with Conditional Adversarial Networks/</id>
-    <published>2017-11-02T22:25:27.000Z</published>
-    <updated>2017-11-02T22:25:27.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Isola P, Zhu J Y, Zhou T, et al. Image-to-image translation with conditional adversarial networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 1125-1134.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Conditional GAN" scheme="http://yoursite.com/tags/Conditional-GAN/"/>
-    
-      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
-    
-      <category term="Map to Aerial" scheme="http://yoursite.com/tags/Map-to-Aerial/"/>
-    
-      <category term="Reality Enhancement" scheme="http://yoursite.com/tags/Reality-Enhancement/"/>
-    
-      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2017) Unsupervised Image-to-Image Translation Networks</title>
-    <link href="http://yoursite.com/2017/11/03/Unsupervised%20Image-to-Image%20Translation%20Networks/"/>
-    <id>http://yoursite.com/2017/11/03/Unsupervised Image-to-Image Translation Networks/</id>
-    <published>2017-11-02T22:25:25.000Z</published>
-    <updated>2017-11-02T22:25:25.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liu M Y, Breuel T, Kautz J. Unsupervised image-to-image translation networks[C]//Advances in Neural Information Processing Systems. 2017: 700-708.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
-    
-      <category term="Map to Aerial" scheme="http://yoursite.com/tags/Map-to-Aerial/"/>
-    
-      <category term="Reality Enhancement" scheme="http://yoursite.com/tags/Reality-Enhancement/"/>
-    
-      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
-    
-      <category term="UNIT" scheme="http://yoursite.com/tags/UNIT/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks</title>
-    <link href="http://yoursite.com/2017/11/03/Unpaired%20Image-to-Image%20Translation%20using%20Cycle-Consistent%20Adversarial%20Networks/"/>
-    <id>http://yoursite.com/2017/11/03/Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks/</id>
-    <published>2017-11-02T22:25:24.000Z</published>
-    <updated>2017-11-02T22:25:24.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhu J Y, Park T, Isola P, et al. Unpaired image-to-image translation using cycle-consistent adversarial networks[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2223-2232.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
-    
-      <category term="Map to Aerial" scheme="http://yoursite.com/tags/Map-to-Aerial/"/>
-    
-      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
-    
-      <category term="CycleGAN" scheme="http://yoursite.com/tags/CycleGAN/"/>
-    
-      <category term="Label to Photo" scheme="http://yoursite.com/tags/Label-to-Photo/"/>
-    
-      <category term="Edge to Photo" scheme="http://yoursite.com/tags/Edge-to-Photo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2013) Auto-Encoding Variational Bayes</title>
-    <link href="http://yoursite.com/2017/11/03/Auto-Encoding%20Variational%20Bayes/"/>
-    <id>http://yoursite.com/2017/11/03/Auto-Encoding Variational Bayes/</id>
-    <published>2017-11-02T22:25:23.000Z</published>
-    <updated>2017-11-02T22:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Kingma D P, Welling M. Auto-encoding variational bayes[J]. arXiv preprint arXiv:1312.6114, 2013.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="VAE" scheme="http://yoursite.com/tags/VAE/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(AAAI 2017) Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction</title>
-    <link href="http://yoursite.com/2017/10/05/Deep%20Spatio-Temporal%20Residual%20Networks%20for%20Citywide%20Crowd%20Flows%20Prediction/"/>
-    <id>http://yoursite.com/2017/10/05/Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction/</id>
-    <published>2017-10-04T22:25:23.000Z</published>
-    <updated>2017-10-04T22:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhang J, Zheng Y, Qi D. Deep spatio-temporal residual networks for citywide crowd flows prediction[C]//Thirty-First AAAI Conference on Artificial Intelligence. 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Prediction" scheme="http://yoursite.com/categories/Paper-Note/Prediction/"/>
-    
-    
-      <category term="Prediction" scheme="http://yoursite.com/tags/Prediction/"/>
-    
-      <category term="Citywide Crowd Flows" scheme="http://yoursite.com/tags/Citywide-Crowd-Flows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2016) Automated Inference on Criminality using Face Images</title>
-    <link href="http://yoursite.com/2017/10/03/Automated%20Inference%20on%20Criminality%20using%20Face%20Images/"/>
-    <id>http://yoursite.com/2017/10/03/Automated Inference on Criminality using Face Images/</id>
-    <published>2017-10-02T22:25:23.000Z</published>
-    <updated>2017-10-02T22:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Wu X, Zhang X. Automated inference on criminality using face images[J]. arXiv preprint arXiv:1611.04135, 2016: 4038-4052.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
-    
-    
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2012) Imagenet classification with deep convolutional neural networks</title>
-    <link href="http://yoursite.com/2017/09/29/ImageNet%20classification%20with%20deep%20convolutional%20neural%20networks/"/>
-    <id>http://yoursite.com/2017/09/29/ImageNet classification with deep convolutional neural networks/</id>
-    <published>2017-09-29T00:25:23.000Z</published>
-    <updated>2017-09-29T00:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Krizhevsky A, Sutskever I, Hinton G E. Imagenet classification with deep convolutional neural networks[C]//Advances in neural information processing systems. 2012: 1097-1105.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="AlexNet" scheme="http://yoursite.com/tags/AlexNet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017 Best Paper) Learning from simulated and unsupervised images through adversarial training</title>
-    <link href="http://yoursite.com/2017/09/19/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/"/>
-    <id>http://yoursite.com/2017/09/19/Learning from simulated and unsupervised images through adversarial training/</id>
-    <published>2017-09-18T22:25:23.000Z</published>
-    <updated>2017-09-18T22:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Shrivastava A, Pfister T, Tuzel O, et al. Learning from simulated and unsupervised images through adversarial training[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2107-2116.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Reality Enhancement" scheme="http://yoursite.com/tags/Reality-Enhancement/"/>
-    
-      <category term="SimGAN" scheme="http://yoursite.com/tags/SimGAN/"/>
-    
-      <category term="Eye" scheme="http://yoursite.com/tags/Eye/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017 Best Paper) Densely connected convolutional networks</title>
-    <link href="http://yoursite.com/2017/09/19/Densely%20connected%20convolutional%20networks/"/>
-    <id>http://yoursite.com/2017/09/19/Densely connected convolutional networks/</id>
-    <published>2017-09-18T21:25:23.000Z</published>
-    <updated>2017-09-18T21:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Huang G, Liu Z, Van Der Maaten L, et al. Densely connected convolutional networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 4700-4708.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="DenseNet" scheme="http://yoursite.com/tags/DenseNet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) Deep feature flow for video recognition</title>
-    <link href="http://yoursite.com/2017/09/19/Deep%20feature%20flow%20for%20video%20recognition/"/>
-    <id>http://yoursite.com/2017/09/19/Deep feature flow for video recognition/</id>
-    <published>2017-09-18T20:25:23.000Z</published>
-    <updated>2017-09-18T20:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhu X, Xiong Y, Dai J, et al. Deep feature flow for video recognition[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2349-2358.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
-    
-    
-      <category term="Video" scheme="http://yoursite.com/tags/Video/"/>
-    
-      <category term="Optical Flow" scheme="http://yoursite.com/tags/Optical-Flow/"/>
-    
-      <category term="FlowNet" scheme="http://yoursite.com/tags/FlowNet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(MICCAI 2015) U-net:Convolutional networks for biomedical image segmentation</title>
-    <link href="http://yoursite.com/2017/09/19/U-net:%20Convolutional%20networks%20for%20biomedical%20image%20segmentation/"/>
-    <id>http://yoursite.com/2017/09/19/U-net: Convolutional networks for biomedical image segmentation/</id>
-    <published>2017-09-18T19:25:23.000Z</published>
-    <updated>2017-09-18T19:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Ronneberger O, Fischer P, Brox T. U-net: Convolutional networks for biomedical image segmentation[C]//International Conference on Medical image computing and computer-assisted intervention. Springer, Cham, 2015: 234-241.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Medical/Segmentation/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-      <category term="Cell" scheme="http://yoursite.com/tags/Cell/"/>
-    
-      <category term="UNet" scheme="http://yoursite.com/tags/UNet/"/>
-    
-      <category term="ISBI" scheme="http://yoursite.com/tags/ISBI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2015) Unsupervised representation learning with deep convolutional generative adversarial networks</title>
-    <link href="http://yoursite.com/2017/09/19/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/"/>
-    <id>http://yoursite.com/2017/09/19/Unsupervised representation learning with deep convolutional generative adversarial networks/</id>
-    <published>2017-09-18T18:25:23.000Z</published>
-    <updated>2017-09-18T18:25:23.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Radford A, Metz L, Chintala S. Unsupervised representation learning with deep convolutional generative adversarial networks[J]. arXiv preprint arXiv:1511.06434, 2015.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Scene" scheme="http://yoursite.com/tags/Scene/"/>
-    
-      <category term="DCGAN" scheme="http://yoursite.com/tags/DCGAN/"/>
+      <category term="Video Classification" scheme="http://yoursite.com/tags/Video-Classification/"/>
     
   </entry>
   

@@ -1,18 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[(CVPR 2018 Best Paper) Non-local Neural Networks]]></title>
-    <url>%2F2017%2F12%2F19%2FNon-local%20Neural%20Networks%2F</url>
-    <content type="text"><![CDATA[Wang X, Girshick R, Gupta A, et al. Non-local neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7794-7803. Overview convolutional和recurrent操作建立的block，每次只能处理一个局部区域，基于非局部均值滤波的思想，论文提出具有通用性的非局部组件，能够capture long range dependencies. 非局部组件通过计算所有点的特征加权和作为目标点的响应。非局部操作能够capture相距较远的点在时间和空间上的关系。 论文使用非局部模型（非局部-残差网络） 在Kinetics和Charades视频数据集上做classification任务，性能超过目前的冠军 在COCO数据集上做object detection/segmentation和pose estimation任务，性能有明显提高 Repeated 由于convolutional和recurrent建立的block每次只能处理一个局部区域，因此需要通过重复操作来实现long range dependencies. convolutional操作通过堆叠(stack) CNN层实现 recurrent操作通过记忆+循环实现 但repeated实现方式存在一些缺陷 效率低下 优化困难 信息很难在相距较远的点之间来回传递(multi-hop dependency modeling多跳依赖建模)。（例如，对于100*100的图像，左上角的点和右下角的点在前几层CNN中并无关联） 非局部操作优点 直接计算任意两点之间的关系来capture long range dependencies，忽略点之间的距离 非局部操作高效，仅使用少量的层就能达到betst result, 额外增加的计算量少 保持输入大小不变 能capture空间和时间维度，比3D CNN更高效 Related Work 非局部图像处理图形模型 CRF能够被用于segmentation, 而非局部操作具有通用性，可用于分类和检测。 Self-attention 通过所有点的加权平均计算当前点的响应。self-attention可看做是非局部均值的一种方式。 Interaction Networks 使用pairwise interaction。其变体Relation Network使用到所有pair of positions. Video Classification Architecture 最通常的做法是结合CNN和RNN，但是前馈模型使用3D CNN，将预训练权重的2D卷积核inflating成3D卷积核。此外，optical flow和trajectory能提高性能。 Non-local Neural Networks Formulation通用形式为 i 输出位置点 j 所有位置点 x 输入 y 输出 f pairwise function, 计算点i和点j之间关系，输出为标量 g 计算representation of 点j C 归一化因子 区别 非局部操作涉及到所有位置点，而convolutional操作只处理局部区域，recurrent操作通常只涉及到当前时间状态与最近时刻状态(j=i或j=i) 非局部操作基于不同点之间的关系计算响应，而fc的权重通过学习得到。 非局部操作能够适用不同大小的输入，并且能够任意加入到网络中，而fc的输入大小需要事先固定，且通常只放到网络的最后一层。 Instantiations g函数使用线性embedding 通过2D CNN（空间）或3D CNN（时空）实现。 Pairwise function f函数有多种选择 Gaussian Embedded Gaussian 可写成softmax形式 Dot Product N为x位置点的总数，与Embedded Gaussian的区别在于没有softmax操作。 Concatenation [,]表示concat操作，wf为权重向量，将concated向量投影为标量。 Non-local Block x为residual连接. Block可以任意插入到预训练模型中，并保持模型的初始行为，即将W_{z}权重初始化为0. 当block使用在high level的特征图上，计算量很少。例如，T=4， H=W=14或7. 减少计算量 Θ和φ网络channel数量设置为输入的一半 在g和φ网络后进行下采样，如连接max pooling 层 Video Classification Model 2D ConvNet (C2D) 输入维度为32帧224224，其本质为1kk的卷积核，直接使用ImageNet预训练权重初始化。残差block中的卷积层相当于逐帧处理操作（卷积核和步长在帧的维度上为1）。 Inflated 3D ConvNet (I3D) 2D kk卷积核inflate为3D tkk卷积核。将kk训练权重扩展到t plane，并乘以缩放因子1/t. 两种inflate方式 inflate残差block中的33卷积核为33*3 inflate残差block中第一个11卷积核为31*1 I3D模型优于CNN+LSTM. Non-local network将non-local网络插入到C2D和I3D网络中。 实现细节 Train阶段 ImageNet预训练权重初始化 输入为32帧clips，从原始视频中random crop连续64帧，并丢弃剩余其他帧 输入尺寸为224*224，通过random crop得到 迭代400k次，学习率初始为0.01，每150k迭代减少10% momentum 0.9，权重衰减0.0001，dropout 0.5 fine tune模型是不固定BN层，能够防止过拟合 仅在W_{z}层后插入BN层，scale参数初始化为0，可保持整个non local block为全等映射，即保持预训练模型的初始行为 Inference阶段 均匀地从一整段视频中抽取10个clip，计算softmax得分，最终预测结果为10个softmax得分的平均。 Experiments on Video Classification Kinetics数据集246k训练视频，20k验证视频，包含400个人类动作分类。 Instantiations比较不同类型的非局部操作，得出结论非局部操作类型的影响并不大，性能的提升主要是由于非局部操作，而非attention机制。因此实验中默认使用Embedded Gaussian. Stage to Add Non local Blockres5的空间大小为7*7，因此可能是因为没有足够准确的空间信息，导致准确度略微下降。 使用更多的非局部block一般而言，更多的非局部block能提升性能准确度，multiple非局部block能够实现long range multi-hop communication (多跳交流). 从5 block R50 73.8%与base R101 73.1%，可以看出准确率的提升并不是因为层数加深，而是因为非局部block. 此外，实验也将加入的非局部block替换为标准残差block，发现准确度并没有提升。 时空上的非局部操作 非局部2D ConvNet vs 3D ConvNet 非局部3DConvNet使用I3D_{311}模型 更长的序列将每个输入clips增加到128帧，所有模型的准确度都有提升。 与目前最好的结果比较非局部网络方法在没有使用optical flow和其他技巧的情况下，取得较好结果。 Charades数据集8k训练视频，1.8k验证视频，2k测试视频，包含157个人类动作分类。 Experiments on COCO Detection与Segmentation 在不同规模的模型中加入非局部block均能提高准确度，说明非局部依赖并没有通过增加层数堆叠充分capture. 此外，单层非局部block只增加了不到5%的计算量，使用更多的非局部block结果反而有所下降。 Keypoint Detection]]></content>
+    <title><![CDATA[(2017) Multi-scale dense convolutional networks for efficient prediction]]></title>
+    <url>%2F2018%2F02%2F25%2FMulti-scale%20dense%20convolutional%20networks%20for%20efficient%20prediction%2F</url>
+    <content type="text"><![CDATA[Huang G, Chen D, Li T, et al. Multi-scale dense convolutional networks for efficient prediction[J]. arXiv preprint arXiv:1703.09844, 2017, 2. Overview Motivation Small model can deal with easy example, but make mistake for hard Hard example need to be deal with by large model, but waste for easy last layer’s features for classification, early layer’s are not first layer for fine-scale, later layer for coarse-scale In this paper, Multi-Scale DenseNet (MSDNet) is proposed which automatically small for easy large for hardcontains two setting anytime classification budgeted batch classification (probability threshhold) has two feature multi-scale feature map + multi-classifier dense connectivity Contribution First deep learning architecture of its kind that allows dynamic resource adaptation with a single model First discover that dense connectivity is crucial to early-exit classifier SettingAnytime prediction stop at any time point (budget exhausted) return most recent predication nondeterministic budget, varies per test instance L. suitable loss function B. budget f. model x. input image Budget batch classification stop when sufficient confidence Less than B/M computation for easy example More than B/M computation for hard example Related Work Computation-efficient prune weights quantize weights compact model knowledge-distillation Resource-efficient FractalNet Adaptive computation time approach Visualization Future Work Extend to other task. segmentation Combine MSDNet with model compression, spatially adaptive computation, more efficient convolution operation Multi-Scale DenseNet Problem Lack of coarse-level feature Accuracy of the classifier is correlated with its position within the network Solution. multi-scale feature map Early classifier interfere with later classifier Solution. Dense connectivity Model Lazy EvaluationFiner feature map do not influence the prediction of classifier. Loss Function Empirically, $w_k$ = 1.]]></content>
       <categories>
         <category>Paper Note</category>
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Classification</tag>
-        <tag>Attention</tag>
-        <tag>Non-local</tag>
-        <tag>Video Classification</tag>
+        <tag>Network</tag>
+        <tag>Multi-Scale DenseNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(AAAI 2017) Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images]]></title>
+    <url>%2F2018%2F02%2F02%2FVolumetric%20ConvNets%20with%20Mixed%20Residual%20Connections%20for%20Automated%20Prostate%20Segmentation%20from%203D%20MR%20Images%2F</url>
+    <content type="text"><![CDATA[Yu L, Yang X, Chen H, et al. Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images[C]//AAAI. 2017: 66-72 Overview 目前prostate MRI segmentation存在一些挑战 不同MR扫描协议导致MRI存在差别 prostate MRI缺少清晰边界（prostate与周围组织很相似） 不同病变或分辨率导致prostate形状大小变化很大 3D MRI segmentation 耗时 因此，论文提出一种end-to-end train, volume-to-volume predict, 适用于limited training data的模型，并在MICCAI PROMISE12数据集上达到state-of-art结果。 模型特点 3D CNN 存在down sampling和up sampling两个阶段 residual block和connection. block内部存在short connection, block之间存在long connection（恢复down sampling造成的空间信息丢失）. 能够增强局部信息和全局信息在整个网格中的传递，以及加快收敛，避免梯度问题 加权(0.3, 0.6, 1) auxiliary cross-entropy loss. 加快收敛; Function as a strong regularization which is important for limited training data Dig the Potential of limited data Data augmentation. 但增加的信息量有限 使用skip connection. 提升网络内信息的propagation Related WorkMulti-altas based method Deformable method Graph cut based mathod Feature based machine learning method（Deep Learning） 使用2D CNN aggregate 3D contextual feature. adjacent slices, orthogonal planes, multi-view planes. 但没有充分利用3D空间信息 3D CNN. with residual block 数据集MICCAI PROMISE12 训练集. 50 transversal T2-weighted MRI and segmentation gt 测试集. 30 MRI, 未提供gt图像来自不同医院、设备、协议以及存在maximum variation in clinical setting (voxel size, dynamic range,position, field of view and anatomic appearance.). Experiments 数据预处理 resize MR volumes into 0.625x0.625x1.5 mm 归一化 rotation (90°, 180°, 270°) , x-flip 训练细节 batch size 8 lr 0.001 divided by 10 every 3000 iteration weight decay 0.0005 SGD, 0.9 momentum weighted loss (0.3, 0.6, 1) 训练（4小时）. random crop 64x64x16 sub-volume 测试（12 s/MRI, 320x320x60）. overlap sliding window (64x64x16), stride (50x50x12), average probability map 评价指标 Dice coefficient (DSC). 链接 aRVD. absolute difference between volumes ABD. average over shortest distance between the boundary points of volumes 95HD (95% Hausdorff distance). 链接 Ablation 实验结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Prostate</category>
+      </categories>
+      <tags>
+        <tag>Medical</tag>
+        <tag>Segmentation</tag>
+        <tag>Prostate</tag>
+        <tag>3D</tag>
+        <tag>MRI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) A survey on deep learning in medical image analysis]]></title>
+    <url>%2F2018%2F02%2F02%2FA%20Survey%20On%20Deep%20Learning%20in%20Medical%20Image%20Analysis%2F</url>
+    <content type="text"><![CDATA[Litjens G, Kooi T, Bejnordi B E, et al. A survey on deep learning in medical image analysis[J]. arXiv preprint arXiv:1702.05747, 2017. Overview 论文检索并分析了308篇与深度学习和医学图像有关的论文。 检索方式 对PubMed数据库（标题摘要）进行关键词（convolutional or deep learning）检索 ArXiv检索medical imaging MICCAI, SPIE, ISBI, EMBC conference proceeding 相关任务 image classification object detection segmentation registration retrieval generation enhancement 应用领域 neuro retinal（视网膜） pulmonary（肺） digital pathology（病理学） breast（乳腺） cardiac（心脏） abdominal（腹部） musculoskeletal（肌肉骨骼） CNN Architecture Classification Architecture Multi-stream Architecture (multi-scale; 2.5D, multiple angled patched from 3D space) Segmentation Architecture (U-Net) RNN pixelRNN for segmentation Unsupervised Model AE, SAE (AE+AE+…+AE). for denoising RBM, DBN (RBM+RBM+…+RBM). 无监督训练，再加上分类器fine tuing VAE, GAN 数据集 OASIS. brain MRI registration BRATS, LSLES, and MRBrains challenges. brain lesion segmentation Kaggle Diabetic Retinopathy challenge 2015. disbetic retinopathy classification PROMISE12 challenge. prostate segmentation LUNA16 challenge. nodule classification CAMELYON16, TUPAC, DREAM. breast cancer metastases detection in lymph nodes ICPR 2012, AMIDA 2013, GLAS. gland segmentation SLIVER07. liver segmentation LIDC-IDRI. detect nodules in lung CT 医学图像中的深度学习应用 ClassificationImage/Exam Classification （图像-&gt;是否病变）使用预训练权重(迁移学习) 预训练网络提取特征，作为后续模型输入 使用medical数据fine tuning预训练网络2015~2017年，47篇exam classification paper， 36篇使用CNN， 5篇使用AE， 6篇使用RBM. 且涉及不同的医学领域：retinal, digital pathology, lung computed tomography. Object or Lesion Classification对图像中已经识别出来的某个小部分进行多分类（病变类型, nodule classification in chest CT）。通常需要考虑（Multi-stream） 病变外观的局部信息 病变位置的全局上下文信息到达高分类准确度。 DetectionOrgan, Region and Landmark Localization通常需要处理3D图像，一些方法将3D空间看做由一些2D正交平面构成（2D MRI slices）。图像localization方法分为 RoI 直接regress此外，还涉及到temporal数据的scan plane or key frame localization (standardized scan planes in mid-pregnancy fetal US). Object or Lesion Detection定位并识别lesion (multi-stream for CT and PET data; micro-bleed in brain MRI) SegmentationOrgan and Substructure SegmentationContour or interior of objects (pectoral muscle in breast MRI, coronary arteries in cardiac CT angiography, vertebral body in MRI). 相关技术 2D U-Net 3D V-Net, Dice coefficient 基于RNN，融合双向信息(left/top, right/bottom) 结合双向LSTM和2D U-Net 结合FCN和graphical model (MRF, CRF) Lesion Segmentation包含 Object detection Organ and substructure segmentation需要考虑global and loval context [Multi-stream] (white matter lesions in brain MRI). Registrationspatial alignment. 包含两种方法 估计两张图像的相似度 预测transformation parameters Other TaskRetrieval使用Hashing forest进行压缩 Generation and Enhancement超分辨率 Combine Image with ReportCaption, LDAMammography中的3个描述 shape margin density 应用领域 BrainAlzheimer classification, brain tissue segmentation, anatomical structure (hippocampus). 相关技术 multi-scale for contextual 2D slice-by-slice处理3D数据 Eyecolor fundus imaging (CFI). Chest基于CT扫描估计lung cancer概率 Digital Pathology and Microscopywhole-slide images （WSI） 检测、分割、分类nuclei 分割organ 检测分类 the disease of interest at the lesion or WSI-level Breast考虑三个子任务 检测分类mass-like lesion 检测分类micro-calcfication breast cancer评估 Cardiac使用2D CNN slice by slice处理3D或4D数据。 ##Abdomen ##Musculoskeletal ##Other 总结 Overview prefer end-to-end CNN Key Aspect data preprocessing or augmentation（相同模型结构，不同结果） 针对特定任务的模型结构（multi-view, multi-scale） 增加patch size观察更多context 超参数（LR, Dropout rate） Challenge 医学图像数据已有很多，挑战在于图像的标注（需要领域专家进行标注、3D图像标注成本大）。因此，从有限数据进行高效学习是重要的研究方向。 一些研究利用sparse 2D segmentation训练3D segmentation、一些考虑 non-expert labels via crowd-sourcing Label noise. 多专家分别进行标注，对比结果是否一致 Fail in rare category Class imbalance. 研究方向（通常对较少样本进行scale, rotate操作） 结合patient history, age, demographics进行诊断 Balance image feature (thousands) and clinical feature (handful) patch不具有全局位置信息，而entire image占用较大内存 Outlook Unsupervised, VAE, GAN are attractive Combine Bayesian statistic with deep learning Image reconstruction (unexplored area)]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Overview</category>
+      </categories>
+      <tags>
+        <tag>Overview</tag>
+        <tag>Medical</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[test]]></title>
+    <url>%2F2018%2F02%2F02%2Ftest%2F</url>
+    <content type="text"><![CDATA[一级标题二级标题三级标题三级标题二级标题二级标题一级标题二级标题二级标题]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Overview</category>
+      </categories>
+      <tags>
+        <tag>Overview</tag>
+        <tag>Medical</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Deep Learning in Medical Imaging:General Overview]]></title>
+    <url>%2F2018%2F02%2F02%2FDeep%20Learning%20in%20Medical%20Imaging%3A%20General%20Overview%2F</url>
+    <content type="text"><![CDATA[Lee J G, Jun S, Cho Y W, et al. Deep Learning in Medical Imaging: General Overview[J]. Korean Journal of Radiology, 2017, 18(4): 570-584. Overview 论文综述了深度学习技术的历史、发展和应用（涉及到医学图像）。 AI三种方法 Symbolism Connectionism Bayesian 算法 分类. Bayesian模型、SVM、集成学习(结合不同分类算法) 回归. SVR ANN. DNN Unsupervised restricted Boltzmann machine. Hinton, 解决DNN的局部最优、过拟合问题。以无监督方式生成数据特征 CNN. RNN Trick Data Augmentation 预训练权重能够在100 cases per class得到较好地结果。 突破 ReLu Dropout Data augmentation 放射学应用 Segmentation lungs（肺） tumor（肿瘤） structure in brain biological cells（生物细胞） membranes（薄膜） tibial cartilage（胫骨软骨） bone tissue（骨组织） cell mitosis（细胞有丝分裂） Registration医学图像配准. 同一患者几幅图像放在一起分析时，首先要做图像严格对齐。医学图像配准是指对于一幅医学图像寻求一种 (或一系列 )空间变换，使它与另一幅医学图像上的对应点达到空间上的一致。 方法 Patch Based Entire Image Automatic Labeling and Captioning 数据集 Caption. Flickr8k, Flickr30k, MS COCO Publicly available radiology dataset of chest radiographs Reading Assistant and Automatic Dictation Automatic radiological dictation system. 深度学习应用到放射学的局限性 要求高质量数据，数据量太小容易过拟合 无法得到通用方法. 世界各地成像设备、协议以及疾病流行率的差异 法律伦理问题 事故责任承担问题]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Overview</category>
+      </categories>
+      <tags>
+        <tag>Overview</tag>
+        <tag>Medical</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Deep region and multi-label learning for facial action unit detection]]></title>
+    <url>%2F2018%2F01%2F17%2FDeep%20region%20and%20multi-label%20learning%20for%20facial%20action%20unit%20detection%2F</url>
+    <content type="text"><![CDATA[Zhao K, Chu W S, Zhang H. Deep region and multi-label learning for facial action unit detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 3391-3399. Overview 在人脸AU检测中，存在两种常见的任务 Region Learning (RL) Multi-label Learning (ML)论文将两者进行结合，提出能够同时解决上述两个任务的框架Deep Region and Multi-label Learning (DRML)。 框架中包含一个region laryer结构。 region layer可通过两种方式设计 locally connected layers (LCN). 每个像素点对应一个卷积核（参数量较大） conventional convolution layers. 首先将输入特征图分成n*m个region, 每个region内的像素点共享卷积核权重（即每个region通过一个卷积层） DRML框架特点 end to end训练 non-linear模型论文在BP4D和DISFA数据集上进行实验，对比F1-score和AUC评价指标。 Region Learning 通过传统方法识别特定的区域来提高检测性能（类似于Attention）。例如patch-based方法，首先将图像划分为patch，然后将patch分类为普通patch和特定patch来描述不同的表情 patch-based 缺点. easily fail on faces with modest or large pose （某些patch中部分相关，但被排除在外，没有用于识别，从而导致性能降低） Multi-label Learning 传统的AU检测方法（AdaBoost、SVM等）都是对某个AU进行检测 ML对于每个表情，同时预测多个AU。 能够在一定程度上解决正负样本不平衡的问题 评价指标 F1-score. precision和recall的调和均值，常用于AU检测 AUC. 量化true positive和false positive之间的关系 DRML结构 大多数表情分析都使用很小的人脸图像（如4848）作为输入，为了避免人脸微小细节的丢失，论文使用**170170**大小的图像作为输入。 Loss Function Region Layer 人脸图像相对于自然图像更加结构化，不同的人脸区域具有不同的局部统计。因此，可使用LCN（参数太多）或者区域卷积进行处理 可看做是对每个区域进行Attention操作 结构包含三部分 patch clipping （论文采用8*8 grid） local convolution identity addition (避免梯度消失；如果patch与AU检测无关，it would be easier to directly forward the patch than learning a filter bank to reduce the patch’s effect) Region可视化使用saliency map（通过计算每个像素点对于某个特定AU的梯度级数）进行可视化。 与相关工作的比较 DRML受JPML启发，但存在不同之处 JPML通过对数据集统计，定义AU关系 JPML使用manually-crafted feature (SIFT) JPML轮流学习PL和ML JPML线性 Experiments 200200图像random crop为170170，并进行horizontally mirrored。 DRML收敛更快，训练loss更低，更接近gt统计 DRML比LCN速度快；ConvNet（去掉Region Layer的DRML）比AlexNet速度慢（由于卷积核为11*11） BP4D&amp;DISFA实验结果 learned features are of lower dimension, more than 40% of learned features for AlexNet, LCN, and DRML, are zeros Multi-label训练提高了效果 当训练数据很少时，multi-label学习能够减少imbalance的影响]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Face</category>
+      </categories>
+      <tags>
+        <tag>Face</tag>
+        <tag>Facial Action Units</tag>
+        <tag>Multi-label Classification</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Fatauva-net:An integrated deep learning framework for facial attribute recognition, action unit (au) detection, and valence-arousal estimation]]></title>
+    <url>%2F2018%2F01%2F17%2FFatauva-net%3A%20An%20integrated%20deep%20learning%20framework%20for%20facial%20attribute%20recognition%2C%20action%20unit%20(au)%20detection%2C%20and%20valence-arousal%20estimation%2F</url>
+    <content type="text"><![CDATA[Chang W Y, Hsu S H, Chien J H. Fatauva-net: An integrated deep learning framework for facial attribute recognition, action unit (au) detection, and valence-arousal estimation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition Workshop. 2017. Overview 目前人脸表情识别的两种主流方式为 Action Units (AUs) Valence-Arousal space (V-A space) 结合上述两种方式，论文提出一种能够同时用于 人脸属性识别 AU检测 V-A估计3种任务的集成深度学习框架FATAUVA (Facial Attribute Recognition, Action Unit Detection, Valence-Arousal Estimation)。 在FATAUVA框架中 将Attribute层的输出作为中间特征，用于后续AU检测 将AU层的输出作为中间特征，用于后续V-A估计 训练过程 利用CelebA数据集训练Core Layer和Attribute Layer 固定Core Layer和Attribute Layer权重, 利用FERA2015数据集训练AU Layer 固定Core Layer, Attribute Layer和AU Layer权重，利用AFF-Wild Challenge训练V-A Layer V-A space分为两个维度 相关数据集 cross-age celebrity dataset (CADA) [Attribute] CelebA [AU] FERA2015, [AU] BP4D (Video) [AU] SEMAINE (实验环境Image) [V-A] AFF-Wild Challenge 训练集共253个视频，每帧都有标注；测试集47个视频 网络结构 Attribute Layer分为四个子层：Face、Eye、Eyebrow、Mouth 论文从CelebA数据集中选出10种人脸属性，并将这10种属性归属到最相关子层代表的区域中（通过在子层后连接相应的2-way FC层进行预测，每种属性对应一个FC层）。 AU Layer将AUs归属到最相关的Attribute子层代表的区域中（通过在子层后连接相应的AU Conv层，并连接2-way FC层进行预测）。 V-A Layer将AU分为两组（Valence和Arousal），每组AU concat在一起，输入后续Conv层以及FC层。 Convolutional Block使用PolyNet中的块结构 Core Layer 8 rPoly-2 blocks Attribute Layer 2 rPoly-2 blocks AU Layer 2 rPoly-3 blocks V-A Layer 2 rPoly-3 blocks Experiments 数据预处理 Attribute和AU数据集 使用MTCNN截取人脸区域 V-A数据集 使用数据集给定的bounding box截取人脸区域 对每个AU的预测是一个二分类问题。由于正负样本比例不平衡，实验对较少的AU进行over sampling，对负样本进行down sampling. 将V-A得分量化到[-5,5]范围，进行可视化 由于样本分布不平衡，实验同样进行over sampling和down sampling. Loss Layer在Attribute Layer和AU Layer后连接3层FC，最后对2维输出做softmax操作。 在V-A Layer后连接3层FC，并使用了两种loss class-based 将[-5, 5]范围的得分离散化为11种类别。选择top 3得分：（1）如果得分连续（1,2,3或1,3,2），进行加权求和得到最终得分。（2）如果得分不连续，取top 1得分作为最终得分。 regression-based 结合center loss和smooth L1 loss x 倒数第二层FC输出的特征 c 类别y的中心（倒数第二层FC输出对应类别y的特征的均值） y 预测值 y^{~} ground truth t L1与L2之间的转折点 Attribute Recognition实验结果 AU Detection实验结果 V-A Estimation实验结果 使用AU能够提高V-Aestimation结果 使用regression-based loss优于class-based loss CCC: Concordance Correlation Coefficient]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Face</category>
+      </categories>
+      <tags>
+        <tag>Face</tag>
+        <tag>Facial Action Units</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Valence-Arousal space</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) DeepCoder:Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding]]></title>
+    <url>%2F2018%2F01%2F17%2FDeepCoder%3A%20Semi-Parametric%20Variational%20Autoencoders%20for%20Automatic%20Facial%20Action%20Coding%2F</url>
+    <content type="text"><![CDATA[Linh Tran D, Walecki R, Eleftheriadis S, et al. DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 3190-3199. Overview 人脸表情可以编码成一系列的面部活动单元(facial action units, AUs)及其对应的活动强度(intensity). 而变分自编码器(VAE)能够通过无监督学习（重构loss+KL loss）提取数据的隐含表达（latent representation）。因此，对于人脸AU强度估计的任务可分为两个步骤 利用VAE提取人脸特征 使用分类器对特征进行AU活动强度估计 另一方面，non-parametric方法（如Gaussian Process）的效果优于parametric，但该方法只适用于小样本数据，无法很好地处理大样本数据。因此，论文将两者进行结合，提出semi-parametric的DeepCoder框架 parametric VC-AE (Variational Convolutional AEs) non-parametric VO-GPAE (Variational Ordinal GP AEs)并在DISFA和FERA2015数据集上进行实验验证。 FACSFacial Action Coding System 定义30多个面部肌肉活动单元，及其活动强度评分标准。 框架结构 VC-AE包含两部分loss KL loss (Z0) reconstruction loss (x-&gt;Z0-&gt;x’) 实验中使用warming strategy, 额外加入了AU强度估计loss VO-GPAE包含三部分loss KL loss (Z0) reconstruction loss (Z0-&gt;Z1-&gt;Z0) 强度估计loss (Z1-&gt;Y) Joint LearningLoss function VO-GPAE中的covariance function计算量会随着数据量的增多而增加，因此论文提出leave-subset-out策略，将训练集X分为不相交的两个子集X_R和X_L. X_R用于训练VC-AE, X_L用于训练VO-GPAE, 且X_R&gt;&gt;X_L. Experiments NLPD negative log-predictive density for reconstruction error ICC intra-class correlation, agreement between annotators 在Z1空间中模型将每个点都fit到一个独立的cluster中，从而使得对Z1空间上的特征进行AU强度估计效果更好。]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Face</category>
+      </categories>
+      <tags>
+        <tag>VAE</tag>
+        <tag>Face</tag>
+        <tag>Facial Action Units</tag>
+        <tag>Multi-label Classification</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2016) Stacked hourglass networks for human pose estimation]]></title>
+    <url>%2F2018%2F01%2F03%2FStacked%20hourglass%20networks%20for%20human%20pose%20estimation%2F</url>
+    <content type="text"><![CDATA[Newell A, Yang K, Deng J. Stacked hourglass networks for human pose estimation[C]//European Conference on Computer Vision. Springer International Publishing, 2016: 483-499. Overview 论文提出一种用于single person pose estimation的 repeated bottom-up, top-down (Hourglass) intermediate supervision模型结构（Stacked Hourglass Networks），能够captures and consolidates information across all scales of the image. 论文在 FLIC MPII数据集上是进行实验 模型结构 Hourglass图中每个box都是一个residual结构. 在top-down过程中只使用upsampling，不适用deconv. Bottom-up. Conv + ReLU + BN + Max pooling Top-Down. Upsamping + Add Residual Block &amp; Full Network 网络输入256x256，输出64x64 整个网络最开始使用一个Conv(7x7, 2s) 所有residual block输出通道数为256 网络中的Hourglass结构不共享参数 intermediate supervision使用相同gt Experiments 数据处理 对于多人情况. MPII训练集和测试集都提供了target person的中心点、scale (相对于200pixel的倍数)，可根据这些信息crop person, resize到256x256，再训练. 另外，可移动target person中心点到图像中心 Data augmentation. 旋转(±30°), 缩放(.75-1.25), 不使用平移 训练&amp;测试 使用MSE计算loss 测试时，使用origin image和flip image的平均结果作为最终预测 评价标准. FLIC：normalized by torso size, MPII： normalized by head size 实验结果 Ablation Multiple People Occlusion]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Pose</category>
+      </categories>
+      <tags>
+        <tag>Pose</tag>
+        <tag>Human Body</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Convolutional pose machines]]></title>
+    <url>%2F2018%2F01%2F03%2FConvolutional%20pose%20machines%2F</url>
+    <content type="text"><![CDATA[Wei S E, Ramakrishna V, Kanade T, et al. Convolutional pose machines[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 4724-4732. Overview 论文将CNN与Pose Machine相结合，提出Convolutional Pose Machine (CPM) Multi-stage结构. 将stage_n的预测输入到stage_{n+1}中进行refine Intermediate supervised &amp; end-to-end. 每个阶段的预测都计算loss。Forward完成后，各阶段loss一起回传. 解决gradient vanish问题 级联CNN. 实现long-range spatial modeling 相关工作 使用CNN直接预测人体关键点. 没有保留空间不确定性，导致accuracy很低 论文中CPM使用heap map. 基于数据集中人体关键点gt构建grid，并在关键点的位置加上Gaussian分布，形成heap map。最后通过MSE计算loss 数据集 MPII. 16 key points, 全身（单人/多人） Extended Leeds Sports Dataset (LSP). 14 key points, 全身（单人） FLIC. 9 key points, 全身（单人） 评价指标 PCKh. 记头部框对角线长度距离为d，预测点与gt之间的距离小于d表示预测正确 PCKh-0.5. 0.5d距离内表示预测正确 CPM stage_1的输入图像可以与后续stage的输入图像不同 每阶段预测结果(batch_size, body_part + 1, h’, w’) Stage 1 predicts part beliefs from only local image evidence. 虽然stage_1的预测结果较差，但能为后续stage的预测提供信息 LossMSE Pytorch版本代码 Center Map (中心点的高斯分布). 训练阶段，数据集label直接给出中心点(或根据关键点坐标计算得出). 中心点计算方法（关键点最大最小坐标和，求平均） 根据中心点生成center map方法 Experiments 模型比较 实验结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Pose</category>
+      </categories>
+      <tags>
+        <tag>Pose</tag>
+        <tag>Human Body</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Going deeper into action recognition:A survey]]></title>
+    <url>%2F2018%2F01%2F03%2FGoing%20deeper%20into%20action%20recognition%3A%20A%20survey%2F</url>
+    <content type="text"><![CDATA[Herath S, Harandi M, Porikli F. Going deeper into action recognition: A survey[J]. Image and Vision Computing, 2017, 60: 4-21. Overview 论文介绍了Action Recognition方面的四种深度学习结构 Spatiotemporal Network Multiple Steam Network Deep Generative Network Temporal Coherency Network以及Action Recognition数据集（KTH、Weizmann、Hollywood2、HMDB-51、UCF-101、Sports 1-M）。 Spatiotemporal Network 3D CNN 在实际中，加入一些补充信息（optical flow）训练网络能得到更好的性能。将时间信息输入网络的过程称为fusion，有以下3种机制 slow fusion. 同时输入视频中的几个片段。在foveated结构中，输入context stream的同时，还输入了fovea stream（图像中心；假设在拍摄时，会将重要的内容移动到视野中心） early fusion. 输入相邻帧集合 late fusion. 逐帧输入进行处理，最后将所有帧的特征融合在3D CNN结构中，使用更长的帧能够提高效果；将3D卷积核分解为2D卷积核和1D卷积核能够减少参数。 RNN 先用3D CNN提取特征，再输入到LSTM中 LRCN（Long-term Recurrent Convolutional Network） Multiple Stream Network 两个并行输入 基准帧 连续光流特点 使用ImageNet预训练权重 光流 early fusion multi-task训练 （由于数据集较小，因此使用多数据集进行训练，每个数据集对应一个分类层）在中间层进行fusion，既能提高效果，也能减少参数。 Deep Generative Models 时间序列维度的生成预测是一个无监督问题。 Dynencoder分为三层 输入帧x_t得到h_t 根据h_t预测h_{t+1} 根据h_{t+1}生成帧x_{t+1}先分别预训练每层，再end-to-end fine tuning. LSTM Autoencoder分为两层 encoder LSTM decoder LSTM （合成和预测） Adversarial方法训练 Temporal Coherency Network 一种弱监督形式。模型判断一段视频帧是否时序正确。 Siamese Network判断给定序列是否Coherency。相比ImageNet预训练权重，give more attention to human poses，并且能够提高准确度。 缺点. 视频段之间可能会出现场景变化（如Sports 1M数据集中的广告插播）。## 基于Siamese网络的并行结构将视频帧分为两个集合- prediction set X_p- effect set X_e将X_p特征进行变换，与X_e特征进行对比，从而识别行为。 数据数据 ##KTH&amp;Weizmann dataset controlled condition (limited camera motion, almost zero background clutter) limited to basic action (walking, running and jumping) HMDB-51&amp;UCF-101 非专业拍摄的Youtube视频(contain camera motion (and shakes), view-point variations and resolution inconsistencies) Actions are well cropped in the temporal domain, not well-suited for measuring the performance of action localization 包含subtle classes (chewing and talking or playing violin and playing cello)，要求网络深层次理解时空线索 Hollywood2&amp;Sports-1M 视角变换（view-point/editing complexities） 行为只发生在视频中某个很小的clipsSports-1M中还包含观众和广告条 未来发展 knowledge transfer &amp; domain adaptation 算法混合（3D CNN、temporal pooling、 optical flow frames、LSTM） 提升性能（data augmentation、foveated architecture、distinct frame sampling strategis） 实际应用 通常会涉及到joint dection（人体关键点检测） fine-grained行为识别，而非识别所有类别的行为]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Action Recognition</category>
+      </categories>
+      <tags>
+        <tag>Overview</tag>
+        <tag>Action Recognition</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Compact Bilinear Pooling]]></title>
+    <url>%2F2017%2F12%2F30%2FCompact%20Bilinear%20Pooling%2F</url>
+    <content type="text"><![CDATA[Gao Y, Beijbom O, Zhang N, et al. Compact bilinear pooling[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 317-326. Overview 此前提出的full bilinear模型存在一些问题(channel=512, k=1000时) 输出512512(260000)维度，导致后续的分类器参数很大(1000512*512≈250 million) storage expensive (2TB) 无法扩展到spatial pyramid matching、domain adaptation等 在few-shot learning上存在困难（如参数太多很容易过拟合） 基于上述问题，论文提出两种compact bilinear pooling方法 Random Maclaurin Projection (RM) Tensor Sketch Projection (TS) 具有以下特点 减少两个数量级维度的同时，几乎不降低性能 back-propagation efficient且end-to-end train 实际上，full bilinear方法在只使用2%特征维度情况下，与论文提出方法的性能相似。因此，98%的特征都是冗余的。 与其他方法比较 数据集 CUB（鸟类） MIT（室内场景） DTD（结构） Pooling方法 circular convolution（循环卷积）a=[1,2,3,4], b=[5,6,7,8], a*b计算过程 a逆时针固定在圆上，b顺时针固定在圆上。对应相乘求和结果y(0)=66. a顺时针旋转一位，计算y(1)=68 最终y的维度与a,b相同 Bilinear Sum Pooling(h, w, c)-&gt;(h,w, cc)-&gt;(cc) Compact Bilinear Models Full Bilinear Pooling S. set of location, 数量为height*width X. local descriptors, 输入特征图每个点的值(长度为channel数c)维度变化(h, w, c)-&gt;(h, w, cc)-&gt;(cc) Compact Bilinear Pooling找到Φ(x)∈R^d使得 $Φ(x) ≈ xx^T$ Random Maclaurin Tensor Sketch pytorch版本代码过程 stream_1, stream_2;(b, 512, h, w), d=8000 初始化h_1, s_1, h_2, s_2;(512)，构造矩阵sparse_sketch_matrix1,sparse_sketch_matrix2;(512, 8000) reshape stream_1,stream_2;(bhw, 512) sketch=stream*sparse_sketch_matrix; (bhw, 8000) FFT(sketch_1)·FFT(sketch_2); (bhw, 8000) IFFT; (bhw, 8000) reshape (b, h, w, 8000) sum pooling; (b, 8000) 计算时间 在Caffe K40c GPU下 VGG16 forward backward时间为312ms Bilinear pooling 0.77ms TS(d=4096) 5.03ms，FFT计算量比矩阵运算大 Experiments Pooling Methods Full Bilinear Pooling Compact Bilinear Pooling. 相对于512*512（≈260000）特征维度，8000维度足够表示特征。fine tuning能够提高效果，但提升很小。 Fully Connected Pooling Improved Fisher Encoding. 对输出进行64 GMM编码 维数&amp;方式比较 在维度很小时，fine tune能够显著提升效果 维度在2000～8000合适 与PCA比较PCA Bilinear通过在bilinear layer前插入1*1Conv实现，初始化为PCA权重。 实验结果 Few Shot Learning 训练样本数量与分类器假设空间（hypothesis space）大小相关 实验证明低维度表示更适合few-shot learning]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Fine-Grained Classification</tag>
+        <tag>Compact Bilinear Pooling</tag>
+        <tag>Few Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2015) Bilinear CNN Models for Fine-grained]]></title>
+    <url>%2F2017%2F12%2F30%2FBilinear%20CNN%20Models%20for%20Fine-grained%2F</url>
+    <content type="text"><![CDATA[Lin T Y, RoyChowdhury A, Maji S. Bilinear cnn models for fine-grained visual recognition[C]//Proceedings of the IEEE International Conference on Computer Vision. 2015: 1449-1457. Overview 人类大脑双流假说 (two-streams hypothesis). 假说认为大脑中有两种视觉系统 腹流(ventral stream; what pathway). 参与物体识别 背流(dorsal stream; where pathway). 处理物体相对于viewer的空间位置 基于上述假说，论文提出bilinear模型，该模型可end-to-end训练，有助于fine-grained分类问题。 模型分为两条stream，分别负责 localization (where) [part detector] appearance modeling (what) [feature extractor]但最终实验表明两条stream并没有明显的界限，它们都趋向于激活特定的semantic part. 计算过程 得到两条stream输出的特征图后(h, w, c1), (h, w, c2) 首先，对应空间点进行外积操作，从而实现part-feature interaction. (h, w, c1*c2) 其次，进行sum-pooling操作. (c1*c2) 接着，进行signed square-root和L2归一化 最后，分类 数据集 (bird) CUB-200-2011. 11788张图片，200种鸟类 (aircraft) FGVC-aircraft. 10000张图片，100中飞机类型 (car) Cars. 16185张图片，196种车类型 实验结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Fine-Grained Classification</tag>
+        <tag>Bilinear CNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Learning to segment every thing]]></title>
+    <url>%2F2017%2F12%2F22%2FLearning%20to%20Segment%20Every%20Thing%2F</url>
+    <content type="text"><![CDATA[Hu R, Dollár P, He K, et al. Learning to segment every thing[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4233-4241. Overview 使用监督学习方式训练object instance segmentation任务，要求数据集有segmentation mask的标注。由于mask的标注成本非常高，现有数据集只有较少mask标注，而物体检测box的标注成本相对较低，现有数据集包含大量box标注。 因此论文提出一种叫做partially supervised (transfer learning)的训练方法，在包含所有box标注和少量mask标注的数据集上训练能够分割所有box标注对象的instance segmentation模型。对maks预测和box预测解耦的Mask R-CNN结构非常适合用于这种训练方法，论文称网络结果为Maskx R-CNN。 论文在COCO和Visual Genome数据集上进行实验，训练出能够检测3000种对象类别的instance segmentation模型。 思想 在视觉语义空间中，邻近的embedding向量在appearance或semantic上相近。可将box head（最后一层）权重参数和mask head（最后一层）权重参数看作embedding向量。同类别的两个向量在appearance上相似，因此可利用transfer从box head embedding向量学习出mask head embedding向量。 利用weight transfer function基于box权重预测mask权重，weight transfer function通过少量mask标注数据进行学习。由于box权重是针对所有box标注对象而言的，因此transfer后的mask权重也能够针对所有box标注对象， 从而能够预测数据集中mask标注对象以外的对象。换而言之，将category specific信息从box detectors迁移到instance mask predictors. 数据集 COCO. 为了模拟partially supervised instance segmentation, 将数据集分为两部分：使用box标注和mask标注、只使用box标注。 Visual Genome. 规模较大，只有box标注信息。 细节 训练数据划分 C=A∪B C. 数据集中所有对象类别 A. 含有mask标注的对象类别 B. 只有box标注的对象类别（已知mask标注，可以很容易得到box标注） Weight Transfer Function w_{det}. box head最后一层中的权重，可看作appearance-based visual embedding w_{seg}. mask head最后一层中的权重 Θ. 学习的参数，class-agnostic w_{det}的三种类型 w_{cls} w_{box} cat(w_{cls}, w_{box}) 训练使用A∪B训练box head，使用A训练mask head和τ. 训练方式可分为两种 State-wise Training 第一阶段只使用A∪B中的box标注训练模型。第二阶段固定conv和box head，使用A中的mask标注训练mask head和τ. End-to-end Joint Training（Mask R-CNN论文中表明multi-stask训练优于分别训练每个任务） Box loss和mask loss都直接回传，但在transfer分支上的mask loss回传至τ后停止（由于只有A的mask loss回传至w_{deg}，不存在B的mask loss，为了保持w_{det}在A和B之间的一致性）。 BaselineMask R-CNN with class-agnostic FCN mask head. 扩展：融合FCN+MLP Mask Head 两种mask head互补 FCN. capture detail MLP. capture gist 对baseline的FCN和论文transfer模型的FCN进行MLP融合来提高效果 Experiments on COCO 为了模拟partially supervised训练，将COCO中80个类别分为A(20, 类别包含为VOC数据集中，voc)和B(60, non-voc) Oracle Model. 同时利用A和B中的mask标注进行训练Mask R-CNN 实验结果 Ablation Experiments τ的输入 MLP融合 训练方式 Experiments on Visual Genome 使用VG数据集的box标注，COCO数据集的mask标注，由于VG没有mask标注，无法计算AP，因为论文直接可视化结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Transfer Learning</category>
+      </categories>
+      <tags>
+        <tag>Detection</tag>
+        <tag>Segmentation</tag>
+        <tag>Mask R-CNN</tag>
+        <tag>Maskx R-CNN</tag>
+        <tag>Weight Transfer</tag>
+        <tag>Transfer Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017 Best Paper) Mask r-cnn]]></title>
+    <url>%2F2017%2F12%2F22%2FMask%20r-cnn%2F</url>
+    <content type="text"><![CDATA[He K, Gkioxari G, Dollár P, et al. Mask r-cnn[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2961-2969. Overview 论文提出一个用于object instance segmentation的通用框架Mask R-CNN. 该框架在Faster R-CNN的基础上 并行增加了一个预测对象mask的分支（全卷积网络，对每个RoI进行预测） 将RoI Pooling操作改为RoI Align操作（将量化操作改为双线性插值操作） Mask R-CNN 5fps on GPU，论文进行object detection、instance segmentation和human pose estimation实验。 分割任务 Semantic segmentation(pixel labeling task).对每个像素点进行类间分类，不区分类内实例（例如图像中两只狗的像素点都分类为狗，不区分两只狗的像素点） Instance segmentation(object detection task). 检测图像中每个对象，并对每个对象实例进行分割 RoI Pooling的量化操作 Faster R-CNN主要用于物体检测任务，其中的RoI Pooling过程存在两次量化 浮点数RoI缩小feature_stride后，对应到共享特征图上的边界量化 RoI对应特征图进行RoI Pooling操作时，划分H*W区域的边界量化 量化操作会导致共享特征图上的RoI与输入图像之间存在错位问题，对分类和检测任务的影响并不大，但是对像素级别mask预测的影响较大（输入与输出之间并没有pixel-to-pixel alignment）。 RoI Align操作 将RoI Pooling中的量化操作改为双线性插值操作，RoI Align是提高准确度的关键操作。 考虑 Scale (feature_stride)为16的共享特征图 相对于输入图像的预测RoI x 量化操作 计算RoI相对于共享特征图的点坐标x/16.0 量化取整数点坐标round(x/16.0) 在共享特征图上采样该整数点的值 Align操作 计算RoI相对于共享特征图的点坐标x/16.0 在共享特征图上使用双线性插值采样该小数点的值 Mask R-CNN Mask R-CNN分为两个阶段 RPN预测RoIs 并行预测每个RoI的box (class, box offset)和binary mask. 看做两个分支 解耦mask与class FCN. class预测包含在mask预测中，存在类间竞争问题（per-pixel softmax, 多类别交叉熵）。即mask中每个像素点是一个k维softmax向量（或理解为对每个RoI预测一张mask，像素点分为k类型） Mask R-CNN. class预测从mask预测中分离出来，不存在类间竞争问题（per-pixel sigmoid, binary loss）。即mask中每个像素点是k个sigmoid值（或理解为对每个RoI预测k张mask，每张mask中的像素点分为background与foreground两种类型） Multi-task Loss对于每个RoI，有3个loss L_{cls}. log loss L_{box}. smooth L1 L_{mask}. binary cross entropy loss, 只计算对应类别的mask loss. 网络结构 Backbone. ResNet, ResNeXt, FPN Head. cls, box, mask 细节 训练 RoI与gt box的IoU大于等于0.5为正例，其余为负例 采样RoI正负比例1:3 Mask target为RoI与gt mask的交集 shorter side 800 测试 (与训练阶段的区别) 对预测的box进行NMS过滤 选择top 100个预测box进行mask预测 Instance Segmentation 实验结果 Ablationsclass-agnostic mask (29.7AP，m*m mask)与class-specific mask(30.3AP，m*m mask per class)效果相似。 边界框检测使用mask分支的Mask R-CNN比没有使用mask分支的Faster R-CNN&amp;RoI Align效果好 Human Pose Estimation 考虑身体部位共k个关键点（肩膀、肘等），则对每个RoI预测k张mask，每张mask中只有一个像素点为foreground，因此对m*m mask做softmax操作. 实验结果 Cityscape数据集扩展实验]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Object Detection</category>
+      </categories>
+      <tags>
+        <tag>Detection</tag>
+        <tag>Segmentation</tag>
+        <tag>Mask R-CNN</tag>
+        <tag>RoI Align</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2015) Faster R-CNN:Towards real-time object detection with region proposal networks]]></title>
+    <url>%2F2017%2F12%2F22%2FFaster%20R-CNN%3A%20Towards%20real-time%20object%20detection%20with%20region%20proposal%20networks%2F</url>
+    <content type="text"><![CDATA[Ren S, He K, Girshick R, et al. Faster R-CNN: Towards real-time object detection with region proposal networks[C]//Advances in neural information processing systems. 2015: 91-99. Overview SPPnet和Fast R-CNN通过共享特征图的机制解决了proposal计算冗余的问题，因此网络的瓶颈在于region proposal计算。由于 神经网络通过GPU运算 Region proposal通过CPU运算，Selective Search 2s/image 两者在时间上差别太大，在GPU上重新实现region proposal算法虽然能解决问题，但是并没有利用到计算共享的思想。 因此，论文提出Region Proposal Network (RPN). RPN是全卷积网络，模拟预测每个position的object bound和score, nearly cost free (10ms/image). 模型结构 论文将RPN与Fast R-CNN合并，称为Faster R-CNN. RPN与Fast R-CNN共享输入图像的卷积特征图conv_map. RPN对conv_map进行计算输出RoIs，类似于attention机制 Fast R-CNN基于RoIs进行计算输出对象框、对象置信度 论文使用的VGG16网络，5fps on GPU. Faster R-CNN在VOC 2007/2012和MS COCO数据集达到state of the art。 多尺寸机制 Faster R-CNN 论文中的Faster R-CNN使用了两种网络 ZF net RPN与Faster R-CNN共享5层网络 VGG16 RPN与Faster R-CNN共享13层网络 RPN RPN结构RPN网络有3个Conv层组成 第一层Conv. 256 kernels for ZF net, 512 kernels for VGG16, n*n size (论文使用n=3) 第二层Conv(cls). 2k_anchors kernels, 11 size 第三层Conv(reg). 4k_anchors kernels,11 size Anchors对共享特征图上的每个点模拟生成k个anchors box. 对于一张hw的RPN特征图，共有hw*k个anchor box.上述方法为多尺寸anchors, 因此模型中只使用单尺寸输入图片和单尺寸卷积核。 测试阶段 输入一张图片，图片经过共享卷积层生成共享特征图 共享特征图经过RPN网络生成whk个anchor box (reg)和对应的whk个前景/背景分类概率 (cls) 选出topN个前景概率最大anchor box，并使用nms算法对anchor box进行过滤，得到最终输入到Fast R-CNN网络中的RoI (proposal或anchor box) 训练阶段与测试阶段的区别在于 通过nms生成RoI的数量不同（例如github代码中测试阶段保留300 RoI，训练阶段保留2000 RoI） 计算loss（分类交叉熵和预测框的误差） Loss Function基于gt_box定义anchor box为正例还是负例 与gt_box IoU最高的anchor box为正例 与gt_box IoU大于0.7的anchor box为正例 与gt_box IoU小于0.3的anchor box为负例 计算公式 i表示第i个anchor box 表示ground truth, 正例p_{}为1，负例p_{*}为0 L_{cls}为log loss L_{reg}为L1 loss λ默认为10 x表示预测 x_{a}表示anchor x^{*}表示ground truth 训练细节 随机抽取一张图片中的256个anchor计算一个minibatch中的loss. 在这256个anchor中，正负例数量为1:1。如果一张图片中正例少于128个，使用负例填充 模型使用ImageNet预训练权重 迭代训练每次迭代分为四个步骤 预训练权重初始化模型，训练RPN 使用RPN产生RoI，训练检测网络Fast R-CNN 使用检测网络权重初始化RPN，固定共享层，微调RPN 固定共享层，微调检测网络剩余部分 实现细节 使用单尺寸图片，将最短边resize到s=600. anchor scale采用128128, 256256, 512*512 aspect ratios采用1:1, 1:2, 2:1 对于1000600的图片，共大约20000(6040*9)个anchor。剔除超过边界的anchor后，剩余大约6000 anchor for training。选出前景概率topN的anchor，并使用0.7阈值的NMS算法过滤，2000个用于训练的RoI。 实验 VOC数据集 耗时 Anchor超参数 λ超参数 代码流程图 RoI是相对于输入图像而言的，因此在将RoI和共享特征图输入到RoI Pooling层的同时，还会输入一个scale参数，也称为feature_stride（表示共享特征图与输入图像的比例）。]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Object Detection</category>
+      </categories>
+      <tags>
+        <tag>Detection</tag>
+        <tag>Segmentation</tag>
+        <tag>Faster R-CNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2015) Fast r-cnn Segmentation]]></title>
+    <url>%2F2017%2F12%2F22%2FFast%20r-cnn%2F</url>
+    <content type="text"><![CDATA[Girshick R. Fast r-cnn[C]//Proceedings of the IEEE international conference on computer vision. 2015: 1440-1448. Overview 由于R-CNN和SPPnet存在一些缺陷，本篇论文在R-CNN的基础上进行改进，提出速度更快，准确度更高的Fast R-CNN结构(相对于R-CNN增加了一个RoI pooling层)。 对于特定一张图像A，R-CNN模型利用selective search方法对其提取N个proposal (RoIs)，输入特征提取网络中进行后续运算。由于N个proposal中存在大量重叠的内容，特征提取网络的运算存在冗余。 因此，Fast R-CNN利用特征图共享机制，首先将图像A输入到特征提取网络中得到特征图B，再将RoIs定位到B中，选择相应区域特征图输入到RoI pooling层进行计算。 可看作是在输入图像提取的特征图上进行region proposal，而非在输入图像上进行region proposal后再对proposal提取特征。 Fast R-CNN在PASCAL VOC 2012数据集上 相比于R-CNN，训练速度快9倍，测试速度快213倍. mAP到达66% (R-CNN为62%) 相比于SPPnet，训练速度快3倍，测试速度快10倍 R-CNN缺点 Multi state pipeline. 微调、SVM、bounding box回归 速度慢. 47s/image on GPU Expensive in space and time. 在训练SVM之前，需要将提取特征存入硬盘 SPPnet缺点 Multi stage pipeline 提取的特征需要存入硬盘 Fast R-CNN贡献 更高mAP Single stage 能够更新所有网络层 不需硬盘存储 结构与训练 RoI pooling 输入. 输入图像中的RoI在其特征图上对应的区域（RoI是相对于输入图像而言的，因此将RoI和共享特征图输入到RoI Pooling层的同时，还会输入一个scale参数，也称为feature_stride（表示共享特征图与输入图像的比例））。 指定超参数H*W(论文设置为77)，即RoI pooling层的输出大小。对于hw的输入特征图，RoI pooling层将其划分为H*W的网格，对每个网格进行max pool操作 预训练权重初始化网络 使用ImageNet预训练权重，将 最后一个max pooling层换成RoI pooling层 最后一个 (fc, softmax) 换成2个 (fc, softmax)分支 网络的输入为 图像 对应图像中的RoIs Fine-tuning 采样N张图片，每张图片采样R/N个RoIs. 论文将N设置为2，R设置为128，即对采样的两张图片，各采样64个RoIs 由于所属某张图片的各RoI能够共享从该图片提取的特征图，因此相比与对128张图片各采样1个RoIs的方法快64倍 Multi-task loss p由第一个分支输出，包含对k+1个类别的预测置信度，u为ground truth t由第二个分支输出，包含k个类别的bounding box regression offset预测. v为ground truth, 归一化到标准正态分布 [u≥1] 当u≥1时，值为1，否则为0 λ超参数设置为1 对于一张图片（包含2只猫，一只狗），共产生200个region proposal (RoI)，模型分类器包含4类（猫、狗、鸟和背景） cls loss 每个RoI会产生1个置信度向量[猫，狗，鸟，背景]，直接与 class groud truth向量[p1, p2, p3, p4]计算loss loc loss 每个RoI会产生针对3个类别（猫、狗、鸟）的bounding box偏移量BB猫, BB狗, BB鸟，只计算这个RoI的class ground truth对应的bounding box loss. 例如，如果一个RoI的class ground truth为狗，那么计算BB ground truth与BB狗的loss. 上述为训练阶段的操作，在测试阶段，对N个RoI预测结果使用NMS算法进行过滤。 Mini-batch sampling Mini-batch大小为R=128，每张图片64个RoIs，25%为正样本（IoU≥0.5），其余为负样本（IoU∈[0.1,0.5)，忽略小于0.1的RoI） 0.5概率水平翻转图像，扩大数据集 Scale invariance Brute force. 直接将图片resize 成固定大小 Image pyramid. 在训练阶段，每次随机采样一个特定的pyramid scale。 论文在试验中证明image pyramid对mAP提升很小，但耗时明显增加。因此论文采用第一种方法。 测试阶段 R设置为2000，计算得到每个RoI的预测和bounding box regression 使用R-CNN中的NMS方法减少预测结果RoI的数量（NMS仅在测试阶段使用） 使用Truncated SVD提速对于u*v的权重矩阵，将其分解为 U u*t Σ t*t V v*t将计算量从uv降低至t(u+v)，将t远小于u,v时。因此，可将fc层的W分解为两个fc层 ΣV (no bias) U (包含原fc层中的bias) 实验结果 VOC数据集增大数据集能提高准确度. 耗时 Fine-tune对于较深的网络，只微调fc层的结果明显差于微调卷积层+fc层的结果。 multi-task训练效果 Scale invariancesingle scale和multi scale性能相差不大，但multi scale耗时增加明显。 Softmax与SVM More proposal worse]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Object Detection</category>
+      </categories>
+      <tags>
+        <tag>Fast R-CNN</tag>
+        <tag>Detection</tag>
+        <tag>Segmentation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2014) Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation]]></title>
+    <url>%2F2017%2F12%2F22%2FRich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation%2F</url>
+    <content type="text"><![CDATA[Girshick R, Donahue J, Darrell T, et al. Rich feature hierarchies for accurate object detection and semantic segmentation[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2014: 580-587. Overview 论文提出R-CNN模型 (combine region proposals with CNN)，在VOC 2012物体检测任务上达到53.3% mAP，相对于当前best result提高了30%。 由于detection标注数量较少，而classification标注数量较多。因此 首先，基于classification标注信息预训练分类网络 接着，针对detection标注信息，选择合适的分类层替换分类网络中最后的分类层，进行微调 最终，利用该网络（去掉一些fc和softmax层）提取的4096维特征，训练SVM分类器 Modules R-CNN模型包含3个模块: Region Proposal, CNN, SVM. Region Proposals 选用selective search方法： 初始化n个region，组成region集合R 计算每两个region之间的相似度，加入相似度集合S中 选出S中相似度最大的region pair (r_{i}, r_{j})，将r_{i}, r_{j}合并为r_{t} 从S中剔除与r_{i}, r_{j}有关的region pair 计算r_{t}与剩余所有region的相似度，并加入S中 将r_{t}加入到R中 重复[加粗部分]直到S为空 Feature Extraction 输入为mean-subtracted 227*227 RGB，结构由5层CNN和2层FC组成，输出为4096维特征向量。对proposal进行transform的3种方法 将proposal放入tightest框中，并额外加入context信息 将proposal放入tightest框中，不加入context信息 warp 此外，每种方法都是用context padding p像素 测试阶段 使用selective search方法提取2000个region proposal. 最终用贪心non-maximum suppression算法reject proposal预测结果数量。 non-maximum suppression (NMS) 对于一个特定的分类 从region预测结果集合P中，选出最高得分的region A 遍历region集合，剔除与A的IoU大于指定阈值的region 将A存入最终目标结果集合Q中 重复上述3个步骤，直至P为空，则Q为最终所求的预测regions 对N个类别重复上述整个过程。 测试耗时13s/image on GPU, 53s/image on CPU. 主要耗时在于dot product和NMS。在实际中，将一个图像中的2000个proposal组成一个矩阵，因此Feature extraction输出的特征为2000*4096. 训练阶段 训练分为3个阶段：监督预训练、微调、SVM分类器训练。 监督预训练使用auxiliary数据集(ILSVRC2012 classification)预训练分类网络。 Domain-specific fine-tuning 把分类网络的最后一层(1000 way)替换成随机初始化的(N+1背景 way)层。 正样本 与ground-truth的IoU≥0.5的region 负样本 minibatch 128 (32正样本+96负样本) SVM分类器 正样本 ground-truth 负样本 与ground-truth的IoU＜0.3的region. 忽略＞0.3的region Bounding Box Regression 为了提高localization准确度，论文进一步在R-CNN模型中加入了bounding box regression. ground truth和每个proposal的bounding box都由坐标(中心点坐标，宽，高)表示 通过学习一个映射，将proposal box映射到ground truth box. 实验结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Object Detection</category>
+      </categories>
+      <tags>
+        <tag>Detection</tag>
+        <tag>Segmentation</tag>
+        <tag>R-CNN</tag>
       </tags>
   </entry>
   <entry>
@@ -29,6 +270,21 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[(CVPR 2018) Non-local Neural Networks]]></title>
+    <url>%2F2017%2F12%2F19%2FNon-local%20Neural%20Networks%2F</url>
+    <content type="text"><![CDATA[Wang X, Girshick R, Gupta A, et al. Non-local neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7794-7803. Overview convolutional和recurrent操作建立的block，每次只能处理一个局部区域，基于非局部均值滤波的思想，论文提出具有通用性的非局部组件，能够capture long range dependencies. 非局部组件通过计算所有点的特征加权和作为目标点的响应。非局部操作能够capture相距较远的点在时间和空间上的关系。 论文使用非局部模型（非局部-残差网络） 在Kinetics和Charades视频数据集上做classification任务，性能超过目前的冠军 在COCO数据集上做object detection/segmentation和pose estimation任务，性能有明显提高 Repeated 由于convolutional和recurrent建立的block每次只能处理一个局部区域，因此需要通过重复操作来实现long range dependencies. convolutional操作通过堆叠(stack) CNN层实现 recurrent操作通过记忆+循环实现 但repeated实现方式存在一些缺陷 效率低下 优化困难 信息很难在相距较远的点之间来回传递(multi-hop dependency modeling多跳依赖建模)。（例如，对于100*100的图像，左上角的点和右下角的点在前几层CNN中并无关联） 非局部操作优点 直接计算任意两点之间的关系来capture long range dependencies，忽略点之间的距离 非局部操作高效，仅使用少量的层就能达到betst result, 额外增加的计算量少 保持输入大小不变 能capture空间和时间维度，比3D CNN更高效 Related Work 非局部图像处理图形模型 CRF能够被用于segmentation, 而非局部操作具有通用性，可用于分类和检测。 Self-attention 通过所有点的加权平均计算当前点的响应。self-attention可看做是非局部均值的一种方式。 Interaction Networks 使用pairwise interaction。其变体Relation Network使用到所有pair of positions. Video Classification Architecture 最通常的做法是结合CNN和RNN，但是前馈模型使用3D CNN，将预训练权重的2D卷积核inflating成3D卷积核。此外，optical flow和trajectory能提高性能。 Non-local Neural Networks Formulation通用形式为 i 输出位置点 j 所有位置点 x 输入 y 输出 f pairwise function, 计算点i和点j之间关系，输出为标量 g 计算representation of 点j C 归一化因子 区别 非局部操作涉及到所有位置点，而convolutional操作只处理局部区域，recurrent操作通常只涉及到当前时间状态与最近时刻状态(j=i或j=i) 非局部操作基于不同点之间的关系计算响应，而fc的权重通过学习得到。 非局部操作能够适用不同大小的输入，并且能够任意加入到网络中，而fc的输入大小需要事先固定，且通常只放到网络的最后一层。 Instantiations g函数使用线性embedding 通过2D CNN（空间）或3D CNN（时空）实现。 Pairwise function f函数有多种选择 Gaussian Embedded Gaussian 可写成softmax形式 Dot Product N为x位置点的总数，与Embedded Gaussian的区别在于没有softmax操作。 Concatenation [,]表示concat操作，wf为权重向量，将concated向量投影为标量。 Non-local Block x为residual连接. Block可以任意插入到预训练模型中，并保持模型的初始行为，即将W_{z}权重初始化为0. 当block使用在high level的特征图上，计算量很少。例如，T=4， H=W=14或7. 减少计算量 Θ和φ网络channel数量设置为输入的一半 在g和φ网络后进行下采样，如连接max pooling 层 Video Classification Model 2D ConvNet (C2D) 输入维度为32帧224224，其本质为1kk的卷积核，直接使用ImageNet预训练权重初始化。残差block中的卷积层相当于逐帧处理操作（卷积核和步长在帧的维度上为1）。 Inflated 3D ConvNet (I3D) 2D kk卷积核inflate为3D tkk卷积核。将kk训练权重扩展到t plane，并乘以缩放因子1/t. 两种inflate方式 inflate残差block中的33卷积核为33*3 inflate残差block中第一个11卷积核为31*1 I3D模型优于CNN+LSTM. Non-local network将non-local网络插入到C2D和I3D网络中。 实现细节 Train阶段 ImageNet预训练权重初始化 输入为32帧clips，从原始视频中random crop连续64帧，并丢弃剩余其他帧 输入尺寸为224*224，通过random crop得到 迭代400k次，学习率初始为0.01，每150k迭代减少10% momentum 0.9，权重衰减0.0001，dropout 0.5 fine tune模型是不固定BN层，能够防止过拟合 仅在W_{z}层后插入BN层，scale参数初始化为0，可保持整个non local block为全等映射，即保持预训练模型的初始行为 Inference阶段 均匀地从一整段视频中抽取10个clip，计算softmax得分，最终预测结果为10个softmax得分的平均。 Experiments on Video Classification Kinetics数据集246k训练视频，20k验证视频，包含400个人类动作分类。 Instantiations比较不同类型的非局部操作，得出结论非局部操作类型的影响并不大，性能的提升主要是由于非局部操作，而非attention机制。因此实验中默认使用Embedded Gaussian. Stage to Add Non local Blockres5的空间大小为7*7，因此可能是因为没有足够准确的空间信息，导致准确度略微下降。 使用更多的非局部block一般而言，更多的非局部block能提升性能准确度，multiple非局部block能够实现long range multi-hop communication (多跳交流). 从5 block R50 73.8%与base R101 73.1%，可以看出准确率的提升并不是因为层数加深，而是因为非局部block. 此外，实验也将加入的非局部block替换为标准残差block，发现准确度并没有提升。 时空上的非局部操作 非局部2D ConvNet vs 3D ConvNet 非局部3DConvNet使用I3D_{311}模型 更长的序列将每个输入clips增加到128帧，所有模型的准确度都有提升。 与目前最好的结果比较非局部网络方法在没有使用optical flow和其他技巧的情况下，取得较好结果。 Charades数据集8k训练视频，1.8k验证视频，2k测试视频，包含157个人类动作分类。 Experiments on COCO Detection与Segmentation 在不同规模的模型中加入非局部block均能提高准确度，说明非局部依赖并没有通过增加层数堆叠充分capture. 此外，单层非局部block只增加了不到5%的计算量，使用更多的非局部block结果反而有所下降。 Keypoint Detection]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Classification</tag>
+        <tag>Attention</tag>
+        <tag>Non-local</tag>
+        <tag>Video Classification</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(NIPS 2015) Spatial transformer networks]]></title>
     <url>%2F2017%2F12%2F19%2FSpatial%20transformer%20networks%2F</url>
     <content type="text"><![CDATA[Jaderberg M, Simonyan K, Zisserman A. Spatial transformer networks[C]//Advances in neural information processing systems. 2015: 2017-2025. Overview 虽然CNN的效果很好，但是仍然缺乏对数据的空间不变能力，从而限制了计算和参数的效率。因此，论文提出Spatial Transformer Network (STN)。 STN 在网络中对数据显式地进行空间操作（平移、旋转、缩放、裁剪、扭曲）。由于该操作可微，因此模型能够end to end训练。 根据输入数据，动态生成空间操作参数Θ。 网络参数直接通过loss回传进行学习。可直接添加到神经网络模型中，整个训练不需额外的监督信息加入。 空间操作后的数据是与后续特定任务高度相关的。另一方面，变换后的低分辨率数据比原始数据的计算效率更高。 通过对数据进行操作实现不变性，而不是对特征提取器（卷积核）。 适用的任务 classification co-localization spatial attention Spatial Transformers STN包含3部分 (Figure 2) localization network. grid generator. sampler. Localization Network 输入U(h, w, c) 输出空间变换参数Θ 网络可以是任何形式，如FCN、CNN等。仿射变换Θ的参数为6，投影变换参数为8，以及thin plate spline (TPS). 模型对最后一层的weight矩阵初始化为0，bias初始化为[[1, 0, 0], [0, 1, 0]]（仿射变换），即全等变换。 Parameterised Sampling Grid 首先根据采样网格大小（超参数）生成标准网格(t; x,y∈(-1, 1); (h, w, 2)). 利用空间变换参数Θ对其进行变换操作，生成采样网格(s; x,y∈(-1, 1); (h, w, 2)). Differentiable Image Sampling 通用的采样公式可写为 k为通用采样kernel; x, m, y, n为坐标点。Φ为kernel的参数。 对于整数采样kernel，公式简化为 取x+0.5下界整数，δ函数为Kronecker delta函数 对于双线性采样kernel，公式简化为 该公式可导 Spatial Transformer Networks 由于Θ显式地编码了变换，因此也可将Θ传入后续的网络，而非变换后的特征图（或图片）。 可用STN对特征图进行上采样或下采样。但是，用固定的、小空间支持的采样kernel（双线性kernel）进行下采样会造成影响。 STN可级联或并行在网络中。 Experiments Distorted MNIST 数据集distorted方式分为 R 旋转，±90°之间。 RTS 旋转+缩放+平移 P 投影 E 弹性形变（破坏性，不可逆） 所有模型都具有相同数量参数，分别使用3类变换操作：仿射变换(Aff)、投影变换(Proj)、薄板样条变换(TPS)。实验发现TPS最有效。 MNIST Addition 输入两张数字图片(h,w,2)，输出数字的和。 Street View House Numbers 每张图片有1～5个数字。因此，模型采用级联STN，并使用5个独立的softmax分类器，每个分类器包含一个空字符 Fine-Grained Classification CUB-200-2011数据集，模型采用并行STN结构。 Co-localization 使用半监督学习来定位图像中的物体。基于正确定位对象A与正确定位对象B之间的距离，比A与随机定位crop小的假设，构造hinge loss T表示crop，e为编码函数，α为margin，实验设置为1。数据集的构建操作为：将2828的数字图片放在8484背景中，并将从训练集中采样得到的16个随机6*6 crop放入背景中。当预测定位与ground-truth的交集大于0.5时，定义为预测正确。 Higher Dimensionnal Transformer 模型使用3D仿射变换和3D双线性插值操作。 另一种处理方法是：将3D空间投影到2D空间，例如]]></content>
@@ -38,8 +294,8 @@
       </categories>
       <tags>
         <tag>Classification</tag>
-        <tag>STN</tag>
         <tag>Fine-Grained Classification</tag>
+        <tag>STN</tag>
         <tag>Attention</tag>
         <tag>Localization</tag>
       </tags>

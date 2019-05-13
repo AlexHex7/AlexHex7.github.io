@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Litjens G, Kooi T, Bejnordi B E, et al. A survey on deep learning in medical image analysis[J]. arXiv preprint arXiv:1702.05747, 2017.">
+<meta name="keywords" content="Overview,Medical">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(2017) A survey on deep learning in medical image analysis">
+<meta property="og:url" content="http://yoursite.com/2018/02/02/A Survey On Deep Learning in Medical Image Analysis/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Litjens G, Kooi T, Bejnordi B E, et al. A survey on deep learning in medical image analysis[J]. arXiv preprint arXiv:1702.05747, 2017.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/A Survey On Deep Learning in Medical Image Analysis/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/A Survey On Deep Learning in Medical Image Analysis/2.jpg?raw=true">
+<meta property="og:updated_time" content="2018-02-01T22:25:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(2017) A survey on deep learning in medical image analysis">
+<meta name="twitter:description" content="Litjens G, Kooi T, Bejnordi B E, et al. A survey on deep learning in medical image analysis[J]. arXiv preprint arXiv:1702.05747, 2017.">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/A Survey On Deep Learning in Medical Image Analysis/1.jpg?raw=true">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2018/02/02/A Survey On Deep Learning in Medical Image Analysis/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>(2017) A survey on deep learning in medical image analysis | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/02/A Survey On Deep Learning in Medical Image Analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">(2017) A survey on deep learning in medical image analysis
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-02-02 06:25:02" itemprop="dateCreated datePublished" datetime="2018-02-02T06:25:02+08:00">2018-02-02</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Medical/" itemprop="url" rel="index"><span itemprop="name">Medical</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Medical/Overview/" itemprop="url" rel="index"><span itemprop="name">Overview</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Litjens G, Kooi T, Bejnordi B E, et al. A survey on deep learning in medical image analysis[J]. arXiv preprint arXiv:1702.05747, 2017.</p>
+</blockquote>
+<a id="more"></a>
+<p><br></p>
+<hr>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<p>论文检索并分析了308篇与深度学习和医学图像有关的论文。</p>
+<h2 id="检索方式"><a href="#检索方式" class="headerlink" title="检索方式"></a>检索方式</h2><ul>
+<li>对<strong>PubMed</strong>数据库（<strong>标题摘要</strong>）进行<strong>关键词</strong>（convolutional or deep learning）检索</li>
+<li><strong>ArXiv</strong>检索<strong>medical imaging</strong></li>
+<li><strong>MICCAI, SPIE, ISBI, EMBC</strong> conference proceeding</li>
+</ul>
+<h2 id="相关任务"><a href="#相关任务" class="headerlink" title="相关任务"></a>相关任务</h2><ul>
+<li>image classification</li>
+<li>object detection</li>
+<li>segmentation</li>
+<li>registration</li>
+<li>retrieval</li>
+<li>generation</li>
+<li>enhancement</li>
+</ul>
+<h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><ul>
+<li>neuro</li>
+<li>retinal（视网膜）</li>
+<li>pulmonary（肺）</li>
+<li>digital pathology（病理学）</li>
+<li>breast（乳腺）</li>
+<li>cardiac（心脏）</li>
+<li>abdominal（腹部）</li>
+<li>musculoskeletal（肌肉骨骼）</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Survey On Deep Learning in Medical Image Analysis/1.jpg?raw=true" alt><br></div>
+
+<h2 id="CNN-Architecture"><a href="#CNN-Architecture" class="headerlink" title="CNN Architecture"></a>CNN Architecture</h2><ul>
+<li>Classification Architecture</li>
+<li><strong>Multi-stream</strong> Architecture <strong>(multi-scale; 2.5D, multiple angled patched from 3D space)</strong></li>
+<li>Segmentation Architecture (U-Net)</li>
+</ul>
+<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><ul>
+<li><strong>pixelRNN</strong> for segmentation</li>
+</ul>
+<h2 id="Unsupervised-Model"><a href="#Unsupervised-Model" class="headerlink" title="Unsupervised Model"></a>Unsupervised Model</h2><ul>
+<li>AE, SAE (AE+AE+…+AE). for denoising</li>
+<li>RBM, DBN (RBM+RBM+…+RBM). 无监督训练，再加上分类器fine tuing</li>
+<li>VAE, GAN</li>
+</ul>
+<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul>
+<li><strong>OASIS</strong>. brain MRI registration</li>
+<li><strong>BRATS, LSLES, and MRBrains challenges.</strong> brain lesion segmentation</li>
+<li><strong>Kaggle Diabetic Retinopathy challenge 2015.</strong> disbetic retinopathy classification</li>
+<li><strong>PROMISE12 challenge.</strong> prostate segmentation</li>
+<li><strong>LUNA16 challenge.</strong> nodule classification</li>
+<li><strong>CAMELYON16, TUPAC, DREAM.</strong> breast cancer metastases detection in lymph nodes</li>
+<li><strong>ICPR 2012, AMIDA 2013, GLAS.</strong> gland segmentation</li>
+<li><strong>SLIVER07.</strong> liver segmentation</li>
+<li><strong>LIDC-IDRI.</strong> detect nodules in lung CT</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Survey On Deep Learning in Medical Image Analysis/2.jpg?raw=true" alt><br></div>
+
+
+<p><br></p>
+<hr>
+<h1 id="医学图像中的深度学习应用"><a href="#医学图像中的深度学习应用" class="headerlink" title="医学图像中的深度学习应用"></a>医学图像中的深度学习应用</h1><hr>
+<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><h3 id="Image-Exam-Classification-（图像-gt-是否病变）"><a href="#Image-Exam-Classification-（图像-gt-是否病变）" class="headerlink" title="Image/Exam Classification （图像-&gt;是否病变）"></a>Image/Exam Classification （图像-&gt;是否病变）</h3><p>使用预训练权重(迁移学习)</p>
+<ul>
+<li>预训练网络提取特征，作为后续模型输入</li>
+<li>使用medical数据fine tuning预训练网络<br>2015~2017年，47篇exam classification paper， 36篇使用<strong>CNN</strong>， 5篇使用<strong>AE</strong>， 6篇使用<strong>RBM</strong>. 且涉及不同的医学领域：<strong>retinal, digital pathology, lung computed tomography.</strong></li>
+</ul>
+<h3 id="Object-or-Lesion-Classification"><a href="#Object-or-Lesion-Classification" class="headerlink" title="Object or Lesion Classification"></a>Object or Lesion Classification</h3><p>对图像中已经识别出来的某个小部分进行多分类（病变类型, <strong>nodule classification in chest CT</strong>）。通常需要考虑（Multi-stream）</p>
+<ul>
+<li><strong>病变外观的局部信息</strong></li>
+<li><strong>病变位置的全局上下文信息</strong><br>到达高分类准确度。</li>
+</ul>
+<hr>
+<h2 id="Detection"><a href="#Detection" class="headerlink" title="Detection"></a>Detection</h2><h3 id="Organ-Region-and-Landmark-Localization"><a href="#Organ-Region-and-Landmark-Localization" class="headerlink" title="Organ, Region and Landmark Localization"></a>Organ, Region and Landmark Localization</h3><p>通常需要处理3D图像，一些方法将3D空间看做由一些2D正交平面构成（<strong>2D MRI slices</strong>）。<br><strong>图像localization方</strong>法分为</p>
+<ul>
+<li>RoI</li>
+<li>直接regress<br>此外，还涉及到temporal数据的scan plane or key frame localization (<strong>standardized scan planes in mid-pregnancy fetal US).</strong></li>
+</ul>
+<h3 id="Object-or-Lesion-Detection"><a href="#Object-or-Lesion-Detection" class="headerlink" title="Object or Lesion Detection"></a>Object or Lesion Detection</h3><p>定位并识别lesion (<strong>multi-stream</strong> for <strong>CT</strong> and <strong>PET</strong> data; <strong>micro-bleed</strong> in brain MRI)</p>
+<hr>
+<h2 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h2><h3 id="Organ-and-Substructure-Segmentation"><a href="#Organ-and-Substructure-Segmentation" class="headerlink" title="Organ and Substructure Segmentation"></a>Organ and Substructure Segmentation</h3><p>Contour or interior of objects (<strong>pectoral muscle in breast MRI, coronary arteries in cardiac CT angiography, vertebral body in MRI</strong>).</p>
+<p>相关技术</p>
+<ul>
+<li>2D U-Net</li>
+<li><strong>3D V-Net</strong>, Dice coefficient</li>
+<li>基于RNN，融合双向信息(left/top, right/bottom)</li>
+<li>结合双向LSTM和2D U-Net</li>
+<li>结合FCN和graphical model (MRF, CRF)</li>
+</ul>
+<h3 id="Lesion-Segmentation"><a href="#Lesion-Segmentation" class="headerlink" title="Lesion Segmentation"></a>Lesion Segmentation</h3><p>包含</p>
+<ul>
+<li>Object detection</li>
+<li>Organ and substructure segmentation<br>需要考虑global and loval context <strong>[Multi-stream] (white matter lesions in brain MRI). </strong></li>
+</ul>
+<hr>
+<h2 id="Registration"><a href="#Registration" class="headerlink" title="Registration"></a>Registration</h2><p><strong>spatial alignment.</strong> 包含两种方法</p>
+<ul>
+<li><strong>估计两张图像的相似度</strong></li>
+<li><strong>预测transformation parameters</strong></li>
+</ul>
+<hr>
+<h2 id="Other-Task"><a href="#Other-Task" class="headerlink" title="Other Task"></a>Other Task</h2><h3 id="Retrieval"><a href="#Retrieval" class="headerlink" title="Retrieval"></a>Retrieval</h3><p>使用Hashing forest进行压缩</p>
+<h3 id="Generation-and-Enhancement"><a href="#Generation-and-Enhancement" class="headerlink" title="Generation and Enhancement"></a>Generation and Enhancement</h3><p>超分辨率</p>
+<h3 id="Combine-Image-with-Report"><a href="#Combine-Image-with-Report" class="headerlink" title="Combine Image with Report"></a>Combine Image with Report</h3><p>Caption, LDA<br>Mammography中的3个描述</p>
+<ul>
+<li>shape</li>
+<li>margin</li>
+<li>density</li>
+</ul>
+<p><br></p>
+<hr>
+<h1 id="应用领域-1"><a href="#应用领域-1" class="headerlink" title="应用领域"></a>应用领域</h1><hr>
+<h2 id="Brain"><a href="#Brain" class="headerlink" title="Brain"></a>Brain</h2><p>Alzheimer classification, brain tissue segmentation, anatomical structure (hippocampus).</p>
+<p>相关技术</p>
+<ul>
+<li>multi-scale for contextual</li>
+<li>2D slice-by-slice处理3D数据</li>
+</ul>
+<h2 id="Eye"><a href="#Eye" class="headerlink" title="Eye"></a>Eye</h2><p>color fundus imaging (CFI).</p>
+<h2 id="Chest"><a href="#Chest" class="headerlink" title="Chest"></a>Chest</h2><p>基于CT扫描估计lung cancer概率</p>
+<h2 id="Digital-Pathology-and-Microscopy"><a href="#Digital-Pathology-and-Microscopy" class="headerlink" title="Digital Pathology and Microscopy"></a>Digital Pathology and Microscopy</h2><p>whole-slide images （WSI）</p>
+<ul>
+<li>检测、分割、分类nuclei</li>
+<li>分割organ</li>
+<li>检测分类 the disease of interest at the lesion or WSI-level</li>
+</ul>
+<h2 id="Breast"><a href="#Breast" class="headerlink" title="Breast"></a>Breast</h2><p>考虑三个子任务</p>
+<ul>
+<li>检测分类mass-like lesion</li>
+<li>检测分类micro-calcfication</li>
+<li>breast cancer评估</li>
+</ul>
+<h2 id="Cardiac"><a href="#Cardiac" class="headerlink" title="Cardiac"></a>Cardiac</h2><p>使用2D CNN slice by slice处理3D或4D数据。</p>
+<p>##Abdomen</p>
+<p>##Musculoskeletal</p>
+<p>##Other</p>
+<p><br></p>
+<hr>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><hr>
+<h2 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h2><ul>
+<li>prefer end-to-end CNN</li>
+</ul>
+<h2 id="Key-Aspect"><a href="#Key-Aspect" class="headerlink" title="Key Aspect"></a>Key Aspect</h2><ul>
+<li><strong>data preprocessing or augmentation</strong>（相同模型结构，不同结果）</li>
+<li>针对特定任务的模型结构（<strong>multi-view, multi-scale</strong>）</li>
+<li>增加<strong>patch size</strong>观察更多context</li>
+<li>超参数（LR, Dropout rate）</li>
+</ul>
+<h2 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h2><ul>
+<li>医学图像数据已有很多，挑战在于<strong>图像的标注</strong>（需要领域专家进行标注、3D图像标注成本大）。因此，从有限数据进行高效学习是重要的研究方向。 一些研究利用sparse 2D segmentation训练3D segmentation、一些考虑 non-expert labels via crowd-sourcing</li>
+<li><strong>Label noise</strong>. 多专家分别进行标注，对比结果是否一致</li>
+<li>Fail in <strong>rare category</strong></li>
+<li><strong>Class imbalance.</strong> 研究方向（通常对较少样本进行scale, rotate操作）</li>
+<li>结合<strong>patient history, age, demographics</strong>进行诊断</li>
+<li>Balance <strong>image feature</strong> (thousands) and <strong>clinical feature</strong> (handful)</li>
+<li>patch不具有<strong>全局位置信息</strong>，而<strong>entire image</strong>占用较大内存</li>
+</ul>
+<h2 id="Outlook"><a href="#Outlook" class="headerlink" title="Outlook"></a>Outlook</h2><ul>
+<li>Unsupervised, VAE, GAN are attractive</li>
+<li>Combine Bayesian statistic with deep learning</li>
+<li>Image reconstruction (unexplored area)</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Overview/" rel="tag"># Overview</a>
+          
+            <a href="/tags/Medical/" rel="tag"># Medical</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/02/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/02/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/" rel="prev" title="(AAAI 2017) Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images">
+                (AAAI 2017) Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+            
+              <p class="site-author-name" itemprop="name">Alex Hex</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">75</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:378344082@qq.com" title="E-Mail &rarr; mailto:378344082@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检索方式"><span class="nav-number">1.1.</span> <span class="nav-text">检索方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关任务"><span class="nav-number">1.2.</span> <span class="nav-text">相关任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用领域"><span class="nav-number">1.3.</span> <span class="nav-text">应用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN-Architecture"><span class="nav-number">1.4.</span> <span class="nav-text">CNN Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-number">1.5.</span> <span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Model"><span class="nav-number">1.6.</span> <span class="nav-text">Unsupervised Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.7.</span> <span class="nav-text">数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#医学图像中的深度学习应用"><span class="nav-number">2.</span> <span class="nav-text">医学图像中的深度学习应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification"><span class="nav-number">2.1.</span> <span class="nav-text">Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Exam-Classification-（图像-gt-是否病变）"><span class="nav-number">2.1.1.</span> <span class="nav-text">Image/Exam Classification （图像-&gt;是否病变）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-or-Lesion-Classification"><span class="nav-number">2.1.2.</span> <span class="nav-text">Object or Lesion Classification</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detection"><span class="nav-number">2.2.</span> <span class="nav-text">Detection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Organ-Region-and-Landmark-Localization"><span class="nav-number">2.2.1.</span> <span class="nav-text">Organ, Region and Landmark Localization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-or-Lesion-Detection"><span class="nav-number">2.2.2.</span> <span class="nav-text">Object or Lesion Detection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation"><span class="nav-number">2.3.</span> <span class="nav-text">Segmentation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Organ-and-Substructure-Segmentation"><span class="nav-number">2.3.1.</span> <span class="nav-text">Organ and Substructure Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lesion-Segmentation"><span class="nav-number">2.3.2.</span> <span class="nav-text">Lesion Segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Registration"><span class="nav-number">2.4.</span> <span class="nav-text">Registration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-Task"><span class="nav-number">2.5.</span> <span class="nav-text">Other Task</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieval"><span class="nav-number">2.5.1.</span> <span class="nav-text">Retrieval</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generation-and-Enhancement"><span class="nav-number">2.5.2.</span> <span class="nav-text">Generation and Enhancement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-Image-with-Report"><span class="nav-number">2.5.3.</span> <span class="nav-text">Combine Image with Report</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用领域-1"><span class="nav-number">3.</span> <span class="nav-text">应用领域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Brain"><span class="nav-number">3.1.</span> <span class="nav-text">Brain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eye"><span class="nav-number">3.2.</span> <span class="nav-text">Eye</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chest"><span class="nav-number">3.3.</span> <span class="nav-text">Chest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Pathology-and-Microscopy"><span class="nav-number">3.4.</span> <span class="nav-text">Digital Pathology and Microscopy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Breast"><span class="nav-number">3.5.</span> <span class="nav-text">Breast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cardiac"><span class="nav-number">3.6.</span> <span class="nav-text">Cardiac</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-1"><span class="nav-number">4.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-Aspect"><span class="nav-number">4.2.</span> <span class="nav-text">Key Aspect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Challenge"><span class="nav-number">4.3.</span> <span class="nav-text">Challenge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Outlook"><span class="nav-number">4.4.</span> <span class="nav-text">Outlook</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
