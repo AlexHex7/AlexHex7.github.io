@@ -1,6 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(CVPR 2018) Feature Generating Networks for Zero-Shot Learning]]></title>
+    <url>%2F2018%2F06%2F22%2FFeature%20Generating%20Networks%20for%20Zero-Shot%20Learning%2F</url>
+    <content type="text"><![CDATA[Xian Y, Lorenz T, Schiele B, et al. Feature generating networks for zero-shot learning[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 5542-5551. Overview Motivation data imbalance between seen and unseen classes In this paper synthesizes CNN features conditioned on class-level semantic information WGAN + classification loss exploit generated CNN features to train softmax classifier Contribution f-CLSWGAN experiments on five dataset generate deep feature to improve ZSL Related WorksGAN GAN cGAN DCGAN InfoGAN WGAN ZSL and GZSL learn compatibility between images and classes classification Methods Definitions x. image feature y. seen label c(y). label embedding u. unseen label f-GAN D. [0, 1] with MLP + sigmoid f-WGAN α ~ U(0, 1) D. no sigmoid f-CLSWGAN Classification Multimodal Embedding Softmax Experiments Dataset Details sentence. character-based CNN-RNN attribute. G and D. MLP + LeakyReLU no BN the final layer of G. ReLU λ=10, β=0.01 Evaluation T1. average per-class top-1 accuracy harmonic mean Comparison Ablation Study]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>Zero-Shot</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Classification</tag>
+        <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Zero-Shot Learning</tag>
+        <tag>Feature Generation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) An empirical evaluation of generic convolutional and recurrent networks for sequence modeling]]></title>
+    <url>%2F2018%2F06%2F22%2FAn%20empirical%20evaluation%20of%20generic%20convolutional%20and%20recurrent%20networks%20for%20sequence%20modeling%2F</url>
+    <content type="text"><![CDATA[Bai S, Kolter J Z, Koltun V. An empirical evaluation of generic convolutional and recurrent networks for sequence modeling[J]. arXiv preprint arXiv:1803.01271, 2018. Overview In this paper, it demonstrated that simple CNN (TCN) outperforms RNN, such as LSTM TCN. longer memory, more accurate, simper RNN. not paralleled BackgroundApplication part-of-speech tagging and semantic role labelling sentence classification document classification machine translation audio synthesis language modeling Architecture LSTM GRU ConvLSTM Quasi-RNN dilated RNN TCN Architecture input. sequence of any length output sequence of the same length no gating mechanism longer memory 1D Conv with padding receptive fileds dilation factor d kernel size k network depth n d=2^n to make sure to hit each input within the effective history Advantage parallelism flexible receptive filed size stable gradient low memory requirement for training variable length inputs Disadvantage data storage during evaluation potential parameter change for a transfer of domain Experiments Details gradient clipping helped convergence [0.3, 1] find that TCN insensitive to hyperparameter changes, as long as the effective history size is sufficient Comparison Adding Problem Controlled Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>TCN</tag>
+        <tag>NLP</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Attention is all you need]]></title>
+    <url>%2F2018%2F06%2F22%2FAttention%20is%20all%20you%20need%2F</url>
+    <content type="text"><![CDATA[Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need[C]//Advances in Neural Information Processing Systems. 2017: 6000-6010. Overview Motivation dominant sequence transduction models based on RNN or CNN RNN can not parallel, computational complexity, hard to learn long-range dependencies In this paper, it proposed Transformer based solely on attention mechanism without regard to their distance attention to achieve global dependencies Related Work reduce sequential computation self-attention (intra-attention) end-to-end memory network. based on recurrent attention mechanism Methods encoder. [x_1, …, x_n]→ [z_1, …, z_n] decoder. [z_1, …, z_n]→ [y_1, …, y_m] Encoder N = 6 d_model = 512 two sub-layers + layer normalizaion + residual multi-head self-attention position-wise FC feed-forward network Decoder N = 6 insert a third sub-layer. perform multi-head attention over the output of the encoder stack Attention Scaled Dot-Product Attention Multi-Head Attention h = 8 d_k = d_v = d_{model} / h = 64 Found it beneficial to linearly project the queries, keys and values h times with different, learned linear projections to d_k, d_k and d_v dimensions. Multi-Head Attention encoder-decoder attention. Q from previous decoder, K-V from final encoder self-attention in encoder self-attention in decoder Mask out all value which correspond to illegal connection to prevent leftward information flow in the decoder to preserve the auto-regressive property Position-Wise FC or 2 1x1Conv inner-layer d_{ff} = 2048 input d_{model} = 512 Position Encoding since no RNN or CNN, need to inject information about the token’s position use sine and cosine function Experiments Details sentence encoded by byte-pair encoding sentence pairs were batched together by approximate sequence length Adam; LR increase linearly by first warmup_steps then decrease Dropout 0.1. Comparison Ablation Study B. reducing d_k hurts model quality C,D. bigger model better, dropout helpful in avoiding over-fitting E. position embedding nearly identical to sinusoid]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Network</tag>
+        <tag>Transformer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Visual Question Reasoning on General Dependency Tree]]></title>
+    <url>%2F2018%2F06%2F22%2FVisual%20Question%20Reasoning%20on%20General%20Dependency%20Tree%2F</url>
+    <content type="text"><![CDATA[Cao Q, Liang X, Li B, et al. Visual question reasoning on general dependency tree[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7249-7257. Overview Motivation recent work tried to explicit compositional processes to assemble multiple sub-task embedded in the questions, but rely on hand-craft or annotation In this paper, it proposed ACMN (Adversarial Composition Modular Network) adversarial attention module. local visual evidence for each word residual composition module. construct a dependency tree for each question clausal predicate relation modifer relation enforce each parent node not explore new regions by masking out attentive regions of its child nodes at each step Contribution interpretable reasoning VQA system adversarial attention module. enforce efficient visual evidence mining for modifier relations residual composition module. integrat knowledge of child nodes for clausal predicate relations Related WorkVQA CNN-LSTM attention, stacked attention, co-attention joint embedding compact bilinear method Reasoning Modal database queries Adversarial Composition Modular Network generate tree by universal Stanford Parser prune the leaf-nodes that are not noun M. modifier relation P. clausal predicate relation x. node x_c1, x_c2, …, x_cn. n child node of x v. spatial feature through pre-trained network w. word embedding through a Bi-LSTM set of modules f. apply on each word; share weights input of f. (v, w, child’s output) output of f. (attention region att_out, hidden feature h_out) Adversarial Attention Module filter child nodes ∈ M sum attention map of these child nodes 1 - summation attention map to get mask mask x v output new attention map att_out get h’ based on att_out Residual Composition Module sum hidden features h of child ∈ P concat summation of h and h’ add it with all children‘ h Overview the nodes with modifier relations M can modify their parent node by referring to a more specific object the nodes with clausal predicate relations P can enhance the representation output feature h_root → 3 MLP to get y Experiments Dataset CLEVR Sort-of-CLEVR VQAv2 Details 224x224 image max tree hight 13 for CLEVR Comparison Ablation Study]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>VQA</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
+        <tag>VQA</tag>
+        <tag>Reasoning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Learning deep representations of fine-grained visual descriptions]]></title>
+    <url>%2F2018%2F06%2F22%2FLearning%20deep%20representations%20of%20fine-grained%20visual%20descriptions%2F</url>
+    <content type="text"><![CDATA[Reed S, Akata Z, Lee H, et al. Learning deep representations of fine-grained visual descriptions[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 49-58. Overview Motivationattribute-based zero shot attribute do not provide a natural language interface fine-grained recognition requires commensurately more attribute natural language provides a flexible and compact way of encoding only the salient visual aspects for distinguishing categories In this paper, it proposed word or character based methods word-CNN-RNN character-CNN-RNN Related Work fine-grained classification zero-shot image and video caption Methods EmbeddingObjective Inference compatibility classifier Learning since 0-1 loss is discontinue Text-based ConvNet image width is 1 pixel, channel number is equal to the alphabet size Convolutional Recurrent Net (CNN-RNN) only CNN lacks a strong temporal dependency along the input text sequence low-level temporal features learned by efficiently with fast CNN temporal structure can still be exploitd at the more abstract level of mid-level features final encoded feature is the average hidden unit activation over the sequence Experiments Dataset CUB Flowers Details crop horizontal flip length of words 30. length of character 201 RMSprop Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Network</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Word-CNN-RNN</tag>
+        <tag>Character-CNN-RNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Face Synthesis from Visual Attributes via Sketch using Conditional VAEs and GANs]]></title>
+    <url>%2F2018%2F06%2F22%2FFace%20Synthesis%20from%20Visual%20Attributes%20via%20Sketch%20using%20Conditional%20VAEs%20and%20GANs%2F</url>
+    <content type="text"><![CDATA[Di X, Patel V M. Face synthesis from visual attributes via sketch using conditional vaes and gans[J]. arXiv preprint arXiv:1801.00077, 2017. Overview In this paper, it proposed Attribute2Sketch2Face A2S. CVAE S2S. GAN S2F. GA Motivation stage-wise learning AUDeNet. dense UNet-based Related Work Image-to-Image VAE GAN Autoregression CVAE CGAN CycleGAN Wasserstein Distance StackGAN CVAE+GAN Methods Attribute-to-Sketch (A2S) encoder q_Φ. encode sketch and encode attribute encoder q_β. encode noise and encode attribute only texture attribute Sketch-to-Sketch (S2S) UNet. long skip to preserve low-level features Dense. short skip to maximize information flow D. patch-based only texture attribute VGG of Conv1_2 Sketch-to-Face (S2F) attribute consist of both color and texture Testing Experiments Dataset CelebA LFW CUHK use pencil-sketch synthesis method to generate the sketch images from the face images on CelebA and LFW which lack of sketch select attribute of texture and color Ablation Study w/o attribute in A2S w/o S2S w/o attribute concat from S2F Metric Inception Score Attribute L2. extract attributes from MOON attribute prediction Comparison Synthesis fix noise z fix attrbute]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Image-Text</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Face</tag>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Attribute to Face</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Semantic image synthesis via adversarial learning]]></title>
+    <url>%2F2018%2F06%2F22%2FSemantic%20image%20synthesis%20via%20adversarial%20learning%2F</url>
+    <content type="text"><![CDATA[Reed S E, Akata Z, Mohan S, et al. Learning what and where to draw[C]//Advances in Neural Information Processing Systems. 2016: 217-225. Overview In this paper, it attempted to synthesis and meet two requirements disentangle the semantic information from two modalities and generate new images from the combined semantics. realistic while matching the target text description maintain other image features that are irrelevant to the text description Related Work deterministic networks VAE autoregression VAE GAN Methods Architecture CA technique from StackGAN residual. output image would retain similar structure of the source image Adaptive Loss for Semantic Image Synthesis +. positive -. negative Loss Function Improving Image Feature Representation pretrained VGG of conv4 Visual-Semantic Text Embedding pair-wise ranking loss Experiments Details 0.0002 Adam with 0.5 momentum, decrease by 0.5 batch size 64 flipping, rotating, zooming, cropping Comparison Interpolation Variety]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Image-Text</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Semantic Image Synthesis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2016) Learning what and where to draw]]></title>
+    <url>%2F2018%2F06%2F22%2FLearning%20what%20and%20where%20to%20draw%2F</url>
+    <content type="text"><![CDATA[Reed S E, Akata Z, Mohan S, et al. Learning what and where to draw[C]//Advances in Neural Information Processing Systems. 2016: 217-225. Overview Motivation existing methods synthesize images based on global constraints (class label and caption), do not provide control over pose or object location In this paper, it proposed Generative Adversarial What-WHere Network (GAWWN) synthesize images given instructions describing that content to draw in which location condition on coarse location. Implemented using STN condition on part location. set of normalized (x, y) coordinates Contribution novel architecture for text- and location-controllable image synthesis text-conditional object part completion model enabling a streamlined user interface for part locations Related Work CNN (deterministic) VAE, convolutional VAE, recurrent VAE (probabilistic) GAN STN Future Work learn the obj and part location in an unsupervised or weakly supervised way GAWWN Bounding-Box-Conditional Text-to-Image Model replicate text embedding spatially to form a MxMxT feature map warp spatially to fit into the normalized bounding box coordinates (outside the box are all zeros) Keypoint-Conditional Text-to-Image Model location key points are encoded into a MxMxK spatial feature map (channels correspond to the part) max replicate depth Conditional Keypoint Generation ModelNot optimal to require users to enter every single keypoint of the parts of object they wish to be drawn. it would be useful to have access to all of the conditional distributions of unobserved ketpoints given a subset of observed keypoints and the text description. Experiments Details text embedding. char-CNN-GRU 0.0002 Adam, batch size 16 With Bounding Box Via Keypoints Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Image-Text</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Text to Image</tag>
+        <tag>Location-Controllable</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Stackgan:Text to photo-realistic image synthesis with stacked generative adversarial networks]]></title>
+    <url>%2F2018%2F05%2F30%2FStackgan%3A%20Text%20to%20photo-realistic%20image%20synthesis%20with%20stacked%20generative%20adversarial%20networks%2F</url>
+    <content type="text"><![CDATA[Zhang H, Xu T, Li H, et al. Stackgan: Text to photo-realistic image synthesis with stacked generative adversarial networks[C]//IEEE Int. Conf. Comput. Vision (ICCV). 2017: 5907-5915. Overview Motivation existing methods fail to contain details and vivid object parts instability of training GAN the limited number of training text-image pairs often results in sparsity in the text conditioning manifold and such sparsity makes it difficult to train GAN In this paper, it proposed StackGAN decompose the hard problem into more manageable sub-problems stage I. sketch the primitive shape and colors, low-resolution stage II. details Conditioning Augmentation Technique. smoothness in the latent conditioning manifold Contribution StackGAN Conditioning Augmentation (CA) Related WorkGenerative Model VAE Pixel RNN GAN energy-based GAN Conditional Image Generation variable such as attributes or class label image-to-image. photo editing, domain transfer, SR Series of GAN StackGAN Conditioning Augmentation latent space for text embedding usually high, limited amount of data causes discontinuity in the latent data manifold CA yields more training pairs, smoothness over conditioning manifold and avoid overfitting Stage-I GAN set λ = 1 I_0. real image Stage-II GAN s_0. LR generated by stage-I two stages share the same text encoder and different CA Details first train stage-I GAN, fix stage-II GAN then train stage-II GAN, fix stage-I GAN 0.0002 Adam decay 0.5, mini-batch 64 nearest-neighbour upsample dimension of z 100 Experiments Dataset MSCOCO CUB Metric Inception Score x. generated sample y. label predicted by Inception Model (fine-tune on Experiment dataset) Human Evaluation Comparison GAN-INT-CLS. only reflect the general shape and color of the birds GAWWN. fail to generate plausible images stage-II GAN can correct the defects of stage-I even when stage-I fails to draw a plausible shape, shape-II can generate reasonable object Ablation Study CA helps stabilize training and improve diversity of generated samples, because of its ability to encourage robustness to small perturbation along the latent manifold Interpolation]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Image-Text</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Text to Image</tag>
+        <tag>StackGAN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICML 2017) Generative adversarial text to image synthesis]]></title>
+    <url>%2F2018%2F05%2F30%2FGenerative%20adversarial%20text%20to%20image%20synthesis%2F</url>
+    <content type="text"><![CDATA[Reed S, Akata Z, Yan X, et al. Generative adversarial text to image synthesis[J]. arXiv preprint arXiv:1605.05396, 2016. Overview Motivation RNNs are developed to learn discriminative text feature representations GANs two problems learn text feature representation that captures the important visual detailss features to synthesize a compelling image In this paper, it translated visual concepts from character to pixels introduce manifold interpolation regularizer Contribution first end-to-end text-to-image based on GAN zero-shot text-to-image synthesis Related Work Multimodal Learning audio-video Boltzmann machine DeConv recurrent convolutional encoder-decoder image caption Joint Embedding Δ. 0-1 loss v_n. images t_n. corresponding text description y_n. class labels f_v and f_t are parametrized by φ. text encoder Φ. image encoder T(y). text description of class y V(y). image description of class y Methods ArchitectureG Z. dimension of noise from N(0, 1) T. dimension of text embedding, encoded by text encoder φ D. dimension of image φ(t)-FC(128)-leakyReLU-concat with z D Matching-aware Discriminator (GAN-CLS) real + right text real + wrong text fake + right text Learning with Manifold Interpolation (GAN-INT) generate a large amount of additional text embedding by interpolation between embeddings of training set captions found β=0.5 works well Inverting the Generator for Style Transfer noise sample z should capture style factors such as background color and pose transfer style of a query image onto the content of a particular text description S. trained style encoder network Experiments Details pre-train char-CNN-RNN (text encoder) to increase the speed of training, produce 1024 dimension vector and project to 128 dimension image size 64 x 64 x 3 LR 0.0002, Adam with 0.5 momentum minibatch size 64 Quantitative Results Disentangling Style and Content content. visual attributes (shape, size, color of birds) style. background color, pose oriation text embedding mainly covers content information and typically nothing about style GAN must learn to use noise z for style variation Pose and Background Style Transfer Sentence Interpolation]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Image-Text</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Image Generation</tag>
+        <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Text to Image</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Photographic Text-to-Image Synthesis with a Hierarchically-nested Adversarial Network]]></title>
+    <url>%2F2018%2F05%2F30%2FPhotographic%20Text-to-Image%20Synthesis%20with%20a%20Hierarchically-nested%20Adversarial%20Network%2F</url>
+    <content type="text"><![CDATA[Zhang Z, Xie Y, Yang L. Photographic text-to-image synthesis with a hierarchically-nested adversarial network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6199-6208. Overview Motivation fully end-to-end map from low-dimension text space to a high-resolution image space still remains unsolved two difficulty balance the convergence between G and D stably model the huge pixel space in high-resolution images and guaranteeing semantic consistency In this paper, it proposed an extensille single-stream generator architecture (HDGAN) jointed discriminator. regularize mid-level representation and assist generator training to capture the complex image statistics multi-purpose adversarial loss new visual-semantic similarity measure single stage no multiple text condition no additional class label supervision Dataset CUB birds Oxford-102 flowers MSCOCO Related WorkGenerative Models GAN VAE Text-to-Image (ICML 2016) GAN (NIPS 2016) GAN what-where network (ICCV 2017) StackGAN (ICCV 2017) joint embedding perceptual loss auxiliary classifier attention-driven Stability of GAN training techniques regularization using extra knowledge combination of G and D As the targeting image resolution increases, training difficulty increases. Decompose into Multiple Subtasks LAP-GAN symmetric G and D stage-by-stage Methods Hierarchical-nested Adversarial Objective G. hierarchical generator z. noise t. sentence embedding by pre-trained char-RNN text encoder s. number of scales X_n. gradually growing resolution lower-resolution. learn semantic consistent image structure higher-resolution. render fine-grained details Multi-purpose Adversarial Loss pair loss (1). guarantee the global semantic consistency Image loss (R_i x R_i). low-resolution D focus on global structures, high focus on local image details output. two type of errors real image + mismatched text fake image + conditioned text D G Conditioning AugmentationInstead of directly using the deterministic text embedding, sample a stochastic vector from a Gaussian distribution And add Kullback-Leiblere divergence regularization term to prevent over-fitting and force smooth ArchitectureG three modules K-repeat ResBlock. 2 Conv + BN-ReLU stretching layers. x2 nearest upsample + Conv-BN-ReLU linear compression layers. Conv-Tanh structure:1-2-1-2-…. text embedding of CA. 1024 x 4 x 4 D stride-2 conv + BN-LeakyReLU two branch following FCN produce R_i x R_i probability map concat 512 x 4 x 4 feature map and 128 x 4 x 4 text embedding (reduced), 1x1 Conv + 4x4 Co Experiments Metrics Inception Score. need pre-trained Inception model (fine-tuned on dataset of this paper) Multi-scale Structural Similarity (MS-SSIM). pairwise similarity, lower score indicates higher diversity of generated image VIsual-semantic Similarity. train a visual-semantic embedding model to measure the distance between text and image δ. margin set to 0.2 Comparison better preserve semantically consistent information in all resolution Style Transfer Ablation Study local image loss for higher performantic and offer the pair loss more focus on learning sementic consistency share top layers of Ds not observe benifits]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Image-Text</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Text to Image</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Diversity Regularized Spatiotemporal Attention for Video-based Person Re-identification]]></title>
+    <url>%2F2018%2F05%2F30%2FDiversity%20Regularized%20Spatiotemporal%20Attention%20for%20Video-based%20Person%20Re-identification%2F</url>
+    <content type="text"><![CDATA[Li S, Bak S, Carr P, et al. Diversity regularized spatiotemporal attention for video-based person re-identification[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 369-378. Overview Motivation most existing methods encoding each video frame in its entirely and computing an aggregate representation across all frame the remaining visible portions of the person may provide strong cues for re-identification features directly generated from entire images can easily miss fine-grained visual cues In this paper, it proposed spatialtemporal attention model multiple spatail attention model (alignment) + diversity regularization term (Hellinger Distance) to not discover the same body align corresponding image patches across frames determining whether a particular part of the body is occluded or not temporal attention automatically discovers a diverse set of distinctive body parts extract useful information from all frames without succumbing to occlusions and misalignment Related WorkImage-Based Person Re-id extracting discriminative features learning robust metrics Online Instance Matching Loss Video-Based Person Re-id(extension of image-based) top-push distance RNN space-time Attention Models for Person Re-id avoid focus on similar region Methods Restricted Random Sampling divide video into N chunks of equal duration random sample an image of each chunk Multiple Spatial Attention Modelsfoucs on body part, hats, bags, … ResNet-50 (1 Conv + 4 ResBlock). 8x4 grids L. 32 D. 2048 dimension the weight of n-th frame, k-th attention part, l-th grid weighted attention region Enhance (appendix) Diversity Regularization collection of each region weight for n-th frame&gt; K. the number of attention model L. grids Hellinger Distance. maximize the distance Regularization Term. will be multipled by a coefficient and added to original OIM loss variant Temporal AttentionPooling features arocss time using a per-frame weight is not sufficiently robust, since some frames could contain valuable partial information about an individual. (apply same temporal attention weight to all frames) weight across all frames for one attention region Overview entire video is represented by vector x ∈ (K x D) Re-id Loss OIM Experiments Details N = 6 pretrain ResNet-50 on image-based re-identification datasets fixed CNN, train multiple spatial attention model (Diversity Regularization) fixed CNN, jointly train the whole network SGD, 0.1 drop to 0.01 128 dimension L2-normalized Ablation Study different number of spatial attention models treating a person as single region instead of two distinct body parts is better Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Body</category>
+        <category>Person Re-ID</category>
+      </categories>
+      <tags>
+        <tag>Video</tag>
+        <tag>Person Re-ID</tag>
+        <tag>Body</tag>
+        <tag>Spatiotemporal Attention</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Joint detection and identification feature learning for person search]]></title>
+    <url>%2F2018%2F05%2F30%2FJoint%20detection%20and%20identification%20feature%20learning%20for%20person%20search%2F</url>
+    <content type="text"><![CDATA[Xiao T, Li S, Wang B, et al. Joint detection and identification feature learning for person search[C]//2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2017: 3376-3385. Overview Motivation existing methods mainly focus on matching cropped pedestrian images between queries and candidates (assum perfect detection) In this paper, it proposed a framework for person search jointly handle pedestrian detection and person re-identification proposal net. focus more on the recall rather than the precision misalignments of proposal can be furtheradjusted by the identification net Online Instance Matching (OIM) loss function collect and annotate a large-scale benchmark dataset Comparison of Loss Function pairwise or triplet loss. O(N^2) need efficient strategy, difficult to find softmax. compare all samples at the same time, as the number of classes increases, training the big softmax classifier matrix become much slower or even can not converge OIM. compare samples of mini-batch with all registered entries unlabeled identities can be served as negatives for labeled identities Contribution jointly optimization OIM loss function dataset Related WorkPerson Re-identification manually design discriminative features learn feature transforms across camera views learning distance metrics CNN triplet samples classify on abnormal images. low-resolution and partially occlude images Pedestrian Detection hand-crafted features. DPM, ACF and Checkerboard Dataset CUHK03 Market501 Duke Method Structure output. 2048 dimension→ L2-normalized 256 dimension→ cosine similarities 2048 dimension to proposal alignment Online Instance Matching Loss only consider the labeled abd unlabeled identities while leave the other proposals untouched the look up table (LUT). L: the size of the table; D: vector dimension forward. compute cosine similarities between the mini-batch sample and all the labeled identities.x. the features of a labeled identity inside a mini-batch backward. if targe class id is t, update t-th column of the LUT, and then scale to unit L2-norm many unlabeled identities can be safely used as negative classes for all the labeled identities, and store in circular queue. Q: size of the queue cosine similarities The probability of x being recognized as the identity with class-id i L. the number of different target people Q. the size of circular queue to store unlabeled prople τ. higher temperature leads to softer probability distribution The probability of x being recognized as the i-th unlabeled identity Maximization Degradation ) Drawback of Softmax classifier matrix suffers from large variance of gradients and can not by learned effectively large number of identities, which only has several instances; each image contains a few identities learn more than 5,000 discriminant functions simultaneously, but during each SGD iteration we only have positive samples from tens of classes can not exploit the unlabeled identities with softmax loss OIM is non-parametric. potential drawback. overfit more easily, it find that projecting features into a L2-normalized low-dimensional subspace helps reduce overfitting Scalability when the number of identities increases, OIM could be time-consuming approximate by sub-sampling the labeled and unlabeled identities Dataset Come From hand-held camera to shoot movie snapshots Processing ignore smaller heights than 50 pixels Evaluation no overlapped images or labeled identities between training and test set Metrics cumulative matching characteristics (CMC top-K) mean averaged precision (mAP) Experiments Details τ. 0.1 size of circular queue. 5,000 mini-batch. 2 images learning rate. 0.001 to 0.0001 after 40k Detection Search OIM converge faster consistently improves the test performance Sub-sample of OIM small number converge faster Low-dimensional Subspace project features into a proper low-rank subspace is very important to regularize the network training Detection Recall higher recall does not necessarily lead to higher person search performance, re-id method could still get confused on some false alarms should not only focus on training re-id methods with manually cropped pedestrians, but should consider the detections jointly under the person search problem setting Gallery Size larger gallery, more difficult all methods may suffer from some common hard samples]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Body</category>
+        <category>Person Re-ID</category>
+      </categories>
+      <tags>
+        <tag>Person Re-ID</tag>
+        <tag>Body</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Dual-Path Convolutional Image-Text Embedding]]></title>
+    <url>%2F2018%2F05%2F30%2FDual-Path%20Convolutional%20Image-Text%20Embedding%2F</url>
+    <content type="text"><![CDATA[Zheng Z, Zheng L, Garrett M, et al. Dual-path convolutional image-text embedding with instance loss[J]. arXiv preprint arXiv:1711.05535, 2017. Overview Motivation existing methods uses RNN for text feature learning and employs off-the-shelf CNN for image extraction ImageNet pre-trained models do not preserve rich image details that are critical for matching languages In this paper, it proposed CNN for fine-tuning the visual and textual representation (network only contains Conv, Pooling, ReLU, BN) instance loss according to viewing each multimodal data pair as a class Contribution dual-path CNN model instance loss outperform on FLickr30K, MSCOCO, CUHK-PEDES Related WorkModel for Image Recognition fixed CNN feature as input Model for Natural Language Understanding word2vec RNN, directional LSTM CNN to conduct machine translation, 9.3x speed up Multi-modal Learning class-level retrieval. leverage the class labels in training set instance-level retrieval. match image-text pairs, does not use any class label In this paper, it focus on instance-level retrieval and propsoed instance loss. Dataset Flickr30k. 5 sentences, avg 10.5 words per sentence after remove rare word MSCOCO. avg 5 sentences, avg 8.7 words after rare word removal CUHK-PEDES. 2 sentences, avg 19.6 words after removal Method Deep Image CNN pre-trained models can still provide for good CNN initialization input. 224x224 output. 2048 dimension vector Deep Text CNNText Processing convert sentence to code T [n x d]. (ont-hot) n. length of the sentence (set to fixed length) d. size of the dictionary use word2vec to filter out rare words pad zeros to T, if less than fixed length words reshape T to 1 x 32 x d (h, w, c) position shift (more robust). pad random number of zeros at the beginning and the end of sentence left alignment. only padding at the end of the sentence. Deep Text CNN input. T (1 x 32 x d) output. 2048 dimension vector the filter size of the first conv is 1 x 1 x d x 300, two method to init random initialization using d x 300 matrix from word2vec for initialization (better) kernel of Conv. 1x2, every two neighbour components may form a phrase containing content information Loss FunctionRanking Loss I. visual input T. text input I_a/T_a. the same image/text group I_n/T_n. negative sample α. margin the convergence of ranking loss requires both image and text branches converge may be prone to getting stuck in a local minimum Instance Loss assumption. each image/text group is distinct instance loss is a softmax loss classifies an image/text group into one of a large number of classes L. loss P. probability P(c). predicted possibility of the right class c enforce shared weight in the fully connected layer for the two modalities, otherwise the learned image and text features mat exist in totally different subspace. Total Loss stage-1. only instance loss, λ_1 = 0 so the ranking loss can fing a better optimisation for both modalities in the second stage using the instance loss alone can lead to a competitive result instance loss encourages the model to find the fine-grained differences, such as ball, stick,.. stage-2. ranking loss + instance loss Training Stage stage-1. fixed pre-trained image CNN, use instance loss to tune the remaining part if we train the image and text CNNs simultaneously, the text CNN may comprise the pre-trained image CNN stage-2. instance loss + ranking loss to fine-tune the entire network Experiments Metric Recall@K. possibility that true match appears in the top K of the rank list Median Rank. median rank of the closest ground truth result in the rank list Details SGD + fixed 0.9 momentum Matconvnet Framework 224x224 random crop from shorter side 256 horizontal flipping for image position shift for text 0.75 dropout max text length 32 for Flickr30K and MSCOCO, 56 for CUHK-PEDES LR. 0.001 α=1 Comparison Ablation StudyLoss stage-1. ranking loss focuses on inter-modal distance, may be hard to tune the visual and textual features simultaneous at the beginning stage-1. instance loss performs better, which focusses more on learning intra-modal discriminative descriptors instace loss help to regularise the model Fine-tune fine-tune in stage-2 helps Initialization word2vec initialization helps Position Shift vs Left Alignment Training Time image CNN ~119ms per image batch (32) on 1080Ti text CNN ~117ms per sentence batch (32) image feature and text feature can be simultaneously calculated, the model can run in a parallel style efficiently.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Image-Text</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Image-Text</tag>
+        <tag>Cross-Modality</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Identity-aware textual-visual matching with latent co-attention]]></title>
+    <url>%2F2018%2F05%2F30%2FIdentity-aware%20textual-visual%20matching%20with%20latent%20co-attention%2F</url>
+    <content type="text"><![CDATA[Li S, Xiao T, Li H, et al. Identity-aware textual-visual matching with latent co-attention[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 1890-1899. Overview Motivation most existing methods tackle textual-visual matching problem without effectively utilizing identity-level annotations RNNs have difficulty in remembering the complete sequential information of very long sentences RNNs are variant to different sentence structures In this paper, it proposed an identity-aware two-stage framework stage-1. learn to embed cross-modal feature with Cross-Modal Cross-Entropy (CMCE) loss; provide initial training point for stage-2; screen easy incorrect matchings stage-2. refine the matching results with a latent co-attention mechanism spatial attention. relates each word with corresponding image region latent semantic attention. aligns different sentence structures to make the matching results more robust to sentence structure variation; at each step of the LSTM, it learns how to weight different words’ features to be more invariant to sentence structure variations Contribution identity-aware two-stage framework CMCE loss latent co-attention mechanism Related WorkVisual Matching with Identity-Level Annotation person re-identification face recognition classify all identities simultaneously. face challenge when number of classes is too large pair-wise or triplet distance loss function. hard negative training samples might be difficult to sample as the number of training sample increases Textual-Visual Matching image caption VQA text-image embedding Methods Stage-1 with CMCE Loss map image and description into a joint feature embedding space Cross-Modal Cross-Entropy (CMCE) to minimize intra-identity and maximize inter-identity feature distances Cross-Modal Cross-Entropy Loss pair-wise or triplet loss. N identities contains O(N^2) training samples, difficult to sample hard negative samples CMCE. compare each identity in mini-batch from one modality to all N identites in another modality, can cover all hard negative samples cross-modal affinity. inner products of features from the two modalities textual and visual feature buffers. enable efficient calculation of textual-visual affinities before the first iteration. if an identity has multiple descriptions or images, its stored features in the buffers are the average of the multiple samples in each iteration. (calc loss)-(BP)-(update corresponding rows in buffer for sampled identity), if identity t has multiple images or descriptions update by affinity between one image feature v and ith textual feature S_i. σ. temperature hyper-parameter to control how peaky the probability distribution affinity between one textual feature s and kth image feature V_k. maximize the probability of corresponding identity pairs Stage-2 with Latent Co-attention stage-1. visual and text feature embeddings might not be optimal, compress the whole sentence into a single vector stage-1. sensitive to sentence structure variation input. a pair of text description and image output. matching confidence trained stage-1 network serves as the initial point for the stage-2 network only hard negative matching samples from stage-1 results are utilized for training stage-2 Encoder Word-LSTM with Spatial Attention generate the weight between word and L regions sum of all weighted region concate the word and sum word feature of LSTM. H={h_1, …, h_T}, H∈(D_H x T) image feature. I={i_1, …, i_L}, I∈(D_I, L) D_H. dimension of hidden state D_I. dimension of image region feature T. number of words L. number of region W_I, W_H. transform feature to K-dimension space W_P. conver feature to affinity score sum of weighted L regions according to a word concate the word and its weighted region Decoder LSTM with Latent Semantic Attention generate weights between last hidden state and all x_t sum of weighted x_t process and fed into next LSTM step LSTM not robust to sentence structure variations decoder LSTM with latent semantic attention automatically align sentence structure M-step decoder LSTM processes the encoded feature step by step while searches through the entire input sentence to align the image-word features x_t, at mth step f. two-layer CNN weight the importance of jth word for mth decoding step c_{m-1}. hidden state by decoder LSTM for step m-1 x_m. transform by two-FC layers LSTM is able to focus more on relevant information by re-weighting the source image-word features to enhance the network’s robust to sentence structure variation easier training samples are filtered out by the stage-1 network N’. the number of training samples for training the stage-2 Experiments Dataset CUHK-PEDES. two descriptions Caltech-UCSD birds (CUB). ten descriptions Oxford-102 Flowers. ten descriptions Details σ=0.04 Adam of LSTM, SDG of CNN training and testing samples are screened by the mathcing results of stage-1 for each visual or textual sample, we take its 20 most similar samples from the other modality by stage-1 and construct textual-visual pair samples for stage-2 training and testing Comparison Ablation Study CMCE loss vs Triplet loss. 3 times more training time than CMCE identity number vs counting number. latent semantic attention vs remove it. align visual and semantic concepts, mitigate sensitivity to sentence structure spatial attention vs concate visual and textual feature. stage-1 vs w/o stage-1]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Person Search</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Body</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Person Search</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Person search with natural language description]]></title>
+    <url>%2F2018%2F05%2F30%2FPerson%20search%20with%20natural%20language%20description%2F</url>
+    <content type="text"><![CDATA[Li S, Xiao T, Li H, et al. Person search with natural language description[C]//Proc. CVPR. 2017. Overview Motivation existing methods mainly focus on searching persons with image-based or attribute-based queries (limitations for a practical usage) no person dataset or benchmark with textual description available In this paper, it studied person search with natural language description proposed Recurrent Neural Network with Gated Neural Attention mechanism (GNA-RNN) collect CUHK Person Description Dataset (CUHK-PEDES) Image-Based Query person re-identification which requires at least one photo of the queried person being given. Attribute-Based Query pre-defined semantic attributes which have limited capability of describing persons’s appearance. And labeling exhausted set of attributes is expensive. Contribution person search with language is more practical for real-world investigate different solution. image caption, VQA, visual-semantic embedding proposed GNA-RNN Related WorkLanguage Dataset for Vision Flickr8K, Flickr30K MS-COCO Caption Visual Genome Caltech-UCSD Oxford-102 flowers Deep Language Models for Vision Image Caption. NeuralTalk VQA. Stacked Attention Network Visual-Semantic Embedding CUHK-PEDES Dataset 40,206 images of 13,003 persons from five existing person re-identification datasets (CUHK03, Market-1501, SSM, VIPER, CUHK01) 80,412 sentences for 40,206 images (2 sentences/img). details about appearance, actions, poses and interaction with other objects high-frequency word User Study Language vs Attribute.language description are much precise and effective in describing persons than attributes. (top-1: 58.7% vs 33.3%; top-5: 92.0% vs 74.7%). Sentence Number and Length3 sentences achieve highest retrieval accuracy. the longer the sentences are, the easier for users to retrieve the correct images. Word Types nouns provide most information followed by the adjectives, while the verbs carry least information. GNA-RNN key to build word-image relations. given each word, search related regions to determine whether the word with its context fit the image confidences of all relations should be weighted and then aggregate to generate the final sentence-image affinity Visual Units Input. resize to 256x256 Output. 512 visual units pre-trained on our dataset for person classification based on person IDs during jointlt training, only update cls-fc1 and cls-fc2 Attension over Visual Units word are encoded into K-length one-hot vectors. K is the vocabulary size embedded one-hot vector and concat with image features through LSTM-FCs-Softmax, generate unit-level attention at each word summation of weighted attention image features summation of all T words LSTM h. tanh Word-Level Gates for Visual Units different words carry significantly different amount of information for obtaining language-image affinity. (“white” should be more important than the word “this”) unit-level attention can not reflect such difference learn word-level scalar gates at each word Loss Function Details SGD positive:negative=1:3 batch size 128 all FC are 512 units except gate-fc1 Experiments Dataset training set. 11,003 persons; 34,054 images; 68,108 sentence descriptions testing set. 3,074 images of 1,000 persons validation set. 3,078 images of 1,000 persons Comparison LSTM might have difficulty encoding complex sentences into a single feature vector word-by-word processing and comparison might be more suitable for the person search problems RNN is more suitable in processing natural language data Ablation Study initial training affects the final performance a lot The Number of Visual Unit more units might over-fit the dataset]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Person Search</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Body</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Person Search</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(ECCV 2018) Exploring the Limits of Weakly Supervised Pretraining]]></title>
     <url>%2F2018%2F05%2F11%2FExploring%20the%20Limits%20of%20Weakly%20Supervised%20Pretraining%2F</url>
     <content type="text"><![CDATA[Mahajan D, Girshick R, Ramanathan V, et al. Exploring the limits of weakly supervised pretraining[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 181-196. Overview Motivation the large pre-training datasets are difficult to collect and annotate In this paper present a study transfer training with large network trained to predict hashtags on billions of social media images (Weak Supervised) training for large-scale hashtag prediction leads to excellent result Hashtags Dataset billions of images “labeled” in the wild with social media hashtags (no manual labeling) hashtags are noisy and image distribution might be biased multi-label samples. if has k hashtags, then each hashtag is 1/k probability pre-processing utilize WordNet synsets to merge some hashtags into a single canonical form deduplication between training and test sets. compute R-MAC features use kNN (21) Model ResNeXt-101 32xCd (classification). 32 groups, C group width Mask R-CNN (detection). Cross-Entropy. sigmoid and binary logistics get worse results Training Methods Full Network Finetuning. view pre-training as sophisticated weight initialization Feature Transfer. pre-trained network as feature extractor, without updated, only trained classifierEnsure the experiments of paper on the standard validation sets are clean. Dataset ImageNet CUB2011 Places365 Related Work JFT-300M. 300 million weakly supervised images, proprietary and not publicly visible Word or n-gram supervision. weaker than hashtag supervision Observation maybe important to select a label space for the source task to match the target task current network are underfitting when trained on billions of images. lead to very high robustness to noise in hashtags training for large-scale hashtag prediction improves classification while at the same time possibly harming localization performance Experiments Hashtags Vocabulary Size pre-trained with 17k hashtags strongly outperforms 1.5k hashtags 17k span more objects scenes and fine-grained categories Training Set Size when training network on billions of training images, current network architecture are prone to underfitting on IN-1k, pre-trained with 1.5k hashtags outperform other larger hashtags as the matching between hashtags and target classes disappear, larger hashtags outperform the effectiveness of the feature representation learned from hashtag prediction.train linear classifier on fixed feature are nearly as good as full network finetuning. For CUB2011. when training data is limited, the 1.5k hashtag dataset is better The Noise of HashtagsRandomly replaced p% of the hashtags by hashtags obtained by sampling from the marginal distribution over hashtags. The Sampling Strategy of Hashtags using uniform or square-root sampling lead to an accuracy improvement Model Capacity with large-scale Instagram hashtag training, transfer-learning performance appears bottlenecked by model capacity Most Helpful Class of Pre-training more concrete, more helpful Detection when using larger pre-training data, detection is model capacity bound gains from Instagram pre-training mainly due to improved object classification rather than spatial localization]]></content>
@@ -767,8 +1029,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>VAE</tag>
         <tag>Network</tag>
+        <tag>VAE</tag>
       </tags>
   </entry>
   <entry>
@@ -902,22 +1164,6 @@
         <tag>geometric matching</tag>
         <tag>Image Transformation</tag>
         <tag>Image Generation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[(CVPR 2017) Learning from simulated and unsupervised images through adversarial training]]></title>
-    <url>%2F2017%2F09%2F18%2Ftemplate%2F</url>
-    <content type="text"><![CDATA[Shrivastava A, Pfister T, Tuzel O, et al. Learning from simulated and unsupervised images through adversarial training[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2107-2116. 该篇论文 贡献点 贡献点 贡献点 贡献点 贡献点 贡献点 贡献点 贡献点]]></content>
-      <categories>
-        <category>Paper Note</category>
-        <category>Image Processing</category>
-      </categories>
-      <tags>
-        <tag>Image Generation</tag>
-        <tag>GAN</tag>
-        <tag>Reality Enhancement</tag>
-        <tag>Eye</tag>
-        <tag>SIMNet</tag>
       </tags>
   </entry>
 </search>
