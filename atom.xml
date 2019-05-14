@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-28T22:25:08.000Z</updated>
+  <updated>2018-05-10T22:25:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,217 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(ECCV 2018) Exploring the Limits of Weakly Supervised Pretraining</title>
+    <link href="http://yoursite.com/2018/05/11/Exploring%20the%20Limits%20of%20Weakly%20Supervised%20Pretraining/"/>
+    <id>http://yoursite.com/2018/05/11/Exploring the Limits of Weakly Supervised Pretraining/</id>
+    <published>2018-05-10T22:25:08.000Z</published>
+    <updated>2018-05-10T22:25:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Mahajan D, Girshick R, Ramanathan V, et al. Exploring the limits of weakly supervised pretraining[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 181-196.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="Weakly Supervised" scheme="http://yoursite.com/categories/Paper-Note/Learning/Weakly-Supervised/"/>
+    
+    
+      <category term="Weakly Supervised Learning" scheme="http://yoursite.com/tags/Weakly-Supervised-Learning/"/>
+    
+      <category term="Hashtags" scheme="http://yoursite.com/tags/Hashtags/"/>
+    
+      <category term="Social Media Images" scheme="http://yoursite.com/tags/Social-Media-Images/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Two-stream convolutional networks for dynamic texture synthesis</title>
+    <link href="http://yoursite.com/2018/05/11/Two-stream%20convolutional%20networks%20for%20dynamic%20texture%20synthesis/"/>
+    <id>http://yoursite.com/2018/05/11/Two-stream convolutional networks for dynamic texture synthesis/</id>
+    <published>2018-05-10T22:25:07.000Z</published>
+    <updated>2018-05-10T22:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Tesfaldet M, Brubaker M A, Derpanis K G. Two-stream convolutional networks for dynamic texture synthesis[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6703-6712.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
+    
+      <category term="Dynamic Texture Synthesis" scheme="http://yoursite.com/tags/Dynamic-Texture-Synthesis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Who Let The Dogs Out Modeling Dog Behavior From Visual Data</title>
+    <link href="http://yoursite.com/2018/05/11/Who%20Let%20The%20Dogs%20Out%20Modeling%20Dog%20Behavior%20From%20Visual%20Data/"/>
+    <id>http://yoursite.com/2018/05/11/Who Let The Dogs Out Modeling Dog Behavior From Visual Data/</id>
+    <published>2018-05-10T22:25:06.000Z</published>
+    <updated>2018-05-10T22:25:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Ehsani K, Bagherinezhad H, Redmon J, et al. Who Let The Dogs Out? Modeling Dog Behavior From Visual Data[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4051-4060.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Prediction" scheme="http://yoursite.com/categories/Paper-Note/Prediction/"/>
+    
+    
+      <category term="Prediction" scheme="http://yoursite.com/tags/Prediction/"/>
+    
+      <category term="Behavior" scheme="http://yoursite.com/tags/Behavior/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2015) Explaining and harnessing adversarial exampless</title>
+    <link href="http://yoursite.com/2018/05/11/Explaining%20and%20harnessing%20adversarial%20examples/"/>
+    <id>http://yoursite.com/2018/05/11/Explaining and harnessing adversarial examples/</id>
+    <published>2018-05-10T22:25:05.000Z</published>
+    <updated>2018-05-10T22:25:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Goodfellow I J, Shlens J, Szegedy C. Explaining and harnessing adversarial examples[J]. arXiv preprint arXiv:1412.6572, 2014.&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="FGSM" scheme="http://yoursite.com/tags/FGSM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2015) Deep neural networks are easily fooled:High confidence predictions for unrecognizable images</title>
+    <link href="http://yoursite.com/2018/05/11/Deep%20neural%20networks%20are%20easily%20fooled:%20High%20confidence%20predictions%20for%20unrecognizable%20images/"/>
+    <id>http://yoursite.com/2018/05/11/Deep neural networks are easily fooled: High confidence predictions for unrecognizable images/</id>
+    <published>2018-05-10T22:25:04.000Z</published>
+    <updated>2018-05-10T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Nguyen A, Yosinski J, Clune J. Deep neural networks are easily fooled: High confidence predictions for unrecognizable images[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2015: 427-436.&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ECCV 2018) Group normalization</title>
+    <link href="http://yoursite.com/2018/05/11/Group%20normalization/"/>
+    <id>http://yoursite.com/2018/05/11/Group normalization/</id>
+    <published>2018-05-10T22:25:03.000Z</published>
+    <updated>2018-05-10T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Wu Y, He K. Group normalization[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 3-19.&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
+    
+    
+      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
+    
+      <category term="Group Normalization" scheme="http://yoursite.com/tags/Group-Normalization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) Paying more attention to attention:Improving the performance of convolutional neural networks via attention transfer</title>
+    <link href="http://yoursite.com/2018/05/11/Paying%20more%20attention%20to%20attention:%20Improving%20the%20performance%20of%20convolutional%20neural%20networks%20via%20attention%20transfer/"/>
+    <id>http://yoursite.com/2018/05/11/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/</id>
+    <published>2018-05-10T22:25:02.000Z</published>
+    <updated>2018-05-10T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zagoruyko S, Komodakis N. Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer[J]. arXiv preprint arXiv:1612.03928, 2016.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="Transfer Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Transfer-Learning/"/>
+    
+    
+      <category term="Transfer Learning" scheme="http://yoursite.com/tags/Transfer-Learning/"/>
+    
+      <category term="Attention Map" scheme="http://yoursite.com/tags/Attention-Map/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ECCV 2014) Visualizing and understanding convolutional networks Network for Point Cloud Analysis</title>
+    <link href="http://yoursite.com/2018/05/11/Visualizing%20and%20understanding%20convolutional%20networks/"/>
+    <id>http://yoursite.com/2018/05/11/Visualizing and understanding convolutional networks/</id>
+    <published>2018-05-10T22:25:01.000Z</published>
+    <updated>2018-05-10T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zeiler M D, Fergus R. Visualizing and understanding convolutional networks[C]//European conference on computer vision. Springer, Cham, 2014: 818-833&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Visualization" scheme="http://yoursite.com/categories/Paper-Note/Visualization/"/>
+    
+    
+      <category term="Visualization" scheme="http://yoursite.com/tags/Visualization/"/>
+    
+  </entry>
   
   <entry>
     <title>(ICCV 2017) SO-Net:Self-Organizing Network for Point Cloud Analysis</title>
@@ -185,7 +396,9 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Pose" scheme="http://yoursite.com/categories/Paper-Note/Pose/"/>
+      <category term="Body" scheme="http://yoursite.com/categories/Paper-Note/Body/"/>
+    
+      <category term="Pose" scheme="http://yoursite.com/categories/Paper-Note/Body/Pose/"/>
     
     
       <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
@@ -257,7 +470,7 @@
     <link href="http://yoursite.com/2018/02/25/Segnet:%20A%20deep%20convolutional%20encoder-decoder%20architecture%20for%20image%20segmentation/"/>
     <id>http://yoursite.com/2018/02/25/Segnet: A deep convolutional encoder-decoder architecture for image segmentation/</id>
     <published>2018-02-24T22:25:08.000Z</published>
-    <updated>2019-05-13T02:32:21.501Z</updated>
+    <updated>2019-05-14T02:33:31.155Z</updated>
     
     <summary type="html">
     
@@ -269,7 +482,9 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
     
     
       <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
@@ -315,7 +530,7 @@
     <link href="http://yoursite.com/2018/02/25/MentorNet:%20Regularizing%20Very%20Deep%20Neural%20Networks%20on%20Corrupted%20Labels/"/>
     <id>http://yoursite.com/2018/02/25/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/</id>
     <published>2018-02-24T22:25:06.000Z</published>
-    <updated>2019-05-13T02:08:35.921Z</updated>
+    <updated>2019-05-14T02:33:53.899Z</updated>
     
     <summary type="html">
     
@@ -327,7 +542,9 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
     
     
       <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
@@ -367,236 +584,6 @@
       <category term="Data Distillation" scheme="http://yoursite.com/tags/Data-Distillation/"/>
     
       <category term="Omni-supervised Learning" scheme="http://yoursite.com/tags/Omni-supervised-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) Feature pyramid networks for object detection</title>
-    <link href="http://yoursite.com/2018/02/25/Feature%20pyramid%20networks%20for%20object%20detection/"/>
-    <id>http://yoursite.com/2018/02/25/Feature pyramid networks for object detection/</id>
-    <published>2018-02-24T22:25:04.000Z</published>
-    <updated>2019-05-13T01:25:52.228Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Lin T Y, Dollár P, Girshick R, et al. Feature pyramid networks for object detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2117-2125.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="FPN" scheme="http://yoursite.com/tags/FPN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Focal Loss for Dense Object Detection</title>
-    <link href="http://yoursite.com/2018/02/25/Focal%20Loss%20for%20Dense%20Object%20Detection/"/>
-    <id>http://yoursite.com/2018/02/25/Focal Loss for Dense Object Detection/</id>
-    <published>2018-02-24T22:25:03.000Z</published>
-    <updated>2019-05-13T01:14:51.482Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Lin T Y, Goyal P, Girshick R, et al. Focal loss for dense object detection[C]//Proceedings of the IEEE international conference on computer vision. 2017: 2980-2988.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Loss Function" scheme="http://yoursite.com/categories/Paper-Note/Loss-Function/"/>
-    
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="Focal Loss" scheme="http://yoursite.com/tags/Focal-Loss/"/>
-    
-      <category term="Loss Function" scheme="http://yoursite.com/tags/Loss-Function/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2016) Coupled generative adversarial networks</title>
-    <link href="http://yoursite.com/2018/02/25/Coupled%20generative%20adversarial%20networks/"/>
-    <id>http://yoursite.com/2018/02/25/Coupled generative adversarial networks/</id>
-    <published>2018-02-24T22:25:02.000Z</published>
-    <updated>2019-05-13T01:02:03.933Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liu M Y, Tuzel O. Coupled generative adversarial networks[C]//Advances in neural information processing systems. 2016: 469-477.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="coupleGAN" scheme="http://yoursite.com/tags/coupleGAN/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2017) Multi-scale dense convolutional networks for efficient prediction</title>
-    <link href="http://yoursite.com/2018/02/25/Multi-scale%20dense%20convolutional%20networks%20for%20efficient%20prediction/"/>
-    <id>http://yoursite.com/2018/02/25/Multi-scale dense convolutional networks for efficient prediction/</id>
-    <published>2018-02-24T22:25:01.000Z</published>
-    <updated>2019-05-12T12:52:34.768Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Huang G, Chen D, Li T, et al. Multi-scale dense convolutional networks for efficient prediction[J]. arXiv preprint arXiv:1703.09844, 2017, 2.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Network/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Multi-Scale DenseNet" scheme="http://yoursite.com/tags/Multi-Scale-DenseNet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(AAAI 2017) Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images</title>
-    <link href="http://yoursite.com/2018/02/02/Volumetric%20ConvNets%20with%20Mixed%20Residual%20Connections%20for%20Automated%20Prostate%20Segmentation%20from%203D%20MR%20Images/"/>
-    <id>http://yoursite.com/2018/02/02/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/</id>
-    <published>2018-02-01T22:25:03.000Z</published>
-    <updated>2018-02-01T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Yu L, Yang X, Chen H, et al. Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images[C]//AAAI. 2017: 66-72&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
-    
-      <category term="Prostate" scheme="http://yoursite.com/categories/Paper-Note/Medical/Prostate/"/>
-    
-    
-      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-      <category term="Prostate" scheme="http://yoursite.com/tags/Prostate/"/>
-    
-      <category term="3D" scheme="http://yoursite.com/tags/3D/"/>
-    
-      <category term="MRI" scheme="http://yoursite.com/tags/MRI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2017) A survey on deep learning in medical image analysis</title>
-    <link href="http://yoursite.com/2018/02/02/A%20Survey%20On%20Deep%20Learning%20in%20Medical%20Image%20Analysis/"/>
-    <id>http://yoursite.com/2018/02/02/A Survey On Deep Learning in Medical Image Analysis/</id>
-    <published>2018-02-01T22:25:02.000Z</published>
-    <updated>2018-02-01T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Litjens G, Kooi T, Bejnordi B E, et al. A survey on deep learning in medical image analysis[J]. arXiv preprint arXiv:1702.05747, 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
-    
-      <category term="Overview" scheme="http://yoursite.com/categories/Paper-Note/Medical/Overview/"/>
-    
-    
-      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
-    
-      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2017) Deep Learning in Medical Imaging:General Overview</title>
-    <link href="http://yoursite.com/2018/02/02/Deep%20Learning%20in%20Medical%20Imaging:%20General%20Overview/"/>
-    <id>http://yoursite.com/2018/02/02/Deep Learning in Medical Imaging: General Overview/</id>
-    <published>2018-02-01T22:25:01.000Z</published>
-    <updated>2018-02-01T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Lee J G, Jun S, Cho Y W, et al. Deep Learning in Medical Imaging: General Overview[J]. Korean Journal of Radiology, 2017, 18(4): 570-584.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
-    
-      <category term="Overview" scheme="http://yoursite.com/categories/Paper-Note/Medical/Overview/"/>
-    
-    
-      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
-    
-      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2016) Deep region and multi-label learning for facial action unit detection</title>
-    <link href="http://yoursite.com/2018/01/17/Deep%20region%20and%20multi-label%20learning%20for%20facial%20action%20unit%20detection/"/>
-    <id>http://yoursite.com/2018/01/17/Deep region and multi-label learning for facial action unit detection/</id>
-    <published>2018-01-16T22:25:03.000Z</published>
-    <updated>2018-01-16T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhao K, Chu W S, Zhang H. Deep region and multi-label learning for facial action unit detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 3391-3399.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Face" scheme="http://yoursite.com/categories/Paper-Note/Face/"/>
-    
-    
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
-      <category term="Facial Action Units" scheme="http://yoursite.com/tags/Facial-Action-Units/"/>
-    
-      <category term="Multi-label Classification" scheme="http://yoursite.com/tags/Multi-label-Classification/"/>
     
   </entry>
   
