@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Arnab A, Miksik O, Torr P H S. On the robustness of semantic segmentation models to adversarial attacks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 888-89">
+<meta name="keywords" content="Adversarial Attack,Segmentation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(CVPR 2018) On the Robustness of Semantic Segmentation Models to Adversarial Attacks">
+<meta property="og:url" content="http://yoursite.com/2018/08/16/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Arnab A, Miksik O, Torr P H S. On the robustness of semantic segmentation models to adversarial attacks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 888-89">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/11.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/12.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/13.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/14.jpg?raw=true">
+<meta property="og:updated_time" content="2018-08-15T22:25:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(CVPR 2018) On the Robustness of Semantic Segmentation Models to Adversarial Attacks">
+<meta name="twitter:description" content="Arnab A, Miksik O, Torr P H S. On the robustness of semantic segmentation models to adversarial attacks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 888-89">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/1.jpg?raw=true">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2018/08/16/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>(CVPR 2018) On the Robustness of Semantic Segmentation Models to Adversarial Attacks | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/16/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">(CVPR 2018) On the Robustness of Semantic Segmentation Models to Adversarial Attacks
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-08-16 06:25:01" itemprop="dateCreated datePublished" datetime="2018-08-16T06:25:01+08:00">2018-08-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Adversarial-Attack/" itemprop="url" rel="index"><span itemprop="name">Adversarial Attack</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Arnab A, Miksik O, Torr P H S. On the robustness of semantic segmentation models to adversarial attacks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 888-897.</p>
+</blockquote>
+<a id="more"></a>
+<p><br></p>
+<hr>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<li>adversarial examples has not been extensively studied on multiple, large-scale dataset and structureed prediction task</li>
+</ul>
+<p>In this paper</p>
+<ul>
+<li>evaluate adversarial attacks on model semantic segmentation models, using two large-scale datasets</li>
+</ul>
+<h2 id="Observation"><a href="#Observation" class="headerlink" title="Observation"></a>Observation</h2><ul>
+<li><strong>DeeplabV2</strong> more robust than other approach</li>
+<li><strong>multiscale</strong> networks more robust to multiple different attacks and white-box attacks</li>
+<li>adversarial examples are less effective when processed at <strong>different scales</strong></li>
+<li><strong>input transformation</strong> only more robust to attack which not take these transformation into account</li>
+<li><strong>mean filed CRF Inference</strong> increases robustness to untargeted adversarial attacks</li>
+</ul>
+<p><br></p>
+<hr>
+<h1 id="Adversarial-Examples"><a href="#Adversarial-Examples" class="headerlink" title="Adversarial Examples"></a>Adversarial Examples</h1><hr>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/1.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><strong>y_t</strong>. target label</li>
+<li><strong>c.</strong> positive scalar</li>
+<li><strong>L-BFGS</strong>. expensive, require several minutes to produce a single attack</li>
+</ul>
+<h2 id="FGSM"><a href="#FGSM" class="headerlink" title="FGSM"></a>FGSM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/2.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>single-step, untargeted attack</li>
+<li>minimise the l_oo norm of the perturbation bounded by the parameter ε</li>
+</ul>
+<h2 id="FGSM-II"><a href="#FGSM-II" class="headerlink" title="FGSM II"></a>FGSM II</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/3.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>single-step, choose the target class as the least likely class predicted by network</li>
+</ul>
+<h2 id="Iterative-FGSM"><a href="#Iterative-FGSM" class="headerlink" title="Iterative FGSM"></a>Iterative FGSM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/4.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>iterative manner, untargeted</li>
+<li><strong>clip(a,ε)</strong>. make sure each element a_i of a in range [a_i -ε, a_i+ε]</li>
+<li><strong>α</strong>. step-size</li>
+</ul>
+<h2 id="Iterative-FGSM-II"><a href="#Iterative-FGSM-II" class="headerlink" title="Iterative FGSM II"></a>Iterative FGSM II</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/5.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>iterative manner, targeted</li>
+<li><strong>y_ll</strong>. least likely class predicted by the network</li>
+</ul>
+<p><br></p>
+<hr>
+<h1 id="Adversarial-Defenses-and-Evaluation"><a href="#Adversarial-Defenses-and-Evaluation" class="headerlink" title="Adversarial Defenses and Evaluation"></a>Adversarial Defenses and Evaluation</h1><hr>
+<ul>
+<li>training with adversarial examples generated by <strong>single-step</strong> methods conferred <strong>robustness to other single-step attacks</strong> with negligible performance difference to normally trained networks on clean inputs</li>
+<li>however, the adversarially trained network was <strong>still as vulnerable to iterative attacks</strong> as standard models</li>
+<li>currently, no effective defense to all adversarial attacks exist</li>
+<li>state-of-art methods should be preferred in settings where both accuracy and robustness are a priority</li>
+</ul>
+<p><br></p>
+<hr>
+<h1 id="Experiments-Set-up"><a href="#Experiments-Set-up" class="headerlink" title="Experiments Set-up"></a>Experiments Set-up</h1><hr>
+<ul>
+<li>number of iteration. <strong>min(ε+4, ceil(1.25ε))</strong></li>
+<li>step-size <strong>α=1</strong></li>
+<li><strong>l_oo of ε</strong>. {0.25, 0.5, 1, 2, 4, 8, 16, 32}</li>
+</ul>
+<hr>
+<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h2 id="The-Robustness-of-Different-Networks"><a href="#The-Robustness-of-Different-Networks" class="headerlink" title="The Robustness of Different Networks"></a>The Robustness of Different Networks</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/6.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>resnet-based (skip-connection) more robust to single-step attack</li>
+<li>none perform well on iterative FGSM II attack, but tend not to transfer to other models, less useful in practical black-box attacks</li>
+</ul>
+<h2 id="Model-Capacity-and-Residual-Connections"><a href="#Model-Capacity-and-Residual-Connections" class="headerlink" title="Model Capacity and Residual Connections"></a>Model Capacity and Residual Connections</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/7.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><strong>lightweight</strong> models are affected <strong>similarly</strong> as <strong>heavyweight</strong> models</li>
+<li>adding <strong>context module</strong> of Dilated-Net onto the Front-end slightly <strong>reducdce robustness</strong> across all ε values on Cityscapes</li>
+</ul>
+<h2 id="Multiscale-Processing"><a href="#Multiscale-Processing" class="headerlink" title="Multiscale Processing"></a>Multiscale Processing</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/8.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>perturbations generated from the multiscale and 100% resolutions of Deeplabv2 transfer the best</li>
+<li>multiscale version Deeplabv2 is the most robust to white-box attacks</li>
+<li>FCN8 with multiscale inputs is more rbust to white-box attacks</li>
+<li>adversarial attacks <strong>generated at a single scale, are no longer as malignant when processed at another</strong></li>
+<li>network process images at multiple scales more robust</li>
+</ul>
+<h2 id="Input-Transformation"><a href="#Input-Transformation" class="headerlink" title="Input Transformation"></a>Input Transformation</h2><ul>
+<li>JPEG recompression</li>
+<li>Gaussian Blur</li>
+<li>HSV Jitter</li>
+<li>Grayscale</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/10.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><strong>JPEG</strong> and <strong>Gaussian Blur</strong> providing substantial benefits</li>
+</ul>
+<h2 id="Expectation-over-Transformation-EOT-Attack"><a href="#Expectation-over-Transformation-EOT-Attack" class="headerlink" title="Expectation over Transformation (EOT) Attack"></a>Expectation over Transformation (EOT) Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/11.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><strong>T.</strong> the distribution of transformation functions t<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/12.jpg?raw=true" alt><br></div>
+
+</li>
+</ul>
+<h2 id="Transferability-of-Input-Transformation"><a href="#Transferability-of-Input-Transformation" class="headerlink" title="Transferability of Input Transformation"></a>Transferability of Input Transformation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/14.jpg?raw=true" alt><br></div>
+
+
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Adversarial-Attack/" rel="tag"># Adversarial Attack</a>
+          
+            <a href="/tags/Segmentation/" rel="tag"># Segmentation</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/22/Feature Generating Networks for Zero-Shot Learning/" rel="next" title="(CVPR 2018) Feature Generating Networks for Zero-Shot Learning">
+                <i class="fa fa-chevron-left"></i> (CVPR 2018) Feature Generating Networks for Zero-Shot Learning
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/16/Adversarial Examples for Semantic Segmentation and Object Detection/" rel="prev" title="(ICCV 2017) Adversarial Examples for Semantic Segmentation and Object Detection">
+                (ICCV 2017) Adversarial Examples for Semantic Segmentation and Object Detection <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+            
+              <p class="site-author-name" itemprop="name">Alex Hex</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">138</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:378344082@qq.com" title="E-Mail &rarr; mailto:378344082@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observation"><span class="nav-number">1.2.</span> <span class="nav-text">Observation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adversarial-Examples"><span class="nav-number">2.</span> <span class="nav-text">Adversarial Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.1.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FGSM"><span class="nav-number">2.2.</span> <span class="nav-text">FGSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FGSM-II"><span class="nav-number">2.3.</span> <span class="nav-text">FGSM II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-FGSM"><span class="nav-number">2.4.</span> <span class="nav-text">Iterative FGSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-FGSM-II"><span class="nav-number">2.5.</span> <span class="nav-text">Iterative FGSM II</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adversarial-Defenses-and-Evaluation"><span class="nav-number">3.</span> <span class="nav-text">Adversarial Defenses and Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments-Set-up"><span class="nav-number">4.</span> <span class="nav-text">Experiments Set-up</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">5.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Robustness-of-Different-Networks"><span class="nav-number">5.1.</span> <span class="nav-text">The Robustness of Different Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Capacity-and-Residual-Connections"><span class="nav-number">5.2.</span> <span class="nav-text">Model Capacity and Residual Connections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiscale-Processing"><span class="nav-number">5.3.</span> <span class="nav-text">Multiscale Processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Transformation"><span class="nav-number">5.4.</span> <span class="nav-text">Input Transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expectation-over-Transformation-EOT-Attack"><span class="nav-number">5.5.</span> <span class="nav-text">Expectation over Transformation (EOT) Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transferability-of-Input-Transformation"><span class="nav-number">5.6.</span> <span class="nav-text">Transferability of Input Transformation</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

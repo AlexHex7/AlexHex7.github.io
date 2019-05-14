@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-21T22:25:08.000Z</updated>
+  <updated>2018-09-12T22:25:01.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,253 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(NIPS 2016) Hierarchical Object Detection with Deep Reinforcement Learning</title>
+    <link href="http://yoursite.com/2018/09/13/Hierarchical%20Object%20Detection%20with%20Deep%20Reinforcement%20Learning/"/>
+    <id>http://yoursite.com/2018/09/13/Hierarchical Object Detection with Deep Reinforcement Learning/</id>
+    <published>2018-09-12T22:25:01.000Z</published>
+    <updated>2018-09-12T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Bellver M, Giroinieto X, Marques F, et al. Hierarchical Object Detection with Deep Reinforcement Learning[J]. Advances in Parallel Computing, 2016&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Reinforcement Learning" scheme="http://yoursite.com/categories/Paper-Note/Reinforcement-Learning/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="DQN" scheme="http://yoursite.com/tags/DQN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2018) Mitigating adversarial effects through randomization</title>
+    <link href="http://yoursite.com/2018/08/16/Mitigating%20adversarial%20effects%20through%20randomization/"/>
+    <id>http://yoursite.com/2018/08/16/Mitigating adversarial effects through randomization/</id>
+    <published>2018-08-15T22:25:08.000Z</published>
+    <updated>2018-08-15T22:25:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Xie C, Wang J, Zhang Z, et al. Mitigating adversarial effects through randomization[J]. arXiv preprint arXiv:1711.01991, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+      <category term="Ensemble" scheme="http://yoursite.com/tags/Ensemble/"/>
+    
+      <category term="Randomization" scheme="http://yoursite.com/tags/Randomization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Deflecting adversarial attacks with pixel deflection</title>
+    <link href="http://yoursite.com/2018/08/16/Deflecting%20adversarial%20attacks%20with%20pixel%20deflection/"/>
+    <id>http://yoursite.com/2018/08/16/Deflecting adversarial attacks with pixel deflection/</id>
+    <published>2018-08-15T22:25:07.000Z</published>
+    <updated>2018-08-15T22:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Prakash A, Moran N, Garber S, et al. Deflecting adversarial attacks with pixel deflection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 8571-8580.&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+      <category term="PixelDeflection" scheme="http://yoursite.com/tags/PixelDeflection/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) Adversarial Transformation Networks:Learning to Generate Adversarial Examples</title>
+    <link href="http://yoursite.com/2018/08/16/Adversarial%20Transformation%20Networks:%20Learning%20to%20Generate%20Adversarial%20Examples/"/>
+    <id>http://yoursite.com/2018/08/16/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/</id>
+    <published>2018-08-15T22:25:06.000Z</published>
+    <updated>2018-08-15T22:25:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Baluja S, Fischer I. Adversarial transformation networks: Learning to generate adversarial examples[J]. arXiv preprint arXiv:1703.09387, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+      <category term="Adversarial Transformation Network" scheme="http://yoursite.com/tags/Adversarial-Transformation-Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser</title>
+    <link href="http://yoursite.com/2018/08/16/Defense%20against%20Adversarial%20Attacks%20Using%20High-Level%20Representation%20Guided%20Denoiser/"/>
+    <id>http://yoursite.com/2018/08/16/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/</id>
+    <published>2018-08-15T22:25:05.000Z</published>
+    <updated>2018-08-15T22:25:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Liao F, Liang M, Dong Y, et al. Defense against adversarial attacks using high-level representation guided denoiser[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 1778-1787.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+      <category term="HGD" scheme="http://yoursite.com/tags/HGD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2018) Countering Adversarial Images using Input Transformations</title>
+    <link href="http://yoursite.com/2018/08/16/Countering%20Adversarial%20Images%20using%20Input%20Transformations/"/>
+    <id>http://yoursite.com/2018/08/16/Countering Adversarial Images using Input Transformations/</id>
+    <published>2018-08-15T22:25:04.000Z</published>
+    <updated>2018-08-15T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Guo C, Rana M, Cisse M, et al. Countering adversarial images using input transformations[J]. arXiv preprint arXiv:1711.00117, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Boosting Adversarial Attacks with Momentum</title>
+    <link href="http://yoursite.com/2018/08/16/Boosting%20Adversarial%20Attacks%20with%20Momentum/"/>
+    <id>http://yoursite.com/2018/08/16/Boosting Adversarial Attacks with Momentum/</id>
+    <published>2018-08-15T22:25:03.000Z</published>
+    <updated>2018-08-15T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Dong Y, Liao F, Pang T, et al. Boosting adversarial attacks with momentum[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 9185-9193.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="MI-FGSM" scheme="http://yoursite.com/tags/MI-FGSM/"/>
+    
+      <category term="Ensemble" scheme="http://yoursite.com/tags/Ensemble/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2017) Adversarial Examples for Semantic Segmentation and Object Detection</title>
+    <link href="http://yoursite.com/2018/08/16/Adversarial%20Examples%20for%20Semantic%20Segmentation%20and%20Object%20Detection/"/>
+    <id>http://yoursite.com/2018/08/16/Adversarial Examples for Semantic Segmentation and Object Detection/</id>
+    <published>2018-08-15T22:25:02.000Z</published>
+    <updated>2018-08-15T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Xie C, Wang J, Zhang Z, et al. Adversarial examples for semantic segmentation and object detection[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 1369-1378.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) On the Robustness of Semantic Segmentation Models to Adversarial Attacks</title>
+    <link href="http://yoursite.com/2018/08/16/On%20the%20Robustness%20of%20Semantic%20Segmentation%20Models%20to%20Adversarial%20Attacks/"/>
+    <id>http://yoursite.com/2018/08/16/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/</id>
+    <published>2018-08-15T22:25:01.000Z</published>
+    <updated>2018-08-15T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Arnab A, Miksik O, Torr P H S. On the robustness of semantic segmentation models to adversarial attacks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 888-897.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+  </entry>
   
   <entry>
     <title>(CVPR 2018) Feature Generating Networks for Zero-Shot Learning</title>
@@ -383,269 +630,6 @@
       <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
     
       <category term="Text to Image" scheme="http://yoursite.com/tags/Text-to-Image/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Diversity Regularized Spatiotemporal Attention for Video-based Person Re-identification</title>
-    <link href="http://yoursite.com/2018/05/30/Diversity%20Regularized%20Spatiotemporal%20Attention%20for%20Video-based%20Person%20Re-identification/"/>
-    <id>http://yoursite.com/2018/05/30/Diversity Regularized Spatiotemporal Attention for Video-based Person Re-identification/</id>
-    <published>2018-05-29T22:25:05.000Z</published>
-    <updated>2018-05-29T22:25:05.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Li S, Bak S, Carr P, et al. Diversity regularized spatiotemporal attention for video-based person re-identification[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 369-378.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Body" scheme="http://yoursite.com/categories/Paper-Note/Body/"/>
-    
-      <category term="Person Re-ID" scheme="http://yoursite.com/categories/Paper-Note/Body/Person-Re-ID/"/>
-    
-    
-      <category term="Video" scheme="http://yoursite.com/tags/Video/"/>
-    
-      <category term="Person Re-ID" scheme="http://yoursite.com/tags/Person-Re-ID/"/>
-    
-      <category term="Body" scheme="http://yoursite.com/tags/Body/"/>
-    
-      <category term="Spatiotemporal Attention" scheme="http://yoursite.com/tags/Spatiotemporal-Attention/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) Joint detection and identification feature learning for person search</title>
-    <link href="http://yoursite.com/2018/05/30/Joint%20detection%20and%20identification%20feature%20learning%20for%20person%20search/"/>
-    <id>http://yoursite.com/2018/05/30/Joint detection and identification feature learning for person search/</id>
-    <published>2018-05-29T22:25:04.000Z</published>
-    <updated>2018-05-29T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Xiao T, Li S, Wang B, et al. Joint detection and identification feature learning for person search[C]//2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2017: 3376-3385.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Body" scheme="http://yoursite.com/categories/Paper-Note/Body/"/>
-    
-      <category term="Person Re-ID" scheme="http://yoursite.com/categories/Paper-Note/Body/Person-Re-ID/"/>
-    
-    
-      <category term="Person Re-ID" scheme="http://yoursite.com/tags/Person-Re-ID/"/>
-    
-      <category term="Body" scheme="http://yoursite.com/tags/Body/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2017) Dual-Path Convolutional Image-Text Embedding</title>
-    <link href="http://yoursite.com/2018/05/30/Dual-Path%20Convolutional%20Image-Text%20Embedding/"/>
-    <id>http://yoursite.com/2018/05/30/Dual-Path Convolutional Image-Text Embedding/</id>
-    <published>2018-05-29T22:25:03.000Z</published>
-    <updated>2018-05-29T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zheng Z, Zheng L, Garrett M, et al. Dual-path convolutional image-text embedding with instance loss[J]. arXiv preprint arXiv:1711.05535, 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Image-Text" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Image-Text/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Image-Text" scheme="http://yoursite.com/tags/Image-Text/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Identity-aware textual-visual matching with latent co-attention</title>
-    <link href="http://yoursite.com/2018/05/30/Identity-aware%20textual-visual%20matching%20with%20latent%20co-attention/"/>
-    <id>http://yoursite.com/2018/05/30/Identity-aware textual-visual matching with latent co-attention/</id>
-    <published>2018-05-29T22:25:02.000Z</published>
-    <updated>2018-05-29T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Li S, Xiao T, Li H, et al. Identity-aware textual-visual matching with latent co-attention[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 1890-1899.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Person Search" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Person-Search/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Body" scheme="http://yoursite.com/tags/Body/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Person Search" scheme="http://yoursite.com/tags/Person-Search/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) Person search with natural language description</title>
-    <link href="http://yoursite.com/2018/05/30/Person%20search%20with%20natural%20language%20description/"/>
-    <id>http://yoursite.com/2018/05/30/Person search with natural language description/</id>
-    <published>2018-05-29T22:25:01.000Z</published>
-    <updated>2018-05-29T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Li S, Xiao T, Li H, et al. Person search with natural language description[C]//Proc. CVPR. 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Person Search" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Person-Search/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Body" scheme="http://yoursite.com/tags/Body/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Person Search" scheme="http://yoursite.com/tags/Person-Search/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ECCV 2018) Exploring the Limits of Weakly Supervised Pretraining</title>
-    <link href="http://yoursite.com/2018/05/11/Exploring%20the%20Limits%20of%20Weakly%20Supervised%20Pretraining/"/>
-    <id>http://yoursite.com/2018/05/11/Exploring the Limits of Weakly Supervised Pretraining/</id>
-    <published>2018-05-10T22:25:08.000Z</published>
-    <updated>2018-05-10T22:25:08.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Mahajan D, Girshick R, Ramanathan V, et al. Exploring the limits of weakly supervised pretraining[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 181-196.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
-    
-      <category term="Weakly Supervised" scheme="http://yoursite.com/categories/Paper-Note/Learning/Weakly-Supervised/"/>
-    
-    
-      <category term="Weakly Supervised Learning" scheme="http://yoursite.com/tags/Weakly-Supervised-Learning/"/>
-    
-      <category term="Hashtags" scheme="http://yoursite.com/tags/Hashtags/"/>
-    
-      <category term="Social Media Images" scheme="http://yoursite.com/tags/Social-Media-Images/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Two-stream convolutional networks for dynamic texture synthesis</title>
-    <link href="http://yoursite.com/2018/05/11/Two-stream%20convolutional%20networks%20for%20dynamic%20texture%20synthesis/"/>
-    <id>http://yoursite.com/2018/05/11/Two-stream convolutional networks for dynamic texture synthesis/</id>
-    <published>2018-05-10T22:25:07.000Z</published>
-    <updated>2018-05-10T22:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Tesfaldet M, Brubaker M A, Derpanis K G. Two-stream convolutional networks for dynamic texture synthesis[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6703-6712.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
-    
-      <category term="Dynamic Texture Synthesis" scheme="http://yoursite.com/tags/Dynamic-Texture-Synthesis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Who Let The Dogs Out Modeling Dog Behavior From Visual Data</title>
-    <link href="http://yoursite.com/2018/05/11/Who%20Let%20The%20Dogs%20Out%20Modeling%20Dog%20Behavior%20From%20Visual%20Data/"/>
-    <id>http://yoursite.com/2018/05/11/Who Let The Dogs Out Modeling Dog Behavior From Visual Data/</id>
-    <published>2018-05-10T22:25:06.000Z</published>
-    <updated>2018-05-10T22:25:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Ehsani K, Bagherinezhad H, Redmon J, et al. Who Let The Dogs Out? Modeling Dog Behavior From Visual Data[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4051-4060.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Prediction" scheme="http://yoursite.com/categories/Paper-Note/Prediction/"/>
-    
-    
-      <category term="Prediction" scheme="http://yoursite.com/tags/Prediction/"/>
-    
-      <category term="Behavior" scheme="http://yoursite.com/tags/Behavior/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICLR 2015) Explaining and harnessing adversarial exampless</title>
-    <link href="http://yoursite.com/2018/05/11/Explaining%20and%20harnessing%20adversarial%20examples/"/>
-    <id>http://yoursite.com/2018/05/11/Explaining and harnessing adversarial examples/</id>
-    <published>2018-05-10T22:25:05.000Z</published>
-    <updated>2018-05-10T22:25:05.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Goodfellow I J, Shlens J, Szegedy C. Explaining and harnessing adversarial examples[J]. arXiv preprint arXiv:1412.6572, 2014.&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="FGSM" scheme="http://yoursite.com/tags/FGSM/"/>
     
   </entry>
   
