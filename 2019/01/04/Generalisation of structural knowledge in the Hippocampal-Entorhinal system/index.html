@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Whittington J, Muller T, Mark S, et al. Generalisation of structural knowledge in the hippocampal-entorhinal system[C]//Advances in Neural Information Processing Systems. 2018: 8484-8495.">
+<meta name="keywords" content="Cortex,Hippocampal,Hebbian Memory,Hippocampal-Wntorhinal System">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(NIPS 2018 Oral) Generalisation of structural knowledge in the Hippocampal-Entorhinal system">
+<meta property="og:url" content="http://yoursite.com/2019/01/04/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Whittington J, Muller T, Mark S, et al. Generalisation of structural knowledge in the hippocampal-entorhinal system[C]//Advances in Neural Information Processing Systems. 2018: 8484-8495.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/11.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/12.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/13.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/14.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/15.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/16.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/17.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/18.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/19.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/20.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/21.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/22.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/23.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/24.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/25.jpg?raw=true">
+<meta property="og:updated_time" content="2019-01-03T22:25:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(NIPS 2018 Oral) Generalisation of structural knowledge in the Hippocampal-Entorhinal system">
+<meta name="twitter:description" content="Whittington J, Muller T, Mark S, et al. Generalisation of structural knowledge in the hippocampal-entorhinal system[C]//Advances in Neural Information Processing Systems. 2018: 8484-8495.">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/1.jpg?raw=true">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/01/04/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>(NIPS 2018 Oral) Generalisation of structural knowledge in the Hippocampal-Entorhinal system | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/04/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">(NIPS 2018 Oral) Generalisation of structural knowledge in the Hippocampal-Entorhinal system
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-04 06:25:02" itemprop="dateCreated datePublished" datetime="2019-01-04T06:25:02+08:00">2019-01-04</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Neuron/" itemprop="url" rel="index"><span itemprop="name">Neuron</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Whittington J, Muller T, Mark S, et al. Generalisation of structural knowledge in the hippocampal-entorhinal system[C]//Advances in Neural Information Processing Systems. 2018: 8484-8495.</p>
+</blockquote>
+<a id="more"></a>
+<p><br></p>
+<hr>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<li>a central problem to <strong>understanding intelligence</strong> is the concept of <strong>generalisation</strong></li>
+<li><strong>hippocampal-entorhinal system</strong> is known to be important for generalisation</li>
+</ul>
+<p>In this paper, it proposes that to generalise structural knowledge, the representations of the <strong>structure of the world</strong> (how entities in the word relate to each other) need to be <strong>separated</strong> from representations of the <strong>entities</strong> themselves </p>
+<ul>
+<li><strong>ANN</strong> embedded with <strong>hierarchy</strong> and fast <strong>Hebbian memory</strong></li>
+<li>representations can effectively utilise <strong>memories</strong></li>
+<li>shows a <strong>preserved relationship</strong> between entorhinal gird and hippocampal place cells across environments</li>
+<li>explicitly represented structure can be combined with <strong>sensory</strong> information in a <strong>conjunctive</strong> code <strong>unique to each environment</strong>. Thus <strong>sensory</strong> observations are <strong>fit with prior learned structural knowledge</strong>, leading to <strong>generalisation</strong></li>
+</ul>
+<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><h3 id="Neuroscience"><a href="#Neuroscience" class="headerlink" title="Neuroscience"></a>Neuroscience</h3><ul>
+<li>find an <strong>interpretation of grid cells, place cells</strong> and <strong>remapping</strong> that offers a mechanistic <strong>understanding for the hippocampal involvement</strong> in <strong>generalisation of knowledge across domains</strong></li>
+<li>results suggest <strong>spatial representations</strong> found in the <strong>brain</strong> may be an instance of a more <strong>general coding mechanism</strong> organising knowledge across multiple domains</li>
+</ul>
+<h3 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h3><ul>
+<li>build a network where <strong>fast Hebbian learning interacts with slow statistical learning</strong><ul>
+<li>this allow to <strong>learn representations</strong> whereby memories are not only stored in a Hebbian network for one-shot retrieval <strong>within domain</strong>, but also <strong>benefit from statistical knowledge</strong> that is shared <strong>across domains</strong> - allowing zero shot inference</li>
+</ul>
+</li>
+</ul>
+<h2 id="Generally"><a href="#Generally" class="headerlink" title="Generally"></a>Generally</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/1.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>implement its proposal in an <strong>ANN</strong> tasked with <strong>predicting sensory observations</strong> when <strong>walking on 2D graph worlds</strong>, where each <strong>vertex</strong> is associated with a <strong>sensory</strong> experience</li>
+<li>To make accurate predictions, the agent should <strong>learn the underlying hidden strucutre of graphs</strong></li>
+<li><strong>unsupervised learning</strong>. providing the network with <strong>only sensory observations and actions</strong></li>
+<li><strong>place cells</strong> form a <strong>conjunctive</strong> representation between sensory identity and strucuture. This <strong>conjunctive representation</strong> forms <strong>a Hebbian memory</strong>, which bridges structure and identity, <strong>allowing the same structural code to be reused across environments</strong></li>
+<li>combine <strong>fast Hebbian learning of episodic memories</strong>, with gradient descent which <strong>slowly learns to extract statistics of these memories</strong></li>
+</ul>
+<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<li>propose that the statistics of memories in <strong>hippocampus</strong> are <strong>extracted by cortex</strong></li>
+<li>propose that <strong>future</strong> hippocampal representations/memories are constrained to be <strong>consistent with</strong> the learned <strong>structural knowledge</strong></li>
+<li>choose memory storage and addressing to be computationally <strong>biologically plausible</strong> (rather than using other types of differentiable memory more akin to RAM) , as well as using <strong>hierarchical processing</strong>. This enables our model to <strong>discover representations</strong> that are <strong>useful for</strong> both <strong>navigation and addressing memories</strong></li>
+</ul>
+<h2 id="In-Neuroscience"><a href="#In-Neuroscience" class="headerlink" title="In Neuroscience"></a>In Neuroscience</h2><ul>
+<li><strong>generalisation of statistical structure</strong> (the relationships between objects in the world) imbues an agent with the ability to fit things/concepts together that share <strong>the same statistical structure</strong>, but <strong>differ in the particularities</strong></li>
+<li><strong>hippocampus</strong> is known to be important for <strong>generalisation, memory</strong>, problems of <strong>causality, inferential</strong> reasoning, <strong>transitive</strong> reasoning, conceptual knowledge representation, one-shot imagination and <strong>navigation</strong></li>
+<li>in <strong>spatial navigation</strong> there is a good undertanding of neuronal representations in both <strong>hippocampus</strong> (<strong>place cell</strong>, landmark cells) and medial <strong>entorhinal cortex</strong> (<strong>grid cell</strong>, border cell, object vector cell)</li>
+<li><strong>place cells and grid cells</strong> have had a radical impact in neuroscience, leading to the 2014 <strong>Noble Prize</strong> in Physiology and Medicine</li>
+<li><strong>place and grid cells</strong> are similar in that they have a <strong>stable firing pattern</strong> for <strong>specific regions of space</strong></li>
+<li>place cells <strong>only</strong> fire in a <strong>single</strong> (or couple) <strong>localtion</strong> in <strong>a given environment</strong> whereas grid cells  fire in a r<strong>egular lattice pattern</strong> tiling the space. These cells cemented the idea of a ‘<strong>cognitive map</strong>‘, where an animal holds an <strong>internal representation of the space</strong> it navigates</li>
+<li><strong>other entorhinal cell types</strong> (border, object vector cells) appear to have <strong>disparate roles</strong> in coding space</li>
+<li><strong>remapping</strong> (traditionally thought to be random) → the space cell code is <strong>different for two structurally identical environments</strong></li>
+</ul>
+<p><br></p>
+<hr>
+<h1 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/2.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>consider an agent passively <strong>moving on a 2D graph</strong>, observing a <strong>non-unique</strong> sensory stimulus (an image) on each vertex</li>
+<li>if the agent wishes to <strong>undertand its environment</strong> then it should <strong>maximise</strong> its model’s <strong>probability</strong> of observing each stimulus</li>
+<li>trained on <strong>many environments</strong> sharing the <strong>same strucure</strong> (2D graph)</li>
+<li>one <strong>approach</strong> to this problem: have an <strong>abstract representation</strong> of space encoding relative locations, and then place a memory of what stimulus was observed at that (relative) location</li>
+<li>since the agent <strong>understands where it</strong> is in space, this allows for accurate state <strong>predictions to previously visited nodes</strong> even if the agent has never travelled along that particular edge before (Figure 2c)</li>
+<li><strong>grid cell</strong> as base for constructing <strong>abstract representation of space</strong></li>
+<li><strong>place cell</strong> representations for the formation of <strong>fast episodic memories</strong></li>
+<li>posit that <strong>this</strong> (place cells forms a conjunction) <strong>is done hierarchically across spatial frequencies</strong>, such that the <strong>higher frequency statistics can be repeatedly used across space</strong>.This reduces the number of weights that need to be learnt</li>
+<li>grid cells to be <strong>recurrent</strong> through time</li>
+<li>view the hippocampal-entorhinal system as one that <strong>performs inference</strong></li>
+</ul>
+<h2 id="Model-Summary"><a href="#Model-Summary" class="headerlink" title="Model Summary"></a>Model Summary</h2><ul>
+<li>the model is a <strong>neural network</strong> and <strong>learns strucuture</strong> across tasks</li>
+<li>optimise end-to-end via backpropagation through time</li>
+<li>the <strong>central</strong> (attractor) network employs <strong>Hebbian learning</strong> to rapidly <strong>remember the conjunction</strong></li>
+<li>a <strong>generavie temporal model</strong> learns how to <strong>use the Hebbian memory most efficiently</strong> given the common statistics of transitions across worlds</li>
+</ul>
+<h2 id="Notation"><a href="#Notation" class="headerlink" title="Notation"></a>Notation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/3.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>a layer of activations with vector notations</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/4.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>Element</li>
+<li><strong>s</strong>. index for sensory</li>
+<li><strong>j</strong>. index for phases</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/5.jpg?raw=true" alt><br></div>
+
+
+<h2 id="Generative-Model"><a href="#Generative-Model" class="headerlink" title="Generative Model"></a>Generative Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/6.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><strong>g</strong>. grid cell</li>
+<li><strong>p</strong>. place cell</li>
+<li><strong>M</strong>. agent’s memory</li>
+<li><strong>a</strong>. action</li>
+<li><strong>Θ</strong>. parameters of generative model</li>
+<li><strong>x</strong>. <strong>one-hot</strong> vector where each of its <strong>n_s elements</strong> represent a sensory identity</li>
+<li><strong>g&amp;p</strong> (<strong>learned instead of hard-coded</strong>). come in <strong>different frequencies</strong> (hierarchies) indexed by superscript f</li>
+</ul>
+<h3 id="Grid-Cells"><a href="#Grid-Cells" class="headerlink" title="Grid Cells"></a>Grid Cells</h3><ul>
+<li><p>to <strong>predict where we will be</strong>, we can <strong>transition</strong> from our current location <strong>based on our heading</strong> (path integration, Fig 2c)</p>
+<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/7.jpg?raw=true" alt><br></div>
+</li>
+<li><p><strong>f</strong>. functions specific to the distribution in question</p>
+</li>
+<li>connections in D_a are from low frequency to the same or higher frequency only (or alternatively only within frequency).</li>
+<li>separate into hierarchical scales so that <strong>high frequency statistics can be reused across lower frequency statistics</strong>, i.e. learning and knowledge is reused across space</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/8.jpg?raw=true" alt><br></div>
+
+<h3 id="Place-Cells"><a href="#Place-Cells" class="headerlink" title="Place Cells"></a>Place Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/9.jpg?raw=true" alt><br></div>
+
+<ul>
+<li>for <strong>retrieving memories</strong></li>
+<li>stored memories are <strong>extracted via an attractor network</strong> (Fig 2b) using  as  input - i.e. <strong>grid cells</strong> act as an <strong>index</strong> for memory extraction<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/10.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/11.jpg?raw=true" alt><br></div>
+
+</li>
+</ul>
+<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/12.jpg?raw=true" alt><br></div>
+
+<ol>
+<li>categorical distribution<div align="center"><br> <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/13.jpg?raw=true" alt><br></div>
+
+
+</li>
+</ol>
+<ul>
+<li>sum over phases</li>
+<li>f_c*. MLP</li>
+<li>choose f* to be 0 (only include highest frequency)</li>
+</ul>
+<h2 id="Inference-Network"><a href="#Inference-Network" class="headerlink" title="Inference Network"></a>Inference Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/14.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><p>posterior is intractable so approximated to</p>
+<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/15.jpg?raw=true" alt><br></div>
+</li>
+<li><p><strong>phi</strong>. parameters of the inference network</p>
+</li>
+<li>learn Θ and phi by maximising the ELBO with the VAE fra</li>
+</ul>
+<h3 id="Place-Cells-1"><a href="#Place-Cells-1" class="headerlink" title="Place Cells"></a>Place Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/16.jpg?raw=true" alt><br></div>
+
+<h3 id="Grid-Cells-1"><a href="#Grid-Cells-1" class="headerlink" title="Grid Cells"></a>Grid Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/17.jpg?raw=true" alt><br></div>
+
+<h2 id="Hebbian-Memories"><a href="#Hebbian-Memories" class="headerlink" title="Hebbian Memories"></a>Hebbian Memories</h2><ul>
+<li>when enter a <strong>new environment</strong>, memory is reset to be <strong>empty</strong> (zeros)</li>
+<li>memories of place cell representations are stored in <strong>Hebbian weights</strong> between place cells (<strong>M_t</strong>)</li>
+<li>allow rapid learning when entering a new environment</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/18.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><strong>p^.</strong> place cells generated from <strong>inferred grid cells</strong></li>
+<li><strong>λ&amp;η.</strong> the rate of forgetting and remembering</li>
+<li><strong>connections from high to low frequencies are set to zero, so that memories are retrieved hierarchically</strong></li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/19.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><p><strong>best results</strong>. when two <strong>separate matrices</strong> were used</p>
+<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/20.jpg?raw=true" alt><br></div>
+</li>
+<li><p><strong>x(^)</strong>. retrieved memory with the sensorium as input to the attra</p>
+</li>
+</ul>
+<h3 id="Retrieval"><a href="#Retrieval" class="headerlink" title="Retrieval"></a>Retrieval</h3><ul>
+<li><p>attractor network</p>
+<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/21.jpg?raw=true" alt><br></div>
+</li>
+<li><p><strong>τ</strong>. iteration of the network</p>
+</li>
+<li><strong>α</strong>. decay term</li>
+<li><strong>h_0</strong>. input, from grid cells or sensorium (depending on for generative or inference), dimensions scaled appropriately</li>
+<li><strong>output</strong>. retrieved memory (place cell code)</li>
+</ul>
+<h2 id="Model-Implication"><a href="#Model-Implication" class="headerlink" title="Model Implication"></a>Model Implication</h2><ul>
+<li>believe that using more <strong>biologically realistic computational mechanism</strong>s (Hebbian Memory <strong>instead of LSTM</strong>) will facilitate further incorporation of neuroscience-inspired phenomena, such as successor representations or replay</li>
+</ul>
+<h2 id="Details-1"><a href="#Details-1" class="headerlink" title="Details"></a>Details</h2><ul>
+<li>although presented a <strong>Bayesian formulation, best resuts</strong> were obtained by only using the <strong>means</strong> of the above distributions</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/22.jpg?raw=true" alt><br></div>
+
+<ul>
+<li><strong>first item</strong>. cross entropy loss</li>
+<li><strong>other item</strong>. squared error loss between <strong>inferred</strong> and <strong>generated</strong> variables</li>
+<li><strong>5 different frequencies</strong>. n_f as [10, 10, 8, 6, 6]</li>
+<li><strong>environment square</strong>. [8, 10, 12]</li>
+<li>agent changes to a <strong>new environment</strong> after 2000~5000 steps</li>
+<li><strong>a_t</strong>. up, down, left, right, stay still</li>
+<li>time truncated to 25 steps</li>
+<li><strong>two separate memory matrices.</strong> use additional memory module in grid cell inference</li>
+<li>Typically after <strong>200-300 environments</strong>, the agent has fully learned the strucuture (~50000 gradient updates) </li>
+<li>remove a_t from the generative model so that the generative model can more easily capture the true underlying transition statistics</li>
+<li><strong>place-like</strong> representations are learned in the <strong>attractor</strong></li>
+<li><strong>grid-like</strong> representations are learned in the <strong>generative temporal model</strong></li>
+</ul>
+<h2 id="graphic"><a href="#graphic" class="headerlink" title="graphic"></a>graphic</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/23.jpg?raw=true" alt><br></div>
+
+<p>For the gird cells of a certain frequency (<strong>Inference</strong>)</p>
+<ol>
+<li>(1, 30) <strong>downsample</strong> to (1, 10)</li>
+<li><strong>combined</strong> with (1, 10) sensory cell to get (1, 100) cells</li>
+</ol>
+<ul>
+<li>(<strong>Constrain</strong>) connections from high to low frequency are set to 0</li>
+</ul>
+<p><br></p>
+<hr>
+<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/24.jpg?raw=true" alt><br></div>
+
+
+<p><strong>For Fig 4b middle and right</strong></p>
+<ul>
+<li>grid representations that are shifted versions of each other, as in the brain</li>
+<li>the separation into <strong>different phases</strong> (same frequency) means that two conjunctive place cells that respond to the same stimulus, will not necessarily be active simultaneously - each cell will only be active when their corresponding grid phase is active</li>
+<li>thus one can uniquely code for the same stimulus in many different locations</li>
+<li>Across <strong>two environments</strong>, a given stimulus may occur at the same grid phase but at a different location</li>
+</ul>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/25.jpg?raw=true" alt><br></div>
+
+
+
+
+
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Cortex/" rel="tag"># Cortex</a>
+          
+            <a href="/tags/Hippocampal/" rel="tag"># Hippocampal</a>
+          
+            <a href="/tags/Hebbian-Memory/" rel="tag"># Hebbian Memory</a>
+          
+            <a href="/tags/Hippocampal-Wntorhinal-System/" rel="tag"># Hippocampal-Wntorhinal System</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/04/Dendritic cortical microcircuits approximate the backpropagation algorithm/" rel="next" title="(NIPS 2018 Oral) Dendritic cortical microcircuits approximate the backpropagation algorithm">
+                <i class="fa fa-chevron-left"></i> (NIPS 2018 Oral) Dendritic cortical microcircuits approximate the backpropagation algorithm
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/05/SLSDeep: Skin Lesion Segmentation Based on Dilated Residual and Pyramid Pooling Networks/" rel="prev" title="(MICCAI 2018) SLSDeep:Skin Lesion Segmentation Based on Dilated Residual and Pyramid Pooling Networks">
+                (MICCAI 2018) SLSDeep:Skin Lesion Segmentation Based on Dilated Residual and Pyramid Pooling Networks <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+            
+              <p class="site-author-name" itemprop="name">Alex Hex</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">105</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">166</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:378344082@qq.com" title="E-Mail &rarr; mailto:378344082@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Neuroscience"><span class="nav-number">1.2.1.</span> <span class="nav-text">Neuroscience</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">1.2.2.</span> <span class="nav-text">Machine Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generally"><span class="nav-number">1.3.</span> <span class="nav-text">Generally</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">1.4.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#In-Neuroscience"><span class="nav-number">1.5.</span> <span class="nav-text">In Neuroscience</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Model"><span class="nav-number">2.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Summary"><span class="nav-number">2.1.</span> <span class="nav-text">Model Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notation"><span class="nav-number">2.2.</span> <span class="nav-text">Notation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generative-Model"><span class="nav-number">2.3.</span> <span class="nav-text">Generative Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Grid-Cells"><span class="nav-number">2.3.1.</span> <span class="nav-text">Grid Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Place-Cells"><span class="nav-number">2.3.2.</span> <span class="nav-text">Place Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data"><span class="nav-number">2.3.3.</span> <span class="nav-text">Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inference-Network"><span class="nav-number">2.4.</span> <span class="nav-text">Inference Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Place-Cells-1"><span class="nav-number">2.4.1.</span> <span class="nav-text">Place Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grid-Cells-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">Grid Cells</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hebbian-Memories"><span class="nav-number">2.5.</span> <span class="nav-text">Hebbian Memories</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieval"><span class="nav-number">2.5.1.</span> <span class="nav-text">Retrieval</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Implication"><span class="nav-number">2.6.</span> <span class="nav-text">Model Implication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details-1"><span class="nav-number">2.7.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#graphic"><span class="nav-number">2.8.</span> <span class="nav-text">graphic</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.1</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

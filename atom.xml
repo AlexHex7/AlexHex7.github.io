@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-09-12T22:25:01.000Z</updated>
+  <updated>2019-01-04T22:25:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,552 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(CVPR 2017) Dilated Residual Networks</title>
+    <link href="http://yoursite.com/2019/01/05/Dilated%20Residual%20Networks/"/>
+    <id>http://yoursite.com/2019/01/05/Dilated Residual Networks/</id>
+    <published>2019-01-04T22:25:04.000Z</published>
+    <updated>2019-01-04T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Yu F, Koltun V, Funkhouser T. Dilated residual networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 472-480.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
+    
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="DRN" scheme="http://yoursite.com/tags/DRN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Context encoding for semantic segmentation</title>
+    <link href="http://yoursite.com/2019/01/05/Context%20encoding%20for%20semantic%20segmentation/"/>
+    <id>http://yoursite.com/2019/01/05/Context encoding for semantic segmentation/</id>
+    <published>2019-01-04T22:25:03.000Z</published>
+    <updated>2019-01-04T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhang H, Dana K, Shi J, et al. Context encoding for semantic segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7151-7160.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
+    
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Context Encoding" scheme="http://yoursite.com/tags/Context-Encoding/"/>
+    
+      <category term="Componet" scheme="http://yoursite.com/tags/Componet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) Deep TEN:Texture Encoding Network</title>
+    <link href="http://yoursite.com/2019/01/05/Deep%20TEN:%20Texture%20Encoding%20Network/"/>
+    <id>http://yoursite.com/2019/01/05/Deep TEN: Texture Encoding Network/</id>
+    <published>2019-01-04T22:25:02.000Z</published>
+    <updated>2019-01-04T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhang H, Xue J, Dana K. Deep ten: Texture encoding network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 708-717.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
+    
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Componet" scheme="http://yoursite.com/tags/Componet/"/>
+    
+      <category term="DeepTEN" scheme="http://yoursite.com/tags/DeepTEN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(MICCAI 2018) SLSDeep:Skin Lesion Segmentation Based on Dilated Residual and Pyramid Pooling Networks</title>
+    <link href="http://yoursite.com/2019/01/05/SLSDeep:%20Skin%20Lesion%20Segmentation%20Based%20on%20Dilated%20Residual%20and%20Pyramid%20Pooling%20Networks/"/>
+    <id>http://yoursite.com/2019/01/05/SLSDeep: Skin Lesion Segmentation Based on Dilated Residual and Pyramid Pooling Networks/</id>
+    <published>2019-01-04T22:25:01.000Z</published>
+    <updated>2019-01-04T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Sarker M M K, Rashwan H A, Akram F, et al. Slsdeep: Skin lesion segmentation based on dilated residual and pyramid pooling networks[C]//International Conference on Medical Image Computing and Computer-Assisted Intervention. Springer, Cham, 2018: 21-29.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Medical" scheme="http://yoursite.com/categories/Paper-Note/Medical/"/>
+    
+      <category term="Skin Lesion" scheme="http://yoursite.com/categories/Paper-Note/Medical/Skin-Lesion/"/>
+    
+    
+      <category term="Medical" scheme="http://yoursite.com/tags/Medical/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Skin Lesion" scheme="http://yoursite.com/tags/Skin-Lesion/"/>
+    
+      <category term="SLSDeep" scheme="http://yoursite.com/tags/SLSDeep/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2018 Oral) Generalisation of structural knowledge in the Hippocampal-Entorhinal system</title>
+    <link href="http://yoursite.com/2019/01/04/Generalisation%20of%20structural%20knowledge%20in%20the%20Hippocampal-Entorhinal%20system/"/>
+    <id>http://yoursite.com/2019/01/04/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/</id>
+    <published>2019-01-03T22:25:02.000Z</published>
+    <updated>2019-01-03T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Whittington J, Muller T, Mark S, et al. Generalisation of structural knowledge in the hippocampal-entorhinal system[C]//Advances in Neural Information Processing Systems. 2018: 8484-8495.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Neuron" scheme="http://yoursite.com/categories/Paper-Note/Neuron/"/>
+    
+    
+      <category term="Cortex" scheme="http://yoursite.com/tags/Cortex/"/>
+    
+      <category term="Hippocampal" scheme="http://yoursite.com/tags/Hippocampal/"/>
+    
+      <category term="Hebbian Memory" scheme="http://yoursite.com/tags/Hebbian-Memory/"/>
+    
+      <category term="Hippocampal-Wntorhinal System" scheme="http://yoursite.com/tags/Hippocampal-Wntorhinal-System/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2018 Oral) Dendritic cortical microcircuits approximate the backpropagation algorithm</title>
+    <link href="http://yoursite.com/2019/01/04/Dendritic%20cortical%20microcircuits%20approximate%20the%20backpropagation%20algorithm/"/>
+    <id>http://yoursite.com/2019/01/04/Dendritic cortical microcircuits approximate the backpropagation algorithm/</id>
+    <published>2019-01-03T22:25:01.000Z</published>
+    <updated>2019-01-03T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Sacramento J, Costa R P, Bengio Y, et al. Dendritic cortical microcircuits approximate the backpropagation algorithm[J]. neural information processing systems, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Neuron" scheme="http://yoursite.com/categories/Paper-Note/Neuron/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Dendrite" scheme="http://yoursite.com/tags/Dendrite/"/>
+    
+      <category term="Cortex" scheme="http://yoursite.com/tags/Cortex/"/>
+    
+      <category term="Back Propagation" scheme="http://yoursite.com/tags/Back-Propagation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018 spotlight) Iterative Visual Reasoning Beyond Convolutions</title>
+    <link href="http://yoursite.com/2018/12/27/Iterative%20Visual%20Reasoning%20Beyond%20Convolutions/"/>
+    <id>http://yoursite.com/2018/12/27/Iterative Visual Reasoning Beyond Convolutions/</id>
+    <published>2018-12-26T22:25:05.000Z</published>
+    <updated>2018-12-26T22:25:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Chen X, Li L J, Fei-Fei L, et al. Iterative visual reasoning beyond convolutions[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7239-7248.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Graph Network" scheme="http://yoursite.com/categories/Paper-Note/Graph-Network/"/>
+    
+    
+      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
+    
+      <category term="Graph Network" scheme="http://yoursite.com/tags/Graph-Network/"/>
+    
+      <category term="Reasoning" scheme="http://yoursite.com/tags/Reasoning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) GLoMo:Unsupervisedly Learned Relational Graphs as Transferable Representations</title>
+    <link href="http://yoursite.com/2018/12/27/GLoMo:%20Unsupervisedly%20Learned%20Relational%20Graphs%20as%20Transferable%20Representations/"/>
+    <id>http://yoursite.com/2018/12/27/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/</id>
+    <published>2018-12-26T22:25:04.000Z</published>
+    <updated>2018-12-26T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Yang Z, Dhingra B, He K, et al. Glomo: Unsupervisedly learned relational graphs as transferable representations[J]. arXiv preprint arXiv:1806.05662, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="Transfer Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Transfer-Learning/"/>
+    
+    
+      <category term="Transfer Learning" scheme="http://yoursite.com/tags/Transfer-Learning/"/>
+    
+      <category term="Graph" scheme="http://yoursite.com/tags/Graph/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) The more you know:Using knowledge graphs for image classification</title>
+    <link href="http://yoursite.com/2018/12/27/The%20more%20you%20know:%20Using%20knowledge%20graphs%20for%20image%20classification/"/>
+    <id>http://yoursite.com/2018/12/27/The more you know: Using knowledge graphs for image classification/</id>
+    <published>2018-12-26T22:25:03.000Z</published>
+    <updated>2018-12-26T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Marino K, Salakhutdinov R, Gupta A. The more you know: Using knowledge graphs for image classification[J]. arXiv preprint arXiv:1612.04844, 2016.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Graph Network" scheme="http://yoursite.com/categories/Paper-Note/Graph-Network/"/>
+    
+    
+      <category term="Graph Network" scheme="http://yoursite.com/tags/Graph-Network/"/>
+    
+      <category term="Zero Shot Learning" scheme="http://yoursite.com/tags/Zero-Shot-Learning/"/>
+    
+      <category term="GSNN" scheme="http://yoursite.com/tags/GSNN/"/>
+    
+      <category term="GGNN" scheme="http://yoursite.com/tags/GGNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2018) Relational inductive biases, deep learning, and graph networks</title>
+    <link href="http://yoursite.com/2018/12/27/Relational%20inductive%20biases,%20deep%20learning,%20and%20graph%20networks/"/>
+    <id>http://yoursite.com/2018/12/27/Relational inductive biases, deep learning, and graph networks/</id>
+    <published>2018-12-26T22:25:02.000Z</published>
+    <updated>2018-12-26T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Battaglia P W, Hamrick J B, Bapst V, et al. Relational inductive biases, deep learning, and graph networks[J]. arXiv preprint arXiv:1806.01261, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Graph Network" scheme="http://yoursite.com/categories/Paper-Note/Graph-Network/"/>
+    
+    
+      <category term="Overview" scheme="http://yoursite.com/tags/Overview/"/>
+    
+      <category term="Graph Network" scheme="http://yoursite.com/tags/Graph-Network/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Zero-shot Recognition via Semantic Embeddings and Knowledge Graphs</title>
+    <link href="http://yoursite.com/2018/12/27/Zero-shot%20Recognition%20via%20Semantic%20Embeddings%20and%20Knowledge%20Graphs/"/>
+    <id>http://yoursite.com/2018/12/27/Zero-shot Recognition via Semantic Embeddings and Knowledge Graphs/</id>
+    <published>2018-12-26T22:25:01.000Z</published>
+    <updated>2018-12-26T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Wang X, Ye Y, Gupta A. Zero-shot recognition via semantic embeddings and knowledge graphs[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6857-6866.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Graph Network" scheme="http://yoursite.com/categories/Paper-Note/Graph-Network/"/>
+    
+    
+      <category term="Graph Network" scheme="http://yoursite.com/tags/Graph-Network/"/>
+    
+      <category term="Zero Shot Learning" scheme="http://yoursite.com/tags/Zero-Shot-Learning/"/>
+    
+      <category term="Semantic Embedding" scheme="http://yoursite.com/tags/Semantic-Embedding/"/>
+    
+      <category term="Knowledge Graph" scheme="http://yoursite.com/tags/Knowledge-Graph/"/>
+    
+      <category term="Transfer Knowledge" scheme="http://yoursite.com/tags/Transfer-Knowledge/"/>
+    
+      <category term="GCN" scheme="http://yoursite.com/tags/GCN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2018) Defense-GAN:Protecting classifiers against adversarial attacks using generative models</title>
+    <link href="http://yoursite.com/2018/12/21/Defense-GAN:%20Protecting%20classifiers%20against%20adversarial%20attacks%20using%20generative%20models/"/>
+    <id>http://yoursite.com/2018/12/21/Defense-GAN: Protecting classifiers against adversarial attacks using generative models/</id>
+    <published>2018-12-20T22:25:08.000Z</published>
+    <updated>2018-12-20T22:25:08.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Samangouei P, Kabkab M, Chellappa R. Defense-gan: Protecting classifiers against adversarial attacks using generative models[J]. arXiv preprint arXiv:1805.06605, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+      <category term="DefenseGAN" scheme="http://yoursite.com/tags/DefenseGAN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2018) Thermometer encoding:One hot way to resist adversarial examples</title>
+    <link href="http://yoursite.com/2018/12/21/Thermometer%20encoding:%20One%20hot%20way%20to%20resist%20adversarial%20examples/"/>
+    <id>http://yoursite.com/2018/12/21/Thermometer encoding: One hot way to resist adversarial examples/</id>
+    <published>2018-12-20T22:25:07.000Z</published>
+    <updated>2018-12-20T22:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Buckman J, Roy A, Raffel C, et al. Thermometer encoding: One hot way to resist adversarial examples[J]. 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+      <category term="Thermometer Encoding" scheme="http://yoursite.com/tags/Thermometer-Encoding/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2018) PixelDefend:Leveraging Generative Models to Understand and Defend against Adversarial Examples</title>
+    <link href="http://yoursite.com/2018/12/21/PixelDefend:%20Leveraging%20Generative%20Models%20to%20Understand%20and%20Defend%20against%20Adversarial%20Examples/"/>
+    <id>http://yoursite.com/2018/12/21/PixelDefend: Leveraging Generative Models to Understand and Defend against Adversarial Examples/</id>
+    <published>2018-12-20T22:25:06.000Z</published>
+    <updated>2018-12-20T22:25:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Song Y, Kim T, Nowozin S, et al. Pixeldefend: Leveraging generative models to understand and defend against adversarial examples[J]. arXiv preprint arXiv:1710.10766, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+      <category term="PixelDefend" scheme="http://yoursite.com/tags/PixelDefend/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) Obfuscated Gradients Give a False Sense of Security:Circumventing Defenses to Adversarial Examples</title>
+    <link href="http://yoursite.com/2018/12/21/Obfuscated%20Gradients%20Give%20a%20False%20Sense%20of%20Security:%20Circumventing%20Defenses%20to%20Adversarial%20Examples/"/>
+    <id>http://yoursite.com/2018/12/21/Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples/</id>
+    <published>2018-12-20T22:25:05.000Z</published>
+    <updated>2018-12-20T22:25:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Athalye A, Carlini N, Wagner D. Obfuscated gradients give a false sense of security: Circumventing defenses to adversarial examples[J]. arXiv preprint arXiv:1802.00420, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2017) The robust manifold defense:Adversarial training using generative models</title>
+    <link href="http://yoursite.com/2018/12/21/The%20robust%20manifold%20defense:%20Adversarial%20training%20using%20generative%20models/"/>
+    <id>http://yoursite.com/2018/12/21/The robust manifold defense: Adversarial training using generative models/</id>
+    <published>2018-12-20T22:25:04.000Z</published>
+    <updated>2018-12-20T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Ilyas A, Jalal A, Asteri E, et al. The robust manifold defense: Adversarial training using generative models[J]. arXiv preprint arXiv:1712.09196, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defense" scheme="http://yoursite.com/tags/Defense/"/>
+    
+      <category term="Deep Image Prior" scheme="http://yoursite.com/tags/Deep-Image-Prior/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Art of singular vectors and universal adversarial perturbations</title>
+    <link href="http://yoursite.com/2018/12/21/Art%20of%20singular%20vectors%20and%20universal%20adversarial%20perturbations/"/>
+    <id>http://yoursite.com/2018/12/21/Art of singular vectors and universal adversarial perturbations/</id>
+    <published>2018-12-20T22:25:03.000Z</published>
+    <updated>2018-12-20T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Khrulkov V, Oseledets I. Art of singular vectors and universal adversarial perturbations[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 8562-8570.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Universal Adversarial Perturbations" scheme="http://yoursite.com/tags/Universal-Adversarial-Perturbations/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Generative Adversarial Perturbations</title>
+    <link href="http://yoursite.com/2018/12/21/Generative%20Adversarial%20Perturbations/"/>
+    <id>http://yoursite.com/2018/12/21/Generative Adversarial Perturbations/</id>
+    <published>2018-12-20T22:25:02.000Z</published>
+    <updated>2018-12-20T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Poursaeed O, Katsman I, Gao B, et al. Generative adversarial perturbations[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4422-4431.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Universal Adversarial Perturbations" scheme="http://yoursite.com/tags/Universal-Adversarial-Perturbations/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Defense against Universal Adversarial Perturbations</title>
+    <link href="http://yoursite.com/2018/12/21/Defense%20against%20Universal%20Adversarial%20Perturbations/"/>
+    <id>http://yoursite.com/2018/12/21/Defense against Universal Adversarial Perturbations/</id>
+    <published>2018-12-20T22:25:01.000Z</published>
+    <updated>2018-12-20T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Akhtar N, Liu J, Mian A. Defense against universal adversarial perturbations[C]Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 3389-3398.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
+    
+    
+      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
+    
+      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
+    
+      <category term="Universal Adversarial Perturbations" scheme="http://yoursite.com/tags/Universal-Adversarial-Perturbations/"/>
+    
+      <category term="Adversarial Detection" scheme="http://yoursite.com/tags/Adversarial-Detection/"/>
+    
+  </entry>
   
   <entry>
     <title>(NIPS 2016) Hierarchical Object Detection with Deep Reinforcement Learning</title>
@@ -39,597 +585,6 @@
       <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
     
       <category term="DQN" scheme="http://yoursite.com/tags/DQN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICLR 2018) Mitigating adversarial effects through randomization</title>
-    <link href="http://yoursite.com/2018/08/16/Mitigating%20adversarial%20effects%20through%20randomization/"/>
-    <id>http://yoursite.com/2018/08/16/Mitigating adversarial effects through randomization/</id>
-    <published>2018-08-15T22:25:08.000Z</published>
-    <updated>2018-08-15T22:25:08.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Xie C, Wang J, Zhang Z, et al. Mitigating adversarial effects through randomization[J]. arXiv preprint arXiv:1711.01991, 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
-    
-      <category term="Ensemble" scheme="http://yoursite.com/tags/Ensemble/"/>
-    
-      <category term="Randomization" scheme="http://yoursite.com/tags/Randomization/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Deflecting adversarial attacks with pixel deflection</title>
-    <link href="http://yoursite.com/2018/08/16/Deflecting%20adversarial%20attacks%20with%20pixel%20deflection/"/>
-    <id>http://yoursite.com/2018/08/16/Deflecting adversarial attacks with pixel deflection/</id>
-    <published>2018-08-15T22:25:07.000Z</published>
-    <updated>2018-08-15T22:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Prakash A, Moran N, Garber S, et al. Deflecting adversarial attacks with pixel deflection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 8571-8580.&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
-    
-      <category term="PixelDeflection" scheme="http://yoursite.com/tags/PixelDeflection/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2017) Adversarial Transformation Networks:Learning to Generate Adversarial Examples</title>
-    <link href="http://yoursite.com/2018/08/16/Adversarial%20Transformation%20Networks:%20Learning%20to%20Generate%20Adversarial%20Examples/"/>
-    <id>http://yoursite.com/2018/08/16/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/</id>
-    <published>2018-08-15T22:25:06.000Z</published>
-    <updated>2018-08-15T22:25:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Baluja S, Fischer I. Adversarial transformation networks: Learning to generate adversarial examples[J]. arXiv preprint arXiv:1703.09387, 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
-    
-      <category term="Adversarial Transformation Network" scheme="http://yoursite.com/tags/Adversarial-Transformation-Network/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser</title>
-    <link href="http://yoursite.com/2018/08/16/Defense%20against%20Adversarial%20Attacks%20Using%20High-Level%20Representation%20Guided%20Denoiser/"/>
-    <id>http://yoursite.com/2018/08/16/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/</id>
-    <published>2018-08-15T22:25:05.000Z</published>
-    <updated>2018-08-15T22:25:05.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liao F, Liang M, Dong Y, et al. Defense against adversarial attacks using high-level representation guided denoiser[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 1778-1787.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
-    
-      <category term="HGD" scheme="http://yoursite.com/tags/HGD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICLR 2018) Countering Adversarial Images using Input Transformations</title>
-    <link href="http://yoursite.com/2018/08/16/Countering%20Adversarial%20Images%20using%20Input%20Transformations/"/>
-    <id>http://yoursite.com/2018/08/16/Countering Adversarial Images using Input Transformations/</id>
-    <published>2018-08-15T22:25:04.000Z</published>
-    <updated>2018-08-15T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Guo C, Rana M, Cisse M, et al. Countering adversarial images using input transformations[J]. arXiv preprint arXiv:1711.00117, 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="Defence" scheme="http://yoursite.com/tags/Defence/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Boosting Adversarial Attacks with Momentum</title>
-    <link href="http://yoursite.com/2018/08/16/Boosting%20Adversarial%20Attacks%20with%20Momentum/"/>
-    <id>http://yoursite.com/2018/08/16/Boosting Adversarial Attacks with Momentum/</id>
-    <published>2018-08-15T22:25:03.000Z</published>
-    <updated>2018-08-15T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Dong Y, Liao F, Pang T, et al. Boosting adversarial attacks with momentum[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 9185-9193.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="MI-FGSM" scheme="http://yoursite.com/tags/MI-FGSM/"/>
-    
-      <category term="Ensemble" scheme="http://yoursite.com/tags/Ensemble/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Adversarial Examples for Semantic Segmentation and Object Detection</title>
-    <link href="http://yoursite.com/2018/08/16/Adversarial%20Examples%20for%20Semantic%20Segmentation%20and%20Object%20Detection/"/>
-    <id>http://yoursite.com/2018/08/16/Adversarial Examples for Semantic Segmentation and Object Detection/</id>
-    <published>2018-08-15T22:25:02.000Z</published>
-    <updated>2018-08-15T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Xie C, Wang J, Zhang Z, et al. Adversarial examples for semantic segmentation and object detection[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 1369-1378.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) On the Robustness of Semantic Segmentation Models to Adversarial Attacks</title>
-    <link href="http://yoursite.com/2018/08/16/On%20the%20Robustness%20of%20Semantic%20Segmentation%20Models%20to%20Adversarial%20Attacks/"/>
-    <id>http://yoursite.com/2018/08/16/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/</id>
-    <published>2018-08-15T22:25:01.000Z</published>
-    <updated>2018-08-15T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Arnab A, Miksik O, Torr P H S. On the robustness of semantic segmentation models to adversarial attacks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 888-897.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/categories/Paper-Note/Adversarial-Attack/"/>
-    
-    
-      <category term="Adversarial Attack" scheme="http://yoursite.com/tags/Adversarial-Attack/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Feature Generating Networks for Zero-Shot Learning</title>
-    <link href="http://yoursite.com/2018/06/22/Feature%20Generating%20Networks%20for%20Zero-Shot%20Learning/"/>
-    <id>http://yoursite.com/2018/06/22/Feature Generating Networks for Zero-Shot Learning/</id>
-    <published>2018-06-21T22:25:08.000Z</published>
-    <updated>2018-06-21T22:25:08.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Xian Y, Lorenz T, Schiele B, et al. Feature generating networks for zero-shot learning[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 5542-5551.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
-    
-      <category term="Zero-Shot" scheme="http://yoursite.com/categories/Paper-Note/Learning/Zero-Shot/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Classification" scheme="http://yoursite.com/tags/Classification/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Zero-Shot Learning" scheme="http://yoursite.com/tags/Zero-Shot-Learning/"/>
-    
-      <category term="Feature Generation" scheme="http://yoursite.com/tags/Feature-Generation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) An empirical evaluation of generic convolutional and recurrent networks for sequence modeling</title>
-    <link href="http://yoursite.com/2018/06/22/An%20empirical%20evaluation%20of%20generic%20convolutional%20and%20recurrent%20networks%20for%20sequence%20modeling/"/>
-    <id>http://yoursite.com/2018/06/22/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/</id>
-    <published>2018-06-21T22:25:07.000Z</published>
-    <updated>2018-06-21T22:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Bai S, Kolter J Z, Koltun V. An empirical evaluation of generic convolutional and recurrent networks for sequence modeling[J]. arXiv preprint arXiv:1803.01271, 2018.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
-    
-    
-      <category term="TCN" scheme="http://yoursite.com/tags/TCN/"/>
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Attention is all you need</title>
-    <link href="http://yoursite.com/2018/06/22/Attention%20is%20all%20you%20need/"/>
-    <id>http://yoursite.com/2018/06/22/Attention is all you need/</id>
-    <published>2018-06-21T22:25:06.000Z</published>
-    <updated>2018-06-21T22:25:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need[C]//Advances in Neural Information Processing Systems. 2017: 6000-6010.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Transformer" scheme="http://yoursite.com/tags/Transformer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Visual Question Reasoning on General Dependency Tree</title>
-    <link href="http://yoursite.com/2018/06/22/Visual%20Question%20Reasoning%20on%20General%20Dependency%20Tree/"/>
-    <id>http://yoursite.com/2018/06/22/Visual Question Reasoning on General Dependency Tree/</id>
-    <published>2018-06-21T22:25:05.000Z</published>
-    <updated>2018-06-21T22:25:05.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Cao Q, Liang X, Li B, et al. Visual question reasoning on general dependency tree[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7249-7257.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="VQA" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/VQA/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="VQA" scheme="http://yoursite.com/tags/VQA/"/>
-    
-      <category term="Reasoning" scheme="http://yoursite.com/tags/Reasoning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2016) Learning deep representations of fine-grained visual descriptions</title>
-    <link href="http://yoursite.com/2018/06/22/Learning%20deep%20representations%20of%20fine-grained%20visual%20descriptions/"/>
-    <id>http://yoursite.com/2018/06/22/Learning deep representations of fine-grained visual descriptions/</id>
-    <published>2018-06-21T22:25:04.000Z</published>
-    <updated>2018-06-21T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Reed S, Akata Z, Lee H, et al. Learning deep representations of fine-grained visual descriptions[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 49-58.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Word-CNN-RNN" scheme="http://yoursite.com/tags/Word-CNN-RNN/"/>
-    
-      <category term="Character-CNN-RNN" scheme="http://yoursite.com/tags/Character-CNN-RNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Face Synthesis from Visual Attributes via Sketch using Conditional VAEs and GANs</title>
-    <link href="http://yoursite.com/2018/06/22/Face%20Synthesis%20from%20Visual%20Attributes%20via%20Sketch%20using%20Conditional%20VAEs%20and%20GANs/"/>
-    <id>http://yoursite.com/2018/06/22/Face Synthesis from Visual Attributes via Sketch using Conditional VAEs and GANs/</id>
-    <published>2018-06-21T22:25:03.000Z</published>
-    <updated>2018-06-21T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Di X, Patel V M. Face synthesis from visual attributes via sketch using conditional vaes and gans[J]. arXiv preprint arXiv:1801.00077, 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Image-Text" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Image-Text/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Face" scheme="http://yoursite.com/tags/Face/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Attribute to Face" scheme="http://yoursite.com/tags/Attribute-to-Face/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Semantic image synthesis via adversarial learning</title>
-    <link href="http://yoursite.com/2018/06/22/Semantic%20image%20synthesis%20via%20adversarial%20learning/"/>
-    <id>http://yoursite.com/2018/06/22/Semantic image synthesis via adversarial learning/</id>
-    <published>2018-06-21T22:25:02.000Z</published>
-    <updated>2018-06-21T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Reed S E, Akata Z, Mohan S, et al. Learning what and where to draw[C]//Advances in Neural Information Processing Systems. 2016: 217-225.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Image-Text" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Image-Text/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Semantic Image Synthesis" scheme="http://yoursite.com/tags/Semantic-Image-Synthesis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2016) Learning what and where to draw</title>
-    <link href="http://yoursite.com/2018/06/22/Learning%20what%20and%20where%20to%20draw/"/>
-    <id>http://yoursite.com/2018/06/22/Learning what and where to draw/</id>
-    <published>2018-06-21T22:25:01.000Z</published>
-    <updated>2018-06-21T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Reed S E, Akata Z, Mohan S, et al. Learning what and where to draw[C]//Advances in Neural Information Processing Systems. 2016: 217-225.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Image-Text" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Image-Text/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Text to Image" scheme="http://yoursite.com/tags/Text-to-Image/"/>
-    
-      <category term="Location-Controllable" scheme="http://yoursite.com/tags/Location-Controllable/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Stackgan:Text to photo-realistic image synthesis with stacked generative adversarial networks</title>
-    <link href="http://yoursite.com/2018/05/30/Stackgan:%20Text%20to%20photo-realistic%20image%20synthesis%20with%20stacked%20generative%20adversarial%20networks/"/>
-    <id>http://yoursite.com/2018/05/30/Stackgan: Text to photo-realistic image synthesis with stacked generative adversarial networks/</id>
-    <published>2018-05-29T22:25:08.000Z</published>
-    <updated>2018-05-29T22:25:08.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhang H, Xu T, Li H, et al. Stackgan: Text to photo-realistic image synthesis with stacked generative adversarial networks[C]//IEEE Int. Conf. Comput. Vision (ICCV). 2017: 5907-5915.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Image-Text" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Image-Text/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Text to Image" scheme="http://yoursite.com/tags/Text-to-Image/"/>
-    
-      <category term="StackGAN" scheme="http://yoursite.com/tags/StackGAN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICML 2017) Generative adversarial text to image synthesis</title>
-    <link href="http://yoursite.com/2018/05/30/Generative%20adversarial%20text%20to%20image%20synthesis/"/>
-    <id>http://yoursite.com/2018/05/30/Generative adversarial text to image synthesis/</id>
-    <published>2018-05-29T22:25:07.000Z</published>
-    <updated>2018-05-29T22:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Reed S, Akata Z, Yan X, et al. Generative adversarial text to image synthesis[J]. arXiv preprint arXiv:1605.05396, 2016.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Image-Text" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Image-Text/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Text to Image" scheme="http://yoursite.com/tags/Text-to-Image/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Photographic Text-to-Image Synthesis with a Hierarchically-nested Adversarial Network</title>
-    <link href="http://yoursite.com/2018/05/30/Photographic%20Text-to-Image%20Synthesis%20with%20a%20Hierarchically-nested%20Adversarial%20Network/"/>
-    <id>http://yoursite.com/2018/05/30/Photographic Text-to-Image Synthesis with a Hierarchically-nested Adversarial Network/</id>
-    <published>2018-05-29T22:25:06.000Z</published>
-    <updated>2018-05-29T22:25:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhang Z, Xie Y, Yang L. Photographic text-to-image synthesis with a hierarchically-nested adversarial network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6199-6208.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Image-Text" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Image-Text/"/>
-    
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Text to Image" scheme="http://yoursite.com/tags/Text-to-Image/"/>
     
   </entry>
   

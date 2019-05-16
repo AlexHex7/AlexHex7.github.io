@@ -1,6 +1,279 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(CVPR 2017) Dilated Residual Networks]]></title>
+    <url>%2F2019%2F01%2F05%2FDilated%20Residual%20Networks%2F</url>
+    <content type="text"><![CDATA[Yu F, Koltun V, Funkhouser T. Dilated residual networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 472-480. Overview Motivation progressively reduce resolution is harmful for segmentation, even classification In this paper, it proposed DRN (Dilated Residual Network) increase the resolution of output feature maps without reducing the receptive filed of individual neurons removing gridding artifacts introduce by dilation Dilated Residual Networks remove the stride-2 in layer-4 and layer-5 set dilation = 2 of block_i in layer-4, i≥2 set dilation = 2 of block_1 in layer-5 set dilation = 4 of block_i in layer-5, i≥2 Degridding removing max pooling adding layers removing residual connections Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Segmentation</tag>
+        <tag>Network</tag>
+        <tag>DRN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Context encoding for semantic segmentation]]></title>
+    <url>%2F2019%2F01%2F05%2FContext%20encoding%20for%20semantic%20segmentation%2F</url>
+    <content type="text"><![CDATA[Zhang H, Dana K, Shi J, et al. Context encoding for semantic segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7151-7160. Overview Motivation recent works exploit FCN + dilated/atrous Conv and utilize multi-scale features and refining boundaries dilated/atrous Conv isolates the pixels from the global scene context In this paper, in proposed Context Encoding Module explore global contextual information selectively highlight class-dependent featuremaps improve performance with only marginal extra computation cost 14 layers network extend the Encoding Layer to capture global feature statistics for understanding semantic context QuestionIs capturing contextual information the same as increasing the receptive filed size? Contribution Context Encoding Module incorporating Semantic Encoding Loss (SE-loss). SE-loss can regularize training, enforce network learning of semantic context EncNet. 3.5M parameters Methods Context Encoding encoder semantics. output of encoding layer apply aggregation instead of concatenation Feature Attention FC + Sigmoid SE-Loss unlike per-pixel loss, SE-loss consider big and small objects equally Context Encoding Network pretrained Dilated Residual Network (dilated strategy at stage 3 and 4) Experiments Details output size 1/8 bilinear upsample 8 times of prediction random shuffle training samples, discard last mini-batch random flip + random scale (0.5~2) + random rotate (-10~10) + crop to fix size if padding needed Implement Synchronized Cross-GPU BN in Pytorch using NVIDIA CUDA &amp; NCCL toolkit K = 32 batchsize 16 Comparison Ablation Study]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Component</category>
+      </categories>
+      <tags>
+        <tag>Segmentation</tag>
+        <tag>Context Encoding</tag>
+        <tag>Componet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Deep TEN:Texture Encoding Network]]></title>
+    <url>%2F2019%2F01%2F05%2FDeep%20TEN%3A%20Texture%20Encoding%20Network%2F</url>
+    <content type="text"><![CDATA[Zhang H, Xue J, Dana K. Deep ten: Texture encoding network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 708-717. Overview In this paper, it proposed Deep Texture Encoding Network (Deep-TEN) with novel Encoding Layer encoding layer. generalizes robust residual encoder Contribution encoding layer. learnable residual encoding layer Deep-TEN. feature extraction, dictionary learning and encoding representation learn together Methods Residual Encoding Model X. visual descriptor C. learned codebook (learn K x D) r. residual vector E. output S. smoothing factor (learned, Concat K vectors and L2-norm. when K = 1, c = 0, it simplifies to sum pooling can deal with any input size Deep-TEN Multi-size Training. 352x352, 320x320 pretrained ResNet50 K = 32 weights of C and s randomly initialized with uniform distribution ±(1/√k) Experiments Multi-size vs Single-size training Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Component</category>
+      </categories>
+      <tags>
+        <tag>Segmentation</tag>
+        <tag>Componet</tag>
+        <tag>DeepTEN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(MICCAI 2018) SLSDeep:Skin Lesion Segmentation Based on Dilated Residual and Pyramid Pooling Networks]]></title>
+    <url>%2F2019%2F01%2F05%2FSLSDeep%3A%20Skin%20Lesion%20Segmentation%20Based%20on%20Dilated%20Residual%20and%20Pyramid%20Pooling%20Networks%2F</url>
+    <content type="text"><![CDATA[Sarker M M K, Rashwan H A, Akram F, et al. Slsdeep: Skin lesion segmentation based on dilated residual and pyramid pooling networks[C]//International Conference on Medical Image Computing and Computer-Assisted Intervention. Springer, Cham, 2018: 21-29. Overview In this paper, it proposed SLSDeep encoder. dilated residual layer (DRN) decoder. pyramid pooling Negative Log Likelihood (NLL) + End Point Error (EPE) Methods layer1~layer4. four pretrained DRN Loss Function α=0.5 NLL EPE u0, u1. first derivatives of u in x and y direction Experiments Dataset ISBI 2016. 900 train, 379 test; size range [542x718~2848x4288] ISBI 2017. 2000 train, 150 valid, 600 test Metrics Specificity Sensitivity Jaccard Index Dice coefficient Accuracy Details LR. decoder 0.01, encoder 0.001 poly learning rate policy. 0.9 batchsize. 16 epoch. 100 TITANX 12G, 20 hours Data Augmentation random scale. 0.5~1.5 random rotation. -10~10 resize to 384x384 for training Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Skin Lesion</category>
+      </categories>
+      <tags>
+        <tag>Medical</tag>
+        <tag>Segmentation</tag>
+        <tag>Skin Lesion</tag>
+        <tag>SLSDeep</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2018 Oral) Generalisation of structural knowledge in the Hippocampal-Entorhinal system]]></title>
+    <url>%2F2019%2F01%2F04%2FGeneralisation%20of%20structural%20knowledge%20in%20the%20Hippocampal-Entorhinal%20system%2F</url>
+    <content type="text"><![CDATA[Whittington J, Muller T, Mark S, et al. Generalisation of structural knowledge in the hippocampal-entorhinal system[C]//Advances in Neural Information Processing Systems. 2018: 8484-8495. Overview Motivation a central problem to understanding intelligence is the concept of generalisation hippocampal-entorhinal system is known to be important for generalisation In this paper, it proposes that to generalise structural knowledge, the representations of the structure of the world (how entities in the word relate to each other) need to be separated from representations of the entities themselves ANN embedded with hierarchy and fast Hebbian memory representations can effectively utilise memories shows a preserved relationship between entorhinal gird and hippocampal place cells across environments explicitly represented structure can be combined with sensory information in a conjunctive code unique to each environment. Thus sensory observations are fit with prior learned structural knowledge, leading to generalisation ContributionNeuroscience find an interpretation of grid cells, place cells and remapping that offers a mechanistic understanding for the hippocampal involvement in generalisation of knowledge across domains results suggest spatial representations found in the brain may be an instance of a more general coding mechanism organising knowledge across multiple domains Machine Learning build a network where fast Hebbian learning interacts with slow statistical learning this allow to learn representations whereby memories are not only stored in a Hebbian network for one-shot retrieval within domain, but also benefit from statistical knowledge that is shared across domains - allowing zero shot inference Generally implement its proposal in an ANN tasked with predicting sensory observations when walking on 2D graph worlds, where each vertex is associated with a sensory experience To make accurate predictions, the agent should learn the underlying hidden strucutre of graphs unsupervised learning. providing the network with only sensory observations and actions place cells form a conjunctive representation between sensory identity and strucuture. This conjunctive representation forms a Hebbian memory, which bridges structure and identity, allowing the same structural code to be reused across environments combine fast Hebbian learning of episodic memories, with gradient descent which slowly learns to extract statistics of these memories Details propose that the statistics of memories in hippocampus are extracted by cortex propose that future hippocampal representations/memories are constrained to be consistent with the learned structural knowledge choose memory storage and addressing to be computationally biologically plausible (rather than using other types of differentiable memory more akin to RAM) , as well as using hierarchical processing. This enables our model to discover representations that are useful for both navigation and addressing memories In Neuroscience generalisation of statistical structure (the relationships between objects in the world) imbues an agent with the ability to fit things/concepts together that share the same statistical structure, but differ in the particularities hippocampus is known to be important for generalisation, memory, problems of causality, inferential reasoning, transitive reasoning, conceptual knowledge representation, one-shot imagination and navigation in spatial navigation there is a good undertanding of neuronal representations in both hippocampus (place cell, landmark cells) and medial entorhinal cortex (grid cell, border cell, object vector cell) place cells and grid cells have had a radical impact in neuroscience, leading to the 2014 Noble Prize in Physiology and Medicine place and grid cells are similar in that they have a stable firing pattern for specific regions of space place cells only fire in a single (or couple) localtion in a given environment whereas grid cells fire in a regular lattice pattern tiling the space. These cells cemented the idea of a ‘cognitive map‘, where an animal holds an internal representation of the space it navigates other entorhinal cell types (border, object vector cells) appear to have disparate roles in coding space remapping (traditionally thought to be random) → the space cell code is different for two structurally identical environments Model consider an agent passively moving on a 2D graph, observing a non-unique sensory stimulus (an image) on each vertex if the agent wishes to undertand its environment then it should maximise its model’s probability of observing each stimulus trained on many environments sharing the same strucure (2D graph) one approach to this problem: have an abstract representation of space encoding relative locations, and then place a memory of what stimulus was observed at that (relative) location since the agent understands where it is in space, this allows for accurate state predictions to previously visited nodes even if the agent has never travelled along that particular edge before (Figure 2c) grid cell as base for constructing abstract representation of space place cell representations for the formation of fast episodic memories posit that this (place cells forms a conjunction) is done hierarchically across spatial frequencies, such that the higher frequency statistics can be repeatedly used across space.This reduces the number of weights that need to be learnt grid cells to be recurrent through time view the hippocampal-entorhinal system as one that performs inference Model Summary the model is a neural network and learns strucuture across tasks optimise end-to-end via backpropagation through time the central (attractor) network employs Hebbian learning to rapidly remember the conjunction a generavie temporal model learns how to use the Hebbian memory most efficiently given the common statistics of transitions across worlds Notation a layer of activations with vector notations Element s. index for sensory j. index for phases Generative Model g. grid cell p. place cell M. agent’s memory a. action Θ. parameters of generative model x. one-hot vector where each of its n_s elements represent a sensory identity g&amp;p (learned instead of hard-coded). come in different frequencies (hierarchies) indexed by superscript f Grid Cells to predict where we will be, we can transition from our current location based on our heading (path integration, Fig 2c) f. functions specific to the distribution in question connections in D_a are from low frequency to the same or higher frequency only (or alternatively only within frequency). separate into hierarchical scales so that high frequency statistics can be reused across lower frequency statistics, i.e. learning and knowledge is reused across space Place Cells for retrieving memories stored memories are extracted via an attractor network (Fig 2b) using as input - i.e. grid cells act as an index for memory extraction Data categorical distribution sum over phases f_c*. MLP choose f* to be 0 (only include highest frequency) Inference Network posterior is intractable so approximated to phi. parameters of the inference network learn Θ and phi by maximising the ELBO with the VAE fra Place Cells Grid Cells Hebbian Memories when enter a new environment, memory is reset to be empty (zeros) memories of place cell representations are stored in Hebbian weights between place cells (M_t) allow rapid learning when entering a new environment p^. place cells generated from inferred grid cells λ&amp;η. the rate of forgetting and remembering connections from high to low frequencies are set to zero, so that memories are retrieved hierarchically best results. when two separate matrices were used x(^). retrieved memory with the sensorium as input to the attra Retrieval attractor network τ. iteration of the network α. decay term h_0. input, from grid cells or sensorium (depending on for generative or inference), dimensions scaled appropriately output. retrieved memory (place cell code) Model Implication believe that using more biologically realistic computational mechanisms (Hebbian Memory instead of LSTM) will facilitate further incorporation of neuroscience-inspired phenomena, such as successor representations or replay Details although presented a Bayesian formulation, best resuts were obtained by only using the means of the above distributions first item. cross entropy loss other item. squared error loss between inferred and generated variables 5 different frequencies. n_f as [10, 10, 8, 6, 6] environment square. [8, 10, 12] agent changes to a new environment after 2000~5000 steps a_t. up, down, left, right, stay still time truncated to 25 steps two separate memory matrices. use additional memory module in grid cell inference Typically after 200-300 environments, the agent has fully learned the strucuture (~50000 gradient updates) remove a_t from the generative model so that the generative model can more easily capture the true underlying transition statistics place-like representations are learned in the attractor grid-like representations are learned in the generative temporal model graphic For the gird cells of a certain frequency (Inference) (1, 30) downsample to (1, 10) combined with (1, 10) sensory cell to get (1, 100) cells (Constrain) connections from high to low frequency are set to 0 Experiments For Fig 4b middle and right grid representations that are shifted versions of each other, as in the brain the separation into different phases (same frequency) means that two conjunctive place cells that respond to the same stimulus, will not necessarily be active simultaneously - each cell will only be active when their corresponding grid phase is active thus one can uniquely code for the same stimulus in many different locations Across two environments, a given stimulus may occur at the same grid phase but at a different location]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Neuron</category>
+      </categories>
+      <tags>
+        <tag>Cortex</tag>
+        <tag>Hippocampal</tag>
+        <tag>Hebbian Memory</tag>
+        <tag>Hippocampal-Wntorhinal System</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2018 Oral) Dendritic cortical microcircuits approximate the backpropagation algorithm]]></title>
+    <url>%2F2019%2F01%2F04%2FDendritic%20cortical%20microcircuits%20approximate%20the%20backpropagation%20algorithm%2F</url>
+    <content type="text"><![CDATA[Sacramento J, Costa R P, Bengio Y, et al. Dendritic cortical microcircuits approximate the backpropagation algorithm[J]. neural information processing systems, 2018. Overview In this paper, it proposed dendritic cortical microcircuits to approximate the backpropagation algorithm introduce a multilayer neuronal network model with simplified dendritic compartments in which error-driven synaptic plasticty adapts the network towards a global desired output errors originate at apical dendrites and occur due to a mismatch between predictive input from lateral interneurons and activity from actual top-down feedback demonstrates the learning capabilities in regression and classification task show analytically that it approximates the error BP algorithm In Neuroscience growing evidence demonstrates that deep neural networks outperform alternative frameworks in accurately reproducing activity patterns observed in the cortex although recent developments have started to bridge the gap between neuroscience and AI, how the brain could implement a BP-like algorithm remains an open question understanding how the brain learns to associate different areas to successfully drive behavior is of fundamental importance. However, how to correctly modify synapses to achieve this has puzzled neuroscientists for decades (synaptic credit problem) Structure of Pyramidal Cells neocortical pyramidal cells can be defined as somatic, basal and apical integration zones Future Work this paper only focus on a specific interneurons type (SST) as a feedback-specific interneurons. There are many other type interneurons, such as PV (parvalbumin-positive) mediate a somatic excitation-inhibition balance and competition consider multiple subsystems (neocortex and hippocampus) that transfer knowledge to each other and learn at different rates Algorithm General Methods interpret a brain area as being equivalent to a layer propose that prediction errors that drive learning in BP are encoded at distal dendrites of pyramidal neurons, which receive top-down input from downstream brain areas errors arise from the inability via lateral input from local interneurons (somatostatin-expressing; SST) to exactly match the top-down feedback from downstream cortical areas cross-layer feedback onto SST cells originating at the next upper layer provide a weak nudging signal, as a conductance-based somatic input current model weak top-down nudging on a one-to-one basis: each interneuron is nudged towards the potential of a corresponding upper-layer pyramidal cell recude pyramidal output neurons to two-compartment cell feedforward. ignore the lateral and top-down weights from the model Interneurons receive input from lateral pyramidal cells onto their own basal dendrites integrate this input on their soma project back to the apical compartments of same-layer pyramidal cells predominantly driven by pyramidal cells within the same layer Somatic Membrane Potentials Evolve in Time k. layer index g. fixed conductance sigma. controls the amount of injected noise lk. leak ξ. background activity is modelled as Gaussian White Noise Dendritic Compartmental Potentials phi. neuronal transfer function B. basal dendrite A. apical dendrite Teaching Current an interneuron at layer k permanently receives balanced somatic teaching excitatory and inhibitory input from a pyramidal neuron at layer k+1 on a one-to-one basis (u_{k+1}^P as target) the interneuron is nudged to follow the corresponding next layer pyramidal neuron Synaptic Learning RulesIn Previous Works w. individual synaptic weight η. learning rate u. somatic potential v. postsynaptic dendritic potential phi. rate function r. presynaptic input In this Paper v_rest = 0. resting potential ^. take into acount dendritic attenuation factors of different compartment Self-predicting no external target is provided to output layer neurons the lateral input from interneurons cancels the internally generated top-down feedback and renders apical dendrites silent this paper demonstrate that synaptic plasticity in self-predicting nets approximates the weight changes prescribed by BP only W^IP and W^PI are changed at that stage the interneurons will learn to mimic the layer-(k+1) pyramidal neurons Once learning of the lateral interneurons has converged, the apical input cancellation occurs irrespective of the actual bottom-up sensory input help speed-up learning, but is not essential Experiments Self-predicting &amp; Training A. top-down weight = - i-to-p weight C. aligned 45° Regression Task Network. 30-50-10 (with 10 hidden layer interneurons) learn to approximate a random nonlinear function implemented by a heldaside feedforward network of 30-20-10 W^PP, W^PI, W^IP all are random initialized with a uniform distribution top-down weight matrix is kept fixed (top-down and interneurons-to-pyramidal synapses need not to be changed) relax the bottom-up vs top-down weight symmetry Classification Network. 784-500-500-10, initialized to a random but self-predicting state top-down and i-to-p weights were kept fixed epical compartment voltages remained approximately silent when output nudging was turned off, reflecting the maintenance of a self-predicting state throughout learning both pyramidal and interneurons are first initialized to their bottom-up prediction state output layer neurons are nudged to their desired target, yielding updated somatic potentials k=N-1 to 1]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Neuron</category>
+      </categories>
+      <tags>
+        <tag>Classification</tag>
+        <tag>Dendrite</tag>
+        <tag>Cortex</tag>
+        <tag>Back Propagation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018 spotlight) Iterative Visual Reasoning Beyond Convolutions]]></title>
+    <url>%2F2018%2F12%2F27%2FIterative%20Visual%20Reasoning%20Beyond%20Convolutions%2F</url>
+    <content type="text"><![CDATA[Chen X, Li L J, Fei-Fei L, et al. Iterative visual reasoning beyond convolutions[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7239-7248. Overview Motivation current recognition systems lack the capability to reason beyond stack of Conv with large receptive fields reasoning via top-down modules (UNet) or explicit memories local pixel-level reasoning lacks a global reasoning power assume enough examples of relationships in training data but not. (relationships grow exponentially and most reasoning requires learning from few or no example) a good image understanding is usually a compromise between background knowledge learned a prior and image-specific observations In this paper, it proposed a novel framework for iterative visual reasoning (incorporate both spatial and semantic reasoning) local module. use parallel updated spatial memory (pixel-level reasoning) global graph-reasoning module knowledge graph. node→class; edge→ different types of semantic relationships region graph. node→region; edge→spatial relationships assignment graph. assign regions to classes roll-out iteratively and cross-feed predictions combine the prediction with attention mechanism Dataset. ADE, Visual Genome (VG) and COCO Related Works Visual Knowledge Base. accumulate structured knowledge automatically from the web Context Modeling Relational Reasoning. symbolic approaches apply neural networks to the graph structured data regularize the output of networks with relationships Methods Local Module S. 1 x 512 x h x w f. logits before sotfmax input feature. mid-level feature (Layer_3) + high-level feature (f) (s_r) feature of each region is crop and resize to 7x7 memory of GRU parallel update. a matrix to keep track of how much a region has to a memory cell memory S contains two-dimensional image structure and the location information Global Graph Reasoning Module spatial path + semantic path input feature. mid-level feature (Layer_4, after avg) + high-level feature (f) Region-Region relationship of edge. left/right and top/bottom (pixel-level distance and normalize to [0,1]) △=50 bandwidth closer regions are more correlated Region-Class propagate beliefs from region to class backward from class to region rather than only linking to the most confident class, it chooses full softmax score p Class-Class commonsense knowledge. is-kind-of, is-part-of other relationships. actions, prepositions The end-goal is to recognize regions better, all the class nodes should only be used as intermediate “hops” for better region representations. Use three stacks of below operations with residual connections Spatial Path M_r (R, D). nodes of region A_e (R, R). adjacency matrix of edge type e W_e. weight Semantic Path map regions to classes combine intermediate features AM_rW with class features M_c aggregate features from multiple types of edges between classes Merge first to propagates semantic information back to regions Iterative Reasoning &amp; Cross-feed both the local and global features are concated together to update the memories S_{i+1} and M_{i+1} using GRU Attention N = 2I + 1; I is iteration times Loss Function plain ConvNet loss L_0 local module loss L^l global module loss L^g final prediction loss with attention L_f Re-weight for Hard Sample Experiments Dataset ADE ( parts annotations) Visual Genome (relationship annotation) COCO Details use provided ground-truth location evaluation. classification accuracy (AC) and average precision (**AP); per-class and per-instance** word vectors of fastText algorithm roll-out the reasoning modules 3 times (more iterations do not offer more help) Main Results deeper network and larger image size can only help ~1%, less than ensembles proposed models achieve higher per-class metric gains than per-instance ones, indicating that rare classes get helped more Ablation In the local module, spatial memory S is critical In the global module, removing reasoning module R steeply drops performance, whereas further removing memory M dose not hurt much Visualization]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Graph Network</category>
+      </categories>
+      <tags>
+        <tag>Classification</tag>
+        <tag>Graph Network</tag>
+        <tag>Reasoning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) GLoMo:Unsupervisedly Learned Relational Graphs as Transferable Representations]]></title>
+    <url>%2F2018%2F12%2F27%2FGLoMo%3A%20Unsupervisedly%20Learned%20Relational%20Graphs%20as%20Transferable%20Representations%2F</url>
+    <content type="text"><![CDATA[Yang Z, Dhingra B, He K, et al. Glomo: Unsupervisedly learned relational graphs as transferable representations[J]. arXiv preprint arXiv:1806.05662, 2018. Overview Motivation most existing methods mainly focus on learning generic feature vector, ignore more structured graphical representation In this paper, it proposed GLOMO (graph from low-level unit modeling) learning generic latent relational graphs that capture dependencies between pairs of data units experiments on question answer, natural language inference, semantic analysis, and image classification Methods Training graph predictor g. produce set of graphs G = g(x) graphs G. LxTxT L. number of layers Testing G = g(x’) G fed as input to the downstream network to augment training, multiply G with task-specific features Graph Predictor key CNN query CNN Input of Feature Predictor features affinity maxtrix. G_l v. compositional function such as GRU Object Function context prediction Desiderata separate networks g and f employ a dquared ReLU to enforce sparse connections in the graphs hierarchical graph representation Latent Graph Transfer product of all affinity matrices from the first layers to the l-th layer take a mixture of all the graphs Implementation H. specific task feature M. mixture graph []. concat also adopt multi-head attention Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>Transfer Learning</category>
+      </categories>
+      <tags>
+        <tag>Transfer Learning</tag>
+        <tag>Graph</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) The more you know:Using knowledge graphs for image classification]]></title>
+    <url>%2F2018%2F12%2F27%2FThe%20more%20you%20know%3A%20Using%20knowledge%20graphs%20for%20image%20classification%2F</url>
+    <content type="text"><![CDATA[Marino K, Salakhutdinov R, Gupta A. The more you know: Using knowledge graphs for image classification[J]. arXiv preprint arXiv:1612.04844, 2016. Overview Motivation human has ability to acquire knowledge about the world and use knowledge to reason about the visual world Gated Graph Neural Network (GGNN) suffers computational issues when graph is large In this paper proposed Graph Search Neural Network (GSNN) mitigates the computational issues using knowledge improves performance on image classification Contribution GSNN. incorporate potentially large knowledge graph into end-to-end system Methods GGNN input. graph of N nodes output. every graph node or global output h_{v}^{t}. hidden state for node v at time step t x_v. problem specific annotation A_v. adjacency matrix of graph for node v W, U. learned parameters (1). Initialization (2). propagation updates from adjacent nodes (3-6). combine the information from adjacent nodes and current hidden state of the nodes to compute the next hidden state output network (g). FC network GSNN propagation net importance net output net start with initial nodes in the graph based on the likelihood of the concept being present (faster R-CNN) add adjacent node in, learn a per-node score function to estimates the importance of these nodes importance network. assign target importance value to each node, correspond to gt is 1, neighbours are γ, two-hop away γ^2 add top P nodes to expanded set at final step T, compute the per-node-output and re-order and zero-pad the outputs into the final classification net]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Graph Network</category>
+      </categories>
+      <tags>
+        <tag>Graph Network</tag>
+        <tag>Zero Shot Learning</tag>
+        <tag>GSNN</tag>
+        <tag>GGNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICLR 2018) Relational inductive biases, deep learning, and graph networks]]></title>
+    <url>%2F2018%2F12%2F27%2FRelational%20inductive%20biases%2C%20deep%20learning%2C%20and%20graph%20networks%2F</url>
+    <content type="text"><![CDATA[Battaglia P W, Hamrick J B, Bapst V, et al. Relational inductive biases, deep learning, and graph networks[J]. arXiv preprint arXiv:1806.01261, 2018. Overview In this paper argue that combinational generalization must be a top priority for AI advocate integrative approaches explore how using relational inductive biases within deep learning architecture present graph network. strong relational inductive bias; manipulate structured knowledge and produce structured behaviors discuss how graph networks can support relational reasoning and combinational generalization Relational Inductive Biasesimpose constraints on relationships and interactions among entities in a learning process. over Sets and Graphs Invariant to ordering Graph Networks takes a graph as input perform computations over the structure return a graph as output Strong Relational Inductive Biases express arbitrary relationships among entities invariant to permutation per-edge and per-node functions are reused across all edges and nodes Definitions u. global attribute V. set of nodes E. set of edges v_i. the ith node e_k. the kth edge r_k. receiver of the kth edge s_k. sender of the kth edge Design Principles flexible representation configurable within-block structure composable multi-block architecture Discussion combinatorial generalization. shared computations across the entities and ralations to reason never-before-seen system question. where do get graphs come from that graph networks operate over?]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Graph Network</category>
+      </categories>
+      <tags>
+        <tag>Overview</tag>
+        <tag>Graph Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Zero-shot Recognition via Semantic Embeddings and Knowledge Graphs]]></title>
+    <url>%2F2018%2F12%2F27%2FZero-shot%20Recognition%20via%20Semantic%20Embeddings%20and%20Knowledge%20Graphs%2F</url>
+    <content type="text"><![CDATA[Wang X, Ye Y, Gupta A. Zero-shot recognition via semantic embeddings and knowledge graphs[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6857-6866. Overview Motivationtwo paradigms of transferring knowledge use implicit knowledge representation (semantic embedding) use explicit knowledge bases or knowledge graph In this paper based on Graph Convolutional Network (GCN) predict visual classifier for each category use both (imexplicit) semantic embeddings and the (explicit) categorical relationships to predict the classifier Related Works Zero-Shot Learning attribute semantic embeddings knowledge graph Methods GCN A [n x n]. normalized, binary adjacency matrix of graph X [n x k]. feature matrix W [k x c]. weight matrix Z [n x c]. output n. the number of category; node of hte graph ReLU Training Time use first m entities X = {x_1, x_2, …, x_n}, n entities embedding Y = {y_1, y_2, …, y_n} y_i ∈ {1, …, C} C. the number of labels Testing Time use n-m entities GCN for Zero-Shot Learning Input. set of category’s embedding vector Output. visual classifier for each input category (node) visual feature. extract by fixed pre-trained net, dimension D classifier. dimension D for each node 6-layer GCN A direct way. input x_i, output w_i based on m training pairs, but m is small. Loss function ground-truth classifier weights learned from training images Details LeakyReLU (0.2) leads to faster convergence L2-Normalized classifier is important find the last layer classifiers of the ImageNet pre-trained networks are naturally normalized Experiments Dataset relationships and graph (common sense knowledge rules) from Never-Ending Language Learning (NELL) images from Never-Ending Image Learning (NEIL) construct a new knowledge graph based on NELL and NEIL (1.7M object entities, 2.4M edges) use Breadth-first search (BFS), maximum length 7 hops Ablation StudyBaseline more performance gain as our graph size increases Missing Edge knowledge graph chave redundant information with 14k nodes and 97k edges connecting them Random Graph Depth of GCN optimization becomes harder as the network goes deeper Differences between Word Embeding and Classifier Is Word Embedding Methods Crucial Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Graph Network</category>
+      </categories>
+      <tags>
+        <tag>Graph Network</tag>
+        <tag>Zero Shot Learning</tag>
+        <tag>Semantic Embedding</tag>
+        <tag>Knowledge Graph</tag>
+        <tag>Transfer Knowledge</tag>
+        <tag>GCN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICLR 2018) Defense-GAN:Protecting classifiers against adversarial attacks using generative models]]></title>
+    <url>%2F2018%2F12%2F21%2FDefense-GAN%3A%20Protecting%20classifiers%20against%20adversarial%20attacks%20using%20generative%20models%2F</url>
+    <content type="text"><![CDATA[Samangouei P, Kabkab M, Chellappa R. Defense-gan: Protecting classifiers against adversarial attacks using generative models[J]. arXiv preprint arXiv:1805.06605, 2018. Overview In this paper, it proposed Defense-GAN methods train to model the distribution of unperturbed images does not assume knowledge of the process for generating the adversarial examples effective against both white-box and black-box attacks Defense Type modify the training data: adversarial trainingmodify the training procedure of the classifier to reduce the magnitude of gradients: defensive distilationremove the adversarial noise Attack Type FGSM RAND+FGSM C&amp;W Iterative FGSM Jacobian-based Saliency Map Attack (JSMA) Deepfool Algorithm]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Defence</tag>
+        <tag>DefenseGAN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICLR 2018) Thermometer encoding:One hot way to resist adversarial examples]]></title>
+    <url>%2F2018%2F12%2F21%2FThermometer%20encoding%3A%20One%20hot%20way%20to%20resist%20adversarial%20examples%2F</url>
+    <content type="text"><![CDATA[Buckman J, Roy A, Raffel C, et al. Thermometer encoding: One hot way to resist adversarial examples[J]. 2018. Overview In this paper proposed thermometer encoding to defense adversarial attacks demonstrate the robustness with experiments on the MNIST, CIFAR-10, CIFAR-100 and SVHN datasets. One-Hot Encoding Thermometer Encoding (B, 3, H, W)→ (B, 3*levels, H, W) (B, 3*levels, H, W)→ ResNet Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Defence</tag>
+        <tag>Thermometer Encoding</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICLR 2018) PixelDefend:Leveraging Generative Models to Understand and Defend against Adversarial Examples]]></title>
+    <url>%2F2018%2F12%2F21%2FPixelDefend%3A%20Leveraging%20Generative%20Models%20to%20Understand%20and%20Defend%20against%20Adversarial%20Examples%2F</url>
+    <content type="text"><![CDATA[Song Y, Kim T, Nowozin S, et al. Pixeldefend: Leveraging generative models to understand and defend against adversarial examples[J]. arXiv preprint arXiv:1710.10766, 2017. Overview Motivation adversarial examples mainly lie in the low probability regions of the training distribution In this paper, it proposed PixelDefend methods using statistical hypothesis testing, find modern neural density models are good at detecting imperceptible perturbations 63% to 84% for Fashion MNIST 32% to 70% for CIFAR-10 Contribution show that generative models can be used for detecting adversarially perturbed images and observe that most adversarial exmaples lie in low probability regions introduce a novel family of defend methods. PixelDefend (one of this family) CIFAR-10 performance Attack Methods Random Perturbation FGSM BIM (Basic Iterative Methods) DeepFool CW Defense MethodsChange Network &amp; training procedure Adversarial Training. FGSM adversarial examples (most commonly used) train with BIM has witness success in small datases, but has reported failure in larger ones Label Smoothing (defensive distillation). convert one-hot labels to soft targets correct class 1-ε; wrong class ε/(N-1) Modify Adversarial Examples Feature Squeezing. reduces the color range from [0, 255] to a smaller value, then smooths the image with a median filter Datasets Fashion MNIST CIFAR-10 Model ResNet VGG Detecting Adversarial Examples bit per dimension the distribution of log-likelihood p-values (compute by PixelCNN) PixelDefend trade-off. choose ε_defend overestimate ε_attack Adaptive PixelDefend ε_defend = 0. input image probability is below a threshold value otherwise ε=manually chosen setting Defensive Attack with BIM. unrooling the PixelCNN is too deep, lead to vanishing gradient. Moreover, time consuming to attack (10 hours to generate 100 attacking images with one TITAN Xp GPU) optimization problem was not amenable to gradient descent PixelCNN and Classifier are trained separately and have independent parameters Experiments p-values after defend Comparision]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Defence</tag>
+        <tag>PixelDefend</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Obfuscated Gradients Give a False Sense of Security:Circumventing Defenses to Adversarial Examples]]></title>
+    <url>%2F2018%2F12%2F21%2FObfuscated%20Gradients%20Give%20a%20False%20Sense%20of%20Security%3A%20Circumventing%20Defenses%20to%20Adversarial%20Examples%2F</url>
+    <content type="text"><![CDATA[Athalye A, Carlini N, Wagner D. Obfuscated gradients give a false sense of security: Circumventing defenses to adversarial examples[J]. arXiv preprint arXiv:1802.00420, 2018. Overview In this paper identify three types of obfuscated gradient (shattered gradient, stochastic gradient, vanishing/exploding gradients) propose Backward Pass Differentiable Approximation (BPDA) to overcome obfuscated gradient Dataset MNIST&amp;CIFAR-10. untargeted ImageNet. 1000 randomly selected, targeted attacker-targeted, defender-untargeted Network MNIST. 5 Conv CIFAR-10. ResNet ImageNet. InceptionV3 Attacker white-box (but not test-time randomness) Obfuscated Gradient Shattered Gradient. non-differentiable, nonexistent, incorrect Stochastic Gradient. randomized Exploding&amp;Vanishing Gradient. multiple iteration Attack Methods Shattered GradientSimple preprocessor g() satisfy g(x)≈x. BPDA find a differentiable approximation g() such that (f_i: non-differentiable layer) forward. through f_i(x) backward. replacing f_i(x) with g(x) Stochastic Gradient apply Expectation over Transformation (EOT) Exploding&amp;Vanishing GradientReparameterization For f(g(x)), g performs optimation loop make a change-of-variable find differentiable h Experiments Adversarial Training has been shown to be difficulty at ImageNet scale. Adversarial Machine Learning at Scale training exclusively on l∞ adversarial examples provides only limited robustness to adversarial examples under other distortion metrics. Attacking the madry de-fense model with L1-based adversarial examples Shattered Gradient thermometer encoding. BPDA-backward cropping&amp;rescaling. EOT bit-depth. BPDA-identity JPEG. BPDA-identity TVM. EOT+BPDA Quilting. EOT+BPDA Stochastic Gradient SAP (random dropout at each layer). EOT Vanishing&amp;Exploding Gradient PixelDefend Defense-GAN Results]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) The robust manifold defense:Adversarial training using generative models]]></title>
+    <url>%2F2018%2F12%2F21%2FThe%20robust%20manifold%20defense%3A%20Adversarial%20training%20using%20generative%20models%2F</url>
+    <content type="text"><![CDATA[Ilyas A, Jalal A, Asteri E, et al. The robust manifold defense: Adversarial training using generative models[J]. arXiv preprint arXiv:1712.09196, 2017. Overview Motivation the natural image manifold is low-dimensional but the noisy is very high dimensional In this paper, it proposed a pre-processing step that projects on the range of a generative model using gradient descent (Invert and Classify, INC) robust against first-order, substitute model and combined adversarial attacks show that adversarial training on the generative manifold can make the classifier robust to these attacks INC + deep image prior Contribution INC. robust against a wide variety of attacks. first-order, substitute models and enhanced attacks combining the two formulating min-max optimization problem DIP-INC. without pretrained Methods INC DIP-INC The number of steps was empirically tuned in our experiments and depends on the power of the adversary Experiments INC-MNIST INC-CelebA DIP-INC ImageNet]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Defense</tag>
+        <tag>Deep Image Prior</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Art of singular vectors and universal adversarial perturbations]]></title>
+    <url>%2F2018%2F12%2F21%2FArt%20of%20singular%20vectors%20and%20universal%20adversarial%20perturbations%2F</url>
+    <content type="text"><![CDATA[Khrulkov V, Oseledets I. Art of singular vectors and universal adversarial perturbations[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 8562-8570. Overview In this paper, it proposed a algorithm for constructing universal perturbation compute the (p,q)-singular vectors of the Jacobian matrices of hidden layers based on 64 images, the perturbation with more than 60% fooling rate on 50000 images dataset investigate a correlation between maximum singular value and fooling rate (p-q)-singular gector Jacobian f_i. the i-th hidden layer q-norm (p,q)-singular vector of J_i(x) Iterative Methods Instead of evaluating and storing the full matrix A, we use only the macvec function of A (given an input vector v, computes an ordinary product Av without forming the full matrix A, O(n) complexity) Power Methods algorithm to compute (p,q)-singular vectors Generalized Power Method x. ε A. Jacobian matrix p,q. hyper-parameter when stacking J vertically for each x_j randomly choose a subset of images Stochastic Power Methods Efficient Implementation of the Matvec Function Perturbation]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Universal Adversarial Perturbations</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Generative Adversarial Perturbations]]></title>
+    <url>%2F2018%2F12%2F21%2FGenerative%20Adversarial%20Perturbations%2F</url>
+    <content type="text"><![CDATA[Poursaeed O, Katsman I, Gao B, et al. Generative adversarial perturbations[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4422-4431. Overview In this paper, it proposed generative models for creating adversarial examples can produce image-agnostic and image-dependent perturbation for targeted and untargeted attacks demonstrate that similar architecture can achive impressive results in fooling both classification and semantic segmentation models faster than iterative methods at inference time Type of perturbation Universal. fixed Image-dependent. vary for different images targeted untargeted Contribution unifying framework. universal and image-dependent state-of-art performance in universal perturbations first to present effective targeted universal perturbation faster than iterative and optimization-based methods, the order of milliseconds Related WorkUniversal Perturbations iterates over samples in a target set, aggregate image-dependent perturbation and normalize the results to build universal perturbation add image-dependent perturbations and clip the results Image-dependent Perturbation optimization-based FGSM Iterative Least-Likely Class adversarial examples are sensitive to the angle and distance Generative Adversarial Perturbation Universal Perturbation U. scale to have a fixed norm trained with fooling loss. the combination of fooling and discriminatice loss lead to sub-optimal Image-dependent Perturbation generate perturbation instead of adversarial example giving us better control over the perturbation magnitude Fooling Multiple Network Experiments L_{oo}. make use of the maximum permissible magnitude at each pixel]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Universal Adversarial Perturbations</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Defense against Universal Adversarial Perturbations]]></title>
+    <url>%2F2018%2F12%2F21%2FDefense%20against%20Universal%20Adversarial%20Perturbations%2F</url>
+    <content type="text"><![CDATA[Akhtar N, Liu J, Mian A. Defense against universal adversarial perturbations[C]Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 3389-3398. Overview In this paper, it proposed the first framework to defend against universal adversarial perturbation learn a Perturbation Rectifying Network (PRN) as pre-input layers perturbation detector trained on the Discrete Cosine Transform (DCT) Contribution PRN methods to compute synthetic image-agnostic perturbations to train PRN separate perturbation detector learned from DCT Related Work FGSM DeepFool (iterative) adversarial transformation network ensemble foveation distillation JPG compression SafetyNet. detect and reject adversarial example Problem Formulation I_c. clean image ρ. perturbation δ. fooling ratio (set 0.8) ξ. 2000 for l_2, 10 for l_oo detector rectifier I_{ρ/c}. perturbation image or clean image Methods PRN Θ. weights b. bias l*. predicted by joint network l. predicted by target network implemented as 5-ResNet blocks cross entropy loss Adam with momentum (0.9, 0.999) LR 0.01 decay by 10% eack 1K iteration batch size 64 Synthetic Perturbation Generation fooling ratios for the synthetic perturbation is lower than the original ones but in an acceptable range help in early convergence and better performance of the PRN Perturbation Detection DCT based compression can also be exploited to reduce the network fooling ratio under the universal perturbation B. SVM F. compute log-absolute values of the 2D-DCT coefficients of the gray-scaled image if detect perturbation else Experiments Metric Results]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Defence</tag>
+        <tag>Universal Adversarial Perturbations</tag>
+        <tag>Adversarial Detection</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(NIPS 2016) Hierarchical Object Detection with Deep Reinforcement Learning]]></title>
     <url>%2F2018%2F09%2F13%2FHierarchical%20Object%20Detection%20with%20Deep%20Reinforcement%20Learning%2F</url>
     <content type="text"><![CDATA[Bellver M, Giroinieto X, Marques F, et al. Hierarchical Object Detection with Deep Reinforcement Learning[J]. Advances in Parallel Computing, 2016 Overview In this paper, it trained an intelligent agent to decide where to look proposal strategy. with and w/o overlap extract feature strategy. zoom and crop-pool overlap+zoom better cast the problem as a Markov Decision Process (MDP) Related Work RL has been applied to Classification, Captioning, Activity Recognition Region proposal is expensive (R-CNN) AttentionNet. cast detection as iterative classification SSD Active Object Localization (agent). Methods MDP Formulation state. descriptor of current region + memory vector (last 4 actions, 6 * 4=24 dimension) action. 5 movement + terminal reward. τ=0.5 η=3 Q-learning Proposal Strategy overlap. 0.75 Model Exploration-Exploration ε-greedy policy. start with ε=1, decrease until ε=0.1 in step of 0.1 start with random actions, and at each epoch the agent takes decisions relying more on the already learnt policy to help the agent learn terminal action, we force it each time the current region has a IoU&gt;0.5 Training Parameters DQN Adam 1e-6 50 epoch discount factor. γ=0.9 Experiments Replay(s, a, r, s’) consecutive experiences in this paper is very correlated, lead to inefficient and unstable learning to solve it, we use random minibatches. 1000 experiences and batch size 100 Experiments Region Proposal with less than 3 step, can almost approximate all objects we can detect Zoom vs Crop-Pool Zoom better]]></content>
@@ -184,8 +457,8 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
-        <tag>VQA</tag>
         <tag>Reasoning</tag>
+        <tag>VQA</tag>
       </tags>
   </entry>
   <entry>
@@ -907,10 +1180,10 @@
       <tags>
         <tag>Segmentation</tag>
         <tag>Detection</tag>
+        <tag>Transfer Learning</tag>
         <tag>Mask R-CNN</tag>
         <tag>Maskx R-CNN</tag>
         <tag>Weight Transfer</tag>
-        <tag>Transfer Learning</tag>
       </tags>
   </entry>
   <entry>
