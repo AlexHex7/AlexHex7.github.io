@@ -1,6 +1,374 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(ICLR 2018) Ensemble Adversarial Training:Attacks and Defenses]]></title>
+    <url>%2F2019%2F02%2F26%2FEnsemble%20Adversarial%20Training%3A%20Attacks%20and%20Defenses%2F</url>
+    <content type="text"><![CDATA[Tramèr F, Kurakin A, Papernot N, et al. Ensemble adversarial training: Attacks and defenses[J]. arXiv preprint arXiv:1705.07204, 2017. Overview In this paper show that adversarial training converges to a defenerate global minimum find that adversarial training remains vulnerable to black-box attack, where we transfer perturbations computed on undefended model, as well as to proposed single-step attack introduce Ensemble Adversarial Training that augments training data with perturbations transferred from other model (decouples adversarial example generation from the parameters of the trained model) Ensemble Adversarial Training yields models with strong robustness to black-box attack Adversarial Training adversarial training on MNIST yields models that are robust to white-box attacks MNIST dataset is peculiar in that there exists a simple ‘closed-form’ denoising procedure (namely feature binarization) which leads to similarly robust models without adversarial training. This may explain why robustness to white-box attack is hard to scale to tasks such as ImageNet for an average MNIST image, over 80% of the pixels are in {0, 1} and only 6% are in the range [0.2, 0.8]. Thus, for a perturbation with epsilon ≤ 0.3, binarized version of x and x_adv can differ in at most 6% of the input dimension Some prior works have hinted that adversarially trained models may remain vulnerable to black-box attacks an adversarial maxout network on MNIST has slightly higher error on transferred examples than on white-box examples Attack Methods FGSM Single-Step Least-Likely Class Method (Step-LL). most effective for adversarial training on ImageNet Iter FGSM and Iter Step-LL proposed randomized single-step attack Ensemble Adversarial Training decouple the generation of adversarial example from the model being trained augments training data with adversarial examples crafted on other static pre-trained models Experiments adversarial training greatly increases robustness to white-box single-step attacks, but incurs a higher error rate in a black-box setting Ensemble Training Ensemble Adversarial Training is not robust to white-box Iter-LL and R+Step-LL sample]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Ensemble Adversarial Training</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICML 2012) Poisoning Attacks against Support Vector Machines]]></title>
+    <url>%2F2019%2F02%2F26%2FPoisoning%20Attacks%20against%20Support%20Vector%20Machines%2F</url>
+    <content type="text"><![CDATA[Biggio B , Nelson B , Laskov P . Poisoning Attacks against Support Vector Machines[J]. 2012. Overview In this paper, it investigates a family of poisoning attacks against SVM. Such attacks inject specially crafted training data that increasing the SVM’s test error. use a gradient ascent strategy the gradient is computed based on properties of the SVM’s optimal solution Attack CategoryCausative manipulation of training data. such as poisoning attack Exploratory exploitation of the classifier Discussion as an attacker usually cannot directly access an existing training databse but may provide new training data poisoning attacks have been previously studied only for simple anomaly detection methods assume that the attacker knows the learning algorithm and can draw data from the underlying data distribution further assume that attacker knows the training data used by the learner Overview the attacker’s goal is to find a point (x_c, y_c), whose addition to training data D_tr maximally decreases the SVM’sclassification accuracy y_c. attacking class the attacker proceeds by drawing a validation data set D_val and maximizing the hinge loss incurred on D_val by the SVM trained on D_tr ∪(x_c, y_c) Visualization]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Poisoning Attack</tag>
+        <tag>SVM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) DARCCC:Detecting Adversaries by Reconstruction from Class Conditional Capsule]]></title>
+    <url>%2F2019%2F02%2F26%2FDARCCC%3A%20Detecting%20Adversaries%20by%20Reconstruction%20from%20Class%20Conditional%20Capsule%2F</url>
+    <content type="text"><![CDATA[Frosst N, Sabour S, Hinton G. DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsules[J]. arXiv preprint arXiv:1811.06969, 2018. Overview In this paper present a simple tachnique that allows capsule models (DARCCC) to detect advertisarial images set a threshold on L2 distance between input image and reconstruction from winning capsule same technique works well for CNNs explore a stronger white-box attack (R-BIM) that takes the reconstruction error into account. However the generated adversarial examples do not look like the original image but with a small amount of adder noise experiments on MNIST, Fashion-MNIST and SVHN Related Works CapsuleNet has been proven to be more robust to white box attacks while being as weak as CNNs in defending black box attacks (this paper address this shortcoming) Methods Histogram of L2 Distance Network Threshold set it as the 95th percentile of validation distances. That meas FPR on real validation is 5% Experiments Block Box Attack CapsuleNet is as weak as CNN White Box Attack CapsuleNet is more robust to CNN R-BIM R-BIM is significantly less successful than a standard BIM attack in changing the classification CapsuleNet in particular exhibits significant resilience to this attack Visualize some generated adversarial examples look like ‘0’. These are not adversarial images at all since they resemble their predicted class to the human eye]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Defence</tag>
+        <tag>CapsulesNet</tag>
+        <tag>CapsuleNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) LaVAN:Localized and Visible Adversarial Noise]]></title>
+    <url>%2F2019%2F02%2F26%2FLaVAN%3A%20Localized%20and%20Visible%20Adversarial%20Noise%2F</url>
+    <content type="text"><![CDATA[Karmon D, Zoran D, Goldberg Y. Lavan: Localized and visible adversarial noise[J]. arXiv preprint arXiv:1801.02608, 2018. Overview In this paper, it proposed a algorithm to generate adversarial patches without covering the main objects of images only covering 2% of the pixels transferable across images and locations fool InceptionV3 model MethodsLoss Function To be Universal At each iteration, choose a random image x Visualization]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Adversarial Patch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Adversarial patch]]></title>
+    <url>%2F2019%2F02%2F26%2FAdversarial%20patch%2F</url>
+    <content type="text"><![CDATA[Brown T B, Mané D, Roy A, et al. Adversarial patch[J]. arXiv preprint arXiv:1712.09665, 2017. Overview In this paper, it proposed a methods to generate universal targeted adversarial patches patches can be place anywhere explore what is possible if an attacker no longer restricts to imperceptible changes (the existing defense techniques which focus on defending against small perturbations may bot be robust to larger perturbations) Algorithm mask our patch to allow it to take any shape train over a variety of images apply a random translation, scaling, and rotation on the patch in each image Experiments Five models: InceptionV3, ResNet50, Xception, VGG16 and VGG19 white box attack (ensemble and single) and black box attack]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Adversarial Attack</category>
+      </categories>
+      <tags>
+        <tag>Adversarial Attack</tag>
+        <tag>Adversarial Patch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Inverting Visual Representations with Convolutional Networks]]></title>
+    <url>%2F2019%2F02%2F15%2FInverting%20Visual%20Representations%20with%20Convolutional%20Networks%2F</url>
+    <content type="text"><![CDATA[Dosovitskiy A, Brox T. Inverting Visual Representations with Convolutional Networks[C]// IEEE Conference on Computer Vision &amp; Pattern Recognition. 2016. Overview In this paper, it proposes a new approach to study image representation by inverting them with an up-convolutional neural network apply to shallow representation. HOG, SIFT, LBP apply to deep representation. DNN ConclusionRepresentation of AlexNet Features from all layers of the network preserve the precise colors and the rough position of objects in the image In higher layers, almost all information about the input image is contained in the pattern of non-zero activations, not their precise values In the layer FC8, most information about the input image is contained in small probabilities of those classes that are not in top-5 network predictions Related Work Local Binary Pattern (LBP). LBP features are not differentiable SIFT. keypoint-based representation Existing Method Based on Gradient Descent invert a differentiable image representation phi using gradient descent, so it can not be applied to LBP optimize the difference between the feature vectors, not the image reconstruction error involve optimization at test time MethodsLoss Function phi. feature vector w. parameters of CNN Network HOG and LBP HOG feature. W/8 x H/8 x 31 LBP feature. W/16 x H/16 x 58 continue process by CNN untill feature size is 64 times smaller than input Sparse SIFT N keypoints. each keypoint contains: coordinate (x, y), scale s, orientation α, feature descriptor f split image into cells of size d x d, yhis yields W/d x H/d feature. W/d x H/d x (D+5) ExperimentsMetric Shallow Representation Deep Representation]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Inverting</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>Inverting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2015) Understanding Deep Image Representations by Inverting Them]]></title>
+    <url>%2F2019%2F02%2F15%2FUnderstanding%20Deep%20Image%20Representations%20by%20Inverting%20Them%2F</url>
+    <content type="text"><![CDATA[Mahendran A, Vedaldi A. Understanding deep image representations by inverting them[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2015: 5188-5196. Overview In this paper, it proposes a general framework to invert representation invert a differentiable image representation using gradient descent first work to study the inverse of CNN image representation Related Work DSIFT, HOG Exploring the representation capabilities of the HOG descriptor. show that it is possible to make any two images look nearly identical in SIFT space up to the injection of adversarial noise Intriguing properties of neural networks. demonstrated that adversarial example Algorithm try to find the best x involve optimization at test time Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Inverting</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>Inverting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2016) Estimation of ambient light and transmission map with common convolutional architecture]]></title>
+    <url>%2F2019%2F02%2F15%2FEstimation%20of%20ambient%20light%20and%20transmission%20map%20with%20common%20convolutional%20architecture%2F</url>
+    <content type="text"><![CDATA[Shin Y S , Cho Y , Pandey G , et al. [IEEE OCEANS 2016 MTS/IEEE Monterey - Monterey, CA, USA (2016.9.19-2016.9.23)] OCEANS 2016 MTS/IEEE Monterey - Estimation of ambient light and transmission map with common convolutional architecture[J]. 2016:1-7. Overview Motivation the scattering of light from water particles along with the attenuation and change in the color of different wavelengths of ambient light In this paper, it proposes a method for effective ambient light and transmission estimation in underwater image. balance scene recovery model Dataset synthetic based on ICL-NUIM and SUM database 1 million patches Model multi-scale fusion element-wise summation (reduce computation) Maxout Balance Scene Recovery ModelHaze Model can not achieve the recovery of the original scene radiance in an underwater environment the attenuation of ambient light in an underwater environment is not only dependent upon the distance travelled and density of particles in the path of the light but also depends on the color/wavelength of the light For instance, the light intensity of red channel rapidly decreases whereas green channel decreases slowly Proposed Model A_b. balanced ambient light a_b. fixed vector which represents the balanced ambient light inRGB Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Image Super-Resolution via Deep Recursive Residual Network]]></title>
+    <url>%2F2019%2F02%2F15%2FImage%20Super-Resolution%20via%20Deep%20Recursive%20Residual%20Network%2F</url>
+    <content type="text"><![CDATA[Tai Y , Yang J , Liu X . Image Super-Resolution via Deep Recursive Residual Network[C]// 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE Computer Society, 2017. Overview In this paper, it proposes Deep Recursive Residual Network (DRNN) adopt residual learning (local + global) recursive to control the model parameters while increasing depth 2x, 6x, 14x fewer parameters than VDSR, DRCN and RED30 Related WorksVDSR high LR to accelerate the convergence speed residual learning + adjustable gradient clipping to sovel gradient explosion problem DRCN chain strucuture recursive-supervision and skip-connection to mitigate the difficulty of training Novelties both global and local residual learning recursive learning. Increase the depth without adding parameters DRRNPre-Activation Recursive Architecture Parameters U. the number of residual unit in a recursive block B. the number of recursive block when U=0, DRRN becomes VDSR depth of DRRN Loss Function Experiments Dataset Set5 Set14 BSD100 Urban100 Augmentation flipping rotation scale. x2, x3, x4 training sample. 31x31 patches with stride of 21 Details adjustable gradient clipping γ. current learning rate Θ = 0.01. gradient clipping parameter DRRN with d=20 takes 4 days with 2 Titan X GPUs Metric. PSNR, SSIM, IFCs 0.25s per 288x288 image on a Titan X GPU Study of B and U Comparison Discussion DRRN_NS. no sharing weights DRRN_C. chain strucuture LRL improves VDSR at all depth weight sharing DRRN (recursive strategy) better than without sharing, less prone to overfitting]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Super Resolution</tag>
+        <tag>Recursive Residual Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICML 2016) Pixel recurrent neural networks]]></title>
+    <url>%2F2019%2F02%2F15%2FPixel%20recurrent%20neural%20networks%2F</url>
+    <content type="text"><![CDATA[Oord A, Kalchbrenner N, Kavukcuoglu K. Pixel recurrent neural networks[J]. arXiv preprint arXiv:1601.06759, 2016. Overview In this paper, it proposed PixelRNN, a deep neural network that sequentially predicts the pixels in an image along the two spatial dimensions. PixelRNN]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Generation</tag>
+        <tag>Image Processing</tag>
+        <tag>PixelCNN</tag>
+        <tag>PixelRNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2018) Recurrent Squeeze-and-Excitation Context Aggregation Net for Single Image Deraining]]></title>
+    <url>%2F2019%2F02%2F15%2FRecurrent%20Squeeze-and-Excitation%20Context%20Aggregation%20Net%20for%20Single%20Image%20Deraining%2F</url>
+    <content type="text"><![CDATA[Li X, Wu J, Lin Z, et al. Recurrent squeeze-and-excitation context aggregation net for single image deraining[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 254-269. Overview In this paper, it proposed RESCAN dilated convolutional SE block to achive different alpha-values to various rain streaks layers multi-stage with RNN. useful information for rain removal in previous stages can guide the learning in later stages Methods Rain Model A. global atmospheric light α_0. scene transmission α_i. brightness of a rain streak layer or a haze layer Architecture depth = 6 Dilation of L1 to L3 (1, 2, 4) no BN. rain streaks in different layers have different distributions, and remove 40% memory Recurrent Recurrent Version ConvRNN ConvGRU ConvLSTM PredictionAdditive Prediction Full Prediction Experiments Details patch 64x64 Ablation Study Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>De-raining</tag>
+        <tag>SE Block</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2018) Non-Local Recurrent Network for Image Restoration]]></title>
+    <url>%2F2019%2F02%2F15%2FNon-Local%20Recurrent%20Network%20for%20Image%20Restoration%2F</url>
+    <content type="text"><![CDATA[Liu D, Wen B, Fan Y, et al. Non-local recurrent network for image restoration[C]//Advances in Neural Information Processing Systems. 2018: 1673-1682. Overview Motivation existing methods do not explicitly use self-similarity properties in images In this paper, it proposed non-local recurrent network (NLRN). Methods Non-local Module Non-Local Recurrent Network x. input state y. output state s. recurrent state s^0. function of input Image I. x^t = 0, f_input(x) = 0 output state y^t calculate only at time T s^0. add an identity path from the very first state s_corr. add a residual path of deep feature correlation between each location and its neighbourhood from previous state Experiments Ablation Study Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Image Restoration</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Restoration</tag>
+        <tag>Non-local</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Future Frame Prediction for Anomaly Detection -- A New Baseline]]></title>
+    <url>%2F2019%2F01%2F25%2FFuture%20Frame%20Prediction%20for%20Anomaly%20Detection%20--%20A%20New%20Baseline%2F</url>
+    <content type="text"><![CDATA[Liu W, Luo W, Lian D, et al. Future frame prediction for anomaly detection–a new baseline[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6536-6545. Overview Motivation In anomaly video detection, almost all existing methods tackle the problem by minimizing the reconstruction errors of training data, which can not guarantee a large reconstruction error for an abnormal event The capacity of DNN is high, and larger reconstruction errors for abnormal events do not necessarily happen Abnormal events are unbounded In this paper, it proposes to tackle the anomaly detection problem within a video prediction framework first work to leverage the difference between predicted future frame and GT first work to introduce a temporal constraint into video prediction task other than spatial constraints (intensity and gradient), also introduce temporal constraint Related Work Hand-craft Feature. HOG, HOF Deep Learning. ConvLSTM-AE Video Frame Prediction Least Square GAN Architecture Overview Contraints Intensity Gradient Motion f. pre-trained FlowNet Adversarial (Least Square GAN) Loss Function frame normalize to [-1, 1] frame resize to 256x256 t=4; random clip of 5 sequential frames batch size 4 int, gd, op, adv: 1.0, 1.0, 2.0, 0.05 Anomaly Detection on Testing Data Mathieu shows that Peak Signal to Noise Ratio (PSNR) is a better way for image quality assessment (higher PSNR → normal) normalize PSNR of all frames in each testing video to the range [0, 1], and calculate the regular score for each frame by Experiments DatasetCUHK Avenue Dataset 16 training videos and 21 testing videos 47 abnormal events UCSD Dataset UCSD Pedestrian 1. 34 training videos and 36 testing videos with 40 irregular events UCSD Pedestrian 2. 16 training videos and 12 testing videos with 12 abnormal events ShanghaiTech Dataset 330 training videos and 107 testing 130 abnormal events Toy Dataset 210 frames for training 1242 frames for testing Comparison Ablation Study Delta. gap between average score of normal frames and that of abnormal frames Toy Experiments After observing the pedestrian for a while when the pedestrian has made his or her choice, it becomes predictable and PSNR would go up]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Abnormality Detection</category>
+      </categories>
+      <tags>
+        <tag>Abnormality Detection</tag>
+        <tag>VIdeo Frame</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) GANomaly:Semi-Supervised Anomaly Detection via Adversarial Training]]></title>
+    <url>%2F2019%2F01%2F25%2FGANomaly%3A%20Semi-Supervised%20Anomaly%20Detection%20via%20Adversarial%20Training%2F</url>
+    <content type="text"><![CDATA[Akcay S, Atapour-Abarghouei A, Breckon T P. GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training[J]. 2018. Overview In this paper, it proposes a novel anomaly detection model (output anomaly score) Conditional GAN jointly learn the generation of high-dimensional image space and the inference of latent space only trained on nromal samples Problem Definition large training set. M normal samples smaller testing set. N samples (normal + abnormal) model f. learn the normal data distribution and minimizes the output anomaly score phi. threshold (set to 0.2) Methods Model For Abnormal Image G_D is not able to reconstruct the abnormalities the network is modeled only on normal samples during training and its parametrization is not suitable for generating abnormal samples An output X^ that has missed abnormalities can lead to the encoder network R mapping X^ to a vector z^ that has also missed abnormal feature representation, causing dissimilarity between z and z^ Loss Function Experiments Dataset MNIST (32x32). treating one class being an anomaly, while other as normal class CIFAR10. one as abnormal class University Baggage Anomaly Dataset (UBA) (64x64). abnormal class: knife, gun and gun componen Setting λ=50 Metric. AUC, ROC and TPR (true positive rate), FPR Comparison Table 1. all approaches show very poor performance for detecting digit 1 as abnormal. This is probably due to the linear shape simplicity of this class such that any model can easily overfit to the data Table 2. The reason for getting relatively lower quantitative results within this dataset is that for a selected abnormal category, there exists a normal class the is similar to the abnormal (plane vs bird, cat vs dog) Speed]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Abnormality Detection</category>
+      </categories>
+      <tags>
+        <tag>GAN</tag>
+        <tag>Abnormality Detection</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Learning in an Uncertain World:Representing Ambiguity Through Multiple Hypotheses]]></title>
+    <url>%2F2019%2F01%2F12%2FLearning%20in%20an%20Uncertain%20World%3A%20Representing%20Ambiguity%20Through%20Multiple%20Hypotheses%2F</url>
+    <content type="text"><![CDATA[Rupprecht C, Laina I, DiPietro R, et al. Learning in an uncertain world: Representing ambiguity through multiple hypotheses[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 3591-3600. Overview Motivation uncertainty arises from the way data is labeled (label of occluded joints in pose) In this paper reformulate existing single-prediction modles as multiple hypothesis prediction (MHP) modles (meta loss) MHP can expose valuable insights outperform SHP experiments on human pose estimation future frame prediction classification (multi-label) segmentation Related Work Multiple Choice Learning Multi-label Recognition Methods SHP MHPMeta Loss Function M. the number of predictions (replicate output layer M times with differ init) Delta. True for 1, False for 0 f_j. the j-th predictor among M predictors Meta loss function can be regarded as original loss function weighted by Deltal Procedure create M predictors, then forward each sample build y_i(x) compute gradient and update Relax Delta solve the problem: predictor may be initialized so far from the target labels y that all y lie in a single Voronoi cell k Additionally, drop out predictions with some low probability (1%) to introduce some randomness in the selection of the best hypothesis, such that weaker predictions will not vanish during training Hyper-parameter M almost every method that models posterior probabilities needs some form of hand-tuned model parameter (k-means, MDNs) Experiments Pose SHP. 59.7% 2-MHP. 60.0% 5-MHP. 61.2% 10-MHP. 62.8% with increasing number of predictions the method is able to model the output space more and more-precisely Future Frame Predictions Classification if an image contains two bikes and a person, every time the image is sampled during training it will be labeled either as bike or person with 50% Segmentation MHP (70.3%) vs MCL (69.1%)]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Multiple Hypotheses</category>
+      </categories>
+      <tags>
+        <tag>Pose</tag>
+        <tag>Multiple Hypotheses</tag>
+        <tag>Frame Prediction</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2018 Spotlight) Training Neural Networks Using Features Replay]]></title>
+    <url>%2F2019%2F01%2F12%2FTraining%20Neural%20Networks%20Using%20Features%20Replay%2F</url>
+    <content type="text"><![CDATA[Huo Z, Gu B, Huang H. Training neural networks using features replay[C]//Advances in Neural Information Processing Systems. 2018: 6659-6668. Overview Motivation the computational time of the backward pass is about twice of the computational time of the forward pass existing methods removing backward locking work poorly when DNN is deep In this paper propose a novel parallel-objective formulation for the objective function of the neural network introduce features reply algorithm prove it is guaranteed to converge experiments to demonstrate the proposed method achieves faster convergence, lower memory consumption and better generalisation error Algorithm Formulation parallel-objective loss function optimal solution Breaking DependencyNew Formulation each module is independent and updated at the same time module k keeps a history of its input with size K-k+1 Approximation Gradient inside Each Module Pass Gradient module k sends to the gradient below module k-1 for the computation of the next iteration Procedure Experiments Implementations CIFAR-10 and CIFAR-100 ResNet random cropping, random horizontal flipping and normalizing K modules is distributed across K GPUs Sufficient Direction Constant σ divide ResNet164 and ResNet101 into 4 modules σ &gt; 0 all the time. Assumption 1 is satisfied such that Algorithm 1 is guaranteed to converge to the critical points of for the non-convex problem σ of lower modules are small at the first half epochs. The variation of σ indicates the difference between the descent direction of FR and the steepest descent direction small σ at early epochs. help method escape from saddle points and find better local minimum large σ at final epochs. prevent method from diverging Memory Consumption Generalization]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Optimization</category>
+      </categories>
+      <tags>
+        <tag>Optimization</tag>
+        <tag>Back Propagation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018 Best Paper) Taskonomy:Disentangling Task Transfer Learning]]></title>
+    <url>%2F2019%2F01%2F12%2FTaskonomy%3A%20Disentangling%20Task%20Transfer%20Learning%2F</url>
+    <content type="text"><![CDATA[Zamir A R, Sax A, Shen W, et al. Taskonomy: Disentangling Task Transfer Learning[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 3712-3722. Overview Motivation relationships among different visual tasks In this paper proposes a fully computational approach for modeling the structure of space of visual task exploit it to reduce the demand for labeled data Related Works self-supervised learning unsupervised learning meta-learning multi-task learning domain adaption Methods Definitions γ. limited supervision budget T (target). set of task want to solve S (source). set of task can be trained V=T∪S. task dictionary T∩S. task want to solve but can play as source T-T∩S. task can not trained (target only) S-T∩S. (source only) edge. between a group of source and target tasks, represent feasible case weight. prediction of its performance use these edges to estimate the globally optimal transfer policy to solve T Four Steps Stage I: Task-Specific Modeling Encoder-Decoder Stage II: Transfer Modeling learn a readout function E_s. encoder D_Θ. readout function f_t. gt of task t for image I. the performance of D_{s→ t} is a useful metric as task affinity use shallow fully convolutional network combinatorial explosion of higher-oder transfer. using beam search to sample Stage III: Ordinal Normalization using Analytic Hierarchy Process (AHP) aggregating the raw losses/evaluations L_{s→ t} from transfer function into a matrix is problem. vastly different scale and live in different spaces naive solution of linearly rescale each fail Step IV: Computing the Global Texonomy edge (hypergraph) Boolean Integer Programming (BIP) to find global policy Constrains each target task has exactly one transfer in supervision budget is not exceeded]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>Transfer Learning</category>
+      </categories>
+      <tags>
+        <tag>Transfer Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2016) Identity mappings in deep residual networks]]></title>
+    <url>%2F2019%2F01%2F12%2FIdentity%20mappings%20in%20deep%20residual%20networks%2F</url>
+    <content type="text"><![CDATA[He K, Zhang X, Ren S, et al. Identity mappings in deep residual networks[C]//European Conference on Computer Vision. Springer, Cham, 2016: 630-645. Overview In this paper, it analyzed the propagation formulations behind the residual building blocks identity mapping is better pre-activation is better Identity Mapping Pre-Activation pre-activation (BN + ReLU) can normalize the signal of residual + F(x) which is not normalized]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Component</category>
+      </categories>
+      <tags>
+        <tag>Component</tag>
+        <tag>Identity Mapping</tag>
+        <tag>Pre-activation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Convolutional Neural Networks with Alternately Updated Clique]]></title>
+    <url>%2F2019%2F01%2F12%2FConvolutional%20Neural%20Networks%20with%20Alternately%20Updated%20Clique%2F</url>
+    <content type="text"><![CDATA[Yang Y, Zhong Z, Shen T, et al. Convolutional Neural Networks with Alternately Updated Clique[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 2413-2422. Overview In this paper, it proposed CliqueNet improving information flow both forward and backward connections between any two layers in the same block combination of recurrent structure and feedback mechanisim Contribution CliqueNet multi-scale feature strategy experiments on five datasets Related WorkNetwork Multi-column networks Deeply-Fused Nets GooLeNet (WRN) wide residual networks FractalNet ResNet DenseNet (DPN) dual path networks Methods Clique Block recurrent feedback structure ensures that the communication is maximized among all layers in the block while concat feature, the weight matrix of corresponding layers also are concat Extra TechniquesAttention Transition only add to transition layer Bottleneck and Compression introduce bottleneck to block introduce compression to feature of loss function before global pooling Implementation Experiments Details Dropout 0.2 after each Conv Comparison Stage I vs Stage II]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>CliqueNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Learning feature pyramids for human pose estimation]]></title>
+    <url>%2F2019%2F01%2F12%2FLearning%20feature%20pyramids%20for%20human%20pose%20estimation%2F</url>
+    <content type="text"><![CDATA[Yang W, Li S, Ouyang W, et al. Learning feature pyramids for human pose estimation[C]//The IEEE International Conference on Computer Vision (ICCV). 2017, 2. Overview Motivation pyramid methods widely used at inference time learning feature in DCNN still not well explored existing weight initialization schemes (MSR, Xavier) are not proper for layers with branches In this paper, it proposed Pyramid Residual Module (PRMs) subsample ratios in a multi-branch network weight initialization schemes Contribution PRM weight initialization scheme observe that the problem of activation variance accumulation introduced by identity mapping may be harmful in some scenario Related WorkHuman Pose Estimation graph structures build on handcraft features. pictorial structure, loopy structure regression Gaussian peaks in score maps image pyramid. computation, memory Multiple-layers of DCNN plain network. VGG, AlexNet multi-branch. inception, ResNet, ResNeXt Weight Initialization layer-by-layer pretraining strategy Gaussian distribution. μ=0, σ=0.01 Xavier. sound estimation of the variance of weight assume that weights are initialized close to zero, hence the nonlinear activation (sigmoid, Tanh) can be regarded as linear function initialization scheme for rectifier networks All above are derived for plain networks with only one branch. Dataset MPII LSP Framework Pyramid Residual Modules PRM-B has comparable performance with others feature with smaller resolution contain relatively fewer information, we use fewer feature channels for branches with smaller scales C. the number of pyramid levels f_c. transformation for c-th pyramid level, design as bottleneck Fractional Max-Pooling pooling reduces the resolution too fast fractional max-pooling to approximate the smoothing and subsampling process s_c. subsampling ratio ∈ [2^{-M}, 1] set M = 1, C = 4 Training and Inference BN is less effective because of the small minibacth due to the large memory consumption of networks. Loss Function for k-th body joint z_k=(x_k, y_k), ground-truth score map S_k is generated from a Gaussian with mean z_k and variance Σ Forward Propagation(Assumption μ=0)To make the variances of the output y_l approximately the same for different layers, the condition must be satisfied in initialization, a proper variance for W_l should be α. depends on activation function, 0.5 for ReLU, 1 for Tanh and Sigmoid C_i. the number of input in l-th layers n_i. the number of elements in x_c, c=1,…, C_i Backward Propagation C_o. the number of output Special Case. C_o=C_i = 1 for plain network. Output AccumulationDrawbacks. identity mapping keeps increasing the variances of responses when the network goes deeper, which increase the difficulty of optimization. the identity mapping will be replaced by Conv to reduce or increase the channels, which can reset the variance to small value 1x1 Conv-BN-ReLU to replace identity mapping, which can stops the variance explosion find that breaking the variance explosion can provide a better performance Experiments Details 256x256 cropped scaling, rotation, flipping and adding color noise mini-batch 16 test. six-scale pyramid with flipping Comparison Ablation StudyVariant Scale of Pyramid and Weight initialization Controlling Variance Explosion [w]88.5 vs [w/o]88.0 vs [baseline] 87.6]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Body</category>
+        <category>Pose</category>
+      </categories>
+      <tags>
+        <tag>Pose</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Spiking Deep Residual Network]]></title>
+    <url>%2F2019%2F01%2F12%2FSpiking%20Deep%20Residual%20Network%2F</url>
+    <content type="text"><![CDATA[Hu Y , Tang H , Wang Y , et al. Spiking Deep Residual Network[J]. 2018. Overview Motivation big challenge to train a very deep SNN In this paper, it proposed an efficient approach to build a spiking version of ResNet Spiking ResNet. converting a trained ResNet to a network of spiking neurons shortcut normalization mechanism layer-wise error compensation. reduce error caused by discretistion accumulating sampling error caused by discretisation remains a crucial problem for deep SNNs converted from ANNs SNN solution to bridge the gap between performance and computational costs and theoretically can approximate any function as ANNs communicate each other via discrete events (spikes) instead of continuous-valued activations emulated by neuromorphic hardware (TrueNorth, SpiNNaker, Rolls). several orders of magnitude less energy consumption than by contemporary computing hardware fits to process input from AER-based (adress-event-representation) sensors that have low redundancy, low latency and high dynamic range , , such as DVC (dynamic vision sensor), auditory sensor (silicon cochlea) main challenge. find an efficient training algorithm that overcome the discontinuity of spiking and achieve comparable performance to ANN Related Workthe indifferentiability of SNN, it is hard to direclty apply classic learning methods of ANN. directly learn from spikes with BP-like algorithm by approximating the threshold function with linearity STDP (spiking-timing-dependent plasticity), rectangular STDP, exponential STDP convert pre-trained CNN to SNN add noise during training can improve the tolerance of errors caused by approximation ReLU eliminates all negative activations and continuous value in ANNs equals the firing rate of neuron in SNN conver several successful techniques in ANNs to SNN version, such as sparse coding, dropout, stacked auto-encoder conver common operations in ANNs such as max-pooling, softmax, BN and Inception-Modules to spiking equivalents usually focus on shallow network Residual residual networks are equivalent to RNNs and RNNs are biologically plausible models of vision cortex biological finding indicate that it takes much less time to alter the weights of synapse than creating a new synaptic connection with residual learning, we can re-train falsely learned knowledge by simply suppressing synaptic weights in stacked layers, without introducing new synaptic connection if we interpret the addition as integration of incoming information, then each residual block in pre-activation structure is actually integrating the output information from every residual block that is lower than itself, which is similar to the integration of high level knowledge and low level knowledge in biological system Methods Overview ReLU can approximate the firing rate of spiking IF neuron Batch Normalization replace x by the output from previous layer x_n = Wx_{n-1} + b. In spiking network, directly regulating the weight and bias of previous layer. Weight Normalization λ^l. max 99.9% activation at layer l instead of the actual max activation as using the actual max activation is more prone to be susceptible to outliers Problem spiking residual network is a directed acyclic graph. In order to scale the activation appropriately, we must also take its input from the shortcut connection into consideration as the conversion introduces new synaptic weights in shortcuts sampling error caused by discretisation is the major factor for degradation Shorcut Normalization max_1, max_2, max_3 denote max activations in ReLU1, ReLU2, ReLU3 (W_1, b_1), (W_2, b_2) in Conv1, Conv2 Compensation of Sampling Error shallow network. sampling error has no significant impact on performance deep network. actual max firing rate declines sampling error can be reduced by slightly enlarge the weights at each layer apply a compensation factor λ to each layer to reduce sampling errors by slightly enlarge the weights compensation factor λ is searched in a region of (1, τ_max). τ_max is the reciprocal firing max firing rate at last layer Experiments Comparison Shortcut Normalization ResNet vs CNN Error Compensation]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>Spiking ResNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Aggregated residual transformations for deep neural networks]]></title>
+    <url>%2F2019%2F01%2F12%2FAggregated%20residual%20transformations%20for%20deep%20neural%20networks%2F</url>
+    <content type="text"><![CDATA[Xie S, Girshick R, Dollár P, et al. Aggregated residual transformations for deep neural networks[C]//Computer Vision and Pattern Recognition (CVPR), 2017 IEEE Conference on. IEEE, 2017: 5987-5995. Overview Motivation transition from feature engineering to network engineering human effort has been shifted to designing better network architecture for learning representation important strategy of Inception model is split-transform-merge In this paper, it proposed ResNeXt Network aggregate a set of transformations with the same topology homogeneous multi-branch architecture increase cardinality (the size of the set of transformation) is more effective than going deeper or wider Related WorkMulti-branch Convolutional Network Inception. multi-branch ResNet. two-branch Group Convolution channel-wise convolution Compressing Convolutional Network decomposition. at spatial or channel Ensembling Method Simple Neurons Inner Product. can be recast as a combination of splitting, transforming and aggregating. D. the number of channel x=[x_1, x_2, …, x_D] Aggregated Transformations Network-in-Neuron. replace the elementary transformation (wx) with a more generic function All T_i have the same topology. T. arbitrary function; projects x into low-dimension embedding and then transforms it C. the size of the set of transformations Relation to Grouped Convolutions Depth ≥ 3 The block depth must ≥ 3. Capacity Left. 25664 + 336464 + 64*256 ≈ 70k parameters and proportional FLOPs Right. C(256d + 33dd + d256) ≈ 70k, when C=32, d=4 Experiments Cardinality vs Width with complexity preserved, increasing cardinality at the price of reducing width starts to show saturating accuracy more training data will enlarge the gap of validation error, shown in ImageNet-5K set the saturation is caused by the complexity of dataset, not the capacity of models Cardinality vs Deeper/Wider incrase cardinality better w/o Residual Comparison Detection]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>ResNeXt</tag>
+        <tag>Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2018 Spotlight) Probabilistic U-Net for Segmentation of Ambiguous Images]]></title>
+    <url>%2F2019%2F01%2F05%2FProbabilistic%20U-Net%20for%20Segmentation%20of%20Ambiguous%20Images%2F</url>
+    <content type="text"><![CDATA[Kohl S, Romera-Paredes B, Meyer C, et al. A probabilistic u-net for segmentation of ambiguous images[C]//Advances in Neural Information Processing Systems. 2018: 6965-6975. Overview Motivation many real-world vision problems suffer from inherent ambiguities which are common in medical imaging applications a group of graders typically produces a set of diverse but plausible segmentation In this paper consider the task of learning a distribution over segmentations given an input propose generative segmentation modle (UNet+Conditional VAE) producing a unlimited number of plausible hypotheses experiments on LIDC-IDRI and Cityscape Contribution the proposed framework provides consistent segmentation maps instead of pixel-wise probabilities induce arbitrarily complex output distributions including the occurrence of very rare modes sampling is computationally cheap allow quantitative performance evaluation Dataset LIDC-IDRI 4 annotation per input contain 1018 lung CT scans from 1010 lung patients with annotation from 4 experts (split to 772 patients train, 144 validation, 144 test) resample (0.5mm x 0.5mm) and cropped 2D images (180x180 pixels) centered at the lesion positions. get 8882 train, 1996 validation, 1992 test Cityscapes total 19 different semantic classes create ambiguities by artifical random flips of five classes to newly introduced classes sidewalk to sidewalk2 with probability of 8/17 person to person2 with 7/17 car with 6/17 vegetation with 5/17 road with 4/17 500 test, split off 274 as validation from 2975 train Methods Prior Net &amp; UNet w. parameters of prior net m. the number of segmentations to predict of an image X Θ. parameters of UNet f_comb. 1x1 Conv with parameters psi during m times, z and feature of UNet can be reused, only f_comb needs to be re-evaluated Posterior Net v. parameters of posterior net, that learn to recognize a segmentation variant, given the raw image X and gt segmentation Y) and to map this to a position μ with some uncertainty sigma in the latent space S. prediction Metric Y, Y’. independent samples from gt distribution S, S’. independent samples from the predicted distribution In LIDC m = 4. gt samples n samples from model Experiments Baseline Comparison Visualization]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Multiple Hypotheses</category>
+      </categories>
+      <tags>
+        <tag>Medical</tag>
+        <tag>Lung</tag>
+        <tag>Segmentation</tag>
+        <tag>Multiple Hypotheses</tag>
+        <tag>UNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(MICCAI 2018) DeepASL:Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning]]></title>
+    <url>%2F2019%2F01%2F05%2FDeepASL%3A%20Kinetic%20Model%20Incorporated%20Loss%20for%20Denoising%20Arterial%20Spin%20Labeled%20MRI%20via%20Deep%20Residual%20Learning%2F</url>
+    <content type="text"><![CDATA[Ulas C, Tetteh G, Kaczmarz S, et al. DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning[C]//International Conference on Medical Image Computing and Computer-Assisted Intervention. Springer, Cham, 2018: 30-38. Overview MotivationArterial spin labeling (ASL) allows to quantify the cerebral blood flow (CBF) by magnetic labeling of the arterial blood water, but suffers from an inherently low-signal-to-noise ratio (SNR). In this paper FCN to learn residual from noisy perfusion-weighted image incorporate the CBF estimation model in the loss function during training Model Input. 2D noisy gray image patches 8 Conv2D (48 channels, 3x3, following pReLU) + 1 Conv2D (no activation) training. 18000 patch pairs of 40x40, batch size 500, 200 epoch, LR 0.0001 CBF Estimation Model β. brain-blood partition coefficient T_{1b}. longitudinal relaxation time of blood α. labeling efficiency τ. label duration PLD. post-label delay SI_{PD}. proton density weighted image ΔM. perfusion-weighted images Loss Function N. noisy f_t. reference CBF value for each voxel Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Cerebral</category>
+      </categories>
+      <tags>
+        <tag>Medical</tag>
+        <tag>Segmentation</tag>
+        <tag>Cerebral Blood Flow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Accurate Lung Segmentation via Network-Wise Training of Convolutional Networks]]></title>
+    <url>%2F2019%2F01%2F05%2FAccurate%20Lung%20Segmentation%20via%20Network-Wise%20Training%20of%20Convolutional%20Networks%2F</url>
+    <content type="text"><![CDATA[Hwang S, Park S. Accurate Lung Segmentation via Network-Wise Training of Convolutional Networks[M]//Deep Learning in Medical Image Analysis and Multimodal Learning for Clinical Decision Support. Springer, Cham, 2017: 92-99. Overview In this paper, it proposed network-wise training 3 Conv + 6 Resblock (15 layers) dilation = 3 for the end of two residual blocks conv-BN global stride = 4 fewer parameters Details one fold (124 odd numbers) and one fold (123 even number) one fold train, another test, then calc avg resize to 256x256 Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Medical</tag>
+        <tag>Lung</tag>
+        <tag>Segmentation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Squeeze-and-excitation networks]]></title>
+    <url>%2F2019%2F01%2F05%2FSqueeze-and-excitation%20networks%2F</url>
+    <content type="text"><![CDATA[Hu J, Shen L, Sun G. Squeeze-and-excitation networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 7132-7141. Overview In this paper, it propsed SE block (Squeeze-and-Excitation). adaptively recalibrates channel-wise feature responses by explicity modelling interdependencies between channels SE network Methods Squeeze: Global Information Embedding global pooling Excitation: Adaptive Recalibration FC + ReLU FC + Sigmoid Example Implementation Experiments Ablation Study Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Component</category>
+      </categories>
+      <tags>
+        <tag>Segmentation</tag>
+        <tag>Component</tag>
+        <tag>SE Block</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(CVPR 2017) Dilated Residual Networks]]></title>
     <url>%2F2019%2F01%2F05%2FDilated%20Residual%20Networks%2F</url>
     <content type="text"><![CDATA[Yu F, Koltun V, Funkhouser T. Dilated residual networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 472-480. Overview Motivation progressively reduce resolution is harmful for segmentation, even classification In this paper, it proposed DRN (Dilated Residual Network) increase the resolution of output feature maps without reducing the receptive filed of individual neurons removing gridding artifacts introduce by dilation Dilated Residual Networks remove the stride-2 in layer-4 and layer-5 set dilation = 2 of block_i in layer-4, i≥2 set dilation = 2 of block_1 in layer-5 set dilation = 4 of block_i in layer-5, i≥2 Degridding removing max pooling adding layers removing residual connections Experiments]]></content>
@@ -86,9 +454,9 @@
       </categories>
       <tags>
         <tag>Classification</tag>
+        <tag>Back Propagation</tag>
         <tag>Dendrite</tag>
         <tag>Cortex</tag>
-        <tag>Back Propagation</tag>
       </tags>
   </entry>
   <entry>
@@ -379,8 +747,8 @@
         <category>Adversarial Attack</category>
       </categories>
       <tags>
-        <tag>Adversarial Attack</tag>
         <tag>Segmentation</tag>
+        <tag>Adversarial Attack</tag>
         <tag>Detection</tag>
       </tags>
   </entry>
@@ -393,8 +761,8 @@
         <category>Adversarial Attack</category>
       </categories>
       <tags>
-        <tag>Adversarial Attack</tag>
         <tag>Segmentation</tag>
+        <tag>Adversarial Attack</tag>
       </tags>
   </entry>
   <entry>
@@ -425,9 +793,9 @@
         <category>Network</category>
       </categories>
       <tags>
+        <tag>Network</tag>
         <tag>TCN</tag>
         <tag>NLP</tag>
-        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -440,8 +808,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>NLP</tag>
         <tag>Network</tag>
+        <tag>NLP</tag>
         <tag>Transformer</tag>
       </tags>
   </entry>
@@ -471,8 +839,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>NLP</tag>
         <tag>Network</tag>
+        <tag>NLP</tag>
         <tag>Cross-Modality</tag>
         <tag>Word-CNN-RNN</tag>
         <tag>Character-CNN-RNN</tag>
@@ -1268,8 +1636,8 @@
       <tags>
         <tag>Classification</tag>
         <tag>Component</tag>
-        <tag>Attention</tag>
         <tag>Non-local</tag>
+        <tag>Attention</tag>
         <tag>Video Classification</tag>
       </tags>
   </entry>
@@ -1315,8 +1683,8 @@
       <tags>
         <tag>Classification</tag>
         <tag>Cognitive Neuroscience</tag>
-        <tag>EM Algorithm</tag>
         <tag>CapsulesNet</tag>
+        <tag>EM Algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -1528,8 +1896,8 @@
       <tags>
         <tag>Segmentation</tag>
         <tag>Network</tag>
-        <tag>Cell</tag>
         <tag>UNet</tag>
+        <tag>Cell</tag>
         <tag>ISBI</tag>
       </tags>
   </entry>
