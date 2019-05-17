@@ -285,9 +285,9 @@
       <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
     
     
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
       <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
+    
+      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
     
       <category term="PixelCNN" scheme="http://yoursite.com/tags/PixelCNN/"/>
     

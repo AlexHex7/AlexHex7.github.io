@@ -134,8 +134,8 @@
         <category>Image Processing</category>
       </categories>
       <tags>
-        <tag>Image Generation</tag>
         <tag>Image Processing</tag>
+        <tag>Image Generation</tag>
         <tag>PixelCNN</tag>
         <tag>PixelRNN</tag>
       </tags>
@@ -1051,8 +1051,8 @@
         <category>Image Processing</category>
       </categories>
       <tags>
-        <tag>Image Generation</tag>
         <tag>Image Processing</tag>
+        <tag>Image Generation</tag>
         <tag>Dynamic Texture Synthesis</tag>
       </tags>
   </entry>
@@ -1353,10 +1353,10 @@
         <category>Image Processing</category>
       </categories>
       <tags>
+        <tag>Image Enhancement</tag>
         <tag>Image Generation</tag>
         <tag>coupleGAN</tag>
         <tag>GAN</tag>
-        <tag>Image Enhancement</tag>
       </tags>
   </entry>
   <entry>
@@ -1416,6 +1416,336 @@
       <tags>
         <tag>Overview</tag>
         <tag>Medical</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICPR 2018) Deep joint rain and haze removal from single images]]></title>
+    <url>%2F2018%2F01%2F23%2FDeep%20joint%20rain%20and%20haze%20removal%20from%20single%20images%2F</url>
+    <content type="text"><![CDATA[Shen L, Yue Z, Chen Q, et al. Deep joint rain and haze removal from a single image[C]//2018 24th International Conference on Pattern Recognition (ICPR). IEEE, 2018: 2821-2826. Overview Motivation Rain streak correspond to high-frequency Haze correspond to dark channel Paper proposed Deep Joint Rain and Haze Removal Network (DJRHR-net) Haar wavelet transform Extract dark channel as input Wavelet Transformation LL. background HL. vertical LH. horizontal HH. diagonal Simple Rain Removal Network (SRR-net)Spectrum of an image loses a lot of great properties such as local receptive field, which makes it difficult to use convolutional neural network Process Loss function DJRHR-netIt is more effective to add the artificial feature directly than the features learned by the deep network. Process Loss Function DatasetTrainSetA Directly used Deep Detail Network’s Without haze veil 12 type rain streaks TrainSetB 1449 RGBD from NYU Depth V2 12 type rain streaks Experiments Training Setup Dense Block Remove BN and pooling to get better result Metric PSNR SSIM NIQE. the lower the better Synthetic Real DenseBlock parameters]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>De-raining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Zero-Shot Super-Resolution using Deep Internal Learning]]></title>
+    <url>%2F2018%2F01%2F23%2FZero-Shot%20Super-Resolution%20using%20Deep%20Internal%20Learning%2F</url>
+    <content type="text"><![CDATA[Shocher A, Cohen N, Irani M. “Zero-Shot” Super-Resolution using Deep Internal Learning[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 3118-3126. Overview Motivation Existing SR supervised method rely on prior training (restricted to training data) Non-ideal acquisition process in reality (not always bicubic, bilinear), old photo, noisy image, biological data, phone image Natural images have strong internal data repetition (at different location and scale). Internal entropy of patches inside a single image is much smaller than the external entropy of patches in a general collection of natural images 论文提出Zero-Shot SR方法 Not rely on prior training Exploit internal recurrence of information inside a single image Perform SR on real image where the acquisition process is unknown and non-ideal Train a small CNN at test time only from the LR image and its downscaled (self-supervision) train + test time is comparable to the test time of SotA Contribution First unsupervised CNN-based SR method Handle non-ideal condition Not require pretraining SR any size Related WorkSupervised EDSR VDSR Unsupervised (not deep learning) Blind-Deblurring Blind-Dehazing Blind-SR Model Downscaling test image to many smaller version of itself (HR-fater vs LR-son). Gradually SR. Several intermediate scale-factors 4 Rotations (0, 90, 180, 270) and 2 flip Learn residual Select rate based on proportional to the size of the HR-father. Size close to test image has high rate 8 output of test image (4R x 2F), take median + back-projection More intermediate scale-factor increase accuracy Time independent of image size and scale-factor 54 s/img on GPU, EDSR+ 20s on 200x200 image, EDSR 5min on 800x800 image Parameters Downscaling kernel Scale-factor Number of gradual scale increase Whether Backprojection Whether add noise (learn to ignore uncorrelated cross-scale information) Future Work Combine Internal-Learning with External-Learning in a single computational framework Experiments Ideal Case (bicubic kernel) Non-ideal CaseDeviate from bicubic Random Gaussian Kernel Two case apply to ZSSR Blind-SR evaluate kernel, feed to ZSSR True kenel feed to ZSSR Solution Accurate downscaling model is more important than sophisticated image prior Wrong downscaling kernel lead to oversmoothed SR result Low-quality LR image Gaussian noise Speckle noise JPEG compression]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+        <tag>Unsupervised</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Deep Image Prior]]></title>
+    <url>%2F2018%2F01%2F23%2FDeep%20Image%20Prior%2F</url>
+    <content type="text"><![CDATA[Ulyanov D, Vedaldi A, Lempitsky V. Deep image prior[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 9446-9454. Overview 目前深度学习都是learning-based方式，论文将深度学习作为learning-free方式 used as handcrafted priors to solve inverse problems, such as denoising, super-resolution, inpainting, restore image based on flash-no flash image generator network is sufficient to capture low-level image statistics proir bridge the gap between learning-based and laerning-free first study to investigates the prior captured by deep convolutional generative networks independently of learning the network parameters from images Loss Function input. random noise, usually initialize randomly and keep it fixed gt. noise image Converge 图像的收敛比噪声快 应用 Denoising Super-Resolution input. random noise gt. H x W output. tH x tW, and then downsampled H x W Inpainting output. x gt. x0, image with missing pixel m. binary mask skip-connection对该类任务的效果较差 Natural Pre-image pre-image loss function Flash-no Flash Reconstruction]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+        <tag>Inpainting</tag>
+        <tag>Inverting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2018) Discriminative Region Proposal Adversarial Networks for High-Quality Image-to-Image Translation]]></title>
+    <url>%2F2018%2F01%2F23%2FDiscriminative%20Region%20Proposal%20Adversarial%20Networks%20for%20High-Quality%20Image-to-Image%20Translation%2F</url>
+    <content type="text"><![CDATA[Wang C, Zheng H, Yu Z, et al. Discriminative region proposal adversarial networks for high-quality image-to-image translation[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 770-785. Overview 论文提出Discriminative Region Proposal Adversarial Network (DRPAN)结构，并用于一些任务 de-raining image-to-image translation 模型 Discriminator generate score map find the most artificial patch by sliding window map the patch into the real image, generate fake-mask real w. sliding window size w_s. score map size w_i. input image size w_*. patch size of input image that window map to x_c, y_c. center point of score map patch τ. scale d_r. discriminate region of input image Reviser discriminate Loss Function Discriminator Reviser δ. noise Generator Algorithm 数据集 Cityscapes Facades SUN6 UT Zappos 50K edge to handbag Related Work ID-CGAN Pix2Pix CRN (cascaded refined network) Metric PSNR SSIM VIF RECO IOU FCN-score AMT Inception score 实验结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>GAN</tag>
+        <tag>De-raining</tag>
+        <tag>Image-to-Image Translation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) xUnit:Learning a Spatial Activation Function for Efficient Image Restoration]]></title>
+    <url>%2F2018%2F01%2F22%2FxUnit%3A%20Learning%20a%20Spatial%20Activation%20Function%20for%20Efficient%20Image%20Restoration%2F</url>
+    <content type="text"><![CDATA[Kligvasser I, Rott Shaham T, Michaeli T. xUnit: learning a spatial activation function for efficient image restoration[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 2433-2442. Overview 目前 0% parameters in Activation unit (nonlinearities), Conv (spatial processing) Network deeper and deeper 因此，论文提出xUnit结构 learnable nonlinear function with spatial connection reduce layer used in low-level task (denoising, de-raining, super resolution) Related Work ELUs SRCNN VDSR SRResNet EDSR ESPCN Binarized Neural Networks Deep Detail Network DehazeNet MobileNet 模型 Conv+Activation形式如下： ReLU o表示点乘，定义0/0=0. xUnit H_k为depth-wise convolution.对于d-channel输入，d-channel输出而言，计算复杂度为 标准Conv. rxrxdxd depth-wise Conv. rxrxd Experiments Compare 特征图可视化ReLU丢弃了大部分特征图（黑色），而xUnit大部分特征图都参与后续计算（白色）。 Denoising De-raining (PSNR) 28.94 VS 31.17. Super Resolution]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Component</category>
+      </categories>
+      <tags>
+        <tag>Component</tag>
+        <tag>Super Resolution</tag>
+        <tag>De-raining</tag>
+        <tag>xUnit</tag>
+        <tag>Activation Unit</tag>
+        <tag>Denoising</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) WaterGAN:unsupervised generative network to enable real-time color correction of monocular underwater images]]></title>
+    <url>%2F2018%2F01%2F22%2FWaterGAN%3A%20unsupervised%20generative%20network%20to%20enable%20real-time%20color%20correction%20of%20monocular%20underwater%20images%2F</url>
+    <content type="text"><![CDATA[Li J, Skinner K A, Eustice R M, et al. WaterGAN: unsupervised generative network to enable real-time color correction of monocular underwater images[J]. IEEE Robotics and Automation Letters, 2018, 3(1): 387-394. Overview 论文 基于SimGAN的思想，提出WaterGAN模型。通过un-supervised方法利用WaterGAN将in-air image渲染成underwater image 基于渲染得到的underwater image，通过supervised方法利用Restoration Network将underwater image恢复成in-air image Related Work CNN SimGAN RenderGAN 模型WaterGAN 输入大小：48x64 Attenuation η：wavelength-dependent attenuation coefficient estimated by networkr_c：range from camera to sceneλ：color channel约束η≥0：确保颜色衰减而不增强 Scattering 输入：48x64 depth map + 100 noise (project, reshape, concat) 计算：3个并行CNN 输出：48x64x3 mask Camera Modela, b, c, k estimated by network. 约束条件 Restoration Network 使用segNet中的non-parametric upsampling layer (uses the index information from corresponding max-pooling layers). Depth Estimation Network 输入：56x56x3 downsampled 输出：56x56x1 Loss：L2 Color Restoration Network 输入：480x480x1 upsampled and then padded to 512x512x1 下采样：128x128 AvgPooling Core Component 上采样：512x512 DeConv (initialized by bilinear interpolation) Loss：L2 数据集 Synthetic4 Kinect dataset (B3DO, UW RGB-D Object, NYU Depth, Microsoft 7-scenes). Total 15000 RGB-D images (12000 training, 3000 validation). MHL (University of Michigan’s Marine Hydrodynamics Laboratory)7000 underwater images. Port Royal6500 underwater images, maximum depth 1.5m. Lizard Island6083 underimages, maximum depth 2.0m. Metric Color Accuracy Color Consistenct 实验结果 MHL Validation Skip Connection]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>DeWater</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>GAN</tag>
+        <tag>SimGAN</tag>
+        <tag>DeWater</tag>
+        <tag>WaterGAN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(AAAI 2018) Towards Perceptual Image Dehazing by Physics-based Disentanglement and Adversarial Training]]></title>
+    <url>%2F2018%2F01%2F22%2FTowards%20Perceptual%20Image%20Dehazing%20by%20Physics-based%20Disentanglement%20and%20Adversarial%20Training%2F</url>
+    <content type="text"><![CDATA[Yang X, Xu Z, Luo J. Towards perceptual image dehazing by physics-based disentanglement and adversarial training[C]//Thirty-second AAAI conference on artificial intelligence. 2018. Overview 现有的de-hazing方法 on synthetic dataset hand-designed priors supervised training 因此，论文提出Disentangled Dehazing Network weakly-supervised GAN, multi-scale discriminator physical-model based disentanglement reconstruction collect HazyCity dataset Related Work DehazeNet MSCNN AOD-Net CycleGAN dualGAN AIGN WaterGAN discoGAN UNIT 模型 Generator G_J. 生成clean image G_A.生成atmosphere light G_t. 生成transmission map Discriminatormulti-scale结构 local discriminator (感知域70x70). Model high-frequency structure (texture/style recognition) global discriminator (感知域256x256). Global information, alleviate artifacts Reconstruction Reconstruction Loss Adversarial Loss Regularization Lossthe smoothness of the medium transmission map. Recovering Method of Haze-free Image The output of G_J Generate from A and t Combine 数据集 D-HAZY (synthetic) β=1, A=255. NYU-Depth (23 images). Middlebury (1449 images). HazyCity (real) natural, outdoor. Build on PM25 dataset. hazy (845), haze-free (1891) crawled from tourist website and photos of various attraction sites and street scenes in Beijing. 三个标注者，选取标注一致的图片。 Future Work de-raining image matting Experiments Baselineprior-based DCP CAP NCP learning-based DehazeNet MSCNN CycleGAN Metric PSNR SSIM CIEDE2000. measure color difference 实验结果 Ablation Study]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>GAN</tag>
+        <tag>Unsupervised</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Single Image Deraining using Scale-Aware Multi-Stage Recurrent Network]]></title>
+    <url>%2F2018%2F01%2F22%2FSingle%20Image%20Deraining%20using%20Scale-Aware%20Multi-Stage%20Recurrent%20Network%2F</url>
+    <content type="text"><![CDATA[Li R, Cheong L F, Tan R T. Single Image Deraining using Scale-Aware Multi-Stage Recurrent Network[J]. arXiv preprint arXiv:1712.06830, 2017. Overview 现实生活中rain的两个显著特点 Rain streaks of various sizes and directions can overlap each other Veiling effect 因此，论文提出Scale-aware Multi-stage CNN parallel sub-network to deal with different rain streaks veil module to deal with veiling effect multi-stage to deal with rain streaks accumulation (DenseNet能够提高效果) Related Work DetailsNet JORDER Have not been subject to the full force of the tropical heavy rain. Have not been tested where the scenes contain a range of depths. Model Rain Model FrameworkDenseNet结构去掉transition layer，不使用down-sampling. Veil Module 训练集包含不同的A值。测试阶段将最亮的pixel设为A. Loss Function Experiments 数据集 BSD300 rain size (area). small (0, 60], middle (60, 300], large (300, 600). 3300 rain images containing 11 rain streak orientation. NYU (depth information) Rain12 12 synthetic rain image with one type streak. Rain12S extension of Rain12. various sizes and densities of streak. Rain100-COCO rander different-sized streak on 100 images from COCO. Rain12-Veil rander streak and atmosphere veils. 12 images from BSD300. 实验结果 Ablation Study]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>De-raining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Joint Transmission Map Estimation and Dehazing using Deep Networks]]></title>
+    <url>%2F2018%2F01%2F22%2FJoint%20Transmission%20Map%20Estimation%20and%20Dehazing%20using%20Deep%20Networks%2F</url>
+    <content type="text"><![CDATA[Zhang H, Sindagi V, Patel V M. Joint transmission map estimation and dehazing using deep networks[J]. arXiv preprint arXiv:1708.00581, 2017. Overview 大多数现有的方法假设constant atmosphere light，包含两个步骤 基于prior-based方法估计transmission map 近似解计算haze-free image 论文提出multi-task结构 Relax constant atmosphere light assumption, joint estimate transmission map and de-hazing Introduce GAN Introduce perceptual loss Related Work DehazeNet Multi-scale Net Model PReLU Generator使用U-Net结构 Loss Function Transmission Map Loss Dehazing LossPerceptual loss (VGG-16 relu3_1) 速度512x512. 18 fps 数据集α ∈ [0.5, 1.2]. β ∈ [0.4, 1.6] NYU Depth Dataset Training Set. 600 images x 4 Testing Set. 300 images x 4 Real Set. 30 images Experiments AblationStudy Adversarial Loss Perceptual Loss Euclidean Loss Transmission Map 实验结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) CANDY:Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal]]></title>
+    <url>%2F2018%2F01%2F22%2FCANDY%3A%20Conditional%20Adversarial%20Networks%20based%20Fully%20End-to-End%20System%20for%20Single%20Image%20Haze%20Removal%2F</url>
+    <content type="text"><![CDATA[Swami K, Das S K. Candy: Conditional adversarial networks based fully end-to-end system for single image haze removal[J]. arXiv preprint arXiv:1801.02892, 2018. Overview 现有的去雾方法关注intermediate parameter (transmission map)，并没有将haze-free image quality考虑到optimization framework中。而intermediate parameter的估计误差会进一步影响haze-free image的质量。 因此，论文提出CANDY (Conditional Adversarial Networks based Dehazing of hazY images)结构 First work of end-to-end de-hazing to generate haze-free image First work of introducing GAN for de-hazing 速度On GPU. 256x256. 35ms 1024x1024. 53ms Model size 3MB Related Work估计intermediate parameter，没有将image quality考虑到optimization framework中。 DehazeNet Multi-scale Net Model Generator 6 Conv + 6 Deconv. 3x3 kernel size, 64 channels, 1 stride, 1 padding Down-Sampling会导致图片特征丢失 PReLU Discriminator 7 Conv. 3x3, 2s, 1p, double channel Leaky ReLU. λ=0.2 Loss Function Content Loss Feature Reconstruction Loss 使用VGGNet提取 9(relu2_2) 16(relu3_3) 23(relu4_3) 数据集 Make3D Depth BSDS500 MeddleBury NYU Depth只包含indoor images 论文使用CVPR 2015的single image depth estimation方法估计图片的depth α = [k, k, k], k ∈ [0.7, 1], β ∈ [0.5, 1.5] Training Set 700 x 3 images. 500 from Make3D, 200 from BSDS500 Validation Set 40 images Testing Set Test-Synthetic-A. 90 from Make3D and BSDS500 Test-Synthetic-B. 23 from Middlebury Test-Real-500 Experiments Baseline GEN. L2 loss + 9th L2 loss CANDY_L1_9P. 500 iteration GEN initialized … 模型选择 Smooth L1比L2更有效，并且能够稳定GAN训练 Lower Layers feature reconstruction的结果更好。可能是因为higher layer preserve spatial structure，而忽略了texture and color 最终选择CANDY_L1_9P。 实验结果 Night Hazy ImageAlthough train on daytime hazy image, it can work on night hazy image.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ITIP 2016) Dehazenet:An end-to-end system for single image haze removal]]></title>
+    <url>%2F2018%2F01%2F22%2FDehazenet%3A%20An%20end-to-end%20system%20for%20single%20image%20haze%20removal%2F</url>
+    <content type="text"><![CDATA[Cai B, Xu X, Jia K, et al. Dehazenet: An end-to-end system for single image haze removal[J]. IEEE Transactions on Image Processing, 2016, 25(11): 5187-5198. Overview 论文提出DehazeNet结构 Maxout unit to generate almost all haze-relevant feature Bilateral rectified linear unit (BReLU) 模型结构 Local Extremum假设medium transmission是局部常量。 BReLU Maxout Maxout activation functions can be considered as piece-wise linear approximations to arbitrary convex functions. Haze-Relevant Feature Dark Channel Haze-free patches中至少有一个channel中的一些像素值非常低，接近0. 因此，dark channel feature与haze amount高相关，能够用来估计medium transmission. Maximum Contrast Haze transmission会减小对比度。因此，contrast与medium transmission高相关。 Color AttenuationPrior：Hazy导致saturation下降，brightness上升。 Color attenuation feature： 与depth成正比，能够用于transmission estimation. Hue DisparityOriginal image与semi-inverse image之间的hue disparity能够用于检测haze. Semi-inverse Image]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Dehazenet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2016) Single image dehazing via multi-scale convolutional neural networks]]></title>
+    <url>%2F2018%2F01%2F22%2FSingle%20image%20dehazing%20via%20multi-scale%20convolutional%20neural%20networks%2F</url>
+    <content type="text"><![CDATA[Ren W, Liu S, Zhang H, et al. Single image dehazing via multi-scale convolutional neural networks[C]//European Conference on Computer Vision. Springer International Publishing, 2016: 154-169. Overview 现有的hand-designed feature dark channel color disparity maximum contrast fusion schemes 存在局限性。因此，论文提出multi-scale结构 coarse-scale net. predict holistic transmission map fine-scale net. refine result locally 模型 网络使用max-pooling增加模型的非线性能力，而输出的t需要与hazy image尺寸一样，因此使用bilinear interpolation. 网络预测透射率矩阵t. 选择t中0.1%透射率最小的像素点位置，对应到hazy image像素点，其中强度最大的值作为A 当t为0时，对其设置阈值 Loss Function 同时用在coarse-scale和fine-scale的网络输出上. 数据集 A = [k, k, k], k ∈ [0.7, 1.0] β ∈ [0.5, 1.5] β ∈ (0, 0.5)，透射率增大，导致thin haze, boost noise β ∈ (1.5, OO)， 透射率减小 利用数据集提供的depth-meta生成数据. 320 x 240 NYU Depth Dataset Training Set. 6000 images x 3 Middlebury Stereo Dataset Valid Set. 50 images x 3 Related Work Multiple images Albedo Maximizing local contrast Boundary constraint and contextual regularization Dark channel prior Random Forest Experiments 实验结果 He.估计的透射矩阵是均匀分布的，一些区域中的hazy thickness overestimated. 运行时间 泛化性虽然real image depth通常很大，而训练集中的depth较小。但是可以通过调整介质的消光系数（medium extinction coefficient）来增加雾的浓度。这种方案独立于depth，能够包含real transmission map的范围。 Fine-Scale的作用 3-scale网络性能并没有提升 single-deep-scale网络性能降低 得出结论：相比于high-level task，deep structure对low-level task并不明显。 Up-Sampling的作用 (c)不使用pooling，效果较差 虽然(d)与(b)相似，但(b)计算量较大 特征提取方法对比 CNN提取的特征类似于dark channel, local max contrast. Failure Case 由于缺少相应数据，对夜间hazy image效果并不好 Future Work 处理上述缺陷 End-to-end同时估计transmission map, atmosphere light]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Aod-net:All-in-one dehazing network]]></title>
+    <url>%2F2018%2F01%2F21%2FAod-net%3A%20All-in-one%20dehazing%20network%2F</url>
+    <content type="text"><![CDATA[Li B, Peng X, Wang Z, et al. Aod-net: All-in-one dehazing network[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 4770-4778. Overview 此前的大多数工作都是独立估计 Transmission matrix Atmosphere light 但是，通过non-joint估计的这两个参数在同时使用时，可能会进一步放大误差。 DehazeNet overestimate A and cause overexposure visual effect 因此论文 基于re-formulated atmosphere scattering model 提出AOD-Net，直接生成clean image AOD-Net可直接嵌入到其他模型中，如Faster R-CNN 0.026s to process 480x640 image with a single GPU Re-formulated Atmosphere Scattering Model 基本物理模型 Re-formulated估计K（即联合估计A和t） Model 相关工作 Maximizing the local contrast Estimate the albedo of the scene Dark channel prior Enforce the boundary constraint and contextual regularization Color attenuation prior and A linear model of scene depth (Deep Learning) MSCNN. Multi-scale, coarse-to-fine transmission matrix DehazeNet. end-to-end for transmission estimation 数据集根据基本物理模型，通过设置不同的参数合成haze（数据集提供depth-meta） A. [0.6, 1.0],choosing each channel uniformly β. {0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6} NYU2 Depth Database 训练集. 27,256张图片 TestSetA. 3,170张图片 Middlebury Stereo Database TestSetB. 800张图片 Natural Hazy Image Experiments Synthetic实验结果 图片可以分解两个元素的和 Mean. 所有像素点的值设置为同一个均值，即与A有关的global illumination Residual. local structural variations and contrast 两张图片的MSE，可看作是Mean和Residual两部分的MSE 相比于local distortion，人眼对global illumination更敏感 实验证明，AOD-Net的Residual MSE与其他方法相近，但是Mean MSE更低 说明AOD-Net能够更好地recover A. 运行时间 Natural实验结果 Anti-halation 白色背景 嵌入到Faster R-CNN中雾霾程度 Heavy. A=1, β=0.1 Medium. A=1, β=0.06 Light. A=1, β=0.04]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Deep joint rain detection and removal from a single image]]></title>
+    <url>%2F2018%2F01%2F21%2FDeep%20joint%20rain%20detection%20and%20removal%20from%20a%20single%20image%2F</url>
+    <content type="text"><![CDATA[Yang W, Tan R T, Feng J, et al. Deep joint rain detection and removal from a single image[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 1357-1366. Overview 现实生活中的雨滴具有以下特性 远处的雨滴堆积产生类似于雾的大气遮盖物，散射光线，导致可见度降低 近处的雨滴产生镜面反射，遮挡背景 雨滴具有不同形状和方向. 尤其是大雨，可见度很低 现有的方法存在一些不足之处 雨滴与背景纹理存在重叠，去雨导致over-smoothing the regions 雨滴的退化效果很复杂，现有方法不能充分包含所有重要的因素 基于local patch或有限receptivefield 因此，论文 对雨滴进行建模 创建数据集Rain100H 并在此基础上提出multi-task深度学习框架 Contribution First method to model rain-streak binary mask, atmosphere veils and various shapes and directions of overlapping rain streaks First method to jointly detect and remove rains First rain method to use contextualized dilated network First method use recurrent to address heavy rain 相关工作 Sparse coding. Learned dictionary Low rank Non-local mean filter Discriminative sparse coding GMM Denoising, complement, super-resolution, deblurring, deconvolution, style tansfer, dehazing, light enhancement. 数据集数据集中的图片选择BSD200 Rain12, Rain100L. one type of rain streak Rain100H (论文提出). five type of rain streak，虽然现实生活中很少同时存在多种类型的rain streak. 但这样的训练数据能够提升网络性能 d. simulated sharp line streaks along a certain direction with a small variation Rain Image Model Widely Used Model此前的一些工作用 表示rain image model. 将rain removal转化为分离两个信号问题. O. Input image or Observe image B. Background layer S. rain streak layer但该模型存在缺陷 不同region中的S具有不同的密度，无法使用统一的S表示 没有区分rain region和no-rain region，造成no-rain region过度平滑 Region-dependent Model R为binary mask. 1表示rain region. 0表示no-rain region. 公式表明 提供额外gt (rain streak region)给神经网络模型. Multi-task pipeline. 检测rain region, 对rain region和no-rain region进行不同的处理 Rain Accumulation Model雨滴存在堆积的情况，并形成类似与雾的视觉效果。 Koschmieder模型适用于近似多种浓密的介质，如雾、水下等。因此，可将模型表示为 t. rain-streak layer index s. rain-streak layer number A. global atmosphere light α. atmosphere transmission 公式表明：可独立处理rain removal和rain accumulation Architecture Joint Rain Streak Detection and Removal (JORDER) 结构 通过Contextualized Dilated Network提取特征F 基于F预测R 基于[F, R]预测S 基于[F, R, S]预测SR B = O - SR Recurrent也可采用其他的策略：并行预测等。 Contextualized Dilated Network 分支一：Conv 3x3 1 dilate, Conv 3x3 1 dilate, 感知域5x5 分支二：Conv 3x3 2 dilate, Conv 3x3 2 dilate, 感知域9x9 分支三：Conv 3x3 3 dilate, Conv 3x3 3 dilate, 感知域13x13 Loss Function Recurrent 每次迭代的过程 最终生成图片 τ为迭代次数 Loss Function Rain-Accumulation Removal 虽然公式3表明，首先应做rain-accumulation removal. 但会增强图片中sharp, visible rain streak，导致与数据集中的rain streak不同。因此，论文的处理过程为 streak removal rain-accumulation removal streak removal Accumulation removal网络 Create another network based on the structure of contextualized dilated network, with only one recurrence Trained with the synthesized data generated with the random background reliance and transmission value Experiments Baseline JORDER-. 只有一条分支，不使用dilated convolutions JORDER. JORDER-R. JORDER-R-DEVEIL. Image Decomposition (ID) CNN DSC Layer Prior (LP) SRCNN 实验结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>De-raining</tag>
+        <tag>Rain Model</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(TPAMI 2015) Image super-resolution using deep convolutional networks]]></title>
+    <url>%2F2018%2F01%2F21%2FImage%20super-resolution%20using%20deep%20convolutional%20networks%2F</url>
+    <content type="text"><![CDATA[Dong C, Loy C C, He K, et al. Image super-resolution using deep convolutional networks[J]. IEEE transactions on pattern analysis and machine intelligence, 2016, 38(2): 295-307. Overview Kappeler A, Yoo S, Dai Q, et al. Video super-resolution with convolutional neural networks[J]. IEEE Transactions on Computational Imaging, 2016, 2(2): 109-122.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+        <tag>SRCNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Real-Time Video Super-Resolution with Spatio-Temporal Networks and Motion Compensation]]></title>
+    <url>%2F2018%2F01%2F21%2FReal-Time%20Video%20Super-Resolution%20with%20Spatio-Temporal%20Networks%20and%20Motion%20Compensation%2F</url>
+    <content type="text"><![CDATA[Caballero J, Ledig C, Aitken A, et al. Real-time video super-resolution with spatio-temporal networks and motion compensation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 4778-4787. Overview 基于ESPCN，论文 扩展到spatial-temporal 使用STN进行motion compensation 模型 Loss Function Fusion方案 数据集 CDVL. 115 uncompressed full HD videos 评价指标 MOVIE. Motion-based Video Integrity EvaluationThe MOVIE index was designed as a metric measuring video quality that correlates with human perception and incorporates a notion of temporal consistency. 实验结果 L. Layer number E5. Early fusion with 5 frame MC. Motion compensation]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+        <tag>Video</tag>
+        <tag>Optical Flow</tag>
+        <tag>FlowNet</tag>
+        <tag>Pixel Shuffle</tag>
+        <tag>VESPCN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Frame-Recurrent Video Super-Resolution]]></title>
+    <url>%2F2018%2F01%2F21%2FFrame-Recurrent%20Video%20Super-Resolution%2F</url>
+    <content type="text"><![CDATA[Sajjadi M S M, Vemulapalli R, Brown M. Frame-recurrent video super-resolution[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6626-6634. Overview 目前的視頻SR任务使用CNN+motion compensation方法，通过多个LR帧生成一个LR帧。当前State-of-art方法使用sliding window实现，但存在缺陷： 计算冗余. 多帧被重复计算 独立估计每帧. 限制了temporally consistent results 因此，论文提出frame-recurrent video super-resolution (FRVSR)框架，previous HR estimate参与到当前帧的预测 (optical flow warping) Temporally consistent result 降低计算量. 相比于sliding window, 每帧只计算一次 Assimilate a large number of previous frame No pre-train, end-to-end 处理任意size, length视频 模型 数据集训练集 vimeo.com下载40个HR视频，downsmaple 2倍 Extract 256x256 patch Gaussian blur. 方差1.5 提取相似场景连续帧 测试集 youtube.com下载3-5s HR视频（YT10） Future Work Occluded region Application. video compression Loss term. GAN, EnhenceNet. 相关工作 InterpolationBilinear, Bicubic, Lanczos Example-Based Dictionary Learning Self-similarity (Deep Learning) GAN Multi-frame (Expensive) Optical Flow Conv-LSTM Bidirectional Recurrent Architecture Experiments Baseline SISR. LR输入SRNet VSR. sliding window, warp t+1, t-1 to t帧, concate输入SRNet 实验结果 Blur Size Training Clip Length Degraded Input Temporal Consistent Range of Information Flow Network Size]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+        <tag>Video</tag>
+        <tag>Optical Flow</tag>
+        <tag>FlowNet</tag>
+        <tag>ESPCN</tag>
+        <tag>Pixel Shuffle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Real-time single image and video super-resolution using an efficient sub-pixel convolutional neural network]]></title>
+    <url>%2F2018%2F01%2F21%2FReal-time%20single%20image%20and%20video%20super-resolution%20using%20an%20efficient%20sub-pixel%20convolutional%20neural%20network%2F</url>
+    <content type="text"><![CDATA[Shi W, Caballero J, Huszár F, et al. Real-time single image and video super-resolution using an efficient sub-pixel convolutional neural network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 1874-1883. Overview 在此前的工作中，首先将low resolution (LR)图像upscale（bicubic插值）到high resolution (HR)空间。然后，输入到神经网络中。然而，这种方法的计算复杂度很大。 论文提出ESPCN结构(efficient sub-pixel convolutional neural network) 降低计算复杂度与速度.输入为LR空间图像（3 x h x w），网络结构中最后一层Conv层为efficient sub-pixel convolution layer （输出维度为3rr x h x w）.最后进行rearrange（3 x rh x rw）成HR空间 Pipeline不需使用bicubic 提高准确度 效果 Real-time SR of 1080p videos on single K2 GPU r*r times faster Perform better (+0.15dB on Images, +0.39dB on Videos) SR Problem ill-posed problem multiple solutions (one-to-many mapping). key assumption. Much of the high-frequency data（边缘） is redundant and thus can be accurately reconstructed from low frequency components Related Work Edge-based Image statistics-based Patch-based Sparsity-based (sparse coding). dictionary (prior) discover correspondence between LR and HR. Computation expensive Random forest Auto-encoder SRCNN DatasetImage Timofte (widely used by SISR paper)91张训练图片，2个测试集（Set5, Set14分别包含5张、14张图片）. Berkeley segmentation dataset (BSD300, BSD500) Super texture dataset136张texture图片. ImageNet机选取5000张. Video Xiph8 1920x1080 videos, length ≈10s. Ultra Video Group7 1920x1080 videos, length 5s. Future Work Neighbouring video frames Spatial-temporal network Experiments 网络结构实验中的ESPCN结构： Input (b, 3, h, w) Conv_1 (5x5, 64, 1s) –&gt; (b, 64, h, w) Conv_2 (3x3, 32, 1s) –&gt; (b, 32, h, w) Conv_3 (3x3, rr, 1s) –&gt; (b, 3r*r, h, w) PixelShuffle (r) –&gt; (b, 3, rh, rw)模型使用tanh，实验中与relu进行比较。 Loss FunctionMSE. 评价指标PSNR of luminance in YCbCr. 实验结果]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+        <tag>ESPCN</tag>
+        <tag>Pixel Shuffle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Removing rain from single images via a deep detail network]]></title>
+    <url>%2F2018%2F01%2F21%2FRemoving%20rain%20from%20single%20images%20via%20a%20deep%20detail%20network%2F</url>
+    <content type="text"><![CDATA[Fu X, Huang J, Zeng D, et al. Removing rain from single images via a deep detail network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 3855-3863. Overview 当object的structure, orientation与rain streak相似时，基于low-level图像特征的de-rain方法效果很差 ResNet通过改变映射形式简化训练过程 因此，论文提出用于de-rain的Deep Detail Network框架 利用lossless negative residual mapping, 缩小映射范围，简化训练过程. (输入)rain image - (预测)rain residual = (输出)clean image 引入prior信息（rain high-frequency）. 去除图片背景，得到包含object and rain streaks structures的图片，将其作为神经网络的输入，神经网络对rain structure建模. 此外，去除背景后的图片像素值范围缩小，且大部分像素点为0，其稀疏性能够提高效果。 Y: gt; X: rain image; X_detail: obj and rain streak structure; |Y - X|: rain structure. 创建数据集. 框架特点 可泛化到真实图像 通用性. 能用于去噪，降低JPEG artifacts 基于先验信息缩小映射范围（而ResNet改变映射形式） 数据集 从UCID、BSD和Google image search中收集1000张clean image 每张图片生成14种不同streak orientation and magnitude的rain image 相关工作分为两类 基于视频 基于单张图片 基于视频的de-rain任务可以使用inter-frame information，相对于基于单张图片而言，较简单。 基于单张图片的工作有： Non-local mean fltering GMM + patch-rank prior (low-rank) （patch-based） GMM + patch-based prior DSC (discriminative sparse coding). Dictionary Learning Findingsheavy rain image存在类似于haze的现象，因此，对图片进行de-haze预处理能够提高效果。 Deep Detail Network Direct Network 神经网络输入(X): rain image 神经网络输出&amp;gt: clean image 出现color shift现象. frobenius范数平方-求和-开方 Negative Residual Mapping 神经网络输入(X): rain image 神经网络输出: rain structure 模型输出: clean image = rain image - rain structure gt: clean image 通过缩小输出映射范围，减小solution space. 无法完全de-rain. Deep Detail Network 神经网络输入(X_detail): obj + rain structure image 神经网络输出: rain structure 模型输出: clean image = rain image - rain structure gt: clean image 输入具有稀疏性 + 输出缩小映射范围. Decompose使用guided filtering（实验中，半径设为15）作为low-pass filter，将图片分为 Base layer Detail layer Detail layer包含图片中object and rain streak structure信息. 网络结构 Experiments 实验与两个算法进行对比 [25] DSC [24] GMM + Patch-rank prior评价指标SSIM 合成数据 真实数据 测试时间[24] [25]算法为CPU运行时间。 收敛比较 网络depth vs width 与深度学习算法(ICCV 2013)比较 扩展任务（通用性）]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>De-raining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Image De-raining Using a Conditional Generative Adversarial Network]]></title>
+    <url>%2F2018%2F01%2F21%2FImage%20De-raining%20Using%20a%20Conditional%20Generative%20Adversarial%20Network%2F</url>
+    <content type="text"><![CDATA[Zhang H, Sindagi V, Patel V M. Image de-raining using a conditional generative adversarial network[J]. arXiv preprint arXiv:1701.05957, 2017. Overview 图像去雨/去雪任务具有ill-posed性质，此前大多数工作都引入了prior信息，将问题转化为well-posed。本篇论文（cGAN+refined loss函数, ID-CGAN），在不引入prior信息的情况下，达到state-of-art。 模型 Loss FunctionG loss 包含三部分 去雨图像与gt之间的L2 loss 对抗loss perceptual loss. 去雨图像与gt的特征L2 loss（通过VGG-16提取）实验中λ_a设为0.0066, λ_p设为1。 D loss 相关工作 SPM（sparse coding-based clustering method）. 使用双边滤波将图像分为高频和低频两个部分， 接着将高频图像分为有雨和无雨两部分。基于假设：雨的条纹具有相同的边缘方向。 DSC（discriminative sparse coding based method）. Dictionary Learning PRM. GMM + patch-based prior GMM. GMM + patch-rank prior CCR（convolutional coding-based method）. 学习convolutional low-rank filters CNN 相比于相关工作，ID-CGAN 关注优化函数 没有使用额外的处理方法 Drawbacks对于白色圆形雨点，不但无法去除，而且还会增强。可能的原因： 训练集缺少多样性 VGG-16捕获到白色原形雨点的特征，通过loss function使其增强 发现训练好的de-rain模型还具有de-snow和de-haze效果。 数据集 合成数据 训练集. 700张图片。其中，500张从UCID数据集前800张图片中随机抽取；剩余200张从BSD-500训练集随机抽取 测试集. 100张图片。其中，50张从UCID后500张中随机抽取；50张从BSD-500测试集随机抽取 使用photoshop加上雨状条纹（不同方向和像素强度）。图像resize到256x256. 真实数据从网上下载50张包含雨点的图片，且具有不同方向和像素强度。 实验 评价指标论文使用图像的luminance channel进行计算. PSNR（Peak Signal Noise Ratio） SSIM（Structure Similarity Index） UQI（Universal Quality Index） VIF（Visual Information ） Baseline GEN. 图像L2 loss CGAN. 图像L2 loss + 对抗loss CGAN-P. 对抗loss + perceptual loss Baseline实验结果 对抗loss能够提高视觉效果，但相关于常规CNN而言引进了artifacts Perceptual loss能够很好地的解决artifacts问题，以及增强实验效果。但不能完全消除artifacts，造成质量下降 算法比较]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>GAN</tag>
+        <tag>De-raining</tag>
+        <tag>Conditional GAN</tag>
       </tags>
   </entry>
   <entry>
@@ -1737,9 +2067,9 @@
         <category>Image Processing</category>
       </categories>
       <tags>
+        <tag>Image Enhancement</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Image Enhancement</tag>
         <tag>Conditional GAN</tag>
         <tag>Map to Aerial</tag>
         <tag>Reality Enhancement</tag>
@@ -1755,10 +2085,10 @@
         <category>Image Processing</category>
       </categories>
       <tags>
+        <tag>Image Enhancement</tag>
         <tag>Face</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Image Enhancement</tag>
         <tag>Map to Aerial</tag>
         <tag>Reality Enhancement</tag>
         <tag>Style Transfer</tag>
@@ -1774,9 +2104,9 @@
         <category>Image Processing</category>
       </categories>
       <tags>
+        <tag>Image Enhancement</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Image Enhancement</tag>
         <tag>Map to Aerial</tag>
         <tag>Style Transfer</tag>
         <tag>CycleGAN</tag>
