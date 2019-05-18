@@ -464,8 +464,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>ResNeXt</tag>
         <tag>Network</tag>
+        <tag>ResNeXt</tag>
       </tags>
   </entry>
   <entry>
@@ -477,8 +477,8 @@
         <category>Multiple Hypotheses</category>
       </categories>
       <tags>
-        <tag>Lung</tag>
         <tag>Medical</tag>
+        <tag>Lung</tag>
         <tag>Segmentation</tag>
         <tag>Multiple Hypotheses</tag>
         <tag>UNet</tag>
@@ -509,8 +509,8 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Lung</tag>
         <tag>Medical</tag>
+        <tag>Lung</tag>
         <tag>Segmentation</tag>
       </tags>
   </entry>
@@ -908,8 +908,8 @@
         <category>Adversarial Attack</category>
       </categories>
       <tags>
-        <tag>Segmentation</tag>
         <tag>Adversarial Attack</tag>
+        <tag>Segmentation</tag>
         <tag>Detection</tag>
       </tags>
   </entry>
@@ -922,8 +922,8 @@
         <category>Adversarial Attack</category>
       </categories>
       <tags>
-        <tag>Segmentation</tag>
         <tag>Adversarial Attack</tag>
+        <tag>Segmentation</tag>
       </tags>
   </entry>
   <entry>
@@ -955,8 +955,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Network</tag>
         <tag>TCN</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -1020,8 +1020,8 @@
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
         <tag>Face</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Attribute to Face</tag>
       </tags>
   </entry>
@@ -1037,8 +1037,8 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Semantic Image Synthesis</tag>
       </tags>
   </entry>
@@ -1054,8 +1054,8 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Text to Image</tag>
         <tag>Location-Controllable</tag>
       </tags>
@@ -1072,8 +1072,8 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Text to Image</tag>
         <tag>StackGAN</tag>
       </tags>
@@ -1090,8 +1090,8 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Text to Image</tag>
       </tags>
   </entry>
@@ -1452,9 +1452,9 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1470,9 +1470,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1488,9 +1488,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>MIMIC-CXR</tag>
         <tag>Lateral X-ray</tag>
@@ -1507,9 +1507,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1523,9 +1523,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1542,9 +1542,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Attention</tag>
@@ -1560,9 +1560,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>SE Block</tag>
@@ -1578,9 +1578,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>LSTM</tag>
@@ -1596,9 +1596,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1615,9 +1615,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1633,9 +1633,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>PLCO</tag>
@@ -1651,9 +1651,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1667,9 +1667,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
       </tags>
@@ -1684,9 +1684,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Dataset</tag>
@@ -1763,8 +1763,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>Detection</tag>
+        <tag>Network</tag>
         <tag>FPN</tag>
       </tags>
   </entry>
@@ -1793,9 +1793,9 @@
       </categories>
       <tags>
         <tag>Image Enhancement</tag>
+        <tag>Image Generation</tag>
         <tag>coupleGAN</tag>
         <tag>GAN</tag>
-        <tag>Image Generation</tag>
       </tags>
   </entry>
   <entry>
@@ -1839,8 +1839,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Overview</tag>
+        <tag>Medical</tag>
       </tags>
   </entry>
   <entry>
@@ -1853,8 +1853,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Overview</tag>
+        <tag>Medical</tag>
       </tags>
   </entry>
   <entry>
@@ -2416,8 +2416,8 @@
       </categories>
       <tags>
         <tag>Multi-label Classification</tag>
-        <tag>Face</tag>
         <tag>VAE</tag>
+        <tag>Face</tag>
         <tag>Facial Action Units</tag>
       </tags>
   </entry>
@@ -2593,8 +2593,8 @@
         <category>Component</category>
       </categories>
       <tags>
-        <tag>Classification</tag>
         <tag>Component</tag>
+        <tag>Classification</tag>
         <tag>Attention</tag>
         <tag>Non-local</tag>
         <tag>Video Classification</tag>
@@ -2611,9 +2611,9 @@
       </categories>
       <tags>
         <tag>Localization</tag>
-        <tag>Classification</tag>
         <tag>Fine-Grained Classification</tag>
         <tag>Component</tag>
+        <tag>Classification</tag>
         <tag>Attention</tag>
         <tag>STN</tag>
       </tags>
@@ -2697,8 +2697,8 @@
       </categories>
       <tags>
         <tag>Image Enhancement</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Conditional GAN</tag>
         <tag>Map to Aerial</tag>
         <tag>Reality Enhancement</tag>
@@ -2716,8 +2716,8 @@
       <tags>
         <tag>Image Enhancement</tag>
         <tag>Face</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Map to Aerial</tag>
         <tag>Reality Enhancement</tag>
         <tag>Style Transfer</tag>
@@ -2734,8 +2734,8 @@
       </categories>
       <tags>
         <tag>Image Enhancement</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Map to Aerial</tag>
         <tag>Style Transfer</tag>
         <tag>CycleGAN</tag>
@@ -2807,8 +2807,8 @@
         <category>Image Processing</category>
       </categories>
       <tags>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Reality Enhancement</tag>
         <tag>SimGAN</tag>
         <tag>Eye</tag>
@@ -2870,8 +2870,8 @@
       </categories>
       <tags>
         <tag>Face</tag>
-        <tag>GAN</tag>
         <tag>Image Generation</tag>
+        <tag>GAN</tag>
         <tag>Scene</tag>
         <tag>DCGAN</tag>
       </tags>
@@ -2885,9 +2885,9 @@
         <category>Image Processing</category>
       </categories>
       <tags>
-        <tag>Image Generation</tag>
         <tag>geometric matching</tag>
         <tag>Image Transformation</tag>
+        <tag>Image Generation</tag>
       </tags>
   </entry>
 </search>
