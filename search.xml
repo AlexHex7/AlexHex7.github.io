@@ -1,6 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(CVPR 2018) Low-Shot Learning from Imaginary Data]]></title>
+    <url>%2F2019%2F03%2F26%2FLow-Shot%20Learning%20from%20Imaginary%20Data%2F</url>
+    <content type="text"><![CDATA[Snell J, Swersky K, Zemel R. Prototypical networks for few-shot learning[C]//Advances in Neural Information Processing Systems. 2017: 4077-4087. Overview Motivation human can visualize or imagine what novel objects look like from different views In this paper, it proposes a novel approach to low-shot learning (learning concept from few examples) build on recent progress in meta-learning (learning to learn) combine a meta-learner with a hallucinator producing additional training examples optimize both model jointly proposed hallucinator can be incorporated into a variety of meta-learners Low-shot Learning build generative models that can share priors across categories build feature representation that are invariant to intra-class variation triplet loss, contrastIve loss Meta Learning try to frame low-shot learning as a ‘learning to learn’ task train a parametrized mapping from training sets to classifiers learner embeds examples into a feature space accumulate statistics over training set using RNN, MAN, MLP Definition x. test sample S_train. training set p. prediction h. classification algorithm meta-learning is an umbrella term estimate w can be construed as meta-learning Stage-1. Meta Training estimate w meta-learner has access to a large labeled dataset S_meta in each iteration, sample a classification problem out of S_meta m. the number of class in each iteration n. maximum number of training examples per clas Stage-2. Meta Testing the labeled training set and unlabeled test examples are given to the algorithm h then algorithm h output class probabilities Prototypical Networks (PN) d. distance metric w_phi. learned feature extractor Matching Network (MN) embed all training and test points independently using feature extractor create a contextual embedding of training and test examples using bi-LSTM and attention-LSTM three parameters. w_phi, w_g and w_f Prototype Matching Networks (PMN) in MN, attention LSTM might find it harder to attend to rare classes combine contextual embedding in MN with the resilience to class imbalance in PN collapse every class to its class mean Meta-Learning with Learned Hallucination Meta-Training BP final loss and update h and G jointly Meta-Testing hallucinator (G) keeps fixed Tradeoffs between Base and Novel Classes normal. prior knowledge. overall accuracy remains fairly stable, even as novel class accuracy rises and base class accuracy falls New Evaluation test examples from novel classes. μ=1 from base classes from both Experiments Details train extractor on C_base, then save all feature to disk ResNet-10 and ResNet-50 Meta-learner Architecture PN. 2 MLP + ReLU MN. 1 bi-LSTM for training examples, 1 attention LSTM for test samples PMN same as MN Hallucinator Architecture 3 MLP + ReLU all hidden layers. 512 for ResNet-10, 2048 for ResNet-50 initialization. block diagonal identity matrices to copy seed example Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>Low-Shot Learning</category>
+      </categories>
+      <tags>
+        <tag>Low-Shot Learning</tag>
+        <tag>Meta Learning</tag>
+        <tag>Prototypical Network</tag>
+        <tag>Bi-LSTM</tag>
+        <tag>Attention LSTM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2017) Prototypical Networks for Few-shot Learning]]></title>
+    <url>%2F2019%2F03%2F26%2FPrototypical%20Networks%20for%20Few-shot%20Learning%2F</url>
+    <content type="text"><![CDATA[Snell J, Swersky K, Zemel R. Prototypical networks for few-shot learning[C]//Advances in Neural Information Processing Systems. 2017: 4077-4087. Overview In this paper proposes Prototypical Network (PN) for few-shot learning extend PN to zero-shot learning euclidean distance better than cosine similarly Few-Shot Learning c. mean of the support examples for each class classifier must generalize to new classes not seen in the training set given only a small number of examples (support set) of each new class Episode Training (for example) training set. 200 classes, 10 samples/class each episode. randomly select 5 classes 4 samples/class as support set (GT can be used) 6 samples/class as query set (GT only use to calc loss) Testing test set. new 20 classes, 20 samples/class each episode. randomly select 5 classes 5 samples/class as support set (GT can be used) 15 samples/class as query set (GT can be used, only to calc acc) One-Shot Learning only one sample/class in support set Zero-Shot Learning c. embed class meta-data v each class comes with meta-data giving a high-level description of the class rather than a small number of labeled examples Related Work Matching Network (MN). in one-shot learning, PN=MN Method Algorithm zero-shot. Episode N_c-way (class), N_S-shot (sample) higher way or shot is beneficial best to train and test with the same shot Experiments DatailsOmniglot 28x28, gray 1623 characters, 20 samples/character rotate 90, 180. 270 to get different classes 1,200 x 4 classes as training set 1000 randomly generated episodes from test set miniImageNet CUB-200 Network 4 Conv each as [64, 3x3 Conv; BN; ReLU; Maxpooling] Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>Few-Shot Learning</category>
+      </categories>
+      <tags>
+        <tag>Prototypical Network</tag>
+        <tag>Few-Shot Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(NIPS 2016) Matching Networks for One Shot Learning]]></title>
+    <url>%2F2019%2F03%2F26%2FMatching%20Networks%20for%20One%20Shot%20Learning%2F</url>
+    <content type="text"><![CDATA[Vinyals O, Blundell C, Lillicrap T, et al. Matching networks for one shot learning[C]//Advances in neural information processing systems. 2016: 3630-3638. Overview In this paper, it proposes Matching Nets (MN) maps a small labeled support set and an unlabeled example to its label based on Bi-LSTM and Atten-LSTM experiments on vision (Omniglot, ImageNet) and language (Penn Treebank) devise new data set. miniImageNet (60,000 images, 84x84, 100 classes, 600 examples/class) ModelBasic Formulation x_i, y_i. labeled small support set a. attention mechanism Attention Kernel g, f. embedded function c. cosine similarly x^. query image Full Context Embeddings bi-LSTM S should be able to modify how to embed the test img x^ through f K. number of unrolling steps of LSTM Loss Function Training for each episode, sample L labels sample support set S and query set B Testing know support set S’ predict label of query set B’ Network 4 Conv [64, 3x3 Conv; BN; ReLU; Maxpool] Experiments Omniglot ImageNet]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>One-Shot Learning</category>
+      </categories>
+      <tags>
+        <tag>Bi-LSTM</tag>
+        <tag>Attention LSTM</tag>
+        <tag>One-Shot Learning</tag>
+        <tag>Matching Net</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICML 2016) Meta-learning with memory-augmented neural networks]]></title>
+    <url>%2F2019%2F03%2F26%2FMeta-learning%20with%20memory-augmented%20neural%20networks%2F</url>
+    <content type="text"><![CDATA[Santoro, Adam, Bartunov, Sergey, Botvinick, Matthew, Wierstra, Daan, and Lillicrap, Timothy. Meta-learning with memory-augmented neural networks. In Proceedings of The 33rd International Conference on Machine Learning, pp. 1842–1850, 2016. Overview Motivation When new data is encountered, the models must inefficiently relearn In this paper, it proposes Memory-Augmented Neural Network (MANN), such as NTM quickly encode and retrieve new information rapidly assimilate new data, and leverage this data to make accurate predictions after only a few samples without re-training (one-shot learning) introduce a new method (Least Recently Used Access) for accessing an external memory slowly learn an abstract method for obtaining useful representations of raw data, via gradient descent rapidly bind never-before-seen information after a single presentation, via an external memory module Meta-Learning Task Methodology offset input. label are shuffled from dataset-to-dataset must learn to hold data samples in memory until the appropriate labels are presented at the next time Input[batch size, length of an episode, hwc+class_nb] for exmaple, [16, 50, 20201+5] for Omniglot dataset in the paper class_nb at time t is the label of input image at time t-1 Output[batch size, length of an episode, class_nb of an episode] for exmaple, [16, 50, 5]. Only 5 class in an episode whose length is 50 (input images) For a given episode, ideal performance involves a random guess for the first presentation of a class, and use of memory to achieve perfect accuracy thereafter. Neural Turing MachinesMemory encoding and retrieval in a NTM external memory module is rapid. Memory Read r. read memory Least Recently Used Access content-based memory writer Usage Weights wu. usage weights wr. read weights ww. write weights γ. decay parameter, 0.95 in this paper Least-Used Weights wlu. least-used weights m(v, n). nth smallest element of the vector v Write Weights sigma. sigmoid function α. learnable gate parameter Memory Write prior to writing to memory, the least used memory location is set to zero Access Module Code Input. (16, 50, 2020)(a) reshape to (50, 16, 2020)(b) each time (16, 20*20) come into Access Module and output M_t (16, 128, 40) c_t (16, 200) h_t (16, 200) r_t (16, 4*40) wr_t (16, 4, 128) wu_t (16, 128) (c) for 50 times, total get M (50, 16, 128, 40) c (50, 16, 200) h (50, 16, 200) r (50, 16, 4*40) wr (50, 16, 4, 128) wu (50, 16, 128) (d) cat r and h to get (50, 16, 200+160)(e) (50, 16, 360) · (360, 5) → (50, 16, 5) → (16, 50, 5)(f) calculate loss, BP and update Experiments DataSetOmniglot contains over 1600 separate classes wuth only a few examples per class, aptly leading to it being called the transpose of MNIST apply data augmentation. translate and rotate create new class through 90°, 180° and 270° rotations 1200 classes for training, 423 classes for testing image downscale to 20x20 the classes in testing set are different from classes in training set In testing set, each episode contains unique classes. Performance x-axis. training episode. when entering a new episode, the memory will be set to 0 y-axis. testing performance nst Instance. during a certain episode, it is the nst time to see the sample of one class. five-character string label. to reduce the length of the one-hot label, it uses 5-length string to represent labels. 5 position for each contains 5 possible character→ total 5^5 class can be represent MANN with standard NTM access module is worse than with LRU Access Persistent Memory Inference As each episode contains unique classes, wipe memory from episode to episode is important It becomes worse without wiping memory Curriculum Training first tasked to classify fiftenn classes per episode every 10,000 episodes of training thereafter, the maximum number of classes presented per episode incremented by one]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>Meta Learning</category>
+      </categories>
+      <tags>
+        <tag>Meta Learning</tag>
+        <tag>MANN (Memory-Augmented Neural Network)</tag>
+        <tag>Memory</tag>
+        <tag>NTM (Neural Turing Machines)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(IJCAI 2018) A Multi-task Learning Approach for Image Captioning]]></title>
+    <url>%2F2019%2F03%2F12%2FA%20Multi-task%20Learning%20Approach%20for%20Image%20Captioning%2F</url>
+    <content type="text"><![CDATA[Zhao W, Wang B, Ye J, et al. A Multi-task Learning Approach for Image Captioning[C]//IJCAI. 2018: 1205-1211. Overview In this paper, it proposes Multi-task Learning Approach for Image Captioning (MLAIC) multi-object classification model. regularize CNN encoder syntax generation model image captioning model. benifit from object categorization and syntax knowledge Architecture Ground-TruthObject Vector 1 is present. C. the number of categories Image Description T. sentence length Combinatory Category Gramma (CCG) Shared CNN Encoder image to L vectors (HxWxC–&gt;LxD) L=14x14, D=2048 shared CNN encoder fine-tuned with both captioning and classification Classification Shared LSTM Decoder LSTM_1. top-down visual attention model LSTM_2. language model LSTM_1 Input. z. image mean feature e^w. previously generated word embedding e_s. previously generated syntax embedding h^(2). previously output of LSTM_2 Output. ### LSTM_2 Input sigma. feed-forward NN Output Multi-Task Learning classification. multi-label margin loss other two task. NLL All Experiments Details λ1 = 0.2, λ2 = 0.7, λ3 = 0.1 LSTM_1 = 1000 unit, LSTM_2 = 512 unit word embedding = 512, CCG supertag embedding = 100 beam size = 5 Comparison Ablation]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Caption</category>
+      </categories>
+      <tags>
+        <tag>Caption</tag>
+        <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Multi-task Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) WILDCAT:Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation]]></title>
+    <url>%2F2019%2F03%2F05%2FWILDCAT%3A%20Weakly%20Supervised%20Learning%20of%20Deep%20ConvNets%20for%20Image%20Classification%2C%20Pointwise%20Localization%20and%20Segmentation%2F</url>
+    <content type="text"><![CDATA[Durand T , Mordan T , Thome N , et al. WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation[C]// 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2017. Overview In this paper, it proposes WILDCAT FCN backbone Multi-Map WSL transfer layer Wildcat Pooling Related Work Max Pooling (MP) Global Average Pooling (GAP) LSE Pooling Compact Bilinear Pooling Architecture FCN ResNet101. output [W/32, H/32, 2048] remove GAP and FC replace with WSL transfer amd wildcat pooling layers Multi-map Transfer Layer per class through 1x1 Conv (h, w, c) – (h, w, m*c) Wildcat PoolingClasswise Pooling (h, w, mc) – (h, w, c) Spatial Pooling for a class map (h, w, 1) average k+ max point average k- max point α. trade off hypothesize that maximum scoring regions are more useful for classification With α ＜ 1 Wildcat should focus more on discriminating regions and then better localize features than with α=1 Training input a single image Inference classification. input a single image localization. extract the region with maximum score for each class segmentation. take the class with maximum score at eachlocation independently or apply CRF Experiments Details M = 4, α = 0.7 image. 448x448 ExperimentsClassification WSL]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Component</category>
+      </categories>
+      <tags>
+        <tag>Component</tag>
+        <tag>Weakly Supervised Learning</tag>
+        <tag>Classwise Pooling</tag>
+        <tag>Spatial Pooling</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICIP 2016) Maxmin convolutional neural networks for image classification]]></title>
+    <url>%2F2019%2F03%2F05%2FMaxmin%20convolutional%20neural%20networks%20for%20image%20classification%2F</url>
+    <content type="text"><![CDATA[Blot M, Cord M, Thome N. Max-min convolutional neural networks for image classification[C]//2016 IEEE International Conference on Image Processing (ICIP). IEEE, 2016: 3678-3682. Overview In this paper, it proposes to modify the CNN to transfer more information transmit directly the negative detections from a filter in order to prevent the network to learn the opposite filter Related Work ReLU PReLU CReLU Max-Min Methods Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Component</category>
+      </categories>
+      <tags>
+        <tag>Component</tag>
+        <tag>Max-Min Pooling</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Learning Deep Features for Discriminative Localization]]></title>
+    <url>%2F2019%2F03%2F05%2FLearning%20Deep%20Features%20for%20Discriminative%20Localization%2F</url>
+    <content type="text"><![CDATA[Zhou B, Khosla A, Lapedriza A, et al. Learning deep features for discriminative localization[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 2921-2929. Overview Motivation recent work find that various layers of CNN behave as object detectors despite on supervision on the location of the object was provided. This ability is lost when FC are used for classification In this paper revisit global average pooling layers, shed light on how it explicitly enables CNN to have remarkble localization ability despite being trained on image-level labels Related Work Weakly-supervised Object Localization global max pooling Visualizing CNNs DeConv Class Activation Mapping (CAM) before final ouput layer, perform global average pooling on CNN feature then FC layer to produce the desired output finally, project back the weights of the output layer on CNN features FormulationFor feature maps (K, h, w) f_k (1, h, w). feature map of kth channel F^k (1, 1, 1). kth channel feature after GAP final FC layer (K, C) w^c (K, 1) S_c (C) simply upsample the class activation map to the size of the input image GAP vs GMP GMP. encourages to identify one discriminative part GMP. low scores for all image regions except the most discriminative one do not impact the score Experiments Weakly-supervised Object Localization find that the localization ability of the networks improved when the last Conv before GAP had a higher spatial resolution (13x13 for AlexNet, 14x14 for VGG, 14x14 for GooLeNet) Localization value above 20% of the max value of CAM take the BBox covers the largest connected component in the segmentation map (top-5 predicted classes) Visualize Class-Specific Units]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Visualization</category>
+      </categories>
+      <tags>
+        <tag>Visualization</tag>
+        <tag>Global Average Pooling</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2015) Recurrent convolutional neural network for object recognition]]></title>
+    <url>%2F2019%2F03%2F05%2FRecurrent%20convolutional%20neural%20network%20for%20object%20recognition%2F</url>
+    <content type="text"><![CDATA[Liang N M , Hu N X . Recurrent convolutional neural network for object recognition[C]// 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE Computer Society, 2015. Overview Motivation the visual system recurrent connections are abundant in CNNs context can only be captured in higher layers, but cannot modulate the activities of units in lower layers responsible for recognizing smaller objects In this paper, it proposes Recurrent CNN (RCNN) can integrate the context information unfolded network has multiple path. longer path to learn highly complex features shorter path to help gradient BP experiments on CIFAR-10, CIFAR-100, MNIST and SVHN Recurrent Convolutional Layer (RCL) u. forward feature x. recurrent feature f. ReLU g. Local Response Normaliztion (LRN) Experiments Baseline CIFAR-10 more iteration in RCNN led to both lower training and testing error more iteration in rCNN led to lower training error but higher testing error dropout palyed an important role for RCNN simply increasing K led to better results]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>Recurrent CNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICML 2014) Recurrent convolutional neural networks for scene labeling]]></title>
+    <url>%2F2019%2F03%2F05%2FRecurrent%20convolutional%20neural%20networks%20for%20scene%20labeling%2F</url>
+    <content type="text"><![CDATA[Pinheiro P H O, Collobert R. Recurrent convolutional neural networks for scene labeling[C]//31st International Conference on Machine Learning (ICML). 2014 (EPFL-CONF-199822). Overview In this paper, it propose an approach consist of a recurrent CNN allow to consider a large input context while limiting the capacity of the model as the context size increases with the built-in recurrence, the system identifies and corrects its own errors Methods In Figure 2. The input is a patch and output is the prediction of centerpixel For the first time ,the feature is zero map]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Segmentation</category>
+      </categories>
+      <tags>
+        <tag>Segmentation</tag>
+        <tag>Recurrent CNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2018) Uncertainty Estimates and Multi-Hypotheses Networks for Optical Flow]]></title>
+    <url>%2F2019%2F03%2F05%2FUncertainty%20Estimates%20and%20Multi-Hypotheses%20Networks%20for%20Optical%20Flow%2F</url>
+    <content type="text"><![CDATA[Ilg E, Cicek O, Galesso S, et al. Uncertainty estimates and multi-hypotheses networks for optical flow[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 652-667. Overview Motivation it is not possible to deploy such a system without information about how reliable the underlying estimates are we should expect an additional estimate of the network’s own uncertainty, such that the network can highlight hard cases where it cannot reliably estimate In this paper compare several strategies and techniques to estimate uncertainty introduce a network utilizing the Winner-Takes-All (WTA, penalize only the best prediction) loss without the need for sampling or ensembles Network (e). the proposed network. generate multi-hypothesis (distribution) then merge]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Multiple Hypotheses</category>
+      </categories>
+      <tags>
+        <tag>Multiple Hypotheses</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(ICLR 2018) Ensemble Adversarial Training:Attacks and Defenses]]></title>
     <url>%2F2019%2F02%2F26%2FEnsemble%20Adversarial%20Training%3A%20Attacks%20and%20Defenses%2F</url>
     <content type="text"><![CDATA[Tramèr F, Kurakin A, Papernot N, et al. Ensemble adversarial training: Attacks and defenses[J]. arXiv preprint arXiv:1705.07204, 2017. Overview In this paper show that adversarial training converges to a defenerate global minimum find that adversarial training remains vulnerable to black-box attack, where we transfer perturbations computed on undefended model, as well as to proposed single-step attack introduce Ensemble Adversarial Training that augments training data with perturbations transferred from other model (decouples adversarial example generation from the parameters of the trained model) Ensemble Adversarial Training yields models with strong robustness to black-box attack Adversarial Training adversarial training on MNIST yields models that are robust to white-box attacks MNIST dataset is peculiar in that there exists a simple ‘closed-form’ denoising procedure (namely feature binarization) which leads to similarly robust models without adversarial training. This may explain why robustness to white-box attack is hard to scale to tasks such as ImageNet for an average MNIST image, over 80% of the pixels are in {0, 1} and only 6% are in the range [0.2, 0.8]. Thus, for a perturbation with epsilon ≤ 0.3, binarized version of x and x_adv can differ in at most 6% of the input dimension Some prior works have hinted that adversarially trained models may remain vulnerable to black-box attacks an adversarial maxout network on MNIST has slightly higher error on transferred examples than on white-box examples Attack Methods FGSM Single-Step Least-Likely Class Method (Step-LL). most effective for adversarial training on ImageNet Iter FGSM and Iter Step-LL proposed randomized single-step attack Ensemble Adversarial Training decouple the generation of adversarial example from the model being trained augments training data with adversarial examples crafted on other static pre-trained models Experiments adversarial training greatly increases robustness to white-box single-step attacks, but incurs a higher error rate in a black-box setting Ensemble Training Ensemble Adversarial Training is not robust to white-box Iter-LL and R+Step-LL sample]]></content>
@@ -316,8 +477,8 @@
         <category>Multiple Hypotheses</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
+        <tag>Medical</tag>
         <tag>Segmentation</tag>
         <tag>Multiple Hypotheses</tag>
         <tag>UNet</tag>
@@ -348,8 +509,8 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
+        <tag>Medical</tag>
         <tag>Segmentation</tag>
       </tags>
   </entry>
@@ -772,13 +933,13 @@
       <categories>
         <category>Paper Note</category>
         <category>Learning</category>
-        <category>Zero-Shot</category>
+        <category>Zero-Shot Learning</category>
       </categories>
       <tags>
         <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
         <tag>Classification</tag>
         <tag>GAN</tag>
-        <tag>Cross-Modality</tag>
         <tag>Zero-Shot Learning</tag>
         <tag>Feature Generation</tag>
       </tags>
@@ -793,9 +954,9 @@
         <category>Network</category>
       </categories>
       <tags>
+        <tag>NLP</tag>
         <tag>Network</tag>
         <tag>TCN</tag>
-        <tag>NLP</tag>
       </tags>
   </entry>
   <entry>
@@ -808,8 +969,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>NLP</tag>
+        <tag>Network</tag>
         <tag>Transformer</tag>
       </tags>
   </entry>
@@ -839,9 +1000,9 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
+        <tag>Network</tag>
         <tag>Word-CNN-RNN</tag>
         <tag>Character-CNN-RNN</tag>
       </tags>
@@ -857,10 +1018,10 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Face</tag>
-        <tag>Image Generation</tag>
-        <tag>GAN</tag>
         <tag>Cross-Modality</tag>
+        <tag>Face</tag>
+        <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Attribute to Face</tag>
       </tags>
   </entry>
@@ -875,9 +1036,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Image Generation</tag>
-        <tag>GAN</tag>
         <tag>Cross-Modality</tag>
+        <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Semantic Image Synthesis</tag>
       </tags>
   </entry>
@@ -892,9 +1053,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Image Generation</tag>
-        <tag>GAN</tag>
         <tag>Cross-Modality</tag>
+        <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Text to Image</tag>
         <tag>Location-Controllable</tag>
       </tags>
@@ -910,9 +1071,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Image Generation</tag>
-        <tag>GAN</tag>
         <tag>Cross-Modality</tag>
+        <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Text to Image</tag>
         <tag>StackGAN</tag>
       </tags>
@@ -928,9 +1089,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Image Generation</tag>
-        <tag>GAN</tag>
         <tag>Cross-Modality</tag>
+        <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Text to Image</tag>
       </tags>
   </entry>
@@ -945,8 +1106,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>GAN</tag>
         <tag>Cross-Modality</tag>
+        <tag>GAN</tag>
         <tag>Text to Image</tag>
       </tags>
   </entry>
@@ -991,8 +1152,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Image-Text</tag>
         <tag>Cross-Modality</tag>
+        <tag>Image-Text</tag>
       </tags>
   </entry>
   <entry>
@@ -1006,8 +1167,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Body</tag>
         <tag>Cross-Modality</tag>
+        <tag>Body</tag>
         <tag>Person Search</tag>
       </tags>
   </entry>
@@ -1022,8 +1183,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Body</tag>
         <tag>Cross-Modality</tag>
+        <tag>Body</tag>
         <tag>Person Search</tag>
       </tags>
   </entry>
@@ -1173,10 +1334,10 @@
         <category>Point Cloud</category>
       </categories>
       <tags>
+        <tag>Localization</tag>
         <tag>Segmentation</tag>
         <tag>Detection</tag>
         <tag>Point Cloud</tag>
-        <tag>Localization</tag>
         <tag>Frustum PointNets</tag>
       </tags>
   </entry>
@@ -1254,6 +1415,284 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[(IJCAI 2018) Multi-scale and Discriminative Part Detectors Based Features for Multi-label Image Classification]]></title>
+    <url>%2F2018%2F03%2F12%2FMulti-scale%20and%20Discriminative%20Part%20Detectors%20Based%20Features%20for%20Multi-label%20Image%20Classification%2F</url>
+    <content type="text"><![CDATA[Cheng G, Gao D, Liu Y, et al. Multi-scale and Discriminative Part Detectors Based Features for Multi-label Image Classification[C]//IJCAI. 2018: 649-655. Overview Motivation global CNN feature lack geometric invariance for addressing the problem of intra-class variation In this paper, it proposes Multi-scale and Discriminative Part Detectors (MsDPD) task-driven feature pooling Architecture Formulation S = softmax(); sigma = sigmoid() xij. a patch of origin image phi. pooled DPD-based feature O(xij). a point of DPD-based feature map (1x1xK) P. prediction Loss Function classification loss. BCE generalized max pooling regularization term enforce the dot product similarity between O(xij) and the pooled feature phi(Xi) to be a constant one object part-level classification loss term y_l∈R^K. stands for object part label vector of object part instance xl]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Multi-label Classification</category>
+      </categories>
+      <tags>
+        <tag>Multi-label Classification</tag>
+        <tag>Multi-scale</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Improving pairwise ranking for multi-label image classification]]></title>
+    <url>%2F2018%2F03%2F12%2FImproving%20pairwise%20ranking%20for%20multi-label%20image%20classification%2F</url>
+    <content type="text"><![CDATA[Li Y, Song Y, Luo J. Improving pairwise ranking for multi-label image classification[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 3617-3625.8. Overview Motivation hinge loss is non-smooth and difficult to optimize simple heuristics (top-k, threshhold) limits the use in the real world In this paper, propose smooth pairwise ranking loss incorporate label decision into model Related WorkObjective exact match Y^. predicted labels of i-th sample Y. GT Hamming distance Ranking objective Algorithm f. label prediction, d–&gt;K (K. all labels) g. label decision, K–&gt;k (k＜K) Label PredictionPairwise Loss (PWE) Log-Sum-Exp sample at most t pairs Label Decision estimate label count estimate optimal thresholds for each class g. MLP on top of f’(x) (final CNN layer) (FC-ReLU, FC-ReLU) + two different branch Label Count Estimation n-way classification Cross Entropy Threshold Estimation Details label prediction model VGG16 replace Softmax loss with LSEP loss finetune 10 epoches label decision model maximum number count = 4 first FC-100, second FC-10 count FC-4, threshold FC-14 Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Multi-label Classification</category>
+      </categories>
+      <tags>
+        <tag>Multi-label Classification</tag>
+        <tag>Pairwise Ranking</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Tienet:Text-image embedding network for common thorax disease classification and reporting in chest x-rays]]></title>
+    <url>%2F2018%2F03%2F02%2FTienet%3A%20Text-image%20embedding%20network%20for%20common%20thorax%20disease%20classification%20and%20reporting%20in%20chest%20x-rays%2F</url>
+    <content type="text"><![CDATA[Wang X, Peng Y, Lu L, et al. Tienet: Text-image embedding network for common thorax disease classification and reporting in chest x-rays[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 9049-9058. Overview In this paper, it proposes TieNet (Text-Image Embedding Network) CNN-RNN Multi-level attention highlight the meaning full text words and image regions generate reporting paired text-image representation from training two enhancement: AETE. attention-encoded text embedding SW-GAP. saliency weighted global average pooling Related Work image caption Task TypeMedical Image Auto-Annotation ommit the generation of sequential words BP only for classification loss Automatic Classification and Reporting of Thorax Disease training. image + report testing. only image Architecture CNN word embedding. (T, d_w) output of transition layer. X (D, D, C), D=16, C=1024 RNN phi(X) map X toget h_0. d_x to d_h Input. w. previous generated word a. previous generated weight Attention Text Enhancement G. weights (r, T) H. (d_h, T) W_s1 (s, d_h) W_s2 (r, s) r. the number of global attention M. embedding matrix (r, d_h) execute max-over-r pooling across M to highlight word Saliency Weighted Global Average Pooling reuse G to highlight region Joint Training concate then use FC to predict classification Details classification. 15 length word2vec. 200 dimension 15,427 words appear at least twice. out-of-vocabulary token, start token, end token LSTM 256 cell, 350 unit, s=2000, r=5 α=1 0.5 dropout, 1e-4 for L2 regularization 1e-3 LR, Adam balanced loss. β. image with at least one disease and no disease λ. image with and without certain disease Loss L_R. RNN loss L_C. classification loss Experiments Dataset ChestX-ray14 Hand-labeled OpenI Comparision]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>Localization</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) Deep multiscale convolutional feature learning for weakly supervised localization of chest pathologies in X-ray images]]></title>
+    <url>%2F2018%2F03%2F02%2FDeep%20multiscale%20convolutional%20feature%20learning%20for%20weakly%20supervised%20localization%20of%20chest%20pathologies%20in%20X-ray%20images%2F</url>
+    <content type="text"><![CDATA[Sedai S, Mahapatra D, Ge Z, et al. Deep multiscale convolutional feature learning for weakly supervised localization of chest pathologies in X-ray images[C]//International Workshop on Machine Learning in Medical Imaging. Springer, Cham, 2018: 26 Overview In this paper, it proposes weakly supervised method to localize chest pathologies intermediate feature maps from different stages leared layer relevant weight weighted CAM improves the location performance of small size pathologies (nodule, mass) Model Train C-CNN learned weight. (b, c), each (1, c) initialize to 1/B B. number of scales Loss Function β. percentage of 0 Details Adam. LR 1e-3, decay by 0.1 when valid loss plateau randomly split 256x256 others. Xavier init]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>Localization</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) Large scale automated reading of frontal and lateral chest X-rays using dual convolutional neural networks]]></title>
+    <url>%2F2018%2F03%2F02%2FLarge%20scale%20automated%20reading%20of%20frontal%20and%20lateral%20chest%20X-rays%20using%20dual%20convolutional%20neural%20networks%2F</url>
+    <content type="text"><![CDATA[Rubin J, Sanghavi D, Zhao C, et al. Large scale automated reading of frontal and lateral chest x-rays using dual convolutional neural networks[J]. arXiv preprint arXiv:1804.07839, 2018. Overview In this paper, it proposes DualNet PA-lateral pair DualNet AP-lateral pair DualNet experiments on MIMIC-CXR Related Work ChestX-ray14 dataset JSRT dataset BSE-JSRT dataset Indiana chest X-ray Shenzhen dataset Limitation medical image. 12-bit or greater make no distinction between PA and AP cardiomegaly can only be accurately assessed in PA image AP view will exaggerate the heart silhouette due to magnificention lateral view reveals lung areas that are hidden in the frontal view lateral view can be useful in detecting lower-lobe lung disease, pleural effusions and anterior mediastinal masses Network &amp; Details replace 3-channel to 1-channel four denseblock (32 growth rate) per layer no data augmentation Adam with 0.001~0.02 (Triangular2 policy) Dataset 80-20-10 nearest interpolation (ratio mantained). 512x512 normalize from [0, 2^12-1] to [0, 1] Results PA results in larger AUC for atelectasis, cardiomegaly, fibrosis, infiltration and pleural thickening lateral benefit for consolidation, edema, effusion, hernia, mass, pneumonia and pneumothorax Future Work improvement. data augmentation, pixel normalization patient’s history and current clinical record]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>MIMIC-CXR</tag>
+        <tag>Lateral X-ray</tag>
+        <tag>PA View &amp; AP View</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Boosted cascaded convnets for multilabel classification of thoracic diseases in chest radiographs]]></title>
+    <url>%2F2018%2F03%2F02%2FBoosted%20cascaded%20convnets%20for%20multilabel%20classification%20of%20thoracic%20diseases%20in%20chest%20radiographs%2F</url>
+    <content type="text"><![CDATA[Kumar P, Grewal M, Srivastava M M. Boosted cascaded convnets for multilabel classification of thoracic diseases in chest radiographs[C]//International Conference Image Analysis and Recognition. Springer, Cham, 2018: 546-552. Overview In this paper propose a cascaded DNN exploit smooth PWE loss Multi-Label ClassificationBinary Relevance (BR) not account for the interdependence of different class labels BCE loss Pairwise Error (PWE) Loss maximzie the margin between positive and negative labels within an example Architecture weighted sampling Details randomly separate 20% for test 6-level cascading both for cross-entropy and PWE loss ReLU, 0.5 dropout between FC SGD 0.1 Results]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>ChestX-ray14</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities]]></title>
+    <url>%2F2018%2F03%2F02%2FA%20Weakly%20Supervised%20Adaptive%20DenseNet%20for%20Classifying%20Thoracic%20Diseases%20and%20Identifying%20Abnormalities%2F</url>
+    <content type="text"><![CDATA[Zhou B, Li Y, Wang J. A weakly supervised adaptive densenet for classifying thoracic diseases and identifying abnormalities[J]. arXiv preprint arXiv:1807.01257, 2018. Overview In this paper, adaptive DenseNet bridging layer WSL pooling strucuture Architecture Adaptive DenseNet remove avg pooling from the third transition layer dilated all kernels in the fourth dense block output 14x14 Bridging Layer transform by 1x1 Conv (b, 1664, h, w) – (b, MxC, h, w) WSL Pooling Class-Wise Pooling C (b, M, h, w) – C (b, 1, h, w) – (b, C, h, w) Spatial-Wise Pooling (b, C, h, w) – (b, C, 1, 1) during training, randomly select from top-k m duting testing, both top-k and bottom-k Experiments Dataset same as ChestX-ray14 split 256x256, randomly crop 224x224 normalize by ImageNet test. center crop Details weighted BCE in each DenseBlock, add BN and dropout 0.1 M = 14 training. k=10 testing. k+ = k- = 15 α = 1 heatmap threshold. 0.8 for Cardiomegaly, 0.9 for others Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>Localization</tag>
+        <tag>Weakly Supervised Learning Pooling Strucuture</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ACM ICBCB 2018) Diagnose like a Radiologist:Attention Guided Convolutional Neural Network for Thorax Disease Classification]]></title>
+    <url>%2F2018%2F03%2F02%2FDiagnose%20like%20a%20Radiologist%3A%20Attention%20Guided%20Convolutional%20Neural%20Network%20for%20Thorax%20Disease%20Classification%2F</url>
+    <content type="text"><![CDATA[Guan Q, Huang Y, Zhong Z, et al. Diagnose like a radiologist: Attention guided convolutional neural network for thorax disease classification[J]. arXiv preprint arXiv:1801.09927, 2018. Overview Motivation existing methods use global image as input data limitation small localized areas poor alignment In this paper, it proposes AG-CNN (Attention Guided CNN) three-branch. global, local and fusion learn a global CNN branch using global images crop local region based on global branch fuse global and local Related Work JSRT dataset Shenzhen chest X-ray set Montgomery County chest X-ray set Indiana University Chest X-ray Colletion dataset Architecture AG-CNN output. [l1, l2, …, l15]. 14 disease + 1 No Finding Algorithm Attention Guided Mask Inference absolute value (b, k, h, w) – (b, 1, h, w) binary mask. threshhold=0.7 crop based on [x_min, y_min, x_max, y_max] Training Strategy fine-tune global branch fine-tune local branch, fix global branch fine-tune fusion branch, fix local and global branch Experiments Dataset randomly shuffle 70-10-20 Details 256x256, randomly crop 224x224 random horizontal flipping normalize by ImageNet mean value test. center crop Comparison OthersThreshold Training Strategy Heat Map Analysis]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>Localization</tag>
+        <tag>Attention</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ACM ICBCB 2018) Weakly Supervised Deep Learning for Thoracic Disease Classification and Localization on Chest X-rays]]></title>
+    <url>%2F2018%2F03%2F01%2FWeakly%20Supervised%20Deep%20Learning%20for%20Thoracic%20Disease%20Classification%20and%20Localization%20on%20Chest%20X-rays%2F</url>
+    <content type="text"><![CDATA[Yan C, Yao J, Li R, et al. Weakly supervised deep learning for thoracic disease classification and localization on chest x-rays[C]//Proceedings of the 2018 ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics. ACM, 2018: 103-110. Overview Motivation existing methods do not treat different diseases separately In this paper, it exploits DenseNet-121 as backbone, and equip with SE block multi-map transfer max-min pooling Related Work JSRT dataset BSE-JSRT dataset Indiana chast X-ray MIMIC-CXR dataset. lateral views are available AGCNN Architecture SE Block model the interdependency between channels (b, c, h, w) –avg– (b, c, 1, 1) (b, c, 1, 1) –FC+FC– (b, c, 1, 1) 1. r. reduction rate- (b, c, 1, 1) * (b, c, h, w) Multi-Map Layer (b, c, h, w) -M 1x1_Conv- (b, Mc, h, w). (M: the number of class) (b, Mc, h, w) –Classwise Pooling– (b, c, h, w) Max-Min Pooling (b, c, h, w) – (b, c) z^c. c-th pooled feature map k+ = k- = 1 α = 0.7 Experiments Dataset ChestX-ray14. official 70-10-20 512 x 512, 3RGB, normalize Details BCE loss Adam with 0.0001, *0.1 when 5 time batch size 16 random crop 448x448 (4 corner + 1 center) horizontal flipping reimplement CheXNet not using BBox Comparison Ablation Study]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>SE Block</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2017) Learning to diagnose from scratch by exploiting dependencies among labels]]></title>
+    <url>%2F2018%2F03%2F01%2FLearning%20to%20diagnose%20from%20scratch%20by%20exploiting%20dependencies%20among%20labels%2F</url>
+    <content type="text"><![CDATA[Yao L, Poblenz E, Dagunts D, et al. Learning to diagnose from scratch by exploiting dependencies among labels[J]. arXiv preprint arXiv:1710.10501, 2017. Overview Motivation pre-trained ImageNet models may introduce unintended biases which are undesirable in a clinical setting there exists dependencies among labels the need for pre-training may be safely removed when there are sufficient medical data available In this paper DenseNet Image Encoder LSTM Decoder. using LSTM to leverage interdependencies among target lables without pre-training Dependency complex interactions between abnormal patterns frequently have significant clinical meaning that provides radiologist with additional context cardiomegaly (心脏扩大) is more like to additionally have pulmonary edema (肺水肿). edema futher predicate the possible presence of both consolidation (实变) and a pleural effusion (积液) Related WorkModel Inter-label Dependencies loss function implicitly represent dependencies receive a subset of the previous prediction RNN OpenI dataset with 7,000 images, smaller and less representative than ChestX-ray8 Algorithm Model Encoder Decoder initial state based on x_enc f_h0, f_c0 with one hidden layer LSTM y. GT with fixed ordering Loss Function Experiments Details randomly split. 70%, 10%, 20% ChestX-ray8 noticed insignificant performance difference with different random split 512x512 randomly translate 4 directions by 25 pixel randomly rotate [-15, 15] randomly scale [80%, 120%] early stop based on valiadation weighted cross-entropy loss without pre-trained Metric NLL AUC DICE Per-example sensitivity and specificity (PESS) Per-class sensitivity and specificity (PCSS) Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>LSTM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) CheXNet:Radiologist-Level Pneumonia Detection on Chest X-Rays with Deep Learning]]></title>
+    <url>%2F2018%2F03%2F01%2FCheXNet%3A%20Radiologist-Level%20Pneumonia%20Detection%20on%20Chest%20X-Rays%20with%20Deep%20Learning%2F</url>
+    <content type="text"><![CDATA[Rajpurkar P, Irvin J, Zhu K, et al. Chexnet: Radiologist-level pneumonia detection on chest x-rays with deep learning[J]. arXiv preprint arXiv:1711.05225, 2017. Overview MotivationIn this paper, it proposes CheXNet 121-layer DenseNet on ChestX-ray14 Details random split dataset. 70% training, 10% validation, 20% test 224x224, normalize based on the mean and standard deviation of ImageNet data augmentation. horizontal flipping unweighted loss CAM Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>Localization</tag>
+        <tag>CheXNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Weakly Supervised Medical Diagnosis and Localization from Multiple Resolutions]]></title>
+    <url>%2F2018%2F03%2F01%2FWeakly%20Supervised%20Medical%20Diagnosis%20and%20Localization%20from%20Multiple%20Resolutions%2F</url>
+    <content type="text"><![CDATA[Li Z, Wang C, Han M, et al. Thoracic disease identification and localization with limited supervision[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 8290-8299. Overview Motivation Medical training data rarely includes more than global image-level labels as segmentations are time-consuming and expensive to collect In this paper, it proposes a architecture learn at multiple resolutions while generating saliency maps with weak supervision parameterize the Log-Sum-Exp pooling function with a learnable lower-bounded adaptation (LSE-LBA) Disease Enlargement. width of the heart is measured to be 50% or greater than the width of the thoracic cage Nodules (肺结节). subtle findings as small as a few millimeters in size and are frequently missed by practitioners even when viewed closely on a high resolution monitor Diffuse infiltrative opacification (浸润). in the periphery of the lung is often more easily noted from a global view. But closer inspection of the anomalous region is often required to narrow the differential diagnosis and determine followup Contribution multi-resolution with MIL LSE-LBA Related Work Wang. ChestX-ray14 (one resolution, non-adaptive pooling) Li. upsample or downsample to PxP grids Chexnet Yao. leverage interdependencies among 14 diseases Guan. attention guided CNN Kumar. cascaded multiple predictions Tienet. additional radiology reports Methods Network ResNet line. f identity connection enseNet line coarse-to-fine. U denote upsample Pooling Function Noisy-OR (NOR) Generalized-mean (GM) Log-Sum-Exp Log-Sum-Exp Pooling with Lower-bound Adaptation (LSE-LBA) larger r_0 encourages the learned saliency map to have less diffuse modes. Experiments dataset 1024x1024 to 512x512, [0, 1] data augmentation resize [0.25, 0.75] translate in for direction [-50, 50] rotate [-25, 25] not use other clinical information, such as age and gender official split Comparison when r_0 is large, the performance of disffused abnormalities degrades, such as atelectasis(扩张不全), cardiomegaly (心脏扩大), effusion (积液) and pneumonia (肺炎) increasing r_0 results in overall sharper saliency maps]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>Localization</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICPR 2018) Learning to recognize Abnormalities in Chest X-Rays with Location-Aware Dense Networks]]></title>
+    <url>%2F2018%2F03%2F01%2FLearning%20to%20recognize%20Abnormalities%20in%20Chest%20X-Rays%20with%20Location-Aware%20Dense%20Networks%2F</url>
+    <content type="text"><![CDATA[Guendel S, Grbic S, Georgescu B, et al. Learning to recognize abnormalities in chest x-rays with location-aware dense networks[C]//Iberoamerican Congress on Pattern Recognition. Springer, Cham, 2018: 757-765. Overview Motivation most methods report performance based on random image splitting, ignore the high probability of the same patient appearing in both training and test test most methods fails to explicitly incorporate the spatial information of abnormalities or utilize the high resolution images In this paper, it proposes location aware Dense Networks (DNetLoc) incorporate spatial information and high resolution for classification provide new reference patient-wise splits for ChestX-ray14 and PLCO Related Work Wang. proposes ChestX-ray14 dataset Chexnet. slightlymodify DenseNet Yao. DenseNet + LSTM (randomly split dataset) Guan. attention guided CNN (randomly split dataset) DatasetChestX-Ray14 1024x1024, 8 bits gray-scale 112,120 images PLCO 2500x2100, 16 bits gray-scale choose 12 most prevalent pathology labels, among which 5 labels contains spatial information Across both data sets, there are 6 labels which share the same name, but not combing them Method loss function leverage high-resolution images (2 Conv with 3 kernel, 3x3 size, stride 2). 1024x1024 as input 35 lable where 21 from PLCO Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>DenseNet</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>PLCO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) ChestNet:A Deep Neural Network for Classification of Thoracic Diseases on Chest Radiography]]></title>
+    <url>%2F2018%2F03%2F01%2FChestNet%3A%20A%20Deep%20Neural%20Network%20for%20Classification%20of%20Thoracic%20Diseases%20on%20Chest%20Radiography%2F</url>
+    <content type="text"><![CDATA[Wang H, Xia Y. Chestnet: A deep neural network for classification of thoracic diseases on chest radiography[J]. arXiv preprint arXiv:1807.03058, 2018. Overview In this paper, it incorporates the attention mechanism into DNN classification branch attention branch. Grad-CAM experiments on Chest X-ray 14 dataset Related Work different pooling strategy statistical label dependencies CheXNet. dense connection + BN Dataset Chest X-ray 14 dataset with official patient-wise split (80%/20%) 10% among 80% as validation Model ResNet-152. remove softmax layer; replace last FC; Sigmoid Attention Branch choose output of penultimate residual module first 3 Conv: 1x1, 3x3, 1x1 A~. output of the third CNN A-. map for each class c α_ck. computed by using the gradient propagation of Grad-CAM Then normalize each element in A-. use normalized map A as input to last 3 CNN (14, 1x1; 512, 1x1; 1, 14x14) Training 224x224 image no data augmentation threshold 0.5 Experiments With or Without Attention]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>ChestX-ray14</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Thoracic Disease Identification and Localization with Limited Supervision]]></title>
+    <url>%2F2018%2F03%2F01%2FThoracic%20Disease%20Identification%20and%20Localization%20with%20Limited%20Supervision%2F</url>
+    <content type="text"><![CDATA[Li Z, Wang C, Han M, et al. Thoracic disease identification and localization with limited supervision[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 8290-8299. Overview Motivation building a highly accurate prediction model requires a large number of annotation and finding the site of abnormalities In this paper, it proposes a method that can work well with a small amount of location annotations effectively leverage both class information and limited location annotation perform disease identificaion and localization at the same time slice the image into patch grids to capture the local information of the disease Disease large object. Cardiomegaly (心脏扩大), Emphysema (肺气肿), Pneumothorax (气胸) small object. Mass (肺部块), Nodule (肺结节) Fibrosis (肺纤维化) Edema (肺水肿) Consolidation (肺实变) Atelectasis (肺扩张不全) Effusion (肺积液) Infiltration (肺部浸润) Pneumonia (肺炎) Hernia (肺氙) Pleural Thickening (肺膜增厚) Model feature from ResNet-v2 before global pooling layer upsample (bilinear interpolation) or downsample (max-pooling) (PxPxc*) FCN (PxPxK) Loss FunctionWith Annotated Bounding Box i-th image, j-th grid, k-th channel (class) Without Annotated Bounding Box Loss for k-th Class *. GT Simplify to For All Class Experiments Details patch slice. {12, 16, 20} λ_bbox. 5 normalize the patch scores p and 1-p from [0, 1] to [0.98, 1] Dataset 112,120 images with 14 disease labels 984 bounding boxes for 880 image about 8 disease annotated 880 images vs unannotated 111,240 images Image. 512x512, [-1, 1] no data augmentation Classification train. 70% annotated + 70% unannotated Metric. AUC]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>Localization</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) ChestX-ray8:Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases]]></title>
+    <url>%2F2018%2F03%2F01%2FChestX-ray8%3A%20Hospital-scale%20Chest%20X-ray%20Database%20and%20Benchmarks%20on%20Weakly-Supervised%20Classification%20and%20Localization%20of%20Common%20Thorax%20Diseases%2F</url>
+    <content type="text"><![CDATA[Wang X, Peng Y, Lu L, et al. Chestx-ray8: Hospital-scale chest x-ray database and benchmarks on weakly-supervised classification and localization of common thorax diseases[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 2097-2106. Overview Motivation there is still significant room for performance improvement when underlying challenges become greater (0.413 on COCO vs 0.884 on VOC) In this paper, it present a new chest X-ray database (ChestX-ray8) comprise 108,948 frontal-view X-ray images of 32,717 unique patients with the text-mined 8 disease image labels 24,636 images contain one or more pathologies 84,312 images are normal cases, label [0, 0, 0, 0, 0, 0, 0, 0] resize image dimension from 3000x2000 (typical for X-ray image) to 1024x1024 bitmap some connection between different pathologies, which agree with radiologists’s domain knowledge, such as Infiltration is often associated with Atelectasis and Effusion DCNN Framework exploit Global Average Pooling to visualize the region Log-Sum-Exp (LSE) Pooling serve as an adjustable option between max pooling (r→ ∞) and average pooling (r→ 0) LSE suffers from overflow/underflow problems, so Loss Functionone of 3 standard loss function Hinge Loss (HL) Euclidean Loss (EL) Cross Entropy Loss (CEL) Sample-Balance W-CLE Experiments Different Pooling Strategy r=10 is best Comparison W-CEL is better than CEL]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Medical</category>
+        <category>Lung</category>
+      </categories>
+      <tags>
+        <tag>Lung</tag>
+        <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
+        <tag>ChestX-ray14</tag>
+        <tag>Localization</tag>
+        <tag>Dataset</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(PAMI 2017) Segnet:A deep convolutional encoder-decoder architecture for image segmentation]]></title>
     <url>%2F2018%2F02%2F25%2FSegnet%3A%20A%20deep%20convolutional%20encoder-decoder%20architecture%20for%20image%20segmentation%2F</url>
     <content type="text"><![CDATA[Badrinarayanan V, Kendall A, Cipolla R. Segnet: A deep convolutional encoder-decoder architecture for image segmentation[J]. IEEE transactions on pattern analysis and machine intelligence, 2017, 39(12): 2481-2495. Overview Motivation Due to the lack the good encoding techniques (poor ability to delineate boundaries), existing method use CRF to increase accuracy In this paper. it proposed SegNet In decoder, using upsampling according to the pooling indices of the encoder’s corresponding max-pooling layer. Upsample. get sparse feature map Conv. get dense feature map Eliminate the need for learning to upsample Less memory in the inference time Comparison Traditional method DeepLab-LargeFOV DeconvNet Dataset CamVid road scenes SUN RGB-D indoor scenes Related Work Hand Engineered Feature DNN Random Forest Boosting Smooth classifier by CRF Region Proposal. do not exploit co-occurrence of object or other spatial-context RGBD segmentation CRF-RNN. using RNN mimic the charp boundary delineation capabilities of CRF; can be appended to any deep segmentation architecture Multi-scale. image or feature DeconvNet DecoupledNet SegNet is inspired by the unsupervised feature learning architecture proposed by Ranzato. Experiments Best performance is achieved when encoder feature maps are stored in full When memory during inference is constrained, the compressed form (dimensionality reduction, max-pooling indices) can improve performance Larger decoder increase performance for a given encoder]]></content>
@@ -1324,8 +1763,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Detection</tag>
         <tag>Network</tag>
+        <tag>Detection</tag>
         <tag>FPN</tag>
       </tags>
   </entry>
@@ -1354,9 +1793,9 @@
       </categories>
       <tags>
         <tag>Image Enhancement</tag>
-        <tag>Image Generation</tag>
         <tag>coupleGAN</tag>
         <tag>GAN</tag>
+        <tag>Image Generation</tag>
       </tags>
   </entry>
   <entry>
@@ -1400,8 +1839,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Overview</tag>
         <tag>Medical</tag>
+        <tag>Overview</tag>
       </tags>
   </entry>
   <entry>
@@ -1414,8 +1853,197 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Overview</tag>
         <tag>Medical</tag>
+        <tag>Overview</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Deeply-recursive convolutional network for image super-resolution]]></title>
+    <url>%2F2018%2F01%2F24%2FDeeply-recursive%20convolutional%20network%20for%20image%20super-resolution%2F</url>
+    <content type="text"><![CDATA[Kim J, Kwon Lee J, Mu Lee K. Deeply-recursive convolutional network for image super-resolution[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 1637-1645. Overview Motivation stacking Conv to increase receptive filed lead to more parameter pooling discard pixel-infomation In this paper, it proposed DRCN (deeply-recursive convolutional network) 16 recursion recursive-supervision and skip-connections to solve gradient problem Methods Baseline Advance Model D predictions (shared net to predict) are simultaneously supervised use all D predictions to compute the final output skip connections. LR and HR are similar weighted average of all intermediate predictions (learned parameter) Loss Function intermediate output final output final loss function Experiments Comparison Ablation Study]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Residual-Guide Feature Fusion Network for Single Image Deraining]]></title>
+    <url>%2F2018%2F01%2F24%2FResidual-Guide%20Feature%20Fusion%20Network%20for%20Single%20Image%20Deraining%2F</url>
+    <content type="text"><![CDATA[Fan Z, Wu H, Fu X, et al. Residual-Guide Feature Fusion Network for Single Image Deraining[J]. arXiv preprint arXiv:1804.07493, 2018. Overview Motivation wasteful to utilize a resource-hungry model to meet all kinds of demands for rain streak removal task cascaded architecture may lost valuable intermediate reconstruction features In this paper, it proposed ResGuidedNet residual generated from shallower blocks to guide deeper blocks coarse to fine estimation recursive convolutional apply to low-level and high-level Methods recursive block. Conv+LeakyReLU, 5 recursive time ensemble all intermediate results to predict final output Loss Function L2 + SSIM for block_k g. SSIM function λ=1 M + 1 loss function Experiments Comparison Ablation Study Time]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>De-raining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Learning a single convolutional super-resolution network for multiple degradations]]></title>
+    <url>%2F2018%2F01%2F24%2FLearning%20a%20single%20convolutional%20super-resolution%20network%20for%20multiple%20degradations%2F</url>
+    <content type="text"><![CDATA[Zhang K, Zuo W, Zhang L. Learning a single convolutional super-resolution network for multiple degradations[C]//IEEE Conference on Computer Vision and Pattern Recognition. 2018, 6. Overview Motivation existing SR methods assume bicubicly downsample accurate blur kernel increases good performance, mismatch blur kernel decrease performance In this paper take two keys factors as input. blur kernel, noise level proposed dimensionality stretching strategy training. different combinations of blur kernels and noise levels testing. select the best fitted degradation model rather than bicubic Related Works SRCNN VDSR LapSRN SRGAN Degradation Model Blur Kernel the influence of an accurate blur kernel is much larger than that of sophisticated image priors smoother kernel→ over smoothed sharper kernel→ ringing artifacts Noise directly SR with noise removal will amplify the noise denoising pre-processing loses detail information, jointly better Methods MAP Problem Dimensionality Stretching blur kernel. pxp→ p^2x1→ tx1→ h x w x t noise. σx1→ tx1→ h x w x 1 concat. h x w x (t+1) Network pixelShuffle Loss Function Experiments Comparison Inference for real images, use grid search strategy rather than adopting any blur kernel or noise level estimation methods]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPRW 2017) Formresnet:Formatted residual learning for image restoration]]></title>
+    <url>%2F2018%2F01%2F24%2FFormresnet%3A%20Formatted%20residual%20learning%20for%20image%20restoration%2F</url>
+    <content type="text"><![CDATA[Jiao J, Tu W C, He S, et al. Formresnet: Formatted residual learning for image restoration[C]//Computer Vision and Pattern Recognition Workshops (CVPRW), 2017 IEEE Conference on. IEEE, 2017: 1034-1042. Overview Motivation directly learn the clean images may suffer gradient problem directly learn the high-frequency residual may harm the structure detials L2 loss suffers from blur In this paper, it proposed residual formating layer to recover the latent clean image learn the structure detial proposed cross-level loss net Experiments on denoising, SR, de-raining, inpainting, enhancement Methods Residual Formatting Layer aim to reduce the corrupation on the input image layer can be stacked Cross-Level Loss NetPixel Loss Feature Loss Gradient Loss sobel Loss Function Experiments Comparison Time]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) PAD-Net:A Perception-Aided Single Image Dehazing Network]]></title>
+    <url>%2F2018%2F01%2F24%2FPAD-Net%3A%20A%20Perception-Aided%20Single%20Image%20Dehazing%20Network%2F</url>
+    <content type="text"><![CDATA[Liu Y, Zhao G. PAD-Net: A Perception-Aided Single Image Dehazing Network[J]. arXiv preprint arXiv:1805.03146, 2018. Overview Motivation L2 norm implicitly assumes a white Gaussian noise, which is an oversimplified case that is not valid in general dehazing cases L2 treats the impact of noise independently to the local characteristics In this paper, it replaced the L2 loss with perceptually derived loss function SSIM MS-SSIM prposed Perception-Aided SIngle Image Dehazing Network (PAD-Net). AOD-Net + Loss Function Loss Function L2 Loss L1 Loss The derivative of L1 loss is not defined at 0. If the error is 0, do not need to update the weight. So use the convention that sign(0) = 0 SSIM μ_x. view as estimates of the luminance of x σ_x. contrast of x μ_{xy}. structural similarity l(p). measure the comparisons of the luminance cs(p). combination of contrast and structure similarity p. the pixel involved the μ and σ of the Gaussian filter on the pixel p p’. center pixel of patch P Derivation MS-SSIM smaller σ_G loses the ability to preserve the local structure and reintroduce splotchy in flat region larger σ_G tends to keep the noises in the proximity of edges Multi-scale σ_G α = β_j = 1 j = 1, …, M Experiments System MS-SSIM + L2 MS-SSIM + L1 Dataset ITS. indoor training set OTS. outdoor training set random select 10,000 images from ITS + OTS (2,790 IST + 7,210 OST) random select 1,000 non-overlapping set as validation set test on SOTS (500 indoor + 500 outdoor) Directly Train Fine-tuing on AOD-Net]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Loss Function</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>AOD-Net</tag>
+        <tag>Loss Function</tag>
+        <tag>MS-SSIM</tag>
+        <tag>SSIM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2018) Image Inpainting for Irregular Holes Using Partial Convolutions]]></title>
+    <url>%2F2018%2F01%2F24%2FImage%20Inpainting%20for%20Irregular%20Holes%20Using%20Partial%20Convolutions%2F</url>
+    <content type="text"><![CDATA[Liu G, Reda F A, Shih K J, et al. Image inpainting for irregular holes using partial convolutions[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 85-100. Overview Motivation Conv responses conditioned on both valid pixels as well as the substitute values (mean value) in masked holes often lead to artifacts such as color discrepancy and blurriness post-processing used to reduce artifacts, but expensive and may fail previous methods focus on rectanglar regions In this paper, it proposed partial convolutionss convolution is masked and renormalized to be conditioned on only valid pixels generate update mask for the next layer focus on irregular mask Contribution partial Conv (PConv) replace Conv with PConv get state-of-art first on irregularly shaped holes proposed a large irregular mask dataset Related WorkNon-learning Approach neighbouring pixel. can only handle narrow holes, where color and texture variance is small patch based. PatchMatch (faster similar patch searching algorithm) Deep Learning Based initialize the holes with some constant placeholder values (mean pixel value of ImageNet) post-processing replace post-processing with refinement network ignore the mask placeholder values search closest encoding in a latent space Dataset ImageNet Places2 CelebA-HQ Augmentation dilation, rotation, cropping masks with and without holes close to border Do Inpainting on SRextension experiments. offset pixels and insert holes (scaling factor k) Methods Partial Convolution (PConv) M. binary mask 1/sum(M). scaling factor to adjust for the varying amount of valid (unmasked) inputs After each PConv, update the mask mask will eventually be all ones Network U-Net (8 encoder + 8 decoder)… No padding Loss FunctionTotal Loss Pixel Loss Perceptual Loss I_out. output image I_comp. I_out of hole + Input of non-hole ψ_n. nth layer of VGG16 Style Loss K_n. 1/chw Total Variation (TV) Loss P. region of 1-pixel dilation of the hole region smoothing penalty. deal with the checkerboard artifacts of perceptual loss Experiments Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Inpainting</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Inpainting</tag>
+        <tag>Partial Convolution</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Gated fusion network for single image dehazing]]></title>
+    <url>%2F2018%2F01%2F24%2FGated%20fusion%20network%20for%20single%20image%20dehazing%2F</url>
+    <content type="text"><![CDATA[Ren W, Ma L, Zhang J, et al. Gated fusion network for single image dehazing[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 3253-3261. Overview MotivationMost existing methods follow the atmosphere scattering model. In this paper, it proposed Gated Fusion Network (GFN) directly restore a clear image from a hazy image encoder-decoder fusion-based strategy + confidence maps. White Balance, Contrast Enhancing and Gamma Correlation multi-scale to avoid halo artifacts GAN loss Major Factors of Hazy Image color cast introduced by atmosphere light lack of visibility due to attenuation solution WB. eliminating chromatic casts CE. better global visibility in thick hazy region but too dark in light hazy region GC. recover the light hazy region Contribution Network not follow the atmosphere scattering model demonstrate the utility and effectiveness of GFN multi-scale approch to eliminate halo artifacts Related WorkMultiple-image aggregationHand-crafted Priors Based Methods maximize the contrast dark channel color-lines non-local fusion luminance, chromatic and saliency maps Data-driven Methods combine four feature with Random Forest color attenuation prior deep learning DatasetA∈(0.8, 1.0), β∈[0.5, 1.5]. random sample 7 groups, add 1% Gaussian noise. Train. 1400 images x7 Test. remained 49 images x7 RESIDE dataset. benchmark Network White Balance Input recover the latent color of the scene and eliminate chromatic cast but still present low contrast Gary World Assumpationthe average value of the R,G,B components should average out to a common gray value. (Link) Contrast Enhanced Input subtracting the average luminance value dark image region tend to black Gamma Corrected Input overcome the dark limitation of CE Network dilation Conv Relu 3 Conv + 3 DeConv, stride 1 first layer 5x5, other 3x3x32 Multi-Scale Refinement vary the image resolution (x2) to preserve halo artifacts loss function motivationthe human visual system is sensitive to local changes (e.g., edges) over a wide range of scales. As a merit, the multi-scale approach provides a convenient way to incorporate local image details over varying resolutions. GAN Lossapply to finest image. Total Loss Experiments Details 128x128 patches, batch size 10, 240,000 iteration Adam, 0.0001 LR, LR decay weight decay 0.00001 train 35 hours on K80 Comparison light, medium and heavy (β=0.8, 1.0, 1.2). Ablation Study Multi-scale Gated Fusion Limitation can not handle very large fog]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(AAAI 2018) Densely connected pyramid dehazing network]]></title>
+    <url>%2F2018%2F01%2F24%2FDensely%20Connected%20Pyramid%20Dehazing%20Network%2F</url>
+    <content type="text"><![CDATA[Zhang H, Patel V M. Densely connected pyramid dehazing network[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 3194-3203. Overview MotivationMost existing method inaccuracies in the estimation of transmission map not leverage end-to-end training, unable to capture the inherent relation among transmission map, atmospheric light and dehazed image In this paper, it proposed Densely Connected Pyramid Dehazing Network (DCPDN) jointly learn transmission map, atmospheric light and dehazed image multi-level pyramid pooling for the estimation of transmission map edge-preserving loss function joint-discriminator stage-wise learning Contribution jointly network jointly discriminator edge-preserving loss, edge-preserving pyramid densely connected encoder-decoder network experiments, ablation study Related WorkPrior-based dark-channel contrast color-lines haze-lineLearning-basedGAN DatasetA∈[0.5, 1]， β∈[0.4, 1.6]. random sample 4 groups. TrainA. 1000 images from NYU-depth2, get 4000 paris TestA. 100 images from NYU-depth2, get 400 paris TestB. 200 paris fromMiddlebury and Sun3D Network Pyramid Densely Connected Transmission Map Estimation Net dense: maximize information flow. Encoder. 5 (dense block + down-sample transition block) Decoder. 5 (dense block + up-sample transition block) Multi-level pyramid pooling module. deal with lacking of global structure information Atmosphere Light Estimation Net U-net. 4 (Conv-BN-Relu) + 4 (DeConv-BN-Relu) Joint Discriminator Edge-preserving Loss (set 1) L2 loss of transmission map (set 0.8) two-directional gradient loss edge corresponds to the discontinuities in the image intensities. (0.8) feature edge loss low-level features (edges and contour) can be captured in the shallow layers. relu1-1 and relu2-1 of VGG16. Loss Function L^t. edge-preserving loss L^a. L2 of atmospheric loss L^d. L2 of dehazed loss (0.25) L^j. joint Discriminator loss Stage-wise training and then fine-tuned. Experiments Details LR. 0.002, Adam batch size 1, 512x512, 400000 iteration Ablation Study multi-level pooling. better preserve the global structural for obj with relatively larger scale edge-preserving loss. better refined the edge of transmission map joint Discriminator. enhance the transmission map Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>DenseNet</tag>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Density-aware Single Image De-raining using a Multi-stream Dense Network]]></title>
+    <url>%2F2018%2F01%2F23%2FDensity-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network%2F</url>
+    <content type="text"><![CDATA[Zhang H, Patel V M. Density-aware single image de-raining using a multi-stream dense network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 695-704. Overview Motivation Non-uniform rain densities Existing method do not consider the density of rain drops (lead to over de-rain or under de-rain) [6]. Deep Detail Network. CVPR 2017 [33]. Deep Joint Rain Detection and Removal. CVPR 2017 In this paper, it proposed DID-MDN joint (two stage) rain density estimation and de-raining (guided by the estimated rain-density label) multi-stream (different scale feature) use residual to represent rain-density feature create a dataset containing rain-density label (heavy, medium, light) Related Work video-based prior-based (over-smooth details) Multi-scale feature (U-Net, FCN, skip-connection) Dataset 12,000 for training 1, 200 for testing use PS to get different level rain density (noise level [5%, 35%], [35%, 65%], [65%, 95%]) link Architecture Residual-Aware Rain-Density Classifiersingle network may not be sufficient enough to learn different rain-densities occurring in practice. used for guiding the de-raining process residual can better represent the rain feature observe that fine-tune pre-trained model is not an efficient solution. high-level feature focus on localizing the discriminative object (not small rain-streak), so it’s not good for density classify. step estimate residual (residual feature extraction network) train classifier with residual (classifier) Loss firstly train residual network then train classifier finally joint optimized Classifier (low, medium, high) Multi-Stream Dense Network Concat multi-stream feature and density label Refinement Multi-Stream smaller rain-streak can be capture by small-scale feature longer rain-streak can be capture by larger-scale feature For each stream six dense blocks + six transition layer short path better for convergence Dense1. 3-down + 3-up (7x7) Dense2. 2-down + 2-no + 2-up (5x5) Dense3. 1-down + 4-no + 1-up (3x3) Total Loss Experiments Dataset Train1. 12,000 Test1. 1,200 Test2. 1,000 (from Deep Detail Network) Detail random crop, horizontal flip batch size 1 λF = 1 Ablation Study VGG vs Residual classifier Modules Single. single stream without label fusion Yang-Multi. multi-stream (dilated) Multi-no-label. multi stream without label fusion DID-MDN. multi-stream with label fusion Over de-rain with blur. Single and Yang-Multi Leave some rain-streak. Muti-no-label Comparison Synthetic [33, 41] leave some rain-streak. [6] remove some details. Real long-thin rain-streak heavy rain small round rain medium reain Inference Time]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>De-raining</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(AAAI 2018) End-to-End United Video Dehazing and Detection]]></title>
+    <url>%2F2018%2F01%2F23%2FEnd-to-End%20United%20Video%20Dehazing%20and%20Detection%2F</url>
+    <content type="text"><![CDATA[Li B, Peng X, Wang Z, et al. End-to-end united video dehazing and detection[C]//Thirty-Second AAAI Conference on Artificial Intelligence. 2018. Overview Motivation end-to-end video dehazing has not been explored temporal consistency In this paper, it proposed EVD-Net (End-to-End Video Dehazing Network) EVDD-Net (End-to-End United Video Dehazing and Detection Network) Related Work Classical Atmosphere Scattering Model DehazeNet MSCNN AOD-Net. re-formulationVideo Dehazing DatasetDehazing Synthetic Hazy Video Dataset from TUM RGB-D Dataset refined depth infomation TestSet. video from city road when PM2.5 is 223 Dehazing + Detection ILSVRC2015 VID estimated depth by paper 2016 Start Pointbased on AOD-Net architecture. EVD-Net Multi-framethe global atmosphere light A should be hardly or slowly changed over a moderate number of consecutive frame. EVDD-Net Multi-Frame Faster RCNN EVD-Net Experiments Details MSE loss well aligned with SSIM and visual quality Fusion Strategy Comparison of Dehaze Comparison of Detection naive concatenation of low-level and high-level models often can not sufficiently boost the high-level task performance JAOD-Faster RCNN. flickering and inconsistent detection Only EVDD-Net detection 4 cars in all frames]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Dehazing</category>
+      </categories>
+      <tags>
+        <tag>Dehazing</tag>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Video</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Locally Adaptive Learning Loss for Semantic Image Segmentation]]></title>
+    <url>%2F2018%2F01%2F23%2FLocally%20Adaptive%20Learning%20Loss%20for%20Semantic%20Image%20Segmentation%2F</url>
+    <content type="text"><![CDATA[Guo J, Ren P, Gu A, et al. Locally Adaptive Learning Loss for Semantic Image Segmentation[J]. arXiv preprint arXiv:1802.08290, 2018. Overview Motivation Most loss layer focus on pixel-wise, ignore spatial layout and interaction with neighbouring pixel (not sensitive to intra-class connection) In this paper, it proposed Locally Adaptive Learning Loss for segmentation merge predicted distribution over a small group of neighbouring pixels with same category (imporve the capability of discriminating targets from both inter- and intra- class) sliding window + ensemble by Minkowski pooling (focus on high loss, rebalancing) Related Work contrastive loss, triplet loss and center loss pixel-wise loss. collapse the spatial dimension Aligned RoI. sigmoid + binary loss (ROI maintain spatial layout) Loss Max-Pooling. handle imbalanced inter-class dataset in segmentation (assign weight to each pixel based on their losses) weighted ensemble entropy estimator. better accuracy and higher converge rate Locally Adaptive Loss Selective Ensemble m. number of the pixel which have the same label μ. select same label pixel wd. Gaussian weight based on chessboard distance x. pixel when ε is softmax cross-entropy Batch Pooling Mp. number of batchMinkowski Pooling. when k increases, it will focus on high loss value and increase the impacts of mispredited samples of intra-class Dataset &amp; MetricVOC2012, IoU Experiments DeepLabV2 (disable multi-scale and CRF) Batch size 2 Crop size 321x321]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Loss Function</category>
+      </categories>
+      <tags>
+        <tag>Segmentation</tag>
+        <tag>Loss Function</tag>
+        <tag>Locally Adaptive Learning Loss</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Residual Dense Network for Image Super-Resolution]]></title>
+    <url>%2F2018%2F01%2F23%2FResidual%20Dense%20Network%20for%20Image%20Super-Resolution%2F</url>
+    <content type="text"><![CDATA[Zhang Y, Tian Y, Kong Y, et al. Residual dense network for image super-resolution[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 2472-2481. Overview Motivation Most SR models do not make full use of the hierarchical feature from the original LR image Hierarchical features give more clues for reconstruction Interpolation of LR image will increase computation and lose details of LR image Higher growth rate of dense block can improve performance but hard to train In this paper, it proposed residual dense network (RDN) consist of residual dense block (RDB) contiguous memory mechanism (CM) local feature fusion (LFF). deal with high growth rate global feature fusion (GFF) local residual learning (LRL) global residual learning (GRL) Related Work VDSR, IRCNN. residual learning DRCN, DRRN. recursive learning Memnet. memory block ESPCN. sub-pixel Architecture contains four parts SFENet (shallow feature extraction net) RDBs (residual dense blocks) DFF (dense feature fusion)contains GFF (1x1 for fusion, 3x3 for extraction effective in another paper). UPNet (up-sampling net) inspired by CVPRW 2017 RDB CMpassing the state of preceding RDB to each layer of current RDB. LFFfind that as G grows, very deep dense nerwork without LFF would be hard to train. LRL Details remove BN (performance and memory) remove pooling L1 loss self-ensemble method Dataset DIV2K (800 train, 100 valid, 100 test) 5 benchmark dataset for testing (Set5, Set14, B100, Urban100, Manga109) Degradation Model bicubic Gaussian kernel bicubic + Gaussian noise Experiments Study of D, C, G D. number of RDB C. number of conv layers in RDB G. growth rate the larger the better. Ablation Study Comparison when scaling factor become larger, RDN not better for MDSR (depth, multi-scale, larger patch size). Method using interpolated LR image would produce artifacts and blur.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>Super Resolution</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Super Resolution</tag>
+        <tag>RDN</tag>
+        <tag>RDB</tag>
       </tags>
   </entry>
   <entry>
@@ -1624,6 +2252,7 @@
         <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>AOD-Net</tag>
       </tags>
   </entry>
   <entry>
@@ -1757,9 +2386,9 @@
         <category>Face</category>
       </categories>
       <tags>
+        <tag>Multi-label Classification</tag>
         <tag>Face</tag>
         <tag>Facial Action Units</tag>
-        <tag>Multi-label Classification</tag>
       </tags>
   </entry>
   <entry>
@@ -1771,9 +2400,9 @@
         <category>Face</category>
       </categories>
       <tags>
+        <tag>Multi-label Classification</tag>
         <tag>Face</tag>
         <tag>Facial Action Units</tag>
-        <tag>Multi-label Classification</tag>
         <tag>Valence-Arousal space</tag>
       </tags>
   </entry>
@@ -1786,10 +2415,10 @@
         <category>Face</category>
       </categories>
       <tags>
-        <tag>VAE</tag>
-        <tag>Face</tag>
-        <tag>Facial Action Units</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Face</tag>
+        <tag>VAE</tag>
+        <tag>Facial Action Units</tag>
       </tags>
   </entry>
   <entry>
@@ -1966,8 +2595,8 @@
       <tags>
         <tag>Classification</tag>
         <tag>Component</tag>
-        <tag>Non-local</tag>
         <tag>Attention</tag>
+        <tag>Non-local</tag>
         <tag>Video Classification</tag>
       </tags>
   </entry>
@@ -1981,12 +2610,12 @@
         <category>Component</category>
       </categories>
       <tags>
+        <tag>Localization</tag>
         <tag>Classification</tag>
         <tag>Fine-Grained Classification</tag>
         <tag>Component</tag>
-        <tag>STN</tag>
         <tag>Attention</tag>
-        <tag>Localization</tag>
+        <tag>STN</tag>
       </tags>
   </entry>
   <entry>
@@ -2068,8 +2697,8 @@
       </categories>
       <tags>
         <tag>Image Enhancement</tag>
-        <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Conditional GAN</tag>
         <tag>Map to Aerial</tag>
         <tag>Reality Enhancement</tag>
@@ -2087,8 +2716,8 @@
       <tags>
         <tag>Image Enhancement</tag>
         <tag>Face</tag>
-        <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Map to Aerial</tag>
         <tag>Reality Enhancement</tag>
         <tag>Style Transfer</tag>
@@ -2105,8 +2734,8 @@
       </categories>
       <tags>
         <tag>Image Enhancement</tag>
-        <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Map to Aerial</tag>
         <tag>Style Transfer</tag>
         <tag>CycleGAN</tag>
@@ -2178,8 +2807,8 @@
         <category>Image Processing</category>
       </categories>
       <tags>
-        <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Reality Enhancement</tag>
         <tag>SimGAN</tag>
         <tag>Eye</tag>
@@ -2195,9 +2824,9 @@
         <category>Network</category>
       </categories>
       <tags>
+        <tag>DenseNet</tag>
         <tag>Network</tag>
         <tag>Classification</tag>
-        <tag>DenseNet</tag>
       </tags>
   </entry>
   <entry>
@@ -2241,8 +2870,8 @@
       </categories>
       <tags>
         <tag>Face</tag>
-        <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Image Generation</tag>
         <tag>Scene</tag>
         <tag>DCGAN</tag>
       </tags>
@@ -2256,9 +2885,9 @@
         <category>Image Processing</category>
       </categories>
       <tags>
+        <tag>Image Generation</tag>
         <tag>geometric matching</tag>
         <tag>Image Transformation</tag>
-        <tag>Image Generation</tag>
       </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-02-25T22:25:05.000Z</updated>
+  <updated>2019-03-25T22:25:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,328 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(CVPR 2018) Low-Shot Learning from Imaginary Data</title>
+    <link href="http://yoursite.com/2019/03/26/Low-Shot%20Learning%20from%20Imaginary%20Data/"/>
+    <id>http://yoursite.com/2019/03/26/Low-Shot Learning from Imaginary Data/</id>
+    <published>2019-03-25T22:25:04.000Z</published>
+    <updated>2019-03-25T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Snell J, Swersky K, Zemel R. Prototypical networks for few-shot learning[C]//Advances in Neural Information Processing Systems. 2017: 4077-4087.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="Low-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Low-Shot-Learning/"/>
+    
+    
+      <category term="Low-Shot Learning" scheme="http://yoursite.com/tags/Low-Shot-Learning/"/>
+    
+      <category term="Meta Learning" scheme="http://yoursite.com/tags/Meta-Learning/"/>
+    
+      <category term="Prototypical Network" scheme="http://yoursite.com/tags/Prototypical-Network/"/>
+    
+      <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
+    
+      <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2017) Prototypical Networks for Few-shot Learning</title>
+    <link href="http://yoursite.com/2019/03/26/Prototypical%20Networks%20for%20Few-shot%20Learning/"/>
+    <id>http://yoursite.com/2019/03/26/Prototypical Networks for Few-shot Learning/</id>
+    <published>2019-03-25T22:25:03.000Z</published>
+    <updated>2019-03-25T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Snell J, Swersky K, Zemel R. Prototypical networks for few-shot learning[C]//Advances in Neural Information Processing Systems. 2017: 4077-4087.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="Few-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Few-Shot-Learning/"/>
+    
+    
+      <category term="Prototypical Network" scheme="http://yoursite.com/tags/Prototypical-Network/"/>
+    
+      <category term="Few-Shot Learning" scheme="http://yoursite.com/tags/Few-Shot-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2016) Matching Networks for One Shot Learning</title>
+    <link href="http://yoursite.com/2019/03/26/Matching%20Networks%20for%20One%20Shot%20Learning/"/>
+    <id>http://yoursite.com/2019/03/26/Matching Networks for One Shot Learning/</id>
+    <published>2019-03-25T22:25:02.000Z</published>
+    <updated>2019-03-25T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Vinyals O, Blundell C, Lillicrap T, et al. Matching networks for one shot learning[C]//Advances in neural information processing systems. 2016: 3630-3638.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="One-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/One-Shot-Learning/"/>
+    
+    
+      <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
+    
+      <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
+    
+      <category term="One-Shot Learning" scheme="http://yoursite.com/tags/One-Shot-Learning/"/>
+    
+      <category term="Matching Net" scheme="http://yoursite.com/tags/Matching-Net/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICML 2016) Meta-learning with memory-augmented neural networks</title>
+    <link href="http://yoursite.com/2019/03/26/Meta-learning%20with%20memory-augmented%20neural%20networks/"/>
+    <id>http://yoursite.com/2019/03/26/Meta-learning with memory-augmented neural networks/</id>
+    <published>2019-03-25T22:25:01.000Z</published>
+    <updated>2019-03-25T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Santoro, Adam, Bartunov, Sergey, Botvinick, Matthew, Wierstra, Daan, and Lillicrap, Timothy. Meta-learning with memory-augmented neural networks. In Proceedings of The 33rd International Conference on Machine Learning, pp. 1842–1850, 2016.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="Meta Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Meta-Learning/"/>
+    
+    
+      <category term="Meta Learning" scheme="http://yoursite.com/tags/Meta-Learning/"/>
+    
+      <category term="MANN (Memory-Augmented Neural Network)" scheme="http://yoursite.com/tags/MANN-Memory-Augmented-Neural-Network/"/>
+    
+      <category term="Memory" scheme="http://yoursite.com/tags/Memory/"/>
+    
+      <category term="NTM (Neural Turing Machines)" scheme="http://yoursite.com/tags/NTM-Neural-Turing-Machines/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(IJCAI 2018) A Multi-task Learning Approach for Image Captioning</title>
+    <link href="http://yoursite.com/2019/03/12/A%20Multi-task%20Learning%20Approach%20for%20Image%20Captioning/"/>
+    <id>http://yoursite.com/2019/03/12/A Multi-task Learning Approach for Image Captioning/</id>
+    <published>2019-03-11T22:25:01.000Z</published>
+    <updated>2019-03-11T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhao W, Wang B, Ye J, et al. A Multi-task Learning Approach for Image Captioning[C]//IJCAI. 2018: 1205-1211.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
+    
+      <category term="Caption" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Caption/"/>
+    
+    
+      <category term="Caption" scheme="http://yoursite.com/tags/Caption/"/>
+    
+      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
+    
+      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
+    
+      <category term="Multi-task Learning" scheme="http://yoursite.com/tags/Multi-task-Learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) WILDCAT:Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation</title>
+    <link href="http://yoursite.com/2019/03/05/WILDCAT:%20Weakly%20Supervised%20Learning%20of%20Deep%20ConvNets%20for%20Image%20Classification,%20Pointwise%20Localization%20and%20Segmentation/"/>
+    <id>http://yoursite.com/2019/03/05/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/</id>
+    <published>2019-03-04T22:25:06.000Z</published>
+    <updated>2019-03-04T22:25:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Durand T , Mordan T , Thome N , et al. WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation[C]// 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
+    
+    
+      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
+    
+      <category term="Weakly Supervised Learning" scheme="http://yoursite.com/tags/Weakly-Supervised-Learning/"/>
+    
+      <category term="Classwise Pooling" scheme="http://yoursite.com/tags/Classwise-Pooling/"/>
+    
+      <category term="Spatial Pooling" scheme="http://yoursite.com/tags/Spatial-Pooling/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICIP 2016) Maxmin convolutional neural networks for image classification</title>
+    <link href="http://yoursite.com/2019/03/05/Maxmin%20convolutional%20neural%20networks%20for%20image%20classification/"/>
+    <id>http://yoursite.com/2019/03/05/Maxmin convolutional neural networks for image classification/</id>
+    <published>2019-03-04T22:25:05.000Z</published>
+    <updated>2019-03-04T22:25:05.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Blot M, Cord M, Thome N. Max-min convolutional neural networks for image classification[C]//2016 IEEE International Conference on Image Processing (ICIP). IEEE, 2016: 3678-3682.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
+    
+    
+      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
+    
+      <category term="Max-Min Pooling" scheme="http://yoursite.com/tags/Max-Min-Pooling/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2016) Learning Deep Features for Discriminative Localization</title>
+    <link href="http://yoursite.com/2019/03/05/Learning%20Deep%20Features%20for%20Discriminative%20Localization/"/>
+    <id>http://yoursite.com/2019/03/05/Learning Deep Features for Discriminative Localization/</id>
+    <published>2019-03-04T22:25:04.000Z</published>
+    <updated>2019-03-04T22:25:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhou B, Khosla A, Lapedriza A, et al. Learning deep features for discriminative localization[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 2921-2929.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Visualization" scheme="http://yoursite.com/categories/Paper-Note/Visualization/"/>
+    
+    
+      <category term="Visualization" scheme="http://yoursite.com/tags/Visualization/"/>
+    
+      <category term="Global Average Pooling" scheme="http://yoursite.com/tags/Global-Average-Pooling/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2015) Recurrent convolutional neural network for object recognition</title>
+    <link href="http://yoursite.com/2019/03/05/Recurrent%20convolutional%20neural%20network%20for%20object%20recognition/"/>
+    <id>http://yoursite.com/2019/03/05/Recurrent convolutional neural network for object recognition/</id>
+    <published>2019-03-04T22:25:03.000Z</published>
+    <updated>2019-03-04T22:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Liang N M , Hu N X . Recurrent convolutional neural network for object recognition[C]// 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE Computer Society, 2015.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="Recurrent CNN" scheme="http://yoursite.com/tags/Recurrent-CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICML 2014) Recurrent convolutional neural networks for scene labeling</title>
+    <link href="http://yoursite.com/2019/03/05/Recurrent%20convolutional%20neural%20networks%20for%20scene%20labeling/"/>
+    <id>http://yoursite.com/2019/03/05/Recurrent convolutional neural networks for scene labeling/</id>
+    <published>2019-03-04T22:25:02.000Z</published>
+    <updated>2019-03-04T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Pinheiro P H O, Collobert R. Recurrent convolutional neural networks for scene labeling[C]//31st International Conference on Machine Learning (ICML). 2014 (EPFL-CONF-199822).&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+    
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Recurrent CNN" scheme="http://yoursite.com/tags/Recurrent-CNN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ECCV 2018) Uncertainty Estimates and Multi-Hypotheses Networks for Optical Flow</title>
+    <link href="http://yoursite.com/2019/03/05/Uncertainty%20Estimates%20and%20Multi-Hypotheses%20Networks%20for%20Optical%20Flow/"/>
+    <id>http://yoursite.com/2019/03/05/Uncertainty Estimates and Multi-Hypotheses Networks for Optical Flow/</id>
+    <published>2019-03-04T22:25:01.000Z</published>
+    <updated>2019-03-04T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Ilg E, Cicek O, Galesso S, et al. Uncertainty estimates and multi-hypotheses networks for optical flow[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 652-667.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Multiple Hypotheses" scheme="http://yoursite.com/categories/Paper-Note/Multiple-Hypotheses/"/>
+    
+    
+      <category term="Multiple Hypotheses" scheme="http://yoursite.com/tags/Multiple-Hypotheses/"/>
+    
+  </entry>
   
   <entry>
     <title>(ICLR 2018) Ensemble Adversarial Training:Attacks and Defenses</title>
@@ -262,314 +584,6 @@
       <category term="Super Resolution" scheme="http://yoursite.com/tags/Super-Resolution/"/>
     
       <category term="Recursive Residual Network" scheme="http://yoursite.com/tags/Recursive-Residual-Network/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICML 2016) Pixel recurrent neural networks</title>
-    <link href="http://yoursite.com/2019/02/15/Pixel%20recurrent%20neural%20networks/"/>
-    <id>http://yoursite.com/2019/02/15/Pixel recurrent neural networks/</id>
-    <published>2019-02-14T22:25:03.000Z</published>
-    <updated>2019-02-14T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Oord A, Kalchbrenner N, Kavukcuoglu K. Pixel recurrent neural networks[J]. arXiv preprint arXiv:1601.06759, 2016.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="PixelCNN" scheme="http://yoursite.com/tags/PixelCNN/"/>
-    
-      <category term="PixelRNN" scheme="http://yoursite.com/tags/PixelRNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ECCV 2018) Recurrent Squeeze-and-Excitation Context Aggregation Net for Single Image Deraining</title>
-    <link href="http://yoursite.com/2019/02/15/Recurrent%20Squeeze-and-Excitation%20Context%20Aggregation%20Net%20for%20Single%20Image%20Deraining/"/>
-    <id>http://yoursite.com/2019/02/15/Recurrent Squeeze-and-Excitation Context Aggregation Net for Single Image Deraining/</id>
-    <published>2019-02-14T22:25:02.000Z</published>
-    <updated>2019-02-14T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Li X, Wu J, Lin Z, et al. Recurrent squeeze-and-excitation context aggregation net for single image deraining[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 254-269.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-      <category term="De-raining" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/De-raining/"/>
-    
-    
-      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
-    
-      <category term="De-raining" scheme="http://yoursite.com/tags/De-raining/"/>
-    
-      <category term="SE Block" scheme="http://yoursite.com/tags/SE-Block/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2018) Non-Local Recurrent Network for Image Restoration</title>
-    <link href="http://yoursite.com/2019/02/15/Non-Local%20Recurrent%20Network%20for%20Image%20Restoration/"/>
-    <id>http://yoursite.com/2019/02/15/Non-Local Recurrent Network for Image Restoration/</id>
-    <published>2019-02-14T22:25:01.000Z</published>
-    <updated>2019-02-14T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liu D, Wen B, Fan Y, et al. Non-local recurrent network for image restoration[C]//Advances in Neural Information Processing Systems. 2018: 1673-1682.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-      <category term="Image Restoration" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/Image-Restoration/"/>
-    
-    
-      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
-    
-      <category term="Image Restoration" scheme="http://yoursite.com/tags/Image-Restoration/"/>
-    
-      <category term="Non-local" scheme="http://yoursite.com/tags/Non-local/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Future Frame Prediction for Anomaly Detection -- A New Baseline</title>
-    <link href="http://yoursite.com/2019/01/25/Future%20Frame%20Prediction%20for%20Anomaly%20Detection%20--%20A%20New%20Baseline/"/>
-    <id>http://yoursite.com/2019/01/25/Future Frame Prediction for Anomaly Detection -- A New Baseline/</id>
-    <published>2019-01-24T22:25:02.000Z</published>
-    <updated>2019-01-24T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liu W, Luo W, Lian D, et al. Future frame prediction for anomaly detection–a new baseline[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6536-6545.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Abnormality Detection" scheme="http://yoursite.com/categories/Paper-Note/Abnormality-Detection/"/>
-    
-    
-      <category term="Abnormality Detection" scheme="http://yoursite.com/tags/Abnormality-Detection/"/>
-    
-      <category term="VIdeo Frame" scheme="http://yoursite.com/tags/VIdeo-Frame/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2018) GANomaly:Semi-Supervised Anomaly Detection via Adversarial Training</title>
-    <link href="http://yoursite.com/2019/01/25/GANomaly:%20Semi-Supervised%20Anomaly%20Detection%20via%20Adversarial%20Training/"/>
-    <id>http://yoursite.com/2019/01/25/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/</id>
-    <published>2019-01-24T22:25:01.000Z</published>
-    <updated>2019-01-24T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Akcay S, Atapour-Abarghouei A, Breckon T P. GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training[J]. 2018.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Abnormality Detection" scheme="http://yoursite.com/categories/Paper-Note/Abnormality-Detection/"/>
-    
-    
-      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
-    
-      <category term="Abnormality Detection" scheme="http://yoursite.com/tags/Abnormality-Detection/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Learning in an Uncertain World:Representing Ambiguity Through Multiple Hypotheses</title>
-    <link href="http://yoursite.com/2019/01/12/Learning%20in%20an%20Uncertain%20World:%20Representing%20Ambiguity%20Through%20Multiple%20Hypotheses/"/>
-    <id>http://yoursite.com/2019/01/12/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/</id>
-    <published>2019-01-11T22:25:08.000Z</published>
-    <updated>2019-01-11T22:25:08.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Rupprecht C, Laina I, DiPietro R, et al. Learning in an uncertain world: Representing ambiguity through multiple hypotheses[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 3591-3600.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Multiple Hypotheses" scheme="http://yoursite.com/categories/Paper-Note/Multiple-Hypotheses/"/>
-    
-    
-      <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
-    
-      <category term="Multiple Hypotheses" scheme="http://yoursite.com/tags/Multiple-Hypotheses/"/>
-    
-      <category term="Frame Prediction" scheme="http://yoursite.com/tags/Frame-Prediction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2018 Spotlight) Training Neural Networks Using Features Replay</title>
-    <link href="http://yoursite.com/2019/01/12/Training%20Neural%20Networks%20Using%20Features%20Replay/"/>
-    <id>http://yoursite.com/2019/01/12/Training Neural Networks Using Features Replay/</id>
-    <published>2019-01-11T22:25:07.000Z</published>
-    <updated>2019-01-11T22:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Huo Z, Gu B, Huang H. Training neural networks using features replay[C]//Advances in Neural Information Processing Systems. 2018: 6659-6668.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Optimization" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Optimization/"/>
-    
-    
-      <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
-    
-      <category term="Back Propagation" scheme="http://yoursite.com/tags/Back-Propagation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018 Best Paper) Taskonomy:Disentangling Task Transfer Learning</title>
-    <link href="http://yoursite.com/2019/01/12/Taskonomy:%20Disentangling%20Task%20Transfer%20Learning/"/>
-    <id>http://yoursite.com/2019/01/12/Taskonomy: Disentangling Task Transfer Learning/</id>
-    <published>2019-01-11T22:25:06.000Z</published>
-    <updated>2019-01-11T22:25:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zamir A R, Sax A, Shen W, et al. Taskonomy: Disentangling Task Transfer Learning[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 3712-3722.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
-    
-      <category term="Transfer Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Transfer-Learning/"/>
-    
-    
-      <category term="Transfer Learning" scheme="http://yoursite.com/tags/Transfer-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ECCV 2016) Identity mappings in deep residual networks</title>
-    <link href="http://yoursite.com/2019/01/12/Identity%20mappings%20in%20deep%20residual%20networks/"/>
-    <id>http://yoursite.com/2019/01/12/Identity mappings in deep residual networks/</id>
-    <published>2019-01-11T22:25:05.000Z</published>
-    <updated>2019-01-11T22:25:05.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;He K, Zhang X, Ren S, et al. Identity mappings in deep residual networks[C]//European Conference on Computer Vision. Springer, Cham, 2016: 630-645.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
-    
-    
-      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
-    
-      <category term="Identity Mapping" scheme="http://yoursite.com/tags/Identity-Mapping/"/>
-    
-      <category term="Pre-activation" scheme="http://yoursite.com/tags/Pre-activation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Convolutional Neural Networks with Alternately Updated Clique</title>
-    <link href="http://yoursite.com/2019/01/12/Convolutional%20Neural%20Networks%20with%20Alternately%20Updated%20Clique/"/>
-    <id>http://yoursite.com/2019/01/12/Convolutional Neural Networks with Alternately Updated Clique/</id>
-    <published>2019-01-11T22:25:04.000Z</published>
-    <updated>2019-01-11T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Yang Y, Zhong Z, Shen T, et al. Convolutional Neural Networks with Alternately Updated Clique[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 2413-2422.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="CliqueNet" scheme="http://yoursite.com/tags/CliqueNet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Learning feature pyramids for human pose estimation</title>
-    <link href="http://yoursite.com/2019/01/12/Learning%20feature%20pyramids%20for%20human%20pose%20estimation/"/>
-    <id>http://yoursite.com/2019/01/12/Learning feature pyramids for human pose estimation/</id>
-    <published>2019-01-11T22:25:03.000Z</published>
-    <updated>2019-01-11T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Yang W, Li S, Ouyang W, et al. Learning feature pyramids for human pose estimation[C]//The IEEE International Conference on Computer Vision (ICCV). 2017, 2.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Body" scheme="http://yoursite.com/categories/Paper-Note/Body/"/>
-    
-      <category term="Pose" scheme="http://yoursite.com/categories/Paper-Note/Body/Pose/"/>
-    
-    
-      <category term="Pose" scheme="http://yoursite.com/tags/Pose/"/>
     
   </entry>
   
