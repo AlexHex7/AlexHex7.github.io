@@ -38,15 +38,15 @@
       <category term="Low-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Low-Shot-Learning/"/>
     
     
+      <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
+    
+      <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
+    
       <category term="Low-Shot Learning" scheme="http://yoursite.com/tags/Low-Shot-Learning/"/>
     
       <category term="Meta Learning" scheme="http://yoursite.com/tags/Meta-Learning/"/>
     
       <category term="Prototypical Network" scheme="http://yoursite.com/tags/Prototypical-Network/"/>
-    
-      <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
-    
-      <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
     
   </entry>
   
@@ -100,11 +100,11 @@
       <category term="One-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/One-Shot-Learning/"/>
     
     
+      <category term="One-Shot Learning" scheme="http://yoursite.com/tags/One-Shot-Learning/"/>
+    
       <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
     
       <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
-    
-      <category term="One-Shot Learning" scheme="http://yoursite.com/tags/One-Shot-Learning/"/>
     
       <category term="Matching Net" scheme="http://yoursite.com/tags/Matching-Net/"/>
     

@@ -1768,7 +1768,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9a91ba;
+  background: #a2b1ff;
 }
 .feed-link,
 .chat {
@@ -2754,4 +2754,28 @@ h5.nocount:before,
 h6.nocount:before {
   content: "";
   counter-increment: none;
+}
+div.main {
+  display: flex;
+}
+div.left {
+  width: 33%;
+  padding-top: 18px;
+}
+div.right {
+  flex: 1;
+}
+div.right span.name {
+  align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  div.main {
+    display: block;
+  }
+  div.left {
+    display: block;
+    margin: 0 auto;
+  }
 }

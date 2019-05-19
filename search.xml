@@ -10,11 +10,11 @@
         <category>Low-Shot Learning</category>
       </categories>
       <tags>
+        <tag>Bi-LSTM</tag>
+        <tag>Attention LSTM</tag>
         <tag>Low-Shot Learning</tag>
         <tag>Meta Learning</tag>
         <tag>Prototypical Network</tag>
-        <tag>Bi-LSTM</tag>
-        <tag>Attention LSTM</tag>
       </tags>
   </entry>
   <entry>
@@ -41,9 +41,9 @@
         <category>One-Shot Learning</category>
       </categories>
       <tags>
+        <tag>One-Shot Learning</tag>
         <tag>Bi-LSTM</tag>
         <tag>Attention LSTM</tag>
-        <tag>One-Shot Learning</tag>
         <tag>Matching Net</tag>
       </tags>
   </entry>
@@ -464,8 +464,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>ResNeXt</tag>
         <tag>Network</tag>
+        <tag>ResNeXt</tag>
       </tags>
   </entry>
   <entry>
@@ -477,8 +477,8 @@
         <category>Multiple Hypotheses</category>
       </categories>
       <tags>
-        <tag>Lung</tag>
         <tag>Medical</tag>
+        <tag>Lung</tag>
         <tag>Segmentation</tag>
         <tag>Multiple Hypotheses</tag>
         <tag>UNet</tag>
@@ -509,8 +509,8 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Lung</tag>
         <tag>Medical</tag>
+        <tag>Lung</tag>
         <tag>Segmentation</tag>
       </tags>
   </entry>
@@ -955,8 +955,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Network</tag>
         <tag>TCN</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -1334,9 +1334,9 @@
         <category>Point Cloud</category>
       </categories>
       <tags>
-        <tag>Localization</tag>
         <tag>Segmentation</tag>
         <tag>Detection</tag>
+        <tag>Localization</tag>
         <tag>Point Cloud</tag>
         <tag>Frustum PointNets</tag>
       </tags>
@@ -1452,9 +1452,9 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1470,9 +1470,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1488,9 +1488,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>MIMIC-CXR</tag>
         <tag>Lateral X-ray</tag>
@@ -1507,9 +1507,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1523,9 +1523,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1542,9 +1542,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Attention</tag>
@@ -1560,9 +1560,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>SE Block</tag>
@@ -1578,9 +1578,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>LSTM</tag>
@@ -1596,9 +1596,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1615,9 +1615,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1633,9 +1633,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>PLCO</tag>
@@ -1651,9 +1651,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1667,9 +1667,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
       </tags>
@@ -1684,9 +1684,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Dataset</tag>
@@ -1839,8 +1839,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Overview</tag>
+        <tag>Medical</tag>
       </tags>
   </entry>
   <entry>
@@ -1853,8 +1853,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Overview</tag>
+        <tag>Medical</tag>
       </tags>
   </entry>
   <entry>
@@ -2825,8 +2825,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>DenseNet</tag>
         <tag>Network</tag>
+        <tag>DenseNet</tag>
         <tag>Classification</tag>
       </tags>
   </entry>
