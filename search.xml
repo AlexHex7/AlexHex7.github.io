@@ -464,8 +464,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>ResNeXt</tag>
         <tag>Network</tag>
+        <tag>ResNeXt</tag>
       </tags>
   </entry>
   <entry>
@@ -797,8 +797,8 @@
       </categories>
       <tags>
         <tag>Adversarial Attack</tag>
-        <tag>Defence</tag>
         <tag>Universal Adversarial Perturbations</tag>
+        <tag>Defence</tag>
         <tag>Adversarial Detection</tag>
       </tags>
   </entry>
@@ -825,8 +825,8 @@
       </categories>
       <tags>
         <tag>Adversarial Attack</tag>
-        <tag>Defence</tag>
         <tag>Ensemble</tag>
+        <tag>Defence</tag>
         <tag>Randomization</tag>
       </tags>
   </entry>
@@ -955,8 +955,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Network</tag>
         <tag>TCN</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -2594,8 +2594,8 @@
         <category>Component</category>
       </categories>
       <tags>
-        <tag>Component</tag>
         <tag>Classification</tag>
+        <tag>Component</tag>
         <tag>Attention</tag>
         <tag>Non-local</tag>
         <tag>Video Classification</tag>
@@ -2612,9 +2612,9 @@
       </categories>
       <tags>
         <tag>Localization</tag>
+        <tag>Classification</tag>
         <tag>Fine-Grained Classification</tag>
         <tag>Component</tag>
-        <tag>Classification</tag>
         <tag>Attention</tag>
         <tag>STN</tag>
       </tags>
