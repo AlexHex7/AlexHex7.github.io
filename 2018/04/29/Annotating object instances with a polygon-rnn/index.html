@@ -478,8 +478,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>Most current method <strong>treat object segmentation</strong> as a <strong>pixel-labeling problem</strong></li>
 </ul>
 <p>In this paper, it cast this segmentation task as <strong>polygon prediction</strong></p>
@@ -487,67 +487,67 @@
 <li>proposed <strong>Polygon-RNN</strong> architecture for <strong>semi-automatic annotation</strong></li>
 <li><strong>speed up</strong> the annotation process by <strong>4.7 times</strong> in Cityscapes dataset</li>
 </ul>
-<h2 id="Polygon-RNN"><a href="#Polygon-RNN" class="headerlink" title="Polygon-RNN"></a>Polygon-RNN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/1.jpg?raw=true" alt><br></div>
+<h2 id="1-2-Polygon-RNN"><a href="#1-2-Polygon-RNN" class="headerlink" title="1.2. Polygon-RNN"></a>1.2. Polygon-RNN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/1.jpg?raw=true" alt><br></div>
 
 
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><ul>
+<h3 id="1-2-1-Input"><a href="#1-2-1-Input" class="headerlink" title="1.2.1. Input"></a>1.2.1. Input</h3><ul>
 <li>image crop</li>
 <li>vertices sequence</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/2.jpg?raw=true" alt><br></div>
 
-<h3 id="Feature-Extractor"><a href="#Feature-Extractor" class="headerlink" title="Feature Extractor"></a>Feature Extractor</h3><ul>
+<h3 id="1-2-2-Feature-Extractor"><a href="#1-2-2-Feature-Extractor" class="headerlink" title="1.2.2. Feature Extractor"></a>1.2.2. Feature Extractor</h3><ul>
 <li>modified VGG</li>
 <li><strong>(boundary) low-level</strong> about the <strong>edge</strong> and <strong>corner</strong></li>
 <li><strong>(see object) high-level</strong> about the <strong>semantic information</strong></li>
 <li>exploit <strong>bilinear</strong> interpolation or <strong>max-pooling</strong> before concat</li>
 </ul>
-<h3 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h3><ul>
+<h3 id="1-2-3-RNN"><a href="#1-2-3-RNN" class="headerlink" title="1.2.3. RNN"></a>1.2.3. RNN</h3><ul>
 <li><strong>ConvLSTM</strong>. preserve spatial information; reduce parameters compared to FC-RNN</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/3.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Semi-automatic-Annotation"><a href="#Semi-automatic-Annotation" class="headerlink" title="Semi-automatic Annotation"></a>Semi-automatic Annotation</h3><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><h3 id="1-3-1-Semi-automatic-Annotation"><a href="#1-3-1-Semi-automatic-Annotation" class="headerlink" title="1.3.1. Semi-automatic Annotation"></a>1.3.1. Semi-automatic Annotation</h3><ul>
 <li>GrabCut. exploit annotation</li>
-<li>GrabCut + CNN<br>Most define a graphical model at the pixel-level which are hard to incorporate shape prior.<h3 id="Annotation-Tool"><a href="#Annotation-Tool" class="headerlink" title="Annotation Tool"></a>Annotation Tool</h3><h3 id="Instance-Segmentation"><a href="#Instance-Segmentation" class="headerlink" title="Instance Segmentation"></a>Instance Segmentation</h3></li>
+<li>GrabCut + CNN<br>Most define a graphical model at the pixel-level which are hard to incorporate shape prior.<h3 id="1-3-2-Annotation-Tool"><a href="#1-3-2-Annotation-Tool" class="headerlink" title="1.3.2. Annotation Tool"></a>1.3.2. Annotation Tool</h3><h3 id="1-3-3-Instance-Segmentation"><a href="#1-3-3-Instance-Segmentation" class="headerlink" title="1.3.3. Instance Segmentation"></a>1.3.3. Instance Segmentation</h3></li>
 <li>pixel-level explicit box or patch</li>
 <li>produce polygon</li>
 </ul>
-<h2 id="Training-Detail"><a href="#Training-Detail" class="headerlink" title="Training Detail"></a>Training Detail</h2><ul>
+<h2 id="1-4-Training-Detail"><a href="#1-4-Training-Detail" class="headerlink" title="1.4. Training Detail"></a>1.4. Training Detail</h2><ul>
 <li>cross-entry at each time step of RNN</li>
 <li><strong>feed t-1, t-2 gt</strong> to prediction t step</li>
 <li><strong>for the first vertex prediction</strong>. train another CNN using <strong>multi-task</strong> loss</li>
 <li>250 ms/img about inference time</li>
 <li>set <strong>chessboard distance threshhold T</strong>. If distance large than T, simulated human correction</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-5-Dataset"><a href="#1-5-Dataset" class="headerlink" title="1.5. Dataset"></a>1.5. Dataset</h2><ul>
 <li>Cityscapes</li>
 <li>KITTI</li>
 </ul>
-<h2 id="Data-Process"><a href="#Data-Process" class="headerlink" title="Data Process"></a>Data Process</h2><ul>
+<h2 id="1-6-Data-Process"><a href="#1-6-Data-Process" class="headerlink" title="1.6. Data Process"></a>1.6. Data Process</h2><ul>
 <li>perform <strong>polygon simplification</strong> with zero error in the <strong>quantized grid</strong>. eliminate vertices which are in a line or fall into same grid</li>
 </ul>
-<h2 id="Data-Augmentation"><a href="#Data-Augmentation" class="headerlink" title="Data Augmentation"></a>Data Augmentation</h2><ul>
+<h2 id="1-7-Data-Augmentation"><a href="#1-7-Data-Augmentation" class="headerlink" title="1.7. Data Augmentation"></a>1.7. Data Augmentation</h2><ul>
 <li>random flip</li>
 <li>enlarged box 10%~20%</li>
 <li>random select starting vertex</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h2><ul>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Metrics"><a href="#2-1-Metrics" class="headerlink" title="2.1. Metrics"></a>2.1. Metrics</h2><ul>
 <li>IoU</li>
 <li>number of clicks</li>
 </ul>
-<h2 id="Step-Limitation"><a href="#Step-Limitation" class="headerlink" title="Step Limitation"></a>Step Limitation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/4.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Step-Limitation"><a href="#2-2-Step-Limitation" class="headerlink" title="2.2. Step Limitation"></a>2.2. Step Limitation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>set max step to <strong>70</strong></li>
 <li><strong>instance-wise</strong>. treat the entire instance as an example</li>
 <li><strong>component-wise</strong>. treat each component as a single example</li>
 </ul>
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/6.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Result"><a href="#2-3-Result" class="headerlink" title="2.3. Result"></a>2.3. Result</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Annotating object instances with a polygon-rnn/6.jpg?raw=true" alt><br></div>
 
 
 
@@ -1392,7 +1392,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polygon-RNN"><span class="nav-number">1.2.</span> <span class="nav-text">Polygon-RNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input"><span class="nav-number">1.2.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Extractor"><span class="nav-number">1.2.2.</span> <span class="nav-text">Feature Extractor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RNN"><span class="nav-number">1.2.3.</span> <span class="nav-text">RNN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Semi-automatic-Annotation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Semi-automatic Annotation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Annotation-Tool"><span class="nav-number">1.3.2.</span> <span class="nav-text">Annotation Tool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instance-Segmentation"><span class="nav-number">1.3.3.</span> <span class="nav-text">Instance Segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-Detail"><span class="nav-number">1.4.</span> <span class="nav-text">Training Detail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.5.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Process"><span class="nav-number">1.6.</span> <span class="nav-text">Data Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Augmentation"><span class="nav-number">1.7.</span> <span class="nav-text">Data Augmentation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metrics"><span class="nav-number">2.1.</span> <span class="nav-text">Metrics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-Limitation"><span class="nav-number">2.2.</span> <span class="nav-text">Step Limitation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Result"><span class="nav-number">2.3.</span> <span class="nav-text">Result</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Polygon-RNN"><span class="nav-text">1.2. Polygon-RNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Input"><span class="nav-text">1.2.1. Input</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Feature-Extractor"><span class="nav-text">1.2.2. Feature Extractor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-RNN"><span class="nav-text">1.2.3. RNN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Semi-automatic-Annotation"><span class="nav-text">1.3.1. Semi-automatic Annotation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Annotation-Tool"><span class="nav-text">1.3.2. Annotation Tool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-Instance-Segmentation"><span class="nav-text">1.3.3. Instance Segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Training-Detail"><span class="nav-text">1.4. Training Detail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Dataset"><span class="nav-text">1.5. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Data-Process"><span class="nav-text">1.6. Data Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-Data-Augmentation"><span class="nav-text">1.7. Data Augmentation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Metrics"><span class="nav-text">2.1. Metrics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Step-Limitation"><span class="nav-text">2.2. Step Limitation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Result"><span class="nav-text">2.3. Result</span></a></li></ol></li></ol></div>
             
 
           </div>

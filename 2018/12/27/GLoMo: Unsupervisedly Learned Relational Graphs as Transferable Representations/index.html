@@ -490,8 +490,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>most existing methods mainly focus on learning generic <strong>feature vector, ignore more structured graphical representation</strong></li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/1.jpg?raw=true" alt><br></div>
@@ -503,7 +503,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/2.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -521,13 +521,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="Graph-Predictor"><a href="#Graph-Predictor" class="headerlink" title="Graph Predictor"></a>Graph Predictor</h2><ul>
+<h2 id="2-1-Graph-Predictor"><a href="#2-1-Graph-Predictor" class="headerlink" title="2.1. Graph Predictor"></a>2.1. Graph Predictor</h2><ul>
 <li>key CNN</li>
 <li>query CNN</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Input-of-Feature-Predictor"><a href="#Input-of-Feature-Predictor" class="headerlink" title="Input of Feature Predictor"></a>Input of Feature Predictor</h2><ul>
+<h2 id="2-2-Input-of-Feature-Predictor"><a href="#2-2-Input-of-Feature-Predictor" class="headerlink" title="2.2. Input of Feature Predictor"></a>2.2. Input of Feature Predictor</h2><ul>
 <li><p>features</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/4.jpg?raw=true" alt><br></div>
 </li>
@@ -537,17 +537,17 @@
 
 </li>
 </ul>
-<h2 id="Object-Function"><a href="#Object-Function" class="headerlink" title="Object Function"></a>Object Function</h2><ul>
+<h2 id="2-3-Object-Function"><a href="#2-3-Object-Function" class="headerlink" title="2.3. Object Function"></a>2.3. Object Function</h2><ul>
 <li>context prediction<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/6.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Desiderata"><a href="#Desiderata" class="headerlink" title="Desiderata"></a>Desiderata</h2><ul>
+<h2 id="2-4-Desiderata"><a href="#2-4-Desiderata" class="headerlink" title="2.4. Desiderata"></a>2.4. Desiderata</h2><ul>
 <li>separate networks g and f</li>
 <li>employ a dquared ReLU to enforce sparse connections in the graphs</li>
 <li>hierarchical graph representation</li>
 </ul>
-<h2 id="Latent-Graph-Transfer"><a href="#Latent-Graph-Transfer" class="headerlink" title="Latent Graph Transfer"></a>Latent Graph Transfer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/7.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Latent-Graph-Transfer"><a href="#2-5-Latent-Graph-Transfer" class="headerlink" title="2.5. Latent Graph Transfer"></a>2.5. Latent Graph Transfer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>product</strong> of all affinity matrices <strong>from the first layers to the l-th layer</strong></li>
@@ -555,7 +555,7 @@
 
 </li>
 </ul>
-<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/9.jpg?raw=true" alt><br></div>
+<h2 id="2-6-Implementation"><a href="#2-6-Implementation" class="headerlink" title="2.6. Implementation"></a>2.6. Implementation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>H.</strong> specific task feature</li>
@@ -565,7 +565,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GLoMo: Unsupervisedly Learned Relational Graphs as Transferable Representations/11.jpg?raw=true" alt><br></div>
 
 
@@ -1404,7 +1404,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Graph-Predictor"><span class="nav-number">2.1.</span> <span class="nav-text">Graph Predictor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-of-Feature-Predictor"><span class="nav-number">2.2.</span> <span class="nav-text">Input of Feature Predictor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Function"><span class="nav-number">2.3.</span> <span class="nav-text">Object Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Desiderata"><span class="nav-number">2.4.</span> <span class="nav-text">Desiderata</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Latent-Graph-Transfer"><span class="nav-number">2.5.</span> <span class="nav-text">Latent Graph Transfer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementation"><span class="nav-number">2.6.</span> <span class="nav-text">Implementation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Graph-Predictor"><span class="nav-text">2.1. Graph Predictor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Input-of-Feature-Predictor"><span class="nav-text">2.2. Input of Feature Predictor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Object-Function"><span class="nav-text">2.3. Object Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Desiderata"><span class="nav-text">2.4. Desiderata</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Latent-Graph-Transfer"><span class="nav-text">2.5. Latent Graph Transfer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Implementation"><span class="nav-text">2.6. Implementation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a></li></ol></div>
             
 
           </div>

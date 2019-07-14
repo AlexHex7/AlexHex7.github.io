@@ -485,8 +485,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>rasterize 3D models onto uniform <strong>voxel grids</strong> lead to <strong>large memory footprint</strong> and <strong>slow process time</strong></li>
 <li>there exist a large number of <strong>indexing strucutres</strong> (<strong>kd-tree, oc-trees</strong>, binary spatial partition tree, R-trees and constructive solid geometry)</li>
 </ul>
@@ -498,7 +498,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><ul>
+<h2 id="1-2-Related-Works"><a href="#1-2-Related-Works" class="headerlink" title="1.2. Related Works"></a>1.2. Related Works</h2><ul>
 <li>3D Conv (+ GAN)</li>
 <li>2D Conv (2D <strong>projection</strong> of 3D obj)</li>
 <li>spectral Conv</li>
@@ -507,24 +507,24 @@
 <li><strong>OctNet</strong> (Oct-Trees)</li>
 <li>Graph-based ConvNet</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-3-Dataset"><a href="#1-3-Dataset" class="headerlink" title="1.3. Dataset"></a>1.3. Dataset</h2><ul>
 <li><strong>classification</strong>. ModelNet10, ModelNet40</li>
 <li><strong>shape retrieval</strong>. SHREC’16</li>
 <li><strong>shape part segmentation</strong>. ShapeNet part dataset</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h1><hr>
+<h1 id="2-Network"><a href="#2-Network" class="headerlink" title="2. Network"></a>2. Network</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>Recur to divide the point clouds into two <strong>equally-sized subsets</strong>. get <strong>N - 1</strong> nodes and each <strong>divide direction d_i (along x, y or z)</strong>.</p>
+<h2 id="2-1-Input"><a href="#2-1-Input" class="headerlink" title="2.1. Input"></a>2.1. Input</h2><p>Recur to divide the point clouds into two <strong>equally-sized subsets</strong>. get <strong>N - 1</strong> nodes and each <strong>divide direction d_i (along x, y or z)</strong>.</p>
 <ul>
 <li><strong>N</strong>. the <strong>fixed size</strong> of point cloud (sub-sample or over-sample)</li>
 <li><strong>d_i</strong>. divide direction of each level</li>
 <li><strong>l_i</strong>. the level of tree</li>
 <li><strong>c_1(i) = 2i, c_2(i) = 2i + 1</strong>. children of <strong>ith node</strong></li>
 </ul>
-<h2 id="Processing-Data-with-Kd-Net"><a href="#Processing-Data-with-Kd-Net" class="headerlink" title="Processing Data with Kd-Net"></a>Processing Data with Kd-Net</h2><p>Given a kd-tree, compute the representation v_i of each node. <strong>In the ith level</strong>, apply the <strong>sharing layer to the same divide direction node.</strong></p>
+<h2 id="2-2-Processing-Data-with-Kd-Net"><a href="#2-2-Processing-Data-with-Kd-Net" class="headerlink" title="2.2. Processing Data with Kd-Net"></a>2.2. Processing Data with Kd-Net</h2><p>Given a kd-tree, compute the representation v_i of each node. <strong>In the ith level</strong>, apply the <strong>sharing layer to the same divide direction node.</strong></p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/3.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -533,13 +533,13 @@
 <li><strong>[]</strong>. concate</li>
 <li><strong>W, b</strong>. parameters of the layer in <strong>ith level, d_i direction</strong> (<strong>dimension</strong>: 2m_{l+1} x m_l, m_l)</li>
 </ul>
-<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/4.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Classification"><a href="#2-3-Classification" class="headerlink" title="2.3. Classification"></a>2.3. Classification</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Shape-Retrieval"><a href="#Shape-Retrieval" class="headerlink" title="Shape Retrieval"></a>Shape Retrieval</h2><ul>
+<h2 id="2-4-Shape-Retrieval"><a href="#2-4-Shape-Retrieval" class="headerlink" title="2.4. Shape Retrieval"></a>2.4. Shape Retrieval</h2><ul>
 <li><strong>output a descriptor vector</strong> (remove trained classifier of Classification)</li>
 <li><strong>histogram loss</strong>. also can use <strong>Siamese loss</strong> or <strong>triplet loss</strong></li>
 </ul>
-<h2 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/5.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Segmentation"><a href="#2-5-Segmentation" class="headerlink" title="2.5. Segmentation"></a>2.5. Segmentation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>mimic encoder-decoder</strong> (Hourglass)</li>
@@ -547,7 +547,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><ul>
+<h2 id="2-6-Properties"><a href="#2-6-Properties" class="headerlink" title="2.6. Properties"></a>2.6. Properties</h2><ul>
 <li><strong>Layerwise Parameter Sharing</strong><ul>
 <li><strong>CNN.</strong> share kernels for each localized multiplication</li>
 <li><strong>Kd-Net.</strong> share kernel (1x1) for points with same split direction in same level</li>
@@ -567,7 +567,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="2-7-Details"><a href="#2-7-Details" class="headerlink" title="2.7. Details"></a>2.7. Details</h2><ul>
 <li><strong>normalize 3D coordinates</strong>.  [-1, 1]^3 and put the origin at centroid</li>
 <li>data augmentation. <strong>perturbing geometric transformation</strong>, inject <strong>randomness into kd-tree construction (direction probability)</strong><div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/8.jpg?raw=true" alt><br></div>
 </li>
@@ -577,8 +577,8 @@
 </ol>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details-1"><a href="#Details-1" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Details"><a href="#3-1-Details" class="headerlink" title="3.1. Details"></a>3.1. Details</h2><ul>
 <li>MNIST→2D Point Cloud. point of the pixel center</li>
 <li>3D Point Cloud. sample faces→ sample point from face</li>
 <li>Self-ensemble in test time</li>
@@ -590,16 +590,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="Classification-1"><a href="#Classification-1" class="headerlink" title="Classification"></a>Classification</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/9.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Classification"><a href="#3-2-Classification" class="headerlink" title="3.2. Classification"></a>3.2. Classification</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/9.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablation"><a href="#Ablation" class="headerlink" title="Ablation"></a>Ablation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/11.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Ablation"><a href="#3-3-Ablation" class="headerlink" title="3.3. Ablation"></a>3.3. Ablation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Shape-Retrieval-1"><a href="#Shape-Retrieval-1" class="headerlink" title="Shape Retrieval"></a>Shape Retrieval</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/12.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Shape-Retrieval"><a href="#3-4-Shape-Retrieval" class="headerlink" title="3.4. Shape Retrieval"></a>3.4. Shape Retrieval</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Escape from cells: Deep kd-networks for the recognition of 3d point cloud models/12.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>20 rotations→pooling→FC</strong></li>
 </ul>
-<h2 id="Part-Segmentation"><a href="#Part-Segmentation" class="headerlink" title="Part Segmentation"></a>Part Segmentation</h2><ul>
+<h2 id="3-5-Part-Segmentation"><a href="#3-5-Part-Segmentation" class="headerlink" title="3.5. Part Segmentation"></a>3.5. Part Segmentation</h2><ul>
 <li><strong>duplicated random sample</strong> with an <strong>addition of a small noise</strong>. help with rare calss</li>
 <li>during test, <strong>predict on upsampled cloud</strong> and then obtain the mapping of <strong>original points</strong></li>
 </ul>
@@ -1444,7 +1444,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Works"><span class="nav-number">1.2.</span> <span class="nav-text">Related Works</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.3.</span> <span class="nav-text">Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network"><span class="nav-number">2.</span> <span class="nav-text">Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Processing-Data-with-Kd-Net"><span class="nav-number">2.2.</span> <span class="nav-text">Processing Data with Kd-Net</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification"><span class="nav-number">2.3.</span> <span class="nav-text">Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shape-Retrieval"><span class="nav-number">2.4.</span> <span class="nav-text">Shape Retrieval</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation"><span class="nav-number">2.5.</span> <span class="nav-text">Segmentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties"><span class="nav-number">2.6.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">2.7.</span> <span class="nav-text">Details</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details-1"><span class="nav-number">3.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification-1"><span class="nav-number">3.2.</span> <span class="nav-text">Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation"><span class="nav-number">3.3.</span> <span class="nav-text">Ablation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shape-Retrieval-1"><span class="nav-number">3.4.</span> <span class="nav-text">Shape Retrieval</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-Segmentation"><span class="nav-number">3.5.</span> <span class="nav-text">Part Segmentation</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Works"><span class="nav-text">1.2. Related Works</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Dataset"><span class="nav-text">1.3. Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Network"><span class="nav-text">2. Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Input"><span class="nav-text">2.1. Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Processing-Data-with-Kd-Net"><span class="nav-text">2.2. Processing Data with Kd-Net</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Classification"><span class="nav-text">2.3. Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Shape-Retrieval"><span class="nav-text">2.4. Shape Retrieval</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Segmentation"><span class="nav-text">2.5. Segmentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Properties"><span class="nav-text">2.6. Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Details"><span class="nav-text">2.7. Details</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Details"><span class="nav-text">3.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Classification"><span class="nav-text">3.2. Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Ablation"><span class="nav-text">3.3. Ablation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Shape-Retrieval"><span class="nav-text">3.4. Shape Retrieval</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Part-Segmentation"><span class="nav-text">3.5. Part Segmentation</span></a></li></ol></li></ol></div>
             
 
           </div>

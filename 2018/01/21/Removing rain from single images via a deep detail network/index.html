@@ -500,7 +500,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <ul>
 <li>当object的structure, orientation与rain streak相似时，基于low-level图像特征的de-rain方法效果很差</li>
 <li>ResNet通过改变映射形式简化训练过程</li>
@@ -525,16 +525,16 @@
 <ul>
 <li>创建数据集.</li>
 </ul>
-<h2 id="框架特点"><a href="#框架特点" class="headerlink" title="框架特点"></a>框架特点</h2><ul>
+<h2 id="1-1-框架特点"><a href="#1-1-框架特点" class="headerlink" title="1.1. 框架特点"></a>1.1. 框架特点</h2><ul>
 <li>可<strong>泛化</strong>到真实图像</li>
 <li><strong>通用性</strong>. 能用于去噪，降低JPEG artifacts</li>
 <li><strong>基于先验信息缩小映射范围</strong>（而ResNet改变映射形式）</li>
 </ul>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul>
+<h2 id="1-2-数据集"><a href="#1-2-数据集" class="headerlink" title="1.2. 数据集"></a>1.2. 数据集</h2><ul>
 <li>从<strong>UCID、BSD和Google image search</strong>中收集1000张<strong>clean image</strong></li>
 <li>每张图片生成<strong>14种</strong>不同streak orientation and magnitude的rain image</li>
 </ul>
-<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>分为两类</p>
+<h2 id="1-3-相关工作"><a href="#1-3-相关工作" class="headerlink" title="1.3. 相关工作"></a>1.3. 相关工作</h2><p>分为两类</p>
 <ul>
 <li>基于视频</li>
 <li>基于单张图片</li>
@@ -552,16 +552,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="Findings"><a href="#Findings" class="headerlink" title="Findings"></a>Findings</h2><p>heavy rain image存在类似于haze的现象，因此，对图片进行de-haze预处理能够提高效果。</p>
+<h2 id="1-4-Findings"><a href="#1-4-Findings" class="headerlink" title="1.4. Findings"></a>1.4. Findings</h2><p>heavy rain image存在类似于haze的现象，因此，对图片进行de-haze预处理能够提高效果。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/3.jpg?raw=true" alt><br></div>
 
 
 <p><br></p>
 <hr>
-<h1 id="Deep-Detail-Network"><a href="#Deep-Detail-Network" class="headerlink" title="Deep Detail Network"></a>Deep Detail Network</h1><hr>
+<h1 id="2-Deep-Detail-Network"><a href="#2-Deep-Detail-Network" class="headerlink" title="2. Deep Detail Network"></a>2. Deep Detail Network</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Direct-Network"><a href="#Direct-Network" class="headerlink" title="Direct Network"></a>Direct Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/5.jpg?raw=true" alt><br></div>
+<h2 id="2-1-Direct-Network"><a href="#2-1-Direct-Network" class="headerlink" title="2.1. Direct Network"></a>2.1. Direct Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>神经网络输入(X): rain image</li>
@@ -570,7 +570,7 @@
 </ul>
 <div align="center"><br><strong>frobenius范数</strong><br><strong>平方-求和-开方</strong><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Negative-Residual-Mapping"><a href="#Negative-Residual-Mapping" class="headerlink" title="Negative Residual Mapping"></a>Negative Residual Mapping</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/7.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Negative-Residual-Mapping"><a href="#2-2-Negative-Residual-Mapping" class="headerlink" title="2.2. Negative Residual Mapping"></a>2.2. Negative Residual Mapping</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>神经网络输入(X): rain image</li>
@@ -579,7 +579,7 @@
 <li>gt: clean image</li>
 </ul>
 <p>通过缩小输出映射范围，减小solution space. 无法完全de-rain.</p>
-<h2 id="Deep-Detail-Network-1"><a href="#Deep-Detail-Network-1" class="headerlink" title="Deep Detail Network"></a>Deep Detail Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/8.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Deep-Detail-Network"><a href="#2-3-Deep-Detail-Network" class="headerlink" title="2.3. Deep Detail Network"></a>2.3. Deep Detail Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>神经网络输入(X_detail): obj + rain structure image</li>
@@ -590,7 +590,7 @@
 <p>输入具有稀疏性 + 输出缩小映射范围.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/9.jpg?raw=true" alt><br></div>
 
-<h3 id="Decompose"><a href="#Decompose" class="headerlink" title="Decompose"></a>Decompose</h3><p>使用<strong>guided filtering</strong>（实验中，半径设为15）作为low-pass filter，将图片分为</p>
+<h3 id="2-3-1-Decompose"><a href="#2-3-1-Decompose" class="headerlink" title="2.3.1. Decompose"></a>2.3.1. Decompose</h3><p>使用<strong>guided filtering</strong>（实验中，半径设为15）作为low-pass filter，将图片分为</p>
 <ul>
 <li><strong>Base layer</strong> </li>
 <li><strong>Detail layer</strong></li>
@@ -599,32 +599,32 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/10.jpg?raw=true" alt><br></div>
 
 
-<h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/11.jpg?raw=true" alt><br></div>
+<h2 id="2-4-网络结构"><a href="#2-4-网络结构" class="headerlink" title="2.4. 网络结构"></a>2.4. 网络结构</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/11.jpg?raw=true" alt><br></div>
 
 
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
 <p>实验与两个算法进行对比</p>
 <ul>
 <li>[25] DSC</li>
 <li>[24] GMM + Patch-rank prior<br>评价指标SSIM</li>
 </ul>
-<h2 id="合成数据"><a href="#合成数据" class="headerlink" title="合成数据"></a>合成数据</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/12.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/13.jpg?raw=true" alt><br></div>
+<h2 id="3-1-合成数据"><a href="#3-1-合成数据" class="headerlink" title="3.1. 合成数据"></a>3.1. 合成数据</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/12.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/13.jpg?raw=true" alt><br></div>
 
-<h2 id="真实数据"><a href="#真实数据" class="headerlink" title="真实数据"></a>真实数据</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/14.jpg?raw=true" alt><br></div>
+<h2 id="3-2-真实数据"><a href="#3-2-真实数据" class="headerlink" title="3.2. 真实数据"></a>3.2. 真实数据</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/14.jpg?raw=true" alt><br></div>
 
-<h2 id="测试时间"><a href="#测试时间" class="headerlink" title="测试时间"></a>测试时间</h2><p>[24] [25]算法为CPU运行时间。</p>
+<h2 id="3-3-测试时间"><a href="#3-3-测试时间" class="headerlink" title="3.3. 测试时间"></a>3.3. 测试时间</h2><p>[24] [25]算法为CPU运行时间。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/15.jpg?raw=true" alt><br></div>
 
-<h2 id="收敛比较"><a href="#收敛比较" class="headerlink" title="收敛比较"></a>收敛比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/16.jpg?raw=true" alt><br></div>
+<h2 id="3-4-收敛比较"><a href="#3-4-收敛比较" class="headerlink" title="3.4. 收敛比较"></a>3.4. 收敛比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/16.jpg?raw=true" alt><br></div>
 
-<h2 id="网络depth-vs-width"><a href="#网络depth-vs-width" class="headerlink" title="网络depth vs width"></a>网络depth vs width</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/17.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/18.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/19.jpg?raw=true" alt><br></div>
+<h2 id="3-5-网络depth-vs-width"><a href="#3-5-网络depth-vs-width" class="headerlink" title="3.5. 网络depth vs width"></a>3.5. 网络depth vs width</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/17.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/18.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/19.jpg?raw=true" alt><br></div>
 
-<h2 id="与深度学习算法-ICCV-2013-比较"><a href="#与深度学习算法-ICCV-2013-比较" class="headerlink" title="与深度学习算法(ICCV 2013)比较"></a>与深度学习算法(ICCV 2013)比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/20.jpg?raw=true" alt><br></div>
+<h2 id="3-6-与深度学习算法-ICCV-2013-比较"><a href="#3-6-与深度学习算法-ICCV-2013-比较" class="headerlink" title="3.6. 与深度学习算法(ICCV 2013)比较"></a>3.6. 与深度学习算法(ICCV 2013)比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/20.jpg?raw=true" alt><br></div>
 
-<h2 id="扩展任务（通用性）"><a href="#扩展任务（通用性）" class="headerlink" title="扩展任务（通用性）"></a>扩展任务（通用性）</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/21.jpg?raw=true" alt><br></div>
+<h2 id="3-7-扩展任务（通用性）"><a href="#3-7-扩展任务（通用性）" class="headerlink" title="3.7. 扩展任务（通用性）"></a>3.7. 扩展任务（通用性）</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Removing rain from single images via a deep detail network/21.jpg?raw=true" alt><br></div>
 
 
 
@@ -1462,7 +1462,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#框架特点"><span class="nav-number">1.1.</span> <span class="nav-text">框架特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.2.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关工作"><span class="nav-number">1.3.</span> <span class="nav-text">相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Findings"><span class="nav-number">1.4.</span> <span class="nav-text">Findings</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deep-Detail-Network"><span class="nav-number">2.</span> <span class="nav-text">Deep Detail Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Direct-Network"><span class="nav-number">2.1.</span> <span class="nav-text">Direct Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Negative-Residual-Mapping"><span class="nav-number">2.2.</span> <span class="nav-text">Negative Residual Mapping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Detail-Network-1"><span class="nav-number">2.3.</span> <span class="nav-text">Deep Detail Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decompose"><span class="nav-number">2.3.1.</span> <span class="nav-text">Decompose</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络结构"><span class="nav-number">2.4.</span> <span class="nav-text">网络结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#合成数据"><span class="nav-number">3.1.</span> <span class="nav-text">合成数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#真实数据"><span class="nav-number">3.2.</span> <span class="nav-text">真实数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试时间"><span class="nav-number">3.3.</span> <span class="nav-text">测试时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收敛比较"><span class="nav-number">3.4.</span> <span class="nav-text">收敛比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络depth-vs-width"><span class="nav-number">3.5.</span> <span class="nav-text">网络depth vs width</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与深度学习算法-ICCV-2013-比较"><span class="nav-number">3.6.</span> <span class="nav-text">与深度学习算法(ICCV 2013)比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展任务（通用性）"><span class="nav-number">3.7.</span> <span class="nav-text">扩展任务（通用性）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-框架特点"><span class="nav-text">1.1. 框架特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-数据集"><span class="nav-text">1.2. 数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-相关工作"><span class="nav-text">1.3. 相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Findings"><span class="nav-text">1.4. Findings</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Deep-Detail-Network"><span class="nav-text">2. Deep Detail Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Direct-Network"><span class="nav-text">2.1. Direct Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Negative-Residual-Mapping"><span class="nav-text">2.2. Negative Residual Mapping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Deep-Detail-Network"><span class="nav-text">2.3. Deep Detail Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Decompose"><span class="nav-text">2.3.1. Decompose</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-网络结构"><span class="nav-text">2.4. 网络结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-合成数据"><span class="nav-text">3.1. 合成数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-真实数据"><span class="nav-text">3.2. 真实数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-测试时间"><span class="nav-text">3.3. 测试时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-收敛比较"><span class="nav-text">3.4. 收敛比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-网络depth-vs-width"><span class="nav-text">3.5. 网络depth vs width</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-与深度学习算法-ICCV-2013-比较"><span class="nav-text">3.6. 与深度学习算法(ICCV 2013)比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-扩展任务（通用性）"><span class="nav-text">3.7. 扩展任务（通用性）</span></a></li></ol></li></ol></div>
             
 
           </div>

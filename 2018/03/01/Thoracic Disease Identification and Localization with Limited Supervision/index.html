@@ -487,8 +487,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>building a <strong>highly accurate</strong> prediction model <strong>requires</strong> a large number of <strong>annotation</strong> and finding the <strong>site of abnormalities</strong></li>
 </ul>
 <p>In this paper, it proposes a method that can work well with a <strong>small amount of location annotations</strong></p>
@@ -497,7 +497,7 @@
 <li>perform disease <strong>identificaion</strong> and <strong>localization</strong> at the same time</li>
 <li>slice the image <strong>into patch grids to capture the local information</strong> of the disease</li>
 </ul>
-<h2 id="Disease"><a href="#Disease" class="headerlink" title="Disease"></a>Disease</h2><ul>
+<h2 id="1-2-Disease"><a href="#1-2-Disease" class="headerlink" title="1.2. Disease"></a>1.2. Disease</h2><ul>
 <li><strong>large object</strong>. Cardiomegaly (心脏扩大), Emphysema (肺气肿), Pneumothorax (气胸)</li>
 <li><strong>small object</strong>. Mass (肺部块), Nodule (肺结节)</li>
 <li>Fibrosis (肺纤维化)</li>
@@ -510,48 +510,48 @@
 <li>Hernia (肺氙)</li>
 <li>Pleural Thickening (肺膜增厚)</li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/1.jpg?raw=true" alt><br></div>
+<h2 id="1-3-Model"><a href="#1-3-Model" class="headerlink" title="1.3. Model"></a>1.3. Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>feature</strong> from ResNet-v2 before global pooling layer</li>
 <li>upsample (bilinear interpolation) or <strong>downsample</strong> (max-pooling) (PxPxc*)</li>
 <li><strong>FCN</strong> (PxPxK)</li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><h3 id="With-Annotated-Bounding-Box"><a href="#With-Annotated-Bounding-Box" class="headerlink" title="With Annotated Bounding Box"></a>With Annotated Bounding Box</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/2.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Loss-Function"><a href="#1-4-Loss-Function" class="headerlink" title="1.4. Loss Function"></a>1.4. Loss Function</h2><h3 id="1-4-1-With-Annotated-Bounding-Box"><a href="#1-4-1-With-Annotated-Bounding-Box" class="headerlink" title="1.4.1. With Annotated Bounding Box"></a>1.4.1. With Annotated Bounding Box</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>i-th <strong>image</strong>, j-th <strong>grid</strong>, k-th <strong>channel</strong> (class)</li>
 </ul>
-<h3 id="Without-Annotated-Bounding-Box"><a href="#Without-Annotated-Bounding-Box" class="headerlink" title="Without Annotated Bounding Box"></a>Without Annotated Bounding Box</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/3.jpg?raw=true" alt><br></div>
+<h3 id="1-4-2-Without-Annotated-Bounding-Box"><a href="#1-4-2-Without-Annotated-Bounding-Box" class="headerlink" title="1.4.2. Without Annotated Bounding Box"></a>1.4.2. Without Annotated Bounding Box</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/3.jpg?raw=true" alt><br></div>
 
-<h3 id="Loss-for-k-th-Class"><a href="#Loss-for-k-th-Class" class="headerlink" title="Loss for k-th Class"></a>Loss for k-th Class</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/4.jpg?raw=true" alt><br></div>
+<h3 id="1-4-3-Loss-for-k-th-Class"><a href="#1-4-3-Loss-for-k-th-Class" class="headerlink" title="1.4.3. Loss for k-th Class"></a>1.4.3. Loss for k-th Class</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>*. GT<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/5.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h3 id="Simplify-to"><a href="#Simplify-to" class="headerlink" title="Simplify to"></a>Simplify to</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/6.jpg?raw=true" alt><br></div>
+<h3 id="1-4-4-Simplify-to"><a href="#1-4-4-Simplify-to" class="headerlink" title="1.4.4. Simplify to"></a>1.4.4. Simplify to</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/6.jpg?raw=true" alt><br></div>
 
-<h3 id="For-All-Class"><a href="#For-All-Class" class="headerlink" title="For All Class"></a>For All Class</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/7.jpg?raw=true" alt><br></div>
+<h3 id="1-4-5-For-All-Class"><a href="#1-4-5-For-All-Class" class="headerlink" title="1.4.5. For All Class"></a>1.4.5. For All Class</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Thoracic Disease Identification and Localization with Limited Supervision/7.jpg?raw=true" alt><br></div>
 
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Details"><a href="#2-1-Details" class="headerlink" title="2.1. Details"></a>2.1. Details</h2><ul>
 <li><strong>patch slice</strong>. {12, 16, 20}</li>
 <li><strong>λ_bbox</strong>. 5</li>
 <li>normalize the patch scores p and 1-p from [0, 1] to [0.98, 1]</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="2-2-Dataset"><a href="#2-2-Dataset" class="headerlink" title="2.2. Dataset"></a>2.2. Dataset</h2><ul>
 <li>112,120 images with <strong>14 disease</strong> labels</li>
 <li>984 <strong>bounding boxes</strong> for <strong>880 image</strong> about 8 disease</li>
 <li><strong>annotated 880</strong> images vs <strong>unannotated 111,240</strong> images</li>
 <li>Image. 512x512, [-1, 1]</li>
 <li>no data augmentation</li>
 </ul>
-<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><ul>
+<h2 id="2-3-Classification"><a href="#2-3-Classification" class="headerlink" title="2.3. Classification"></a>2.3. Classification</h2><ul>
 <li><strong>train</strong>. 70% annotated + 70% unannotated</li>
 <li><strong>Metric</strong>. AUC</li>
 </ul>
@@ -1400,7 +1400,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disease"><span class="nav-number">1.2.</span> <span class="nav-text">Disease</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.3.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">1.4.</span> <span class="nav-text">Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#With-Annotated-Bounding-Box"><span class="nav-number">1.4.1.</span> <span class="nav-text">With Annotated Bounding Box</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Without-Annotated-Bounding-Box"><span class="nav-number">1.4.2.</span> <span class="nav-text">Without Annotated Bounding Box</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss-for-k-th-Class"><span class="nav-number">1.4.3.</span> <span class="nav-text">Loss for k-th Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Simplify-to"><span class="nav-number">1.4.4.</span> <span class="nav-text">Simplify to</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-All-Class"><span class="nav-number">1.4.5.</span> <span class="nav-text">For All Class</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">2.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">2.2.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification"><span class="nav-number">2.3.</span> <span class="nav-text">Classification</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Disease"><span class="nav-text">1.2. Disease</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Model"><span class="nav-text">1.3. Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Loss-Function"><span class="nav-text">1.4. Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-With-Annotated-Bounding-Box"><span class="nav-text">1.4.1. With Annotated Bounding Box</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-Without-Annotated-Bounding-Box"><span class="nav-text">1.4.2. Without Annotated Bounding Box</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-3-Loss-for-k-th-Class"><span class="nav-text">1.4.3. Loss for k-th Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-4-Simplify-to"><span class="nav-text">1.4.4. Simplify to</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-5-For-All-Class"><span class="nav-text">1.4.5. For All Class</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Details"><span class="nav-text">2.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Dataset"><span class="nav-text">2.2. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Classification"><span class="nav-text">2.3. Classification</span></a></li></ol></li></ol></div>
             
 
           </div>

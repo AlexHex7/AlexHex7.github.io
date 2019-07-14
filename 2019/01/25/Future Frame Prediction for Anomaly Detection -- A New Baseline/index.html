@@ -488,8 +488,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>In anomaly video detection, almost all existing methods tackle the problem by <strong>minimizing</strong> the <strong>reconstruction errors</strong> of training data, which can not guarantee a large reconstruction error for an abnormal event</li>
 <li>The capacity of DNN is high, and larger reconstruction errors for abnormal events do not necessarily happen</li>
 <li>Abnormal events are unbounded</li>
@@ -502,7 +502,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li><strong>Hand-craft Feature</strong>. HOG, HOF</li>
 <li><strong>Deep Learning</strong>. ConvLSTM-AE</li>
 <li>Video Frame Prediction</li>
@@ -510,10 +510,10 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
-<h2 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/2.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/3.jpg?raw=true" alt><br></div>
+<h1 id="2-Architecture"><a href="#2-Architecture" class="headerlink" title="2. Architecture"></a>2. Architecture</h1><hr>
+<h2 id="2-1-Overview"><a href="#2-1-Overview" class="headerlink" title="2.1. Overview"></a>2.1. Overview</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/2.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Contraints"><a href="#Contraints" class="headerlink" title="Contraints"></a>Contraints</h2><ul>
+<h2 id="2-2-Contraints"><a href="#2-2-Contraints" class="headerlink" title="2.2. Contraints"></a>2.2. Contraints</h2><ul>
 <li><p>Intensity</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/4.jpg?raw=true" alt><br></div>
 </li>
@@ -532,7 +532,7 @@
 
 </li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/8.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Loss-Function"><a href="#2-3-Loss-Function" class="headerlink" title="2.3. Loss Function"></a>2.3. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>frame <strong>normalize</strong> to [-1, 1]</li>
@@ -541,7 +541,7 @@
 <li>batch size 4</li>
 <li><strong>int, gd, op, adv</strong>: 1.0, 1.0, 2.0, 0.05</li>
 </ul>
-<h2 id="Anomaly-Detection-on-Testing-Data"><a href="#Anomaly-Detection-on-Testing-Data" class="headerlink" title="Anomaly Detection on Testing Data"></a>Anomaly Detection on Testing Data</h2><ul>
+<h2 id="2-4-Anomaly-Detection-on-Testing-Data"><a href="#2-4-Anomaly-Detection-on-Testing-Data" class="headerlink" title="2.4. Anomaly Detection on Testing Data"></a>2.4. Anomaly Detection on Testing Data</h2><ul>
 <li><p>Mathieu shows that Peak Signal to Noise Ratio (PSNR) is a better way for image quality assessment (higher PSNR → normal)</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/9.jpg?raw=true" alt><br></div>
 </li>
@@ -552,33 +552,33 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><h3 id="CUHK-Avenue-Dataset"><a href="#CUHK-Avenue-Dataset" class="headerlink" title="CUHK Avenue Dataset"></a>CUHK Avenue Dataset</h3><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Dataset"><a href="#3-1-Dataset" class="headerlink" title="3.1. Dataset"></a>3.1. Dataset</h2><h3 id="3-1-1-CUHK-Avenue-Dataset"><a href="#3-1-1-CUHK-Avenue-Dataset" class="headerlink" title="3.1.1. CUHK Avenue Dataset"></a>3.1.1. CUHK Avenue Dataset</h3><ul>
 <li>16 training videos and 21 testing videos</li>
 <li>47 abnormal events</li>
 </ul>
-<h3 id="UCSD-Dataset"><a href="#UCSD-Dataset" class="headerlink" title="UCSD Dataset"></a>UCSD Dataset</h3><ul>
+<h3 id="3-1-2-UCSD-Dataset"><a href="#3-1-2-UCSD-Dataset" class="headerlink" title="3.1.2. UCSD Dataset"></a>3.1.2. UCSD Dataset</h3><ul>
 <li><strong>UCSD Pedestrian 1</strong>. 34 training videos and 36 testing videos with 40 irregular events</li>
 <li><strong>UCSD Pedestrian 2</strong>. 16 training videos and 12 testing videos with 12 abnormal events</li>
 </ul>
-<h3 id="ShanghaiTech-Dataset"><a href="#ShanghaiTech-Dataset" class="headerlink" title="ShanghaiTech Dataset"></a>ShanghaiTech Dataset</h3><ul>
+<h3 id="3-1-3-ShanghaiTech-Dataset"><a href="#3-1-3-ShanghaiTech-Dataset" class="headerlink" title="3.1.3. ShanghaiTech Dataset"></a>3.1.3. ShanghaiTech Dataset</h3><ul>
 <li>330 training videos and 107 testing</li>
 <li>130 abnormal events</li>
 </ul>
-<h3 id="Toy-Dataset"><a href="#Toy-Dataset" class="headerlink" title="Toy Dataset"></a>Toy Dataset</h3><ul>
+<h3 id="3-1-4-Toy-Dataset"><a href="#3-1-4-Toy-Dataset" class="headerlink" title="3.1.4. Toy Dataset"></a>3.1.4. Toy Dataset</h3><ul>
 <li>210 frames for training</li>
 <li>1242 frames for testing</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/11.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Comparison"><a href="#3-2-Comparison" class="headerlink" title="3.2. Comparison"></a>3.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablation-Study"><a href="#Ablation-Study" class="headerlink" title="Ablation Study"></a>Ablation Study</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/12.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Ablation-Study"><a href="#3-3-Ablation-Study" class="headerlink" title="3.3. Ablation Study"></a>3.3. Ablation Study</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/12.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Delta</strong>. gap between average score of normal frames and that of abnormal frames</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/14.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/15.jpg?raw=true" alt><br></div>
 
-<h2 id="Toy-Experiments"><a href="#Toy-Experiments" class="headerlink" title="Toy Experiments"></a>Toy Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/16.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Toy-Experiments"><a href="#3-4-Toy-Experiments" class="headerlink" title="3.4. Toy Experiments"></a>3.4. Toy Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Future Frame Prediction for Anomaly Detection -- A New Baseline/16.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>After observing the pedestrian for a while when the pedestrian has made his or her choice, it becomes predictable and <strong>PSNR would go up</strong></li>
@@ -1415,7 +1415,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">2.</span> <span class="nav-text">Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-1"><span class="nav-number">2.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contraints"><span class="nav-number">2.2.</span> <span class="nav-text">Contraints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.3.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anomaly-Detection-on-Testing-Data"><span class="nav-number">2.4.</span> <span class="nav-text">Anomaly Detection on Testing Data</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CUHK-Avenue-Dataset"><span class="nav-number">3.1.1.</span> <span class="nav-text">CUHK Avenue Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UCSD-Dataset"><span class="nav-number">3.1.2.</span> <span class="nav-text">UCSD Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ShanghaiTech-Dataset"><span class="nav-number">3.1.3.</span> <span class="nav-text">ShanghaiTech Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Toy-Dataset"><span class="nav-number">3.1.4.</span> <span class="nav-text">Toy Dataset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation-Study"><span class="nav-number">3.3.</span> <span class="nav-text">Ablation Study</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Toy-Experiments"><span class="nav-number">3.4.</span> <span class="nav-text">Toy Experiments</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Architecture"><span class="nav-text">2. Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Overview"><span class="nav-text">2.1. Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Contraints"><span class="nav-text">2.2. Contraints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Loss-Function"><span class="nav-text">2.3. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Anomaly-Detection-on-Testing-Data"><span class="nav-text">2.4. Anomaly Detection on Testing Data</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Dataset"><span class="nav-text">3.1. Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-CUHK-Avenue-Dataset"><span class="nav-text">3.1.1. CUHK Avenue Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-UCSD-Dataset"><span class="nav-text">3.1.2. UCSD Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-ShanghaiTech-Dataset"><span class="nav-text">3.1.3. ShanghaiTech Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-4-Toy-Dataset"><span class="nav-text">3.1.4. Toy Dataset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Comparison"><span class="nav-text">3.2. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Ablation-Study"><span class="nav-text">3.3. Ablation Study</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Toy-Experiments"><span class="nav-text">3.4. Toy Experiments</span></a></li></ol></li></ol></div>
             
 
           </div>

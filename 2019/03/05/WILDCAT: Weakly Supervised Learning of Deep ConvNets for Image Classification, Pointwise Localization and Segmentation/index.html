@@ -490,7 +490,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposes <strong>WILDCAT</strong></p>
 <ul>
 <li>FCN backbone</li>
@@ -499,7 +499,7 @@
 
 </li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-1-Related-Work"><a href="#1-1-Related-Work" class="headerlink" title="1.1. Related Work"></a>1.1. Related Work</h2><ul>
 <li>Max Pooling (MP)</li>
 <li>Global Average Pooling (GAP)</li>
 <li>LSE Pooling</li>
@@ -507,24 +507,24 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
-<h2 id="FCN"><a href="#FCN" class="headerlink" title="FCN"></a>FCN</h2><ul>
+<h1 id="2-Architecture"><a href="#2-Architecture" class="headerlink" title="2. Architecture"></a>2. Architecture</h1><hr>
+<h2 id="2-1-FCN"><a href="#2-1-FCN" class="headerlink" title="2.1. FCN"></a>2.1. FCN</h2><ul>
 <li>ResNet101. output <strong>[W/32, H/32, 2048]</strong></li>
 <li>remove GAP and FC</li>
 <li>replace with <strong>WSL transfer</strong> amd <strong>wildcat pooling layers</strong></li>
 </ul>
-<h2 id="Multi-map-Transfer-Layer"><a href="#Multi-map-Transfer-Layer" class="headerlink" title="Multi-map Transfer Layer"></a>Multi-map Transfer Layer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/2.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Multi-map-Transfer-Layer"><a href="#2-2-Multi-map-Transfer-Layer" class="headerlink" title="2.2. Multi-map Transfer Layer"></a>2.2. Multi-map Transfer Layer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>per class through 1x1 Conv</strong></li>
 <li>(h, w, c) – (h, w, m*c)</li>
 </ul>
-<h2 id="Wildcat-Pooling"><a href="#Wildcat-Pooling" class="headerlink" title="Wildcat Pooling"></a>Wildcat Pooling</h2><h3 id="Classwise-Pooling"><a href="#Classwise-Pooling" class="headerlink" title="Classwise Pooling"></a>Classwise Pooling</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/3.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Wildcat-Pooling"><a href="#2-3-Wildcat-Pooling" class="headerlink" title="2.3. Wildcat Pooling"></a>2.3. Wildcat Pooling</h2><h3 id="2-3-1-Classwise-Pooling"><a href="#2-3-1-Classwise-Pooling" class="headerlink" title="2.3.1. Classwise Pooling"></a>2.3.1. Classwise Pooling</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>(h, w, mc) – (h, w, c)</li>
 </ul>
-<h3 id="Spatial-Pooling"><a href="#Spatial-Pooling" class="headerlink" title="Spatial Pooling"></a>Spatial Pooling</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/4.jpg?raw=true" alt><br></div>
+<h3 id="2-3-2-Spatial-Pooling"><a href="#2-3-2-Spatial-Pooling" class="headerlink" title="2.3.2. Spatial Pooling"></a>2.3.2. Spatial Pooling</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>for a class map (h, w, 1)</li>
@@ -536,24 +536,24 @@
 </ul>
 </li>
 </ul>
-<h2 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h2><ul>
+<h2 id="2-4-Training"><a href="#2-4-Training" class="headerlink" title="2.4. Training"></a>2.4. Training</h2><ul>
 <li>input a single image</li>
 </ul>
-<h2 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h2><ul>
+<h2 id="2-5-Inference"><a href="#2-5-Inference" class="headerlink" title="2.5. Inference"></a>2.5. Inference</h2><ul>
 <li><strong>classification</strong>. input a single image</li>
 <li><strong>localization</strong>. extract the <strong>region</strong> with <strong>maximum score</strong> for each class</li>
 <li><strong>segmentation</strong>. take the class with maximum score at eachlocation independently or apply CRF</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Details"><a href="#3-1-Details" class="headerlink" title="3.1. Details"></a>3.1. Details</h2><ul>
 <li>M = 4, α = 0.7</li>
 <li>image. 448x448</li>
 </ul>
-<h2 id="Experiments-1"><a href="#Experiments-1" class="headerlink" title="Experiments"></a>Experiments</h2><h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/9.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Experiments"><a href="#3-2-Experiments" class="headerlink" title="3.2. Experiments"></a>3.2. Experiments</h2><h3 id="3-2-1-Classification"><a href="#3-2-1-Classification" class="headerlink" title="3.2.1. Classification"></a>3.2.1. Classification</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/9.jpg?raw=true" alt><br></div>
 
-<h3 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/11.jpg?raw=true" alt><br></div>
+<h3 id="3-2-2-WSL"><a href="#3-2-2-WSL" class="headerlink" title="3.2.2. WSL"></a>3.2.2. WSL</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/11.jpg?raw=true" alt><br></div>
 
 
 
@@ -1393,7 +1393,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.1.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">2.</span> <span class="nav-text">Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FCN"><span class="nav-number">2.1.</span> <span class="nav-text">FCN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-map-Transfer-Layer"><span class="nav-number">2.2.</span> <span class="nav-text">Multi-map Transfer Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wildcat-Pooling"><span class="nav-number">2.3.</span> <span class="nav-text">Wildcat Pooling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Classwise-Pooling"><span class="nav-number">2.3.1.</span> <span class="nav-text">Classwise Pooling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spatial-Pooling"><span class="nav-number">2.3.2.</span> <span class="nav-text">Spatial Pooling</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training"><span class="nav-number">2.4.</span> <span class="nav-text">Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inference"><span class="nav-number">2.5.</span> <span class="nav-text">Inference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments-1"><span class="nav-number">3.2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Classification"><span class="nav-number">3.2.1.</span> <span class="nav-text">Classification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WSL"><span class="nav-number">3.2.2.</span> <span class="nav-text">WSL</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Work"><span class="nav-text">1.1. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Architecture"><span class="nav-text">2. Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-FCN"><span class="nav-text">2.1. FCN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Multi-map-Transfer-Layer"><span class="nav-text">2.2. Multi-map Transfer Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Wildcat-Pooling"><span class="nav-text">2.3. Wildcat Pooling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Classwise-Pooling"><span class="nav-text">2.3.1. Classwise Pooling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-Spatial-Pooling"><span class="nav-text">2.3.2. Spatial Pooling</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Training"><span class="nav-text">2.4. Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Inference"><span class="nav-text">2.5. Inference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Details"><span class="nav-text">3.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Experiments"><span class="nav-text">3.2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-Classification"><span class="nav-text">3.2.1. Classification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-WSL"><span class="nav-text">3.2.2. WSL</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

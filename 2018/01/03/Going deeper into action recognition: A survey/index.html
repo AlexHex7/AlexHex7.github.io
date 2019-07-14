@@ -489,7 +489,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>论文介绍了<strong>Action Recognition</strong>方面的四种深度学习结构</p>
 <ul>
 <li>Spatiotemporal Network</li>
@@ -499,8 +499,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Spatiotemporal-Network"><a href="#Spatiotemporal-Network" class="headerlink" title="Spatiotemporal Network"></a>Spatiotemporal Network</h1><hr>
-<h2 id="3D-CNN"><a href="#3D-CNN" class="headerlink" title="3D CNN"></a>3D CNN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/1.jpg?raw=true" alt><br></div>
+<h1 id="2-Spatiotemporal-Network"><a href="#2-Spatiotemporal-Network" class="headerlink" title="2. Spatiotemporal Network"></a>2. Spatiotemporal Network</h1><hr>
+<h2 id="2-1-3D-CNN"><a href="#2-1-3D-CNN" class="headerlink" title="2.1. 3D CNN"></a>2.1. 3D CNN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/1.jpg?raw=true" alt><br></div>
 
 <p>在实际中，加入一些补充信息（optical flow）训练网络能得到更好的性能。将时间信息输入网络的过程称为fusion，有以下3种机制</p>
 <ul>
@@ -512,7 +512,7 @@
 <li><strong>early fusion</strong>. 输入相邻帧集合</li>
 <li><strong>late fusion</strong>. 逐帧输入进行处理，最后将所有帧的特征融合<br>在3D CNN结构中，使用更长的帧能够提高效果；将3D卷积核分解为2D卷积核和1D卷积核能够减少参数。</li>
 </ul>
-<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><ul>
+<h2 id="2-2-RNN"><a href="#2-2-RNN" class="headerlink" title="2.2. RNN"></a>2.2. RNN</h2><ul>
 <li>先用3D CNN提取特征，再输入到LSTM中</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/3.jpg?raw=true" alt><br></div>
@@ -524,7 +524,7 @@
 
 <p><br></p>
 <hr>
-<h1 id="Multiple-Stream-Network"><a href="#Multiple-Stream-Network" class="headerlink" title="Multiple Stream Network"></a>Multiple Stream Network</h1><hr>
+<h1 id="3-Multiple-Stream-Network"><a href="#3-Multiple-Stream-Network" class="headerlink" title="3. Multiple Stream Network"></a>3. Multiple Stream Network</h1><hr>
 <p>两个并行输入</p>
 <ul>
 <li>基准帧</li>
@@ -537,42 +537,41 @@
 
 <p><br></p>
 <hr>
-<h1 id="Deep-Generative-Models"><a href="#Deep-Generative-Models" class="headerlink" title="Deep Generative Models"></a>Deep Generative Models</h1><hr>
+<h1 id="4-Deep-Generative-Models"><a href="#4-Deep-Generative-Models" class="headerlink" title="4. Deep Generative Models"></a>4. Deep Generative Models</h1><hr>
 <p>时间序列维度的生成预测是一个无监督问题。</p>
-<h2 id="Dynencoder"><a href="#Dynencoder" class="headerlink" title="Dynencoder"></a>Dynencoder</h2><p>分为三层</p>
+<h2 id="4-1-Dynencoder"><a href="#4-1-Dynencoder" class="headerlink" title="4.1. Dynencoder"></a>4.1. Dynencoder</h2><p>分为三层</p>
 <ul>
 <li>输入帧x_t得到h_t</li>
 <li>根据h_t预测h_{t+1}</li>
 <li>根据h_{t+1}生成帧x_{t+1}<br>先分别预训练每层，再end-to-end fine tuning.</li>
 </ul>
-<h2 id="LSTM-Autoencoder"><a href="#LSTM-Autoencoder" class="headerlink" title="LSTM Autoencoder"></a>LSTM Autoencoder</h2><p>分为两层</p>
+<h2 id="4-2-LSTM-Autoencoder"><a href="#4-2-LSTM-Autoencoder" class="headerlink" title="4.2. LSTM Autoencoder"></a>4.2. LSTM Autoencoder</h2><p>分为两层</p>
 <ul>
 <li><strong>encoder LSTM</strong></li>
 <li><strong>decoder LSTM</strong> （合成和预测）</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Adversarial方法训练"><a href="#Adversarial方法训练" class="headerlink" title="Adversarial方法训练"></a>Adversarial方法训练</h2><p><br></p>
+<h2 id="4-3-Adversarial方法训练"><a href="#4-3-Adversarial方法训练" class="headerlink" title="4.3. Adversarial方法训练"></a>4.3. Adversarial方法训练</h2><p><br></p>
 <hr>
-<h1 id="Temporal-Coherency-Network"><a href="#Temporal-Coherency-Network" class="headerlink" title="Temporal Coherency Network"></a>Temporal Coherency Network</h1><hr>
+<h1 id="5-Temporal-Coherency-Network"><a href="#5-Temporal-Coherency-Network" class="headerlink" title="5. Temporal Coherency Network"></a>5. Temporal Coherency Network</h1><hr>
 <p>一种弱监督形式。模型判断一段视频帧是否时序正确。</p>
-<h2 id="Siamese-Network"><a href="#Siamese-Network" class="headerlink" title="Siamese Network"></a>Siamese Network</h2><p>判断给定序列是否Coherency。<strong>相比ImageNet预训练权重</strong>，<strong>give more attention to human poses</strong>，并且能够提高准确度。</p>
-<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/7.jpg?raw=true" alt><br></div><br><strong>缺点</strong>. 视频段之间可能会出现场景变化（如Sports 1M数据集中的广告插播）。<br><br>## 基于Siamese网络的并行结构<br>将视频帧分为两个集合<br>- <strong>prediction set X_p</strong><br>- <strong>effect set X_e</strong><br>将X_p特征进行变换，与X_e特征进行对比，从而识别行为。<br><br><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/8.jpg?raw=true" alt><br></div>
+<h2 id="5-1-Siamese-Network"><a href="#5-1-Siamese-Network" class="headerlink" title="5.1. Siamese Network"></a>5.1. Siamese Network</h2><p>判断给定序列是否Coherency。<strong>相比ImageNet预训练权重</strong>，<strong>give more attention to human poses</strong>，并且能够提高准确度。</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/7.jpg?raw=true" alt><br></div><br><strong>缺点</strong>. 视频段之间可能会出现场景变化（如Sports 1M数据集中的广告插播）。<br><br>## 5.2. 基于Siamese网络的并行结构<br>将视频帧分为两个集合<br>- <strong>prediction set X_p</strong><br>- <strong>effect set X_e</strong><br>将X_p特征进行变换，与X_e特征进行对比，从而识别行为。<br><br><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/8.jpg?raw=true" alt><br></div>
 
 <p><br></p>
 <hr>
-<h1 id="数据数据"><a href="#数据数据" class="headerlink" title="数据数据"></a>数据数据</h1><hr>
-<p>##KTH&amp;Weizmann dataset</p>
-<ul>
+<h1 id="6-数据数据"><a href="#6-数据数据" class="headerlink" title="6. 数据数据"></a>6. 数据数据</h1><hr>
+<h2 id="6-1-dataset"><a href="#6-1-dataset" class="headerlink" title="6.1. dataset"></a>6.1. dataset</h2><ul>
 <li><strong>controlled condition</strong> (limited camera motion, almost zero background clutter)</li>
 <li><strong>limited to basic action</strong> (walking, running and jumping)</li>
 </ul>
-<h2 id="HMDB-51-amp-UCF-101"><a href="#HMDB-51-amp-UCF-101" class="headerlink" title="HMDB-51&amp;UCF-101"></a>HMDB-51&amp;UCF-101</h2><ul>
+<h2 id="6-2-HMDB-51-amp-UCF-101"><a href="#6-2-HMDB-51-amp-UCF-101" class="headerlink" title="6.2. HMDB-51&amp;UCF-101"></a>6.2. HMDB-51&amp;UCF-101</h2><ul>
 <li>非专业拍摄的Youtube视频(contain <strong>camera motion (and shakes), view-point variations and resolution inconsistencies</strong>)</li>
 <li>Actions are well cropped in the temporal domain, not well-suited for measuring the performance of action localization</li>
 <li>包含<strong>subtle classes</strong> (chewing and talking or playing violin and playing cello)，要求网络深层次理解时空线索</li>
 </ul>
-<h2 id="Hollywood2-amp-Sports-1M"><a href="#Hollywood2-amp-Sports-1M" class="headerlink" title="Hollywood2&amp;Sports-1M"></a>Hollywood2&amp;Sports-1M</h2><ul>
+<h2 id="6-3-Hollywood2-amp-Sports-1M"><a href="#6-3-Hollywood2-amp-Sports-1M" class="headerlink" title="6.3. Hollywood2&amp;Sports-1M"></a>6.3. Hollywood2&amp;Sports-1M</h2><ul>
 <li>视角变换（view-point/editing complexities）</li>
 <li>行为只发生在视频中某个很小的clips<br><strong>Sports-1M中还包含观众和广告条</strong><div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/9.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Going deeper into action recognition: A survey/10.jpg?raw=true" alt><br></div>
 
@@ -580,7 +579,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="未来发展"><a href="#未来发展" class="headerlink" title="未来发展"></a>未来发展</h1><hr>
+<h1 id="7-未来发展"><a href="#7-未来发展" class="headerlink" title="7. 未来发展"></a>7. 未来发展</h1><hr>
 <ul>
 <li><strong>knowledge transfer &amp; domain adaptation</strong></li>
 <li>算法混合（<strong>3D CNN、temporal pooling、 optical flow frames、LSTM</strong>）</li>
@@ -588,7 +587,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h1><hr>
+<h1 id="8-实际应用"><a href="#8-实际应用" class="headerlink" title="8. 实际应用"></a>8. 实际应用</h1><hr>
 <ul>
 <li>通常会涉及到joint dection（人体关键点检测）</li>
 <li>fine-grained行为识别，而非识别所有类别的行为</li>
@@ -1425,7 +1424,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spatiotemporal-Network"><span class="nav-number">2.</span> <span class="nav-text">Spatiotemporal Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3D-CNN"><span class="nav-number">2.1.</span> <span class="nav-text">3D CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-number">2.2.</span> <span class="nav-text">RNN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Multiple-Stream-Network"><span class="nav-number">3.</span> <span class="nav-text">Multiple Stream Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deep-Generative-Models"><span class="nav-number">4.</span> <span class="nav-text">Deep Generative Models</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dynencoder"><span class="nav-number">4.1.</span> <span class="nav-text">Dynencoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LSTM-Autoencoder"><span class="nav-number">4.2.</span> <span class="nav-text">LSTM Autoencoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial方法训练"><span class="nav-number">4.3.</span> <span class="nav-text">Adversarial方法训练</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Temporal-Coherency-Network"><span class="nav-number">5.</span> <span class="nav-text">Temporal Coherency Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Siamese-Network"><span class="nav-number">5.1.</span> <span class="nav-text">Siamese Network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据数据"><span class="nav-number">6.</span> <span class="nav-text">数据数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HMDB-51-amp-UCF-101"><span class="nav-number">6.1.</span> <span class="nav-text">HMDB-51&amp;UCF-101</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hollywood2-amp-Sports-1M"><span class="nav-number">6.2.</span> <span class="nav-text">Hollywood2&amp;Sports-1M</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#未来发展"><span class="nav-number">7.</span> <span class="nav-text">未来发展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实际应用"><span class="nav-number">8.</span> <span class="nav-text">实际应用</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Spatiotemporal-Network"><span class="nav-text">2. Spatiotemporal Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-3D-CNN"><span class="nav-text">2.1. 3D CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-RNN"><span class="nav-text">2.2. RNN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Multiple-Stream-Network"><span class="nav-text">3. Multiple Stream Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Deep-Generative-Models"><span class="nav-text">4. Deep Generative Models</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Dynencoder"><span class="nav-text">4.1. Dynencoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-LSTM-Autoencoder"><span class="nav-text">4.2. LSTM Autoencoder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Adversarial方法训练"><span class="nav-text">4.3. Adversarial方法训练</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Temporal-Coherency-Network"><span class="nav-text">5. Temporal Coherency Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-Siamese-Network"><span class="nav-text">5.1. Siamese Network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-数据数据"><span class="nav-text">6. 数据数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-dataset"><span class="nav-text">6.1. dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-HMDB-51-amp-UCF-101"><span class="nav-text">6.2. HMDB-51&amp;UCF-101</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-Hollywood2-amp-Sports-1M"><span class="nav-text">6.3. Hollywood2&amp;Sports-1M</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-未来发展"><span class="nav-text">7. 未来发展</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-实际应用"><span class="nav-text">8. 实际应用</span></a></li></ol></div>
             
 
           </div>

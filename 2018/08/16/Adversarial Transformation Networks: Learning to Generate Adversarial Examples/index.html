@@ -479,8 +479,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>existing methods either directly computing <strong>gradients</strong> of solving an <strong>optimization</strong> on the image pixels</li>
 </ul>
 <p>In this paper, it proposed <strong>Adversarial Transformation Network (ATN)</strong></p>
@@ -492,8 +492,8 @@
 
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="ATN"><a href="#ATN" class="headerlink" title="ATN"></a>ATN</h2><ul>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-ATN"><a href="#2-1-ATN" class="headerlink" title="2.1. ATN"></a>2.1. ATN</h2><ul>
 <li>transform an input into an adversarial example against a target network or set of networks</li>
 <li><p>focus on targeted, white-box ATNs</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/2.jpg?raw=true" alt><br></div>
@@ -502,26 +502,26 @@
 </li>
 <li><strong>g.</strong> parameter vector</li>
 </ul>
-<h2 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Training"><a href="#2-2-Training" class="headerlink" title="2.2. Training"></a>2.2. Training</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>L_X</strong>. loss function in the input space or perceptual loss</li>
 <li><strong>L_Y.</strong> specially-formed loss on the output space</li>
 <li><strong>β</strong>. weight to balance</li>
 </ul>
-<h2 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h2><ul>
+<h2 id="2-3-Inference"><a href="#2-3-Inference" class="headerlink" title="2.3. Inference"></a>2.3. Inference</h2><ul>
 <li>even faster than the single-step gradient-based methods, so long as<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/4.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Loss-Functions"><a href="#Loss-Functions" class="headerlink" title="Loss Functions"></a>Loss Functions</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/5.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Loss-Functions"><a href="#2-4-Loss-Functions" class="headerlink" title="2.4. Loss Functions"></a>2.4. Loss Functions</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>r(*)</strong>. reranking function<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/6.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Reranking-Function"><a href="#Reranking-Function" class="headerlink" title="Reranking Function"></a>Reranking Function</h2><ul>
+<h2 id="2-5-Reranking-Function"><a href="#2-5-Reranking-Function" class="headerlink" title="2.5. Reranking Function"></a>2.5. Reranking Function</h2><ul>
 <li><p>simplest way. set <strong>r(y, t) = onehot(t)</strong></p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Transformation Networks: Learning to Generate Adversarial Examples/7.jpg?raw=true" alt><br></div>
 </li>
@@ -1362,7 +1362,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ATN"><span class="nav-number">2.1.</span> <span class="nav-text">ATN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training"><span class="nav-number">2.2.</span> <span class="nav-text">Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inference"><span class="nav-number">2.3.</span> <span class="nav-text">Inference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Functions"><span class="nav-number">2.4.</span> <span class="nav-text">Loss Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reranking-Function"><span class="nav-number">2.5.</span> <span class="nav-text">Reranking Function</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-ATN"><span class="nav-text">2.1. ATN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Training"><span class="nav-text">2.2. Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Inference"><span class="nav-text">2.3. Inference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Loss-Functions"><span class="nav-text">2.4. Loss Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Reranking-Function"><span class="nav-text">2.5. Reranking Function</span></a></li></ol></li></ol></div>
             
 
           </div>

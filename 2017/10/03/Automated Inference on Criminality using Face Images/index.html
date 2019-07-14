@@ -496,7 +496,7 @@
 <li>The variation of C greater than N.</li>
 </ul>
 <p>基于面部特征的人为判断会带有偏见、先决条件等，而CV算法并不会存在这些问题。</p>
-<h1 id="Data-Preparation"><a href="#Data-Preparation" class="headerlink" title="Data Preparation"></a>Data Preparation</h1><hr>
+<h1 id="1-Data-Preparation"><a href="#1-Data-Preparation" class="headerlink" title="1. Data Preparation"></a>1. Data Preparation</h1><hr>
 <ul>
 <li>Dataset包含1856张照片 (1126N+730C, <strong>Figure 1</strong>). 照片标准: Chinese, male, between ages of 18 and 55, no facial hair, no facial scars, or other markings.</li>
 <li><strong>N</strong> including waiters, construction workers, taxi and truck drivers, real estate agents, doctors, lawyers and professors; half have <strong>university degrees</strong>.</li>
@@ -508,7 +508,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Automated%20Inference%20on%20Criminality%20using%20Face%20Images/1.jpg?raw=true" alt><br></div>
 
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <ul>
 <li>面部关键点特征能够避免signal level和variant of source cameras的影响。论文使用以下四种关键点:<ol>
 <li>Facial <strong>landmark</strong> point.</li>
@@ -519,7 +519,7 @@
 </li>
 </ul>
 <p>(Feature-driven classifiers (LR, SVM, KNN) <em> 3 + Data-driven classifiers (CNN)) </em> 10-fold cross validation  = 130 cases</p>
-<h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><hr>
+<h1 id="3-Results"><a href="#3-Results" class="headerlink" title="3. Results"></a>3. Results</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Automated%20Inference%20on%20Criminality%20using%20Face%20Images/2.jpg?raw=true" alt><br></div>
 
 
@@ -549,7 +549,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Automated%20Inference%20on%20Criminality%20using%20Face%20Images/10.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Discriminating-Feature"><a href="#Discriminating-Feature" class="headerlink" title="Discriminating Feature"></a>Discriminating Feature</h1><hr>
+<h1 id="4-Discriminating-Feature"><a href="#4-Discriminating-Feature" class="headerlink" title="4. Discriminating Feature"></a>4. Discriminating Feature</h1><hr>
 <ul>
 <li>使用Feature Generating Machine (FGM)进行分析与犯罪最相关的面部部位，得出这些特征位于眼角、嘴唇和额头部位 <strong>(Figure 8)</strong>.<ol>
 <li>ρ: 上嘴唇的曲度</li>
@@ -582,7 +582,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Automated%20Inference%20on%20Criminality%20using%20Face%20Images/15.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Face-Clustering-on-Manifold"><a href="#Face-Clustering-on-Manifold" class="headerlink" title="Face Clustering on Manifold"></a>Face Clustering on Manifold</h1><hr>
+<h1 id="5-Face-Clustering-on-Manifold"><a href="#5-Face-Clustering-on-Manifold" class="headerlink" title="5. Face Clustering on Manifold"></a>5. Face Clustering on Manifold</h1><hr>
 <ul>
 <li>通过<strong>平均脸</strong>并不能很好地得出C和N群体的区别 <strong>(Figure 10)</strong>，因此需要在更高维度 <strong>(manifold流形和聚类)</strong>上进行分析。</li>
 </ul>
@@ -1435,7 +1435,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Preparation"><span class="nav-number">1.</span> <span class="nav-text">Data Preparation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Results"><span class="nav-number">3.</span> <span class="nav-text">Results</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discriminating-Feature"><span class="nav-number">4.</span> <span class="nav-text">Discriminating Feature</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Face-Clustering-on-Manifold"><span class="nav-number">5.</span> <span class="nav-text">Face Clustering on Manifold</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Data-Preparation"><span class="nav-text">1. Data Preparation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Results"><span class="nav-text">3. Results</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Discriminating-Feature"><span class="nav-text">4. Discriminating Feature</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Face-Clustering-on-Manifold"><span class="nav-text">5. Face Clustering on Manifold</span></a></li></ol></div>
             
 
           </div>

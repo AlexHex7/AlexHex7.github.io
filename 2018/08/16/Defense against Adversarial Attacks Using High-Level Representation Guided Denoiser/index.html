@@ -486,8 +486,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>small <strong>residual perturbation is amplified</strong> to a large magnitudein top layers of the models</li>
 </ul>
 <p>In this paper, it proposed <strong>high-level representation guided denoiser (HGD)</strong> as a defense for image classification</p>
@@ -498,12 +498,12 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><h3 id="Attack-Methods"><a href="#Attack-Methods" class="headerlink" title="Attack Methods"></a>Attack Methods</h3><ul>
+<h2 id="1-2-Related-Works"><a href="#1-2-Related-Works" class="headerlink" title="1.2. Related Works"></a>1.2. Related Works</h2><h3 id="1-2-1-Attack-Methods"><a href="#1-2-1-Attack-Methods" class="headerlink" title="1.2.1. Attack Methods"></a>1.2.1. Attack Methods</h3><ul>
 <li>box-constrained L-BFGS</li>
 <li><strong>FGSM</strong></li>
 <li><strong>IFGSM</strong></li>
 </ul>
-<h3 id="Defense-Methods"><a href="#Defense-Methods" class="headerlink" title="Defense Methods"></a>Defense Methods</h3><ul>
+<h3 id="1-2-2-Defense-Methods"><a href="#1-2-2-Defense-Methods" class="headerlink" title="1.2.2. Defense Methods"></a>1.2.2. Defense Methods</h3><ul>
 <li><strong>augmentation with perturbation data (time consuming).</strong> even improve accuracy of clean image on some datasets, but not found on ImageNet</li>
 <li><strong>preprocessing</strong><ul>
 <li>denoising auto-encoder, median filter, averaging filter, Gaussian low-pass filter, JPEG compression</li>
@@ -519,14 +519,14 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/2.jpg?raw=true" alt><br></div>
 
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Pixel-Guided-Denoiser-PGD"><a href="#Pixel-Guided-Denoiser-PGD" class="headerlink" title="Pixel Guided Denoiser (PGD)"></a>Pixel Guided Denoiser (PGD)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/4.jpg?raw=true" alt><br></div>
+<h2 id="2-1-Pixel-Guided-Denoiser-PGD"><a href="#2-1-Pixel-Guided-Denoiser-PGD" class="headerlink" title="2.1. Pixel Guided Denoiser (PGD)"></a>2.1. Pixel Guided Denoiser (PGD)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/4.jpg?raw=true" alt><br></div>
 
-<h2 id="High-level-Representation-Guided-Denoiser-HGD"><a href="#High-level-Representation-Guided-Denoiser-HGD" class="headerlink" title="High-level Representation Guided Denoiser (HGD)"></a>High-level Representation Guided Denoiser (HGD)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/6.jpg?raw=true" alt><br></div>
+<h2 id="2-2-High-level-Representation-Guided-Denoiser-HGD"><a href="#2-2-High-level-Representation-Guided-Denoiser-HGD" class="headerlink" title="2.2. High-level Representation Guided Denoiser (HGD)"></a>2.2. High-level Representation Guided Denoiser (HGD)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Feature Guided Denoiser (FGD)</strong>. l=-2 layer, unsupervised</li>
@@ -535,8 +535,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="PGD"><a href="#PGD" class="headerlink" title="PGD"></a>PGD</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/7.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-PGD"><a href="#3-1-PGD" class="headerlink" title="3.1. PGD"></a>3.1. PGD</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>DAE performance significantly drops in clean images</li>
@@ -551,7 +551,7 @@
 <li><p>LGD perturbation at the final layer is much lower than PGD and adversarial perturbations and close to random perturbation</p>
 </li>
 </ul>
-<h2 id="HGD"><a href="#HGD" class="headerlink" title="HGD"></a>HGD</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/10.jpg?raw=true" alt><br></div>
+<h2 id="3-2-HGD"><a href="#3-2-HGD" class="headerlink" title="3.2. HGD"></a>3.2. HGD</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/10.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>HGD is more robust</strong> to white-box and black-box than PGD and ensV3</li>
@@ -561,7 +561,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/11.jpg?raw=true" alt><br></div>
 
 
-<h2 id="HGD-as-an-Anti-adversarial-Transformer"><a href="#HGD-as-an-Anti-adversarial-Transformer" class="headerlink" title="HGD as an Anti-adversarial Transformer"></a>HGD as an Anti-adversarial Transformer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/12.jpg?raw=true" alt><br></div>
+<h2 id="3-3-HGD-as-an-Anti-adversarial-Transformer"><a href="#3-3-HGD-as-an-Anti-adversarial-Transformer" class="headerlink" title="3.3. HGD as an Anti-adversarial Transformer"></a>3.3. HGD as an Anti-adversarial Transformer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/12.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>LGD does not suppress the total noise as PGD does, but adds more perturbations to the image<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/13.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Adversarial Attacks Using High-Level Representation Guided Denoiser/14.jpg?raw=true" alt><br></div>
@@ -1409,7 +1409,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Works"><span class="nav-number">1.2.</span> <span class="nav-text">Related Works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Attack-Methods"><span class="nav-number">1.2.1.</span> <span class="nav-text">Attack Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Defense-Methods"><span class="nav-number">1.2.2.</span> <span class="nav-text">Defense Methods</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pixel-Guided-Denoiser-PGD"><span class="nav-number">2.1.</span> <span class="nav-text">Pixel Guided Denoiser (PGD)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#High-level-Representation-Guided-Denoiser-HGD"><span class="nav-number">2.2.</span> <span class="nav-text">High-level Representation Guided Denoiser (HGD)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PGD"><span class="nav-number">3.1.</span> <span class="nav-text">PGD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HGD"><span class="nav-number">3.2.</span> <span class="nav-text">HGD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HGD-as-an-Anti-adversarial-Transformer"><span class="nav-number">3.3.</span> <span class="nav-text">HGD as an Anti-adversarial Transformer</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Works"><span class="nav-text">1.2. Related Works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Attack-Methods"><span class="nav-text">1.2.1. Attack Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Defense-Methods"><span class="nav-text">1.2.2. Defense Methods</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Pixel-Guided-Denoiser-PGD"><span class="nav-text">2.1. Pixel Guided Denoiser (PGD)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-High-level-Representation-Guided-Denoiser-HGD"><span class="nav-text">2.2. High-level Representation Guided Denoiser (HGD)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-PGD"><span class="nav-text">3.1. PGD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-HGD"><span class="nav-text">3.2. HGD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-HGD-as-an-Anti-adversarial-Transformer"><span class="nav-text">3.3. HGD as an Anti-adversarial Transformer</span></a></li></ol></li></ol></div>
             
 
           </div>

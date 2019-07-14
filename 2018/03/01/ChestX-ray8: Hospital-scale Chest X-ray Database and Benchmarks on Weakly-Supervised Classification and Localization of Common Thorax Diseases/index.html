@@ -487,8 +487,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>there is still significant room for performance improvement when underlying challenges become greater <strong>(0.413 on COCO vs 0.884 on VOC)</strong></li>
 </ul>
 <p>In this paper, it present a new chest X-ray database (<strong>ChestX-ray8</strong>)</p>
@@ -504,12 +504,12 @@
 <ul>
 <li>some c<strong>onnection between different pathologies</strong>, which agree with radiologists’s domain knowledge, such as <strong>Infiltration</strong> is often associated with Atelectasis and <strong>Effusion</strong></li>
 </ul>
-<h2 id="DCNN-Framework"><a href="#DCNN-Framework" class="headerlink" title="DCNN Framework"></a>DCNN Framework</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/3.jpg?raw=true" alt><br></div>
+<h2 id="1-2-DCNN-Framework"><a href="#1-2-DCNN-Framework" class="headerlink" title="1.2. DCNN Framework"></a>1.2. DCNN Framework</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>exploit <strong>Global Average Pooling</strong> to visualize the region</li>
 </ul>
-<h3 id="Log-Sum-Exp-LSE-Pooling"><a href="#Log-Sum-Exp-LSE-Pooling" class="headerlink" title="Log-Sum-Exp (LSE) Pooling"></a>Log-Sum-Exp (LSE) Pooling</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/4.jpg?raw=true" alt><br></div>
+<h3 id="1-2-1-Log-Sum-Exp-LSE-Pooling"><a href="#1-2-1-Log-Sum-Exp-LSE-Pooling" class="headerlink" title="1.2.1. Log-Sum-Exp (LSE) Pooling"></a>1.2.1. Log-Sum-Exp (LSE) Pooling</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>serve as an <strong>adjustable</strong> option <strong>between max</strong> pooling (r→ ∞) and <strong>average</strong> pooling (r→ 0)</li>
@@ -518,26 +518,26 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/5.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><p>one of 3 standard loss function</p>
+<h2 id="1-3-Loss-Function"><a href="#1-3-Loss-Function" class="headerlink" title="1.3. Loss Function"></a>1.3. Loss Function</h2><p>one of 3 standard loss function</p>
 <ul>
 <li><strong>Hinge</strong> Loss (HL)</li>
 <li><strong>Euclidean</strong> Loss (EL)</li>
 <li><strong>Cross Entropy</strong> Loss (CEL)</li>
 </ul>
-<h3 id="Sample-Balance"><a href="#Sample-Balance" class="headerlink" title="Sample-Balance"></a>Sample-Balance</h3><ul>
+<h3 id="1-3-1-Sample-Balance"><a href="#1-3-1-Sample-Balance" class="headerlink" title="1.3.1. Sample-Balance"></a>1.3.1. Sample-Balance</h3><ul>
 <li>W-CLE<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/6.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Different-Pooling-Strategy"><a href="#Different-Pooling-Strategy" class="headerlink" title="Different Pooling Strategy"></a>Different Pooling Strategy</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/7.jpg?raw=true" alt><br></div>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Different-Pooling-Strategy"><a href="#2-1-Different-Pooling-Strategy" class="headerlink" title="2.1. Different Pooling Strategy"></a>2.1. Different Pooling Strategy</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>r=10 is best</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/8.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Comparison"><a href="#2-2-Comparison" class="headerlink" title="2.2. Comparison"></a>2.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ChestX-ray8: Hospital-scale Chest X-ray Database and Benchmarks on Weakly-Supervised Classification and Localization of Common Thorax Diseases/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>W-CEL is better than CEL</li>
@@ -1382,7 +1382,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DCNN-Framework"><span class="nav-number">1.2.</span> <span class="nav-text">DCNN Framework</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Log-Sum-Exp-LSE-Pooling"><span class="nav-number">1.2.1.</span> <span class="nav-text">Log-Sum-Exp (LSE) Pooling</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">1.3.</span> <span class="nav-text">Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Balance"><span class="nav-number">1.3.1.</span> <span class="nav-text">Sample-Balance</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Different-Pooling-Strategy"><span class="nav-number">2.1.</span> <span class="nav-text">Different Pooling Strategy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">2.2.</span> <span class="nav-text">Comparison</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-DCNN-Framework"><span class="nav-text">1.2. DCNN Framework</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Log-Sum-Exp-LSE-Pooling"><span class="nav-text">1.2.1. Log-Sum-Exp (LSE) Pooling</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Loss-Function"><span class="nav-text">1.3. Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Sample-Balance"><span class="nav-text">1.3.1. Sample-Balance</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Different-Pooling-Strategy"><span class="nav-text">2.1. Different Pooling Strategy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Comparison"><span class="nav-text">2.2. Comparison</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/6.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/7.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/8.jpg?raw=true">
-<meta property="og:updated_time" content="2019-05-14T02:34:20.100Z">
+<meta property="og:updated_time" content="2019-06-08T02:18:05.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(2017) Multi-scale dense convolutional networks for efficient prediction">
 <meta name="twitter:description" content="Huang G, Chen D, Li T, et al. Multi-scale dense convolutional networks for efficient prediction[J]. arXiv preprint arXiv:1703.09844, 2017, 2.">
@@ -424,7 +424,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-14 10:34:20" itemprop="dateModified" datetime="2019-05-14T10:34:20+08:00">2019-05-14</time>
+                <time title="Modified: 2019-06-08 10:18:05" itemprop="dateModified" datetime="2019-06-08T10:18:05+08:00">2019-06-08</time>
               
             
           </span>
@@ -503,8 +503,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li><strong>Small model</strong> can deal with <strong>easy example</strong>, but make <strong>mistake</strong> for hard</li>
 <li><strong>Hard example</strong> need to be deal with by <strong>large model</strong>, but <strong>waste</strong> for <strong>easy</strong></li>
 </ul>
@@ -526,11 +526,11 @@
 <li><strong>multi-scale feature map + multi-classifier</strong></li>
 <li><strong>dense connectivity</strong></li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-2-Contribution"><a href="#1-2-Contribution" class="headerlink" title="1.2. Contribution"></a>1.2. Contribution</h2><ul>
 <li><strong>First</strong> deep learning architecture of its kind that allows <strong>dynamic resource adaptation</strong> with a single model</li>
 <li><strong>First</strong> discover that <strong>dense connectivity</strong> is crucial to <strong>early-exit classifier</strong></li>
 </ul>
-<h2 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h2><h3 id="Anytime-prediction"><a href="#Anytime-prediction" class="headerlink" title="Anytime prediction"></a>Anytime prediction</h3><ul>
+<h2 id="1-3-Setting"><a href="#1-3-Setting" class="headerlink" title="1.3. Setting"></a>1.3. Setting</h2><h3 id="1-3-1-Anytime-prediction"><a href="#1-3-1-Anytime-prediction" class="headerlink" title="1.3.1. Anytime prediction"></a>1.3.1. Anytime prediction</h3><ul>
 <li>stop at any time point (budget exhausted)</li>
 <li>return most recent predication</li>
 <li>nondeterministic budget, varies per test instance</li>
@@ -543,7 +543,7 @@
 <li><strong>f.</strong> model</li>
 <li><strong>x.</strong> input image</li>
 </ol>
-<h3 id="Budget-batch-classification"><a href="#Budget-batch-classification" class="headerlink" title="Budget batch classification"></a>Budget batch classification</h3><ul>
+<h3 id="1-3-2-Budget-batch-classification"><a href="#1-3-2-Budget-batch-classification" class="headerlink" title="1.3.2. Budget batch classification"></a>1.3.2. Budget batch classification</h3><ul>
 <li><strong>stop when sufficient confidence</strong></li>
 <li><strong>Less</strong> than <strong>B/M</strong> computation for <strong>easy</strong> example</li>
 <li><strong>More</strong> than <strong>B/M</strong> computation for <strong>hard</strong> example</li>
@@ -551,7 +551,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/3.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-4-Related-Work"><a href="#1-4-Related-Work" class="headerlink" title="1.4. Related Work"></a>1.4. Related Work</h2><ul>
 <li>Computation-efficient<ul>
 <li>prune weights</li>
 <li>quantize weights</li>
@@ -565,17 +565,17 @@
 </ul>
 </li>
 </ul>
-<h2 id="Visualization"><a href="#Visualization" class="headerlink" title="Visualization"></a>Visualization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/4.jpg?raw=true" alt><br></div>
+<h2 id="1-5-Visualization"><a href="#1-5-Visualization" class="headerlink" title="1.5. Visualization"></a>1.5. Visualization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/4.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><ul>
+<h2 id="1-6-Future-Work"><a href="#1-6-Future-Work" class="headerlink" title="1.6. Future Work"></a>1.6. Future Work</h2><ul>
 <li>Extend to other task. segmentation</li>
 <li>Combine MSDNet with<strong> model compression, spatially adaptive computation, more efficient convolution operation</strong></li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Multi-Scale-DenseNet"><a href="#Multi-Scale-DenseNet" class="headerlink" title="Multi-Scale DenseNet"></a>Multi-Scale DenseNet</h1><hr>
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/5.jpg?raw=true" alt><br></div>
+<h1 id="2-Multi-Scale-DenseNet"><a href="#2-Multi-Scale-DenseNet" class="headerlink" title="2. Multi-Scale DenseNet"></a>2. Multi-Scale DenseNet</h1><hr>
+<h2 id="2-1-Problem"><a href="#2-1-Problem" class="headerlink" title="2.1. Problem"></a>2.1. Problem</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p>Lack of coarse-level feature</p>
@@ -590,10 +590,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/7.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Model"><a href="#2-2-Model" class="headerlink" title="2.2. Model"></a>2.2. Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Lazy-Evaluation"><a href="#Lazy-Evaluation" class="headerlink" title="Lazy Evaluation"></a>Lazy Evaluation</h2><p><strong>Finer feature</strong> map do not influence the prediction of classifier. </p>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/8.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Lazy-Evaluation"><a href="#2-3-Lazy-Evaluation" class="headerlink" title="2.3. Lazy Evaluation"></a>2.3. Lazy Evaluation</h2><p><strong>Finer feature</strong> map do not influence the prediction of classifier. </p>
+<h2 id="2-4-Loss-Function"><a href="#2-4-Loss-Function" class="headerlink" title="2.4. Loss Function"></a>2.4. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Multi-scale dense convolutional networks for efficient prediction/8.jpg?raw=true" alt><br></div>
 
 <p>Empirically, $w_k$ = 1.</p>
 
@@ -1428,7 +1428,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Setting"><span class="nav-number">1.3.</span> <span class="nav-text">Setting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Anytime-prediction"><span class="nav-number">1.3.1.</span> <span class="nav-text">Anytime prediction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Budget-batch-classification"><span class="nav-number">1.3.2.</span> <span class="nav-text">Budget batch classification</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.4.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualization"><span class="nav-number">1.5.</span> <span class="nav-text">Visualization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Work"><span class="nav-number">1.6.</span> <span class="nav-text">Future Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Multi-Scale-DenseNet"><span class="nav-number">2.</span> <span class="nav-text">Multi-Scale DenseNet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">2.1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">2.2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lazy-Evaluation"><span class="nav-number">2.3.</span> <span class="nav-text">Lazy Evaluation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.4.</span> <span class="nav-text">Loss Function</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Contribution"><span class="nav-text">1.2. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Setting"><span class="nav-text">1.3. Setting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Anytime-prediction"><span class="nav-text">1.3.1. Anytime prediction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Budget-batch-classification"><span class="nav-text">1.3.2. Budget batch classification</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Related-Work"><span class="nav-text">1.4. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Visualization"><span class="nav-text">1.5. Visualization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Future-Work"><span class="nav-text">1.6. Future Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Multi-Scale-DenseNet"><span class="nav-text">2. Multi-Scale DenseNet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Problem"><span class="nav-text">2.1. Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Model"><span class="nav-text">2.2. Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Lazy-Evaluation"><span class="nav-text">2.3. Lazy Evaluation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Loss-Function"><span class="nav-text">2.4. Loss Function</span></a></li></ol></li></ol></div>
             
 
           </div>

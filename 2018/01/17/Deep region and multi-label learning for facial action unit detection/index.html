@@ -482,7 +482,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>在人脸AU检测中，存在两种常见的任务</p>
 <ul>
 <li><strong>Region Learning</strong> (RL)</li>
@@ -502,27 +502,27 @@
 <li>end to end训练</li>
 <li>non-linear模型<br>论文在<strong>BP4D</strong>和<strong>DISFA</strong>数据集上进行实验，对比<strong>F1-score和AUC</strong>评价指标。</li>
 </ul>
-<h2 id="Region-Learning"><a href="#Region-Learning" class="headerlink" title="Region Learning"></a>Region Learning</h2><ul>
+<h2 id="1-1-Region-Learning"><a href="#1-1-Region-Learning" class="headerlink" title="1.1. Region Learning"></a>1.1. Region Learning</h2><ul>
 <li>通过<strong>传统方法</strong>识别特定的区域来提高检测性能（类似于Attention）。例如patch-based方法，首先将图像划分为patch，然后将patch分类为<strong>普通patch和特定patch</strong>来描述不同的表情</li>
 <li><strong>patch-based 缺点.</strong>  easily fail on faces with modest or large pose （某些patch中部分相关，但被排除在外，没有用于识别，从而导致性能降低）</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Multi-label-Learning"><a href="#Multi-label-Learning" class="headerlink" title="Multi-label Learning"></a>Multi-label Learning</h2><ul>
+<h2 id="1-2-Multi-label-Learning"><a href="#1-2-Multi-label-Learning" class="headerlink" title="1.2. Multi-label Learning"></a>1.2. Multi-label Learning</h2><ul>
 <li>传统的AU检测方法（AdaBoost、SVM等）都是对某个AU进行检测</li>
 <li>ML对于每个表情，同时预测多个AU。 能够在一定程度上解决正负样本不平衡的问题</li>
 </ul>
-<h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><ul>
+<h2 id="1-3-评价指标"><a href="#1-3-评价指标" class="headerlink" title="1.3. 评价指标"></a>1.3. 评价指标</h2><ul>
 <li><strong>F1-score</strong>. precision和recall的调和均值，常用于AU检测</li>
 <li><strong>AUC</strong>. 量化true positive和false positive之间的关系</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="DRML结构"><a href="#DRML结构" class="headerlink" title="DRML结构"></a>DRML结构</h1><hr>
+<h1 id="2-DRML结构"><a href="#2-DRML结构" class="headerlink" title="2. DRML结构"></a>2. DRML结构</h1><hr>
 <p>大多数表情分析都使用很小的人脸图像（如48<em>48）作为输入，为了<strong>避免人脸微小细节的丢失</strong>，论文使用**170</em>170**大小的图像作为输入。</p>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/4.jpg?raw=true" alt><br></div>
+<h2 id="2-1-Loss-Function"><a href="#2-1-Loss-Function" class="headerlink" title="2.1. Loss Function"></a>2.1. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Region-Layer"><a href="#Region-Layer" class="headerlink" title="Region Layer"></a>Region Layer</h2><ul>
+<h2 id="2-2-Region-Layer"><a href="#2-2-Region-Layer" class="headerlink" title="2.2. Region Layer"></a>2.2. Region Layer</h2><ul>
 <li>人脸图像相对于自然图像更加结构化，不同的人脸区域具有不同的局部统计。因此，可使用LCN（参数太多）或者区域卷积进行处理</li>
 <li>可看做是对每个区域进行Attention操作</li>
 </ul>
@@ -534,8 +534,8 @@
 <li><strong>local convolution</strong></li>
 <li><strong>identity addition</strong> (避免梯度消失；如果patch与AU检测无关，it would be easier to directly forward the patch than learning a filter bank to reduce the patch’s effect)</li>
 </ul>
-<h2 id="Region可视化"><a href="#Region可视化" class="headerlink" title="Region可视化"></a>Region可视化</h2><p>使用saliency map（通过计算每个像素点对于某个特定AU的梯度级数）进行可视化。</p>
-<h2 id="与相关工作的比较"><a href="#与相关工作的比较" class="headerlink" title="与相关工作的比较"></a>与相关工作的比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/6.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Region可视化"><a href="#2-3-Region可视化" class="headerlink" title="2.3. Region可视化"></a>2.3. Region可视化</h2><p>使用saliency map（通过计算每个像素点对于某个特定AU的梯度级数）进行可视化。</p>
+<h2 id="2-4-与相关工作的比较"><a href="#2-4-与相关工作的比较" class="headerlink" title="2.4. 与相关工作的比较"></a>2.4. 与相关工作的比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/6.jpg?raw=true" alt><br></div>
 
 <p>DRML受JPML启发，但存在不同之处</p>
 <ul>
@@ -546,7 +546,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
 <p>200<em>200图像random crop为170</em>170，并进行horizontally mirrored。</p>
 <ul>
 <li><p>DRML收敛更快，训练loss更低，更接近gt统计</p>
@@ -557,7 +557,7 @@
 
 </li>
 </ul>
-<h2 id="BP4D-amp-DISFA实验结果"><a href="#BP4D-amp-DISFA实验结果" class="headerlink" title="BP4D&amp;DISFA实验结果"></a>BP4D&amp;DISFA实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/10.jpg?raw=true" alt><br></div>
+<h2 id="3-1-BP4D-amp-DISFA实验结果"><a href="#3-1-BP4D-amp-DISFA实验结果" class="headerlink" title="3.1. BP4D&amp;DISFA实验结果"></a>3.1. BP4D&amp;DISFA实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep region and multi-label learning for facial action unit detection/10.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>learned features are of lower dimension, more than 40% of learned features for AlexNet, LCN, and DRML, are zeros</li>
@@ -1398,7 +1398,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Region-Learning"><span class="nav-number">1.1.</span> <span class="nav-text">Region Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-label-Learning"><span class="nav-number">1.2.</span> <span class="nav-text">Multi-label Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标"><span class="nav-number">1.3.</span> <span class="nav-text">评价指标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DRML结构"><span class="nav-number">2.</span> <span class="nav-text">DRML结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.1.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Region-Layer"><span class="nav-number">2.2.</span> <span class="nav-text">Region Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Region可视化"><span class="nav-number">2.3.</span> <span class="nav-text">Region可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与相关工作的比较"><span class="nav-number">2.4.</span> <span class="nav-text">与相关工作的比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BP4D-amp-DISFA实验结果"><span class="nav-number">3.1.</span> <span class="nav-text">BP4D&amp;DISFA实验结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Region-Learning"><span class="nav-text">1.1. Region Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Multi-label-Learning"><span class="nav-text">1.2. Multi-label Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-评价指标"><span class="nav-text">1.3. 评价指标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-DRML结构"><span class="nav-text">2. DRML结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Loss-Function"><span class="nav-text">2.1. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Region-Layer"><span class="nav-text">2.2. Region Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Region可视化"><span class="nav-text">2.3. Region可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-与相关工作的比较"><span class="nav-text">2.4. 与相关工作的比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-BP4D-amp-DISFA实验结果"><span class="nav-text">3.1. BP4D&amp;DISFA实验结果</span></a></li></ol></li></ol></div>
             
 
           </div>

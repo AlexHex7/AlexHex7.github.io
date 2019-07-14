@@ -487,48 +487,48 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper</p>
 <ul>
 <li>proposes <strong>Prototypical Network (PN)</strong> for few-shot learning</li>
 <li>extend <strong>PN</strong> to <strong>zero-shot</strong> learning</li>
 <li><strong>euclidean distance</strong> better than cosine similarly</li>
 </ul>
-<h2 id="Few-Shot-Learning"><a href="#Few-Shot-Learning" class="headerlink" title="Few-Shot Learning"></a>Few-Shot Learning</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/1.jpg?raw=true" alt><br>    <strong>c.</strong> mean of the support examples for each class<br></div>
+<h2 id="1-1-Few-Shot-Learning"><a href="#1-1-Few-Shot-Learning" class="headerlink" title="1.1. Few-Shot Learning"></a>1.1. Few-Shot Learning</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/1.jpg?raw=true" alt><br>    <strong>c.</strong> mean of the support examples for each class<br></div>
 
 
 <ul>
 <li>classifier must generalize to new classes not seen in the training set</li>
 <li><strong>given</strong> only <strong>a small number</strong> of examples (<strong>support set</strong>) of <strong>each new class</strong></li>
 </ul>
-<h3 id="Episode-Training-for-example"><a href="#Episode-Training-for-example" class="headerlink" title="Episode Training (for example)"></a>Episode Training (for example)</h3><ul>
+<h3 id="1-1-1-Episode-Training-for-example"><a href="#1-1-1-Episode-Training-for-example" class="headerlink" title="1.1.1. Episode Training (for example)"></a>1.1.1. Episode Training (for example)</h3><ul>
 <li><strong>training set</strong>. 200 classes, 10 samples/class</li>
 <li><strong>each episode</strong>. randomly select 5 classes</li>
 <li>4 samples/class as <strong>support set</strong> (GT can be used)</li>
 <li>6 samples/class as <strong>query set</strong> (GT only use to calc loss)</li>
 </ul>
-<h3 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h3><ul>
+<h3 id="1-1-2-Testing"><a href="#1-1-2-Testing" class="headerlink" title="1.1.2. Testing"></a>1.1.2. Testing</h3><ul>
 <li><strong>test set</strong>. new 20 classes, 20 samples/class</li>
 <li><strong>each episode</strong>. randomly select 5 classes</li>
 <li>5 samples/class as <strong>support set</strong> (GT can be used)</li>
 <li>15 samples/class as <strong>query set</strong> (GT can be used, only to calc acc)</li>
 </ul>
-<h3 id="One-Shot-Learning"><a href="#One-Shot-Learning" class="headerlink" title="One-Shot Learning"></a>One-Shot Learning</h3><ul>
+<h3 id="1-1-3-One-Shot-Learning"><a href="#1-1-3-One-Shot-Learning" class="headerlink" title="1.1.3. One-Shot Learning"></a>1.1.3. One-Shot Learning</h3><ul>
 <li>only <strong>one sample/class in support set</strong></li>
 </ul>
-<h2 id="Zero-Shot-Learning"><a href="#Zero-Shot-Learning" class="headerlink" title="Zero-Shot Learning"></a>Zero-Shot Learning</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/2.jpg?raw=true" alt><br>    <strong>c</strong>. embed class meta-data v<br></div>
+<h2 id="1-2-Zero-Shot-Learning"><a href="#1-2-Zero-Shot-Learning" class="headerlink" title="1.2. Zero-Shot Learning"></a>1.2. Zero-Shot Learning</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/2.jpg?raw=true" alt><br>    <strong>c</strong>. embed class meta-data v<br></div>
 
 
 <ul>
 <li>each class <strong>comes with meta-data</strong> giving a high-level <strong>description</strong> of the class <strong>rather than a small number of labeled examples</strong></li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><ul>
 <li><strong>Matching Network (MN)</strong>. in one-shot learning, PN=MN</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><hr>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/3.jpg?raw=true" alt><br></div>
+<h1 id="2-Method"><a href="#2-Method" class="headerlink" title="2. Method"></a>2. Method</h1><hr>
+<h2 id="2-1-Algorithm"><a href="#2-1-Algorithm" class="headerlink" title="2.1. Algorithm"></a>2.1. Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>zero-shot. </li>
@@ -536,15 +536,15 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/4.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Episode"><a href="#Episode" class="headerlink" title="Episode"></a>Episode</h2><ul>
+<h2 id="2-2-Episode"><a href="#2-2-Episode" class="headerlink" title="2.2. Episode"></a>2.2. Episode</h2><ul>
 <li><strong>N_c-way (class), N_S-shot (sample)</strong></li>
 <li>higher <strong>way</strong> or <strong>shot</strong> is beneficial</li>
 <li>best to train and test with the same <strong>shot</strong></li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Datails"><a href="#Datails" class="headerlink" title="Datails"></a>Datails</h2><h3 id="Omniglot"><a href="#Omniglot" class="headerlink" title="Omniglot"></a>Omniglot</h3><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Datails"><a href="#3-1-Datails" class="headerlink" title="3.1. Datails"></a>3.1. Datails</h2><h3 id="3-1-1-Omniglot"><a href="#3-1-1-Omniglot" class="headerlink" title="3.1.1. Omniglot"></a>3.1.1. Omniglot</h3><ul>
 <li>28x28, gray</li>
 <li><strong>1623 characters</strong>, 20 samples/character</li>
 <li>rotate 90, 180. 270 to get different classes</li>
@@ -553,15 +553,15 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/5.jpg?raw=true" alt><br></div>
 
-<h3 id="miniImageNet"><a href="#miniImageNet" class="headerlink" title="miniImageNet"></a>miniImageNet</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/6.jpg?raw=true" alt><br></div>
+<h3 id="3-1-2-miniImageNet"><a href="#3-1-2-miniImageNet" class="headerlink" title="3.1.2. miniImageNet"></a>3.1.2. miniImageNet</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/6.jpg?raw=true" alt><br></div>
 
-<h3 id="CUB-200"><a href="#CUB-200" class="headerlink" title="CUB-200"></a>CUB-200</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/7.jpg?raw=true" alt><br></div>
+<h3 id="3-1-3-CUB-200"><a href="#3-1-3-CUB-200" class="headerlink" title="3.1.3. CUB-200"></a>3.1.3. CUB-200</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><ul>
+<h2 id="3-2-Network"><a href="#3-2-Network" class="headerlink" title="3.2. Network"></a>3.2. Network</h2><ul>
 <li>4 Conv</li>
 <li>each as [64, 3x3 <strong>Conv; BN; ReLU; Maxpooling</strong>]</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/8.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Comparison"><a href="#3-3-Comparison" class="headerlink" title="3.3. Comparison"></a>3.3. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Prototypical Networks for Few-shot Learning/8.jpg?raw=true" alt><br></div>
 
 
       
@@ -1395,7 +1395,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Few-Shot-Learning"><span class="nav-number">1.1.</span> <span class="nav-text">Few-Shot Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Episode-Training-for-example"><span class="nav-number">1.1.1.</span> <span class="nav-text">Episode Training (for example)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Testing"><span class="nav-number">1.1.2.</span> <span class="nav-text">Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#One-Shot-Learning"><span class="nav-number">1.1.3.</span> <span class="nav-text">One-Shot Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zero-Shot-Learning"><span class="nav-number">1.2.</span> <span class="nav-text">Zero-Shot Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Method"><span class="nav-number">2.</span> <span class="nav-text">Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Episode"><span class="nav-number">2.2.</span> <span class="nav-text">Episode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Datails"><span class="nav-number">3.1.</span> <span class="nav-text">Datails</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Omniglot"><span class="nav-number">3.1.1.</span> <span class="nav-text">Omniglot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#miniImageNet"><span class="nav-number">3.1.2.</span> <span class="nav-text">miniImageNet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CUB-200"><span class="nav-number">3.1.3.</span> <span class="nav-text">CUB-200</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">3.2.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.3.</span> <span class="nav-text">Comparison</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Few-Shot-Learning"><span class="nav-text">1.1. Few-Shot Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-Episode-Training-for-example"><span class="nav-text">1.1.1. Episode Training (for example)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-Testing"><span class="nav-text">1.1.2. Testing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-One-Shot-Learning"><span class="nav-text">1.1.3. One-Shot Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Zero-Shot-Learning"><span class="nav-text">1.2. Zero-Shot Learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Method"><span class="nav-text">2. Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Algorithm"><span class="nav-text">2.1. Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Episode"><span class="nav-text">2.2. Episode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Datails"><span class="nav-text">3.1. Datails</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-Omniglot"><span class="nav-text">3.1.1. Omniglot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-miniImageNet"><span class="nav-text">3.1.2. miniImageNet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-CUB-200"><span class="nav-text">3.1.3. CUB-200</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Network"><span class="nav-text">3.2. Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Comparison"><span class="nav-text">3.3. Comparison</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -494,8 +494,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>most existing methods tackle textual-visual matching problem <strong>without effectively utilizing identity-level annotations</strong></li>
 <li>RNNs have <strong>difficulty</strong> in remembering the complete sequential information of very <strong>long sentences</strong></li>
 <li>RNNs are <strong>variant to different sentence structures</strong></li>
@@ -509,12 +509,12 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-2-Contribution"><a href="#1-2-Contribution" class="headerlink" title="1.2. Contribution"></a>1.2. Contribution</h2><ul>
 <li>identity-aware two-stage framework</li>
 <li>CMCE loss</li>
 <li>latent co-attention mechanism</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Visual-Matching-with-Identity-Level-Annotation"><a href="#Visual-Matching-with-Identity-Level-Annotation" class="headerlink" title="Visual Matching with Identity-Level Annotation"></a>Visual Matching with Identity-Level Annotation</h3><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><h3 id="1-3-1-Visual-Matching-with-Identity-Level-Annotation"><a href="#1-3-1-Visual-Matching-with-Identity-Level-Annotation" class="headerlink" title="1.3.1. Visual Matching with Identity-Level Annotation"></a>1.3.1. Visual Matching with Identity-Level Annotation</h3><ul>
 <li>person re-identification</li>
 <li>face recognition<ul>
 <li><strong>classify all identities simultaneously</strong>.  face challenge when number of classes is too large</li>
@@ -522,21 +522,21 @@
 </ul>
 </li>
 </ul>
-<h3 id="Textual-Visual-Matching"><a href="#Textual-Visual-Matching" class="headerlink" title="Textual-Visual Matching"></a>Textual-Visual Matching</h3><ul>
+<h3 id="1-3-2-Textual-Visual-Matching"><a href="#1-3-2-Textual-Visual-Matching" class="headerlink" title="1.3.2. Textual-Visual Matching"></a>1.3.2. Textual-Visual Matching</h3><ul>
 <li>image caption</li>
 <li>VQA</li>
 <li>text-image embedding</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="Stage-1-with-CMCE-Loss"><a href="#Stage-1-with-CMCE-Loss" class="headerlink" title="Stage-1 with CMCE Loss"></a>Stage-1 with CMCE Loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/2.jpg?raw=true" alt><br></div>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-Stage-1-with-CMCE-Loss"><a href="#2-1-Stage-1-with-CMCE-Loss" class="headerlink" title="2.1. Stage-1 with CMCE Loss"></a>2.1. Stage-1 with CMCE Loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>map image and description into a <strong>joint feature embedding space</strong></li>
 <li>Cross-Modal Cross-Entropy (<strong>CMCE</strong>) to <strong>minimize intra-identity</strong> and <strong>maximize inter-identity feature distances</strong></li>
 </ul>
-<h3 id="Cross-Modal-Cross-Entropy-Loss"><a href="#Cross-Modal-Cross-Entropy-Loss" class="headerlink" title="Cross-Modal Cross-Entropy Loss"></a>Cross-Modal Cross-Entropy Loss</h3><ul>
+<h3 id="2-1-1-Cross-Modal-Cross-Entropy-Loss"><a href="#2-1-1-Cross-Modal-Cross-Entropy-Loss" class="headerlink" title="2.1.1. Cross-Modal Cross-Entropy Loss"></a>2.1.1. Cross-Modal Cross-Entropy Loss</h3><ul>
 <li><strong>pair-wise or triplet loss</strong>. N identities contains <strong>O(N^2)</strong> training samples, difficult to sample hard negative samples</li>
 <li><p><strong>CMCE</strong>. compare each identity in mini-batch from one modality to all N identites in another modality, can <strong>cover all hard negative samples</strong></p>
 </li>
@@ -559,7 +559,7 @@
 <li><p><strong>maximize</strong> the probability of corresponding identity pairs</p>
 </li>
 </ul>
-<h2 id="Stage-2-with-Latent-Co-attention"><a href="#Stage-2-with-Latent-Co-attention" class="headerlink" title="Stage-2 with Latent Co-attention"></a>Stage-2 with Latent Co-attention</h2><ul>
+<h2 id="2-2-Stage-2-with-Latent-Co-attention"><a href="#2-2-Stage-2-with-Latent-Co-attention" class="headerlink" title="2.2. Stage-2 with Latent Co-attention"></a>2.2. Stage-2 with Latent Co-attention</h2><ul>
 <li><strong>stage-1.</strong> visual and text feature embeddings might not be optimal, <strong>compress the whole sentence into a single vector</strong></li>
 <li><strong>stage-1.</strong> sensitive to <strong>sentence structure variation</strong></li>
 </ul>
@@ -571,7 +571,7 @@
 <li>trained stage-1 network serves as the initial point for the stage-2 network</li>
 <li>only hard negative matching samples from stage-1 results are utilized for training stage-2</li>
 </ul>
-<h3 id="Encoder-Word-LSTM-with-Spatial-Attention"><a href="#Encoder-Word-LSTM-with-Spatial-Attention" class="headerlink" title="Encoder Word-LSTM with Spatial Attention"></a>Encoder Word-LSTM with Spatial Attention</h3><ul>
+<h3 id="2-2-1-Encoder-Word-LSTM-with-Spatial-Attention"><a href="#2-2-1-Encoder-Word-LSTM-with-Spatial-Attention" class="headerlink" title="2.2.1. Encoder Word-LSTM with Spatial Attention"></a>2.2.1. Encoder Word-LSTM with Spatial Attention</h3><ul>
 <li>generate the weight between word and L regions</li>
 <li>sum of all weighted region</li>
 <li>concate the word and sum</li>
@@ -598,7 +598,7 @@
 <ul>
 <li>concate the word and its weighted region</li>
 </ul>
-<h3 id="Decoder-LSTM-with-Latent-Semantic-Attention"><a href="#Decoder-LSTM-with-Latent-Semantic-Attention" class="headerlink" title="Decoder LSTM with Latent Semantic Attention"></a>Decoder LSTM with Latent Semantic Attention</h3><ol>
+<h3 id="2-2-2-Decoder-LSTM-with-Latent-Semantic-Attention"><a href="#2-2-2-Decoder-LSTM-with-Latent-Semantic-Attention" class="headerlink" title="2.2.2. Decoder LSTM with Latent Semantic Attention"></a>2.2.2. Decoder LSTM with Latent Semantic Attention</h3><ol>
 <li>generate weights between last hidden state and all x_t</li>
 <li>sum of weighted x_t</li>
 <li>process and fed into next LSTM step</li>
@@ -627,21 +627,21 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Dataset"><a href="#3-1-Dataset" class="headerlink" title="3.1. Dataset"></a>3.1. Dataset</h2><ul>
 <li><strong>CUHK-PEDES</strong>. two descriptions</li>
 <li><strong>Caltech-UCSD birds (CUB)</strong>.  ten descriptions</li>
 <li><strong>Oxford-102 Flowers.</strong> ten descriptions</li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="3-2-Details"><a href="#3-2-Details" class="headerlink" title="3.2. Details"></a>3.2. Details</h2><ul>
 <li>σ=0.04</li>
 <li>Adam of LSTM, SDG of CNN</li>
 <li>training and testing samples are <strong>screened by the mathcing results of stage-1</strong></li>
 <li><strong>for each</strong> visual or textual sample, we <strong>take its 20 most similar samples from the other modality</strong> by stage-1 and construct textual-visual pair samples for stage-2 training and testing</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/14.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Comparison"><a href="#3-3-Comparison" class="headerlink" title="3.3. Comparison"></a>3.3. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/14.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablation-Study"><a href="#Ablation-Study" class="headerlink" title="Ablation Study"></a>Ablation Study</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/15.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Ablation-Study"><a href="#3-4-Ablation-Study" class="headerlink" title="3.4. Ablation Study"></a>3.4. Ablation Study</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Identity-aware textual-visual matching with latent co-attention/15.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>CMCE loss vs Triplet loss</strong>. 3 times more training time than CMCE</li>
@@ -1486,7 +1486,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Visual-Matching-with-Identity-Level-Annotation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Visual Matching with Identity-Level Annotation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Textual-Visual-Matching"><span class="nav-number">1.3.2.</span> <span class="nav-text">Textual-Visual Matching</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stage-1-with-CMCE-Loss"><span class="nav-number">2.1.</span> <span class="nav-text">Stage-1 with CMCE Loss</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Modal-Cross-Entropy-Loss"><span class="nav-number">2.1.1.</span> <span class="nav-text">Cross-Modal Cross-Entropy Loss</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stage-2-with-Latent-Co-attention"><span class="nav-number">2.2.</span> <span class="nav-text">Stage-2 with Latent Co-attention</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Encoder-Word-LSTM-with-Spatial-Attention"><span class="nav-number">2.2.1.</span> <span class="nav-text">Encoder Word-LSTM with Spatial Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decoder-LSTM-with-Latent-Semantic-Attention"><span class="nav-number">2.2.2.</span> <span class="nav-text">Decoder LSTM with Latent Semantic Attention</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.2.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.3.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation-Study"><span class="nav-number">3.4.</span> <span class="nav-text">Ablation Study</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Contribution"><span class="nav-text">1.2. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Visual-Matching-with-Identity-Level-Annotation"><span class="nav-text">1.3.1. Visual Matching with Identity-Level Annotation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Textual-Visual-Matching"><span class="nav-text">1.3.2. Textual-Visual Matching</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Stage-1-with-CMCE-Loss"><span class="nav-text">2.1. Stage-1 with CMCE Loss</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Cross-Modal-Cross-Entropy-Loss"><span class="nav-text">2.1.1. Cross-Modal Cross-Entropy Loss</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Stage-2-with-Latent-Co-attention"><span class="nav-text">2.2. Stage-2 with Latent Co-attention</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Encoder-Word-LSTM-with-Spatial-Attention"><span class="nav-text">2.2.1. Encoder Word-LSTM with Spatial Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Decoder-LSTM-with-Latent-Semantic-Attention"><span class="nav-text">2.2.2. Decoder LSTM with Latent Semantic Attention</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Dataset"><span class="nav-text">3.1. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Details"><span class="nav-text">3.2. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Comparison"><span class="nav-text">3.3. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Ablation-Study"><span class="nav-text">3.4. Ablation Study</span></a></li></ol></li></ol></div>
             
 
           </div>

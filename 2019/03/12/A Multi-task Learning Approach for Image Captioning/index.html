@@ -495,7 +495,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposes Multi-task Learning Approach for Image Captioning (<strong>MLAIC</strong>)</p>
 <ul>
 <li><strong>multi-object classification model</strong>. <strong>regularize</strong> CNN encoder</li>
@@ -504,23 +504,23 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
+<h1 id="2-Architecture"><a href="#2-Architecture" class="headerlink" title="2. Architecture"></a>2. Architecture</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Ground-Truth"><a href="#Ground-Truth" class="headerlink" title="Ground-Truth"></a>Ground-Truth</h2><h3 id="Object-Vector"><a href="#Object-Vector" class="headerlink" title="Object Vector"></a>Object Vector</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/2.jpg?raw=true" alt><br></div>
+<h2 id="2-1-Ground-Truth"><a href="#2-1-Ground-Truth" class="headerlink" title="2.1. Ground-Truth"></a>2.1. Ground-Truth</h2><h3 id="2-1-1-Object-Vector"><a href="#2-1-1-Object-Vector" class="headerlink" title="2.1.1. Object Vector"></a>2.1.1. Object Vector</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>1 is present.</li>
 <li>C. the number of categories</li>
 </ul>
-<h3 id="Image-Description"><a href="#Image-Description" class="headerlink" title="Image Description"></a>Image Description</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/3.jpg?raw=true" alt><br></div>
+<h3 id="2-1-2-Image-Description"><a href="#2-1-2-Image-Description" class="headerlink" title="2.1.2. Image Description"></a>2.1.2. Image Description</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>T. sentence length</li>
 </ul>
-<h3 id="Combinatory-Category-Gramma-CCG"><a href="#Combinatory-Category-Gramma-CCG" class="headerlink" title="Combinatory Category Gramma (CCG)"></a>Combinatory Category Gramma (CCG)</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/4.jpg?raw=true" alt><br></div>
+<h3 id="2-1-3-Combinatory-Category-Gramma-CCG"><a href="#2-1-3-Combinatory-Category-Gramma-CCG" class="headerlink" title="2.1.3. Combinatory Category Gramma (CCG)"></a>2.1.3. Combinatory Category Gramma (CCG)</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Shared-CNN-Encoder"><a href="#Shared-CNN-Encoder" class="headerlink" title="Shared CNN Encoder"></a>Shared CNN Encoder</h2><ul>
+<h2 id="2-2-Shared-CNN-Encoder"><a href="#2-2-Shared-CNN-Encoder" class="headerlink" title="2.2. Shared CNN Encoder"></a>2.2. Shared CNN Encoder</h2><ul>
 <li>image to L vectors (HxWxC–&gt;LxD)</li>
 <li>L=14x14, D=2048</li>
 </ul>
@@ -529,13 +529,13 @@
 <ul>
 <li>shared CNN encoder fine-tuned with both captioning and classification</li>
 </ul>
-<h3 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/6.jpg?raw=true" alt><br></div>
+<h3 id="2-2-1-Classification"><a href="#2-2-1-Classification" class="headerlink" title="2.2.1. Classification"></a>2.2.1. Classification</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Shared-LSTM-Decoder"><a href="#Shared-LSTM-Decoder" class="headerlink" title="Shared LSTM Decoder"></a>Shared LSTM Decoder</h2><ul>
+<h2 id="2-3-Shared-LSTM-Decoder"><a href="#2-3-Shared-LSTM-Decoder" class="headerlink" title="2.3. Shared LSTM Decoder"></a>2.3. Shared LSTM Decoder</h2><ul>
 <li><strong>LSTM_1</strong>. top-down visual attention model</li>
 <li><strong>LSTM_2</strong>. language model</li>
 </ul>
-<h3 id="LSTM-1"><a href="#LSTM-1" class="headerlink" title="LSTM_1"></a>LSTM_1</h3><ul>
+<h3 id="2-3-1-LSTM-1"><a href="#2-3-1-LSTM-1" class="headerlink" title="2.3.1. LSTM_1"></a>2.3.1. LSTM_1</h3><ul>
 <li>Input.<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/7.jpg?raw=true" alt><br></div>
 </li>
 </ul>
@@ -550,7 +550,7 @@
 
 </li>
 </ul>
-<h3 id="LSTM-2"><a href="#LSTM-2" class="headerlink" title="### LSTM_2"></a>### LSTM_2</h3><ul>
+<h3 id="2-3-2-LSTM-2"><a href="#2-3-2-LSTM-2" class="headerlink" title="2.3.2. ### LSTM_2"></a>2.3.2. ### LSTM_2</h3><ul>
 <li>Input<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/9.jpg?raw=true" alt><br>  sigma. feed-forward NN<br></div>
 
 
@@ -562,7 +562,7 @@
 
 </li>
 </ul>
-<h2 id="Multi-Task-Learning"><a href="#Multi-Task-Learning" class="headerlink" title="Multi-Task Learning"></a>Multi-Task Learning</h2><ul>
+<h2 id="2-4-Multi-Task-Learning"><a href="#2-4-Multi-Task-Learning" class="headerlink" title="2.4. Multi-Task Learning"></a>2.4. Multi-Task Learning</h2><ul>
 <li><p><strong>classification</strong>. multi-label margin loss</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/11.jpg?raw=true" alt><br></div>
 </li>
@@ -579,16 +579,16 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Details"><a href="#3-1-Details" class="headerlink" title="3.1. Details"></a>3.1. Details</h2><ul>
 <li>λ1 = 0.2, λ2 = 0.7, λ3 = 0.1</li>
 <li><strong>LSTM_1</strong> = 1000 unit, <strong>LSTM_2</strong> = 512 unit</li>
 <li>word embedding = 512, CCG supertag embedding = 100</li>
 <li>beam size = 5</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/14.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Comparison"><a href="#3-2-Comparison" class="headerlink" title="3.2. Comparison"></a>3.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/14.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablation"><a href="#Ablation" class="headerlink" title="Ablation"></a>Ablation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/15.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/16.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Ablation"><a href="#3-3-Ablation" class="headerlink" title="3.3. Ablation"></a>3.3. Ablation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/15.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Multi-task Learning Approach for Image Captioning/16.jpg?raw=true" alt><br></div>
 
 
 
@@ -1430,7 +1430,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">2.</span> <span class="nav-text">Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ground-Truth"><span class="nav-number">2.1.</span> <span class="nav-text">Ground-Truth</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-Vector"><span class="nav-number">2.1.1.</span> <span class="nav-text">Object Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Description"><span class="nav-number">2.1.2.</span> <span class="nav-text">Image Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combinatory-Category-Gramma-CCG"><span class="nav-number">2.1.3.</span> <span class="nav-text">Combinatory Category Gramma (CCG)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shared-CNN-Encoder"><span class="nav-number">2.2.</span> <span class="nav-text">Shared CNN Encoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Classification"><span class="nav-number">2.2.1.</span> <span class="nav-text">Classification</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shared-LSTM-Decoder"><span class="nav-number">2.3.</span> <span class="nav-text">Shared LSTM Decoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">LSTM_1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">### LSTM_2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-Task-Learning"><span class="nav-number">2.4.</span> <span class="nav-text">Multi-Task Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation"><span class="nav-number">3.3.</span> <span class="nav-text">Ablation</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Architecture"><span class="nav-text">2. Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Ground-Truth"><span class="nav-text">2.1. Ground-Truth</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Object-Vector"><span class="nav-text">2.1.1. Object Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-Image-Description"><span class="nav-text">2.1.2. Image Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-Combinatory-Category-Gramma-CCG"><span class="nav-text">2.1.3. Combinatory Category Gramma (CCG)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Shared-CNN-Encoder"><span class="nav-text">2.2. Shared CNN Encoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Classification"><span class="nav-text">2.2.1. Classification</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Shared-LSTM-Decoder"><span class="nav-text">2.3. Shared LSTM Decoder</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-LSTM-1"><span class="nav-text">2.3.1. LSTM_1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-LSTM-2"><span class="nav-text">2.3.2. ### LSTM_2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Multi-Task-Learning"><span class="nav-text">2.4. Multi-Task Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Details"><span class="nav-text">3.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Comparison"><span class="nav-text">3.2. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Ablation"><span class="nav-text">3.3. Ablation</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Akhtar N, Liu J, Mian A. Defense against universal adversarial perturbations[C]Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 3389-3398.">
-<meta name="keywords" content="Adversarial Attack,Universal Adversarial Perturbations,Defence,Adversarial Detection">
+<meta name="keywords" content="Adversarial Attack,Defence,Universal Adversarial Perturbations,Adversarial Detection">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(CVPR 2018) Defense against Universal Adversarial Perturbations">
 <meta property="og:url" content="http://yoursite.com/2018/12/21/Defense against Universal Adversarial Perturbations/index.html">
@@ -486,18 +486,18 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposed the <strong>first framework</strong> to defend against universal adversarial perturbation</p>
 <ul>
 <li>learn a Perturbation Rectifying Network (<strong>PRN</strong>) as pre-input layers</li>
 <li>perturbation detector trained on the Discrete Cosine Transform (<strong>DCT</strong>)</li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-1-Contribution"><a href="#1-1-Contribution" class="headerlink" title="1.1. Contribution"></a>1.1. Contribution</h2><ul>
 <li><strong>PRN</strong></li>
 <li>methods to compute <strong>synthetic</strong> image-agnostic <strong>perturbations</strong> to train PRN</li>
 <li>separate perturbation detector learned from DCT</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li>FGSM</li>
 <li>DeepFool (iterative)</li>
 <li>adversarial transformation network</li>
@@ -507,7 +507,7 @@
 <li>JPG compression</li>
 <li><strong>SafetyNet</strong>. detect and reject adversarial example</li>
 </ul>
-<h2 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/1.jpg?raw=true" alt><br></div>
+<h2 id="1-3-Problem-Formulation"><a href="#1-3-Problem-Formulation" class="headerlink" title="1.3. Problem Formulation"></a>1.3. Problem Formulation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>I_c.</strong> clean image</li>
@@ -527,10 +527,10 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/4.jpg?raw=true" alt><br></div>
 
-<h2 id="PRN"><a href="#PRN" class="headerlink" title="PRN"></a>PRN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/5.jpg?raw=true" alt><br></div>
+<h2 id="2-1-PRN"><a href="#2-1-PRN" class="headerlink" title="2.1. PRN"></a>2.1. PRN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Θ.</strong> weights</li>
@@ -545,13 +545,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="Synthetic-Perturbation-Generation"><a href="#Synthetic-Perturbation-Generation" class="headerlink" title="Synthetic Perturbation Generation"></a>Synthetic Perturbation Generation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/7.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Synthetic-Perturbation-Generation"><a href="#2-2-Synthetic-Perturbation-Generation" class="headerlink" title="2.2. Synthetic Perturbation Generation"></a>2.2. Synthetic Perturbation Generation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>fooling ratios for the synthetic perturbation is <strong>lower</strong> than the original ones but in an <strong>acceptable range</strong></li>
 <li>help in early convergence and <strong>better performance of the PRN</strong></li>
 </ul>
-<h2 id="Perturbation-Detection"><a href="#Perturbation-Detection" class="headerlink" title="Perturbation Detection"></a>Perturbation Detection</h2><ul>
+<h2 id="2-3-Perturbation-Detection"><a href="#2-3-Perturbation-Detection" class="headerlink" title="2.3. Perturbation Detection"></a>2.3. Perturbation Detection</h2><ul>
 <li><strong>DCT based compression</strong> can also be exploited to reduce the network fooling ratio under the universal perturbation</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/8.jpg?raw=true" alt><br></div>
@@ -571,10 +571,10 @@
 </ol>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Metric"><a href="#Metric" class="headerlink" title="Metric"></a>Metric</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/11.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Metric"><a href="#3-1-Metric" class="headerlink" title="3.1. Metric"></a>3.1. Metric</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/12.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/14.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Results"><a href="#3-2-Results" class="headerlink" title="3.2. Results"></a>3.2. Results</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/12.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Defense against Universal Adversarial Perturbations/14.jpg?raw=true" alt><br></div>
 
 
 
@@ -603,9 +603,9 @@
           
             <a href="/tags/Adversarial-Attack/" rel="tag"># Adversarial Attack</a>
           
-            <a href="/tags/Universal-Adversarial-Perturbations/" rel="tag"># Universal Adversarial Perturbations</a>
-          
             <a href="/tags/Defence/" rel="tag"># Defence</a>
+          
+            <a href="/tags/Universal-Adversarial-Perturbations/" rel="tag"># Universal Adversarial Perturbations</a>
           
             <a href="/tags/Adversarial-Detection/" rel="tag"># Adversarial Detection</a>
           
@@ -1414,7 +1414,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.1.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Formulation"><span class="nav-number">1.3.</span> <span class="nav-text">Problem Formulation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PRN"><span class="nav-number">2.1.</span> <span class="nav-text">PRN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synthetic-Perturbation-Generation"><span class="nav-number">2.2.</span> <span class="nav-text">Synthetic Perturbation Generation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perturbation-Detection"><span class="nav-number">2.3.</span> <span class="nav-text">Perturbation Detection</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metric"><span class="nav-number">3.1.</span> <span class="nav-text">Metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">3.2.</span> <span class="nav-text">Results</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Contribution"><span class="nav-text">1.1. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Problem-Formulation"><span class="nav-text">1.3. Problem Formulation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-PRN"><span class="nav-text">2.1. PRN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Synthetic-Perturbation-Generation"><span class="nav-text">2.2. Synthetic Perturbation Generation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Perturbation-Detection"><span class="nav-text">2.3. Perturbation Detection</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Metric"><span class="nav-text">3.1. Metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Results"><span class="nav-text">3.2. Results</span></a></li></ol></li></ol></div>
             
 
           </div>

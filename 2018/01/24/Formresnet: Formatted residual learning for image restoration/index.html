@@ -487,8 +487,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li><strong>directly learn the clean images</strong> may suffer gradient problem</li>
 <li>directly learn the <strong>high-frequency residual</strong> may harm the structure detials</li>
 <li>L2 loss suffers from blur</li>
@@ -502,33 +502,33 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Residual-Formatting-Layer"><a href="#Residual-Formatting-Layer" class="headerlink" title="Residual Formatting Layer"></a>Residual Formatting Layer</h2><ul>
+<h2 id="2-1-Residual-Formatting-Layer"><a href="#2-1-Residual-Formatting-Layer" class="headerlink" title="2.1. Residual Formatting Layer"></a>2.1. Residual Formatting Layer</h2><ul>
 <li>aim to reduce the corrupation on the input image</li>
 <li>layer can be stacked</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Cross-Level-Loss-Net"><a href="#Cross-Level-Loss-Net" class="headerlink" title="Cross-Level Loss Net"></a>Cross-Level Loss Net</h2><h3 id="Pixel-Loss"><a href="#Pixel-Loss" class="headerlink" title="Pixel Loss"></a>Pixel Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Cross-Level-Loss-Net"><a href="#2-2-Cross-Level-Loss-Net" class="headerlink" title="2.2. Cross-Level Loss Net"></a>2.2. Cross-Level Loss Net</h2><h3 id="2-2-1-Pixel-Loss"><a href="#2-2-1-Pixel-Loss" class="headerlink" title="2.2.1. Pixel Loss"></a>2.2.1. Pixel Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/3.jpg?raw=true" alt><br></div>
 
-<h3 id="Feature-Loss"><a href="#Feature-Loss" class="headerlink" title="Feature Loss"></a>Feature Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/4.jpg?raw=true" alt><br></div>
+<h3 id="2-2-2-Feature-Loss"><a href="#2-2-2-Feature-Loss" class="headerlink" title="2.2.2. Feature Loss"></a>2.2.2. Feature Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/4.jpg?raw=true" alt><br></div>
 
-<h3 id="Gradient-Loss"><a href="#Gradient-Loss" class="headerlink" title="Gradient Loss"></a>Gradient Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/5.jpg?raw=true" alt><br></div>
+<h3 id="2-2-3-Gradient-Loss"><a href="#2-2-3-Gradient-Loss" class="headerlink" title="2.2.3. Gradient Loss"></a>2.2.3. Gradient Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>sobel</li>
 </ul>
-<h3 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/6.jpg?raw=true" alt><br></div>
+<h3 id="2-2-4-Loss-Function"><a href="#2-2-4-Loss-Function" class="headerlink" title="2.2.4. Loss Function"></a>2.2.4. Loss Function</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/6.jpg?raw=true" alt><br></div>
 
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/7.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Comparison"><a href="#3-1-Comparison" class="headerlink" title="3.1. Comparison"></a>3.1. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Time"><a href="#Time" class="headerlink" title="Time"></a>Time</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/8.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Time"><a href="#3-2-Time" class="headerlink" title="3.2. Time"></a>3.2. Time</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Formresnet: Formatted residual learning for image restoration/8.jpg?raw=true" alt><br></div>
 
 
 
@@ -1367,7 +1367,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Residual-Formatting-Layer"><span class="nav-number">2.1.</span> <span class="nav-text">Residual Formatting Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cross-Level-Loss-Net"><span class="nav-number">2.2.</span> <span class="nav-text">Cross-Level Loss Net</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pixel-Loss"><span class="nav-number">2.2.1.</span> <span class="nav-text">Pixel Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Loss"><span class="nav-number">2.2.2.</span> <span class="nav-text">Feature Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient-Loss"><span class="nav-number">2.2.3.</span> <span class="nav-text">Gradient Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.2.4.</span> <span class="nav-text">Loss Function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.1.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Time"><span class="nav-number">3.2.</span> <span class="nav-text">Time</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Residual-Formatting-Layer"><span class="nav-text">2.1. Residual Formatting Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Cross-Level-Loss-Net"><span class="nav-text">2.2. Cross-Level Loss Net</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Pixel-Loss"><span class="nav-text">2.2.1. Pixel Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Feature-Loss"><span class="nav-text">2.2.2. Feature Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-Gradient-Loss"><span class="nav-text">2.2.3. Gradient Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-Loss-Function"><span class="nav-text">2.2.4. Loss Function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Comparison"><span class="nav-text">3.1. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Time"><span class="nav-text">3.2. Time</span></a></li></ol></li></ol></div>
             
 
           </div>

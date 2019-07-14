@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Linh Tran D, Walecki R, Eleftheriadis S, et al. DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding[C]//Proceedings of the IEEE Conference on Computer Vision and Pa">
-<meta name="keywords" content="Multi-label Classification,VAE,Face,Facial Action Units">
+<meta name="keywords" content="Multi-label Classification,Face,VAE,Facial Action Units">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(ICCV 2017) DeepCoder:Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding">
 <meta property="og:url" content="http://yoursite.com/2018/01/17/DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding/index.html">
@@ -481,7 +481,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>人脸表情可以编码成一系列的<strong>面部活动单元</strong>(facial action units, AUs)及其对应的<strong>活动强度</strong>(intensity). 而变分自编码器(VAE)能够通过无监督学习（重构loss+KL loss）提取数据的隐含表达（latent representation）。因此，对于人脸AU强度估计的任务可分为两个步骤</p>
 <ul>
 <li>利用VAE提取人脸特征</li>
@@ -495,11 +495,11 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding/1.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding/2.jpg?raw=true" alt><br></div>
 
 
-<h2 id="FACS"><a href="#FACS" class="headerlink" title="FACS"></a>FACS</h2><p><strong>Facial Action Coding System</strong> 定义30多个面部肌肉活动单元，及其活动强度评分标准。</p>
+<h2 id="1-1-FACS"><a href="#1-1-FACS" class="headerlink" title="1.1. FACS"></a>1.1. FACS</h2><p><strong>Facial Action Coding System</strong> 定义30多个面部肌肉活动单元，及其活动强度评分标准。</p>
 <p><br></p>
 <hr>
-<h1 id="框架结构"><a href="#框架结构" class="headerlink" title="框架结构"></a>框架结构</h1><hr>
-<h2 id="VC-AE"><a href="#VC-AE" class="headerlink" title="VC-AE"></a>VC-AE</h2><p>包含两部分loss</p>
+<h1 id="2-框架结构"><a href="#2-框架结构" class="headerlink" title="2. 框架结构"></a>2. 框架结构</h1><hr>
+<h2 id="2-1-VC-AE"><a href="#2-1-VC-AE" class="headerlink" title="2.1. VC-AE"></a>2.1. VC-AE</h2><p>包含两部分loss</p>
 <ul>
 <li><strong>KL loss</strong> (Z0)</li>
 <li><strong>reconstruction loss</strong> (x-&gt;Z0-&gt;x’)</li>
@@ -509,7 +509,7 @@
 <p>实验中使用<strong>warming strategy</strong>, 额外加入了<strong>AU强度估计loss</strong></p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding/5.jpg?raw=true" alt><br></div>
 
-<h2 id="VO-GPAE"><a href="#VO-GPAE" class="headerlink" title="VO-GPAE"></a>VO-GPAE</h2><p>包含三部分loss</p>
+<h2 id="2-2-VO-GPAE"><a href="#2-2-VO-GPAE" class="headerlink" title="2.2. VO-GPAE"></a>2.2. VO-GPAE</h2><p>包含三部分loss</p>
 <ul>
 <li><strong>KL loss</strong> (Z0)</li>
 <li><strong>reconstruction loss</strong> (Z0-&gt;Z1-&gt;Z0)</li>
@@ -518,13 +518,13 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding/6.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Joint-Learning"><a href="#Joint-Learning" class="headerlink" title="Joint Learning"></a>Joint Learning</h2><p>Loss function</p>
+<h2 id="2-3-Joint-Learning"><a href="#2-3-Joint-Learning" class="headerlink" title="2.3. Joint Learning"></a>2.3. Joint Learning</h2><p>Loss function</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepCoder: Semi-Parametric Variational Autoencoders for Automatic Facial Action Coding/7.jpg?raw=true" alt><br></div>
 
 <p>VO-GPAE中的covariance function计算量会随着数据量的增多而增加，因此论文提出leave-subset-out策略，将训练集X分为不相交的两个子集X_R和X_L. X_R用于训练VC-AE, X_L用于训练VO-GPAE, 且X_R&gt;&gt;X_L.</p>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
 <ul>
 <li><strong>NLPD</strong> negative log-predictive density for reconstruction error</li>
 <li><strong>ICC</strong> intra-class correlation, agreement between annotators</li>
@@ -559,9 +559,9 @@
           
             <a href="/tags/Multi-label-Classification/" rel="tag"># Multi-label Classification</a>
           
-            <a href="/tags/VAE/" rel="tag"># VAE</a>
-          
             <a href="/tags/Face/" rel="tag"># Face</a>
+          
+            <a href="/tags/VAE/" rel="tag"># VAE</a>
           
             <a href="/tags/Facial-Action-Units/" rel="tag"># Facial Action Units</a>
           
@@ -1370,7 +1370,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FACS"><span class="nav-number">1.1.</span> <span class="nav-text">FACS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#框架结构"><span class="nav-number">2.</span> <span class="nav-text">框架结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VC-AE"><span class="nav-number">2.1.</span> <span class="nav-text">VC-AE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VO-GPAE"><span class="nav-number">2.2.</span> <span class="nav-text">VO-GPAE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Joint-Learning"><span class="nav-number">2.3.</span> <span class="nav-text">Joint Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-FACS"><span class="nav-text">1.1. FACS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-框架结构"><span class="nav-text">2. 框架结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-VC-AE"><span class="nav-text">2.1. VC-AE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-VO-GPAE"><span class="nav-text">2.2. VO-GPAE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Joint-Learning"><span class="nav-text">2.3. Joint Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a></li></ol></div>
             
 
           </div>

@@ -490,7 +490,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>此前的大多数工作都是<strong>独立估计</strong></p>
 <ul>
 <li><strong>Transmission matrix</strong></li>
@@ -510,7 +510,7 @@
 <li>AOD-Net可<strong>直接嵌入</strong>到其他模型中，如Faster R-CNN</li>
 <li><strong>0.026s</strong> to process 480x640 image with a single GPU</li>
 </ul>
-<h2 id="Re-formulated-Atmosphere-Scattering-Model"><a href="#Re-formulated-Atmosphere-Scattering-Model" class="headerlink" title="Re-formulated Atmosphere Scattering Model"></a>Re-formulated Atmosphere Scattering Model</h2><ul>
+<h2 id="1-1-Re-formulated-Atmosphere-Scattering-Model"><a href="#1-1-Re-formulated-Atmosphere-Scattering-Model" class="headerlink" title="1.1. Re-formulated Atmosphere Scattering Model"></a>1.1. Re-formulated Atmosphere Scattering Model</h2><ul>
 <li><strong>基本物理模型</strong></li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/2.jpg?raw=true" alt><br></div>
@@ -520,9 +520,9 @@
 
 </li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/4.jpg?raw=true" alt><br></div>
+<h2 id="1-2-Model"><a href="#1-2-Model" class="headerlink" title="1.2. Model"></a>1.2. Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/4.jpg?raw=true" alt><br></div>
 
-<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<h2 id="1-3-相关工作"><a href="#1-3-相关工作" class="headerlink" title="1.3. 相关工作"></a>1.3. 相关工作</h2><ul>
 <li>Maximizing the local contrast</li>
 <li>Estimate the albedo of the scene</li>
 <li>Dark channel prior</li>
@@ -534,7 +534,7 @@
 <li><strong>MSCNN</strong>. Multi-scale, coarse-to-fine transmission matrix</li>
 <li><strong>DehazeNet</strong>. end-to-end for transmission estimation</li>
 </ul>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p>根据基本物理模型，通过设置不同的参数合成haze（数据集提供depth-meta）</p>
+<h2 id="1-4-数据集"><a href="#1-4-数据集" class="headerlink" title="1.4. 数据集"></a>1.4. 数据集</h2><p>根据基本物理模型，通过设置不同的参数合成haze（数据集提供depth-meta）</p>
 <ul>
 <li><strong>A</strong>. [0.6, 1.0],choosing each channel uniformly</li>
 <li><p><strong>β</strong>. {0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6}</p>
@@ -553,8 +553,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Synthetic实验结果"><a href="#Synthetic实验结果" class="headerlink" title="Synthetic实验结果"></a>Synthetic实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/5.jpg?raw=true" alt><br></div>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Synthetic实验结果"><a href="#2-1-Synthetic实验结果" class="headerlink" title="2.1. Synthetic实验结果"></a>2.1. Synthetic实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/5.jpg?raw=true" alt><br></div>
 
 
 <ul>
@@ -572,15 +572,15 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/6.jpg?raw=true" alt><br></div>
 
-<h2 id="运行时间"><a href="#运行时间" class="headerlink" title="运行时间"></a>运行时间</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/7.jpg?raw=true" alt><br></div>
+<h2 id="2-2-运行时间"><a href="#2-2-运行时间" class="headerlink" title="2.2. 运行时间"></a>2.2. 运行时间</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Natural实验结果"><a href="#Natural实验结果" class="headerlink" title="Natural实验结果"></a>Natural实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/8.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Natural实验结果"><a href="#2-3-Natural实验结果" class="headerlink" title="2.3. Natural实验结果"></a>2.3. Natural实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Anti-halation"><a href="#Anti-halation" class="headerlink" title="Anti-halation"></a>Anti-halation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/9.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Anti-halation"><a href="#2-4-Anti-halation" class="headerlink" title="2.4. Anti-halation"></a>2.4. Anti-halation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/9.jpg?raw=true" alt><br></div>
 
-<h2 id="白色背景"><a href="#白色背景" class="headerlink" title="白色背景"></a>白色背景</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/10.jpg?raw=true" alt><br></div>
+<h2 id="2-5-白色背景"><a href="#2-5-白色背景" class="headerlink" title="2.5. 白色背景"></a>2.5. 白色背景</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aod-net: All-in-one dehazing network/10.jpg?raw=true" alt><br></div>
 
-<h2 id="嵌入到Faster-R-CNN中"><a href="#嵌入到Faster-R-CNN中" class="headerlink" title="嵌入到Faster R-CNN中"></a>嵌入到Faster R-CNN中</h2><p>雾霾程度</p>
+<h2 id="2-6-嵌入到Faster-R-CNN中"><a href="#2-6-嵌入到Faster-R-CNN中" class="headerlink" title="2.6. 嵌入到Faster R-CNN中"></a>2.6. 嵌入到Faster R-CNN中</h2><p>雾霾程度</p>
 <ul>
 <li><strong>Heavy</strong>. A=1, β=0.1</li>
 <li><strong>Medium</strong>. A=1, β=0.06</li>
@@ -1427,7 +1427,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Re-formulated-Atmosphere-Scattering-Model"><span class="nav-number">1.1.</span> <span class="nav-text">Re-formulated Atmosphere Scattering Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关工作"><span class="nav-number">1.3.</span> <span class="nav-text">相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.4.</span> <span class="nav-text">数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Synthetic实验结果"><span class="nav-number">2.1.</span> <span class="nav-text">Synthetic实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时间"><span class="nav-number">2.2.</span> <span class="nav-text">运行时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Natural实验结果"><span class="nav-number">2.3.</span> <span class="nav-text">Natural实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anti-halation"><span class="nav-number">2.4.</span> <span class="nav-text">Anti-halation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#白色背景"><span class="nav-number">2.5.</span> <span class="nav-text">白色背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌入到Faster-R-CNN中"><span class="nav-number">2.6.</span> <span class="nav-text">嵌入到Faster R-CNN中</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Re-formulated-Atmosphere-Scattering-Model"><span class="nav-text">1.1. Re-formulated Atmosphere Scattering Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Model"><span class="nav-text">1.2. Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-相关工作"><span class="nav-text">1.3. 相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-数据集"><span class="nav-text">1.4. 数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Synthetic实验结果"><span class="nav-text">2.1. Synthetic实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-运行时间"><span class="nav-text">2.2. 运行时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Natural实验结果"><span class="nav-text">2.3. Natural实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Anti-halation"><span class="nav-text">2.4. Anti-halation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-白色背景"><span class="nav-text">2.5. 白色背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-嵌入到Faster-R-CNN中"><span class="nav-text">2.6. 嵌入到Faster R-CNN中</span></a></li></ol></li></ol></div>
             
 
           </div>

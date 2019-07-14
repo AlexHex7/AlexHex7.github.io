@@ -495,7 +495,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>现实生活中的雨滴具有以下特性</p>
 <ul>
 <li><strong>远处的雨滴堆积</strong>产生类似于雾的大气遮盖物，散射光线，导致可见度降低</li>
@@ -514,13 +514,13 @@
 <li>创建数据集<strong>Rain100H</strong></li>
 <li>并在此基础上提出<strong>multi-task深度学习框架</strong></li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-1-Contribution"><a href="#1-1-Contribution" class="headerlink" title="1.1. Contribution"></a>1.1. Contribution</h2><ul>
 <li>First method to model <strong>rain-streak binary mask, atmosphere veils</strong> and various shapes and directions of <strong>overlapping rain streaks</strong></li>
 <li>First method to <strong>jointly detect and remove rains</strong></li>
 <li>First rain method to use <strong>contextualized dilated network</strong></li>
 <li>First method use <strong>recurrent</strong> to address heavy rain</li>
 </ul>
-<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<h2 id="1-2-相关工作"><a href="#1-2-相关工作" class="headerlink" title="1.2. 相关工作"></a>1.2. 相关工作</h2><ul>
 <li>Sparse coding. Learned dictionary</li>
 <li>Low rank</li>
 <li>Non-local mean filter</li>
@@ -528,7 +528,7 @@
 <li>GMM</li>
 <li>Denoising, complement, super-resolution, deblurring, deconvolution, style tansfer, dehazing, light enhancement.</li>
 </ul>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p>数据集中的图片选择BSD200</p>
+<h2 id="1-3-数据集"><a href="#1-3-数据集" class="headerlink" title="1.3. 数据集"></a>1.3. 数据集</h2><p>数据集中的图片选择BSD200</p>
 <ul>
 <li><strong>Rain12, Rain100L</strong>. one type of rain streak</li>
 <li><strong>Rain100H (论文提出)</strong>. five type of rain streak，虽然现实生活中很少同时存在多种类型的rain streak. 但这样的训练数据能够<strong>提升网络性能</strong></li>
@@ -538,8 +538,8 @@
 <p>d. simulated sharp line streaks along a certain direction with a small variation</p>
 <p><br></p>
 <hr>
-<h1 id="Rain-Image-Model"><a href="#Rain-Image-Model" class="headerlink" title="Rain Image Model"></a>Rain Image Model</h1><hr>
-<h2 id="Widely-Used-Model"><a href="#Widely-Used-Model" class="headerlink" title="Widely Used Model"></a>Widely Used Model</h2><p>此前的一些工作用</p>
+<h1 id="2-Rain-Image-Model"><a href="#2-Rain-Image-Model" class="headerlink" title="2. Rain Image Model"></a>2. Rain Image Model</h1><hr>
+<h2 id="2-1-Widely-Used-Model"><a href="#2-1-Widely-Used-Model" class="headerlink" title="2.1. Widely Used Model"></a>2.1. Widely Used Model</h2><p>此前的一些工作用</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/2.jpg?raw=true" alt><br></div>
 
 <p>表示rain image model. 将rain removal转化为分离两个信号问题.</p>
@@ -550,7 +550,7 @@
 <li>不同region中的S具有不同的密度，<strong>无法使用统一的S表示</strong></li>
 <li>没有区分<strong>rain region和no-rain region</strong>，造成no-rain region过度平滑</li>
 </ul>
-<h2 id="Region-dependent-Model"><a href="#Region-dependent-Model" class="headerlink" title="Region-dependent Model"></a>Region-dependent Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/3.jpg?raw=true" alt><br>    R为<strong>binary mask</strong>. 1表示rain region. 0表示no-rain region.<br></div>
+<h2 id="2-2-Region-dependent-Model"><a href="#2-2-Region-dependent-Model" class="headerlink" title="2.2. Region-dependent Model"></a>2.2. Region-dependent Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/3.jpg?raw=true" alt><br>    R为<strong>binary mask</strong>. 1表示rain region. 0表示no-rain region.<br></div>
 
 
 
@@ -559,7 +559,7 @@
 <li>提供额外gt (rain streak region)给神经网络模型. <strong>Multi-task</strong></li>
 <li>pipeline. 检测rain region, 对rain region和no-rain region进行不同的处理</li>
 </ul>
-<h2 id="Rain-Accumulation-Model"><a href="#Rain-Accumulation-Model" class="headerlink" title="Rain Accumulation Model"></a>Rain Accumulation Model</h2><p>雨滴存在堆积的情况，并形成类似与雾的视觉效果。</p>
+<h2 id="2-3-Rain-Accumulation-Model"><a href="#2-3-Rain-Accumulation-Model" class="headerlink" title="2.3. Rain Accumulation Model"></a>2.3. Rain Accumulation Model</h2><p>雨滴存在堆积的情况，并形成类似与雾的视觉效果。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/4.jpg?raw=true" alt><br></div>
 
 <p>Koschmieder模型适用于近似多种浓密的介质，如雾、水下等。因此，可将模型表示为</p>
@@ -576,8 +576,8 @@
 
 <p><br></p>
 <hr>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
-<h2 id="Joint-Rain-Streak-Detection-and-Removal-JORDER"><a href="#Joint-Rain-Streak-Detection-and-Removal-JORDER" class="headerlink" title="Joint Rain Streak Detection and Removal (JORDER)"></a>Joint Rain Streak Detection and Removal (JORDER)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/7.jpg?raw=true" alt><br></div>
+<h1 id="3-Architecture"><a href="#3-Architecture" class="headerlink" title="3. Architecture"></a>3. Architecture</h1><hr>
+<h2 id="3-1-Joint-Rain-Streak-Detection-and-Removal-JORDER"><a href="#3-1-Joint-Rain-Streak-Detection-and-Removal-JORDER" class="headerlink" title="3.1. Joint Rain Streak Detection and Removal (JORDER)"></a>3.1. Joint Rain Streak Detection and Removal (JORDER)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/7.jpg?raw=true" alt><br></div>
 
 <p>结构</p>
 <ul>
@@ -588,14 +588,14 @@
 <li>B = O - SR</li>
 <li>Recurrent<br>也可采用其他的策略：并行预测等。</li>
 </ul>
-<h2 id="Contextualized-Dilated-Network"><a href="#Contextualized-Dilated-Network" class="headerlink" title="Contextualized Dilated Network"></a>Contextualized Dilated Network</h2><ul>
+<h2 id="3-2-Contextualized-Dilated-Network"><a href="#3-2-Contextualized-Dilated-Network" class="headerlink" title="3.2. Contextualized Dilated Network"></a>3.2. Contextualized Dilated Network</h2><ul>
 <li>分支一：Conv 3x3 <strong>1 dilate</strong>, Conv 3x3 <strong>1 dilate, 感知域5x5</strong></li>
 <li>分支二：Conv 3x3 <strong>2 dilate</strong>, Conv 3x3 <strong>2 dilate, 感知域9x9</strong></li>
 <li>分支三：Conv 3x3 <strong>3 dilate</strong>, Conv 3x3 <strong>3 dilate, 感知域13x13</strong></li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/8.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Loss-Function"><a href="#3-3-Loss-Function" class="headerlink" title="3.3. Loss Function"></a>3.3. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Recurrent"><a href="#Recurrent" class="headerlink" title="Recurrent"></a>Recurrent</h2><ul>
+<h2 id="3-4-Recurrent"><a href="#3-4-Recurrent" class="headerlink" title="3.4. Recurrent"></a>3.4. Recurrent</h2><ul>
 <li><p>每次迭代的过程</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/9.jpg?raw=true" alt><br></div>
 </li>
@@ -610,7 +610,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Rain-Accumulation-Removal"><a href="#Rain-Accumulation-Removal" class="headerlink" title="Rain-Accumulation Removal"></a>Rain-Accumulation Removal</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/12.jpg?raw=true" alt><br></div>
+<h2 id="3-5-Rain-Accumulation-Removal"><a href="#3-5-Rain-Accumulation-Removal" class="headerlink" title="3.5. Rain-Accumulation Removal"></a>3.5. Rain-Accumulation Removal</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/12.jpg?raw=true" alt><br></div>
 
 <p>虽然公式3表明，首先应做rain-accumulation removal. 但会增强图片中sharp, visible rain streak，导致与数据集中的rain streak不同。因此，论文的处理过程为</p>
 <ul>
@@ -628,8 +628,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h2><ul>
+<h1 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h1><hr>
+<h2 id="4-1-Baseline"><a href="#4-1-Baseline" class="headerlink" title="4.1. Baseline"></a>4.1. Baseline</h2><ul>
 <li><strong>JORDER-</strong>. 只有一条分支，不使用dilated convolutions</li>
 <li><strong>JORDER</strong>. </li>
 <li><strong>JORDER-R</strong>. </li>
@@ -642,7 +642,7 @@
 <li>Layer Prior (LP)</li>
 <li>SRCNN</li>
 </ul>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/14.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/15.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/16.jpg?raw=true" alt><br></div>
+<h2 id="4-2-实验结果"><a href="#4-2-实验结果" class="headerlink" title="4.2. 实验结果"></a>4.2. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/14.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/15.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain detection and removal from a single image/16.jpg?raw=true" alt><br></div>
 
 
 
@@ -1488,7 +1488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.1.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关工作"><span class="nav-number">1.2.</span> <span class="nav-text">相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.3.</span> <span class="nav-text">数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rain-Image-Model"><span class="nav-number">2.</span> <span class="nav-text">Rain Image Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Widely-Used-Model"><span class="nav-number">2.1.</span> <span class="nav-text">Widely Used Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Region-dependent-Model"><span class="nav-number">2.2.</span> <span class="nav-text">Region-dependent Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rain-Accumulation-Model"><span class="nav-number">2.3.</span> <span class="nav-text">Rain Accumulation Model</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">3.</span> <span class="nav-text">Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Joint-Rain-Streak-Detection-and-Removal-JORDER"><span class="nav-number">3.1.</span> <span class="nav-text">Joint Rain Streak Detection and Removal (JORDER)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contextualized-Dilated-Network"><span class="nav-number">3.2.</span> <span class="nav-text">Contextualized Dilated Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">3.3.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Recurrent"><span class="nav-number">3.4.</span> <span class="nav-text">Recurrent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rain-Accumulation-Removal"><span class="nav-number">3.5.</span> <span class="nav-text">Rain-Accumulation Removal</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">4.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Baseline"><span class="nav-number">4.1.</span> <span class="nav-text">Baseline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">4.2.</span> <span class="nav-text">实验结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Contribution"><span class="nav-text">1.1. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-相关工作"><span class="nav-text">1.2. 相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-数据集"><span class="nav-text">1.3. 数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Rain-Image-Model"><span class="nav-text">2. Rain Image Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Widely-Used-Model"><span class="nav-text">2.1. Widely Used Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Region-dependent-Model"><span class="nav-text">2.2. Region-dependent Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Rain-Accumulation-Model"><span class="nav-text">2.3. Rain Accumulation Model</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Architecture"><span class="nav-text">3. Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Joint-Rain-Streak-Detection-and-Removal-JORDER"><span class="nav-text">3.1. Joint Rain Streak Detection and Removal (JORDER)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Contextualized-Dilated-Network"><span class="nav-text">3.2. Contextualized Dilated Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Loss-Function"><span class="nav-text">3.3. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Recurrent"><span class="nav-text">3.4. Recurrent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Rain-Accumulation-Removal"><span class="nav-text">3.5. Rain-Accumulation Removal</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments"><span class="nav-text">4. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Baseline"><span class="nav-text">4.1. Baseline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-实验结果"><span class="nav-text">4.2. 实验结果</span></a></li></ol></li></ol></div>
             
 
           </div>

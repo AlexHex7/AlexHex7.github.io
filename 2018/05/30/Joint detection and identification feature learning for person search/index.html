@@ -502,8 +502,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>existing methods mainly focus on matching cropped pedestrian images between queries and candidates (assum perfect detection)</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/1.jpg?raw=true" alt><br></div>
@@ -523,7 +523,7 @@
 <li>Online Instance Matching (<strong>OIM</strong>) loss function</li>
 <li>collect and annotate a large-scale benchmark <strong>dataset</strong></li>
 </ul>
-<h2 id="Comparison-of-Loss-Function"><a href="#Comparison-of-Loss-Function" class="headerlink" title="Comparison of Loss Function"></a>Comparison of Loss Function</h2><ul>
+<h2 id="1-2-Comparison-of-Loss-Function"><a href="#1-2-Comparison-of-Loss-Function" class="headerlink" title="1.2. Comparison of Loss Function"></a>1.2. Comparison of Loss Function</h2><ul>
 <li><strong>pairwise or triplet loss. O(N^2)</strong> need efficient strategy, difficult to find</li>
 <li><strong>softmax</strong>. compare all samples at the same time, as the number of classes increases, training the big softmax classifier matrix become <strong>much slower or even can not converge</strong></li>
 <li><strong>OIM</strong>. <ul>
@@ -532,12 +532,12 @@
 </ul>
 </li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-3-Contribution"><a href="#1-3-Contribution" class="headerlink" title="1.3. Contribution"></a>1.3. Contribution</h2><ul>
 <li>jointly optimization</li>
 <li>OIM loss function</li>
 <li>dataset</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Person-Re-identification"><a href="#Person-Re-identification" class="headerlink" title="Person Re-identification"></a>Person Re-identification</h3><ul>
+<h2 id="1-4-Related-Work"><a href="#1-4-Related-Work" class="headerlink" title="1.4. Related Work"></a>1.4. Related Work</h2><h3 id="1-4-1-Person-Re-identification"><a href="#1-4-1-Person-Re-identification" class="headerlink" title="1.4.1. Person Re-identification"></a>1.4.1. Person Re-identification</h3><ul>
 <li>manually design discriminative features</li>
 <li>learn feature transforms across camera views</li>
 <li>learning distance metrics</li>
@@ -546,20 +546,20 @@
 <li><strong>classify</strong></li>
 <li><strong>on abnormal images</strong>. low-resolution and partially occlude images</li>
 </ul>
-<h3 id="Pedestrian-Detection"><a href="#Pedestrian-Detection" class="headerlink" title="Pedestrian Detection"></a>Pedestrian Detection</h3><ul>
+<h3 id="1-4-2-Pedestrian-Detection"><a href="#1-4-2-Pedestrian-Detection" class="headerlink" title="1.4.2. Pedestrian Detection"></a>1.4.2. Pedestrian Detection</h3><ul>
 <li><strong>hand-crafted features</strong>. DPM, ACF and Checkerboard</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-5-Dataset"><a href="#1-5-Dataset" class="headerlink" title="1.5. Dataset"></a>1.5. Dataset</h2><ul>
 <li>CUHK03</li>
 <li>Market501</li>
 <li>Duke</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><hr>
+<h1 id="2-Method"><a href="#2-Method" class="headerlink" title="2. Method"></a>2. Method</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><ul>
+<h2 id="2-1-Structure"><a href="#2-1-Structure" class="headerlink" title="2.1. Structure"></a>2.1. Structure</h2><ul>
 <li>output. <ul>
 <li>2048 dimension→ L2-normalized 256 dimension→ cosine similarities<ul>
 <li>2048 dimension to proposal alignment</li>
@@ -568,7 +568,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Online-Instance-Matching-Loss"><a href="#Online-Instance-Matching-Loss" class="headerlink" title="Online Instance Matching Loss"></a>Online Instance Matching Loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/4.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Online-Instance-Matching-Loss"><a href="#2-2-Online-Instance-Matching-Loss" class="headerlink" title="2.2. Online Instance Matching Loss"></a>2.2. Online Instance Matching Loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>only consider the <strong>labeled abd unlabeled identities</strong> while leave the other proposals untouched</li>
@@ -610,7 +610,7 @@
 <li><p>Degradation<br><div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/13.jpg?raw=true" alt><br></div>)</p>
 </li>
 </ul>
-<h2 id="Drawback-of-Softmax"><a href="#Drawback-of-Softmax" class="headerlink" title="Drawback of Softmax"></a>Drawback of Softmax</h2><ul>
+<h2 id="2-3-Drawback-of-Softmax"><a href="#2-3-Drawback-of-Softmax" class="headerlink" title="2.3. Drawback of Softmax"></a>2.3. Drawback of Softmax</h2><ul>
 <li><strong>classifier matrix suffers from large variance of gradients and can not by learned effectively</strong><ul>
 <li>large number of identities, which only has several instances; each image contains a few identities</li>
 <li>learn more  than 5,000 discriminant functions simultaneously, but during each SGD iteration we only have positive samples from tens of classes</li>
@@ -622,45 +622,45 @@
 </ul>
 </li>
 </ul>
-<h2 id="Scalability"><a href="#Scalability" class="headerlink" title="Scalability"></a>Scalability</h2><ul>
+<h2 id="2-4-Scalability"><a href="#2-4-Scalability" class="headerlink" title="2.4. Scalability"></a>2.4. Scalability</h2><ul>
 <li>when the number of identities increases, OIM could be time-consuming</li>
 <li><strong>approximate by sub-sampling the labeled and unlabeled identities</strong></li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Dataset-1"><a href="#Dataset-1" class="headerlink" title="Dataset"></a>Dataset</h1><hr>
-<h2 id="Come-From"><a href="#Come-From" class="headerlink" title="Come From"></a>Come From</h2><ul>
+<h1 id="3-Dataset"><a href="#3-Dataset" class="headerlink" title="3. Dataset"></a>3. Dataset</h1><hr>
+<h2 id="3-1-Come-From"><a href="#3-1-Come-From" class="headerlink" title="3.1. Come From"></a>3.1. Come From</h2><ul>
 <li>hand-held camera to shoot</li>
 <li>movie snapshots</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/14.jpg?raw=true" alt><br></div>
 
-<h2 id="Processing"><a href="#Processing" class="headerlink" title="Processing"></a>Processing</h2><ul>
+<h2 id="3-2-Processing"><a href="#3-2-Processing" class="headerlink" title="3.2. Processing"></a>3.2. Processing</h2><ul>
 <li>ignore smaller heights than 50 pixels<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/15.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><ul>
+<h2 id="3-3-Evaluation"><a href="#3-3-Evaluation" class="headerlink" title="3.3. Evaluation"></a>3.3. Evaluation</h2><ul>
 <li>no overlapped images  or labeled identities between training and test set</li>
 </ul>
-<h2 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h2><ul>
+<h2 id="3-4-Metrics"><a href="#3-4-Metrics" class="headerlink" title="3.4. Metrics"></a>3.4. Metrics</h2><ul>
 <li>cumulative matching characteristics (<strong>CMC top-K</strong>)</li>
 <li>mean averaged precision (<strong>mAP</strong>)</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h1><hr>
+<h2 id="4-1-Details"><a href="#4-1-Details" class="headerlink" title="4.1. Details"></a>4.1. Details</h2><ul>
 <li><strong>τ.</strong> 0.1</li>
 <li><strong>size of circular queue</strong>. 5,000</li>
 <li><strong>mini-batch</strong>. 2 images</li>
 <li><strong>learning rate</strong>. 0.001 to 0.0001 after 40k</li>
 </ul>
-<h2 id="Detection"><a href="#Detection" class="headerlink" title="Detection"></a>Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/16.jpg?raw=true" alt><br></div>
+<h2 id="4-2-Detection"><a href="#4-2-Detection" class="headerlink" title="4.2. Detection"></a>4.2. Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/16.jpg?raw=true" alt><br></div>
 
-<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/17.jpg?raw=true" alt><br></div>
+<h2 id="4-3-Search"><a href="#4-3-Search" class="headerlink" title="4.3. Search"></a>4.3. Search</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/17.jpg?raw=true" alt><br></div>
 
-<h2 id="OIM"><a href="#OIM" class="headerlink" title="OIM"></a>OIM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/18.jpg?raw=true" alt><br></div>
+<h2 id="4-4-OIM"><a href="#4-4-OIM" class="headerlink" title="4.4. OIM"></a>4.4. OIM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/18.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>converge faster</li>
@@ -668,23 +668,23 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/19.jpg?raw=true" alt><br></div>
 
-<h2 id="Sub-sample-of-OIM"><a href="#Sub-sample-of-OIM" class="headerlink" title="Sub-sample of OIM"></a>Sub-sample of OIM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/20.jpg?raw=true" alt><br></div>
+<h2 id="4-5-Sub-sample-of-OIM"><a href="#4-5-Sub-sample-of-OIM" class="headerlink" title="4.5. Sub-sample of OIM"></a>4.5. Sub-sample of OIM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/20.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>small number converge faster</li>
 </ul>
-<h2 id="Low-dimensional-Subspace"><a href="#Low-dimensional-Subspace" class="headerlink" title="Low-dimensional Subspace"></a>Low-dimensional Subspace</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/21.jpg?raw=true" alt><br></div>
+<h2 id="4-6-Low-dimensional-Subspace"><a href="#4-6-Low-dimensional-Subspace" class="headerlink" title="4.6. Low-dimensional Subspace"></a>4.6. Low-dimensional Subspace</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/21.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>project features into a proper low-rank subspace is very important to <strong>regularize the network training</strong></li>
 </ul>
-<h2 id="Detection-Recall"><a href="#Detection-Recall" class="headerlink" title="Detection Recall"></a>Detection Recall</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/22.jpg?raw=true" alt><br></div>
+<h2 id="4-7-Detection-Recall"><a href="#4-7-Detection-Recall" class="headerlink" title="4.7. Detection Recall"></a>4.7. Detection Recall</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/22.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>higher recall does not necessarily lead to higher person search performance</strong>, re-id method could still get confused on some false alarms</li>
 <li>should not only focus on training re-id methods with manually cropped pedestrians, but should consider the detections jointly under the person search problem setting</li>
 </ul>
-<h2 id="Gallery-Size"><a href="#Gallery-Size" class="headerlink" title="Gallery Size"></a>Gallery Size</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/23.jpg?raw=true" alt><br></div>
+<h2 id="4-8-Gallery-Size"><a href="#4-8-Gallery-Size" class="headerlink" title="4.8. Gallery Size"></a>4.8. Gallery Size</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Joint detection and identification feature learning for person search/23.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>larger gallery, more difficult</li>
@@ -1522,7 +1522,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison-of-Loss-Function"><span class="nav-number">1.2.</span> <span class="nav-text">Comparison of Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.3.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.4.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Person-Re-identification"><span class="nav-number">1.4.1.</span> <span class="nav-text">Person Re-identification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pedestrian-Detection"><span class="nav-number">1.4.2.</span> <span class="nav-text">Pedestrian Detection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.5.</span> <span class="nav-text">Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Method"><span class="nav-number">2.</span> <span class="nav-text">Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">2.1.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Online-Instance-Matching-Loss"><span class="nav-number">2.2.</span> <span class="nav-text">Online Instance Matching Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Drawback-of-Softmax"><span class="nav-number">2.3.</span> <span class="nav-text">Drawback of Softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scalability"><span class="nav-number">2.4.</span> <span class="nav-text">Scalability</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dataset-1"><span class="nav-number">3.</span> <span class="nav-text">Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Come-From"><span class="nav-number">3.1.</span> <span class="nav-text">Come From</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Processing"><span class="nav-number">3.2.</span> <span class="nav-text">Processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evaluation"><span class="nav-number">3.3.</span> <span class="nav-text">Evaluation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metrics"><span class="nav-number">3.4.</span> <span class="nav-text">Metrics</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">4.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">4.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detection"><span class="nav-number">4.2.</span> <span class="nav-text">Detection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Search"><span class="nav-number">4.3.</span> <span class="nav-text">Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OIM"><span class="nav-number">4.4.</span> <span class="nav-text">OIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sub-sample-of-OIM"><span class="nav-number">4.5.</span> <span class="nav-text">Sub-sample of OIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Low-dimensional-Subspace"><span class="nav-number">4.6.</span> <span class="nav-text">Low-dimensional Subspace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detection-Recall"><span class="nav-number">4.7.</span> <span class="nav-text">Detection Recall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gallery-Size"><span class="nav-number">4.8.</span> <span class="nav-text">Gallery Size</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Comparison-of-Loss-Function"><span class="nav-text">1.2. Comparison of Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Contribution"><span class="nav-text">1.3. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Related-Work"><span class="nav-text">1.4. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-Person-Re-identification"><span class="nav-text">1.4.1. Person Re-identification</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-Pedestrian-Detection"><span class="nav-text">1.4.2. Pedestrian Detection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Dataset"><span class="nav-text">1.5. Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Method"><span class="nav-text">2. Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Structure"><span class="nav-text">2.1. Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Online-Instance-Matching-Loss"><span class="nav-text">2.2. Online Instance Matching Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Drawback-of-Softmax"><span class="nav-text">2.3. Drawback of Softmax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Scalability"><span class="nav-text">2.4. Scalability</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Dataset"><span class="nav-text">3. Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Come-From"><span class="nav-text">3.1. Come From</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Processing"><span class="nav-text">3.2. Processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Evaluation"><span class="nav-text">3.3. Evaluation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Metrics"><span class="nav-text">3.4. Metrics</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments"><span class="nav-text">4. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Details"><span class="nav-text">4.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Detection"><span class="nav-text">4.2. Detection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Search"><span class="nav-text">4.3. Search</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-OIM"><span class="nav-text">4.4. OIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-Sub-sample-of-OIM"><span class="nav-text">4.5. Sub-sample of OIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-Low-dimensional-Subspace"><span class="nav-text">4.6. Low-dimensional Subspace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-Detection-Recall"><span class="nav-text">4.7. Detection Recall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-Gallery-Size"><span class="nav-text">4.8. Gallery Size</span></a></li></ol></li></ol></div>
             
 
           </div>

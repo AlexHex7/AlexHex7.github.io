@@ -501,7 +501,7 @@
 <li><strong>Dropout Layer </strong></li>
 </ul>
 <p>来<strong>Reduce overfitting</strong>.</p>
-<h1 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h1><hr>
+<h1 id="1-Dataset"><a href="#1-Dataset" class="headerlink" title="1. Dataset"></a>1. Dataset</h1><hr>
 <ul>
 <li>ImageNet数据集包含超过15 million labeled 高分辨率图像，图像可分为22,000 categories.</li>
 <li>Starting in 2010, as part of the Pascal Visual Object Challenge, an annual competition called the ImageNet Large-Scale Visual Recognition Challenge <strong>(ILSVRC)</strong> has been held.</li>
@@ -509,7 +509,7 @@
 <li>评测指标分为top-1和top-5 error。之所以使用<strong>top-5 error</strong>指标是因为，有些图像可以同时分为好几个类别 (数据集的labele可能存在一定误差)。Top-5表示只要预测的类别在该图像前5个类别labele中，就算预测正确。</li>
 <li>对数据集图像进行256$\times$256尺寸的<strong>下采样处理</strong>。由于图像尺寸大小不一，论文首先按照比例rescale图像，将图像shorter sied rescale到256大小，central crop 256$\times$256 patch. 此外，还对图像像素值进行去中心化操作(减均值)</li>
 </ul>
-<h1 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h1><hr>
+<h1 id="2-ReLU"><a href="#2-ReLU" class="headerlink" title="2. ReLU"></a>2. ReLU</h1><hr>
 <p>用ReLU (non-saturating nonlinearities)</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ImageNet%20classification%20with%20deep%20convolutional%20neural%20networks/2.jpg?raw=true" alt><br></div>
 
@@ -520,7 +520,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/ImageNet%20classification%20with%20deep%20convolutional%20neural%20networks/4.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Local-Response-Normalization"><a href="#Local-Response-Normalization" class="headerlink" title="Local Response Normalization"></a>Local Response Normalization</h1><hr>
+<h1 id="3-Local-Response-Normalization"><a href="#3-Local-Response-Normalization" class="headerlink" title="3. Local Response Normalization"></a>3. Local Response Normalization</h1><hr>
 <ul>
 <li>对各空间点的卷积值在channel维度上作归一化(现在一般使用GoogleNet Version 2提出的<strong>Batch Normalization</strong>).</li>
 </ul>
@@ -529,16 +529,16 @@
 <ul>
 <li>Response normalization reduces our top-1 and top-5 error rates by 1.4% and 1.2%, respectively. </li>
 </ul>
-<h1 id="Overlapping-Pooling"><a href="#Overlapping-Pooling" class="headerlink" title="Overlapping Pooling"></a>Overlapping Pooling</h1><hr>
+<h1 id="4-Overlapping-Pooling"><a href="#4-Overlapping-Pooling" class="headerlink" title="4. Overlapping Pooling"></a>4. Overlapping Pooling</h1><hr>
 <ul>
 <li>即stride小于kernel size.</li>
 <li>This scheme(stride=2, kernel size=3 vs stride=2, kernel size=2) reduces the top-1 and top-5 error rates by 0.4% and 0.3%.</li>
 </ul>
-<h1 id="多GPU训练"><a href="#多GPU训练" class="headerlink" title="多GPU训练"></a>多GPU训练</h1><hr>
+<h1 id="5-多GPU训练"><a href="#5-多GPU训练" class="headerlink" title="5. 多GPU训练"></a>5. 多GPU训练</h1><hr>
 <ul>
 <li>GTX 580 3GB memory. 由于单块GPU显存太小，因此使用两块GPU训练。如今GTX Titan已到12G.</li>
 </ul>
-<h1 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h1><hr>
+<h1 id="6-AlexNet"><a href="#6-AlexNet" class="headerlink" title="6. AlexNet"></a>6. AlexNet</h1><hr>
 <ul>
 <li><p>8 layers=5 Conv+3 FC+Softmax <strong>(Figure 2).</strong></p>
 </li>
@@ -549,7 +549,7 @@
 
 
 
-<h1 id="Data-Augmentation"><a href="#Data-Augmentation" class="headerlink" title="Data Augmentation"></a>Data Augmentation</h1><hr>
+<h1 id="7-Data-Augmentation"><a href="#7-Data-Augmentation" class="headerlink" title="7. Data Augmentation"></a>7. Data Augmentation</h1><hr>
 <ul>
 <li><p>(方法1) 先对256$\times$256图像进行<strong>horizontal reflection</strong>，再<strong>random crop</strong> 224$\times$244 patches，论文将数据集扩大2048倍。</p>
 </li>
@@ -560,7 +560,7 @@
 
 
 
-<h1 id="Dropout-Layer"><a href="#Dropout-Layer" class="headerlink" title="Dropout Layer"></a>Dropout Layer</h1><hr>
+<h1 id="8-Dropout-Layer"><a href="#8-Dropout-Layer" class="headerlink" title="8. Dropout Layer"></a>8. Dropout Layer</h1><hr>
 <ul>
 <li><strong>Combining the predictions of many different models</strong> is a very successful way to reduce test errors, but it appears to be too expensive for big neural networks that already take several days to train.</li>
 <li>因此，利用dropout的随机性来<strong>改变模型training阶段的内部结构</strong>。</li>
@@ -573,7 +573,7 @@
 
 
 
-<h1 id="基于vector进行相似性检索"><a href="#基于vector进行相似性检索" class="headerlink" title="基于vector进行相似性检索"></a>基于vector进行相似性检索</h1><hr>
+<h1 id="9-基于vector进行相似性检索"><a href="#9-基于vector进行相似性检索" class="headerlink" title="9. 基于vector进行相似性检索"></a>9. 基于vector进行相似性检索</h1><hr>
 <ul>
 <li>基于倒数第二层FC输出的4096维Vector，计算欧氏距离进行相似图片检索 <strong>(Figure 4, Right)</strong>.</li>
 <li>在<strong>pixel leve</strong>上基于L2进行图片相似检索显然不可行，但是在<strong>high-level可用L2进行检索</strong>。</li>
@@ -1417,7 +1417,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Dataset"><span class="nav-number">1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ReLU"><span class="nav-number">2.</span> <span class="nav-text">ReLU</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Local-Response-Normalization"><span class="nav-number">3.</span> <span class="nav-text">Local Response Normalization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Overlapping-Pooling"><span class="nav-number">4.</span> <span class="nav-text">Overlapping Pooling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多GPU训练"><span class="nav-number">5.</span> <span class="nav-text">多GPU训练</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AlexNet"><span class="nav-number">6.</span> <span class="nav-text">AlexNet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Augmentation"><span class="nav-number">7.</span> <span class="nav-text">Data Augmentation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dropout-Layer"><span class="nav-number">8.</span> <span class="nav-text">Dropout Layer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基于vector进行相似性检索"><span class="nav-number">9.</span> <span class="nav-text">基于vector进行相似性检索</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Dataset"><span class="nav-text">1. Dataset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-ReLU"><span class="nav-text">2. ReLU</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Local-Response-Normalization"><span class="nav-text">3. Local Response Normalization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Overlapping-Pooling"><span class="nav-text">4. Overlapping Pooling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-多GPU训练"><span class="nav-text">5. 多GPU训练</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-AlexNet"><span class="nav-text">6. AlexNet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Data-Augmentation"><span class="nav-text">7. Data Augmentation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Dropout-Layer"><span class="nav-text">8. Dropout Layer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-基于vector进行相似性检索"><span class="nav-text">9. 基于vector进行相似性检索</span></a></li></ol></div>
             
 
           </div>

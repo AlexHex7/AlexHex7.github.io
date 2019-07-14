@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Xie C, Wang J, Zhang Z, et al. Mitigating adversarial effects through randomization[J]. arXiv preprint arXiv:1711.01991, 2017.">
-<meta name="keywords" content="Adversarial Attack,Ensemble,Defence,Randomization">
+<meta name="keywords" content="Adversarial Attack,Defence,Ensemble,Randomization">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(ICLR 2018) Mitigating adversarial effects through randomization">
 <meta property="og:url" content="http://yoursite.com/2018/08/16/Mitigating adversarial effects through randomization/index.html">
@@ -481,7 +481,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it exploited <strong>randomization</strong> at inference time to mitigate adversarial effects</p>
 <ol>
 <li>random resize</li>
@@ -495,7 +495,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Relative-Work"><a href="#Relative-Work" class="headerlink" title="Relative Work"></a>Relative Work</h2><ul>
+<h2 id="1-1-Relative-Work"><a href="#1-1-Relative-Work" class="headerlink" title="1.1. Relative Work"></a>1.1. Relative Work</h2><ul>
 <li>FGSM</li>
 <li>DeepFool</li>
 <li>Carlini&amp;Wagner (C&amp;W)</li>
@@ -508,7 +508,7 @@
 </ol>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/2.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -520,38 +520,38 @@
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Attack-Scenarios"><a href="#Attack-Scenarios" class="headerlink" title="Attack Scenarios"></a>Attack Scenarios</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Attack-Scenarios"><a href="#3-1-Attack-Scenarios" class="headerlink" title="3.1. Attack Scenarios"></a>3.1. Attack Scenarios</h2><ul>
 <li><strong>vanilla attack.</strong> attacker <strong>do not know</strong> the existence of the randomization layers; target model is the <strong>original network</strong></li>
 <li><strong>single-pattern attack.</strong> attacker <strong>know</strong> the existence of the randomization layers; target model is the original network + randomization layers with <strong>only one predefined pattern</strong></li>
 <li><strong>ensemble-pattern attack</strong>. know; original network + randomization layers with an <strong>ensemble of predefined patterns</strong></li>
 </ul>
-<h2 id="Accurate-Drop"><a href="#Accurate-Drop" class="headerlink" title="Accurate Drop"></a>Accurate Drop</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/4.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Accurate-Drop"><a href="#3-2-Accurate-Drop" class="headerlink" title="3.2. Accurate Drop"></a>3.2. Accurate Drop</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Vanilla-Attack-Scenario"><a href="#Vanilla-Attack-Scenario" class="headerlink" title="Vanilla Attack Scenario"></a>Vanilla Attack Scenario</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/5.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Vanilla-Attack-Scenario"><a href="#3-3-Vanilla-Attack-Scenario" class="headerlink" title="3.3. Vanilla Attack Scenario"></a>3.3. Vanilla Attack Scenario</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>mitigate both single-step and iterativ</li>
 </ul>
-<h2 id="Single-Pattern-Attack-Scenario"><a href="#Single-Pattern-Attack-Scenario" class="headerlink" title="Single-Pattern Attack Scenario"></a>Single-Pattern Attack Scenario</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/6.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Single-Pattern-Attack-Scenario"><a href="#3-4-Single-Pattern-Attack-Scenario" class="headerlink" title="3.4. Single-Pattern Attack Scenario"></a>3.4. Single-Pattern Attack Scenario</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>for single-step attacks, random layers are less effective on mitigating adversarial effects for a <strong>larger ε</strong></li>
 <li>for iterative attacks,  random layers perform well</li>
 </ul>
-<h2 id="Ensemble-Pattern-Attack-Scenario"><a href="#Ensemble-Pattern-Attack-Scenario" class="headerlink" title="Ensemble-Pattern Attack Scenario"></a>Ensemble-Pattern Attack Scenario</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/7.jpg?raw=true" alt><br></div>
+<h2 id="3-5-Ensemble-Pattern-Attack-Scenario"><a href="#3-5-Ensemble-Pattern-Attack-Scenario" class="headerlink" title="3.5. Ensemble-Pattern Attack Scenario"></a>3.5. Ensemble-Pattern Attack Scenario</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>adversarial examples generated under ensemble-pattern attack scenario are much stronger</li>
 </ul>
-<h2 id="One-Pixel-Padding"><a href="#One-Pixel-Padding" class="headerlink" title="One Pixel Padding"></a>One Pixel Padding</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/8.jpg?raw=true" alt><br></div>
+<h2 id="3-6-One-Pixel-Padding"><a href="#3-6-One-Pixel-Padding" class="headerlink" title="3.6. One Pixel Padding"></a>3.6. One Pixel Padding</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>from 330x330 to 331x331</li>
 <li>adversarial examples generated by <strong>single-step attacks</strong> have strong transferability, but still cannot attack the defense model</li>
 <li>adversarial examples generated by <strong>iterative attacks</strong> are much less transferable between different padding pattern</li>
 </ul>
-<h2 id="One-Pixel-Resizing"><a href="#One-Pixel-Resizing" class="headerlink" title="One Pixel Resizing"></a>One Pixel Resizing</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/9.jpg?raw=true" alt><br></div>
+<h2 id="3-7-One-Pixel-Resizing"><a href="#3-7-One-Pixel-Resizing" class="headerlink" title="3.7. One Pixel Resizing"></a>3.7. One Pixel Resizing</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mitigating adversarial effects through randomization/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>from 330x330 to 331x331</strong></li>
@@ -582,9 +582,9 @@
           
             <a href="/tags/Adversarial-Attack/" rel="tag"># Adversarial Attack</a>
           
-            <a href="/tags/Ensemble/" rel="tag"># Ensemble</a>
-          
             <a href="/tags/Defence/" rel="tag"># Defence</a>
+          
+            <a href="/tags/Ensemble/" rel="tag"># Ensemble</a>
           
             <a href="/tags/Randomization/" rel="tag"># Randomization</a>
           
@@ -1393,7 +1393,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Relative-Work"><span class="nav-number">1.1.</span> <span class="nav-text">Relative Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Attack-Scenarios"><span class="nav-number">3.1.</span> <span class="nav-text">Attack Scenarios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accurate-Drop"><span class="nav-number">3.2.</span> <span class="nav-text">Accurate Drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vanilla-Attack-Scenario"><span class="nav-number">3.3.</span> <span class="nav-text">Vanilla Attack Scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Single-Pattern-Attack-Scenario"><span class="nav-number">3.4.</span> <span class="nav-text">Single-Pattern Attack Scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensemble-Pattern-Attack-Scenario"><span class="nav-number">3.5.</span> <span class="nav-text">Ensemble-Pattern Attack Scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#One-Pixel-Padding"><span class="nav-number">3.6.</span> <span class="nav-text">One Pixel Padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#One-Pixel-Resizing"><span class="nav-number">3.7.</span> <span class="nav-text">One Pixel Resizing</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Relative-Work"><span class="nav-text">1.1. Relative Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Attack-Scenarios"><span class="nav-text">3.1. Attack Scenarios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Accurate-Drop"><span class="nav-text">3.2. Accurate Drop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Vanilla-Attack-Scenario"><span class="nav-text">3.3. Vanilla Attack Scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Single-Pattern-Attack-Scenario"><span class="nav-text">3.4. Single-Pattern Attack Scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Ensemble-Pattern-Attack-Scenario"><span class="nav-text">3.5. Ensemble-Pattern Attack Scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-One-Pixel-Padding"><span class="nav-text">3.6. One Pixel Padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-One-Pixel-Resizing"><span class="nav-text">3.7. One Pixel Resizing</span></a></li></ol></li></ol></div>
             
 
           </div>

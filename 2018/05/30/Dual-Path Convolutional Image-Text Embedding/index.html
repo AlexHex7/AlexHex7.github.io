@@ -495,8 +495,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>existing methods uses RNN for text feature learning and employs off-the-shelf CNN for image extraction</li>
 <li>ImageNet <strong>pre-trained models do not preserve rich image details</strong> that are critical for matching languages</li>
 </ul>
@@ -509,42 +509,42 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-2-Contribution"><a href="#1-2-Contribution" class="headerlink" title="1.2. Contribution"></a>1.2. Contribution</h2><ul>
 <li><strong>dual-path CNN model</strong></li>
 <li><strong>instance loss</strong></li>
 <li>outperform on FLickr30K, MSCOCO, CUHK-PEDES</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Model-for-Image-Recognition"><a href="#Model-for-Image-Recognition" class="headerlink" title="Model for Image Recognition"></a>Model for Image Recognition</h3><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><h3 id="1-3-1-Model-for-Image-Recognition"><a href="#1-3-1-Model-for-Image-Recognition" class="headerlink" title="1.3.1. Model for Image Recognition"></a>1.3.1. Model for Image Recognition</h3><ul>
 <li><strong>fixed</strong> CNN feature as input</li>
 </ul>
-<h3 id="Model-for-Natural-Language-Understanding"><a href="#Model-for-Natural-Language-Understanding" class="headerlink" title="Model for Natural Language Understanding"></a>Model for Natural Language Understanding</h3><ul>
+<h3 id="1-3-2-Model-for-Natural-Language-Understanding"><a href="#1-3-2-Model-for-Natural-Language-Understanding" class="headerlink" title="1.3.2. Model for Natural Language Understanding"></a>1.3.2. Model for Natural Language Understanding</h3><ul>
 <li>word2vec</li>
 <li>RNN, directional LSTM</li>
 <li><strong>CNN</strong> to conduct machine translation, 9.3x speed up</li>
 </ul>
-<h3 id="Multi-modal-Learning"><a href="#Multi-modal-Learning" class="headerlink" title="Multi-modal Learning"></a>Multi-modal Learning</h3><ul>
+<h3 id="1-3-3-Multi-modal-Learning"><a href="#1-3-3-Multi-modal-Learning" class="headerlink" title="1.3.3. Multi-modal Learning"></a>1.3.3. Multi-modal Learning</h3><ul>
 <li><strong>class-level retrieval.</strong> leverage the class labels in training set</li>
 <li><strong>instance-level retrieval.</strong> match image-text pairs, does not use any class label</li>
 </ul>
 <p><strong>In this paper, it focus on instance-level retrieval and propsoed instance loss.</strong></p>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-4-Dataset"><a href="#1-4-Dataset" class="headerlink" title="1.4. Dataset"></a>1.4. Dataset</h2><ul>
 <li><strong>Flickr30k</strong>. 5 sentences, avg 10.5 words per sentence after remove rare word</li>
 <li><strong>MSCOCO</strong>. avg 5 sentences, avg 8.7 words after rare word removal</li>
 <li><strong>CUHK-PEDES</strong>. 2 sentences, avg 19.6 words after removal</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><hr>
+<h1 id="2-Method"><a href="#2-Method" class="headerlink" title="2. Method"></a>2. Method</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/3.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Deep-Image-CNN"><a href="#Deep-Image-CNN" class="headerlink" title="Deep Image CNN"></a>Deep Image CNN</h2><ul>
+<h2 id="2-1-Deep-Image-CNN"><a href="#2-1-Deep-Image-CNN" class="headerlink" title="2.1. Deep Image CNN"></a>2.1. Deep Image CNN</h2><ul>
 <li><strong>pre-trained</strong> models can still provide for good CNN initialization</li>
 <li><strong>input</strong>. 224x224 </li>
 <li><strong>output</strong>. 2048 dimension vector<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/5.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Deep-Text-CNN"><a href="#Deep-Text-CNN" class="headerlink" title="Deep Text CNN"></a>Deep Text CNN</h2><h3 id="Text-Processing"><a href="#Text-Processing" class="headerlink" title="Text Processing"></a>Text Processing</h3><ul>
+<h2 id="2-2-Deep-Text-CNN"><a href="#2-2-Deep-Text-CNN" class="headerlink" title="2.2. Deep Text CNN"></a>2.2. Deep Text CNN</h2><h3 id="2-2-1-Text-Processing"><a href="#2-2-1-Text-Processing" class="headerlink" title="2.2.1. Text Processing"></a>2.2.1. Text Processing</h3><ul>
 <li>convert sentence to code <strong>T [n x d]</strong>. (ont-hot)<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/6.jpg?raw=true" alt><br></div>
 </li>
 </ul>
@@ -561,7 +561,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="Deep-Text-CNN-1"><a href="#Deep-Text-CNN-1" class="headerlink" title="Deep Text CNN"></a>Deep Text CNN</h3><ul>
+<h3 id="2-2-2-Deep-Text-CNN"><a href="#2-2-2-Deep-Text-CNN" class="headerlink" title="2.2.2. Deep Text CNN"></a>2.2.2. Deep Text CNN</h3><ul>
 <li><strong>input</strong>. T (1 x 32 x d)</li>
 <li><strong>output</strong>. 2048 dimension vector</li>
 <li>the filter size of the first conv is 1 x 1 x d x 300, two method to init<ul>
@@ -573,7 +573,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><h3 id="Ranking-Loss"><a href="#Ranking-Loss" class="headerlink" title="Ranking Loss"></a>Ranking Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/8.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Loss-Function"><a href="#2-3-Loss-Function" class="headerlink" title="2.3. Loss Function"></a>2.3. Loss Function</h2><h3 id="2-3-1-Ranking-Loss"><a href="#2-3-1-Ranking-Loss" class="headerlink" title="2.3.1. Ranking Loss"></a>2.3.1. Ranking Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>I.</strong> visual input</li>
@@ -586,7 +586,7 @@
 </li>
 <li>may be prone to <strong>getting stuck in a local minimum</strong></li>
 </ul>
-<h3 id="Instance-Loss"><a href="#Instance-Loss" class="headerlink" title="Instance Loss"></a>Instance Loss</h3><ul>
+<h3 id="2-3-2-Instance-Loss"><a href="#2-3-2-Instance-Loss" class="headerlink" title="2.3.2. Instance Loss"></a>2.3.2. Instance Loss</h3><ul>
 <li><strong>assumption</strong>. each image/text group is distinct</li>
 <li>instance loss is a softmax loss classifies an image/text group into <strong>one of a large number of classes</strong></li>
 </ul>
@@ -598,7 +598,7 @@
 <li><strong>P(c).</strong> predicted possibility of the right class c</li>
 </ul>
 <p><strong>enforce shared weight in the fully connected layer for the two modalities</strong>, otherwise the learned image and text features mat exist in totally different subspace.</p>
-<h3 id="Total-Loss"><a href="#Total-Loss" class="headerlink" title="Total Loss"></a>Total Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/10.jpg?raw=true" alt><br></div>
+<h3 id="2-3-3-Total-Loss"><a href="#2-3-3-Total-Loss" class="headerlink" title="2.3.3. Total Loss"></a>2.3.3. Total Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/10.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p><strong>stage-1</strong>. only instance loss, λ_1 = 0</p>
@@ -612,7 +612,7 @@
 <li><p><strong>stage-2</strong>. ranking loss + instance loss</p>
 </li>
 </ul>
-<h3 id="Training-Stage"><a href="#Training-Stage" class="headerlink" title="Training Stage"></a>Training Stage</h3><ul>
+<h3 id="2-3-4-Training-Stage"><a href="#2-3-4-Training-Stage" class="headerlink" title="2.3.4. Training Stage"></a>2.3.4. Training Stage</h3><ul>
 <li><strong>stage-1</strong>. fixed pre-trained image CNN, use instance loss to tune the remaining part<ul>
 <li>if we train the image and text CNNs <strong>simultaneously</strong>, the <strong>text CNN may comprise the pre-trained image CNN</strong></li>
 </ul>
@@ -621,12 +621,12 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Metric"><a href="#Metric" class="headerlink" title="Metric"></a>Metric</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Metric"><a href="#3-1-Metric" class="headerlink" title="3.1. Metric"></a>3.1. Metric</h2><ul>
 <li><strong>Recall@K</strong>. possibility that true match appears in the top K of the rank list</li>
 <li><strong>Median Rank.</strong> median rank of the closest ground truth result in the rank list</li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="3-2-Details"><a href="#3-2-Details" class="headerlink" title="3.2. Details"></a>3.2. Details</h2><ul>
 <li>SGD + fixed 0.9 momentum</li>
 <li>Matconvnet Framework</li>
 <li>224x224 random crop from shorter side 256</li>
@@ -637,28 +637,28 @@
 <li>LR. 0.001</li>
 <li>α=1</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/12.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Comparison"><a href="#3-3-Comparison" class="headerlink" title="3.3. Comparison"></a>3.3. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/12.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablation-Study"><a href="#Ablation-Study" class="headerlink" title="Ablation Study"></a>Ablation Study</h2><h3 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/13.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Ablation-Study"><a href="#3-4-Ablation-Study" class="headerlink" title="3.4. Ablation Study"></a>3.4. Ablation Study</h2><h3 id="3-4-1-Loss"><a href="#3-4-1-Loss" class="headerlink" title="3.4.1. Loss"></a>3.4.1. Loss</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/13.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>stage-1</strong>. ranking loss <strong>focuses on inter-modal distance</strong>, may be hard to tune the visual and textual features simultaneous at the beginning</li>
 <li><strong>stage-1</strong>. instance loss performs better, which <strong>focusses more on learning intra-modal discriminative descriptors</strong></li>
 <li>instace loss help to regularise the model</li>
 </ul>
-<h3 id="Fine-tune"><a href="#Fine-tune" class="headerlink" title="Fine-tune"></a>Fine-tune</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/14.jpg?raw=true" alt><br></div>
+<h3 id="3-4-2-Fine-tune"><a href="#3-4-2-Fine-tune" class="headerlink" title="3.4.2. Fine-tune"></a>3.4.2. Fine-tune</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/14.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>fine-tune in stage-2 helps</li>
 </ul>
-<h3 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/15.jpg?raw=true" alt><br></div>
+<h3 id="3-4-3-Initialization"><a href="#3-4-3-Initialization" class="headerlink" title="3.4.3. Initialization"></a>3.4.3. Initialization</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/15.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>word2vec initialization helps</li>
 </ul>
-<h3 id="Position-Shift-vs-Left-Alignment"><a href="#Position-Shift-vs-Left-Alignment" class="headerlink" title="Position Shift vs Left Alignment"></a>Position Shift vs Left Alignment</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/16.jpg?raw=true" alt><br></div>
+<h3 id="3-4-4-Position-Shift-vs-Left-Alignment"><a href="#3-4-4-Position-Shift-vs-Left-Alignment" class="headerlink" title="3.4.4. Position Shift vs Left Alignment"></a>3.4.4. Position Shift vs Left Alignment</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dual-Path Convolutional Image-Text Embedding/16.jpg?raw=true" alt><br></div>
 
-<h2 id="Training-Time"><a href="#Training-Time" class="headerlink" title="Training Time"></a>Training Time</h2><ul>
+<h2 id="3-5-Training-Time"><a href="#3-5-Training-Time" class="headerlink" title="3.5. Training Time"></a>3.5. Training Time</h2><ul>
 <li><strong>image CNN</strong> ~119ms per image batch (32) on 1080Ti</li>
 <li><strong>text CNN</strong> ~117ms per sentence batch (32)</li>
 </ul>
@@ -1497,7 +1497,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-for-Image-Recognition"><span class="nav-number">1.3.1.</span> <span class="nav-text">Model for Image Recognition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-for-Natural-Language-Understanding"><span class="nav-number">1.3.2.</span> <span class="nav-text">Model for Natural Language Understanding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-modal-Learning"><span class="nav-number">1.3.3.</span> <span class="nav-text">Multi-modal Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.4.</span> <span class="nav-text">Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Method"><span class="nav-number">2.</span> <span class="nav-text">Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Image-CNN"><span class="nav-number">2.1.</span> <span class="nav-text">Deep Image CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Text-CNN"><span class="nav-number">2.2.</span> <span class="nav-text">Deep Text CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Text-Processing"><span class="nav-number">2.2.1.</span> <span class="nav-text">Text Processing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-Text-CNN-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">Deep Text CNN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.3.</span> <span class="nav-text">Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ranking-Loss"><span class="nav-number">2.3.1.</span> <span class="nav-text">Ranking Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instance-Loss"><span class="nav-number">2.3.2.</span> <span class="nav-text">Instance Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Total-Loss"><span class="nav-number">2.3.3.</span> <span class="nav-text">Total Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Training-Stage"><span class="nav-number">2.3.4.</span> <span class="nav-text">Training Stage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Metric"><span class="nav-number">3.1.</span> <span class="nav-text">Metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.2.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.3.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation-Study"><span class="nav-number">3.4.</span> <span class="nav-text">Ablation Study</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss"><span class="nav-number">3.4.1.</span> <span class="nav-text">Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fine-tune"><span class="nav-number">3.4.2.</span> <span class="nav-text">Fine-tune</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Initialization"><span class="nav-number">3.4.3.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Position-Shift-vs-Left-Alignment"><span class="nav-number">3.4.4.</span> <span class="nav-text">Position Shift vs Left Alignment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-Time"><span class="nav-number">3.5.</span> <span class="nav-text">Training Time</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Contribution"><span class="nav-text">1.2. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Model-for-Image-Recognition"><span class="nav-text">1.3.1. Model for Image Recognition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Model-for-Natural-Language-Understanding"><span class="nav-text">1.3.2. Model for Natural Language Understanding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-Multi-modal-Learning"><span class="nav-text">1.3.3. Multi-modal Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Dataset"><span class="nav-text">1.4. Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Method"><span class="nav-text">2. Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Deep-Image-CNN"><span class="nav-text">2.1. Deep Image CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Deep-Text-CNN"><span class="nav-text">2.2. Deep Text CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Text-Processing"><span class="nav-text">2.2.1. Text Processing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Deep-Text-CNN"><span class="nav-text">2.2.2. Deep Text CNN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Loss-Function"><span class="nav-text">2.3. Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Ranking-Loss"><span class="nav-text">2.3.1. Ranking Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-Instance-Loss"><span class="nav-text">2.3.2. Instance Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-Total-Loss"><span class="nav-text">2.3.3. Total Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-4-Training-Stage"><span class="nav-text">2.3.4. Training Stage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Metric"><span class="nav-text">3.1. Metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Details"><span class="nav-text">3.2. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Comparison"><span class="nav-text">3.3. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Ablation-Study"><span class="nav-text">3.4. Ablation Study</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-1-Loss"><span class="nav-text">3.4.1. Loss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2-Fine-tune"><span class="nav-text">3.4.2. Fine-tune</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-3-Initialization"><span class="nav-text">3.4.3. Initialization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-4-Position-Shift-vs-Left-Alignment"><span class="nav-text">3.4.4. Position Shift vs Left Alignment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Training-Time"><span class="nav-text">3.5. Training Time</span></a></li></ol></li></ol></div>
             
 
           </div>

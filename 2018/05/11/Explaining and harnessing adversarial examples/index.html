@@ -480,8 +480,8 @@
 </blockquote>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>ML and DL model <strong>misclassify adversarial examples</strong>. Early explaining focused on <strong>nonlinearity and overfitting</strong></li>
 <li><strong>generic regularization strategies</strong> (<strong>dropout, pretraining, model averaging</strong>) do not confer a significant reduction of vulnerability to adversarial examples</li>
 </ul>
@@ -491,11 +491,11 @@
 <li><strong>fast gradient sign method</strong> to generate adversarial examples</li>
 <li><strong>adversarial training</strong> can provide an <strong>additional regularization benefit</strong> beyond that provided by dropout</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li>the <strong>same adversarial examples</strong> is often misclassified by a variety of classifiers with different architecture or trained on different subsets of the training data</li>
 <li>trained on adversarial examples can <strong>regularize</strong> the model</li>
 </ul>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><ul>
+<h2 id="1-3-Summary"><a href="#1-3-Summary" class="headerlink" title="1.3. Summary"></a>1.3. Summary</h2><ul>
 <li>adversarial examples can be explained as a <strong>property of high-dimensional dot products</strong></li>
 <li>the generation of adversarial examples across different models. <strong>different models learn similar function</strong> when trained to perform the same task</li>
 <li><strong>adversarial training can result in regularization,</strong> further than dropout</li>
@@ -503,7 +503,7 @@
 <li>linear models lack the capacity to resist adversarial perturbation. <strong>only structures with hidden layer</strong> should bt trained to resist it</li>
 <li>ensembles are not resistant to adversarial examples</li>
 </ul>
-<h2 id="Linear-Explanation-of-Adversarial-Examples"><a href="#Linear-Explanation-of-Adversarial-Examples" class="headerlink" title="Linear Explanation of Adversarial Examples"></a>Linear Explanation of Adversarial Examples</h2><ul>
+<h2 id="1-4-Linear-Explanation-of-Adversarial-Examples"><a href="#1-4-Linear-Explanation-of-Adversarial-Examples" class="headerlink" title="1.4. Linear Explanation of Adversarial Examples"></a>1.4. Linear Explanation of Adversarial Examples</h2><ul>
 <li><strong>precision</strong> of an individual input feature is limited<br>discard all information <strong>(η)</strong> below 1/255</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Explaining and harnessing adversarial examples/1.jpg?raw=true" alt><br></div>
@@ -527,9 +527,9 @@
 <li><p><strong>grow linearly with n</strong>. when dimension n is large, it will make greatly effects</p>
 </li>
 </ul>
-<h2 id="Linear-Perturbation-of-Non-linear-Models"><a href="#Linear-Perturbation-of-Non-linear-Models" class="headerlink" title="Linear Perturbation of Non-linear Models"></a>Linear Perturbation of Non-linear Models</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Explaining and harnessing adversarial examples/7.jpg?raw=true" alt><br></div>
+<h2 id="1-5-Linear-Perturbation-of-Non-linear-Models"><a href="#1-5-Linear-Perturbation-of-Non-linear-Models" class="headerlink" title="1.5. Linear Perturbation of Non-linear Models"></a>1.5. Linear Perturbation of Non-linear Models</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Explaining and harnessing adversarial examples/7.jpg?raw=true" alt><br></div>
 
-<h3 id="Fast-Gradient-Sign-Method"><a href="#Fast-Gradient-Sign-Method" class="headerlink" title="Fast Gradient Sign Method"></a>Fast Gradient Sign Method</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Explaining and harnessing adversarial examples/8.jpg?raw=true" alt><br></div>
+<h3 id="1-5-1-Fast-Gradient-Sign-Method"><a href="#1-5-1-Fast-Gradient-Sign-Method" class="headerlink" title="1.5.1. Fast Gradient Sign Method"></a>1.5.1. Fast Gradient Sign Method</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Explaining and harnessing adversarial examples/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>Θ. parameters of model</li>
@@ -537,7 +537,7 @@
 <li>y. output</li>
 <li>J. cost function</li>
 </ul>
-<h2 id="Adversarial-Training-of-Deep-Network"><a href="#Adversarial-Training-of-Deep-Network" class="headerlink" title="Adversarial Training of Deep Network"></a>Adversarial Training of Deep Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Explaining and harnessing adversarial examples/9.jpg?raw=true" alt><br></div>
+<h2 id="1-6-Adversarial-Training-of-Deep-Network"><a href="#1-6-Adversarial-Training-of-Deep-Network" class="headerlink" title="1.6. Adversarial Training of Deep Network"></a>1.6. Adversarial Training of Deep Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Explaining and harnessing adversarial examples/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>deep network at least can <strong>represent function to resist adversarial perturbation</strong>, but shallow linear model can not</li>
@@ -1375,7 +1375,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary"><span class="nav-number">1.3.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Explanation-of-Adversarial-Examples"><span class="nav-number">1.4.</span> <span class="nav-text">Linear Explanation of Adversarial Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Perturbation-of-Non-linear-Models"><span class="nav-number">1.5.</span> <span class="nav-text">Linear Perturbation of Non-linear Models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fast-Gradient-Sign-Method"><span class="nav-number">1.5.1.</span> <span class="nav-text">Fast Gradient Sign Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Training-of-Deep-Network"><span class="nav-number">1.6.</span> <span class="nav-text">Adversarial Training of Deep Network</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Summary"><span class="nav-text">1.3. Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Linear-Explanation-of-Adversarial-Examples"><span class="nav-text">1.4. Linear Explanation of Adversarial Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Linear-Perturbation-of-Non-linear-Models"><span class="nav-text">1.5. Linear Perturbation of Non-linear Models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-Fast-Gradient-Sign-Method"><span class="nav-text">1.5.1. Fast Gradient Sign Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Adversarial-Training-of-Deep-Network"><span class="nav-text">1.6. Adversarial Training of Deep Network</span></a></li></ol></li></ol></div>
             
 
           </div>

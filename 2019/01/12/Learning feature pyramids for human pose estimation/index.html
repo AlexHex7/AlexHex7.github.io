@@ -495,8 +495,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>pyramid methods widely used at <strong>inference time</strong></li>
 <li>learning feature in DCNN still not well explored</li>
 <li><strong>existing weight initialization schemes</strong> (MSR, Xavier) are not proper for layers with branches</li>
@@ -508,22 +508,22 @@
 <li><strong>subsample ratios</strong> in a multi-branch network</li>
 <li><strong>weight initialization schemes</strong></li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-2-Contribution"><a href="#1-2-Contribution" class="headerlink" title="1.2. Contribution"></a>1.2. Contribution</h2><ul>
 <li>PRM</li>
 <li>weight initialization scheme</li>
 <li>observe that the problem of <strong>activation variance accumulation introduced by identity mapping</strong> may be harmful in some scenario</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Human-Pose-Estimation"><a href="#Human-Pose-Estimation" class="headerlink" title="Human Pose Estimation"></a>Human Pose Estimation</h3><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><h3 id="1-3-1-Human-Pose-Estimation"><a href="#1-3-1-Human-Pose-Estimation" class="headerlink" title="1.3.1. Human Pose Estimation"></a>1.3.1. Human Pose Estimation</h3><ul>
 <li><strong>graph structures</strong> build on <strong>handcraft</strong> features. pictorial structure, loopy structure</li>
 <li>regression</li>
 <li><strong>Gaussian peaks</strong> in score maps</li>
 <li><strong>image pyramid.</strong> computation, memory</li>
 </ul>
-<h3 id="Multiple-layers-of-DCNN"><a href="#Multiple-layers-of-DCNN" class="headerlink" title="Multiple-layers of DCNN"></a>Multiple-layers of DCNN</h3><ul>
+<h3 id="1-3-2-Multiple-layers-of-DCNN"><a href="#1-3-2-Multiple-layers-of-DCNN" class="headerlink" title="1.3.2. Multiple-layers of DCNN"></a>1.3.2. Multiple-layers of DCNN</h3><ul>
 <li><strong>plain network</strong>. VGG, AlexNet</li>
 <li><strong>multi-branch</strong>. inception, ResNet, ResNeXt</li>
 </ul>
-<h3 id="Weight-Initialization"><a href="#Weight-Initialization" class="headerlink" title="Weight Initialization"></a>Weight Initialization</h3><ul>
+<h3 id="1-3-3-Weight-Initialization"><a href="#1-3-3-Weight-Initialization" class="headerlink" title="1.3.3. Weight Initialization"></a>1.3.3. Weight Initialization</h3><ul>
 <li>layer-by-layer pretraining strategy</li>
 <li><strong>Gaussian distribution</strong>. μ=0, σ=0.01</li>
 <li><strong>Xavier</strong>. sound estimation of the variance of weight</li>
@@ -531,16 +531,16 @@
 <li>initialization scheme for rectifier networks</li>
 <li>All above are derived for <strong>plain networks with only one branch. </strong></li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-4-Dataset"><a href="#1-4-Dataset" class="headerlink" title="1.4. Dataset"></a>1.4. Dataset</h2><ul>
 <li>MPII</li>
 <li>LSP</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h1><hr>
+<h1 id="2-Framework"><a href="#2-Framework" class="headerlink" title="2. Framework"></a>2. Framework</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Pyramid-Residual-Modules"><a href="#Pyramid-Residual-Modules" class="headerlink" title="Pyramid Residual Modules"></a>Pyramid Residual Modules</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/3.jpg?raw=true" alt><br></div>
+<h2 id="2-1-Pyramid-Residual-Modules"><a href="#2-1-Pyramid-Residual-Modules" class="headerlink" title="2.1. Pyramid Residual Modules"></a>2.1. Pyramid Residual Modules</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>PRM-B</strong> has comparable performance with others</li>
@@ -552,7 +552,7 @@
 <li><strong>C</strong>. the number of pyramid levels</li>
 <li><strong>f_c.</strong> transformation for c-th pyramid level, design as bottleneck</li>
 </ul>
-<h2 id="Fractional-Max-Pooling"><a href="#Fractional-Max-Pooling" class="headerlink" title="Fractional Max-Pooling"></a>Fractional Max-Pooling</h2><ul>
+<h2 id="2-2-Fractional-Max-Pooling"><a href="#2-2-Fractional-Max-Pooling" class="headerlink" title="2.2. Fractional Max-Pooling"></a>2.2. Fractional Max-Pooling</h2><ul>
 <li><strong>pooling reduces the resolution too fast</strong></li>
 <li><strong>fractional max-pooling</strong> to approximate the smoothing and subsampling process</li>
 </ul>
@@ -564,14 +564,14 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Training-and-Inference"><a href="#Training-and-Inference" class="headerlink" title="Training and Inference"></a>Training and Inference</h1><hr>
+<h1 id="3-Training-and-Inference"><a href="#3-Training-and-Inference" class="headerlink" title="3. Training and Inference"></a>3. Training and Inference</h1><hr>
 <p>BN is less effective because of the small minibacth due to the large memory consumption of networks.</p>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/6.jpg?raw=true" alt><br></div>
+<h2 id="3-1-Loss-Function"><a href="#3-1-Loss-Function" class="headerlink" title="3.1. Loss Function"></a>3.1. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>for k-th body joint <strong>z_k=(x_k, y_k)</strong>, ground-truth score map <strong>S_k</strong> is generated from a Gaussian with mean <strong>z_k</strong> and variance <strong>Σ</strong></li>
 </ul>
-<h2 id="Forward-Propagation"><a href="#Forward-Propagation" class="headerlink" title="Forward Propagation"></a>Forward Propagation</h2><p>(Assumption μ=0)<br>To make the variances of the output y_l approximately the same for different layers, the condition must be satisfied</p>
+<h2 id="3-2-Forward-Propagation"><a href="#3-2-Forward-Propagation" class="headerlink" title="3.2. Forward Propagation"></a>3.2. Forward Propagation</h2><p>(Assumption μ=0)<br>To make the variances of the output y_l approximately the same for different layers, the condition must be satisfied</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/7.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -583,13 +583,13 @@
 <li><strong>C_i</strong>. the number of <strong>input</strong> in l-th layers</li>
 <li><strong>n_i</strong>. the number of <strong>elements</strong> in x_c, c=1,…, C_i</li>
 </ul>
-<h2 id="Backward-Propagation"><a href="#Backward-Propagation" class="headerlink" title="Backward Propagation"></a>Backward Propagation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/9.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Backward-Propagation"><a href="#3-3-Backward-Propagation" class="headerlink" title="3.3. Backward Propagation"></a>3.3. Backward Propagation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>C_o</strong>. the number of output</li>
 </ul>
 <p><strong>Special Case</strong>. C_o=C_i = 1 for plain network.</p>
-<h2 id="Output-Accumulation"><a href="#Output-Accumulation" class="headerlink" title="Output Accumulation"></a>Output Accumulation</h2><p><strong>Drawbacks</strong>. identity mapping keeps increasing the variances of responses when the network goes deeper, which increase the difficulty of optimization.</p>
+<h2 id="3-4-Output-Accumulation"><a href="#3-4-Output-Accumulation" class="headerlink" title="3.4. Output Accumulation"></a>3.4. Output Accumulation</h2><p><strong>Drawbacks</strong>. identity mapping keeps increasing the variances of responses when the network goes deeper, which increase the difficulty of optimization.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/10.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -607,21 +607,21 @@
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h1><hr>
+<h2 id="4-1-Details"><a href="#4-1-Details" class="headerlink" title="4.1. Details"></a>4.1. Details</h2><ul>
 <li>256x256 cropped</li>
 <li>scaling, rotation, flipping and adding color noise</li>
 <li>mini-batch 16</li>
 <li><strong>test</strong>. six-scale pyramid with flipping</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/14.jpg?raw=true" alt><br></div>
+<h2 id="4-2-Comparison"><a href="#4-2-Comparison" class="headerlink" title="4.2. Comparison"></a>4.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/14.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Ablation-Study"><a href="#Ablation-Study" class="headerlink" title="Ablation Study"></a>Ablation Study</h2><h3 id="Variant"><a href="#Variant" class="headerlink" title="Variant"></a>Variant</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/15.jpg?raw=true" alt><br></div>
+<h2 id="4-3-Ablation-Study"><a href="#4-3-Ablation-Study" class="headerlink" title="4.3. Ablation Study"></a>4.3. Ablation Study</h2><h3 id="4-3-1-Variant"><a href="#4-3-1-Variant" class="headerlink" title="4.3.1. Variant"></a>4.3.1. Variant</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/15.jpg?raw=true" alt><br></div>
 
-<h3 id="Scale-of-Pyramid-and-Weight-initialization"><a href="#Scale-of-Pyramid-and-Weight-initialization" class="headerlink" title="Scale of Pyramid and Weight initialization"></a>Scale of Pyramid and Weight initialization</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/16.jpg?raw=true" alt><br></div>
+<h3 id="4-3-2-Scale-of-Pyramid-and-Weight-initialization"><a href="#4-3-2-Scale-of-Pyramid-and-Weight-initialization" class="headerlink" title="4.3.2. Scale of Pyramid and Weight initialization"></a>4.3.2. Scale of Pyramid and Weight initialization</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning feature pyramids for human pose estimation/16.jpg?raw=true" alt><br></div>
 
-<h3 id="Controlling-Variance-Explosion"><a href="#Controlling-Variance-Explosion" class="headerlink" title="Controlling Variance Explosion"></a>Controlling Variance Explosion</h3><ul>
+<h3 id="4-3-3-Controlling-Variance-Explosion"><a href="#4-3-3-Controlling-Variance-Explosion" class="headerlink" title="4.3.3. Controlling Variance Explosion"></a>4.3.3. Controlling Variance Explosion</h3><ul>
 <li>[w]88.5 vs [w/o]88.0 vs [baseline] 87.6</li>
 </ul>
 
@@ -1454,7 +1454,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Human-Pose-Estimation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Human Pose Estimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multiple-layers-of-DCNN"><span class="nav-number">1.3.2.</span> <span class="nav-text">Multiple-layers of DCNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weight-Initialization"><span class="nav-number">1.3.3.</span> <span class="nav-text">Weight Initialization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.4.</span> <span class="nav-text">Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Framework"><span class="nav-number">2.</span> <span class="nav-text">Framework</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pyramid-Residual-Modules"><span class="nav-number">2.1.</span> <span class="nav-text">Pyramid Residual Modules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fractional-Max-Pooling"><span class="nav-number">2.2.</span> <span class="nav-text">Fractional Max-Pooling</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Training-and-Inference"><span class="nav-number">3.</span> <span class="nav-text">Training and Inference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">3.1.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Forward-Propagation"><span class="nav-number">3.2.</span> <span class="nav-text">Forward Propagation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Backward-Propagation"><span class="nav-number">3.3.</span> <span class="nav-text">Backward Propagation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Accumulation"><span class="nav-number">3.4.</span> <span class="nav-text">Output Accumulation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">4.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">4.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">4.2.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation-Study"><span class="nav-number">4.3.</span> <span class="nav-text">Ablation Study</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Variant"><span class="nav-number">4.3.1.</span> <span class="nav-text">Variant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scale-of-Pyramid-and-Weight-initialization"><span class="nav-number">4.3.2.</span> <span class="nav-text">Scale of Pyramid and Weight initialization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controlling-Variance-Explosion"><span class="nav-number">4.3.3.</span> <span class="nav-text">Controlling Variance Explosion</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Contribution"><span class="nav-text">1.2. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Human-Pose-Estimation"><span class="nav-text">1.3.1. Human Pose Estimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Multiple-layers-of-DCNN"><span class="nav-text">1.3.2. Multiple-layers of DCNN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-Weight-Initialization"><span class="nav-text">1.3.3. Weight Initialization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Dataset"><span class="nav-text">1.4. Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Framework"><span class="nav-text">2. Framework</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Pyramid-Residual-Modules"><span class="nav-text">2.1. Pyramid Residual Modules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Fractional-Max-Pooling"><span class="nav-text">2.2. Fractional Max-Pooling</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Training-and-Inference"><span class="nav-text">3. Training and Inference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Loss-Function"><span class="nav-text">3.1. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Forward-Propagation"><span class="nav-text">3.2. Forward Propagation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Backward-Propagation"><span class="nav-text">3.3. Backward Propagation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Output-Accumulation"><span class="nav-text">3.4. Output Accumulation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments"><span class="nav-text">4. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Details"><span class="nav-text">4.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Comparison"><span class="nav-text">4.2. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Ablation-Study"><span class="nav-text">4.3. Ablation Study</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1-Variant"><span class="nav-text">4.3.1. Variant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-2-Scale-of-Pyramid-and-Weight-initialization"><span class="nav-text">4.3.2. Scale of Pyramid and Weight initialization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-3-Controlling-Variance-Explosion"><span class="nav-text">4.3.3. Controlling Variance Explosion</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -132,7 +132,7 @@
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&非局部均值去噪&双边滤波/26.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&非局部均值去噪&双边滤波/27.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&非局部均值去噪&双边滤波/28.jpg?raw=true">
-<meta property="og:updated_time" content="2019-05-07T08:51:12.372Z">
+<meta property="og:updated_time" content="2019-06-08T01:30:25.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="条件随机场&amp;非局部均值去噪&amp;双边滤波">
 <meta name="twitter:description" content="如何轻松愉快地理解条件随机场（CRF）非局部均值去噪（NL-means）图像非局部均值滤波的原理Bilateral Filtering(双边滤波) for SSAO">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-07 16:51:12" itemprop="dateModified" datetime="2019-05-07T16:51:12+08:00">2019-05-07</time>
+                <time title="Modified: 2019-06-08 09:30:25" itemprop="dateModified" datetime="2019-06-08T09:30:25+08:00">2019-06-08</time>
               
             
           </span>
@@ -508,11 +508,11 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="条件随机场"><a href="#条件随机场" class="headerlink" title="条件随机场"></a>条件随机场</h1><hr>
+<h1 id="1-条件随机场"><a href="#1-条件随机场" class="headerlink" title="1. 条件随机场"></a>1. 条件随机场</h1><hr>
 <ul>
 <li>对一系列连续时间段的照片分类时，为了提高分类器的性能，常常将相邻照片的标签信息考虑进来，而非单独考虑某张照片进行分类——条件随机场(CRF).</li>
 </ul>
-<h2 id="词性标注中的特征函数"><a href="#词性标注中的特征函数" class="headerlink" title="词性标注中的特征函数"></a>词性标注中的特征函数</h2><ul>
+<h2 id="1-1-词性标注中的特征函数"><a href="#1-1-词性标注中的特征函数" class="headerlink" title="1.1. 词性标注中的特征函数"></a>1.1. 词性标注中的特征函数</h2><ul>
 <li>考虑对标注序列评分问题。定义CRF中的特征函数，如</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/1.jpg?raw=true" alt><br></div>
@@ -526,7 +526,7 @@
 <ul>
 <li>特征函数输入0或1，0表示标注序列不符合特征函数的特征。该特征函数仅考虑当前单词i的标签与其前一个单词i-1的标签来进行判断，因此称为<strong>线性链CRF</strong>。</li>
 </ul>
-<h2 id="特征函数到概率"><a href="#特征函数到概率" class="headerlink" title="特征函数到概率"></a>特征函数到概率</h2><ul>
+<h2 id="1-2-特征函数到概率"><a href="#1-2-特征函数到概率" class="headerlink" title="1.2. 特征函数到概率"></a>1.2. 特征函数到概率</h2><ul>
 <li>定义好一组特征函数及其权重λ后，即可对标注序列进行评分。</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/2.jpg?raw=true" alt><br></div>
@@ -540,12 +540,12 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/3.jpg?raw=true" alt><br></div>
 
-<h2 id="特征函数例子"><a href="#特征函数例子" class="headerlink" title="特征函数例子"></a>特征函数例子</h2><ul>
+<h2 id="1-3-特征函数例子"><a href="#1-3-特征函数例子" class="headerlink" title="1.3. 特征函数例子"></a>1.3. 特征函数例子</h2><ul>
 <li>l_{i-1}是介词，l_{i}是名词，则为1</li>
 <li>l_{i}为副词，且第i个单词以”ly”结尾，则为1</li>
 <li>如果i=1，l_{i}为动词，且句子以”?”结尾，则为1</li>
 </ul>
-<h2 id="与逻辑回归比较"><a href="#与逻辑回归比较" class="headerlink" title="与逻辑回归比较"></a>与逻辑回归比较</h2><p>CRF可看做逻辑回归的序列化版本。逻辑回归是用于分类的对数线性模型，CRF是用于序列化标注的对数线性模型。</p>
+<h2 id="1-4-与逻辑回归比较"><a href="#1-4-与逻辑回归比较" class="headerlink" title="1.4. 与逻辑回归比较"></a>1.4. 与逻辑回归比较</h2><p>CRF可看做逻辑回归的序列化版本。逻辑回归是用于分类的对数线性模型，CRF是用于序列化标注的对数线性模型。</p>
 <h2 id="与HMM比较"><a href="#与HMM比较" class="headerlink" title="与HMM比较"></a>与HMM比较</h2><ul>
 <li>HMM也能解决词性标注问题，其思路是生成方式。即已知标注序列的情况下，判断生成该标注序列的概率。</li>
 </ul>
@@ -581,13 +581,13 @@
 <li>HMM中的log概率值小于等于0，即转换成CRF后，其权重受到限制。而CRF中每个特征函数的权重可是任意值</li>
 </ol>
 <hr>
-<h1 id="非局部均值去噪"><a href="#非局部均值去噪" class="headerlink" title="非局部均值去噪"></a>非局部均值去噪</h1><hr>
+<h1 id="2-非局部均值去噪"><a href="#2-非局部均值去噪" class="headerlink" title="2. 非局部均值去噪"></a>2. 非局部均值去噪</h1><hr>
 <ul>
 <li>基本思想：当前像素值的估计由图像中与其具有<strong>相似领域结构的像素加权平均</strong>得到。该算法能够在去噪的同时，最大程度<strong>保留图像细节特征</strong>。</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/9.jpg?raw=true" alt><br></div>
 
-<h2 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h2><ul>
+<h2 id="2-1-算法实现"><a href="#2-1-算法实现" class="headerlink" title="2.1. 算法实现"></a>2.1. 算法实现</h2><ul>
 <li>理论上，该算法应搜索整个图像范围，但实际考虑到效率问题，会设定两个固定大小窗口。</li>
 </ul>
 <ol>
@@ -621,11 +621,11 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/14.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="Bilateral-Filtering-双边滤波"><a href="#Bilateral-Filtering-双边滤波" class="headerlink" title="Bilateral Filtering(双边滤波)"></a>Bilateral Filtering(双边滤波)</h1><hr>
+<h1 id="3-Bilateral-Filtering-双边滤波"><a href="#3-Bilateral-Filtering-双边滤波" class="headerlink" title="3. Bilateral Filtering(双边滤波)"></a>3. Bilateral Filtering(双边滤波)</h1><hr>
 <ul>
 <li>在滤波算法中，目标点的像素值通常由其周围邻域中的像素值所决定。</li>
 </ul>
-<h2 id="2D高斯滤波"><a href="#2D高斯滤波" class="headerlink" title="2D高斯滤波"></a>2D高斯滤波</h2><ul>
+<h2 id="3-1-2D高斯滤波"><a href="#3-1-2D高斯滤波" class="headerlink" title="3.1. 2D高斯滤波"></a>3.1. 2D高斯滤波</h2><ul>
 <li>2D高斯滤波算法是对其一定范围的邻域内像素值赋以不同高斯权重值，进行加权平均。权重因子基于两像素点之间的空间距离得到，即离目标像素点距离越近，对最终结果贡献越大。</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/15.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/16.jpg?raw=true" alt><br></div>
@@ -640,14 +640,14 @@
 <ul>
 <li>但高斯滤波存在缺陷，<strong>只考虑了像素之间的空间位置关系</strong>，而<strong>没有考虑考虑像素值之间的相似程度</strong>，因此会导致<strong>边缘信息（图像中不同颜色的区域）丢失</strong>。</li>
 </ul>
-<h2 id="基于像素值关系的权重"><a href="#基于像素值关系的权重" class="headerlink" title="基于像素值关系的权重"></a>基于像素值关系的权重</h2><ul>
+<h2 id="3-2-基于像素值关系的权重"><a href="#3-2-基于像素值关系的权重" class="headerlink" title="3.2. 基于像素值关系的权重"></a>3.2. 基于像素值关系的权重</h2><ul>
 <li><p>Bilateral中加入了另一部分权重</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/17.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/18.jpg?raw=true" alt><br></div>
 </li>
 <li><p>s(f(ξ), f(x)) 为基于两像素点的像素值相似关系的权重。</p>
 </li>
 </ul>
-<h2 id="Bilateral滤波"><a href="#Bilateral滤波" class="headerlink" title="Bilateral滤波"></a>Bilateral滤波</h2><ul>
+<h2 id="3-3-Bilateral滤波"><a href="#3-3-Bilateral滤波" class="headerlink" title="3.3. Bilateral滤波"></a>3.3. Bilateral滤波</h2><ul>
 <li>综合考虑有</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/19.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/20.jpg?raw=true" alt><br></div>
@@ -662,7 +662,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/22.jpg?raw=true" alt><br></div>
 
-<h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><ul>
+<h2 id="3-4-可视化"><a href="#3-4-可视化" class="headerlink" title="3.4. 可视化"></a>3.4. 可视化</h2><ul>
 <li>对于带有噪声的图片</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/条件随机场&amp;非局部均值去噪&amp;双边滤波/23.jpg?raw=true" alt><br></div>
@@ -1530,7 +1530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#条件随机场"><span class="nav-number">1.</span> <span class="nav-text">条件随机场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#词性标注中的特征函数"><span class="nav-number">1.1.</span> <span class="nav-text">词性标注中的特征函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征函数到概率"><span class="nav-number">1.2.</span> <span class="nav-text">特征函数到概率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征函数例子"><span class="nav-number">1.3.</span> <span class="nav-text">特征函数例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与逻辑回归比较"><span class="nav-number">1.4.</span> <span class="nav-text">与逻辑回归比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与HMM比较"><span class="nav-number">1.5.</span> <span class="nav-text">与HMM比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非局部均值去噪"><span class="nav-number">2.</span> <span class="nav-text">非局部均值去噪</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#算法实现"><span class="nav-number">2.1.</span> <span class="nav-text">算法实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bilateral-Filtering-双边滤波"><span class="nav-number">3.</span> <span class="nav-text">Bilateral Filtering(双边滤波)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2D高斯滤波"><span class="nav-number">3.1.</span> <span class="nav-text">2D高斯滤波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于像素值关系的权重"><span class="nav-number">3.2.</span> <span class="nav-text">基于像素值关系的权重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bilateral滤波"><span class="nav-number">3.3.</span> <span class="nav-text">Bilateral滤波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化"><span class="nav-number">3.4.</span> <span class="nav-text">可视化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-条件随机场"><span class="nav-text">1. 条件随机场</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-词性标注中的特征函数"><span class="nav-text">1.1. 词性标注中的特征函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-特征函数到概率"><span class="nav-text">1.2. 特征函数到概率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-特征函数例子"><span class="nav-text">1.3. 特征函数例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-与逻辑回归比较"><span class="nav-text">1.4. 与逻辑回归比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与HMM比较"><span class="nav-text">与HMM比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-非局部均值去噪"><span class="nav-text">2. 非局部均值去噪</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-算法实现"><span class="nav-text">2.1. 算法实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Bilateral-Filtering-双边滤波"><span class="nav-text">3. Bilateral Filtering(双边滤波)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-2D高斯滤波"><span class="nav-text">3.1. 2D高斯滤波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-基于像素值关系的权重"><span class="nav-text">3.2. 基于像素值关系的权重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Bilateral滤波"><span class="nav-text">3.3. Bilateral滤波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-可视化"><span class="nav-text">3.4. 可视化</span></a></li></ol></li></ol></div>
             
 
           </div>

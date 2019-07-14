@@ -484,13 +484,13 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/1.jpg?raw=true" alt><br></div>
 
-<h1 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h1><hr>
+<h1 id="1-模型结构"><a href="#1-模型结构" class="headerlink" title="1. 模型结构"></a>1. 模型结构</h1><hr>
 <p><strong>(Figure 2)</strong>模型包含Feature extraction, Matching network和Regression network.图中两个Feature extraction CNN共享同样的参数，即用同一个网络提取A和B的特征。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/2.jpg?raw=true" alt><br></div>
 
-<h1 id="Feature-extraction"><a href="#Feature-extraction" class="headerlink" title="Feature extraction"></a>Feature extraction</h1><hr>
+<h1 id="2-Feature-extraction"><a href="#2-Feature-extraction" class="headerlink" title="2. Feature extraction"></a>2. Feature extraction</h1><hr>
 <p>Use VGG16 network cropped at the pool4 layer (before the ReLU unit), followed by per-feature L2-normalization.</p>
-<h1 id="Matching-network"><a href="#Matching-network" class="headerlink" title="Matching network"></a>Matching network</h1><hr>
+<h1 id="3-Matching-network"><a href="#3-Matching-network" class="headerlink" title="3. Matching network"></a>3. Matching network</h1><hr>
 <p>采用Correlation map computation with CNN feature <strong>(Figure 3)</strong>. 对于特征图A中的某个空间点，计算特征图B中每个空间点与其的相关性（模拟几何变换机器学习算法）。此外，使用channel-wise normalization和ReLu操作amplify the score of the match.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/3.jpg?raw=true" alt><br></div>
 
@@ -502,11 +502,11 @@
 <p>此外，对correlation map进行normalization能够提升4个百分点。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/4.jpg?raw=true" alt><br></div>
 
-<h1 id="Regression-Network"><a href="#Regression-Network" class="headerlink" title="Regression Network"></a>Regression Network</h1><hr>
+<h1 id="4-Regression-Network"><a href="#4-Regression-Network" class="headerlink" title="4. Regression Network"></a>4. Regression Network</h1><hr>
 <p>考虑到参数、内存和计算量的问题，Regression Network <strong>(Figure 4)</strong>采用具有局部感知特性的Conv层，而非FC层。这种方法能够Work是因为对于AB相关性特征图上的某个空间点而言，它包含了B特征图中该点与A特征图中所有空间点的相似性得分，因此虽然使用局部性的Conv，但仍然具有全局性。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/5.jpg?raw=true" alt><br></div>
 
-<h1 id="Hierarchy-of-transformations"><a href="#Hierarchy-of-transformations" class="headerlink" title="Hierarchy of transformations"></a>Hierarchy of transformations</h1><hr>
+<h1 id="5-Hierarchy-of-transformations"><a href="#5-Hierarchy-of-transformations" class="headerlink" title="5. Hierarchy of transformations"></a>5. Hierarchy of transformations</h1><hr>
 <p>为了得到更精确的结果，论文提出了一个hierarchy模型 <strong>(Figure 5)</strong>。该模型包含2个stage。</p>
 <ul>
 <li>第一阶段estimate 6 parameters的affine transformation.</li>
@@ -514,11 +514,11 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/6.jpg?raw=true" alt><br></div>
 
-<h1 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h1><hr>
+<h1 id="6-Loss-Function"><a href="#6-Loss-Function" class="headerlink" title="6. Loss Function"></a>6. Loss Function</h1><hr>
 <p>$g_i$为uniform grid[-1, 1]，计算变换后的网格之间的距离平方。 </p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/7.jpg?raw=true" alt><br></div>
 
-<h1 id="Dateset"><a href="#Dateset" class="headerlink" title="Dateset"></a>Dateset</h1><hr>
+<h1 id="7-Dateset"><a href="#7-Dateset" class="headerlink" title="7. Dateset"></a>7. Dateset</h1><hr>
 <p>Generate each example by sampling image A from a public image dataset, and generating image B by applying a random transformation $T_θ$GT to image A.</p>
 
       
@@ -1350,7 +1350,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模型结构"><span class="nav-number">1.</span> <span class="nav-text">模型结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Feature-extraction"><span class="nav-number">2.</span> <span class="nav-text">Feature extraction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Matching-network"><span class="nav-number">3.</span> <span class="nav-text">Matching network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Regression-Network"><span class="nav-number">4.</span> <span class="nav-text">Regression Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hierarchy-of-transformations"><span class="nav-number">5.</span> <span class="nav-text">Hierarchy of transformations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loss-Function"><span class="nav-number">6.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dateset"><span class="nav-number">7.</span> <span class="nav-text">Dateset</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-模型结构"><span class="nav-text">1. 模型结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Feature-extraction"><span class="nav-text">2. Feature extraction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Matching-network"><span class="nav-text">3. Matching network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Regression-Network"><span class="nav-text">4. Regression Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Hierarchy-of-transformations"><span class="nav-text">5. Hierarchy of transformations</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Loss-Function"><span class="nav-text">6. Loss Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Dateset"><span class="nav-text">7. Dateset</span></a></li></ol></div>
             
 
           </div>

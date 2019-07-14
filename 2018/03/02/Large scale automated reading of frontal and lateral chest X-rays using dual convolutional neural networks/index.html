@@ -485,7 +485,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposes <strong>DualNet</strong></p>
 <ul>
 <li><strong>PA-lateral</strong> pair DualNet</li>
@@ -494,14 +494,14 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Large scale automated reading of frontal and lateral chest X-rays using dual convolutional neural networks/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-1-Related-Work"><a href="#1-1-Related-Work" class="headerlink" title="1.1. Related Work"></a>1.1. Related Work</h2><ul>
 <li>ChestX-ray14 dataset</li>
 <li>JSRT dataset</li>
 <li>BSE-JSRT dataset</li>
 <li>Indiana chest X-ray</li>
 <li>Shenzhen dataset</li>
 </ul>
-<h2 id="Limitation"><a href="#Limitation" class="headerlink" title="Limitation"></a>Limitation</h2><ul>
+<h2 id="1-2-Limitation"><a href="#1-2-Limitation" class="headerlink" title="1.2. Limitation"></a>1.2. Limitation</h2><ul>
 <li>medical image. <strong>12-bit</strong> or greater</li>
 <li>make no distinction between <strong>PA and AP</strong><ul>
 <li><strong>cardiomegaly</strong> can only be accurately assessed in <strong>PA</strong> image</li>
@@ -511,13 +511,13 @@
 </ul>
 </li>
 </ul>
-<h2 id="Network-amp-Details"><a href="#Network-amp-Details" class="headerlink" title="Network &amp; Details"></a>Network &amp; Details</h2><ul>
+<h2 id="1-3-Network-amp-Details"><a href="#1-3-Network-amp-Details" class="headerlink" title="1.3. Network &amp; Details"></a>1.3. Network &amp; Details</h2><ul>
 <li>replace 3-channel to <strong>1-channel</strong></li>
 <li><strong>four denseblock (32 growth rate)</strong> per layer</li>
 <li>no data augmentation</li>
 <li>Adam with 0.001~0.02 (<strong>Triangular2 policy</strong>)</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-4-Dataset"><a href="#1-4-Dataset" class="headerlink" title="1.4. Dataset"></a>1.4. Dataset</h2><ul>
 <li><p>80-20-10</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Large scale automated reading of frontal and lateral chest X-rays using dual convolutional neural networks/2.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Large scale automated reading of frontal and lateral chest X-rays using dual convolutional neural networks/3.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Large scale automated reading of frontal and lateral chest X-rays using dual convolutional neural networks/4.jpg?raw=true" alt><br></div>
 </li>
@@ -525,7 +525,7 @@
 </li>
 <li>normalize from [0, 2^12-1] to <strong>[0, 1]</strong></li>
 </ul>
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Large scale automated reading of frontal and lateral chest X-rays using dual convolutional neural networks/5.jpg?raw=true" alt><br></div>
+<h2 id="1-5-Results"><a href="#1-5-Results" class="headerlink" title="1.5. Results"></a>1.5. Results</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Large scale automated reading of frontal and lateral chest X-rays using dual convolutional neural networks/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>PA</strong> results in larger AUC for <strong>atelectasis, cardiomegaly, fibrosis, infiltration and pleural thickening</strong></li>
@@ -533,7 +533,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Large scale automated reading of frontal and lateral chest X-rays using dual convolutional neural networks/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><ul>
+<h2 id="1-6-Future-Work"><a href="#1-6-Future-Work" class="headerlink" title="1.6. Future Work"></a>1.6. Future Work</h2><ul>
 <li>improvement. data augmentation, pixel normalization</li>
 <li>patient’s history and current clinical record</li>
 </ul>
@@ -1379,7 +1379,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.1.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limitation"><span class="nav-number">1.2.</span> <span class="nav-text">Limitation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-amp-Details"><span class="nav-number">1.3.</span> <span class="nav-text">Network &amp; Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.4.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">1.5.</span> <span class="nav-text">Results</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Work"><span class="nav-number">1.6.</span> <span class="nav-text">Future Work</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Work"><span class="nav-text">1.1. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Limitation"><span class="nav-text">1.2. Limitation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Network-amp-Details"><span class="nav-text">1.3. Network &amp; Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Dataset"><span class="nav-text">1.4. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Results"><span class="nav-text">1.5. Results</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Future-Work"><span class="nav-text">1.6. Future Work</span></a></li></ol></li></ol></div>
             
 
           </div>

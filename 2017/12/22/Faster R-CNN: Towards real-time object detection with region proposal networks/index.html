@@ -483,7 +483,7 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>SPPnet和Fast R-CNN通过<strong>共享特征图</strong>的机制解决了proposal计算冗余的问题，因此网络的<strong>瓶颈在于region proposal计算</strong>。由于</p>
 <ul>
 <li>神经网络通过GPU运算</li>
@@ -491,7 +491,7 @@
 </ul>
 <p>两者在时间上差别太大，在GPU上重新实现region proposal算法虽然能解决问题，但是并没有利用到计算共享的思想。</p>
 <p>因此，论文提出Region Proposal Network (RPN). RPN是全卷积网络，模拟预测每个position的object bound和score, nearly cost free (10ms/image).</p>
-<h2 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h2><ul>
+<h2 id="1-1-模型结构"><a href="#1-1-模型结构" class="headerlink" title="1.1. 模型结构"></a>1.1. 模型结构</h2><ul>
 <li>论文将RPN与Fast R-CNN合并，称为Faster R-CNN. RPN与Fast R-CNN共享输入图像的卷积特征图conv_map.<ul>
 <li><strong>RPN</strong>对conv_map进行计算输出RoIs，类似于attention机制</li>
 <li><strong>Fast R-CNN</strong>基于RoIs进行计算输出对象框、对象置信度</li>
@@ -503,19 +503,19 @@
 <ul>
 <li>论文使用的VGG16网络，5fps on GPU. Faster R-CNN在VOC 2007/2012和MS COCO数据集达到state of the art。</li>
 </ul>
-<h2 id="多尺寸机制"><a href="#多尺寸机制" class="headerlink" title="多尺寸机制"></a>多尺寸机制</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/2.jpg?raw=true" alt><br></div>
+<h2 id="1-2-多尺寸机制"><a href="#1-2-多尺寸机制" class="headerlink" title="1.2. 多尺寸机制"></a>1.2. 多尺寸机制</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/2.jpg?raw=true" alt><br></div>
 
 
 <hr>
-<h1 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h1><hr>
+<h1 id="2-Faster-R-CNN"><a href="#2-Faster-R-CNN" class="headerlink" title="2. Faster R-CNN"></a>2. Faster R-CNN</h1><hr>
 <p>论文中的Faster R-CNN使用了两种网络</p>
 <ul>
 <li><strong>ZF net</strong> RPN与Faster R-CNN共享5层网络</li>
 <li><strong>VGG16</strong> RPN与Faster R-CNN共享13层网络</li>
 </ul>
 <hr>
-<h1 id="RPN"><a href="#RPN" class="headerlink" title="RPN"></a>RPN</h1><hr>
-<h2 id="RPN结构"><a href="#RPN结构" class="headerlink" title="RPN结构"></a>RPN结构</h2><p>RPN网络有3个Conv层组成</p>
+<h1 id="3-RPN"><a href="#3-RPN" class="headerlink" title="3. RPN"></a>3. RPN</h1><hr>
+<h2 id="3-1-RPN结构"><a href="#3-1-RPN结构" class="headerlink" title="3.1. RPN结构"></a>3.1. RPN结构</h2><p>RPN网络有3个Conv层组成</p>
 <ul>
 <li><strong>第一层Conv</strong>. 256 kernels for <strong>ZF net</strong>, 512 kernels for <strong>VGG16</strong>, n*n size (论文使用n=3)</li>
 <li><strong>第二层Conv(cls)</strong>. 2<em>k_anchors kernels, 1</em>1 size</li>
@@ -523,20 +523,20 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Anchors"><a href="#Anchors" class="headerlink" title="Anchors"></a>Anchors</h2><p>对<strong>共享特征图</strong>上的每个点模拟生成k个anchors box. 对于一张h<em>w的RPN特征图，共有h</em>w*k个anchor box.上述方法为<strong>多尺寸anchors</strong>, 因此模型中只使用单尺寸输入图片和单尺寸卷积核。</p>
-<h2 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h2><ul>
+<h2 id="3-2-Anchors"><a href="#3-2-Anchors" class="headerlink" title="3.2. Anchors"></a>3.2. Anchors</h2><p>对<strong>共享特征图</strong>上的每个点模拟生成k个anchors box. 对于一张h<em>w的RPN特征图，共有h</em>w*k个anchor box.上述方法为<strong>多尺寸anchors</strong>, 因此模型中只使用单尺寸输入图片和单尺寸卷积核。</p>
+<h2 id="3-3-测试阶段"><a href="#3-3-测试阶段" class="headerlink" title="3.3. 测试阶段"></a>3.3. 测试阶段</h2><ul>
 <li>输入一张图片，图片经过<strong>共享卷积层</strong>生成<strong>共享特征图</strong></li>
 <li>共享特征图经过RPN网络生成whk个<strong>anchor box</strong> (reg)和对应的whk个前景/背景<strong>分类概率</strong> (cls)</li>
 <li>选出<strong>topN</strong>个前景概率最大anchor box，并使用nms算法对anchor box进行过滤，得到最终输入到Fast R-CNN网络中的<strong>RoI</strong> (proposal或anchor box)</li>
 </ul>
-<h2 id="训练阶段"><a href="#训练阶段" class="headerlink" title="训练阶段"></a>训练阶段</h2><p>与测试阶段的区别在于</p>
+<h2 id="3-4-训练阶段"><a href="#3-4-训练阶段" class="headerlink" title="3.4. 训练阶段"></a>3.4. 训练阶段</h2><p>与测试阶段的区别在于</p>
 <ul>
 <li>通过<strong>nms</strong>生成RoI的<strong>数量</strong>不同（例如github代码中测试阶段保留300 RoI，训练阶段保留2000 RoI）</li>
 <li><strong>计算loss</strong>（分类交叉熵和预测框的误差）</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><p><strong>基于gt_box定义anchor box为正例还是负例</strong></p>
+<h2 id="3-5-Loss-Function"><a href="#3-5-Loss-Function" class="headerlink" title="3.5. Loss Function"></a>3.5. Loss Function</h2><p><strong>基于gt_box定义anchor box为正例还是负例</strong></p>
 <ul>
 <li>与gt_box IoU最高的anchor box为正例</li>
 <li>与gt_box IoU大于0.7的anchor box为正例</li>
@@ -559,18 +559,18 @@
 <li>x_{a}表示anchor</li>
 <li>x^{*}表示ground truth</li>
 </ul>
-<h2 id="训练细节"><a href="#训练细节" class="headerlink" title="训练细节"></a>训练细节</h2><ul>
+<h2 id="3-6-训练细节"><a href="#3-6-训练细节" class="headerlink" title="3.6. 训练细节"></a>3.6. 训练细节</h2><ul>
 <li>随机抽取一张图片中的256个anchor计算一个minibatch中的loss. 在这256个anchor中，正负例数量为1:1。如果一张图片中正例少于128个，使用负例填充</li>
 <li>模型使用ImageNet预训练权重</li>
 </ul>
-<h2 id="迭代训练"><a href="#迭代训练" class="headerlink" title="迭代训练"></a>迭代训练</h2><p>每次迭代分为四个步骤</p>
+<h2 id="3-7-迭代训练"><a href="#3-7-迭代训练" class="headerlink" title="3.7. 迭代训练"></a>3.7. 迭代训练</h2><p>每次迭代分为四个步骤</p>
 <ul>
 <li>预训练权重初始化模型，训练RPN</li>
 <li>使用RPN产生RoI，训练检测网络Fast R-CNN</li>
 <li>使用检测网络权重初始化RPN，固定共享层，微调RPN</li>
 <li>固定共享层，微调检测网络剩余部分</li>
 </ul>
-<h2 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h2><ul>
+<h2 id="3-8-实现细节"><a href="#3-8-实现细节" class="headerlink" title="3.8. 实现细节"></a>3.8. 实现细节</h2><ul>
 <li>使用单尺寸图片，将最短边resize到s=600.</li>
 <li>anchor scale采用128<em>128, 256</em>256, 512*512</li>
 <li>aspect ratios采用1:1, 1:2, 2:1</li>
@@ -581,19 +581,19 @@
 <li>对于1000<em>600的图片，共大约20000(60</em>40*9)个anchor。剔除超过边界的anchor后，剩余大约6000 anchor for training。选出前景概率topN的anchor，并使用0.7阈值的NMS算法过滤，2000个用于训练的RoI。</li>
 </ul>
 <hr>
-<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1><hr>
-<h2 id="VOC数据集"><a href="#VOC数据集" class="headerlink" title="VOC数据集"></a>VOC数据集</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/8.jpg?raw=true" alt><br></div>
+<h1 id="4-实验"><a href="#4-实验" class="headerlink" title="4. 实验"></a>4. 实验</h1><hr>
+<h2 id="4-1-VOC数据集"><a href="#4-1-VOC数据集" class="headerlink" title="4.1. VOC数据集"></a>4.1. VOC数据集</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/8.jpg?raw=true" alt><br></div>
 
-<h2 id="耗时"><a href="#耗时" class="headerlink" title="耗时"></a>耗时</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/9.jpg?raw=true" alt><br></div>
+<h2 id="4-2-耗时"><a href="#4-2-耗时" class="headerlink" title="4.2. 耗时"></a>4.2. 耗时</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/9.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Anchor超参数"><a href="#Anchor超参数" class="headerlink" title="Anchor超参数"></a>Anchor超参数</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/10.jpg?raw=true" alt><br></div>
+<h2 id="4-3-Anchor超参数"><a href="#4-3-Anchor超参数" class="headerlink" title="4.3. Anchor超参数"></a>4.3. Anchor超参数</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/10.jpg?raw=true" alt><br></div>
 
-<h2 id="λ超参数"><a href="#λ超参数" class="headerlink" title="λ超参数"></a>λ超参数</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/11.jpg?raw=true" alt><br></div>
+<h2 id="4-4-λ超参数"><a href="#4-4-λ超参数" class="headerlink" title="4.4. λ超参数"></a>4.4. λ超参数</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/11.jpg?raw=true" alt><br></div>
 
 
 <hr>
-<h1 id="代码流程图"><a href="#代码流程图" class="headerlink" title="代码流程图"></a>代码流程图</h1><hr>
+<h1 id="5-代码流程图"><a href="#5-代码流程图" class="headerlink" title="5. 代码流程图"></a>5. 代码流程图</h1><hr>
 <p>RoI是相对于输入图像而言的，因此在将RoI和共享特征图输入到RoI Pooling层的同时，还会输入一个scale参数，也称为feature_stride（表示共享特征图与输入图像的比例）。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Faster R-CNN: Towards real-time object detection with region proposal networks/12.jpg?raw=true" alt><br></div>
 
@@ -1433,7 +1433,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型结构"><span class="nav-number">1.1.</span> <span class="nav-text">模型结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多尺寸机制"><span class="nav-number">1.2.</span> <span class="nav-text">多尺寸机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Faster-R-CNN"><span class="nav-number">2.</span> <span class="nav-text">Faster R-CNN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RPN"><span class="nav-number">3.</span> <span class="nav-text">RPN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RPN结构"><span class="nav-number">3.1.</span> <span class="nav-text">RPN结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anchors"><span class="nav-number">3.2.</span> <span class="nav-text">Anchors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试阶段"><span class="nav-number">3.3.</span> <span class="nav-text">测试阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练阶段"><span class="nav-number">3.4.</span> <span class="nav-text">训练阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">3.5.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练细节"><span class="nav-number">3.6.</span> <span class="nav-text">训练细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代训练"><span class="nav-number">3.7.</span> <span class="nav-text">迭代训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现细节"><span class="nav-number">3.8.</span> <span class="nav-text">实现细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验"><span class="nav-number">4.</span> <span class="nav-text">实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VOC数据集"><span class="nav-number">4.1.</span> <span class="nav-text">VOC数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耗时"><span class="nav-number">4.2.</span> <span class="nav-text">耗时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anchor超参数"><span class="nav-number">4.3.</span> <span class="nav-text">Anchor超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#λ超参数"><span class="nav-number">4.4.</span> <span class="nav-text">λ超参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码流程图"><span class="nav-number">5.</span> <span class="nav-text">代码流程图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-模型结构"><span class="nav-text">1.1. 模型结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-多尺寸机制"><span class="nav-text">1.2. 多尺寸机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Faster-R-CNN"><span class="nav-text">2. Faster R-CNN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-RPN"><span class="nav-text">3. RPN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-RPN结构"><span class="nav-text">3.1. RPN结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Anchors"><span class="nav-text">3.2. Anchors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-测试阶段"><span class="nav-text">3.3. 测试阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-训练阶段"><span class="nav-text">3.4. 训练阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Loss-Function"><span class="nav-text">3.5. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-训练细节"><span class="nav-text">3.6. 训练细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-迭代训练"><span class="nav-text">3.7. 迭代训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-实现细节"><span class="nav-text">3.8. 实现细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-实验"><span class="nav-text">4. 实验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-VOC数据集"><span class="nav-text">4.1. VOC数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-耗时"><span class="nav-text">4.2. 耗时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Anchor超参数"><span class="nav-text">4.3. Anchor超参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-λ超参数"><span class="nav-text">4.4. λ超参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-代码流程图"><span class="nav-text">5. 代码流程图</span></a></li></ol></div>
             
 
           </div>

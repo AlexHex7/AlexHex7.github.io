@@ -489,7 +489,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it attempted to <strong>synthesis</strong> and meet <strong>two requirements</strong></p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/1.jpg?raw=true" alt><br></div>
 
@@ -498,7 +498,7 @@
 <li>realistic while matching the target text description</li>
 <li><strong>maintain other image features</strong> that are <strong>irrelevant</strong> to the text description</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-1-Related-Work"><a href="#1-1-Related-Work" class="headerlink" title="1.1. Related Work"></a>1.1. Related Work</h2><ul>
 <li>deterministic networks</li>
 <li>VAE</li>
 <li>autoregression</li>
@@ -507,43 +507,43 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><ul>
+<h2 id="2-1-Architecture"><a href="#2-1-Architecture" class="headerlink" title="2.1. Architecture"></a>2.1. Architecture</h2><ul>
 <li><strong>CA technique</strong> from StackGAN</li>
 <li><strong>residual</strong>. output image would retain similar structure of the source image</li>
 </ul>
-<h2 id="Adaptive-Loss-for-Semantic-Image-Synthesis"><a href="#Adaptive-Loss-for-Semantic-Image-Synthesis" class="headerlink" title="Adaptive Loss for Semantic Image Synthesis"></a>Adaptive Loss for Semantic Image Synthesis</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Adaptive-Loss-for-Semantic-Image-Synthesis"><a href="#2-2-Adaptive-Loss-for-Semantic-Image-Synthesis" class="headerlink" title="2.2. Adaptive Loss for Semantic Image Synthesis"></a>2.2. Adaptive Loss for Semantic Image Synthesis</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>+. positive</li>
 <li>-. negative</li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/4.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Loss-Function"><a href="#2-3-Loss-Function" class="headerlink" title="2.3. Loss Function"></a>2.3. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Improving-Image-Feature-Representation"><a href="#Improving-Image-Feature-Representation" class="headerlink" title="Improving Image Feature Representation"></a>Improving Image Feature Representation</h2><ul>
+<h2 id="2-4-Improving-Image-Feature-Representation"><a href="#2-4-Improving-Image-Feature-Representation" class="headerlink" title="2.4. Improving Image Feature Representation"></a>2.4. Improving Image Feature Representation</h2><ul>
 <li>pretrained VGG of conv4</li>
 </ul>
-<h2 id="Visual-Semantic-Text-Embedding"><a href="#Visual-Semantic-Text-Embedding" class="headerlink" title="Visual-Semantic Text Embedding"></a>Visual-Semantic Text Embedding</h2><ul>
+<h2 id="2-5-Visual-Semantic-Text-Embedding"><a href="#2-5-Visual-Semantic-Text-Embedding" class="headerlink" title="2.5. Visual-Semantic Text Embedding"></a>2.5. Visual-Semantic Text Embedding</h2><ul>
 <li>pair-wise ranking loss<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/5.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Details"><a href="#3-1-Details" class="headerlink" title="3.1. Details"></a>3.1. Details</h2><ul>
 <li>0.0002 Adam with 0.5 momentum, decrease by 0.5</li>
 <li>batch size 64</li>
 <li>flipping, rotating, zooming, cropping</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/7.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Comparison"><a href="#3-2-Comparison" class="headerlink" title="3.2. Comparison"></a>3.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Interpolation"><a href="#Interpolation" class="headerlink" title="Interpolation"></a>Interpolation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/9.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Interpolation"><a href="#3-3-Interpolation" class="headerlink" title="3.3. Interpolation"></a>3.3. Interpolation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/9.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Variety"><a href="#Variety" class="headerlink" title="Variety"></a>Variety</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/10.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Variety"><a href="#3-4-Variety" class="headerlink" title="3.4. Variety"></a>3.4. Variety</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Semantic image synthesis via adversarial learning/10.jpg?raw=true" alt><br></div>
 
 
 
@@ -1385,7 +1385,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.1.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture"><span class="nav-number">2.1.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaptive-Loss-for-Semantic-Image-Synthesis"><span class="nav-number">2.2.</span> <span class="nav-text">Adaptive Loss for Semantic Image Synthesis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.3.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improving-Image-Feature-Representation"><span class="nav-number">2.4.</span> <span class="nav-text">Improving Image Feature Representation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Semantic-Text-Embedding"><span class="nav-number">2.5.</span> <span class="nav-text">Visual-Semantic Text Embedding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpolation"><span class="nav-number">3.3.</span> <span class="nav-text">Interpolation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variety"><span class="nav-number">3.4.</span> <span class="nav-text">Variety</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Work"><span class="nav-text">1.1. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Architecture"><span class="nav-text">2.1. Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Adaptive-Loss-for-Semantic-Image-Synthesis"><span class="nav-text">2.2. Adaptive Loss for Semantic Image Synthesis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Loss-Function"><span class="nav-text">2.3. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Improving-Image-Feature-Representation"><span class="nav-text">2.4. Improving Image Feature Representation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Visual-Semantic-Text-Embedding"><span class="nav-text">2.5. Visual-Semantic Text Embedding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Details"><span class="nav-text">3.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Comparison"><span class="nav-text">3.2. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Interpolation"><span class="nav-text">3.3. Interpolation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Variety"><span class="nav-text">3.4. Variety</span></a></li></ol></li></ol></div>
             
 
           </div>

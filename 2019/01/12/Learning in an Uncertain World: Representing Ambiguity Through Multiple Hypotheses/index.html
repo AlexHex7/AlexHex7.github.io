@@ -479,8 +479,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>uncertainty arises from the way data is labeled (label of <strong>occluded joints</strong> in pose)</li>
 </ul>
 <p>In this paper</p>
@@ -496,16 +496,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li>Multiple Choice Learning</li>
 <li>Multi-label Recognition</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="SHP"><a href="#SHP" class="headerlink" title="SHP"></a>SHP</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/1.jpg?raw=true" alt><br></div>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-SHP"><a href="#2-1-SHP" class="headerlink" title="2.1. SHP"></a>2.1. SHP</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/1.jpg?raw=true" alt><br></div>
 
-<h2 id="MHP"><a href="#MHP" class="headerlink" title="MHP"></a>MHP</h2><h3 id="Meta-Loss-Function"><a href="#Meta-Loss-Function" class="headerlink" title="Meta Loss Function"></a>Meta Loss Function</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/2.jpg?raw=true" alt><br></div>
+<h2 id="2-2-MHP"><a href="#2-2-MHP" class="headerlink" title="2.2. MHP"></a>2.2. MHP</h2><h3 id="2-2-1-Meta-Loss-Function"><a href="#2-2-1-Meta-Loss-Function" class="headerlink" title="2.2.1. Meta Loss Function"></a>2.2.1. Meta Loss Function</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>M</strong>. the number of predictions (<strong>replicate</strong> output layer M times with differ init)</li>
@@ -513,24 +513,24 @@
 <li>f_j. the j-th predictor among M predictors</li>
 </ul>
 <p>Meta loss function can be regarded as <strong>original loss function weighted by Deltal</strong></p>
-<h3 id="Procedure"><a href="#Procedure" class="headerlink" title="Procedure"></a>Procedure</h3><ul>
+<h3 id="2-2-2-Procedure"><a href="#2-2-2-Procedure" class="headerlink" title="2.2.2. Procedure"></a>2.2.2. Procedure</h3><ul>
 <li>create <strong>M predictors</strong>, then <strong>forward</strong> each sample</li>
 <li>build y_i(x)</li>
 <li>compute gradient and update</li>
 </ul>
-<h3 id="Relax-Delta"><a href="#Relax-Delta" class="headerlink" title="Relax Delta"></a>Relax Delta</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/3.jpg?raw=true" alt><br></div>
+<h3 id="2-2-3-Relax-Delta"><a href="#2-2-3-Relax-Delta" class="headerlink" title="2.2.3. Relax Delta"></a>2.2.3. Relax Delta</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>solve the problem</strong>: predictor may be initialized so far from the target labels y that all y lie in a single Voronoi cell k</li>
 <li>Additionally, drop out predictions with some low probability (1%) to introduce some randomness in the selection of the best hypothesis, such that weaker predictions will not vanish during training</li>
 </ul>
-<h3 id="Hyper-parameter-M"><a href="#Hyper-parameter-M" class="headerlink" title="Hyper-parameter M"></a>Hyper-parameter M</h3><ul>
+<h3 id="2-2-4-Hyper-parameter-M"><a href="#2-2-4-Hyper-parameter-M" class="headerlink" title="2.2.4. Hyper-parameter M"></a>2.2.4. Hyper-parameter M</h3><ul>
 <li>almost every method that <strong>models posterior probabilities needs some form of hand-tuned model parameter</strong> (k-means, MDNs)</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Pose"><a href="#Pose" class="headerlink" title="Pose"></a>Pose</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/4.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Pose"><a href="#3-1-Pose" class="headerlink" title="3.1. Pose"></a>3.1. Pose</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>SHP</strong>. 59.7%</li>
@@ -541,15 +541,15 @@
 <li><p>with increasing number of predictions the method is able to model the output space more and more-precisely</p>
 </li>
 </ul>
-<h2 id="Future-Frame-Predictions"><a href="#Future-Frame-Predictions" class="headerlink" title="Future Frame Predictions"></a>Future Frame Predictions</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/6.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Future-Frame-Predictions"><a href="#3-2-Future-Frame-Predictions" class="headerlink" title="3.2. Future Frame Predictions"></a>3.2. Future Frame Predictions</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/6.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><ul>
+<h2 id="3-3-Classification"><a href="#3-3-Classification" class="headerlink" title="3.3. Classification"></a>3.3. Classification</h2><ul>
 <li>if an image contains two bikes and a person, every time the image is sampled during training it will be labeled either as bike or person with 50%</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning in an Uncertain World: Representing Ambiguity Through Multiple Hypotheses/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h2><ul>
+<h2 id="3-4-Segmentation"><a href="#3-4-Segmentation" class="headerlink" title="3.4. Segmentation"></a>3.4. Segmentation</h2><ul>
 <li>MHP (70.3%) vs MCL (69.1%)</li>
 </ul>
 
@@ -1386,7 +1386,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SHP"><span class="nav-number">2.1.</span> <span class="nav-text">SHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MHP"><span class="nav-number">2.2.</span> <span class="nav-text">MHP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Meta-Loss-Function"><span class="nav-number">2.2.1.</span> <span class="nav-text">Meta Loss Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Procedure"><span class="nav-number">2.2.2.</span> <span class="nav-text">Procedure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Relax-Delta"><span class="nav-number">2.2.3.</span> <span class="nav-text">Relax Delta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hyper-parameter-M"><span class="nav-number">2.2.4.</span> <span class="nav-text">Hyper-parameter M</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pose"><span class="nav-number">3.1.</span> <span class="nav-text">Pose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Frame-Predictions"><span class="nav-number">3.2.</span> <span class="nav-text">Future Frame Predictions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification"><span class="nav-number">3.3.</span> <span class="nav-text">Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation"><span class="nav-number">3.4.</span> <span class="nav-text">Segmentation</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-SHP"><span class="nav-text">2.1. SHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-MHP"><span class="nav-text">2.2. MHP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Meta-Loss-Function"><span class="nav-text">2.2.1. Meta Loss Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Procedure"><span class="nav-text">2.2.2. Procedure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-Relax-Delta"><span class="nav-text">2.2.3. Relax Delta</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-Hyper-parameter-M"><span class="nav-text">2.2.4. Hyper-parameter M</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Pose"><span class="nav-text">3.1. Pose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Future-Frame-Predictions"><span class="nav-text">3.2. Future Frame Predictions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Classification"><span class="nav-text">3.3. Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Segmentation"><span class="nav-text">3.4. Segmentation</span></a></li></ol></li></ol></div>
             
 
           </div>

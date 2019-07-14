@@ -489,8 +489,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>Rain streak correspond to <strong>high-frequency</strong></li>
 <li>Haze correspond to <strong>dark channel</strong></li>
 </ul>
@@ -499,7 +499,7 @@
 <li><strong>Haar wavelet transform</strong></li>
 <li>Extract <strong>dark channel</strong> as input</li>
 </ul>
-<h2 id="Wavelet-Transformation"><a href="#Wavelet-Transformation" class="headerlink" title="Wavelet Transformation"></a>Wavelet Transformation</h2><ul>
+<h2 id="1-2-Wavelet-Transformation"><a href="#1-2-Wavelet-Transformation" class="headerlink" title="1.2. Wavelet Transformation"></a>1.2. Wavelet Transformation</h2><ul>
 <li>LL. background</li>
 <li>HL. vertical</li>
 <li>LH. horizontal</li>
@@ -507,7 +507,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Simple-Rain-Removal-Network-SRR-net"><a href="#Simple-Rain-Removal-Network-SRR-net" class="headerlink" title="Simple Rain Removal Network (SRR-net)"></a>Simple Rain Removal Network (SRR-net)</h2><p>Spectrum of an image loses a lot of great properties such as local receptive field, which makes it difficult to use convolutional neural network</p>
+<h2 id="1-3-Simple-Rain-Removal-Network-SRR-net"><a href="#1-3-Simple-Rain-Removal-Network-SRR-net" class="headerlink" title="1.3. Simple Rain Removal Network (SRR-net)"></a>1.3. Simple Rain Removal Network (SRR-net)</h2><p>Spectrum of an image loses a lot of great properties such as local receptive field, which makes it difficult to use convolutional neural network</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/2.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -519,7 +519,7 @@
 
 </li>
 </ul>
-<h2 id="DJRHR-net"><a href="#DJRHR-net" class="headerlink" title="DJRHR-net"></a>DJRHR-net</h2><p>It is more effective to add the artificial feature directly than the features learned by the deep network.</p>
+<h2 id="1-4-DJRHR-net"><a href="#1-4-DJRHR-net" class="headerlink" title="1.4. DJRHR-net"></a>1.4. DJRHR-net</h2><p>It is more effective to add the artificial feature directly than the features learned by the deep network.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/5.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -531,32 +531,32 @@
 
 </li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><h3 id="TrainSetA"><a href="#TrainSetA" class="headerlink" title="TrainSetA"></a>TrainSetA</h3><ul>
+<h2 id="1-5-Dataset"><a href="#1-5-Dataset" class="headerlink" title="1.5. Dataset"></a>1.5. Dataset</h2><h3 id="1-5-1-TrainSetA"><a href="#1-5-1-TrainSetA" class="headerlink" title="1.5.1. TrainSetA"></a>1.5.1. TrainSetA</h3><ul>
 <li>Directly used Deep Detail Network’s</li>
 <li>Without haze veil</li>
 <li>12 type rain streaks</li>
 </ul>
-<h3 id="TrainSetB"><a href="#TrainSetB" class="headerlink" title="TrainSetB"></a>TrainSetB</h3><ul>
+<h3 id="1-5-2-TrainSetB"><a href="#1-5-2-TrainSetB" class="headerlink" title="1.5.2. TrainSetB"></a>1.5.2. TrainSetB</h3><ul>
 <li><strong>1449 RGBD</strong> from NYU Depth V2</li>
 <li>12 type rain streaks</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Training-Setup"><a href="#Training-Setup" class="headerlink" title="Training Setup"></a>Training Setup</h2><ul>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Training-Setup"><a href="#2-1-Training-Setup" class="headerlink" title="2.1. Training Setup"></a>2.1. Training Setup</h2><ul>
 <li>Dense Block</li>
 <li>Remove BN and pooling to get better result</li>
 </ul>
-<h2 id="Metric"><a href="#Metric" class="headerlink" title="Metric"></a>Metric</h2><ul>
+<h2 id="2-2-Metric"><a href="#2-2-Metric" class="headerlink" title="2.2. Metric"></a>2.2. Metric</h2><ul>
 <li>PSNR</li>
 <li>SSIM</li>
 <li>NIQE. the lower the better</li>
 </ul>
-<h2 id="Synthetic"><a href="#Synthetic" class="headerlink" title="Synthetic"></a>Synthetic</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/8.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Synthetic"><a href="#2-3-Synthetic" class="headerlink" title="2.3. Synthetic"></a>2.3. Synthetic</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Real"><a href="#Real" class="headerlink" title="Real"></a>Real</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/9.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Real"><a href="#2-4-Real" class="headerlink" title="2.4. Real"></a>2.4. Real</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/9.jpg?raw=true" alt><br></div>
 
-<h2 id="DenseBlock-parameters"><a href="#DenseBlock-parameters" class="headerlink" title="DenseBlock parameters"></a>DenseBlock parameters</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/10.jpg?raw=true" alt><br></div>
+<h2 id="2-5-DenseBlock-parameters"><a href="#2-5-DenseBlock-parameters" class="headerlink" title="2.5. DenseBlock parameters"></a>2.5. DenseBlock parameters</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep joint rain and haze removal from single images/10.jpg?raw=true" alt><br></div>
 
 
 
@@ -1400,7 +1400,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wavelet-Transformation"><span class="nav-number">1.2.</span> <span class="nav-text">Wavelet Transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simple-Rain-Removal-Network-SRR-net"><span class="nav-number">1.3.</span> <span class="nav-text">Simple Rain Removal Network (SRR-net)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DJRHR-net"><span class="nav-number">1.4.</span> <span class="nav-text">DJRHR-net</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.5.</span> <span class="nav-text">Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TrainSetA"><span class="nav-number">1.5.1.</span> <span class="nav-text">TrainSetA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TrainSetB"><span class="nav-number">1.5.2.</span> <span class="nav-text">TrainSetB</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-Setup"><span class="nav-number">2.1.</span> <span class="nav-text">Training Setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Metric"><span class="nav-number">2.2.</span> <span class="nav-text">Metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synthetic"><span class="nav-number">2.3.</span> <span class="nav-text">Synthetic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Real"><span class="nav-number">2.4.</span> <span class="nav-text">Real</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DenseBlock-parameters"><span class="nav-number">2.5.</span> <span class="nav-text">DenseBlock parameters</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Wavelet-Transformation"><span class="nav-text">1.2. Wavelet Transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Simple-Rain-Removal-Network-SRR-net"><span class="nav-text">1.3. Simple Rain Removal Network (SRR-net)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-DJRHR-net"><span class="nav-text">1.4. DJRHR-net</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Dataset"><span class="nav-text">1.5. Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-TrainSetA"><span class="nav-text">1.5.1. TrainSetA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-2-TrainSetB"><span class="nav-text">1.5.2. TrainSetB</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Training-Setup"><span class="nav-text">2.1. Training Setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Metric"><span class="nav-text">2.2. Metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Synthetic"><span class="nav-text">2.3. Synthetic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Real"><span class="nav-text">2.4. Real</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-DenseBlock-parameters"><span class="nav-text">2.5. DenseBlock parameters</span></a></li></ol></li></ol></div>
             
 
           </div>

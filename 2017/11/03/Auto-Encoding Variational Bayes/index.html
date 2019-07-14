@@ -505,12 +505,12 @@
 <p><strong>(Figure 1)</strong> 由于通过(可观察的)变量X推断(不可观察) <strong>latent variables</strong>比较困难 (即<strong>后验概率分布p(z|x)</strong>)，论文提出<strong>VAE</strong> (变分自编码器，variational auto-encoder)结构以及<strong>AEVB</strong> (自编码变分贝叶斯)算法，即通过<strong>SGVB</strong> (随机梯度变分贝叶斯，Stochastic Gradient Variational Bayes)估计使得构造的<strong>q(z|x)分布</strong>近似难以计算的<strong>p(z|x)分布</strong>。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/1.jpg?raw=true" alt><br></div>
 
-<h1 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h1><hr>
+<h1 id="1-Contribution"><a href="#1-Contribution" class="headerlink" title="1. Contribution"></a>1. Contribution</h1><hr>
 <ul>
 <li>通过<strong>reparameterization</strong>方法确保梯度能够回传。</li>
 <li>通过<strong>下界估计</strong>(变分贝叶斯推导得出)近似后验概率分布。</li>
 </ul>
-<h1 id="知识点延伸"><a href="#知识点延伸" class="headerlink" title="知识点延伸"></a>知识点延伸</h1><hr>
+<h1 id="2-知识点延伸"><a href="#2-知识点延伸" class="headerlink" title="2. 知识点延伸"></a>2. 知识点延伸</h1><hr>
 <ul>
 <li><strong>相对熵D(P||Q)=交叉熵H(P, Q) - 熵H(Q).</strong></li>
 <li>熵：真实分布P的平均编码长度(大于等于0)。</li>
@@ -537,7 +537,7 @@
 <ul>
 <li>VAE <a href="https://zhuanlan.zhihu.com/p/22464760" target="_blank" rel="noopener">链接</a></li>
 </ul>
-<h1 id="SGVB"><a href="#SGVB" class="headerlink" title="SGVB"></a>SGVB</h1><hr>
+<h1 id="3-SGVB"><a href="#3-SGVB" class="headerlink" title="3. SGVB"></a>3. SGVB</h1><hr>
 <ul>
 <li><p>基于变分贝叶斯推导得出的下界估计，利用平均场定理推出最终需要满足的条件(涉及到期望计算)，<strong>但分析期望相关的解仍然存在困难</strong>。</p>
 </li>
@@ -549,7 +549,7 @@
 <ul>
 <li>同时，<strong>reparameterization</strong>能够使得下界估计<strong>可导</strong> (即梯度能够回传)。</li>
 </ul>
-<h1 id="The-Problem-Scenario"><a href="#The-Problem-Scenario" class="headerlink" title="The Problem Scenario"></a>The Problem Scenario</h1><hr>
+<h1 id="4-The-Problem-Scenario"><a href="#4-The-Problem-Scenario" class="headerlink" title="4. The Problem Scenario"></a>4. The Problem Scenario</h1><hr>
 <ul>
 <li>Intractability. 边缘似然p(x)=∫p(z)p(x|z)dz难以计算，导致真实后验概率分布p(z|x)=p(x|z)p(z)/p(x)难以计算(无法使用EM算法)，以及mean-field VB难以计算。另一方面，p(x|z)可通过神经网络非线性解决。</li>
 <li>Minibatch训练时，使用Monte Carlo EM非常慢。</li>
@@ -566,7 +566,7 @@
 <li>decoder (真实概率分布θ): p(x|z).</li>
 </ul>
 <p>论文提出一种方法<strong>联合训练encoder参数φ和decoder参数θ.</strong></p>
-<h1 id="The-Variational-Bound"><a href="#The-Variational-Bound" class="headerlink" title="The Variational Bound"></a>The Variational Bound</h1><hr>
+<h1 id="5-The-Variational-Bound"><a href="#5-The-Variational-Bound" class="headerlink" title="5. The Variational Bound"></a>5. The Variational Bound</h1><hr>
 <ul>
 <li><p>根据VB可得到公式 (1) </p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/6.jpg?raw=true" alt><br></div>
@@ -580,7 +580,7 @@
 <ul>
 <li><strong>(公式3)</strong> 右边两项分别为<strong>q分布与真实分布p的差异</strong>、<strong>根据z重构x的误差</strong>。</li>
 </ul>
-<h1 id="SGVB-estimator和AEVB-algorithm"><a href="#SGVB-estimator和AEVB-algorithm" class="headerlink" title="SGVB estimator和AEVB algorithm"></a>SGVB estimator和AEVB algorithm</h1><hr>
+<h1 id="6-SGVB-estimator和AEVB-algorithm"><a href="#6-SGVB-estimator和AEVB-algorithm" class="headerlink" title="6. SGVB estimator和AEVB algorithm"></a>6. SGVB estimator和AEVB algorithm</h1><hr>
 <ul>
 <li>假设一个近似后验概率分布q(z|x)，当不假定条件x时，同样能应用于q(z)。</li>
 <li>使用包含 <strong>(auxiliary) noise variable ε</strong>的可导变换g表示random variable z <strong>(公式4)</strong></li>
@@ -608,7 +608,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/14.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/15.jpg?raw=true" alt><br></div>
 
 
-<h1 id="The-Reparameterization-Trick"><a href="#The-Reparameterization-Trick" class="headerlink" title="The Reparameterization Trick"></a>The Reparameterization Trick</h1><hr>
+<h1 id="7-The-Reparameterization-Trick"><a href="#7-The-Reparameterization-Trick" class="headerlink" title="7. The Reparameterization Trick"></a>7. The Reparameterization Trick</h1><hr>
 <p>假设z服从高斯分布</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/16.jpg?raw=true" alt><br></div>
 
@@ -619,24 +619,24 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/25.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><hr>
+<h1 id="8-Example"><a href="#8-Example" class="headerlink" title="8. Example"></a>8. Example</h1><hr>
 <ul>
 <li>假设z的先验分布服从标准正态分布</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/19.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/20.jpg?raw=true" alt><br></div>
 
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="9-Experiments"><a href="#9-Experiments" class="headerlink" title="9. Experiments"></a>9. Experiments</h1><hr>
 <ul>
 <li>增加latent variable维数不会导致过拟合。</li>
 <li>y: loss, x: iteration.</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/21.jpg?raw=true" alt><br></div>
 
-<h1 id="Solution-of-D-q-p-Gaussian-Case"><a href="#Solution-of-D-q-p-Gaussian-Case" class="headerlink" title="Solution of -D(q||p), Gaussian Case"></a>Solution of -D(q||p), Gaussian Case</h1><hr>
+<h1 id="10-Solution-of-D-q-p-Gaussian-Case"><a href="#10-Solution-of-D-q-p-Gaussian-Case" class="headerlink" title="10. Solution of -D(q||p), Gaussian Case"></a>10. Solution of -D(q||p), Gaussian Case</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Auto-Encoding%20Variational%20Bayes/22.jpg?raw=true" alt><br></div>
 
 
-<h1 id="MLP’s-as-probabilistic-encoders-and-decoders"><a href="#MLP’s-as-probabilistic-encoders-and-decoders" class="headerlink" title="MLP’s as probabilistic encoders and decoders"></a>MLP’s as probabilistic encoders and decoders</h1><hr>
+<h1 id="11-MLP’s-as-probabilistic-encoders-and-decoders"><a href="#11-MLP’s-as-probabilistic-encoders-and-decoders" class="headerlink" title="11. MLP’s as probabilistic encoders and decoders"></a>11. MLP’s as probabilistic encoders and decoders</h1><hr>
 <ul>
 <li>MLP (Multi-layer Perceptron)：神经网络。</li>
 <li><strong>encoder</strong>使用MLP with <strong>Gaussian</strong> output. </li>
@@ -1483,7 +1483,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Contribution"><span class="nav-number">1.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#知识点延伸"><span class="nav-number">2.</span> <span class="nav-text">知识点延伸</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SGVB"><span class="nav-number">3.</span> <span class="nav-text">SGVB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Problem-Scenario"><span class="nav-number">4.</span> <span class="nav-text">The Problem Scenario</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Variational-Bound"><span class="nav-number">5.</span> <span class="nav-text">The Variational Bound</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SGVB-estimator和AEVB-algorithm"><span class="nav-number">6.</span> <span class="nav-text">SGVB estimator和AEVB algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Reparameterization-Trick"><span class="nav-number">7.</span> <span class="nav-text">The Reparameterization Trick</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example"><span class="nav-number">8.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">9.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution-of-D-q-p-Gaussian-Case"><span class="nav-number">10.</span> <span class="nav-text">Solution of -D(q||p), Gaussian Case</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MLP’s-as-probabilistic-encoders-and-decoders"><span class="nav-number">11.</span> <span class="nav-text">MLP’s as probabilistic encoders and decoders</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Contribution"><span class="nav-text">1. Contribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-知识点延伸"><span class="nav-text">2. 知识点延伸</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-SGVB"><span class="nav-text">3. SGVB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-The-Problem-Scenario"><span class="nav-text">4. The Problem Scenario</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-The-Variational-Bound"><span class="nav-text">5. The Variational Bound</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-SGVB-estimator和AEVB-algorithm"><span class="nav-text">6. SGVB estimator和AEVB algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-The-Reparameterization-Trick"><span class="nav-text">7. The Reparameterization Trick</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Example"><span class="nav-text">8. Example</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-Experiments"><span class="nav-text">9. Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-Solution-of-D-q-p-Gaussian-Case"><span class="nav-text">10. Solution of -D(q||p), Gaussian Case</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-MLP’s-as-probabilistic-encoders-and-decoders"><span class="nav-text">11. MLP’s as probabilistic encoders and decoders</span></a></li></ol></div>
             
 
           </div>

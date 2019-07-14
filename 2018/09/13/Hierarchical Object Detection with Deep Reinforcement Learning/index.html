@@ -478,7 +478,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it trained an <strong>intelligent agent</strong> to decide where to look</p>
 <ul>
 <li><strong>proposal strategy</strong>. with and w/o overlap</li>
@@ -486,7 +486,7 @@
 <li>overlap+zoom better</li>
 <li>cast the problem as a <strong>Markov Decision Process (MDP)</strong></li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-1-Related-Work"><a href="#1-1-Related-Work" class="headerlink" title="1.1. Related Work"></a>1.1. Related Work</h2><ul>
 <li>RL has been applied to <strong>Classification, Captioning, Activity Recognition</strong></li>
 <li>Region proposal is expensive (R-CNN)</li>
 <li><strong>AttentionNet</strong>. cast detection as iterative classification</li>
@@ -495,8 +495,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="MDP-Formulation"><a href="#MDP-Formulation" class="headerlink" title="MDP Formulation"></a>MDP Formulation</h2><ul>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-MDP-Formulation"><a href="#2-1-MDP-Formulation" class="headerlink" title="2.1. MDP Formulation"></a>2.1. MDP Formulation</h2><ul>
 <li><strong>state</strong>. descriptor of current region + memory vector (last 4 actions, 6 * 4=24 dimension)</li>
 <li><strong>action</strong>. 5 movement + terminal</li>
 <li><strong>reward</strong>.</li>
@@ -507,40 +507,40 @@
 <li>τ=0.5</li>
 <li>η=3</li>
 </ul>
-<h2 id="Q-learning"><a href="#Q-learning" class="headerlink" title="Q-learning"></a>Q-learning</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/2.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Q-learning"><a href="#2-2-Q-learning" class="headerlink" title="2.2. Q-learning"></a>2.2. Q-learning</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Proposal-Strategy"><a href="#Proposal-Strategy" class="headerlink" title="Proposal Strategy"></a>Proposal Strategy</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/3.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Proposal-Strategy"><a href="#2-3-Proposal-Strategy" class="headerlink" title="2.3. Proposal Strategy"></a>2.3. Proposal Strategy</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>overlap. 0.75</li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/4.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Model"><a href="#2-4-Model" class="headerlink" title="2.4. Model"></a>2.4. Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Exploration-Exploration"><a href="#Exploration-Exploration" class="headerlink" title="Exploration-Exploration"></a>Exploration-Exploration</h2><ul>
+<h2 id="2-5-Exploration-Exploration"><a href="#2-5-Exploration-Exploration" class="headerlink" title="2.5. Exploration-Exploration"></a>2.5. Exploration-Exploration</h2><ul>
 <li>ε-greedy policy. start with ε=1, decrease until ε=0.1 in step of 0.1</li>
 <li><strong>start with random actions</strong>, and at each epoch the agent takes decisions relying more on the already learnt policy</li>
 <li>to help the agent learn terminal action, we <strong>force</strong> it each time the current region has a <strong>IoU&gt;0.5</strong></li>
 </ul>
-<h2 id="Training-Parameters"><a href="#Training-Parameters" class="headerlink" title="Training Parameters"></a>Training Parameters</h2><ul>
+<h2 id="2-6-Training-Parameters"><a href="#2-6-Training-Parameters" class="headerlink" title="2.6. Training Parameters"></a>2.6. Training Parameters</h2><ul>
 <li>DQN</li>
 <li>Adam 1e-6</li>
 <li>50 epoch</li>
 <li>discount factor. γ=0.9</li>
 </ul>
-<h2 id="Experiments-Replay"><a href="#Experiments-Replay" class="headerlink" title="Experiments Replay"></a>Experiments Replay</h2><p>(s, a, r, s’)</p>
+<h2 id="2-7-Experiments-Replay"><a href="#2-7-Experiments-Replay" class="headerlink" title="2.7. Experiments Replay"></a>2.7. Experiments Replay</h2><p>(s, a, r, s’)</p>
 <ul>
 <li><strong>consecutive</strong> experiences in this paper is very <strong>correlated</strong>, lead to inefficient and unstable learning</li>
 <li>to solve it, we use <strong>random minibatches. 1000 experiences and batch size 100</strong></li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Region-Proposal"><a href="#Region-Proposal" class="headerlink" title="Region Proposal"></a>Region Proposal</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/5.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Region-Proposal"><a href="#3-1-Region-Proposal" class="headerlink" title="3.1. Region Proposal"></a>3.1. Region Proposal</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>with less than 3 step, can almost approximate all objects we can detect</li>
 </ul>
-<h2 id="Zoom-vs-Crop-Pool"><a href="#Zoom-vs-Crop-Pool" class="headerlink" title="Zoom vs Crop-Pool"></a>Zoom vs Crop-Pool</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/6.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Zoom-vs-Crop-Pool"><a href="#3-2-Zoom-vs-Crop-Pool" class="headerlink" title="3.2. Zoom vs Crop-Pool"></a>3.2. Zoom vs Crop-Pool</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Hierarchical Object Detection with Deep Reinforcement Learning/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>Zoom better</li>
@@ -1377,7 +1377,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.1.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MDP-Formulation"><span class="nav-number">2.1.</span> <span class="nav-text">MDP Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-learning"><span class="nav-number">2.2.</span> <span class="nav-text">Q-learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proposal-Strategy"><span class="nav-number">2.3.</span> <span class="nav-text">Proposal Strategy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">2.4.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exploration-Exploration"><span class="nav-number">2.5.</span> <span class="nav-text">Exploration-Exploration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-Parameters"><span class="nav-number">2.6.</span> <span class="nav-text">Training Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments-Replay"><span class="nav-number">2.7.</span> <span class="nav-text">Experiments Replay</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Region-Proposal"><span class="nav-number">3.1.</span> <span class="nav-text">Region Proposal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zoom-vs-Crop-Pool"><span class="nav-number">3.2.</span> <span class="nav-text">Zoom vs Crop-Pool</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Work"><span class="nav-text">1.1. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-MDP-Formulation"><span class="nav-text">2.1. MDP Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Q-learning"><span class="nav-text">2.2. Q-learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Proposal-Strategy"><span class="nav-text">2.3. Proposal Strategy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Model"><span class="nav-text">2.4. Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Exploration-Exploration"><span class="nav-text">2.5. Exploration-Exploration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Training-Parameters"><span class="nav-text">2.6. Training Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Experiments-Replay"><span class="nav-text">2.7. Experiments Replay</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Region-Proposal"><span class="nav-text">3.1. Region Proposal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Zoom-vs-Crop-Pool"><span class="nav-text">3.2. Zoom vs Crop-Pool</span></a></li></ol></li></ol></div>
             
 
           </div>

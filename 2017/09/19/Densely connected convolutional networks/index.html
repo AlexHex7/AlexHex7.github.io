@@ -502,24 +502,24 @@
 <li><strong>Bottleneck Layer</strong></li>
 <li><strong>Compression</strong></li>
 </ul>
-<h1 id="Transition-Layer-图1"><a href="#Transition-Layer-图1" class="headerlink" title="Transition Layer (图1)"></a>Transition Layer (图1)</h1><hr>
+<h1 id="1-Transition-Layer-图1"><a href="#1-Transition-Layer-图1" class="headerlink" title="1. Transition Layer (图1)"></a>1. Transition Layer (图1)</h1><hr>
 <ul>
 <li>连接在两个Dense Block之间，包含：BN- (1x1) Conv- (2x2) Avg Pooling </li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Densely%20connected%20convolutional%20networks/4.jpg?raw=true" alt><br></div>
 
-<h1 id="Growth-Rate"><a href="#Growth-Rate" class="headerlink" title="Growth Rate"></a>Growth Rate</h1><hr>
+<h1 id="2-Growth-Rate"><a href="#2-Growth-Rate" class="headerlink" title="2. Growth Rate"></a>2. Growth Rate</h1><hr>
 <ul>
 <li>denoted by $k$. 即$H$层 <strong>(Figure 1)</strong>中 (3x3) Conv层的filter数量为$k$.<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Densely%20connected%20convolutional%20networks/5.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h1 id="Bottleneck-Layer"><a href="#Bottleneck-Layer" class="headerlink" title="Bottleneck Layer"></a>Bottleneck Layer</h1><hr>
+<h1 id="3-Bottleneck-Layer"><a href="#3-Bottleneck-Layer" class="headerlink" title="3. Bottleneck Layer"></a>3. Bottleneck Layer</h1><hr>
 <ul>
 <li>为了降低特征图数量，在H层的头部加上Bottleneck Layer，包含：BN-ReLU-(1x1)Conv.</li>
 <li>该Conv层的filter数量小于输入特征图数量，从而达到降低特征图数量的目的</li>
 </ul>
-<h1 id="Compression"><a href="#Compression" class="headerlink" title="Compression"></a>Compression</h1><hr>
+<h1 id="4-Compression"><a href="#4-Compression" class="headerlink" title="4. Compression"></a>4. Compression</h1><hr>
 <ul>
 <li>为了进一步提高模型的紧凑性，可以在Transition Layer中降低特征图数量。即降低其中的 (1x1) Conv层filter数量。</li>
 <li>假设输入特征图数量为$m$，存在一个hyper-parameter $θ$ (0&lt;$θ$&lt;1) 使得输出特征图数量降低至$θ_m$，则(1x1) Conv层有$θ_m$ filters.</li>
@@ -1358,7 +1358,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Transition-Layer-图1"><span class="nav-number">1.</span> <span class="nav-text">Transition Layer (图1)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Growth-Rate"><span class="nav-number">2.</span> <span class="nav-text">Growth Rate</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bottleneck-Layer"><span class="nav-number">3.</span> <span class="nav-text">Bottleneck Layer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Compression"><span class="nav-number">4.</span> <span class="nav-text">Compression</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Transition-Layer-图1"><span class="nav-text">1. Transition Layer (图1)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Growth-Rate"><span class="nav-text">2. Growth Rate</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Bottleneck-Layer"><span class="nav-text">3. Bottleneck Layer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Compression"><span class="nav-text">4. Compression</span></a></li></ol></div>
             
 
           </div>

@@ -481,14 +481,14 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>论文检索并分析了308篇与深度学习和医学图像有关的论文。</p>
-<h2 id="检索方式"><a href="#检索方式" class="headerlink" title="检索方式"></a>检索方式</h2><ul>
+<h2 id="1-1-检索方式"><a href="#1-1-检索方式" class="headerlink" title="1.1. 检索方式"></a>1.1. 检索方式</h2><ul>
 <li>对<strong>PubMed</strong>数据库（<strong>标题摘要</strong>）进行<strong>关键词</strong>（convolutional or deep learning）检索</li>
 <li><strong>ArXiv</strong>检索<strong>medical imaging</strong></li>
 <li><strong>MICCAI, SPIE, ISBI, EMBC</strong> conference proceeding</li>
 </ul>
-<h2 id="相关任务"><a href="#相关任务" class="headerlink" title="相关任务"></a>相关任务</h2><ul>
+<h2 id="1-2-相关任务"><a href="#1-2-相关任务" class="headerlink" title="1.2. 相关任务"></a>1.2. 相关任务</h2><ul>
 <li>image classification</li>
 <li>object detection</li>
 <li>segmentation</li>
@@ -497,7 +497,7 @@
 <li>generation</li>
 <li>enhancement</li>
 </ul>
-<h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><ul>
+<h2 id="1-3-应用领域"><a href="#1-3-应用领域" class="headerlink" title="1.3. 应用领域"></a>1.3. 应用领域</h2><ul>
 <li>neuro</li>
 <li>retinal（视网膜）</li>
 <li>pulmonary（肺）</li>
@@ -509,20 +509,20 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Survey On Deep Learning in Medical Image Analysis/1.jpg?raw=true" alt><br></div>
 
-<h2 id="CNN-Architecture"><a href="#CNN-Architecture" class="headerlink" title="CNN Architecture"></a>CNN Architecture</h2><ul>
+<h2 id="1-4-CNN-Architecture"><a href="#1-4-CNN-Architecture" class="headerlink" title="1.4. CNN Architecture"></a>1.4. CNN Architecture</h2><ul>
 <li>Classification Architecture</li>
 <li><strong>Multi-stream</strong> Architecture <strong>(multi-scale; 2.5D, multiple angled patched from 3D space)</strong></li>
 <li>Segmentation Architecture (U-Net)</li>
 </ul>
-<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><ul>
+<h2 id="1-5-RNN"><a href="#1-5-RNN" class="headerlink" title="1.5. RNN"></a>1.5. RNN</h2><ul>
 <li><strong>pixelRNN</strong> for segmentation</li>
 </ul>
-<h2 id="Unsupervised-Model"><a href="#Unsupervised-Model" class="headerlink" title="Unsupervised Model"></a>Unsupervised Model</h2><ul>
+<h2 id="1-6-Unsupervised-Model"><a href="#1-6-Unsupervised-Model" class="headerlink" title="1.6. Unsupervised Model"></a>1.6. Unsupervised Model</h2><ul>
 <li>AE, SAE (AE+AE+…+AE). for denoising</li>
 <li>RBM, DBN (RBM+RBM+…+RBM). 无监督训练，再加上分类器fine tuing</li>
 <li>VAE, GAN</li>
 </ul>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul>
+<h2 id="1-7-数据集"><a href="#1-7-数据集" class="headerlink" title="1.7. 数据集"></a>1.7. 数据集</h2><ul>
 <li><strong>OASIS</strong>. brain MRI registration</li>
 <li><strong>BRATS, LSLES, and MRBrains challenges.</strong> brain lesion segmentation</li>
 <li><strong>Kaggle Diabetic Retinopathy challenge 2015.</strong> disbetic retinopathy classification</li>
@@ -538,26 +538,26 @@
 
 <p><br></p>
 <hr>
-<h1 id="医学图像中的深度学习应用"><a href="#医学图像中的深度学习应用" class="headerlink" title="医学图像中的深度学习应用"></a>医学图像中的深度学习应用</h1><hr>
-<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><h3 id="Image-Exam-Classification-（图像-gt-是否病变）"><a href="#Image-Exam-Classification-（图像-gt-是否病变）" class="headerlink" title="Image/Exam Classification （图像-&gt;是否病变）"></a>Image/Exam Classification （图像-&gt;是否病变）</h3><p>使用预训练权重(迁移学习)</p>
+<h1 id="2-医学图像中的深度学习应用"><a href="#2-医学图像中的深度学习应用" class="headerlink" title="2. 医学图像中的深度学习应用"></a>2. 医学图像中的深度学习应用</h1><hr>
+<h2 id="2-1-Classification"><a href="#2-1-Classification" class="headerlink" title="2.1. Classification"></a>2.1. Classification</h2><h3 id="2-1-1-Image-Exam-Classification-（图像-gt-是否病变）"><a href="#2-1-1-Image-Exam-Classification-（图像-gt-是否病变）" class="headerlink" title="2.1.1. Image/Exam Classification （图像-&gt;是否病变）"></a>2.1.1. Image/Exam Classification （图像-&gt;是否病变）</h3><p>使用预训练权重(迁移学习)</p>
 <ul>
 <li>预训练网络提取特征，作为后续模型输入</li>
 <li>使用medical数据fine tuning预训练网络<br>2015~2017年，47篇exam classification paper， 36篇使用<strong>CNN</strong>， 5篇使用<strong>AE</strong>， 6篇使用<strong>RBM</strong>. 且涉及不同的医学领域：<strong>retinal, digital pathology, lung computed tomography.</strong></li>
 </ul>
-<h3 id="Object-or-Lesion-Classification"><a href="#Object-or-Lesion-Classification" class="headerlink" title="Object or Lesion Classification"></a>Object or Lesion Classification</h3><p>对图像中已经识别出来的某个小部分进行多分类（病变类型, <strong>nodule classification in chest CT</strong>）。通常需要考虑（Multi-stream）</p>
+<h3 id="2-1-2-Object-or-Lesion-Classification"><a href="#2-1-2-Object-or-Lesion-Classification" class="headerlink" title="2.1.2. Object or Lesion Classification"></a>2.1.2. Object or Lesion Classification</h3><p>对图像中已经识别出来的某个小部分进行多分类（病变类型, <strong>nodule classification in chest CT</strong>）。通常需要考虑（Multi-stream）</p>
 <ul>
 <li><strong>病变外观的局部信息</strong></li>
 <li><strong>病变位置的全局上下文信息</strong><br>到达高分类准确度。</li>
 </ul>
 <hr>
-<h2 id="Detection"><a href="#Detection" class="headerlink" title="Detection"></a>Detection</h2><h3 id="Organ-Region-and-Landmark-Localization"><a href="#Organ-Region-and-Landmark-Localization" class="headerlink" title="Organ, Region and Landmark Localization"></a>Organ, Region and Landmark Localization</h3><p>通常需要处理3D图像，一些方法将3D空间看做由一些2D正交平面构成（<strong>2D MRI slices</strong>）。<br><strong>图像localization方</strong>法分为</p>
+<h2 id="2-2-Detection"><a href="#2-2-Detection" class="headerlink" title="2.2. Detection"></a>2.2. Detection</h2><h3 id="2-2-1-Organ-Region-and-Landmark-Localization"><a href="#2-2-1-Organ-Region-and-Landmark-Localization" class="headerlink" title="2.2.1. Organ, Region and Landmark Localization"></a>2.2.1. Organ, Region and Landmark Localization</h3><p>通常需要处理3D图像，一些方法将3D空间看做由一些2D正交平面构成（<strong>2D MRI slices</strong>）。<br><strong>图像localization方</strong>法分为</p>
 <ul>
 <li>RoI</li>
 <li>直接regress<br>此外，还涉及到temporal数据的scan plane or key frame localization (<strong>standardized scan planes in mid-pregnancy fetal US).</strong></li>
 </ul>
-<h3 id="Object-or-Lesion-Detection"><a href="#Object-or-Lesion-Detection" class="headerlink" title="Object or Lesion Detection"></a>Object or Lesion Detection</h3><p>定位并识别lesion (<strong>multi-stream</strong> for <strong>CT</strong> and <strong>PET</strong> data; <strong>micro-bleed</strong> in brain MRI)</p>
+<h3 id="2-2-2-Object-or-Lesion-Detection"><a href="#2-2-2-Object-or-Lesion-Detection" class="headerlink" title="2.2.2. Object or Lesion Detection"></a>2.2.2. Object or Lesion Detection</h3><p>定位并识别lesion (<strong>multi-stream</strong> for <strong>CT</strong> and <strong>PET</strong> data; <strong>micro-bleed</strong> in brain MRI)</p>
 <hr>
-<h2 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h2><h3 id="Organ-and-Substructure-Segmentation"><a href="#Organ-and-Substructure-Segmentation" class="headerlink" title="Organ and Substructure Segmentation"></a>Organ and Substructure Segmentation</h3><p>Contour or interior of objects (<strong>pectoral muscle in breast MRI, coronary arteries in cardiac CT angiography, vertebral body in MRI</strong>).</p>
+<h2 id="2-3-Segmentation"><a href="#2-3-Segmentation" class="headerlink" title="2.3. Segmentation"></a>2.3. Segmentation</h2><h3 id="2-3-1-Organ-and-Substructure-Segmentation"><a href="#2-3-1-Organ-and-Substructure-Segmentation" class="headerlink" title="2.3.1. Organ and Substructure Segmentation"></a>2.3.1. Organ and Substructure Segmentation</h3><p>Contour or interior of objects (<strong>pectoral muscle in breast MRI, coronary arteries in cardiac CT angiography, vertebral body in MRI</strong>).</p>
 <p>相关技术</p>
 <ul>
 <li>2D U-Net</li>
@@ -566,21 +566,21 @@
 <li>结合双向LSTM和2D U-Net</li>
 <li>结合FCN和graphical model (MRF, CRF)</li>
 </ul>
-<h3 id="Lesion-Segmentation"><a href="#Lesion-Segmentation" class="headerlink" title="Lesion Segmentation"></a>Lesion Segmentation</h3><p>包含</p>
+<h3 id="2-3-2-Lesion-Segmentation"><a href="#2-3-2-Lesion-Segmentation" class="headerlink" title="2.3.2. Lesion Segmentation"></a>2.3.2. Lesion Segmentation</h3><p>包含</p>
 <ul>
 <li>Object detection</li>
 <li>Organ and substructure segmentation<br>需要考虑global and loval context <strong>[Multi-stream] (white matter lesions in brain MRI). </strong></li>
 </ul>
 <hr>
-<h2 id="Registration"><a href="#Registration" class="headerlink" title="Registration"></a>Registration</h2><p><strong>spatial alignment.</strong> 包含两种方法</p>
+<h2 id="2-4-Registration"><a href="#2-4-Registration" class="headerlink" title="2.4. Registration"></a>2.4. Registration</h2><p><strong>spatial alignment.</strong> 包含两种方法</p>
 <ul>
 <li><strong>估计两张图像的相似度</strong></li>
 <li><strong>预测transformation parameters</strong></li>
 </ul>
 <hr>
-<h2 id="Other-Task"><a href="#Other-Task" class="headerlink" title="Other Task"></a>Other Task</h2><h3 id="Retrieval"><a href="#Retrieval" class="headerlink" title="Retrieval"></a>Retrieval</h3><p>使用Hashing forest进行压缩</p>
-<h3 id="Generation-and-Enhancement"><a href="#Generation-and-Enhancement" class="headerlink" title="Generation and Enhancement"></a>Generation and Enhancement</h3><p>超分辨率</p>
-<h3 id="Combine-Image-with-Report"><a href="#Combine-Image-with-Report" class="headerlink" title="Combine Image with Report"></a>Combine Image with Report</h3><p>Caption, LDA<br>Mammography中的3个描述</p>
+<h2 id="2-5-Other-Task"><a href="#2-5-Other-Task" class="headerlink" title="2.5. Other Task"></a>2.5. Other Task</h2><h3 id="2-5-1-Retrieval"><a href="#2-5-1-Retrieval" class="headerlink" title="2.5.1. Retrieval"></a>2.5.1. Retrieval</h3><p>使用Hashing forest进行压缩</p>
+<h3 id="2-5-2-Generation-and-Enhancement"><a href="#2-5-2-Generation-and-Enhancement" class="headerlink" title="2.5.2. Generation and Enhancement"></a>2.5.2. Generation and Enhancement</h3><p>超分辨率</p>
+<h3 id="2-5-3-Combine-Image-with-Report"><a href="#2-5-3-Combine-Image-with-Report" class="headerlink" title="2.5.3. Combine Image with Report"></a>2.5.3. Combine Image with Report</h3><p>Caption, LDA<br>Mammography中的3个描述</p>
 <ul>
 <li>shape</li>
 <li>margin</li>
@@ -588,44 +588,41 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="应用领域-1"><a href="#应用领域-1" class="headerlink" title="应用领域"></a>应用领域</h1><hr>
-<h2 id="Brain"><a href="#Brain" class="headerlink" title="Brain"></a>Brain</h2><p>Alzheimer classification, brain tissue segmentation, anatomical structure (hippocampus).</p>
+<h1 id="3-应用领域"><a href="#3-应用领域" class="headerlink" title="3. 应用领域"></a>3. 应用领域</h1><hr>
+<h2 id="3-1-Brain"><a href="#3-1-Brain" class="headerlink" title="3.1. Brain"></a>3.1. Brain</h2><p>Alzheimer classification, brain tissue segmentation, anatomical structure (hippocampus).</p>
 <p>相关技术</p>
 <ul>
 <li>multi-scale for contextual</li>
 <li>2D slice-by-slice处理3D数据</li>
 </ul>
-<h2 id="Eye"><a href="#Eye" class="headerlink" title="Eye"></a>Eye</h2><p>color fundus imaging (CFI).</p>
-<h2 id="Chest"><a href="#Chest" class="headerlink" title="Chest"></a>Chest</h2><p>基于CT扫描估计lung cancer概率</p>
-<h2 id="Digital-Pathology-and-Microscopy"><a href="#Digital-Pathology-and-Microscopy" class="headerlink" title="Digital Pathology and Microscopy"></a>Digital Pathology and Microscopy</h2><p>whole-slide images （WSI）</p>
+<h2 id="3-2-Eye"><a href="#3-2-Eye" class="headerlink" title="3.2. Eye"></a>3.2. Eye</h2><p>color fundus imaging (CFI).</p>
+<h2 id="3-3-Chest"><a href="#3-3-Chest" class="headerlink" title="3.3. Chest"></a>3.3. Chest</h2><p>基于CT扫描估计lung cancer概率</p>
+<h2 id="3-4-Digital-Pathology-and-Microscopy"><a href="#3-4-Digital-Pathology-and-Microscopy" class="headerlink" title="3.4. Digital Pathology and Microscopy"></a>3.4. Digital Pathology and Microscopy</h2><p>whole-slide images （WSI）</p>
 <ul>
 <li>检测、分割、分类nuclei</li>
 <li>分割organ</li>
 <li>检测分类 the disease of interest at the lesion or WSI-level</li>
 </ul>
-<h2 id="Breast"><a href="#Breast" class="headerlink" title="Breast"></a>Breast</h2><p>考虑三个子任务</p>
+<h2 id="3-5-Breast"><a href="#3-5-Breast" class="headerlink" title="3.5. Breast"></a>3.5. Breast</h2><p>考虑三个子任务</p>
 <ul>
 <li>检测分类mass-like lesion</li>
 <li>检测分类micro-calcfication</li>
 <li>breast cancer评估</li>
 </ul>
-<h2 id="Cardiac"><a href="#Cardiac" class="headerlink" title="Cardiac"></a>Cardiac</h2><p>使用2D CNN slice by slice处理3D或4D数据。</p>
-<p>##Abdomen</p>
-<p>##Musculoskeletal</p>
-<p>##Other</p>
-<p><br></p>
+<h2 id="3-6-Cardiac"><a href="#3-6-Cardiac" class="headerlink" title="3.6. Cardiac"></a>3.6. Cardiac</h2><p>使用2D CNN slice by slice处理3D或4D数据。</p>
+<h2 id="3-7-Abdomen"><a href="#3-7-Abdomen" class="headerlink" title="3.7. Abdomen"></a>3.7. Abdomen</h2><h2 id="3-8-Musculoskeletal"><a href="#3-8-Musculoskeletal" class="headerlink" title="3.8. Musculoskeletal"></a>3.8. Musculoskeletal</h2><h2 id="3-9-Other"><a href="#3-9-Other" class="headerlink" title="3.9. Other"></a>3.9. Other</h2><p><br></p>
 <hr>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><hr>
-<h2 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h2><ul>
+<h1 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h1><hr>
+<h2 id="4-1-Overview"><a href="#4-1-Overview" class="headerlink" title="4.1. Overview"></a>4.1. Overview</h2><ul>
 <li>prefer end-to-end CNN</li>
 </ul>
-<h2 id="Key-Aspect"><a href="#Key-Aspect" class="headerlink" title="Key Aspect"></a>Key Aspect</h2><ul>
+<h2 id="4-2-Key-Aspect"><a href="#4-2-Key-Aspect" class="headerlink" title="4.2. Key Aspect"></a>4.2. Key Aspect</h2><ul>
 <li><strong>data preprocessing or augmentation</strong>（相同模型结构，不同结果）</li>
 <li>针对特定任务的模型结构（<strong>multi-view, multi-scale</strong>）</li>
 <li>增加<strong>patch size</strong>观察更多context</li>
 <li>超参数（LR, Dropout rate）</li>
 </ul>
-<h2 id="Challenge"><a href="#Challenge" class="headerlink" title="Challenge"></a>Challenge</h2><ul>
+<h2 id="4-3-Challenge"><a href="#4-3-Challenge" class="headerlink" title="4.3. Challenge"></a>4.3. Challenge</h2><ul>
 <li>医学图像数据已有很多，挑战在于<strong>图像的标注</strong>（需要领域专家进行标注、3D图像标注成本大）。因此，从有限数据进行高效学习是重要的研究方向。 一些研究利用sparse 2D segmentation训练3D segmentation、一些考虑 non-expert labels via crowd-sourcing</li>
 <li><strong>Label noise</strong>. 多专家分别进行标注，对比结果是否一致</li>
 <li>Fail in <strong>rare category</strong></li>
@@ -634,7 +631,7 @@
 <li>Balance <strong>image feature</strong> (thousands) and <strong>clinical feature</strong> (handful)</li>
 <li>patch不具有<strong>全局位置信息</strong>，而<strong>entire image</strong>占用较大内存</li>
 </ul>
-<h2 id="Outlook"><a href="#Outlook" class="headerlink" title="Outlook"></a>Outlook</h2><ul>
+<h2 id="4-4-Outlook"><a href="#4-4-Outlook" class="headerlink" title="4.4. Outlook"></a>4.4. Outlook</h2><ul>
 <li>Unsupervised, VAE, GAN are attractive</li>
 <li>Combine Bayesian statistic with deep learning</li>
 <li>Image reconstruction (unexplored area)</li>
@@ -1471,7 +1468,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#检索方式"><span class="nav-number">1.1.</span> <span class="nav-text">检索方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关任务"><span class="nav-number">1.2.</span> <span class="nav-text">相关任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用领域"><span class="nav-number">1.3.</span> <span class="nav-text">应用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN-Architecture"><span class="nav-number">1.4.</span> <span class="nav-text">CNN Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-number">1.5.</span> <span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unsupervised-Model"><span class="nav-number">1.6.</span> <span class="nav-text">Unsupervised Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.7.</span> <span class="nav-text">数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#医学图像中的深度学习应用"><span class="nav-number">2.</span> <span class="nav-text">医学图像中的深度学习应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification"><span class="nav-number">2.1.</span> <span class="nav-text">Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-Exam-Classification-（图像-gt-是否病变）"><span class="nav-number">2.1.1.</span> <span class="nav-text">Image/Exam Classification （图像-&gt;是否病变）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-or-Lesion-Classification"><span class="nav-number">2.1.2.</span> <span class="nav-text">Object or Lesion Classification</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detection"><span class="nav-number">2.2.</span> <span class="nav-text">Detection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Organ-Region-and-Landmark-Localization"><span class="nav-number">2.2.1.</span> <span class="nav-text">Organ, Region and Landmark Localization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object-or-Lesion-Detection"><span class="nav-number">2.2.2.</span> <span class="nav-text">Object or Lesion Detection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation"><span class="nav-number">2.3.</span> <span class="nav-text">Segmentation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Organ-and-Substructure-Segmentation"><span class="nav-number">2.3.1.</span> <span class="nav-text">Organ and Substructure Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lesion-Segmentation"><span class="nav-number">2.3.2.</span> <span class="nav-text">Lesion Segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Registration"><span class="nav-number">2.4.</span> <span class="nav-text">Registration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-Task"><span class="nav-number">2.5.</span> <span class="nav-text">Other Task</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieval"><span class="nav-number">2.5.1.</span> <span class="nav-text">Retrieval</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generation-and-Enhancement"><span class="nav-number">2.5.2.</span> <span class="nav-text">Generation and Enhancement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-Image-with-Report"><span class="nav-number">2.5.3.</span> <span class="nav-text">Combine Image with Report</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应用领域-1"><span class="nav-number">3.</span> <span class="nav-text">应用领域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Brain"><span class="nav-number">3.1.</span> <span class="nav-text">Brain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eye"><span class="nav-number">3.2.</span> <span class="nav-text">Eye</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chest"><span class="nav-number">3.3.</span> <span class="nav-text">Chest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Pathology-and-Microscopy"><span class="nav-number">3.4.</span> <span class="nav-text">Digital Pathology and Microscopy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Breast"><span class="nav-number">3.5.</span> <span class="nav-text">Breast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cardiac"><span class="nav-number">3.6.</span> <span class="nav-text">Cardiac</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-1"><span class="nav-number">4.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-Aspect"><span class="nav-number">4.2.</span> <span class="nav-text">Key Aspect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Challenge"><span class="nav-number">4.3.</span> <span class="nav-text">Challenge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Outlook"><span class="nav-number">4.4.</span> <span class="nav-text">Outlook</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-检索方式"><span class="nav-text">1.1. 检索方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-相关任务"><span class="nav-text">1.2. 相关任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-应用领域"><span class="nav-text">1.3. 应用领域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-CNN-Architecture"><span class="nav-text">1.4. CNN Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-RNN"><span class="nav-text">1.5. RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Unsupervised-Model"><span class="nav-text">1.6. Unsupervised Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-数据集"><span class="nav-text">1.7. 数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-医学图像中的深度学习应用"><span class="nav-text">2. 医学图像中的深度学习应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Classification"><span class="nav-text">2.1. Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Image-Exam-Classification-（图像-gt-是否病变）"><span class="nav-text">2.1.1. Image/Exam Classification （图像-&gt;是否病变）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-Object-or-Lesion-Classification"><span class="nav-text">2.1.2. Object or Lesion Classification</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Detection"><span class="nav-text">2.2. Detection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Organ-Region-and-Landmark-Localization"><span class="nav-text">2.2.1. Organ, Region and Landmark Localization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Object-or-Lesion-Detection"><span class="nav-text">2.2.2. Object or Lesion Detection</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Segmentation"><span class="nav-text">2.3. Segmentation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Organ-and-Substructure-Segmentation"><span class="nav-text">2.3.1. Organ and Substructure Segmentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-Lesion-Segmentation"><span class="nav-text">2.3.2. Lesion Segmentation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Registration"><span class="nav-text">2.4. Registration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Other-Task"><span class="nav-text">2.5. Other Task</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-1-Retrieval"><span class="nav-text">2.5.1. Retrieval</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-2-Generation-and-Enhancement"><span class="nav-text">2.5.2. Generation and Enhancement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-3-Combine-Image-with-Report"><span class="nav-text">2.5.3. Combine Image with Report</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-应用领域"><span class="nav-text">3. 应用领域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Brain"><span class="nav-text">3.1. Brain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Eye"><span class="nav-text">3.2. Eye</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Chest"><span class="nav-text">3.3. Chest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Digital-Pathology-and-Microscopy"><span class="nav-text">3.4. Digital Pathology and Microscopy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Breast"><span class="nav-text">3.5. Breast</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-Cardiac"><span class="nav-text">3.6. Cardiac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-Abdomen"><span class="nav-text">3.7. Abdomen</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-Musculoskeletal"><span class="nav-text">3.8. Musculoskeletal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-Other"><span class="nav-text">3.9. Other</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-总结"><span class="nav-text">4. 总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Overview"><span class="nav-text">4.1. Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Key-Aspect"><span class="nav-text">4.2. Key Aspect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Challenge"><span class="nav-text">4.3. Challenge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-Outlook"><span class="nav-text">4.4. Outlook</span></a></li></ol></li></ol></div>
             
 
           </div>

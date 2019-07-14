@@ -476,7 +476,7 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <ul>
 <li><p>论文提出<strong>R-CNN</strong>模型 (combine region proposals with CNN)，在VOC 2012物体检测任务上达到53.3% mAP，相对于当前best result提高了30%。</p>
 </li>
@@ -491,9 +491,9 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation/1.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h1><hr>
+<h1 id="2-Modules"><a href="#2-Modules" class="headerlink" title="2. Modules"></a>2. Modules</h1><hr>
 <p>R-CNN模型包含3个模块: <strong>Region Proposal</strong>, <strong>CNN</strong>, <strong>SVM</strong>.</p>
-<h2 id="Region-Proposals"><a href="#Region-Proposals" class="headerlink" title="Region Proposals"></a>Region Proposals</h2><ul>
+<h2 id="2-1-Region-Proposals"><a href="#2-1-Region-Proposals" class="headerlink" title="2.1. Region Proposals"></a>2.1. Region Proposals</h2><ul>
 <li>选用selective search方法：<ul>
 <li>初始化n个region，组成region集合R</li>
 <li>计算每两个region之间的相似度，加入相似度集合S中</li>
@@ -507,7 +507,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Feature-Extraction"><a href="#Feature-Extraction" class="headerlink" title="Feature Extraction"></a>Feature Extraction</h2><ul>
+<h2 id="2-2-Feature-Extraction"><a href="#2-2-Feature-Extraction" class="headerlink" title="2.2. Feature Extraction"></a>2.2. Feature Extraction</h2><ul>
 <li>输入为mean-subtracted <strong>227*227</strong> RGB，结构由<strong>5层CNN和2层FC</strong>组成，输出为4096维特征向量。对proposal进行transform的3种方法<ul>
 <li>将proposal放入tightest框中，并额外加入context信息</li>
 <li>将proposal放入tightest框中，不加入context信息</li>
@@ -520,12 +520,12 @@
 
 
 <hr>
-<h1 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h1><hr>
+<h1 id="3-测试阶段"><a href="#3-测试阶段" class="headerlink" title="3. 测试阶段"></a>3. 测试阶段</h1><hr>
 <ul>
 <li>使用selective search方法提取<strong>2000个region proposal</strong>. </li>
 <li>最终用贪心<strong>non-maximum suppression</strong>算法<strong>reject</strong> proposal预测结果数量。</li>
 </ul>
-<h2 id="non-maximum-suppression-NMS"><a href="#non-maximum-suppression-NMS" class="headerlink" title="non-maximum suppression (NMS)"></a>non-maximum suppression (NMS)</h2><ul>
+<h2 id="3-1-non-maximum-suppression-NMS"><a href="#3-1-non-maximum-suppression-NMS" class="headerlink" title="3.1. non-maximum suppression (NMS)"></a>3.1. non-maximum suppression (NMS)</h2><ul>
 <li>对于一个<strong>特定的分类</strong><ul>
 <li>从region预测结果集合P中，选出<strong>最高得分的region A</strong></li>
 <li>遍历region集合，<strong>剔除</strong>与A的IoU大于指定阈值的region</li>
@@ -535,12 +535,12 @@
 </li>
 <li>对N个类别重复上述整个过程。</li>
 </ul>
-<h2 id="测试耗时"><a href="#测试耗时" class="headerlink" title="测试耗时"></a>测试耗时</h2><p>13s/image on GPU, 53s/image on CPU. 主要耗时在于dot product和NMS。在实际中，将一个图像中的2000个proposal组成一个矩阵，因此Feature extraction输出的特征为<strong>2000*4096.</strong></p>
+<h2 id="3-2-测试耗时"><a href="#3-2-测试耗时" class="headerlink" title="3.2. 测试耗时"></a>3.2. 测试耗时</h2><p>13s/image on GPU, 53s/image on CPU. 主要耗时在于dot product和NMS。在实际中，将一个图像中的2000个proposal组成一个矩阵，因此Feature extraction输出的特征为<strong>2000*4096.</strong></p>
 <hr>
-<h1 id="训练阶段"><a href="#训练阶段" class="headerlink" title="训练阶段"></a>训练阶段</h1><hr>
+<h1 id="4-训练阶段"><a href="#4-训练阶段" class="headerlink" title="4. 训练阶段"></a>4. 训练阶段</h1><hr>
 <p>训练分为3个阶段：<strong>监督预训练</strong>、<strong>微调</strong>、<strong>SVM分类器训练</strong>。</p>
-<h2 id="监督预训练"><a href="#监督预训练" class="headerlink" title="监督预训练"></a>监督预训练</h2><p>使用auxiliary数据集(ILSVRC2012 classification)预训练分类网络。</p>
-<h2 id="Domain-specific-fine-tuning"><a href="#Domain-specific-fine-tuning" class="headerlink" title="Domain-specific fine-tuning"></a>Domain-specific fine-tuning</h2><ul>
+<h2 id="4-1-监督预训练"><a href="#4-1-监督预训练" class="headerlink" title="4.1. 监督预训练"></a>4.1. 监督预训练</h2><p>使用auxiliary数据集(ILSVRC2012 classification)预训练分类网络。</p>
+<h2 id="4-2-Domain-specific-fine-tuning"><a href="#4-2-Domain-specific-fine-tuning" class="headerlink" title="4.2. Domain-specific fine-tuning"></a>4.2. Domain-specific fine-tuning</h2><ul>
 <li>把分类网络的最后一层(1000 way)替换成随机初始化的(N+1背景 way)层。<ul>
 <li><strong>正样本</strong> 与ground-truth的IoU≥0.5的region</li>
 <li><strong>负样本</strong> </li>
@@ -548,12 +548,12 @@
 </li>
 <li>minibatch 128 (32正样本+96负样本)</li>
 </ul>
-<h2 id="SVM分类器"><a href="#SVM分类器" class="headerlink" title="SVM分类器"></a>SVM分类器</h2><ul>
+<h2 id="4-3-SVM分类器"><a href="#4-3-SVM分类器" class="headerlink" title="4.3. SVM分类器"></a>4.3. SVM分类器</h2><ul>
 <li><strong>正样本</strong> ground-truth</li>
 <li><strong>负样本</strong> 与ground-truth的IoU＜0.3的region. 忽略＞0.3的region </li>
 </ul>
 <hr>
-<h1 id="Bounding-Box-Regression"><a href="#Bounding-Box-Regression" class="headerlink" title="Bounding Box Regression"></a>Bounding Box Regression</h1><hr>
+<h1 id="5-Bounding-Box-Regression"><a href="#5-Bounding-Box-Regression" class="headerlink" title="5. Bounding Box Regression"></a>5. Bounding Box Regression</h1><hr>
 <ul>
 <li>为了提高localization准确度，论文进一步在R-CNN模型中加入了bounding box regression. ground truth和每个proposal的bounding box都由坐标(中心点坐标，宽，高)表示</li>
 </ul>
@@ -563,7 +563,7 @@
 <li>通过学习一个映射，将proposal box映射到ground truth box.</li>
 </ul>
 <hr>
-<h1 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h1><hr>
+<h1 id="6-实验结果"><a href="#6-实验结果" class="headerlink" title="6. 实验结果"></a>6. 实验结果</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Rich Feature Hierarchies for Accurate Object Detection and Semantic Segmentation/5.jpg?raw=true" alt><br></div>
 
 
@@ -1401,7 +1401,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Modules"><span class="nav-number">2.</span> <span class="nav-text">Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Region-Proposals"><span class="nav-number">2.1.</span> <span class="nav-text">Region Proposals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feature-Extraction"><span class="nav-number">2.2.</span> <span class="nav-text">Feature Extraction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试阶段"><span class="nav-number">3.</span> <span class="nav-text">测试阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#non-maximum-suppression-NMS"><span class="nav-number">3.1.</span> <span class="nav-text">non-maximum suppression (NMS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试耗时"><span class="nav-number">3.2.</span> <span class="nav-text">测试耗时</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#训练阶段"><span class="nav-number">4.</span> <span class="nav-text">训练阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#监督预训练"><span class="nav-number">4.1.</span> <span class="nav-text">监督预训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Domain-specific-fine-tuning"><span class="nav-number">4.2.</span> <span class="nav-text">Domain-specific fine-tuning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM分类器"><span class="nav-number">4.3.</span> <span class="nav-text">SVM分类器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bounding-Box-Regression"><span class="nav-number">5.</span> <span class="nav-text">Bounding Box Regression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果"><span class="nav-number">6.</span> <span class="nav-text">实验结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Modules"><span class="nav-text">2. Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Region-Proposals"><span class="nav-text">2.1. Region Proposals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Feature-Extraction"><span class="nav-text">2.2. Feature Extraction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-测试阶段"><span class="nav-text">3. 测试阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-non-maximum-suppression-NMS"><span class="nav-text">3.1. non-maximum suppression (NMS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-测试耗时"><span class="nav-text">3.2. 测试耗时</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-训练阶段"><span class="nav-text">4. 训练阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-监督预训练"><span class="nav-text">4.1. 监督预训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Domain-specific-fine-tuning"><span class="nav-text">4.2. Domain-specific fine-tuning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-SVM分类器"><span class="nav-text">4.3. SVM分类器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Bounding-Box-Regression"><span class="nav-text">5. Bounding Box Regression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-实验结果"><span class="nav-text">6. 实验结果</span></a></li></ol></div>
             
 
           </div>

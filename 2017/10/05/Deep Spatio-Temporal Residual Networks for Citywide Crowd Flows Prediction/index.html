@@ -494,20 +494,20 @@
 <li>Mobile phone signal of pedestrians.</li>
 <li>GPS trajectories of vehicles.</li>
 </ul>
-<h1 id="Complex-Factors"><a href="#Complex-Factors" class="headerlink" title="Complex Factors"></a>Complex Factors</h1><hr>
+<h1 id="1-Complex-Factors"><a href="#1-Complex-Factors" class="headerlink" title="1. Complex Factors"></a>1. Complex Factors</h1><hr>
 <ul>
 <li><strong>Spatial dependencies.</strong> Region的inflow受到附近regions的outflow影响，甚至受更远的regions影响。同时region的inflow也会影响它自身的outflow.</li>
 <li><strong>Temporal dependencies.</strong> Region的flows也受到近期时间段的影响。例如，8点的交通阻塞可能会影响到9点的交通情况；每个工作日的高峰期相似等。</li>
 <li><strong>External influence.</strong> 天气条件、事件等。</li>
 </ul>
-<h1 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h1><hr>
+<h1 id="2-Contribution"><a href="#2-Contribution" class="headerlink" title="2. Contribution"></a>2. Contribution</h1><hr>
 <ul>
 <li>使用Conv来model任意两region之间的<strong>spatial dependencies.</strong></li>
 <li>使用3个ResNet来model temporal closeness, period和trend的<strong>temporal dependencies.</strong></li>
 <li>Assigning different <strong>weights</strong> to <strong>aggregate</strong> 3 outputs of ResNet, and then aggregate external factors.</li>
 <li><strong>Outperform</strong> 6 baselines on Beijing and NYC dataset.</li>
 </ul>
-<h1 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h1><hr>
+<h1 id="3-Preliminaries"><a href="#3-Preliminaries" class="headerlink" title="3. Preliminaries"></a>3. Preliminaries</h1><hr>
 <ul>
 <li><strong>Region</strong>. 将城市划分为grid map <strong>(Figure 2).</strong></li>
 <li><strong>Flow</strong> (2 channels). 归一化到[-1,1].</li>
@@ -516,7 +516,7 @@
 
 
 
-<h1 id="ST-ResNet-Figure-3"><a href="#ST-ResNet-Figure-3" class="headerlink" title="ST-ResNet (Figure 3)"></a>ST-ResNet (Figure 3)</h1><hr>
+<h1 id="4-ST-ResNet-Figure-3"><a href="#4-ST-ResNet-Figure-3" class="headerlink" title="4. ST-ResNet (Figure 3)"></a>4. ST-ResNet (Figure 3)</h1><hr>
 <ul>
 <li>ST-ResNet <ul>
 <li>Include <strong>temporal closeness</strong> (recent), <strong>period</strong> (near), <strong>trend</strong> (distant) and <strong>external</strong> 4个主要部分。</li>
@@ -540,7 +540,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep%20Spatio-Temporal%20Residual%20Networks%20for%20Citywide%20Crowd%20Flows%20Prediction/7.jpg?raw=true" alt><br></div>
 
-<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><hr>
+<h1 id="5-Algorithm"><a href="#5-Algorithm" class="headerlink" title="5. Algorithm"></a>5. Algorithm</h1><hr>
 <ul>
 <li>p: one day.</li>
 <li>q: one-week.</li>
@@ -549,7 +549,7 @@
 
 
 
-<h1 id="DataSet-Table-1"><a href="#DataSet-Table-1" class="headerlink" title="DataSet (Table 1)"></a>DataSet (Table 1)</h1><hr>
+<h1 id="6-DataSet-Table-1"><a href="#6-DataSet-Table-1" class="headerlink" title="6. DataSet (Table 1)"></a>6. DataSet (Table 1)</h1><hr>
 <ul>
 <li>TaxiBJ. Taxicab GPS and moteorology data. 选择<strong>最近4周</strong>作为testing data.</li>
 <li>BikeNYC. NYC Bike system. 选择<strong>最近10天</strong>作为testing data.</li>
@@ -566,7 +566,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep%20Spatio-Temporal%20Residual%20Networks%20for%20Citywide%20Crowd%20Flows%20Prediction/11.jpg?raw=true" alt><br></div>
 
-<h1 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h1><hr>
+<h1 id="7-Baseline"><a href="#7-Baseline" class="headerlink" title="7. Baseline"></a>7. Baseline</h1><hr>
 <ul>
 <li><strong>HA</strong>. 历史inflow,outflow均值。</li>
 <li><strong>ARIMA</strong>. Auto-Regressive Integrated Moving Average. 用于预测时间序列的值。</li>
@@ -575,7 +575,7 @@
 <li><strong>ST-ANN</strong>. extracts <strong>spatial</strong> (nearby 8 regions’ values) and <strong>temporal</strong> (8 previous time intervals) features, then fed into an artificial neural network.</li>
 <li><strong>DeepST</strong>. State-of-the-art. DNN for <strong>spatio-temporal</strong> data. 4 variants: DeepST-C, DeepST-CP, DeepST-CPT, and DeepST-CPTM. Focus on temporal dependencies and external factors.</li>
 </ul>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="8-Experiments"><a href="#8-Experiments" class="headerlink" title="8. Experiments"></a>8. Experiments</h1><hr>
 <ul>
 <li>Theano&amp;Keras.</li>
 <li>Conv2: 2 filters.</li>
@@ -587,13 +587,13 @@
 
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep%20Spatio-Temporal%20Residual%20Networks%20for%20Citywide%20Crowd%20Flows%20Prediction/14.jpg?raw=true" alt><br></div>
 
-<h1 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h1><hr>
+<h1 id="9-Related-Work"><a href="#9-Related-Work" class="headerlink" title="9. Related Work"></a>9. Related Work</h1><hr>
 <ul>
 <li><strong>Conv</strong>: capture spatial dependencies.</li>
 <li><strong>RNN</strong>: capture temporal denpendencies.</li>
 <li><strong>ConvLSTM</strong>: capture spatial and temporal denpendencies. But can not model very long-range temporal denpendencies(period and trend).</li>
 </ul>
-<h1 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h1><hr>
+<h1 id="10-Future"><a href="#10-Future" class="headerlink" title="10. Future"></a>10. Future</h1><hr>
 <p>Consider other types of flows: taxi, truck, bus, phone signal, metro card swiping.</p>
 
       
@@ -1427,7 +1427,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Complex-Factors"><span class="nav-number">1.</span> <span class="nav-text">Complex Factors</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Contribution"><span class="nav-number">2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Preliminaries"><span class="nav-number">3.</span> <span class="nav-text">Preliminaries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ST-ResNet-Figure-3"><span class="nav-number">4.</span> <span class="nav-text">ST-ResNet (Figure 3)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">5.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DataSet-Table-1"><span class="nav-number">6.</span> <span class="nav-text">DataSet (Table 1)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Baseline"><span class="nav-number">7.</span> <span class="nav-text">Baseline</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">8.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Related-Work"><span class="nav-number">9.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Future"><span class="nav-number">10.</span> <span class="nav-text">Future</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Complex-Factors"><span class="nav-text">1. Complex Factors</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Contribution"><span class="nav-text">2. Contribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Preliminaries"><span class="nav-text">3. Preliminaries</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-ST-ResNet-Figure-3"><span class="nav-text">4. ST-ResNet (Figure 3)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Algorithm"><span class="nav-text">5. Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-DataSet-Table-1"><span class="nav-text">6. DataSet (Table 1)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Baseline"><span class="nav-text">7. Baseline</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Experiments"><span class="nav-text">8. Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-Related-Work"><span class="nav-text">9. Related Work</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-Future"><span class="nav-text">10. Future</span></a></li></ol></div>
             
 
           </div>

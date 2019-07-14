@@ -478,39 +478,39 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper</p>
 <ul>
 <li>identify <strong>three</strong> types of obfuscated gradient (<strong>shattered</strong> gradient, <strong>stochastic</strong> gradient, <strong>vanishing/exploding</strong> gradients)</li>
 <li>propose <strong>Backward Pass Differentiable Approximation (BPDA)</strong> to overcome obfuscated gradient</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-1-Dataset"><a href="#1-1-Dataset" class="headerlink" title="1.1. Dataset"></a>1.1. Dataset</h2><ul>
 <li><strong>MNIST&amp;CIFAR-10</strong>. untargeted</li>
 <li><strong>ImageNet</strong>. 1000 randomly selected, targeted</li>
 <li>attacker-targeted, defender-untargeted</li>
 </ul>
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><ul>
+<h2 id="1-2-Network"><a href="#1-2-Network" class="headerlink" title="1.2. Network"></a>1.2. Network</h2><ul>
 <li><strong>MNIST</strong>. 5 Conv</li>
 <li><strong>CIFAR-10</strong>. ResNet</li>
 <li><strong>ImageNet</strong>. InceptionV3</li>
 </ul>
-<h2 id="Attacker"><a href="#Attacker" class="headerlink" title="Attacker"></a>Attacker</h2><ul>
+<h2 id="1-3-Attacker"><a href="#1-3-Attacker" class="headerlink" title="1.3. Attacker"></a>1.3. Attacker</h2><ul>
 <li><strong>white-box</strong> (but not test-time randomness)</li>
 </ul>
-<h2 id="Obfuscated-Gradient"><a href="#Obfuscated-Gradient" class="headerlink" title="Obfuscated Gradient"></a>Obfuscated Gradient</h2><ul>
+<h2 id="1-4-Obfuscated-Gradient"><a href="#1-4-Obfuscated-Gradient" class="headerlink" title="1.4. Obfuscated Gradient"></a>1.4. Obfuscated Gradient</h2><ul>
 <li><strong>Shattered Gradient</strong>. non-differentiable, nonexistent, incorrect</li>
 <li><strong>Stochastic Gradient</strong>. randomized</li>
 <li><strong>Exploding&amp;Vanishing Gradient</strong>. multiple iteration</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Attack-Methods"><a href="#Attack-Methods" class="headerlink" title="Attack Methods"></a>Attack Methods</h1><hr>
-<h2 id="Shattered-Gradient"><a href="#Shattered-Gradient" class="headerlink" title="Shattered Gradient"></a>Shattered Gradient</h2><h3 id="Simple"><a href="#Simple" class="headerlink" title="Simple"></a>Simple</h3><ul>
+<h1 id="2-Attack-Methods"><a href="#2-Attack-Methods" class="headerlink" title="2. Attack Methods"></a>2. Attack Methods</h1><hr>
+<h2 id="2-1-Shattered-Gradient"><a href="#2-1-Shattered-Gradient" class="headerlink" title="2.1. Shattered Gradient"></a>2.1. Shattered Gradient</h2><h3 id="2-1-1-Simple"><a href="#2-1-1-Simple" class="headerlink" title="2.1.1. Simple"></a>2.1.1. Simple</h3><ul>
 <li>preprocessor <strong>g()</strong> satisfy <strong>g(x)≈x.</strong></li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples/1.jpg?raw=true" alt><br></div>
 
-<h3 id="BPDA"><a href="#BPDA" class="headerlink" title="BPDA"></a>BPDA</h3><ul>
+<h3 id="2-1-2-BPDA"><a href="#2-1-2-BPDA" class="headerlink" title="2.1.2. BPDA"></a>2.1.2. BPDA</h3><ul>
 <li><p>find a <strong>differentiable</strong> approximation <strong>g()</strong> such that </p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples/2.jpg?raw=true" alt><br></div>
 </li>
@@ -519,12 +519,12 @@
 <li>forward. through f_i(x)</li>
 <li>backward. replacing f_i(x) with g(x)</li>
 </ul>
-<h2 id="Stochastic-Gradient"><a href="#Stochastic-Gradient" class="headerlink" title="Stochastic Gradient"></a>Stochastic Gradient</h2><ul>
+<h2 id="2-2-Stochastic-Gradient"><a href="#2-2-Stochastic-Gradient" class="headerlink" title="2.2. Stochastic Gradient"></a>2.2. Stochastic Gradient</h2><ul>
 <li>apply <strong>Expectation over Transformation (EOT)</strong><div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples/3.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Exploding-amp-Vanishing-Gradient"><a href="#Exploding-amp-Vanishing-Gradient" class="headerlink" title="Exploding&amp;Vanishing Gradient"></a>Exploding&amp;Vanishing Gradient</h2><h3 id="Reparameterization"><a href="#Reparameterization" class="headerlink" title="Reparameterization"></a>Reparameterization</h3><ul>
+<h2 id="2-3-Exploding-amp-Vanishing-Gradient"><a href="#2-3-Exploding-amp-Vanishing-Gradient" class="headerlink" title="2.3. Exploding&amp;Vanishing Gradient"></a>2.3. Exploding&amp;Vanishing Gradient</h2><h3 id="2-3-1-Reparameterization"><a href="#2-3-1-Reparameterization" class="headerlink" title="2.3.1. Reparameterization"></a>2.3.1. Reparameterization</h3><ul>
 <li><p>For <strong>f(g(x))</strong>, g performs optimation <strong>loop</strong></p>
 <ul>
 <li>make a change-of-variable<div align="center"><br><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples/4.jpg?raw=true" alt><br></div>
@@ -538,12 +538,12 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Adversarial-Training"><a href="#Adversarial-Training" class="headerlink" title="Adversarial Training"></a>Adversarial Training</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Adversarial-Training"><a href="#3-1-Adversarial-Training" class="headerlink" title="3.1. Adversarial Training"></a>3.1. Adversarial Training</h2><ul>
 <li>has been shown to be <strong>difficulty at ImageNet scale</strong>. Adversarial Machine Learning at Scale</li>
 <li>training exclusively on l∞ adversarial examples provides only <strong>limited</strong> robustness to adversarial examples under other distortion metrics. Attacking the madry de-fense model with L1-based adversarial examples</li>
 </ul>
-<h2 id="Shattered-Gradient-1"><a href="#Shattered-Gradient-1" class="headerlink" title="Shattered Gradient"></a>Shattered Gradient</h2><ul>
+<h2 id="3-2-Shattered-Gradient"><a href="#3-2-Shattered-Gradient" class="headerlink" title="3.2. Shattered Gradient"></a>3.2. Shattered Gradient</h2><ul>
 <li><strong>thermometer encoding.</strong> BPDA-backward</li>
 <li><strong>cropping&amp;rescaling</strong>. EOT</li>
 <li><strong>bit-depth</strong>. BPDA-identity</li>
@@ -551,14 +551,14 @@
 <li><strong>TVM</strong>. EOT+BPDA</li>
 <li><strong>Quilting</strong>. EOT+BPDA</li>
 </ul>
-<h2 id="Stochastic-Gradient-1"><a href="#Stochastic-Gradient-1" class="headerlink" title="Stochastic Gradient"></a>Stochastic Gradient</h2><ul>
+<h2 id="3-3-Stochastic-Gradient"><a href="#3-3-Stochastic-Gradient" class="headerlink" title="3.3. Stochastic Gradient"></a>3.3. Stochastic Gradient</h2><ul>
 <li>SAP (random dropout at each layer). EOT</li>
 </ul>
-<h2 id="Vanishing-amp-Exploding-Gradient"><a href="#Vanishing-amp-Exploding-Gradient" class="headerlink" title="Vanishing&amp;Exploding Gradient"></a>Vanishing&amp;Exploding Gradient</h2><ul>
+<h2 id="3-4-Vanishing-amp-Exploding-Gradient"><a href="#3-4-Vanishing-amp-Exploding-Gradient" class="headerlink" title="3.4. Vanishing&amp;Exploding Gradient"></a>3.4. Vanishing&amp;Exploding Gradient</h2><ul>
 <li>PixelDefend</li>
 <li>Defense-GAN</li>
 </ul>
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples/6.jpg?raw=true" alt><br></div>
+<h2 id="3-5-Results"><a href="#3-5-Results" class="headerlink" title="3.5. Results"></a>3.5. Results</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Obfuscated Gradients Give a False Sense of Security: Circumventing Defenses to Adversarial Examples/6.jpg?raw=true" alt><br></div>
 
 
 
@@ -1394,7 +1394,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">1.2.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attacker"><span class="nav-number">1.3.</span> <span class="nav-text">Attacker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Obfuscated-Gradient"><span class="nav-number">1.4.</span> <span class="nav-text">Obfuscated Gradient</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attack-Methods"><span class="nav-number">2.</span> <span class="nav-text">Attack Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shattered-Gradient"><span class="nav-number">2.1.</span> <span class="nav-text">Shattered Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Simple"><span class="nav-number">2.1.1.</span> <span class="nav-text">Simple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BPDA"><span class="nav-number">2.1.2.</span> <span class="nav-text">BPDA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stochastic-Gradient"><span class="nav-number">2.2.</span> <span class="nav-text">Stochastic Gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exploding-amp-Vanishing-Gradient"><span class="nav-number">2.3.</span> <span class="nav-text">Exploding&amp;Vanishing Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reparameterization"><span class="nav-number">2.3.1.</span> <span class="nav-text">Reparameterization</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Training"><span class="nav-number">3.1.</span> <span class="nav-text">Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shattered-Gradient-1"><span class="nav-number">3.2.</span> <span class="nav-text">Shattered Gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stochastic-Gradient-1"><span class="nav-number">3.3.</span> <span class="nav-text">Stochastic Gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vanishing-amp-Exploding-Gradient"><span class="nav-number">3.4.</span> <span class="nav-text">Vanishing&amp;Exploding Gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">3.5.</span> <span class="nav-text">Results</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Dataset"><span class="nav-text">1.1. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Network"><span class="nav-text">1.2. Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Attacker"><span class="nav-text">1.3. Attacker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Obfuscated-Gradient"><span class="nav-text">1.4. Obfuscated Gradient</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Attack-Methods"><span class="nav-text">2. Attack Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Shattered-Gradient"><span class="nav-text">2.1. Shattered Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Simple"><span class="nav-text">2.1.1. Simple</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-BPDA"><span class="nav-text">2.1.2. BPDA</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Stochastic-Gradient"><span class="nav-text">2.2. Stochastic Gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Exploding-amp-Vanishing-Gradient"><span class="nav-text">2.3. Exploding&amp;Vanishing Gradient</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Reparameterization"><span class="nav-text">2.3.1. Reparameterization</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Adversarial-Training"><span class="nav-text">3.1. Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Shattered-Gradient"><span class="nav-text">3.2. Shattered Gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Stochastic-Gradient"><span class="nav-text">3.3. Stochastic Gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Vanishing-amp-Exploding-Gradient"><span class="nav-text">3.4. Vanishing&amp;Exploding Gradient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Results"><span class="nav-text">3.5. Results</span></a></li></ol></li></ol></div>
             
 
           </div>

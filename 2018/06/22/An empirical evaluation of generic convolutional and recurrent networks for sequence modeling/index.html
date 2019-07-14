@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Bai S, Kolter J Z, Koltun V. An empirical evaluation of generic convolutional and recurrent networks for sequence modeling[J]. arXiv preprint arXiv:1803.01271, 2018.">
-<meta name="keywords" content="NLP,TCN,Network">
+<meta name="keywords" content="NLP,Network,TCN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(CVPR 2018) An empirical evaluation of generic convolutional and recurrent networks for sequence modeling">
 <meta property="og:url" content="http://yoursite.com/2018/06/22/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/index.html">
@@ -483,13 +483,13 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it demonstrated that simple CNN (<strong>TCN</strong>) outperforms RNN, such as LSTM</p>
 <ul>
 <li><strong>TCN</strong>. longer memory, more accurate, simper</li>
 <li><strong>RNN</strong>. not paralleled</li>
 </ul>
-<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><h3 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h3><ul>
+<h2 id="1-1-Background"><a href="#1-1-Background" class="headerlink" title="1.1. Background"></a>1.1. Background</h2><h3 id="1-1-1-Application"><a href="#1-1-1-Application" class="headerlink" title="1.1.1. Application"></a>1.1.1. Application</h3><ul>
 <li>part-of-speech tagging and semantic role labelling</li>
 <li>sentence classification</li>
 <li>document classification</li>
@@ -497,7 +497,7 @@
 <li>audio synthesis</li>
 <li>language modeling</li>
 </ul>
-<h3 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h3><ul>
+<h3 id="1-1-2-Architecture"><a href="#1-1-2-Architecture" class="headerlink" title="1.1.2. Architecture"></a>1.1.2. Architecture</h3><ul>
 <li>LSTM</li>
 <li>GRU</li>
 <li>ConvLSTM</li>
@@ -506,10 +506,10 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="TCN"><a href="#TCN" class="headerlink" title="TCN"></a>TCN</h1><hr>
+<h1 id="2-TCN"><a href="#2-TCN" class="headerlink" title="2. TCN"></a>2. TCN</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Architecture-1"><a href="#Architecture-1" class="headerlink" title="Architecture"></a>Architecture</h2><ul>
+<h2 id="2-1-Architecture"><a href="#2-1-Architecture" class="headerlink" title="2.1. Architecture"></a>2.1. Architecture</h2><ul>
 <li><strong>input</strong>. sequence of any length</li>
 <li><strong>output</strong> sequence of the same length</li>
 <li>no gating mechanism</li>
@@ -521,29 +521,29 @@
 <li>network depth <strong>n</strong></li>
 <li><strong>d=2^n</strong> to make sure to hit each input within the effective history</li>
 </ul>
-<h2 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a>Advantage</h2><ul>
+<h2 id="2-2-Advantage"><a href="#2-2-Advantage" class="headerlink" title="2.2. Advantage"></a>2.2. Advantage</h2><ul>
 <li>parallelism</li>
 <li>flexible receptive filed size</li>
 <li>stable gradient</li>
 <li>low memory requirement for training</li>
 <li>variable length inputs</li>
 </ul>
-<h2 id="Disadvantage"><a href="#Disadvantage" class="headerlink" title="Disadvantage"></a>Disadvantage</h2><ul>
+<h2 id="2-3-Disadvantage"><a href="#2-3-Disadvantage" class="headerlink" title="2.3. Disadvantage"></a>2.3. Disadvantage</h2><ul>
 <li>data storage during evaluation</li>
 <li>potential parameter change for a transfer of domain</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Details"><a href="#3-1-Details" class="headerlink" title="3.1. Details"></a>3.1. Details</h2><ul>
 <li><strong>gradient clipping</strong> helped convergence [0.3, 1]</li>
 <li>find that TCN insensitive to hyperparameter changes, as long as the effective <strong>history size is sufficient</strong></li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/2.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Comparison"><a href="#3-2-Comparison" class="headerlink" title="3.2. Comparison"></a>3.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Adding-Problem"><a href="#Adding-Problem" class="headerlink" title="Adding Problem"></a>Adding Problem</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/3.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Adding-Problem"><a href="#3-3-Adding-Problem" class="headerlink" title="3.3. Adding Problem"></a>3.3. Adding Problem</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Controlled-Experiments"><a href="#Controlled-Experiments" class="headerlink" title="Controlled Experiments"></a>Controlled Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/4.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Controlled-Experiments"><a href="#3-4-Controlled-Experiments" class="headerlink" title="3.4. Controlled Experiments"></a>3.4. Controlled Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An empirical evaluation of generic convolutional and recurrent networks for sequence modeling/4.jpg?raw=true" alt><br></div>
 
 
 
@@ -571,9 +571,9 @@
           
             <a href="/tags/NLP/" rel="tag"># NLP</a>
           
-            <a href="/tags/TCN/" rel="tag"># TCN</a>
-          
             <a href="/tags/Network/" rel="tag"># Network</a>
+          
+            <a href="/tags/TCN/" rel="tag"># TCN</a>
           
         </div>
       
@@ -1380,7 +1380,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Background"><span class="nav-number">1.1.</span> <span class="nav-text">Background</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Application"><span class="nav-number">1.1.1.</span> <span class="nav-text">Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Architecture"><span class="nav-number">1.1.2.</span> <span class="nav-text">Architecture</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCN"><span class="nav-number">2.</span> <span class="nav-text">TCN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture-1"><span class="nav-number">2.1.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Advantage"><span class="nav-number">2.2.</span> <span class="nav-text">Advantage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disadvantage"><span class="nav-number">2.3.</span> <span class="nav-text">Disadvantage</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-Problem"><span class="nav-number">3.3.</span> <span class="nav-text">Adding Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Controlled-Experiments"><span class="nav-number">3.4.</span> <span class="nav-text">Controlled Experiments</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Background"><span class="nav-text">1.1. Background</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-Application"><span class="nav-text">1.1.1. Application</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-Architecture"><span class="nav-text">1.1.2. Architecture</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-TCN"><span class="nav-text">2. TCN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Architecture"><span class="nav-text">2.1. Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Advantage"><span class="nav-text">2.2. Advantage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Disadvantage"><span class="nav-text">2.3. Disadvantage</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Details"><span class="nav-text">3.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Comparison"><span class="nav-text">3.2. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Adding-Problem"><span class="nav-text">3.3. Adding Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Controlled-Experiments"><span class="nav-text">3.4. Controlled Experiments</span></a></li></ol></li></ol></div>
             
 
           </div>

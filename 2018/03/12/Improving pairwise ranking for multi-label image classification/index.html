@@ -484,8 +484,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li><strong>hinge loss is non-smooth</strong> and difficult to optimize</li>
 <li><strong>simple heuristics</strong> (top-k, threshhold) limits the use in the real world</li>
 </ul>
@@ -494,7 +494,7 @@
 <li>propose <strong>smooth pairwise ranking loss</strong></li>
 <li>incorporate <strong>label decision</strong> into model</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h3><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><h3 id="1-2-1-Objective"><a href="#1-2-1-Objective" class="headerlink" title="1.2.1. Objective"></a>1.2.1. Objective</h3><ul>
 <li>exact match<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/1.jpg?raw=true" alt><br></div>
 </li>
 </ul>
@@ -514,38 +514,38 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><hr>
+<h1 id="2-Algorithm"><a href="#2-Algorithm" class="headerlink" title="2. Algorithm"></a>2. Algorithm</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>f. label prediction</strong>, d–&gt;K (K. all labels)</li>
 <li><strong>g. label decision</strong>, K–&gt;k (k＜K)</li>
 </ul>
-<h2 id="Label-Prediction"><a href="#Label-Prediction" class="headerlink" title="Label Prediction"></a>Label Prediction</h2><h3 id="Pairwise-Loss-PWE"><a href="#Pairwise-Loss-PWE" class="headerlink" title="Pairwise Loss (PWE)"></a>Pairwise Loss (PWE)</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/5.jpg?raw=true" alt><br></div>
+<h2 id="2-1-Label-Prediction"><a href="#2-1-Label-Prediction" class="headerlink" title="2.1. Label Prediction"></a>2.1. Label Prediction</h2><h3 id="2-1-1-Pairwise-Loss-PWE"><a href="#2-1-1-Pairwise-Loss-PWE" class="headerlink" title="2.1.1. Pairwise Loss (PWE)"></a>2.1.1. Pairwise Loss (PWE)</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/5.jpg?raw=true" alt><br></div>
 
-<h3 id="Log-Sum-Exp"><a href="#Log-Sum-Exp" class="headerlink" title="Log-Sum-Exp"></a>Log-Sum-Exp</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/6.jpg?raw=true" alt><br></div>
+<h3 id="2-1-2-Log-Sum-Exp"><a href="#2-1-2-Log-Sum-Exp" class="headerlink" title="2.1.2. Log-Sum-Exp"></a>2.1.2. Log-Sum-Exp</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>sample at most t pairs<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/7.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Label-Decision"><a href="#Label-Decision" class="headerlink" title="Label Decision"></a>Label Decision</h2><ul>
+<h2 id="2-2-Label-Decision"><a href="#2-2-Label-Decision" class="headerlink" title="2.2. Label Decision"></a>2.2. Label Decision</h2><ul>
 <li>estimate <strong>label count</strong></li>
 <li>estimate optimal <strong>thresholds</strong> for each class<ul>
 <li>g. MLP on top of f’(x) (final CNN layer) (<strong>FC-ReLU, FC-ReLU</strong>) + <strong>two different branch</strong></li>
 </ul>
 </li>
 </ul>
-<h3 id="Label-Count-Estimation"><a href="#Label-Count-Estimation" class="headerlink" title="Label Count Estimation"></a>Label Count Estimation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/8.jpg?raw=true" alt><br></div>
+<h3 id="2-2-1-Label-Count-Estimation"><a href="#2-2-1-Label-Count-Estimation" class="headerlink" title="2.2.1. Label Count Estimation"></a>2.2.1. Label Count Estimation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>n-way classification</li>
 <li>Cross Entropy</li>
 </ul>
-<h3 id="Threshold-Estimation"><a href="#Threshold-Estimation" class="headerlink" title="Threshold Estimation"></a>Threshold Estimation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/9.jpg?raw=true" alt><br></div>
+<h3 id="2-2-2-Threshold-Estimation"><a href="#2-2-2-Threshold-Estimation" class="headerlink" title="2.2.2. Threshold Estimation"></a>2.2.2. Threshold Estimation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/9.jpg?raw=true" alt><br></div>
 
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="2-3-Details"><a href="#2-3-Details" class="headerlink" title="2.3. Details"></a>2.3. Details</h2><ul>
 <li><strong>label prediction model</strong><ul>
 <li>VGG16 replace Softmax loss with LSEP loss</li>
 <li>finetune 10 epoches</li>
@@ -560,7 +560,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/11.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Improving pairwise ranking for multi-label image classification/12.jpg?raw=true" alt><br></div>
 
       
@@ -1394,7 +1394,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Objective"><span class="nav-number">1.2.1.</span> <span class="nav-text">Objective</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Label-Prediction"><span class="nav-number">2.1.</span> <span class="nav-text">Label Prediction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pairwise-Loss-PWE"><span class="nav-number">2.1.1.</span> <span class="nav-text">Pairwise Loss (PWE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Log-Sum-Exp"><span class="nav-number">2.1.2.</span> <span class="nav-text">Log-Sum-Exp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Label-Decision"><span class="nav-number">2.2.</span> <span class="nav-text">Label Decision</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Label-Count-Estimation"><span class="nav-number">2.2.1.</span> <span class="nav-text">Label Count Estimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Threshold-Estimation"><span class="nav-number">2.2.2.</span> <span class="nav-text">Threshold Estimation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">2.3.</span> <span class="nav-text">Details</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Objective"><span class="nav-text">1.2.1. Objective</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Algorithm"><span class="nav-text">2. Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Label-Prediction"><span class="nav-text">2.1. Label Prediction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Pairwise-Loss-PWE"><span class="nav-text">2.1.1. Pairwise Loss (PWE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-Log-Sum-Exp"><span class="nav-text">2.1.2. Log-Sum-Exp</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Label-Decision"><span class="nav-text">2.2. Label Decision</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Label-Count-Estimation"><span class="nav-text">2.2.1. Label Count Estimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Threshold-Estimation"><span class="nav-text">2.2.2. Threshold Estimation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Details"><span class="nav-text">2.3. Details</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a></li></ol></div>
             
 
           </div>

@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Hui J. Understanding Matrix capsules with EM Routing[J]. Blog.​ Nov, 2017.“Understanding Matrix capsules with EM Routing (Based on Hinton’s Capsule Networks)”">
-<meta name="keywords" content="Classification,Cognitive Neuroscience,CapsulesNet,EM Algorithm">
+<meta name="keywords" content="Classification,CapsulesNet,EM Algorithm,Cognitive Neuroscience">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(2017) Understanding Matrix capsules with EM Routing">
 <meta property="og:url" content="http://yoursite.com/2017/12/18/Understanding Matrix capsules with EM Routing/index.html">
@@ -495,14 +495,14 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="向量capsule缺陷"><a href="#向量capsule缺陷" class="headerlink" title="向量capsule缺陷"></a>向量capsule缺陷</h2><p>此前提出的capsule结构存在一些<strong>缺陷</strong></p>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-向量capsule缺陷"><a href="#1-1-向量capsule缺陷" class="headerlink" title="1.1. 向量capsule缺陷"></a>1.1. 向量capsule缺陷</h2><p>此前提出的capsule结构存在一些<strong>缺陷</strong></p>
 <ul>
 <li>利用pose向量的长度表示存在概率时，使用了squash函数将向量长度压缩至[0, 1]，这阻碍了一些有意义的目标函数的使用。</li>
 <li>使用余弦角度测量两个pose向量之间的agreement，不能很好地区分quit good agreement和very good agreement. 而使用<strong>Gaussian cluster</strong>能使实现这点。</li>
 <li>对于长度为n的pose向量，其变换矩阵有n*n个参数。而对于n个元素的<strong>pose矩阵</strong>，其变换矩阵只有<strong>n个参数</strong>。</li>
 </ul>
-<h2 id="矩阵capsule结构"><a href="#矩阵capsule结构" class="headerlink" title="矩阵capsule结构"></a>矩阵capsule结构</h2><p>因此，本文提出一种新的capsule结构，其中包含</p>
+<h2 id="1-2-矩阵capsule结构"><a href="#1-2-矩阵capsule结构" class="headerlink" title="1.2. 矩阵capsule结构"></a>1.2. 矩阵capsule结构</h2><p>因此，本文提出一种新的capsule结构，其中包含</p>
 <ul>
 <li><strong>a logistic unit</strong>，表示该entity存在概率。</li>
 <li><strong>a 4*4 pose矩阵</strong>，通过学习表示entity与viewer之间的关系。</li>
@@ -514,25 +514,25 @@
 <p>每个vote都对应一个权重系数$r_i$,权重系数通过EM算法迭代更新。在本文中使用的迭代次数为3.</p>
 <p>矩阵capsule结构在smallNORB数据集上相对于目前的state-of-the-art减小了45%的test errors. 并且更能够抵抗白盒对抗攻击。</p>
 <hr>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><hr>
-<h2 id="Viewpoint与Pose矩阵"><a href="#Viewpoint与Pose矩阵" class="headerlink" title="Viewpoint与Pose矩阵"></a>Viewpoint与Pose矩阵</h2><ul>
+<h1 id="2-Introduction"><a href="#2-Introduction" class="headerlink" title="2. Introduction"></a>2. Introduction</h1><hr>
+<h2 id="2-1-Viewpoint与Pose矩阵"><a href="#2-1-Viewpoint与Pose矩阵" class="headerlink" title="2.1. Viewpoint与Pose矩阵"></a>2.1. Viewpoint与Pose矩阵</h2><ul>
 <li>Viewpoint的改变会导致图像像素产生较大的变化，但对表示objet和viewer之间关系的pose矩阵而言，只会产生简单的线性影响。</li>
 <li>随着viewpoint的改变，pose矩阵以一种协调的方式进行变化，因此不同部位votes的agreement保持恒定。</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/2.jpg?raw=true" alt><br></div>
 
-<h2 id="反向Attention"><a href="#反向Attention" class="headerlink" title="反向Attention"></a>反向Attention</h2><p>由L+1层的所有$capsule_c$竞争L层的某个$capsule_i$，即权重系数和为1. 而正向Attention是由L层的所有$capsule_i$竞争L+1层的某个$capsule_c$。</p>
+<h2 id="2-2-反向Attention"><a href="#2-2-反向Attention" class="headerlink" title="2.2. 反向Attention"></a>2.2. 反向Attention</h2><p>由L+1层的所有$capsule_c$竞争L层的某个$capsule_i$，即权重系数和为1. 而正向Attention是由L层的所有$capsule_i$竞争L+1层的某个$capsule_c$。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/3.jpg?raw=true" alt><br></div>
 
 
 <hr>
-<h1 id="EM迭代路由算法"><a href="#EM迭代路由算法" class="headerlink" title="EM迭代路由算法"></a>EM迭代路由算法</h1><p>将L层各capsule_i看为一个data point，L+1层各$capsule_c$看为一个Gaussian模型。因L层各$capsule_i$的vote路由问题转化为对给定数量data point进行Gaussian聚类问题。例如，眼睛、鼻子、嘴巴的$capsule_i$都vote（聚成一个cluster） L+1层中某个$capsule_c$，即检测到人脸。</p>
+<h1 id="3-EM迭代路由算法"><a href="#3-EM迭代路由算法" class="headerlink" title="3. EM迭代路由算法"></a>3. EM迭代路由算法</h1><p>将L层各capsule_i看为一个data point，L+1层各$capsule_c$看为一个Gaussian模型。因L层各$capsule_i$的vote路由问题转化为对给定数量data point进行Gaussian聚类问题。例如，眼睛、鼻子、嘴巴的$capsule_i$都vote（聚成一个cluster） L+1层中某个$capsule_c$，即检测到人脸。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/4.jpg?raw=true" alt><br></div>
 
-<h2 id="计算公式"><a href="#计算公式" class="headerlink" title="计算公式"></a>计算公式</h2><p><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/5.jpg?raw=true" alt></p>
+<h2 id="3-1-计算公式"><a href="#3-1-计算公式" class="headerlink" title="3.1. 计算公式"></a>3.1. 计算公式</h2><p><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/5.jpg?raw=true" alt></p>
 <p>cost表示某个$capsule_i$属于$caps_c$的一部分的概率。cost越低，则属于的可能性越大。<br><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/6.jpg?raw=true" alt></p>
 <p>λ为超参数，b为描述$capsule_c$均值的cost，可学习。<br><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/7.jpg?raw=true" alt></p>
-<h2 id="EM路由算法"><a href="#EM路由算法" class="headerlink" title="EM路由算法"></a>EM路由算法</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/8.jpg?raw=true" alt><br></div>
+<h2 id="3-2-EM路由算法"><a href="#3-2-EM路由算法" class="headerlink" title="3.2. EM路由算法"></a>3.2. EM路由算法</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>实验中设置的迭代次数为3.</li>
@@ -541,40 +541,40 @@
 
 
 <hr>
-<h1 id="Capsule模型"><a href="#Capsule模型" class="headerlink" title="Capsule模型"></a>Capsule模型</h1><hr>
+<h1 id="4-Capsule模型"><a href="#4-Capsule模型" class="headerlink" title="4. Capsule模型"></a>4. Capsule模型</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/11.jpg?raw=true" alt><br></div>
 
-<h2 id="ReLU-Conv1"><a href="#ReLU-Conv1" class="headerlink" title="ReLU+Conv1"></a>ReLU+Conv1</h2><ul>
+<h2 id="4-1-ReLU-Conv1"><a href="#4-1-ReLU-Conv1" class="headerlink" title="4.1. ReLU+Conv1"></a>4.1. ReLU+Conv1</h2><ul>
 <li>5*5 kernel, 32 channel (A=32), stride 2.</li>
 <li>输入: (b, c, 32, 32)</li>
 <li>输出: (b, 32, 14, 14 )</li>
 </ul>
-<h2 id="PrimaryCaps"><a href="#PrimaryCaps" class="headerlink" title="PrimaryCaps"></a>PrimaryCaps</h2><ul>
+<h2 id="4-2-PrimaryCaps"><a href="#4-2-PrimaryCaps" class="headerlink" title="4.2. PrimaryCaps"></a>4.2. PrimaryCaps</h2><ul>
 <li>1*1 kernel, 32 channel (B=32),  stride 1.</li>
 <li>输入: (b, 32, 14, 14)</li>
 <li>输出: (b, 32, 14, 14, 17)</li>
 </ul>
-<h2 id="ConvCaps1"><a href="#ConvCaps1" class="headerlink" title="ConvCaps1"></a>ConvCaps1</h2><ul>
+<h2 id="4-3-ConvCaps1"><a href="#4-3-ConvCaps1" class="headerlink" title="4.3. ConvCaps1"></a>4.3. ConvCaps1</h2><ul>
 <li>3*3 kernel (K=3), 32 channel (C=32), stride 2.</li>
 <li>输入: (b, 32, 14, 14, 17)</li>
 <li>输出: (b, 32,   6,   6, 17)</li>
 </ul>
-<h2 id="ConvCaps2"><a href="#ConvCaps2" class="headerlink" title="ConvCaps2"></a>ConvCaps2</h2><ul>
+<h2 id="4-4-ConvCaps2"><a href="#4-4-ConvCaps2" class="headerlink" title="4.4. ConvCaps2"></a>4.4. ConvCaps2</h2><ul>
 <li>3*3 kernel (K=3), 32 channel (D=32), stride 1.</li>
 <li>输入: (b, 32, 6, 6, 17)</li>
 <li>输出: (b, 32, 4, 4, 17)</li>
 </ul>
-<h2 id="Class-Capsule"><a href="#Class-Capsule" class="headerlink" title="Class Capsule"></a>Class Capsule</h2><ul>
+<h2 id="4-5-Class-Capsule"><a href="#4-5-Class-Capsule" class="headerlink" title="4.5. Class Capsule"></a>4.5. Class Capsule</h2><ul>
 <li>可看做h*w kernel, 10 channel (分类类别), stride 1. 该层使用了Coordinate Addition方法，额外加入每个感知区域的xy坐标到vote的前两个元素中。</li>
 <li>输入: (b, 32, 4, 4, 17)</li>
 <li>输出: (b, 10, 17)</li>
 </ul>
-<h2 id="Spread-Loss"><a href="#Spread-Loss" class="headerlink" title="Spread Loss"></a>Spread Loss</h2><p><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/12.jpg?raw=true" alt></p>
+<h2 id="4-6-Spread-Loss"><a href="#4-6-Spread-Loss" class="headerlink" title="4.6. Spread Loss"></a>4.6. Spread Loss</h2><p><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/12.jpg?raw=true" alt></p>
 <ul>
 <li>最大化目标类别的activation与其他类别activation的差值。m为margin，从0.2开始线性增长，避免dead capsule.</li>
 </ul>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="5-Experiments"><a href="#5-Experiments" class="headerlink" title="5. Experiments"></a>5. Experiments</h1><hr>
 <ul>
 <li>samllNORB数据集包含5种类别的玩具图片：飞机、车、卡车</li>
 <li>人类和动物。每种类别都有18个不同的视角(0-340), 9种高度和6种光照条件。图片大小为96<em>96.实验中将其下采样为48</em>48并做32*32 random crop操作。</li>
@@ -588,7 +588,7 @@
 
 
 <hr>
-<h1 id="对抗鲁棒性"><a href="#对抗鲁棒性" class="headerlink" title="对抗鲁棒性"></a>对抗鲁棒性</h1><hr>
+<h1 id="6-对抗鲁棒性"><a href="#6-对抗鲁棒性" class="headerlink" title="6. 对抗鲁棒性"></a>6. 对抗鲁棒性</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/16.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Understanding Matrix capsules with EM Routing/17.jpg?raw=true" alt><br></div>
 
 
@@ -617,11 +617,11 @@
           
             <a href="/tags/Classification/" rel="tag"># Classification</a>
           
-            <a href="/tags/Cognitive-Neuroscience/" rel="tag"># Cognitive Neuroscience</a>
-          
             <a href="/tags/CapsulesNet/" rel="tag"># CapsulesNet</a>
           
             <a href="/tags/EM-Algorithm/" rel="tag"># EM Algorithm</a>
+          
+            <a href="/tags/Cognitive-Neuroscience/" rel="tag"># Cognitive Neuroscience</a>
           
         </div>
       
@@ -1428,7 +1428,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#向量capsule缺陷"><span class="nav-number">1.1.</span> <span class="nav-text">向量capsule缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵capsule结构"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵capsule结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Viewpoint与Pose矩阵"><span class="nav-number">2.1.</span> <span class="nav-text">Viewpoint与Pose矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反向Attention"><span class="nav-number">2.2.</span> <span class="nav-text">反向Attention</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EM迭代路由算法"><span class="nav-number">3.</span> <span class="nav-text">EM迭代路由算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算公式"><span class="nav-number">3.1.</span> <span class="nav-text">计算公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EM路由算法"><span class="nav-number">3.2.</span> <span class="nav-text">EM路由算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capsule模型"><span class="nav-number">4.</span> <span class="nav-text">Capsule模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ReLU-Conv1"><span class="nav-number">4.1.</span> <span class="nav-text">ReLU+Conv1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PrimaryCaps"><span class="nav-number">4.2.</span> <span class="nav-text">PrimaryCaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConvCaps1"><span class="nav-number">4.3.</span> <span class="nav-text">ConvCaps1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ConvCaps2"><span class="nav-number">4.4.</span> <span class="nav-text">ConvCaps2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-Capsule"><span class="nav-number">4.5.</span> <span class="nav-text">Class Capsule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spread-Loss"><span class="nav-number">4.6.</span> <span class="nav-text">Spread Loss</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">5.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对抗鲁棒性"><span class="nav-number">6.</span> <span class="nav-text">对抗鲁棒性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-向量capsule缺陷"><span class="nav-text">1.1. 向量capsule缺陷</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-矩阵capsule结构"><span class="nav-text">1.2. 矩阵capsule结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Introduction"><span class="nav-text">2. Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Viewpoint与Pose矩阵"><span class="nav-text">2.1. Viewpoint与Pose矩阵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-反向Attention"><span class="nav-text">2.2. 反向Attention</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-EM迭代路由算法"><span class="nav-text">3. EM迭代路由算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-计算公式"><span class="nav-text">3.1. 计算公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-EM路由算法"><span class="nav-text">3.2. EM路由算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Capsule模型"><span class="nav-text">4. Capsule模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-ReLU-Conv1"><span class="nav-text">4.1. ReLU+Conv1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-PrimaryCaps"><span class="nav-text">4.2. PrimaryCaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-ConvCaps1"><span class="nav-text">4.3. ConvCaps1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-ConvCaps2"><span class="nav-text">4.4. ConvCaps2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-Class-Capsule"><span class="nav-text">4.5. Class Capsule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-Spread-Loss"><span class="nav-text">4.6. Spread Loss</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Experiments"><span class="nav-text">5. Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-对抗鲁棒性"><span class="nav-text">6. 对抗鲁棒性</span></a></li></ol></div>
             
 
           </div>

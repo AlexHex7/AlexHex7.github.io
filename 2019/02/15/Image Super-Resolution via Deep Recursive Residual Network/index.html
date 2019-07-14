@@ -491,7 +491,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposes Deep Recursive Residual Network (<strong>DRNN</strong>)</p>
 <ul>
 <li>adopt <strong>residual</strong> learning (<strong>local + global</strong>)</li>
@@ -500,25 +500,25 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><h3 id="VDSR"><a href="#VDSR" class="headerlink" title="VDSR"></a>VDSR</h3><ul>
+<h2 id="1-1-Related-Works"><a href="#1-1-Related-Works" class="headerlink" title="1.1. Related Works"></a>1.1. Related Works</h2><h3 id="1-1-1-VDSR"><a href="#1-1-1-VDSR" class="headerlink" title="1.1.1. VDSR"></a>1.1.1. VDSR</h3><ul>
 <li><strong>high LR</strong> to accelerate the convergence speed</li>
 <li>residual learning + <strong>adjustable gradient clipping</strong> to sovel gradient explosion problem</li>
 </ul>
-<h3 id="DRCN"><a href="#DRCN" class="headerlink" title="DRCN"></a>DRCN</h3><ul>
+<h3 id="1-1-2-DRCN"><a href="#1-1-2-DRCN" class="headerlink" title="1.1.2. DRCN"></a>1.1.2. DRCN</h3><ul>
 <li><strong>chain strucuture</strong></li>
 <li><strong>recursive-supervision</strong> and <strong>skip-connection</strong> to mitigate the difficulty of training</li>
 </ul>
-<h2 id="Novelties"><a href="#Novelties" class="headerlink" title="Novelties"></a>Novelties</h2><ul>
+<h2 id="1-2-Novelties"><a href="#1-2-Novelties" class="headerlink" title="1.2. Novelties"></a>1.2. Novelties</h2><ul>
 <li>both global and local residual learning</li>
 <li>recursive learning. Increase the <strong>depth without adding parameters</strong></li>
 </ul>
-<h2 id="DRRN"><a href="#DRRN" class="headerlink" title="DRRN"></a>DRRN</h2><h3 id="Pre-Activation"><a href="#Pre-Activation" class="headerlink" title="Pre-Activation"></a>Pre-Activation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/2.jpg?raw=true" alt><br></div>
+<h2 id="1-3-DRRN"><a href="#1-3-DRRN" class="headerlink" title="1.3. DRRN"></a>1.3. DRRN</h2><h3 id="1-3-1-Pre-Activation"><a href="#1-3-1-Pre-Activation" class="headerlink" title="1.3.1. Pre-Activation"></a>1.3.1. Pre-Activation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/2.jpg?raw=true" alt><br></div>
 
-<h3 id="Recursive"><a href="#Recursive" class="headerlink" title="Recursive"></a>Recursive</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/3.jpg?raw=true" alt><br></div>
+<h3 id="1-3-2-Recursive"><a href="#1-3-2-Recursive" class="headerlink" title="1.3.2. Recursive"></a>1.3.2. Recursive</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/3.jpg?raw=true" alt><br></div>
 
-<h3 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/4.jpg?raw=true" alt><br></div>
+<h3 id="1-3-3-Architecture"><a href="#1-3-3-Architecture" class="headerlink" title="1.3.3. Architecture"></a>1.3.3. Architecture</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/4.jpg?raw=true" alt><br></div>
 
-<h3 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h3><ul>
+<h3 id="1-3-4-Parameters"><a href="#1-3-4-Parameters" class="headerlink" title="1.3.4. Parameters"></a>1.3.4. Parameters</h3><ul>
 <li><strong>U</strong>. the number of residual unit in a recursive block</li>
 <li><strong>B</strong>. the number of recursive block<ul>
 <li>when <strong>U=0</strong>, DRRN becomes VDSR</li>
@@ -528,24 +528,24 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/5.jpg?raw=true" alt><br></div>
 
-<h3 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/6.jpg?raw=true" alt><br></div>
+<h3 id="1-3-5-Loss-Function"><a href="#1-3-5-Loss-Function" class="headerlink" title="1.3.5. Loss Function"></a>1.3.5. Loss Function</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/6.jpg?raw=true" alt><br></div>
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Dataset"><a href="#2-1-Dataset" class="headerlink" title="2.1. Dataset"></a>2.1. Dataset</h2><ul>
 <li>Set5</li>
 <li>Set14</li>
 <li>BSD100</li>
 <li>Urban100</li>
 </ul>
-<h2 id="Augmentation"><a href="#Augmentation" class="headerlink" title="Augmentation"></a>Augmentation</h2><ul>
+<h2 id="2-2-Augmentation"><a href="#2-2-Augmentation" class="headerlink" title="2.2. Augmentation"></a>2.2. Augmentation</h2><ul>
 <li>flipping</li>
 <li>rotation</li>
 <li>scale. x2, x3, x4</li>
 <li>training sample. 31x31 <strong>patches</strong> with stride of 21</li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="2-3-Details"><a href="#2-3-Details" class="headerlink" title="2.3. Details"></a>2.3. Details</h2><ul>
 <li><p>adjustable gradient clipping</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/7.jpg?raw=true" alt><br></div>
 </li>
@@ -556,11 +556,11 @@
 <li>Metric. PSNR, SSIM, <strong>IFCs</strong></li>
 <li><strong>0.25s per 288x288 image on a Titan X GPU</strong></li>
 </ul>
-<h2 id="Study-of-B-and-U"><a href="#Study-of-B-and-U" class="headerlink" title="Study of B and U"></a>Study of B and U</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/8.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Study-of-B-and-U"><a href="#2-4-Study-of-B-and-U" class="headerlink" title="2.4. Study of B and U"></a>2.4. Study of B and U</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/10.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Comparison"><a href="#2-5-Comparison" class="headerlink" title="2.5. Comparison"></a>2.5. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/10.jpg?raw=true" alt><br></div>
 
-<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/11.jpg?raw=true" alt><br></div>
+<h2 id="2-6-Discussion"><a href="#2-6-Discussion" class="headerlink" title="2.6. Discussion"></a>2.6. Discussion</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image Super-Resolution via Deep Recursive Residual Network/11.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>DRRN_NS</strong>. no sharing weights</li>
@@ -1407,7 +1407,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Works"><span class="nav-number">1.1.</span> <span class="nav-text">Related Works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VDSR"><span class="nav-number">1.1.1.</span> <span class="nav-text">VDSR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DRCN"><span class="nav-number">1.1.2.</span> <span class="nav-text">DRCN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Novelties"><span class="nav-number">1.2.</span> <span class="nav-text">Novelties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DRRN"><span class="nav-number">1.3.</span> <span class="nav-text">DRRN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pre-Activation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Pre-Activation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Recursive"><span class="nav-number">1.3.2.</span> <span class="nav-text">Recursive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Architecture"><span class="nav-number">1.3.3.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parameters"><span class="nav-number">1.3.4.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss-Function"><span class="nav-number">1.3.5.</span> <span class="nav-text">Loss Function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">2.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Augmentation"><span class="nav-number">2.2.</span> <span class="nav-text">Augmentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">2.3.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Study-of-B-and-U"><span class="nav-number">2.4.</span> <span class="nav-text">Study of B and U</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">2.5.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Discussion"><span class="nav-number">2.6.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Works"><span class="nav-text">1.1. Related Works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-VDSR"><span class="nav-text">1.1.1. VDSR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-DRCN"><span class="nav-text">1.1.2. DRCN</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Novelties"><span class="nav-text">1.2. Novelties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-DRRN"><span class="nav-text">1.3. DRRN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Pre-Activation"><span class="nav-text">1.3.1. Pre-Activation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Recursive"><span class="nav-text">1.3.2. Recursive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-Architecture"><span class="nav-text">1.3.3. Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-4-Parameters"><span class="nav-text">1.3.4. Parameters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-5-Loss-Function"><span class="nav-text">1.3.5. Loss Function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Dataset"><span class="nav-text">2.1. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Augmentation"><span class="nav-text">2.2. Augmentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Details"><span class="nav-text">2.3. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Study-of-B-and-U"><span class="nav-text">2.4. Study of B and U</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Comparison"><span class="nav-text">2.5. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Discussion"><span class="nav-text">2.6. Discussion</span></a></li></ol></li></ol></div>
             
 
           </div>

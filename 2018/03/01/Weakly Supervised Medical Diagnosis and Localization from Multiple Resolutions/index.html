@@ -491,8 +491,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>Medical training data <strong>rarely</strong> includes more than global image-level labels as <strong>segmentations are time-consuming and expensive</strong> to collect</li>
 </ul>
 <p>In this paper, it proposes a architecture</p>
@@ -500,18 +500,18 @@
 <li>learn at <strong>multiple resolutions</strong> while generating saliency maps with weak supervision</li>
 <li>parameterize the Log-Sum-Exp pooling function with a learnable lower-bounded adaptation (<strong>LSE-LBA</strong>)</li>
 </ul>
-<h2 id="Disease"><a href="#Disease" class="headerlink" title="Disease"></a>Disease</h2><ul>
+<h2 id="1-2-Disease"><a href="#1-2-Disease" class="headerlink" title="1.2. Disease"></a>1.2. Disease</h2><ul>
 <li><strong>Enlargement</strong>. width of the heart is measured to be 50% or greater than the width of the thoracic cage</li>
 <li><strong>Nodules</strong> (肺结节). subtle findings as small as a few millimeters in size and are frequently missed by practitioners even when viewed closely on a high resolution monitor</li>
 <li><strong>Diffuse infiltrative opacification</strong> (浸润). in the <strong>periphery</strong> of the lung is often more <strong>easily noted</strong> from a global view. But closer inspection of the anomalous region is often required to narrow the differential diagnosis and determine followup</li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-3-Contribution"><a href="#1-3-Contribution" class="headerlink" title="1.3. Contribution"></a>1.3. Contribution</h2><ul>
 <li>multi-resolution with MIL</li>
 <li>LSE-LBA</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Weakly Supervised Medical Diagnosis and Localization from Multiple Resolutions/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-4-Related-Work"><a href="#1-4-Related-Work" class="headerlink" title="1.4. Related Work"></a>1.4. Related Work</h2><ul>
 <li><strong>Wang</strong>. ChestX-ray14 (one resolution, non-adaptive pooling)</li>
 <li><strong>Li</strong>. upsample or downsample to PxP grids</li>
 <li><strong>Chexnet</strong></li>
@@ -522,8 +522,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Weakly Supervised Medical Diagnosis and Localization from Multiple Resolutions/2.jpg?raw=true" alt><br></div>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-Network"><a href="#2-1-Network" class="headerlink" title="2.1. Network"></a>2.1. Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Weakly Supervised Medical Diagnosis and Localization from Multiple Resolutions/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p><strong>ResNet line</strong>. f identity connection</p>
@@ -537,7 +537,7 @@
 
 </li>
 </ul>
-<h2 id="Pooling-Function"><a href="#Pooling-Function" class="headerlink" title="Pooling Function"></a>Pooling Function</h2><ul>
+<h2 id="2-2-Pooling-Function"><a href="#2-2-Pooling-Function" class="headerlink" title="2.2. Pooling Function"></a>2.2. Pooling Function</h2><ul>
 <li><p>Noisy-OR (NOR)</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Weakly Supervised Medical Diagnosis and Localization from Multiple Resolutions/6.jpg?raw=true" alt><br></div>
 </li>
@@ -556,8 +556,8 @@
 </ol>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-dataset"><a href="#3-1-dataset" class="headerlink" title="3.1. dataset"></a>3.1. dataset</h2><ul>
 <li>1024x1024 to 512x512, [0, 1]</li>
 <li><strong>data augmentation</strong></li>
 <li><strong>resize</strong> [0.25, 0.75]</li>
@@ -568,7 +568,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Weakly Supervised Medical Diagnosis and Localization from Multiple Resolutions/10.jpg?raw=true" alt><br></div>
 
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Weakly Supervised Medical Diagnosis and Localization from Multiple Resolutions/11.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Comparison"><a href="#3-2-Comparison" class="headerlink" title="3.2. Comparison"></a>3.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Weakly Supervised Medical Diagnosis and Localization from Multiple Resolutions/11.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>when r_0 is large, the performance of disffused abnormalities degrades, such as a<strong>telectasis(扩张不全), cardiomegaly (心脏扩大), effusion (积液) and pneumonia (肺炎)</strong></li>
@@ -1418,7 +1418,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Disease"><span class="nav-number">1.2.</span> <span class="nav-text">Disease</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.3.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.4.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">2.1.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pooling-Function"><span class="nav-number">2.2.</span> <span class="nav-text">Pooling Function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-number">3.1.</span> <span class="nav-text">dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Comparison</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Disease"><span class="nav-text">1.2. Disease</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Contribution"><span class="nav-text">1.3. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Related-Work"><span class="nav-text">1.4. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Network"><span class="nav-text">2.1. Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Pooling-Function"><span class="nav-text">2.2. Pooling Function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-dataset"><span class="nav-text">3.1. dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Comparison"><span class="nav-text">3.2. Comparison</span></a></li></ol></li></ol></div>
             
 
           </div>

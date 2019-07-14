@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Xie S, Girshick R, Dollár P, et al. Aggregated residual transformations for deep neural networks[C]//Computer Vision and Pattern Recognition (CVPR), 2017 IEEE Conference on. IEEE, 2017: 5987-5995.">
-<meta name="keywords" content="Network,ResNeXt">
+<meta name="keywords" content="ResNeXt,Network">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(CVPR 2017) Aggregated residual transformations for deep neural networks">
 <meta property="og:url" content="http://yoursite.com/2019/01/12/Aggregated residual transformations for deep neural networks/index.html">
@@ -494,8 +494,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>transition from <strong>feature engineering</strong> to <strong>network engineering</strong></li>
 <li>human effort has been <strong>shifted to designing better network</strong> architecture for learning representation</li>
 <li>important strategy of Inception model is <strong>split-transform-merge</strong></li>
@@ -508,20 +508,20 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Multi-branch-Convolutional-Network"><a href="#Multi-branch-Convolutional-Network" class="headerlink" title="Multi-branch Convolutional Network"></a>Multi-branch Convolutional Network</h3><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><h3 id="1-2-1-Multi-branch-Convolutional-Network"><a href="#1-2-1-Multi-branch-Convolutional-Network" class="headerlink" title="1.2.1. Multi-branch Convolutional Network"></a>1.2.1. Multi-branch Convolutional Network</h3><ul>
 <li>Inception. multi-branch</li>
 <li>ResNet. two-branch</li>
 </ul>
-<h3 id="Group-Convolution"><a href="#Group-Convolution" class="headerlink" title="Group Convolution"></a>Group Convolution</h3><ul>
+<h3 id="1-2-2-Group-Convolution"><a href="#1-2-2-Group-Convolution" class="headerlink" title="1.2.2. Group Convolution"></a>1.2.2. Group Convolution</h3><ul>
 <li>channel-wise convolution</li>
 </ul>
-<h3 id="Compressing-Convolutional-Network"><a href="#Compressing-Convolutional-Network" class="headerlink" title="Compressing Convolutional Network"></a>Compressing Convolutional Network</h3><ul>
+<h3 id="1-2-3-Compressing-Convolutional-Network"><a href="#1-2-3-Compressing-Convolutional-Network" class="headerlink" title="1.2.3. Compressing Convolutional Network"></a>1.2.3. Compressing Convolutional Network</h3><ul>
 <li>decomposition. at spatial or channel</li>
 </ul>
-<h3 id="Ensembling"><a href="#Ensembling" class="headerlink" title="Ensembling"></a>Ensembling</h3><p><br></p>
+<h3 id="1-2-4-Ensembling"><a href="#1-2-4-Ensembling" class="headerlink" title="1.2.4. Ensembling"></a>1.2.4. Ensembling</h3><p><br></p>
 <hr>
-<h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><hr>
-<h2 id="Simple-Neurons"><a href="#Simple-Neurons" class="headerlink" title="Simple Neurons"></a>Simple Neurons</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/2.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/3.jpg?raw=true" alt><br></div>
+<h1 id="2-Method"><a href="#2-Method" class="headerlink" title="2. Method"></a>2. Method</h1><hr>
+<h2 id="2-1-Simple-Neurons"><a href="#2-1-Simple-Neurons" class="headerlink" title="2.1. Simple Neurons"></a>2.1. Simple Neurons</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/2.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/3.jpg?raw=true" alt><br></div>
 
 
 <p><strong>Inner Product.</strong> can be recast as a combination of <strong>splitting, transforming and aggregating.</strong></p>
@@ -529,7 +529,7 @@
 <li>D. the number of channel</li>
 <li>x=[x_1, x_2, …, x_D]</li>
 </ul>
-<h2 id="Aggregated-Transformations"><a href="#Aggregated-Transformations" class="headerlink" title="Aggregated Transformations"></a>Aggregated Transformations</h2><ul>
+<h2 id="2-2-Aggregated-Transformations"><a href="#2-2-Aggregated-Transformations" class="headerlink" title="2.2. Aggregated Transformations"></a>2.2. Aggregated Transformations</h2><ul>
 <li><strong>Network-in-Neuron</strong>. replace the elementary transformation (wx) with a  more generic function<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/4.jpg?raw=true" alt><br>  All T_i have the same topology.<br></div>
 
 
@@ -539,15 +539,15 @@
 <li><strong>T. arbitrary function</strong>; projects x into low-dimension embedding and then transforms it</li>
 <li><strong>C</strong>. the size of the set of transformations</li>
 </ul>
-<h2 id="Relation-to-Grouped-Convolutions"><a href="#Relation-to-Grouped-Convolutions" class="headerlink" title="Relation to Grouped Convolutions"></a>Relation to Grouped Convolutions</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/5.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Relation-to-Grouped-Convolutions"><a href="#2-3-Relation-to-Grouped-Convolutions" class="headerlink" title="2.3. Relation to Grouped Convolutions"></a>2.3. Relation to Grouped Convolutions</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/5.jpg?raw=true" alt><br></div>
 
-<h2 id="Depth-≥-3"><a href="#Depth-≥-3" class="headerlink" title="Depth ≥ 3"></a>Depth ≥ 3</h2><ul>
+<h2 id="2-4-Depth-≥-3"><a href="#2-4-Depth-≥-3" class="headerlink" title="2.4. Depth ≥ 3"></a>2.4. Depth ≥ 3</h2><ul>
 <li>The block depth must ≥ 3.<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/6.jpg?raw=true" alt><br></div>
 
 
 </li>
 </ul>
-<h2 id="Capacity"><a href="#Capacity" class="headerlink" title="Capacity"></a>Capacity</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/7.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Capacity"><a href="#2-5-Capacity" class="headerlink" title="2.5. Capacity"></a>2.5. Capacity</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Left</strong>. 256<em>64 + 3</em>3<em>64</em>64 + 64*256 ≈ 70k parameters and <strong>proportional FLOPs</strong></li>
@@ -555,8 +555,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Cardinality-vs-Width"><a href="#Cardinality-vs-Width" class="headerlink" title="Cardinality vs Width"></a>Cardinality vs Width</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/9.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Cardinality-vs-Width"><a href="#3-1-Cardinality-vs-Width" class="headerlink" title="3.1. Cardinality vs Width"></a>3.1. Cardinality vs Width</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>with complexity preserved</strong>, increasing cardinality at the price of reducing width starts to show <strong>saturating accuracy</strong></li>
@@ -567,16 +567,16 @@
 <li><strong>more training data will enlarge the gap of validation error</strong>, shown in ImageNet-5K set</li>
 <li><strong>the saturation is caused by the complexity of dataset</strong>, not the capacity of models</li>
 </ul>
-<h2 id="Cardinality-vs-Deeper-Wider"><a href="#Cardinality-vs-Deeper-Wider" class="headerlink" title="Cardinality vs Deeper/Wider"></a>Cardinality vs Deeper/Wider</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/11.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/12.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Cardinality-vs-Deeper-Wider"><a href="#3-2-Cardinality-vs-Deeper-Wider" class="headerlink" title="3.2. Cardinality vs Deeper/Wider"></a>3.2. Cardinality vs Deeper/Wider</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/11.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/12.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>incrase cardinality better</li>
 </ul>
-<h2 id="w-o-Residual"><a href="#w-o-Residual" class="headerlink" title="w/o Residual"></a>w/o Residual</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/13.jpg?raw=true" alt><br></div>
+<h2 id="3-3-w-o-Residual"><a href="#3-3-w-o-Residual" class="headerlink" title="3.3. w/o Residual"></a>3.3. w/o Residual</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/13.jpg?raw=true" alt><br></div>
 
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/14.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Comparison"><a href="#3-4-Comparison" class="headerlink" title="3.4. Comparison"></a>3.4. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/14.jpg?raw=true" alt><br></div>
 
-<h2 id="Detection"><a href="#Detection" class="headerlink" title="Detection"></a>Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/15.jpg?raw=true" alt><br></div>
+<h2 id="3-5-Detection"><a href="#3-5-Detection" class="headerlink" title="3.5. Detection"></a>3.5. Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Aggregated residual transformations for deep neural networks/15.jpg?raw=true" alt><br></div>
 
 
       
@@ -601,9 +601,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Network/" rel="tag"># Network</a>
-          
             <a href="/tags/ResNeXt/" rel="tag"># ResNeXt</a>
+          
+            <a href="/tags/Network/" rel="tag"># Network</a>
           
         </div>
       
@@ -1410,7 +1410,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-branch-Convolutional-Network"><span class="nav-number">1.2.1.</span> <span class="nav-text">Multi-branch Convolutional Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-Convolution"><span class="nav-number">1.2.2.</span> <span class="nav-text">Group Convolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compressing-Convolutional-Network"><span class="nav-number">1.2.3.</span> <span class="nav-text">Compressing Convolutional Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ensembling"><span class="nav-number">1.2.4.</span> <span class="nav-text">Ensembling</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Method"><span class="nav-number">2.</span> <span class="nav-text">Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Simple-Neurons"><span class="nav-number">2.1.</span> <span class="nav-text">Simple Neurons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregated-Transformations"><span class="nav-number">2.2.</span> <span class="nav-text">Aggregated Transformations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Relation-to-Grouped-Convolutions"><span class="nav-number">2.3.</span> <span class="nav-text">Relation to Grouped Convolutions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Depth-≥-3"><span class="nav-number">2.4.</span> <span class="nav-text">Depth ≥ 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capacity"><span class="nav-number">2.5.</span> <span class="nav-text">Capacity</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cardinality-vs-Width"><span class="nav-number">3.1.</span> <span class="nav-text">Cardinality vs Width</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cardinality-vs-Deeper-Wider"><span class="nav-number">3.2.</span> <span class="nav-text">Cardinality vs Deeper/Wider</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#w-o-Residual"><span class="nav-number">3.3.</span> <span class="nav-text">w/o Residual</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.4.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detection"><span class="nav-number">3.5.</span> <span class="nav-text">Detection</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Multi-branch-Convolutional-Network"><span class="nav-text">1.2.1. Multi-branch Convolutional Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Group-Convolution"><span class="nav-text">1.2.2. Group Convolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-Compressing-Convolutional-Network"><span class="nav-text">1.2.3. Compressing Convolutional Network</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-4-Ensembling"><span class="nav-text">1.2.4. Ensembling</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Method"><span class="nav-text">2. Method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Simple-Neurons"><span class="nav-text">2.1. Simple Neurons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Aggregated-Transformations"><span class="nav-text">2.2. Aggregated Transformations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Relation-to-Grouped-Convolutions"><span class="nav-text">2.3. Relation to Grouped Convolutions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Depth-≥-3"><span class="nav-text">2.4. Depth ≥ 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Capacity"><span class="nav-text">2.5. Capacity</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Cardinality-vs-Width"><span class="nav-text">3.1. Cardinality vs Width</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Cardinality-vs-Deeper-Wider"><span class="nav-text">3.2. Cardinality vs Deeper/Wider</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-w-o-Residual"><span class="nav-text">3.3. w/o Residual</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Comparison"><span class="nav-text">3.4. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Detection"><span class="nav-text">3.5. Detection</span></a></li></ol></li></ol></div>
             
 
           </div>

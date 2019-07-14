@@ -516,7 +516,7 @@
 <ul>
 <li>Circle GAN可看作是两个<strong>auto-encoder</strong>：GF和FG。</li>
 </ul>
-<h1 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h1><hr>
+<h1 id="1-Related-work"><a href="#1-Related-work" class="headerlink" title="1. Related work"></a>1. Related work</h1><hr>
 <ul>
 <li>Image-to-Image Translation (<strong>CGAN</strong>) <ol>
 <li>I. Goodfellow, J. Pouget-Abadie, M. Mirza, B. Xu, D. Warde-Farley, S. Ozair, A. Courville, and Y. Bengio. Generative adversarial nets. In NIPS, 2014</li>
@@ -529,7 +529,7 @@
 </li>
 <li>Neural Style Transfer<br>学习两张特定图片之间的映射，Cycle GAN学习的是两个domain之间的映射。</li>
 </ul>
-<h1 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h1><hr>
+<h1 id="2-Loss"><a href="#2-Loss" class="headerlink" title="2. Loss"></a>2. Loss</h1><hr>
 <ul>
 <li>Adsersarial Loss</li>
 </ul>
@@ -545,7 +545,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks/7.jpg?raw=true" alt><br></div>
 
-<h1 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h1><hr>
+<h1 id="3-Implementation"><a href="#3-Implementation" class="headerlink" title="3. Implementation"></a>3. Implementation</h1><hr>
 <ul>
 <li>D使用70*70 <strong>PatchGAN</strong>：<strong>更少参数，能判别任意大小图像</strong>。</li>
 <li>将adversarial loss从negative log likelihood改为<strong>least square loss</strong>.</li>
@@ -556,7 +556,7 @@
 <li><strong>History Buffer</strong> of generated images.</li>
 <li>batch size 1 of <strong>scratch</strong>.</li>
 </ul>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h1><hr>
 <ul>
 <li><strong>CoGAN</strong><br>M.-. Liu and O. Tuzel. Coupled generative adversarial networks. In NIPS, pages 469–477, 2016.</li>
 <li><strong>Pixel loss + GAN</strong><br>SimGAN (self-regularision loss).</li>
@@ -584,7 +584,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks/12.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h1><hr>
+<h1 id="5-Dataset"><a href="#5-Dataset" class="headerlink" title="5. Dataset"></a>5. Dataset</h1><hr>
 <ul>
 <li><strong>Labels-photo</strong>: Cityscapes dataset (Figure 5)</li>
 </ul>
@@ -1477,7 +1477,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Related-work"><span class="nav-number">1.</span> <span class="nav-text">Related work</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loss"><span class="nav-number">2.</span> <span class="nav-text">Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implementation"><span class="nav-number">3.</span> <span class="nav-text">Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">4.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dataset"><span class="nav-number">5.</span> <span class="nav-text">Dataset</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Related-work"><span class="nav-text">1. Related work</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Loss"><span class="nav-text">2. Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Implementation"><span class="nav-text">3. Implementation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments"><span class="nav-text">4. Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Dataset"><span class="nav-text">5. Dataset</span></a></li></ol></div>
             
 
           </div>

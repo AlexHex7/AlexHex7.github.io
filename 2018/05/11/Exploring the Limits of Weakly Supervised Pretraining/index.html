@@ -487,8 +487,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>the large <strong>pre-training datasets</strong> are difficult to collect and <strong>annotate</strong></li>
 </ul>
 <p>In this paper</p>
@@ -496,7 +496,7 @@
 <li>present a study <strong>transfer training</strong> with large network trained to <strong>predict hashtags on billions of social media images (Weak Supervised)</strong></li>
 <li>training for large-scale hashtag prediction leads to excellent result</li>
 </ul>
-<h2 id="Hashtags-Dataset"><a href="#Hashtags-Dataset" class="headerlink" title="Hashtags Dataset"></a>Hashtags Dataset</h2><ul>
+<h2 id="1-2-Hashtags-Dataset"><a href="#1-2-Hashtags-Dataset" class="headerlink" title="1.2. Hashtags Dataset"></a>1.2. Hashtags Dataset</h2><ul>
 <li>billions of images “labeled” in the wild with <strong>social media hashtags</strong> (no manual labeling)</li>
 <li>hashtags are noisy and image distribution might be biased</li>
 <li><p><strong>multi-label samples.</strong> if has k hashtags, then each hashtag is 1/k probability</p>
@@ -508,39 +508,39 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><ul>
+<h2 id="1-3-Model"><a href="#1-3-Model" class="headerlink" title="1.3. Model"></a>1.3. Model</h2><ul>
 <li><strong>ResNeXt-101 32xCd</strong> (classification). 32 groups, C group width</li>
 <li><strong>Mask R-CNN</strong> (detection).</li>
 <li><strong>Cross-Entropy.</strong>  sigmoid and binary logistics get worse results</li>
 </ul>
-<h2 id="Training-Methods"><a href="#Training-Methods" class="headerlink" title="Training Methods"></a>Training Methods</h2><ul>
+<h2 id="1-4-Training-Methods"><a href="#1-4-Training-Methods" class="headerlink" title="1.4. Training Methods"></a>1.4. Training Methods</h2><ul>
 <li><strong>Full Network Finetuning.</strong>  view pre-training as sophisticated weight initialization</li>
 <li><strong>Feature Transfer</strong>. pre-trained network as feature extractor, without updated, only trained classifier<br>Ensure the experiments of paper on the standard validation sets are clean.</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-5-Dataset"><a href="#1-5-Dataset" class="headerlink" title="1.5. Dataset"></a>1.5. Dataset</h2><ul>
 <li>ImageNet</li>
 <li>CUB2011</li>
 <li>Places365</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-6-Related-Work"><a href="#1-6-Related-Work" class="headerlink" title="1.6. Related Work"></a>1.6. Related Work</h2><ul>
 <li><strong>JFT-300M</strong>. 300 million weakly supervised images, proprietary and not publicly visible</li>
 <li><strong>Word or n-gram supervision</strong>. weaker than hashtag supervision</li>
 </ul>
-<h2 id="Observation"><a href="#Observation" class="headerlink" title="Observation"></a>Observation</h2><ul>
+<h2 id="1-7-Observation"><a href="#1-7-Observation" class="headerlink" title="1.7. Observation"></a>1.7. Observation</h2><ul>
 <li>maybe important to <strong>select a label space</strong> for the source task to match the target task</li>
 <li>current network are <strong>underfitting</strong> when trained on billions of images. lead to very high <strong>robustness</strong> to noise in hashtags</li>
 <li>training for large-scale hashtag prediction <strong>improves classification</strong> while at the same time possibly <strong>harming localization performance</strong></li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Hashtags-Vocabulary-Size"><a href="#Hashtags-Vocabulary-Size" class="headerlink" title="Hashtags Vocabulary Size"></a>Hashtags Vocabulary Size</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/2.jpg?raw=true" alt><br></div>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Hashtags-Vocabulary-Size"><a href="#2-1-Hashtags-Vocabulary-Size" class="headerlink" title="2.1. Hashtags Vocabulary Size"></a>2.1. Hashtags Vocabulary Size</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>pre-trained with 17k hashtags strongly outperforms 1.5k hashtags</li>
 <li>17k span more objects scenes and fine-grained categories</li>
 </ul>
-<h2 id="Training-Set-Size"><a href="#Training-Set-Size" class="headerlink" title="Training Set Size"></a>Training Set Size</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Training-Set-Size"><a href="#2-2-Training-Set-Size" class="headerlink" title="2.2. Training Set Size"></a>2.2. Training Set Size</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>when training network on billions of training images, current network architecture are <strong>prone to underfitting</strong></li>
@@ -549,25 +549,25 @@
 <li>the effectiveness of the feature representation learned from hashtag prediction.<br>train linear classifier on fixed feature are nearly as good as full network finetuning.</li>
 <li>For CUB2011. when training data is limited, the 1.5k hashtag dataset is better</li>
 </ul>
-<h2 id="The-Noise-of-Hashtags"><a href="#The-Noise-of-Hashtags" class="headerlink" title="The Noise of Hashtags"></a>The Noise of Hashtags</h2><p><strong>Randomly replaced</strong> p% of the hashtags by hashtags obtained by sampling from the marginal distribution over hashtags.</p>
+<h2 id="2-3-The-Noise-of-Hashtags"><a href="#2-3-The-Noise-of-Hashtags" class="headerlink" title="2.3. The Noise of Hashtags"></a>2.3. The Noise of Hashtags</h2><p><strong>Randomly replaced</strong> p% of the hashtags by hashtags obtained by sampling from the marginal distribution over hashtags.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/4.jpg?raw=true" alt><br></div>
 
-<h2 id="The-Sampling-Strategy-of-Hashtags"><a href="#The-Sampling-Strategy-of-Hashtags" class="headerlink" title="The Sampling Strategy of Hashtags"></a>The Sampling Strategy of Hashtags</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/5.jpg?raw=true" alt><br></div>
+<h2 id="2-4-The-Sampling-Strategy-of-Hashtags"><a href="#2-4-The-Sampling-Strategy-of-Hashtags" class="headerlink" title="2.4. The Sampling Strategy of Hashtags"></a>2.4. The Sampling Strategy of Hashtags</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>using <strong>uniform or square-root sampling</strong> lead to an accuracy improvement</li>
 </ul>
-<h2 id="Model-Capacity"><a href="#Model-Capacity" class="headerlink" title="Model Capacity"></a>Model Capacity</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/6.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Model-Capacity"><a href="#2-5-Model-Capacity" class="headerlink" title="2.5. Model Capacity"></a>2.5. Model Capacity</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>with large-scale Instagram hashtag training, transfer-learning performance appears <strong>bottlenecked by model capacity</strong></li>
 </ul>
-<h2 id="Most-Helpful-Class-of-Pre-training"><a href="#Most-Helpful-Class-of-Pre-training" class="headerlink" title="Most Helpful Class of Pre-training"></a>Most Helpful Class of Pre-training</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/7.jpg?raw=true" alt><br></div>
+<h2 id="2-6-Most-Helpful-Class-of-Pre-training"><a href="#2-6-Most-Helpful-Class-of-Pre-training" class="headerlink" title="2.6. Most Helpful Class of Pre-training"></a>2.6. Most Helpful Class of Pre-training</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>more concrete, more helpful</li>
 </ul>
-<h2 id="Detection"><a href="#Detection" class="headerlink" title="Detection"></a>Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/8.jpg?raw=true" alt><br></div>
+<h2 id="2-7-Detection"><a href="#2-7-Detection" class="headerlink" title="2.7. Detection"></a>2.7. Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Exploring the Limits of Weakly Supervised Pretraining/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>when using larger pre-training data, detection is model capacity bound</li>
@@ -1407,7 +1407,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashtags-Dataset"><span class="nav-number">1.2.</span> <span class="nav-text">Hashtags Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.3.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-Methods"><span class="nav-number">1.4.</span> <span class="nav-text">Training Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.5.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.6.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observation"><span class="nav-number">1.7.</span> <span class="nav-text">Observation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashtags-Vocabulary-Size"><span class="nav-number">2.1.</span> <span class="nav-text">Hashtags Vocabulary Size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-Set-Size"><span class="nav-number">2.2.</span> <span class="nav-text">Training Set Size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Noise-of-Hashtags"><span class="nav-number">2.3.</span> <span class="nav-text">The Noise of Hashtags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Sampling-Strategy-of-Hashtags"><span class="nav-number">2.4.</span> <span class="nav-text">The Sampling Strategy of Hashtags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Capacity"><span class="nav-number">2.5.</span> <span class="nav-text">Model Capacity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Most-Helpful-Class-of-Pre-training"><span class="nav-number">2.6.</span> <span class="nav-text">Most Helpful Class of Pre-training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detection"><span class="nav-number">2.7.</span> <span class="nav-text">Detection</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Hashtags-Dataset"><span class="nav-text">1.2. Hashtags Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Model"><span class="nav-text">1.3. Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Training-Methods"><span class="nav-text">1.4. Training Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Dataset"><span class="nav-text">1.5. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Related-Work"><span class="nav-text">1.6. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-Observation"><span class="nav-text">1.7. Observation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Hashtags-Vocabulary-Size"><span class="nav-text">2.1. Hashtags Vocabulary Size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Training-Set-Size"><span class="nav-text">2.2. Training Set Size</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-The-Noise-of-Hashtags"><span class="nav-text">2.3. The Noise of Hashtags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-The-Sampling-Strategy-of-Hashtags"><span class="nav-text">2.4. The Sampling Strategy of Hashtags</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Model-Capacity"><span class="nav-text">2.5. Model Capacity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Most-Helpful-Class-of-Pre-training"><span class="nav-text">2.6. Most Helpful Class of Pre-training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Detection"><span class="nav-text">2.7. Detection</span></a></li></ol></li></ol></div>
             
 
           </div>

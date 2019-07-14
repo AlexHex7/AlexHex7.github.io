@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Wang X, Girshick R, Gupta A, et al. Non-local neural networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 7794-7803.">
-<meta name="keywords" content="Classification,Component,Attention,Non-local,Video Classification">
+<meta name="keywords" content="Component,Classification,Attention,Non-local,Video Classification">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(CVPR 2018) Non-local Neural Networks">
 <meta property="og:url" content="http://yoursite.com/2017/12/19/Non-local Neural Networks/index.html">
@@ -502,7 +502,7 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <ul>
 <li>convolutional和recurrent操作建立的block，<strong>每次只能处理一个局部区域</strong>，基于非局部均值滤波的思想，论文提出具有通用性的非局部组件，能够capture long range dependencies. </li>
 <li>非局部组件通过计算所有点的特征加权和作为目标点的响应。非局部操作能够capture相距较远的点在时间和空间上的关系。</li>
@@ -516,7 +516,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Repeated"><a href="#Repeated" class="headerlink" title="Repeated"></a>Repeated</h2><ul>
+<h2 id="1-1-Repeated"><a href="#1-1-Repeated" class="headerlink" title="1.1. Repeated"></a>1.1. Repeated</h2><ul>
 <li>由于convolutional和recurrent建立的block每次只能处理一个局部区域，因此需要通过<strong>重复操作</strong>来实现long range dependencies.<ul>
 <li>convolutional操作通过<strong>堆叠(stack)</strong> CNN层实现</li>
 <li>recurrent操作通过<strong>记忆+循环</strong>实现</li>
@@ -529,29 +529,29 @@
 </ul>
 </li>
 </ul>
-<h2 id="非局部操作优点"><a href="#非局部操作优点" class="headerlink" title="非局部操作优点"></a>非局部操作优点</h2><ul>
+<h2 id="1-2-非局部操作优点"><a href="#1-2-非局部操作优点" class="headerlink" title="1.2. 非局部操作优点"></a>1.2. 非局部操作优点</h2><ul>
 <li>直接计算任意两点之间的关系来capture long range dependencies，忽略点之间的距离</li>
 <li>非局部操作<strong>高效</strong>，仅使用少量的层就能达到betst result, 额外增加的计算量少</li>
 <li>保持输入大小不变</li>
 <li>能capture空间和时间维度，<strong>比3D CNN更高效</strong></li>
 </ul>
 <hr>
-<h1 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h1><hr>
-<h2 id="非局部图像处理"><a href="#非局部图像处理" class="headerlink" title="非局部图像处理"></a>非局部图像处理</h2><h2 id="图形模型"><a href="#图形模型" class="headerlink" title="图形模型"></a>图形模型</h2><ul>
+<h1 id="2-Related-Work"><a href="#2-Related-Work" class="headerlink" title="2. Related Work"></a>2. Related Work</h1><hr>
+<h2 id="2-1-非局部图像处理"><a href="#2-1-非局部图像处理" class="headerlink" title="2.1. 非局部图像处理"></a>2.1. 非局部图像处理</h2><h2 id="2-2-图形模型"><a href="#2-2-图形模型" class="headerlink" title="2.2. 图形模型"></a>2.2. 图形模型</h2><ul>
 <li><strong>CRF</strong>能够被用于segmentation, 而非局部操作具有通用性，可用于分类和检测。</li>
 </ul>
-<h2 id="Self-attention"><a href="#Self-attention" class="headerlink" title="Self-attention"></a>Self-attention</h2><ul>
+<h2 id="2-3-Self-attention"><a href="#2-3-Self-attention" class="headerlink" title="2.3. Self-attention"></a>2.3. Self-attention</h2><ul>
 <li>通过所有点的加权平均计算当前点的响应。self-attention可看做是非局部均值的一种方式。</li>
 </ul>
-<h2 id="Interaction-Networks"><a href="#Interaction-Networks" class="headerlink" title="Interaction Networks"></a>Interaction Networks</h2><ul>
+<h2 id="2-4-Interaction-Networks"><a href="#2-4-Interaction-Networks" class="headerlink" title="2.4. Interaction Networks"></a>2.4. Interaction Networks</h2><ul>
 <li>使用pairwise interaction。其变体<strong>Relation Network</strong>使用到所有pair of positions.</li>
 </ul>
-<h2 id="Video-Classification-Architecture"><a href="#Video-Classification-Architecture" class="headerlink" title="Video Classification Architecture"></a>Video Classification Architecture</h2><ul>
+<h2 id="2-5-Video-Classification-Architecture"><a href="#2-5-Video-Classification-Architecture" class="headerlink" title="2.5. Video Classification Architecture"></a>2.5. Video Classification Architecture</h2><ul>
 <li>最通常的做法是结合CNN和RNN，但是<strong>前馈模型使用3D CNN</strong>，将预训练权重的2D卷积核inflating成3D卷积核。此外，optical flow和trajectory能提高性能。</li>
 </ul>
 <hr>
-<h1 id="Non-local-Neural-Networks"><a href="#Non-local-Neural-Networks" class="headerlink" title="Non-local Neural Networks"></a>Non-local Neural Networks</h1><hr>
-<h2 id="Formulation"><a href="#Formulation" class="headerlink" title="Formulation"></a>Formulation</h2><p>通用形式为</p>
+<h1 id="3-Non-local-Neural-Networks"><a href="#3-Non-local-Neural-Networks" class="headerlink" title="3. Non-local Neural Networks"></a>3. Non-local Neural Networks</h1><hr>
+<h2 id="3-1-Formulation"><a href="#3-1-Formulation" class="headerlink" title="3.1. Formulation"></a>3.1. Formulation</h2><p>通用形式为</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/3.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -563,12 +563,12 @@
 <li><strong>g</strong> 计算representation of 点j</li>
 <li><strong>C</strong> 归一化因子</li>
 </ul>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><ul>
+<h2 id="3-2-区别"><a href="#3-2-区别" class="headerlink" title="3.2. 区别"></a>3.2. 区别</h2><ul>
 <li>非局部操作涉及到所有位置点，而convolutional操作只处理局部区域，recurrent操作<strong>通常只涉及到当前时间状态与最近时刻状态</strong>(j=i或j=i)</li>
 <li>非局部操作基于不同点之间的关系计算响应，而fc的权重通过学习得到。</li>
 <li>非局部操作能够<strong>适用不同大小的输入</strong>，并且能够任意加入到网络中，而fc的输入大小需要事先固定，且通常只放到网络的最后一层。</li>
 </ul>
-<h2 id="Instantiations"><a href="#Instantiations" class="headerlink" title="Instantiations"></a>Instantiations</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/4.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Instantiations"><a href="#3-3-Instantiations" class="headerlink" title="3.3. Instantiations"></a>3.3. Instantiations</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/4.jpg?raw=true" alt><br></div>
 
 <p>g函数使用线性embedding</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/5.jpg?raw=true" alt><br></div>
@@ -601,19 +601,19 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/10.jpg?raw=true" alt><br></div>
 
 <p>[,]表示concat操作，wf为权重向量，将concated向量投影为标量。</p>
-<h2 id="Non-local-Block"><a href="#Non-local-Block" class="headerlink" title="Non-local Block"></a>Non-local Block</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/11.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Non-local-Block"><a href="#3-4-Non-local-Block" class="headerlink" title="3.4. Non-local Block"></a>3.4. Non-local Block</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/11.jpg?raw=true" alt><br></div>
 
 <p>x为residual连接. Block可以任意插入到预训练模型中，并保持模型的初始行为，即将<strong>W_{z}权重初始化为0</strong>. 当block使用在high level的特征图上，计算量很少。例如，T=4， H=W=14或7.</p>
-<h2 id="减少计算量"><a href="#减少计算量" class="headerlink" title="减少计算量"></a>减少计算量</h2><ul>
+<h2 id="3-5-减少计算量"><a href="#3-5-减少计算量" class="headerlink" title="3.5. 减少计算量"></a>3.5. 减少计算量</h2><ul>
 <li>Θ和φ网络<strong>channel数量</strong>设置为输入的一半</li>
 <li>在g和φ网络后进行<strong>下采样</strong>，如连接max pooling 层</li>
 </ul>
 <hr>
-<h1 id="Video-Classification-Model"><a href="#Video-Classification-Model" class="headerlink" title="Video Classification Model"></a>Video Classification Model</h1><hr>
-<h2 id="2D-ConvNet-C2D"><a href="#2D-ConvNet-C2D" class="headerlink" title="2D ConvNet (C2D)"></a>2D ConvNet (C2D)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/12.jpg?raw=true" alt><br></div>
+<h1 id="4-Video-Classification-Model"><a href="#4-Video-Classification-Model" class="headerlink" title="4. Video Classification Model"></a>4. Video Classification Model</h1><hr>
+<h2 id="4-1-2D-ConvNet-C2D"><a href="#4-1-2D-ConvNet-C2D" class="headerlink" title="4.1. 2D ConvNet (C2D)"></a>4.1. 2D ConvNet (C2D)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/12.jpg?raw=true" alt><br></div>
 
 <p>输入维度为32帧<em>224</em>224，其<strong>本质为1<em>k</em>k的卷积核</strong>，直接使用ImageNet预训练权重初始化。残差block中的卷积层相当于<strong>逐帧</strong>处理操作（卷积核和步长在帧的维度上为1）。</p>
-<h2 id="Inflated-3D-ConvNet-I3D"><a href="#Inflated-3D-ConvNet-I3D" class="headerlink" title="Inflated 3D ConvNet (I3D)"></a>Inflated 3D ConvNet (I3D)</h2><ul>
+<h2 id="4-2-Inflated-3D-ConvNet-I3D"><a href="#4-2-Inflated-3D-ConvNet-I3D" class="headerlink" title="4.2. Inflated 3D ConvNet (I3D)"></a>4.2. Inflated 3D ConvNet (I3D)</h2><ul>
 <li>2D k<em>k卷积核inflate为3D t</em>k<em>k卷积核。将k</em>k训练权重扩展到t plane，并乘以缩放因子1/t.</li>
 <li>两种inflate方式<ul>
 <li>inflate残差block中的3<em>3卷积核为3</em>3*3</li>
@@ -622,8 +622,8 @@
 </li>
 <li>I3D模型优于CNN+LSTM.</li>
 </ul>
-<h2 id="Non-local-network"><a href="#Non-local-network" class="headerlink" title="Non-local network"></a>Non-local network</h2><p>将non-local网络插入到C2D和I3D网络中。</p>
-<h2 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h2><ul>
+<h2 id="4-3-Non-local-network"><a href="#4-3-Non-local-network" class="headerlink" title="4.3. Non-local network"></a>4.3. Non-local network</h2><p>将non-local网络插入到C2D和I3D网络中。</p>
+<h2 id="4-4-实现细节"><a href="#4-4-实现细节" class="headerlink" title="4.4. 实现细节"></a>4.4. 实现细节</h2><ul>
 <li><p>Train阶段</p>
 <ul>
 <li>ImageNet预训练权重初始化</li>
@@ -642,33 +642,33 @@
 </li>
 </ul>
 <hr>
-<h1 id="Experiments-on-Video-Classification"><a href="#Experiments-on-Video-Classification" class="headerlink" title="Experiments on Video Classification"></a>Experiments on Video Classification</h1><hr>
+<h1 id="5-Experiments-on-Video-Classification"><a href="#5-Experiments-on-Video-Classification" class="headerlink" title="5. Experiments on Video Classification"></a>5. Experiments on Video Classification</h1><hr>
 <ul>
 <li><strong>Kinetics数据集</strong><br>246k训练视频，20k验证视频，包含400个人类动作分类。</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/13.jpg?raw=true" alt><br></div>
 
-<h2 id="Instantiations-1"><a href="#Instantiations-1" class="headerlink" title="Instantiations"></a>Instantiations</h2><p>比较不同类型的非局部操作，得出结论非局部操作类型的<strong>影响并不大</strong>，性能的提升主要是由于非局部操作，而非attention机制。因此实验中默认使用Embedded Gaussian.</p>
+<h2 id="5-1-Instantiations"><a href="#5-1-Instantiations" class="headerlink" title="5.1. Instantiations"></a>5.1. Instantiations</h2><p>比较不同类型的非局部操作，得出结论非局部操作类型的<strong>影响并不大</strong>，性能的提升主要是由于非局部操作，而非attention机制。因此实验中默认使用Embedded Gaussian.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/14.jpg?raw=true" alt><br></div>
 
-<h2 id="Stage-to-Add-Non-local-Block"><a href="#Stage-to-Add-Non-local-Block" class="headerlink" title="Stage to Add Non local Block"></a>Stage to Add Non local Block</h2><p>res5的空间大小为7*7，因此可能是因为没有足够准确的空间信息，导致准确度略微下降。</p>
+<h2 id="5-2-Stage-to-Add-Non-local-Block"><a href="#5-2-Stage-to-Add-Non-local-Block" class="headerlink" title="5.2. Stage to Add Non local Block"></a>5.2. Stage to Add Non local Block</h2><p>res5的空间大小为7*7，因此可能是因为没有足够准确的空间信息，导致准确度略微下降。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/15.jpg?raw=true" alt><br></div>
 
-<h2 id="使用更多的非局部block"><a href="#使用更多的非局部block" class="headerlink" title="使用更多的非局部block"></a>使用更多的非局部block</h2><p>一般而言，更多的非局部block能提升性能准确度，multiple非局部block能够实现<strong>long range multi-hop communication</strong> (多跳交流).</p>
+<h2 id="5-3-使用更多的非局部block"><a href="#5-3-使用更多的非局部block" class="headerlink" title="5.3. 使用更多的非局部block"></a>5.3. 使用更多的非局部block</h2><p>一般而言，更多的非局部block能提升性能准确度，multiple非局部block能够实现<strong>long range multi-hop communication</strong> (多跳交流).</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/16.jpg?raw=true" alt><br></div>
 
 <p>从5 block R50 73.8%与base R101 73.1%，可以看出准确率的提升<strong>并不是因为层数加深，而是因为非局部block</strong>. 此外，实验也将加入的非局部block替换为标准残差block，发现准确度并没有提升。</p>
-<h2 id="时空上的非局部操作"><a href="#时空上的非局部操作" class="headerlink" title="时空上的非局部操作"></a>时空上的非局部操作</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/17.jpg?raw=true" alt><br></div>
+<h2 id="5-4-时空上的非局部操作"><a href="#5-4-时空上的非局部操作" class="headerlink" title="5.4. 时空上的非局部操作"></a>5.4. 时空上的非局部操作</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/17.jpg?raw=true" alt><br></div>
 
-<h2 id="非局部2D-ConvNet-vs-3D-ConvNet"><a href="#非局部2D-ConvNet-vs-3D-ConvNet" class="headerlink" title="非局部2D ConvNet vs 3D ConvNet"></a>非局部2D ConvNet vs 3D ConvNet</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/18.jpg?raw=true" alt><br></div>
+<h2 id="5-5-非局部2D-ConvNet-vs-3D-ConvNet"><a href="#5-5-非局部2D-ConvNet-vs-3D-ConvNet" class="headerlink" title="5.5. 非局部2D ConvNet vs 3D ConvNet"></a>5.5. 非局部2D ConvNet vs 3D ConvNet</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/18.jpg?raw=true" alt><br></div>
 
-<h2 id="非局部3DConvNet"><a href="#非局部3DConvNet" class="headerlink" title="非局部3DConvNet"></a>非局部3DConvNet</h2><p>使用I3D_{3<em>1</em>1}模型</p>
+<h2 id="5-6-非局部3DConvNet"><a href="#5-6-非局部3DConvNet" class="headerlink" title="5.6. 非局部3DConvNet"></a>5.6. 非局部3DConvNet</h2><p>使用I3D_{3<em>1</em>1}模型</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/19.jpg?raw=true" alt><br></div>
 
-<h2 id="更长的序列"><a href="#更长的序列" class="headerlink" title="更长的序列"></a>更长的序列</h2><p>将每个输入clips增加到128帧，所有模型的准确度都有提升。</p>
+<h2 id="5-7-更长的序列"><a href="#5-7-更长的序列" class="headerlink" title="5.7. 更长的序列"></a>5.7. 更长的序列</h2><p>将每个输入clips增加到128帧，所有模型的准确度都有提升。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/20.jpg?raw=true" alt><br></div>
 
-<h2 id="与目前最好的结果比较"><a href="#与目前最好的结果比较" class="headerlink" title="与目前最好的结果比较"></a>与目前最好的结果比较</h2><p>非局部网络方法在没有使用optical flow和其他技巧的情况下，取得较好结果。</p>
+<h2 id="5-8-与目前最好的结果比较"><a href="#5-8-与目前最好的结果比较" class="headerlink" title="5.8. 与目前最好的结果比较"></a>5.8. 与目前最好的结果比较</h2><p>非局部网络方法在没有使用optical flow和其他技巧的情况下，取得较好结果。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/21.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -677,11 +677,11 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/22.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="Experiments-on-COCO"><a href="#Experiments-on-COCO" class="headerlink" title="Experiments on COCO"></a>Experiments on COCO</h1><hr>
-<h2 id="Detection与Segmentation"><a href="#Detection与Segmentation" class="headerlink" title="Detection与Segmentation"></a>Detection与Segmentation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/23.jpg?raw=true" alt><br></div>
+<h1 id="6-Experiments-on-COCO"><a href="#6-Experiments-on-COCO" class="headerlink" title="6. Experiments on COCO"></a>6. Experiments on COCO</h1><hr>
+<h2 id="6-1-Detection与Segmentation"><a href="#6-1-Detection与Segmentation" class="headerlink" title="6.1. Detection与Segmentation"></a>6.1. Detection与Segmentation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/23.jpg?raw=true" alt><br></div>
 
 <p>在不同规模的模型中加入非局部block均能提高准确度，说明<strong>非局部依赖并没有通过增加层数堆叠充分capture</strong>. 此外，单层非局部block只增加了不到5%的计算量，使用更多的非局部block结果反而有所下降。</p>
-<h2 id="Keypoint-Detection"><a href="#Keypoint-Detection" class="headerlink" title="Keypoint Detection"></a>Keypoint Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/24.jpg?raw=true" alt><br></div>
+<h2 id="6-2-Keypoint-Detection"><a href="#6-2-Keypoint-Detection" class="headerlink" title="6.2. Keypoint Detection"></a>6.2. Keypoint Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Non-local Neural Networks/24.jpg?raw=true" alt><br></div>
 
 
 
@@ -715,9 +715,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Classification/" rel="tag"># Classification</a>
-          
             <a href="/tags/Component/" rel="tag"># Component</a>
+          
+            <a href="/tags/Classification/" rel="tag"># Classification</a>
           
             <a href="/tags/Attention/" rel="tag"># Attention</a>
           
@@ -1530,7 +1530,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Repeated"><span class="nav-number">1.1.</span> <span class="nav-text">Repeated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非局部操作优点"><span class="nav-number">1.2.</span> <span class="nav-text">非局部操作优点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Related-Work"><span class="nav-number">2.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#非局部图像处理"><span class="nav-number">2.1.</span> <span class="nav-text">非局部图像处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图形模型"><span class="nav-number">2.2.</span> <span class="nav-text">图形模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Self-attention"><span class="nav-number">2.3.</span> <span class="nav-text">Self-attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interaction-Networks"><span class="nav-number">2.4.</span> <span class="nav-text">Interaction Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Video-Classification-Architecture"><span class="nav-number">2.5.</span> <span class="nav-text">Video Classification Architecture</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Non-local-Neural-Networks"><span class="nav-number">3.</span> <span class="nav-text">Non-local Neural Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Formulation"><span class="nav-number">3.1.</span> <span class="nav-text">Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">3.2.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instantiations"><span class="nav-number">3.3.</span> <span class="nav-text">Instantiations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-local-Block"><span class="nav-number">3.4.</span> <span class="nav-text">Non-local Block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减少计算量"><span class="nav-number">3.5.</span> <span class="nav-text">减少计算量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Video-Classification-Model"><span class="nav-number">4.</span> <span class="nav-text">Video Classification Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2D-ConvNet-C2D"><span class="nav-number">4.1.</span> <span class="nav-text">2D ConvNet (C2D)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inflated-3D-ConvNet-I3D"><span class="nav-number">4.2.</span> <span class="nav-text">Inflated 3D ConvNet (I3D)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-local-network"><span class="nav-number">4.3.</span> <span class="nav-text">Non-local network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现细节"><span class="nav-number">4.4.</span> <span class="nav-text">实现细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments-on-Video-Classification"><span class="nav-number">5.</span> <span class="nav-text">Experiments on Video Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Instantiations-1"><span class="nav-number">5.1.</span> <span class="nav-text">Instantiations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stage-to-Add-Non-local-Block"><span class="nav-number">5.2.</span> <span class="nav-text">Stage to Add Non local Block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用更多的非局部block"><span class="nav-number">5.3.</span> <span class="nav-text">使用更多的非局部block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时空上的非局部操作"><span class="nav-number">5.4.</span> <span class="nav-text">时空上的非局部操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非局部2D-ConvNet-vs-3D-ConvNet"><span class="nav-number">5.5.</span> <span class="nav-text">非局部2D ConvNet vs 3D ConvNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非局部3DConvNet"><span class="nav-number">5.6.</span> <span class="nav-text">非局部3DConvNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更长的序列"><span class="nav-number">5.7.</span> <span class="nav-text">更长的序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与目前最好的结果比较"><span class="nav-number">5.8.</span> <span class="nav-text">与目前最好的结果比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments-on-COCO"><span class="nav-number">6.</span> <span class="nav-text">Experiments on COCO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Detection与Segmentation"><span class="nav-number">6.1.</span> <span class="nav-text">Detection与Segmentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keypoint-Detection"><span class="nav-number">6.2.</span> <span class="nav-text">Keypoint Detection</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Repeated"><span class="nav-text">1.1. Repeated</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-非局部操作优点"><span class="nav-text">1.2. 非局部操作优点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Related-Work"><span class="nav-text">2. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-非局部图像处理"><span class="nav-text">2.1. 非局部图像处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-图形模型"><span class="nav-text">2.2. 图形模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Self-attention"><span class="nav-text">2.3. Self-attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Interaction-Networks"><span class="nav-text">2.4. Interaction Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Video-Classification-Architecture"><span class="nav-text">2.5. Video Classification Architecture</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Non-local-Neural-Networks"><span class="nav-text">3. Non-local Neural Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Formulation"><span class="nav-text">3.1. Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-区别"><span class="nav-text">3.2. 区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Instantiations"><span class="nav-text">3.3. Instantiations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Non-local-Block"><span class="nav-text">3.4. Non-local Block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-减少计算量"><span class="nav-text">3.5. 减少计算量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Video-Classification-Model"><span class="nav-text">4. Video Classification Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-2D-ConvNet-C2D"><span class="nav-text">4.1. 2D ConvNet (C2D)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Inflated-3D-ConvNet-I3D"><span class="nav-text">4.2. Inflated 3D ConvNet (I3D)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Non-local-network"><span class="nav-text">4.3. Non-local network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-实现细节"><span class="nav-text">4.4. 实现细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Experiments-on-Video-Classification"><span class="nav-text">5. Experiments on Video Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-Instantiations"><span class="nav-text">5.1. Instantiations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Stage-to-Add-Non-local-Block"><span class="nav-text">5.2. Stage to Add Non local Block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-使用更多的非局部block"><span class="nav-text">5.3. 使用更多的非局部block</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-时空上的非局部操作"><span class="nav-text">5.4. 时空上的非局部操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-非局部2D-ConvNet-vs-3D-ConvNet"><span class="nav-text">5.5. 非局部2D ConvNet vs 3D ConvNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-非局部3DConvNet"><span class="nav-text">5.6. 非局部3DConvNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-7-更长的序列"><span class="nav-text">5.7. 更长的序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-8-与目前最好的结果比较"><span class="nav-text">5.8. 与目前最好的结果比较</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Experiments-on-COCO"><span class="nav-text">6. Experiments on COCO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-Detection与Segmentation"><span class="nav-text">6.1. Detection与Segmentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-Keypoint-Detection"><span class="nav-text">6.2. Keypoint Detection</span></a></li></ol></li></ol></div>
             
 
           </div>

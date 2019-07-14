@@ -497,8 +497,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>a central problem to <strong>understanding intelligence</strong> is the concept of <strong>generalisation</strong></li>
 <li><strong>hippocampal-entorhinal system</strong> is known to be important for generalisation</li>
 </ul>
@@ -509,17 +509,17 @@
 <li>shows a <strong>preserved relationship</strong> between entorhinal gird and hippocampal place cells across environments</li>
 <li>explicitly represented structure can be combined with <strong>sensory</strong> information in a <strong>conjunctive</strong> code <strong>unique to each environment</strong>. Thus <strong>sensory</strong> observations are <strong>fit with prior learned structural knowledge</strong>, leading to <strong>generalisation</strong></li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><h3 id="Neuroscience"><a href="#Neuroscience" class="headerlink" title="Neuroscience"></a>Neuroscience</h3><ul>
+<h2 id="1-2-Contribution"><a href="#1-2-Contribution" class="headerlink" title="1.2. Contribution"></a>1.2. Contribution</h2><h3 id="1-2-1-Neuroscience"><a href="#1-2-1-Neuroscience" class="headerlink" title="1.2.1. Neuroscience"></a>1.2.1. Neuroscience</h3><ul>
 <li>find an <strong>interpretation of grid cells, place cells</strong> and <strong>remapping</strong> that offers a mechanistic <strong>understanding for the hippocampal involvement</strong> in <strong>generalisation of knowledge across domains</strong></li>
 <li>results suggest <strong>spatial representations</strong> found in the <strong>brain</strong> may be an instance of a more <strong>general coding mechanism</strong> organising knowledge across multiple domains</li>
 </ul>
-<h3 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h3><ul>
+<h3 id="1-2-2-Machine-Learning"><a href="#1-2-2-Machine-Learning" class="headerlink" title="1.2.2. Machine Learning"></a>1.2.2. Machine Learning</h3><ul>
 <li>build a network where <strong>fast Hebbian learning interacts with slow statistical learning</strong><ul>
 <li>this allow to <strong>learn representations</strong> whereby memories are not only stored in a Hebbian network for one-shot retrieval <strong>within domain</strong>, but also <strong>benefit from statistical knowledge</strong> that is shared <strong>across domains</strong> - allowing zero shot inference</li>
 </ul>
 </li>
 </ul>
-<h2 id="Generally"><a href="#Generally" class="headerlink" title="Generally"></a>Generally</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/1.jpg?raw=true" alt><br></div>
+<h2 id="1-3-Generally"><a href="#1-3-Generally" class="headerlink" title="1.3. Generally"></a>1.3. Generally</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>implement its proposal in an <strong>ANN</strong> tasked with <strong>predicting sensory observations</strong> when <strong>walking on 2D graph worlds</strong>, where each <strong>vertex</strong> is associated with a <strong>sensory</strong> experience</li>
@@ -528,12 +528,12 @@
 <li><strong>place cells</strong> form a <strong>conjunctive</strong> representation between sensory identity and strucuture. This <strong>conjunctive representation</strong> forms <strong>a Hebbian memory</strong>, which bridges structure and identity, <strong>allowing the same structural code to be reused across environments</strong></li>
 <li>combine <strong>fast Hebbian learning of episodic memories</strong>, with gradient descent which <strong>slowly learns to extract statistics of these memories</strong></li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="1-4-Details"><a href="#1-4-Details" class="headerlink" title="1.4. Details"></a>1.4. Details</h2><ul>
 <li>propose that the statistics of memories in <strong>hippocampus</strong> are <strong>extracted by cortex</strong></li>
 <li>propose that <strong>future</strong> hippocampal representations/memories are constrained to be <strong>consistent with</strong> the learned <strong>structural knowledge</strong></li>
 <li>choose memory storage and addressing to be computationally <strong>biologically plausible</strong> (rather than using other types of differentiable memory more akin to RAM) , as well as using <strong>hierarchical processing</strong>. This enables our model to <strong>discover representations</strong> that are <strong>useful for</strong> both <strong>navigation and addressing memories</strong></li>
 </ul>
-<h2 id="In-Neuroscience"><a href="#In-Neuroscience" class="headerlink" title="In Neuroscience"></a>In Neuroscience</h2><ul>
+<h2 id="1-5-In-Neuroscience"><a href="#1-5-In-Neuroscience" class="headerlink" title="1.5. In Neuroscience"></a>1.5. In Neuroscience</h2><ul>
 <li><strong>generalisation of statistical structure</strong> (the relationships between objects in the world) imbues an agent with the ability to fit things/concepts together that share <strong>the same statistical structure</strong>, but <strong>differ in the particularities</strong></li>
 <li><strong>hippocampus</strong> is known to be important for <strong>generalisation, memory</strong>, problems of <strong>causality, inferential</strong> reasoning, <strong>transitive</strong> reasoning, conceptual knowledge representation, one-shot imagination and <strong>navigation</strong></li>
 <li>in <strong>spatial navigation</strong> there is a good undertanding of neuronal representations in both <strong>hippocampus</strong> (<strong>place cell</strong>, landmark cells) and medial <strong>entorhinal cortex</strong> (<strong>grid cell</strong>, border cell, object vector cell)</li>
@@ -545,7 +545,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h1><hr>
+<h1 id="2-Model"><a href="#2-Model" class="headerlink" title="2. Model"></a>2. Model</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/2.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -560,13 +560,13 @@
 <li>grid cells to be <strong>recurrent</strong> through time</li>
 <li>view the hippocampal-entorhinal system as one that <strong>performs inference</strong></li>
 </ul>
-<h2 id="Model-Summary"><a href="#Model-Summary" class="headerlink" title="Model Summary"></a>Model Summary</h2><ul>
+<h2 id="2-1-Model-Summary"><a href="#2-1-Model-Summary" class="headerlink" title="2.1. Model Summary"></a>2.1. Model Summary</h2><ul>
 <li>the model is a <strong>neural network</strong> and <strong>learns strucuture</strong> across tasks</li>
 <li>optimise end-to-end via backpropagation through time</li>
 <li>the <strong>central</strong> (attractor) network employs <strong>Hebbian learning</strong> to rapidly <strong>remember the conjunction</strong></li>
 <li>a <strong>generavie temporal model</strong> learns how to <strong>use the Hebbian memory most efficiently</strong> given the common statistics of transitions across worlds</li>
 </ul>
-<h2 id="Notation"><a href="#Notation" class="headerlink" title="Notation"></a>Notation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Notation"><a href="#2-2-Notation" class="headerlink" title="2.2. Notation"></a>2.2. Notation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>a layer of activations with vector notations</li>
@@ -581,7 +581,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/5.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Generative-Model"><a href="#Generative-Model" class="headerlink" title="Generative Model"></a>Generative Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/6.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Generative-Model"><a href="#2-3-Generative-Model" class="headerlink" title="2.3. Generative Model"></a>2.3. Generative Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>g</strong>. grid cell</li>
@@ -592,7 +592,7 @@
 <li><strong>x</strong>. <strong>one-hot</strong> vector where each of its <strong>n_s elements</strong> represent a sensory identity</li>
 <li><strong>g&amp;p</strong> (<strong>learned instead of hard-coded</strong>). come in <strong>different frequencies</strong> (hierarchies) indexed by superscript f</li>
 </ul>
-<h3 id="Grid-Cells"><a href="#Grid-Cells" class="headerlink" title="Grid Cells"></a>Grid Cells</h3><ul>
+<h3 id="2-3-1-Grid-Cells"><a href="#2-3-1-Grid-Cells" class="headerlink" title="2.3.1. Grid Cells"></a>2.3.1. Grid Cells</h3><ul>
 <li><p>to <strong>predict where we will be</strong>, we can <strong>transition</strong> from our current location <strong>based on our heading</strong> (path integration, Fig 2c)</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/7.jpg?raw=true" alt><br></div>
 </li>
@@ -603,7 +603,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/8.jpg?raw=true" alt><br></div>
 
-<h3 id="Place-Cells"><a href="#Place-Cells" class="headerlink" title="Place Cells"></a>Place Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/9.jpg?raw=true" alt><br></div>
+<h3 id="2-3-2-Place-Cells"><a href="#2-3-2-Place-Cells" class="headerlink" title="2.3.2. Place Cells"></a>2.3.2. Place Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>for <strong>retrieving memories</strong></li>
@@ -611,7 +611,7 @@
 
 </li>
 </ul>
-<h3 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/12.jpg?raw=true" alt><br></div>
+<h3 id="2-3-3-Data"><a href="#2-3-3-Data" class="headerlink" title="2.3.3. Data"></a>2.3.3. Data</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/12.jpg?raw=true" alt><br></div>
 
 <ol>
 <li>categorical distribution<div align="center"><br> <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/13.jpg?raw=true" alt><br></div>
@@ -624,7 +624,7 @@
 <li>f_c*. MLP</li>
 <li>choose f* to be 0 (only include highest frequency)</li>
 </ul>
-<h2 id="Inference-Network"><a href="#Inference-Network" class="headerlink" title="Inference Network"></a>Inference Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/14.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Inference-Network"><a href="#2-4-Inference-Network" class="headerlink" title="2.4. Inference Network"></a>2.4. Inference Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/14.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p>posterior is intractable so approximated to</p>
@@ -634,11 +634,11 @@
 </li>
 <li>learn Θ and phi by maximising the ELBO with the VAE fra</li>
 </ul>
-<h3 id="Place-Cells-1"><a href="#Place-Cells-1" class="headerlink" title="Place Cells"></a>Place Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/16.jpg?raw=true" alt><br></div>
+<h3 id="2-4-1-Place-Cells"><a href="#2-4-1-Place-Cells" class="headerlink" title="2.4.1. Place Cells"></a>2.4.1. Place Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/16.jpg?raw=true" alt><br></div>
 
-<h3 id="Grid-Cells-1"><a href="#Grid-Cells-1" class="headerlink" title="Grid Cells"></a>Grid Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/17.jpg?raw=true" alt><br></div>
+<h3 id="2-4-2-Grid-Cells"><a href="#2-4-2-Grid-Cells" class="headerlink" title="2.4.2. Grid Cells"></a>2.4.2. Grid Cells</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/17.jpg?raw=true" alt><br></div>
 
-<h2 id="Hebbian-Memories"><a href="#Hebbian-Memories" class="headerlink" title="Hebbian Memories"></a>Hebbian Memories</h2><ul>
+<h2 id="2-5-Hebbian-Memories"><a href="#2-5-Hebbian-Memories" class="headerlink" title="2.5. Hebbian Memories"></a>2.5. Hebbian Memories</h2><ul>
 <li>when enter a <strong>new environment</strong>, memory is reset to be <strong>empty</strong> (zeros)</li>
 <li>memories of place cell representations are stored in <strong>Hebbian weights</strong> between place cells (<strong>M_t</strong>)</li>
 <li>allow rapid learning when entering a new environment</li>
@@ -659,7 +659,7 @@
 <li><p><strong>x(^)</strong>. retrieved memory with the sensorium as input to the attra</p>
 </li>
 </ul>
-<h3 id="Retrieval"><a href="#Retrieval" class="headerlink" title="Retrieval"></a>Retrieval</h3><ul>
+<h3 id="2-5-1-Retrieval"><a href="#2-5-1-Retrieval" class="headerlink" title="2.5.1. Retrieval"></a>2.5.1. Retrieval</h3><ul>
 <li><p>attractor network</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/21.jpg?raw=true" alt><br></div>
 </li>
@@ -669,10 +669,10 @@
 <li><strong>h_0</strong>. input, from grid cells or sensorium (depending on for generative or inference), dimensions scaled appropriately</li>
 <li><strong>output</strong>. retrieved memory (place cell code)</li>
 </ul>
-<h2 id="Model-Implication"><a href="#Model-Implication" class="headerlink" title="Model Implication"></a>Model Implication</h2><ul>
+<h2 id="2-6-Model-Implication"><a href="#2-6-Model-Implication" class="headerlink" title="2.6. Model Implication"></a>2.6. Model Implication</h2><ul>
 <li>believe that using more <strong>biologically realistic computational mechanism</strong>s (Hebbian Memory <strong>instead of LSTM</strong>) will facilitate further incorporation of neuroscience-inspired phenomena, such as successor representations or replay</li>
 </ul>
-<h2 id="Details-1"><a href="#Details-1" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="2-7-Details"><a href="#2-7-Details" class="headerlink" title="2.7. Details"></a>2.7. Details</h2><ul>
 <li>although presented a <strong>Bayesian formulation, best resuts</strong> were obtained by only using the <strong>means</strong> of the above distributions</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/22.jpg?raw=true" alt><br></div>
@@ -691,7 +691,7 @@
 <li><strong>place-like</strong> representations are learned in the <strong>attractor</strong></li>
 <li><strong>grid-like</strong> representations are learned in the <strong>generative temporal model</strong></li>
 </ul>
-<h2 id="graphic"><a href="#graphic" class="headerlink" title="graphic"></a>graphic</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/23.jpg?raw=true" alt><br></div>
+<h2 id="2-8-graphic"><a href="#2-8-graphic" class="headerlink" title="2.8. graphic"></a>2.8. graphic</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/23.jpg?raw=true" alt><br></div>
 
 <p>For the gird cells of a certain frequency (<strong>Inference</strong>)</p>
 <ol>
@@ -703,7 +703,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generalisation of structural knowledge in the Hippocampal-Entorhinal system/24.jpg?raw=true" alt><br></div>
 
 
@@ -1556,7 +1556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Neuroscience"><span class="nav-number">1.2.1.</span> <span class="nav-text">Neuroscience</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">1.2.2.</span> <span class="nav-text">Machine Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generally"><span class="nav-number">1.3.</span> <span class="nav-text">Generally</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">1.4.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#In-Neuroscience"><span class="nav-number">1.5.</span> <span class="nav-text">In Neuroscience</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Model"><span class="nav-number">2.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Summary"><span class="nav-number">2.1.</span> <span class="nav-text">Model Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notation"><span class="nav-number">2.2.</span> <span class="nav-text">Notation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generative-Model"><span class="nav-number">2.3.</span> <span class="nav-text">Generative Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Grid-Cells"><span class="nav-number">2.3.1.</span> <span class="nav-text">Grid Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Place-Cells"><span class="nav-number">2.3.2.</span> <span class="nav-text">Place Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data"><span class="nav-number">2.3.3.</span> <span class="nav-text">Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inference-Network"><span class="nav-number">2.4.</span> <span class="nav-text">Inference Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Place-Cells-1"><span class="nav-number">2.4.1.</span> <span class="nav-text">Place Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Grid-Cells-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">Grid Cells</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hebbian-Memories"><span class="nav-number">2.5.</span> <span class="nav-text">Hebbian Memories</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieval"><span class="nav-number">2.5.1.</span> <span class="nav-text">Retrieval</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Implication"><span class="nav-number">2.6.</span> <span class="nav-text">Model Implication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details-1"><span class="nav-number">2.7.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#graphic"><span class="nav-number">2.8.</span> <span class="nav-text">graphic</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Contribution"><span class="nav-text">1.2. Contribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Neuroscience"><span class="nav-text">1.2.1. Neuroscience</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Machine-Learning"><span class="nav-text">1.2.2. Machine Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Generally"><span class="nav-text">1.3. Generally</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Details"><span class="nav-text">1.4. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-In-Neuroscience"><span class="nav-text">1.5. In Neuroscience</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Model"><span class="nav-text">2. Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Model-Summary"><span class="nav-text">2.1. Model Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Notation"><span class="nav-text">2.2. Notation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Generative-Model"><span class="nav-text">2.3. Generative Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Grid-Cells"><span class="nav-text">2.3.1. Grid Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-Place-Cells"><span class="nav-text">2.3.2. Place Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-3-Data"><span class="nav-text">2.3.3. Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Inference-Network"><span class="nav-text">2.4. Inference Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-Place-Cells"><span class="nav-text">2.4.1. Place Cells</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-Grid-Cells"><span class="nav-text">2.4.2. Grid Cells</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Hebbian-Memories"><span class="nav-text">2.5. Hebbian Memories</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-1-Retrieval"><span class="nav-text">2.5.1. Retrieval</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Model-Implication"><span class="nav-text">2.6. Model Implication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Details"><span class="nav-text">2.7. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-graphic"><span class="nav-text">2.8. graphic</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a></li></ol></div>
             
 
           </div>

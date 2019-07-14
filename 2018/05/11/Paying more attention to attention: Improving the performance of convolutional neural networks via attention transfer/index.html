@@ -493,19 +493,19 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li><strong>different observers</strong> with different knowledge, goals lead to <strong>different attentional strategies</strong></li>
 <li>can a <strong>teacher</strong> network improve the performance of another <strong>student</strong> network <strong>by providing to it information about where it looks</strong><br>In this paper, it improves the student network by forcing it to <strong>mimic the attention maps</strong> of a powerful teacher network.</li>
 <li><strong>activation-based</strong> and <strong>gradient-based</strong> attention map</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-2-Contribution"><a href="#1-2-Contribution" class="headerlink" title="1.2. Contribution"></a>1.2. Contribution</h2><ul>
 <li>attention mechanism to <strong>transfer knowledge</strong></li>
 <li><strong>activation-based</strong> (<strong>better</strong> and can <strong>combine with knowledge distillation</strong>) and <strong>gradient-based</strong> spatial attention maps</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><ul>
 <li><strong>Attention Mechanism</strong><ul>
 <li>image caption</li>
 <li>VQA</li>
@@ -524,14 +524,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-4-Dataset"><a href="#1-4-Dataset" class="headerlink" title="1.4. Dataset"></a>1.4. Dataset</h2><ul>
 <li><strong>ImageNet.</strong> classification, localization</li>
 <li><strong>COCO</strong>. obj detection, face recognition amd fine-grained recognition</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Attention-Transfer"><a href="#Attention-Transfer" class="headerlink" title="Attention Transfer"></a>Attention Transfer</h1><hr>
-<h2 id="Activation-Based-Attention-Transfer"><a href="#Activation-Based-Attention-Transfer" class="headerlink" title="Activation-Based Attention Transfer"></a>Activation-Based Attention Transfer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/2.jpg?raw=true" alt><br></div>
+<h1 id="2-Attention-Transfer"><a href="#2-Attention-Transfer" class="headerlink" title="2. Attention Transfer"></a>2. Attention Transfer</h1><hr>
+<h2 id="2-1-Activation-Based-Attention-Transfer"><a href="#2-1-Activation-Based-Attention-Transfer" class="headerlink" title="2.1. Activation-Based Attention Transfer"></a>2.1. Activation-Based Attention Transfer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p>get the <strong>attention map</strong> from the feature maps</p>
@@ -542,20 +542,20 @@
 <li><strong>middle level.</strong> high for discriminative regions (eyes, wheels)</li>
 <li><strong>top level.</strong>  reflects full obj</li>
 </ul>
-<h3 id="three-methods"><a href="#three-methods" class="headerlink" title="three methods"></a>three methods</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/6.jpg?raw=true" alt><br></div>
+<h3 id="2-1-1-three-methods"><a href="#2-1-1-three-methods" class="headerlink" title="2.1.1. three methods"></a>2.1.1. three methods</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>stronger networks hace <strong>peaks in attention</strong> where weak networks don’t</li>
 <li><strong>(F_sum)^p</strong> put more weight (than F_sum) to spatial locations the correspond to the neurons with the <strong>highest activation</strong></li>
 <li><strong>(F_max)^p</strong> only consider one of the max rather than sum of all</li>
 </ul>
-<h3 id="Cases-of-Student-and-Teacher-Networks"><a href="#Cases-of-Student-and-Teacher-Networks" class="headerlink" title="Cases of Student and Teacher Networks"></a>Cases of Student and Teacher Networks</h3><ul>
+<h3 id="2-1-2-Cases-of-Student-and-Teacher-Networks"><a href="#2-1-2-Cases-of-Student-and-Teacher-Networks" class="headerlink" title="2.1.2. Cases of Student and Teacher Networks"></a>2.1.2. Cases of Student and Teacher Networks</h3><ul>
 <li>same depth</li>
 <li><strong>different depth</strong><div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/7.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h3 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/9.jpg?raw=true" alt><br></div>
+<h3 id="2-1-3-Loss-Function"><a href="#2-1-3-Loss-Function" class="headerlink" title="2.1.3. Loss Function"></a>2.1.3. Loss Function</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>L(W, x).</strong> task loss</li>
@@ -563,7 +563,7 @@
 <li>The <strong>normalization of attention maps</strong> is important for student training</li>
 </ul>
 <p>Attention transfer can also be combined with knowledge distillation.</p>
-<h2 id="Gradient-Based-Attention-Transfer"><a href="#Gradient-Based-Attention-Transfer" class="headerlink" title="Gradient-Based Attention Transfer"></a>Gradient-Based Attention Transfer</h2><p>If <strong>small changes at a pixel can have a large effect on the network output</strong> then it is logical to assume that the network is “paying attention” to that pix</p>
+<h2 id="2-2-Gradient-Based-Attention-Transfer"><a href="#2-2-Gradient-Based-Attention-Transfer" class="headerlink" title="2.2. Gradient-Based Attention Transfer"></a>2.2. Gradient-Based Attention Transfer</h2><p>If <strong>small changes at a pixel can have a large effect on the network output</strong> then it is logical to assume that the network is “paying attention” to that pix</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/10.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -574,8 +574,8 @@
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Attention-Based"><a href="#Attention-Based" class="headerlink" title="Attention-Based"></a>Attention-Based</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/12.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Attention-Based"><a href="#3-1-Attention-Based" class="headerlink" title="3.1. Attention-Based"></a>3.1. Attention-Based</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/12.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>trained with all transfer loss better than only one transfer loss</li>
@@ -583,7 +583,7 @@
 
 </li>
 </ul>
-<h1 id="Compared-with-Knowledge-Distillation"><a href="#Compared-with-Knowledge-Distillation" class="headerlink" title="Compared with Knowledge Distillation"></a>Compared with Knowledge Distillation</h1><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/14.jpg?raw=true" alt><br></div>
+<h1 id="4-Compared-with-Knowledge-Distillation"><a href="#4-Compared-with-Knowledge-Distillation" class="headerlink" title="4. Compared with Knowledge Distillation"></a>4. Compared with Knowledge Distillation</h1><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Paying more attention to attention: Improving the performance of convolutional neural networks via attention transfer/14.jpg?raw=true" alt><br></div>
 
 
       
@@ -1417,7 +1417,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.4.</span> <span class="nav-text">Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attention-Transfer"><span class="nav-number">2.</span> <span class="nav-text">Attention Transfer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activation-Based-Attention-Transfer"><span class="nav-number">2.1.</span> <span class="nav-text">Activation-Based Attention Transfer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#three-methods"><span class="nav-number">2.1.1.</span> <span class="nav-text">three methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cases-of-Student-and-Teacher-Networks"><span class="nav-number">2.1.2.</span> <span class="nav-text">Cases of Student and Teacher Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.1.3.</span> <span class="nav-text">Loss Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gradient-Based-Attention-Transfer"><span class="nav-number">2.2.</span> <span class="nav-text">Gradient-Based Attention Transfer</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Attention-Based"><span class="nav-number">3.1.</span> <span class="nav-text">Attention-Based</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Compared-with-Knowledge-Distillation"><span class="nav-number">4.</span> <span class="nav-text">Compared with Knowledge Distillation</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Contribution"><span class="nav-text">1.2. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Dataset"><span class="nav-text">1.4. Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Attention-Transfer"><span class="nav-text">2. Attention Transfer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Activation-Based-Attention-Transfer"><span class="nav-text">2.1. Activation-Based Attention Transfer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-three-methods"><span class="nav-text">2.1.1. three methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-Cases-of-Student-and-Teacher-Networks"><span class="nav-text">2.1.2. Cases of Student and Teacher Networks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-Loss-Function"><span class="nav-text">2.1.3. Loss Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Gradient-Based-Attention-Transfer"><span class="nav-text">2.2. Gradient-Based Attention Transfer</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Attention-Based"><span class="nav-text">3.1. Attention-Based</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Compared-with-Knowledge-Distillation"><span class="nav-text">4. Compared with Knowledge Distillation</span></a></li></ol></div>
             
 
           </div>

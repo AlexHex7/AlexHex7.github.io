@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Jaderberg M, Simonyan K, Zisserman A. Spatial transformer networks[C]//Advances in neural information processing systems. 2015: 2017-2025.">
-<meta name="keywords" content="Localization,Classification,Fine-Grained Classification,Component,Attention,STN">
+<meta name="keywords" content="Localization,Fine-Grained Classification,Component,Classification,Attention,STN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(NIPS 2015) Spatial transformer networks">
 <meta property="og:url" content="http://yoursite.com/2017/12/19/Spatial transformer networks/index.html">
@@ -501,26 +501,26 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <ul>
 <li>虽然CNN的效果很好，但是仍然缺乏对数据的空间不变能力，从而限制了计算和参数的效率。因此，论文提出Spatial Transformer Network (STN)。</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/1.jpg?raw=true" alt><br></div>
 
-<h2 id="STN"><a href="#STN" class="headerlink" title="STN"></a>STN</h2><ul>
+<h2 id="1-1-STN"><a href="#1-1-STN" class="headerlink" title="1.1. STN"></a>1.1. STN</h2><ul>
 <li>在网络中对数据显式地进行<strong>空间操作</strong>（平移、旋转、缩放、裁剪、扭曲）。由于该操作<strong>可微</strong>，因此模型能够end to end训练。</li>
 <li>根据输入数据，<strong>动态</strong>生成空间操作参数<strong>Θ</strong>。</li>
 <li>网络参数直接通过loss回传进行学习。可直接添加到神经网络模型中，整个训练<strong>不需额外</strong>的监督信息加入。</li>
 <li>空间操作后的数据是与后续特定任务高度相关的。另一方面，变换后的低分辨率数据比原始数据的计算效率更高。</li>
 <li>通过<strong>对数据进行操作实现不变性</strong>，而不是对特征提取器（卷积核）。</li>
 </ul>
-<h2 id="适用的任务"><a href="#适用的任务" class="headerlink" title="适用的任务"></a>适用的任务</h2><ul>
+<h2 id="1-2-适用的任务"><a href="#1-2-适用的任务" class="headerlink" title="1.2. 适用的任务"></a>1.2. 适用的任务</h2><ul>
 <li>classification</li>
 <li>co-localization</li>
 <li>spatial attention</li>
 </ul>
 <hr>
-<h1 id="Spatial-Transformers"><a href="#Spatial-Transformers" class="headerlink" title="Spatial Transformers"></a>Spatial Transformers</h1><hr>
+<h1 id="2-Spatial-Transformers"><a href="#2-Spatial-Transformers" class="headerlink" title="2. Spatial Transformers"></a>2. Spatial Transformers</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/2.jpg?raw=true" alt><br></div>
 
 <p>STN包含3部分 (Figure 2)</p>
@@ -529,12 +529,12 @@
 <li><strong>grid generator.</strong></li>
 <li><strong>sampler.</strong></li>
 </ul>
-<h2 id="Localization-Network"><a href="#Localization-Network" class="headerlink" title="Localization Network"></a>Localization Network</h2><ul>
+<h2 id="2-1-Localization-Network"><a href="#2-1-Localization-Network" class="headerlink" title="2.1. Localization Network"></a>2.1. Localization Network</h2><ul>
 <li>输入U(h, w, c)</li>
 <li>输出空间变换参数Θ</li>
 </ul>
 <p>网络可以是任何形式，如FCN、CNN等。仿射变换Θ的参数为6，投影变换参数为8，以及thin plate spline (TPS). 模型对最后一层的weight矩阵初始化为0，bias初始化为[[1, 0, 0], [0, 1, 0]]（仿射变换），即<strong>全等变换</strong>。</p>
-<h2 id="Parameterised-Sampling-Grid"><a href="#Parameterised-Sampling-Grid" class="headerlink" title="Parameterised Sampling Grid"></a>Parameterised Sampling Grid</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Parameterised-Sampling-Grid"><a href="#2-2-Parameterised-Sampling-Grid" class="headerlink" title="2.2. Parameterised Sampling Grid"></a>2.2. Parameterised Sampling Grid</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/3.jpg?raw=true" alt><br></div>
 
 
 <ul>
@@ -544,7 +544,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/4.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Differentiable-Image-Sampling"><a href="#Differentiable-Image-Sampling" class="headerlink" title="Differentiable Image Sampling"></a>Differentiable Image Sampling</h2><ul>
+<h2 id="2-3-Differentiable-Image-Sampling"><a href="#2-3-Differentiable-Image-Sampling" class="headerlink" title="2.3. Differentiable Image Sampling"></a>2.3. Differentiable Image Sampling</h2><ul>
 <li>通用的采样公式可写为</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/5.jpg?raw=true" alt><br></div>
@@ -573,7 +573,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/9.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Spatial-Transformer-Networks"><a href="#Spatial-Transformer-Networks" class="headerlink" title="Spatial Transformer Networks"></a>Spatial Transformer Networks</h2><ul>
+<h2 id="2-4-Spatial-Transformer-Networks"><a href="#2-4-Spatial-Transformer-Networks" class="headerlink" title="2.4. Spatial Transformer Networks"></a>2.4. Spatial Transformer Networks</h2><ul>
 <li>由于Θ显式地编码了变换，因此<strong>也可将Θ传入后续的网络</strong>，而非变换后的特征图（或图片）。</li>
 <li>可用STN对特征图进行上采样或下采样。但是，用固定的、小空间支持的采样kernel（双线性kernel）进行下采样会<strong>造成影响</strong>。</li>
 <li>STN可<strong>级联或并行</strong>在网络中。</li>
@@ -581,8 +581,8 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/11.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Distorted-MNIST"><a href="#Distorted-MNIST" class="headerlink" title="Distorted MNIST"></a>Distorted MNIST</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Distorted-MNIST"><a href="#3-1-Distorted-MNIST" class="headerlink" title="3.1. Distorted MNIST"></a>3.1. Distorted MNIST</h2><ul>
 <li>数据集distorted方式分为<ul>
 <li>R 旋转，±90°之间。</li>
 <li>RTS 旋转+缩放+平移</li>
@@ -595,24 +595,24 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/12.jpg?raw=true" alt><br></div>
 
 
-<h2 id="MNIST-Addition"><a href="#MNIST-Addition" class="headerlink" title="MNIST Addition"></a>MNIST Addition</h2><ul>
+<h2 id="3-2-MNIST-Addition"><a href="#3-2-MNIST-Addition" class="headerlink" title="3.2. MNIST Addition"></a>3.2. MNIST Addition</h2><ul>
 <li>输入两张数字图片(h,w,2)，输出数字的和。</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/13.jpg?raw=true" alt><br></div>
 
-<h2 id="Street-View-House-Numbers"><a href="#Street-View-House-Numbers" class="headerlink" title="Street View House Numbers"></a>Street View House Numbers</h2><ul>
+<h2 id="3-3-Street-View-House-Numbers"><a href="#3-3-Street-View-House-Numbers" class="headerlink" title="3.3. Street View House Numbers"></a>3.3. Street View House Numbers</h2><ul>
 <li>每张图片有1～5个数字。因此，模型采用级联STN，并使用5个独立的softmax分类器，每个分类器包含一个<strong>空字符</strong></li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/14.jpg?raw=true" alt><br></div>
 
-<h2 id="Fine-Grained-Classification"><a href="#Fine-Grained-Classification" class="headerlink" title="Fine-Grained Classification"></a>Fine-Grained Classification</h2><ul>
+<h2 id="3-4-Fine-Grained-Classification"><a href="#3-4-Fine-Grained-Classification" class="headerlink" title="3.4. Fine-Grained Classification"></a>3.4. Fine-Grained Classification</h2><ul>
 <li>CUB-200-2011数据集，模型采用并行STN结构。</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/15.jpg?raw=true" alt><br></div>
 
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/16.jpg?raw=true" alt><br></div>
 
-<h2 id="Co-localization"><a href="#Co-localization" class="headerlink" title="Co-localization"></a>Co-localization</h2><ul>
+<h2 id="3-5-Co-localization"><a href="#3-5-Co-localization" class="headerlink" title="3.5. Co-localization"></a>3.5. Co-localization</h2><ul>
 <li>使用<strong>半监督学习</strong>来定位图像中的物体。基于正确定位对象A与正确定位对象B之间的距离，比A与随机定位crop小的假设，构造<strong>hinge loss</strong></li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/17.jpg?raw=true" alt><br></div>
@@ -623,7 +623,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/18.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/19.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Higher-Dimensionnal-Transformer"><a href="#Higher-Dimensionnal-Transformer" class="headerlink" title="Higher Dimensionnal Transformer"></a>Higher Dimensionnal Transformer</h2><ul>
+<h2 id="3-6-Higher-Dimensionnal-Transformer"><a href="#3-6-Higher-Dimensionnal-Transformer" class="headerlink" title="3.6. Higher Dimensionnal Transformer"></a>3.6. Higher Dimensionnal Transformer</h2><ul>
 <li><p>模型使用3D仿射变换和3D双线性插值操作。</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/20.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/21.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spatial transformer networks/22.jpg?raw=true" alt><br></div>
 </li>
@@ -657,11 +657,11 @@
           
             <a href="/tags/Localization/" rel="tag"># Localization</a>
           
-            <a href="/tags/Classification/" rel="tag"># Classification</a>
-          
             <a href="/tags/Fine-Grained-Classification/" rel="tag"># Fine-Grained Classification</a>
           
             <a href="/tags/Component/" rel="tag"># Component</a>
+          
+            <a href="/tags/Classification/" rel="tag"># Classification</a>
           
             <a href="/tags/Attention/" rel="tag"># Attention</a>
           
@@ -1472,7 +1472,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#STN"><span class="nav-number">1.1.</span> <span class="nav-text">STN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#适用的任务"><span class="nav-number">1.2.</span> <span class="nav-text">适用的任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spatial-Transformers"><span class="nav-number">2.</span> <span class="nav-text">Spatial Transformers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Localization-Network"><span class="nav-number">2.1.</span> <span class="nav-text">Localization Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameterised-Sampling-Grid"><span class="nav-number">2.2.</span> <span class="nav-text">Parameterised Sampling Grid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Differentiable-Image-Sampling"><span class="nav-number">2.3.</span> <span class="nav-text">Differentiable Image Sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spatial-Transformer-Networks"><span class="nav-number">2.4.</span> <span class="nav-text">Spatial Transformer Networks</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Distorted-MNIST"><span class="nav-number">3.1.</span> <span class="nav-text">Distorted MNIST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MNIST-Addition"><span class="nav-number">3.2.</span> <span class="nav-text">MNIST Addition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Street-View-House-Numbers"><span class="nav-number">3.3.</span> <span class="nav-text">Street View House Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fine-Grained-Classification"><span class="nav-number">3.4.</span> <span class="nav-text">Fine-Grained Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Co-localization"><span class="nav-number">3.5.</span> <span class="nav-text">Co-localization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Higher-Dimensionnal-Transformer"><span class="nav-number">3.6.</span> <span class="nav-text">Higher Dimensionnal Transformer</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-STN"><span class="nav-text">1.1. STN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-适用的任务"><span class="nav-text">1.2. 适用的任务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Spatial-Transformers"><span class="nav-text">2. Spatial Transformers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Localization-Network"><span class="nav-text">2.1. Localization Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Parameterised-Sampling-Grid"><span class="nav-text">2.2. Parameterised Sampling Grid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Differentiable-Image-Sampling"><span class="nav-text">2.3. Differentiable Image Sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Spatial-Transformer-Networks"><span class="nav-text">2.4. Spatial Transformer Networks</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Distorted-MNIST"><span class="nav-text">3.1. Distorted MNIST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-MNIST-Addition"><span class="nav-text">3.2. MNIST Addition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Street-View-House-Numbers"><span class="nav-text">3.3. Street View House Numbers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Fine-Grained-Classification"><span class="nav-text">3.4. Fine-Grained Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Co-localization"><span class="nav-text">3.5. Co-localization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-Higher-Dimensionnal-Transformer"><span class="nav-text">3.6. Higher Dimensionnal Transformer</span></a></li></ol></li></ol></div>
             
 
           </div>

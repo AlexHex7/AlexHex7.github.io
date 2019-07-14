@@ -478,7 +478,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper</p>
 <ul>
 <li>show that <strong>adversarial training</strong> converges to a <strong>defenerate global minimum</strong></li>
@@ -486,14 +486,14 @@
 <li>introduce <strong>Ensemble Adversarial Training</strong> that <strong>augments</strong> training <strong>data</strong> with perturbations transferred from other model (decouples adversarial example generation from the parameters of the trained model)</li>
 <li>Ensemble Adversarial Training yields models with <strong>strong robustness to black-box attack</strong></li>
 </ul>
-<h2 id="Adversarial-Training"><a href="#Adversarial-Training" class="headerlink" title="Adversarial Training"></a>Adversarial Training</h2><ul>
+<h2 id="1-1-Adversarial-Training"><a href="#1-1-Adversarial-Training" class="headerlink" title="1.1. Adversarial Training"></a>1.1. Adversarial Training</h2><ul>
 <li><strong>adversarial training on MNIST</strong> yields models that are <strong>robust</strong> to <strong>white-box attacks</strong></li>
 <li><strong>MNIST</strong> dataset is <strong>peculiar</strong> in that there exists a simple ‘closed-form’ denoising procedure (namely <strong>feature binarization</strong>) which leads to similarly robust models without adversarial training. This may explain why <strong>robustness to white-box attack is hard to scale to tasks such as ImageNet</strong></li>
 <li><strong>for an average MNIST image, over 80% of the pixels are in {0, 1} and only 6% are in the range [0.2, 0.8]. Thus, for a perturbation with epsilon ≤ 0.3, binarized version of x and x_adv can differ in at most 6% of the input dimension</strong></li>
 <li>Some prior works have hinted that <strong>adversarially trained models</strong> may remain <strong>vulnerable to black-box attacks</strong></li>
 <li>an <strong>adversarial maxout network</strong> on <strong>MNIST</strong> has slightly <strong>higher error</strong> on <strong>transferred</strong> examples than on <strong>white-box</strong> examples</li>
 </ul>
-<h2 id="Attack-Methods"><a href="#Attack-Methods" class="headerlink" title="Attack Methods"></a>Attack Methods</h2><ul>
+<h2 id="1-2-Attack-Methods"><a href="#1-2-Attack-Methods" class="headerlink" title="1.2. Attack Methods"></a>1.2. Attack Methods</h2><ul>
 <li><p>FGSM</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Ensemble Adversarial Training: Attacks and Defenses/1.jpg?raw=true" alt><br></div>
 </li>
@@ -506,16 +506,16 @@
 
 </li>
 </ul>
-<h2 id="Ensemble-Adversarial-Training"><a href="#Ensemble-Adversarial-Training" class="headerlink" title="Ensemble Adversarial Training"></a>Ensemble Adversarial Training</h2><ul>
+<h2 id="1-3-Ensemble-Adversarial-Training"><a href="#1-3-Ensemble-Adversarial-Training" class="headerlink" title="1.3. Ensemble Adversarial Training"></a>1.3. Ensemble Adversarial Training</h2><ul>
 <li><strong>decouple</strong> the generation of adversarial example from the model being trained</li>
 <li><strong>augments training data</strong> with adversarial examples crafted on other <strong>static pre-trained models</strong></li>
 </ul>
-<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Ensemble Adversarial Training: Attacks and Defenses/4.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Experiments"><a href="#1-4-Experiments" class="headerlink" title="1.4. Experiments"></a>1.4. Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Ensemble Adversarial Training: Attacks and Defenses/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>adversarial training</strong> greatly <strong>increases robustness to white-box single-step attacks</strong>, but <strong>incurs</strong> a higher error rate in a <strong>black-box setting</strong></li>
 </ul>
-<h3 id="Ensemble-Training"><a href="#Ensemble-Training" class="headerlink" title="Ensemble Training"></a>Ensemble Training</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Ensemble Adversarial Training: Attacks and Defenses/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Ensemble Adversarial Training: Attacks and Defenses/6.jpg?raw=true" alt><br></div>
+<h3 id="1-4-1-Ensemble-Training"><a href="#1-4-1-Ensemble-Training" class="headerlink" title="1.4.1. Ensemble Training"></a>1.4.1. Ensemble Training</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Ensemble Adversarial Training: Attacks and Defenses/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Ensemble Adversarial Training: Attacks and Defenses/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Ensemble Adversarial Training is not robust to white-box Iter-LL and R+Step-LL sample</strong></li>
@@ -1352,7 +1352,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Training"><span class="nav-number">1.1.</span> <span class="nav-text">Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attack-Methods"><span class="nav-number">1.2.</span> <span class="nav-text">Attack Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensemble-Adversarial-Training"><span class="nav-number">1.3.</span> <span class="nav-text">Ensemble Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments"><span class="nav-number">1.4.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ensemble-Training"><span class="nav-number">1.4.1.</span> <span class="nav-text">Ensemble Training</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Adversarial-Training"><span class="nav-text">1.1. Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Attack-Methods"><span class="nav-text">1.2. Attack Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Ensemble-Adversarial-Training"><span class="nav-text">1.3. Ensemble Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Experiments"><span class="nav-text">1.4. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-Ensemble-Training"><span class="nav-text">1.4.1. Ensemble Training</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

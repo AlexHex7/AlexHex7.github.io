@@ -490,8 +490,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>attribute-based zero shot</p>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><p>attribute-based zero shot</p>
 <ul>
 <li>attribute do not provide a natural language interface</li>
 <li>fine-grained recognition requires commensurately more attribute</li>
@@ -502,17 +502,17 @@
 <li>word-CNN-RNN</li>
 <li>character-CNN-RNN</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li>fine-grained classification</li>
 <li>zero-shot</li>
 <li>image and video caption</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="Embedding"><a href="#Embedding" class="headerlink" title="Embedding"></a>Embedding</h2><h3 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/1.jpg?raw=true" alt><br></div>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-Embedding"><a href="#2-1-Embedding" class="headerlink" title="2.1. Embedding"></a>2.1. Embedding</h2><h3 id="2-1-1-Objective"><a href="#2-1-1-Objective" class="headerlink" title="2.1.1. Objective"></a>2.1.1. Objective</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/1.jpg?raw=true" alt><br></div>
 
-<h3 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h3><ul>
+<h3 id="2-1-2-Inference"><a href="#2-1-2-Inference" class="headerlink" title="2.1.2. Inference"></a>2.1.2. Inference</h3><ul>
 <li><p>compatibility</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/2.jpg?raw=true" alt><br></div>
 </li>
@@ -521,17 +521,17 @@
 
 </li>
 </ul>
-<h3 id="Learning"><a href="#Learning" class="headerlink" title="Learning"></a>Learning</h3><ul>
+<h3 id="2-1-3-Learning"><a href="#2-1-3-Learning" class="headerlink" title="2.1.3. Learning"></a>2.1.3. Learning</h3><ul>
 <li>since 0-1 loss is discontinue<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/4.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Text-based-ConvNet"><a href="#Text-based-ConvNet" class="headerlink" title="Text-based ConvNet"></a>Text-based ConvNet</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/5.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Text-based-ConvNet"><a href="#2-2-Text-based-ConvNet" class="headerlink" title="2.2. Text-based ConvNet"></a>2.2. Text-based ConvNet</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>image width is 1 pixel, channel number is equal to the alphabet size</li>
 </ul>
-<h2 id="Convolutional-Recurrent-Net-CNN-RNN"><a href="#Convolutional-Recurrent-Net-CNN-RNN" class="headerlink" title="Convolutional Recurrent Net (CNN-RNN)"></a>Convolutional Recurrent Net (CNN-RNN)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/6.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Convolutional-Recurrent-Net-CNN-RNN"><a href="#2-3-Convolutional-Recurrent-Net-CNN-RNN" class="headerlink" title="2.3. Convolutional Recurrent Net (CNN-RNN)"></a>2.3. Convolutional Recurrent Net (CNN-RNN)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>only CNN lacks a strong temporal dependency along the input text sequence</li>
@@ -544,18 +544,18 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Dataset"><a href="#3-1-Dataset" class="headerlink" title="3.1. Dataset"></a>3.1. Dataset</h2><ul>
 <li>CUB</li>
 <li>Flowers</li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="3-2-Details"><a href="#3-2-Details" class="headerlink" title="3.2. Details"></a>3.2. Details</h2><ul>
 <li>crop</li>
 <li>horizontal flip</li>
 <li>length of words 30. length of character 201</li>
 <li>RMSprop</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/11.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Comparison"><a href="#3-3-Comparison" class="headerlink" title="3.3. Comparison"></a>3.3. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning deep representations of fine-grained visual descriptions/11.jpg?raw=true" alt><br></div>
 
 
 
@@ -1399,7 +1399,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Embedding"><span class="nav-number">2.1.</span> <span class="nav-text">Embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Objective"><span class="nav-number">2.1.1.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inference"><span class="nav-number">2.1.2.</span> <span class="nav-text">Inference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Learning"><span class="nav-number">2.1.3.</span> <span class="nav-text">Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-based-ConvNet"><span class="nav-number">2.2.</span> <span class="nav-text">Text-based ConvNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convolutional-Recurrent-Net-CNN-RNN"><span class="nav-number">2.3.</span> <span class="nav-text">Convolutional Recurrent Net (CNN-RNN)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.2.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.3.</span> <span class="nav-text">Comparison</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Embedding"><span class="nav-text">2.1. Embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Objective"><span class="nav-text">2.1.1. Objective</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-Inference"><span class="nav-text">2.1.2. Inference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-Learning"><span class="nav-text">2.1.3. Learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Text-based-ConvNet"><span class="nav-text">2.2. Text-based ConvNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Convolutional-Recurrent-Net-CNN-RNN"><span class="nav-text">2.3. Convolutional Recurrent Net (CNN-RNN)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Dataset"><span class="nav-text">3.1. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Details"><span class="nav-text">3.2. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Comparison"><span class="nav-text">3.3. Comparison</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -480,14 +480,14 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposed <strong>generative models</strong> for creating adversarial examples</p>
 <ul>
 <li>can produce <strong>image-agnostic</strong> and <strong>image-dependent</strong> perturbation for <strong>targeted</strong> and <strong>untargeted</strong> attacks</li>
 <li>demonstrate that <strong>similar architecture</strong> can achive impressive results in fooling both <strong>classification</strong> and <strong>semantic segmentation</strong> models</li>
 <li><strong>faster</strong> than iterative methods at inference time</li>
 </ul>
-<h2 id="Type-of-perturbation"><a href="#Type-of-perturbation" class="headerlink" title="Type of perturbation"></a>Type of perturbation</h2><ul>
+<h2 id="1-1-Type-of-perturbation"><a href="#1-1-Type-of-perturbation" class="headerlink" title="1.1. Type of perturbation"></a>1.1. Type of perturbation</h2><ul>
 <li><strong>Universal</strong>. fixed</li>
 <li><strong>Image-dependent</strong>. vary for different images<ul>
 <li><strong>targeted</strong></li>
@@ -495,17 +495,17 @@
 </ul>
 </li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-2-Contribution"><a href="#1-2-Contribution" class="headerlink" title="1.2. Contribution"></a>1.2. Contribution</h2><ul>
 <li><strong>unifying framework</strong>. universal and image-dependent</li>
 <li><strong>state-of-art</strong> performance in <strong>universal</strong> perturbations</li>
 <li><strong>first</strong> to present effective <strong>targeted universal</strong> perturbation</li>
 <li>faster than iterative and optimization-based methods, the order of milliseconds</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Universal-Perturbations"><a href="#Universal-Perturbations" class="headerlink" title="Universal Perturbations"></a>Universal Perturbations</h3><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><h3 id="1-3-1-Universal-Perturbations"><a href="#1-3-1-Universal-Perturbations" class="headerlink" title="1.3.1. Universal Perturbations"></a>1.3.1. Universal Perturbations</h3><ul>
 <li>iterates over samples in a target set, <strong>aggregate image-dependent</strong> perturbation and <strong>normalize</strong> the results to build universal perturbation</li>
 <li>add image-dependent perturbations and clip the results</li>
 </ul>
-<h3 id="Image-dependent-Perturbation"><a href="#Image-dependent-Perturbation" class="headerlink" title="Image-dependent Perturbation"></a>Image-dependent Perturbation</h3><ul>
+<h3 id="1-3-2-Image-dependent-Perturbation"><a href="#1-3-2-Image-dependent-Perturbation" class="headerlink" title="1.3.2. Image-dependent Perturbation"></a>1.3.2. Image-dependent Perturbation</h3><ul>
 <li>optimization-based</li>
 <li>FGSM</li>
 <li>Iterative Least-Likely Class</li>
@@ -513,8 +513,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Generative-Adversarial-Perturbation"><a href="#Generative-Adversarial-Perturbation" class="headerlink" title="Generative Adversarial Perturbation"></a>Generative Adversarial Perturbation</h1><hr>
-<h2 id="Universal-Perturbation"><a href="#Universal-Perturbation" class="headerlink" title="Universal Perturbation"></a>Universal Perturbation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/1.jpg?raw=true" alt><br></div>
+<h1 id="2-Generative-Adversarial-Perturbation"><a href="#2-Generative-Adversarial-Perturbation" class="headerlink" title="2. Generative Adversarial Perturbation"></a>2. Generative Adversarial Perturbation</h1><hr>
+<h2 id="2-1-Universal-Perturbation"><a href="#2-1-Universal-Perturbation" class="headerlink" title="2.1. Universal Perturbation"></a>2.1. Universal Perturbation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p>U. scale to have a fixed norm</p>
@@ -525,16 +525,16 @@
 
 </li>
 </ul>
-<h2 id="Image-dependent-Perturbation-1"><a href="#Image-dependent-Perturbation-1" class="headerlink" title="Image-dependent Perturbation"></a>Image-dependent Perturbation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/4.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/5.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Image-dependent-Perturbation"><a href="#2-2-Image-dependent-Perturbation" class="headerlink" title="2.2. Image-dependent Perturbation"></a>2.2. Image-dependent Perturbation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/4.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>generate perturbation instead of adversarial example giving us better control over the perturbation magnitude</li>
 </ul>
-<h2 id="Fooling-Multiple-Network"><a href="#Fooling-Multiple-Network" class="headerlink" title="Fooling Multiple Network"></a>Fooling Multiple Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/7.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Fooling-Multiple-Network"><a href="#2-3-Fooling-Multiple-Network" class="headerlink" title="2.3. Fooling Multiple Network"></a>2.3. Fooling Multiple Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/7.jpg?raw=true" alt><br></div>
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Generative Adversarial Perturbations/8.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -1372,7 +1372,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-of-perturbation"><span class="nav-number">1.1.</span> <span class="nav-text">Type of perturbation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Universal-Perturbations"><span class="nav-number">1.3.1.</span> <span class="nav-text">Universal Perturbations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Image-dependent-Perturbation"><span class="nav-number">1.3.2.</span> <span class="nav-text">Image-dependent Perturbation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Generative-Adversarial-Perturbation"><span class="nav-number">2.</span> <span class="nav-text">Generative Adversarial Perturbation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Universal-Perturbation"><span class="nav-number">2.1.</span> <span class="nav-text">Universal Perturbation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-dependent-Perturbation-1"><span class="nav-number">2.2.</span> <span class="nav-text">Image-dependent Perturbation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fooling-Multiple-Network"><span class="nav-number">2.3.</span> <span class="nav-text">Fooling Multiple Network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Type-of-perturbation"><span class="nav-text">1.1. Type of perturbation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Contribution"><span class="nav-text">1.2. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Universal-Perturbations"><span class="nav-text">1.3.1. Universal Perturbations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Image-dependent-Perturbation"><span class="nav-text">1.3.2. Image-dependent Perturbation</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Generative-Adversarial-Perturbation"><span class="nav-text">2. Generative Adversarial Perturbation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Universal-Perturbation"><span class="nav-text">2.1. Universal Perturbation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Image-dependent-Perturbation"><span class="nav-text">2.2. Image-dependent Perturbation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Fooling-Multiple-Network"><span class="nav-text">2.3. Fooling Multiple Network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a></li></ol></div>
             
 
           </div>

@@ -484,7 +484,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposed Dense Adversary Generation (<strong>DAG</strong>)</p>
 <ul>
 <li>optimize a loss function <strong>over a set of pixels/proposals</strong> for generating adversarial perturbations</li>
@@ -493,7 +493,7 @@
 <li>change <strong>IOU</strong> to <strong>preserve more proposals.</strong> generating adversarial example is more difficult in detection then segmentation <strong>(O(N*N) vs O(N), N pixels)</strong></li>
 <li>add two or more <strong>heterogeneous perturbations</strong> significantly increase the transferability</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-1-Related-Work"><a href="#1-1-Related-Work" class="headerlink" title="1.1. Related Work"></a>1.1. Related Work</h2><ul>
 <li>FGSM</li>
 <li>universal adversarial perturbation</li>
 <li>trained a <strong>network</strong> to generate adversarial examples for a target model</li>
@@ -505,7 +505,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/1.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -542,31 +542,31 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><hr>
+<h1 id="3-Details"><a href="#3-Details" class="headerlink" title="3. Details"></a>3. Details</h1><hr>
 <ul>
 <li>target set selection is more difficult in detection task.<br>when the adversarial perturbation r is added t the original image X, <strong>a different set of proposals may be generated according to the net input X+r.</strong></li>
 <li>incrase the threshhold of NMS in RPN(IOU: 0.7 to 0.9 → 300 proposals to 3000 proposals)</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/6.jpg?raw=true" alt><br></div>
+<h1 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h1><hr>
+<h2 id="4-1-Comparison"><a href="#4-1-Comparison" class="headerlink" title="4.1. Comparison"></a>4.1. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/6.jpg?raw=true" alt><br></div>
 
 
 <ul>
 <li>permuted perturbations cause negligible accuracy drop</li>
 <li>indicate that it is the <strong>spatial structure of r, instead of its magnitude</strong>, contributes in generating adversarial examples</li>
 </ul>
-<h2 id="Control-Output"><a href="#Control-Output" class="headerlink" title="Control Output"></a>Control Output</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/7.jpg?raw=true" alt><br></div>
+<h2 id="4-2-Control-Output"><a href="#4-2-Control-Output" class="headerlink" title="4.2. Control Output"></a>4.2. Control Output</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/7.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Denseness-of-Proposals"><a href="#Denseness-of-Proposals" class="headerlink" title="Denseness of Proposals"></a>Denseness of Proposals</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/8.jpg?raw=true" alt><br></div>
+<h2 id="4-3-Denseness-of-Proposals"><a href="#4-3-Denseness-of-Proposals" class="headerlink" title="4.3. Denseness of Proposals"></a>4.3. Denseness of Proposals</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/8.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Convergence"><a href="#Convergence" class="headerlink" title="Convergence"></a>Convergence</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/9.jpg?raw=true" alt><br></div>
+<h2 id="4-4-Convergence"><a href="#4-4-Convergence" class="headerlink" title="4.4. Convergence"></a>4.4. Convergence</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/9.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Perceptibility"><a href="#Perceptibility" class="headerlink" title="Perceptibility"></a>Perceptibility</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/10.jpg?raw=true" alt><br></div>
+<h2 id="4-5-Perceptibility"><a href="#4-5-Perceptibility" class="headerlink" title="4.5. Perceptibility"></a>4.5. Perceptibility</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/10.jpg?raw=true" alt><br></div>
 
 
 <ul>
@@ -574,20 +574,20 @@
 <li><strong>segmentation</strong>. 2.6e-3, 2.5e-3, 2.9e-3, 3e-3 on FCN-Alex, FCN-Alex<em>, FCN-VGG, FCN-VGG</em></li>
 <li><strong>detection</strong>. 2.4e-3, 2.7e-3, 1.5e-3, 1.7e-3</li>
 </ul>
-<h2 id="Transferability"><a href="#Transferability" class="headerlink" title="Transferability"></a>Transferability</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/11.jpg?raw=true" alt><br></div>
+<h2 id="4-6-Transferability"><a href="#4-6-Transferability" class="headerlink" title="4.6. Transferability"></a>4.6. Transferability</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/11.jpg?raw=true" alt><br></div>
 
 
-<h3 id="Cross-Training-Transfer"><a href="#Cross-Training-Transfer" class="headerlink" title="Cross-Training Transfer"></a>Cross-Training Transfer</h3><ul>
+<h3 id="4-6-1-Cross-Training-Transfer"><a href="#4-6-1-Cross-Training-Transfer" class="headerlink" title="4.6.1. Cross-Training Transfer"></a>4.6.1. Cross-Training Transfer</h3><ul>
 <li>perturbation learn from one network to another network with same architecture but different dataset</li>
 </ul>
-<h3 id="Cross-Network-Transfer"><a href="#Cross-Network-Transfer" class="headerlink" title="Cross-Network Transfer"></a>Cross-Network Transfer</h3><ul>
+<h3 id="4-6-2-Cross-Network-Transfer"><a href="#4-6-2-Cross-Network-Transfer" class="headerlink" title="4.6.2. Cross-Network Transfer"></a>4.6.2. Cross-Network Transfer</h3><ul>
 <li>through different network structures</li>
 </ul>
-<h3 id="Cross-Task-Transfer"><a href="#Cross-Task-Transfer" class="headerlink" title="Cross-Task Transfer"></a>Cross-Task Transfer</h3><ul>
+<h3 id="4-6-3-Cross-Task-Transfer"><a href="#4-6-3-Cross-Task-Transfer" class="headerlink" title="4.6.3. Cross-Task Transfer"></a>4.6.3. Cross-Task Transfer</h3><ul>
 <li>perturbation generated from one task to attack another task</li>
 <li>drop significantly between same network (FCN-VGG, FR-VGG-07)</li>
 </ul>
-<h3 id="Combining-Heterogeneous-Perturbations"><a href="#Combining-Heterogeneous-Perturbations" class="headerlink" title="Combining Heterogeneous Perturbations"></a>Combining Heterogeneous Perturbations</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/12.jpg?raw=true" alt><br></div>
+<h3 id="4-6-4-Combining-Heterogeneous-Perturbations"><a href="#4-6-4-Combining-Heterogeneous-Perturbations" class="headerlink" title="4.6.4. Combining Heterogeneous Perturbations"></a>4.6.4. Combining Heterogeneous Perturbations</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Adversarial Examples for Semantic Segmentation and Object Detection/12.jpg?raw=true" alt><br></div>
 
 
 <ul>
@@ -1427,7 +1427,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.1.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Details"><span class="nav-number">3.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">4.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">4.1.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Control-Output"><span class="nav-number">4.2.</span> <span class="nav-text">Control Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Denseness-of-Proposals"><span class="nav-number">4.3.</span> <span class="nav-text">Denseness of Proposals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convergence"><span class="nav-number">4.4.</span> <span class="nav-text">Convergence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perceptibility"><span class="nav-number">4.5.</span> <span class="nav-text">Perceptibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transferability"><span class="nav-number">4.6.</span> <span class="nav-text">Transferability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Training-Transfer"><span class="nav-number">4.6.1.</span> <span class="nav-text">Cross-Training Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Network-Transfer"><span class="nav-number">4.6.2.</span> <span class="nav-text">Cross-Network Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cross-Task-Transfer"><span class="nav-number">4.6.3.</span> <span class="nav-text">Cross-Task Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combining-Heterogeneous-Perturbations"><span class="nav-number">4.6.4.</span> <span class="nav-text">Combining Heterogeneous Perturbations</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Work"><span class="nav-text">1.1. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Details"><span class="nav-text">3. Details</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments"><span class="nav-text">4. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Comparison"><span class="nav-text">4.1. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Control-Output"><span class="nav-text">4.2. Control Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Denseness-of-Proposals"><span class="nav-text">4.3. Denseness of Proposals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-Convergence"><span class="nav-text">4.4. Convergence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-Perceptibility"><span class="nav-text">4.5. Perceptibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-Transferability"><span class="nav-text">4.6. Transferability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-1-Cross-Training-Transfer"><span class="nav-text">4.6.1. Cross-Training Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-2-Cross-Network-Transfer"><span class="nav-text">4.6.2. Cross-Network Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-3-Cross-Task-Transfer"><span class="nav-text">4.6.3. Cross-Task Transfer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-4-Combining-Heterogeneous-Perturbations"><span class="nav-text">4.6.4. Combining Heterogeneous Perturbations</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

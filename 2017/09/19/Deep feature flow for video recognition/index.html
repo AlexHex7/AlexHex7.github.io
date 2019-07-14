@@ -512,25 +512,25 @@
 <li><strong>Task Network</strong></li>
 </ul>
 <p>以及<strong>Inference</strong>和<strong>Training</strong>两个阶段</p>
-<h1 id="Feature-Network"><a href="#Feature-Network" class="headerlink" title="Feature Network"></a>Feature Network</h1><hr>
+<h1 id="1-Feature-Network"><a href="#1-Feature-Network" class="headerlink" title="1. Feature Network"></a>1. Feature Network</h1><hr>
 <ul>
 <li>采用ResNet-50和ResNet-101 <strong>pre-trained</strong> on ImageNet Classification.</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep%20feature%20flow%20for%20video%20recognition/4.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Task-Network"><a href="#Task-Network" class="headerlink" title="Task Network"></a>Task Network</h1><hr>
+<h1 id="2-Task-Network"><a href="#2-Task-Network" class="headerlink" title="2. Task Network"></a>2. Task Network</h1><hr>
 <ul>
 <li><strong>DeepLab</strong> for segmentation</li>
 <li><strong>R-FCN</strong> for object detection</li>
 </ul>
-<h1 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h1><hr>
+<h1 id="3-Inference"><a href="#3-Inference" class="headerlink" title="3. Inference"></a>3. Inference</h1><hr>
 <ul>
 <li><strong>Scale Function</strong> Better approximate the features the spatial warping may be inaccurate due to errors in flow estimation, object occlusion.</li>
 <li>基于optical flow对key frame feature map进行bilinear interpolation 得到propagated feature map of current frame</li>
 <li>Key frame schedule</li>
 </ul>
-<h1 id="Training-图3"><a href="#Training-图3" class="headerlink" title="Training (图3)"></a>Training (图3)</h1><hr>
+<h1 id="4-Training-图3"><a href="#4-Training-图3" class="headerlink" title="4. Training (图3)"></a>4. Training (图3)</h1><hr>
 <ul>
 <li>选取labeled frame作为current frame（一些Dataset只有少数帧有ground-truth），随机选取附近的帧作为key frame：<ul>
 <li>Current frame == key frame. 计算current frame loss(右半部分).</li>
@@ -542,12 +542,12 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep%20feature%20flow%20for%20video%20recognition/5.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h1><hr>
+<h1 id="5-Dataset"><a href="#5-Dataset" class="headerlink" title="5. Dataset"></a>5. Dataset</h1><hr>
 <ul>
 <li>ImageNet VID for object detection</li>
 <li>Cityscapes for semantic segmentation</li>
 </ul>
-<h1 id="Task-Network与Feature-Network分割"><a href="#Task-Network与Feature-Network分割" class="headerlink" title="Task Network与Feature Network分割"></a>Task Network与Feature Network分割</h1><hr>
+<h1 id="6-Task-Network与Feature-Network分割"><a href="#6-Task-Network与Feature-Network分割" class="headerlink" title="6. Task Network与Feature Network分割"></a>6. Task Network与Feature Network分割</h1><hr>
 <ul>
 <li>论文做了一个实验，验证将Feature Network中最后多少层放入Task Network中性能最好。从<strong>Table 5</strong>中可以看出在两个网络完全分离的情况下，性能最好。</li>
 <li>DFF Framework的通用性，论文默认采用预留Feature Network中最后1层到Task Network中。</li>
@@ -556,12 +556,12 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep%20feature%20flow%20for%20video%20recognition/6.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Experiments-Results"><a href="#Experiments-Results" class="headerlink" title="Experiments Results"></a>Experiments Results</h1><hr>
+<h1 id="7-Experiments-Results"><a href="#7-Experiments-Results" class="headerlink" title="7. Experiments Results"></a>7. Experiments Results</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep%20feature%20flow%20for%20video%20recognition/7.jpg?raw=true" alt><br></div>
 
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deep%20feature%20flow%20for%20video%20recognition/8.jpg?raw=true" alt><br></div>
 
-<h1 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h1><hr>
+<h1 id="8-Future"><a href="#8-Future" class="headerlink" title="8. Future"></a>8. Future</h1><hr>
 <ul>
 <li>论文提到未来将会在<strong>flow estimation</strong>和<strong>key frame scheduling</strong>两方面进行优化。</li>
 <li>此外，论文结尾说，提出的DFF框架可能会成为一个<strong>新的研究方向</strong>。</li>
@@ -1407,7 +1407,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Feature-Network"><span class="nav-number">1.</span> <span class="nav-text">Feature Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Task-Network"><span class="nav-number">2.</span> <span class="nav-text">Task Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inference"><span class="nav-number">3.</span> <span class="nav-text">Inference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Training-图3"><span class="nav-number">4.</span> <span class="nav-text">Training (图3)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Dataset"><span class="nav-number">5.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Task-Network与Feature-Network分割"><span class="nav-number">6.</span> <span class="nav-text">Task Network与Feature Network分割</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments-Results"><span class="nav-number">7.</span> <span class="nav-text">Experiments Results</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Future"><span class="nav-number">8.</span> <span class="nav-text">Future</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Feature-Network"><span class="nav-text">1. Feature Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Task-Network"><span class="nav-text">2. Task Network</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Inference"><span class="nav-text">3. Inference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Training-图3"><span class="nav-text">4. Training (图3)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Dataset"><span class="nav-text">5. Dataset</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Task-Network与Feature-Network分割"><span class="nav-text">6. Task Network与Feature Network分割</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Experiments-Results"><span class="nav-text">7. Experiments Results</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Future"><span class="nav-text">8. Future</span></a></li></ol></div>
             
 
           </div>

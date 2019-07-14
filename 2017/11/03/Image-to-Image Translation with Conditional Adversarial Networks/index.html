@@ -498,21 +498,21 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/1.jpg?raw=true" alt><br></div>
 
-<h1 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h1><hr>
+<h1 id="1-Contribution"><a href="#1-Contribution" class="headerlink" title="1. Contribution"></a>1. Contribution</h1><hr>
 <ul>
 <li>针对不同任务，cGAN具有通用性。</li>
 <li>Achieve good result, 并分析cGAN结构中的一些重要部分</li>
 </ul>
-<h1 id="Relative-Work"><a href="#Relative-Work" class="headerlink" title="Relative Work"></a>Relative Work</h1><hr>
-<h2 id="Loss类型"><a href="#Loss类型" class="headerlink" title="Loss类型"></a>Loss类型</h2><ul>
+<h1 id="2-Relative-Work"><a href="#2-Relative-Work" class="headerlink" title="2. Relative Work"></a>2. Relative Work</h1><hr>
+<h2 id="2-1-Loss类型"><a href="#2-1-Loss类型" class="headerlink" title="2.1. Loss类型"></a>2.1. Loss类型</h2><ul>
 <li><strong>Structured loss</strong> 每个像素点<strong>独立考虑</strong>. per-pixel classification loss, regression.</li>
 <li><strong>Unstructured loss</strong> penalize the <strong>joint</strong> configuration of the output, 如conditional random fields. cGAN的unstructured loss是学习到的。</li>
 </ul>
-<h2 id="cGAN"><a href="#cGAN" class="headerlink" title="cGAN"></a>cGAN</h2><ul>
+<h2 id="2-2-cGAN"><a href="#2-2-cGAN" class="headerlink" title="2.2. cGAN"></a>2.2. cGAN</h2><ul>
 <li>前人也apply GANs in conditional seting, 但是针对特定应用的，而本论文的cGAN提出的是<strong>通用框架</strong>。</li>
 <li>本论文的cGAN使用到了<strong>U-Net和PatchGAN</strong>.</li>
 </ul>
-<h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><hr>
+<h1 id="3-Objective"><a href="#3-Objective" class="headerlink" title="3. Objective"></a>3. Objective</h1><hr>
 <ul>
 <li>GAN<ul>
 <li>z-&gt;G-&gt;y</li>
@@ -544,20 +544,20 @@
 <ul>
 <li>没有噪声z的网络会产生一个特定的输出，<strong>无法match any distribution</strong>, 因此cGAN加入噪声z，但在本篇论文实验中发现，G能够学习到如何<strong>ignore 噪声</strong>，从而在模型的<strong>test阶段</strong>也使用<strong>dropout产生noise.</strong></li>
 </ul>
-<h1 id="Network-architectures"><a href="#Network-architectures" class="headerlink" title="Network architectures"></a>Network architectures</h1><hr>
-<h2 id="Skip-connection-of-G"><a href="#Skip-connection-of-G" class="headerlink" title="Skip connection of G"></a>Skip connection of G</h2><ul>
+<h1 id="4-Network-architectures"><a href="#4-Network-architectures" class="headerlink" title="4. Network architectures"></a>4. Network architectures</h1><hr>
+<h2 id="4-1-Skip-connection-of-G"><a href="#4-1-Skip-connection-of-G" class="headerlink" title="4.1. Skip connection of G"></a>4.1. Skip connection of G</h2><ul>
 <li>在auto-encoder结构中，<strong>input的所有信息会在所有layers传输</strong>。为了避免这种方法，在AE的基础上添加skip connection, 即U-Net <strong>(Figure 3).</strong></li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Image-to-Image Translation with Conditional Adversarial Networks/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Markovian-D-PatchGAN"><a href="#Markovian-D-PatchGAN" class="headerlink" title="Markovian D (PatchGAN)"></a>Markovian D (PatchGAN)</h2><ul>
+<h2 id="4-2-Markovian-D-PatchGAN"><a href="#4-2-Markovian-D-PatchGAN" class="headerlink" title="4.2. Markovian D (PatchGAN)"></a>4.2. Markovian D (PatchGAN)</h2><ul>
 <li>L1 loss和L2 loss能够<strong>capture low frequencies</strong>, 因此需要约束D能够<strong>capture high frequency structure</strong>，即<strong>PatchGAN (N X N patches)</strong>. D effectively models the image as <strong>a Markov random field</strong>. </li>
 </ul>
-<h2 id="Optimization-and-inference"><a href="#Optimization-and-inference" class="headerlink" title="Optimization and inference"></a>Optimization and inference</h2><ul>
+<h2 id="4-3-Optimization-and-inference"><a href="#4-3-Optimization-and-inference" class="headerlink" title="4.3. Optimization and inference"></a>4.3. Optimization and inference</h2><ul>
 <li>在<strong>test阶段</strong>，使用<strong>dropout</strong>, BN使用<strong> the statistics of the test batch</strong>, rather than aggregated statistics of the training batch.</li>
 <li><strong>instance normalization</strong>在图像生成任务上很有效。(<strong>batch size为1</strong>，使用the statistics of the test batch)</li>
 </ul>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="5-Experiments"><a href="#5-Experiments" class="headerlink" title="5. Experiments"></a>5. Experiments</h1><hr>
 <ul>
 <li>L1产生blur.</li>
 <li>cGAN sharp imaged，但是存在artifacts.</li>
@@ -1479,7 +1479,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Contribution"><span class="nav-number">1.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Relative-Work"><span class="nav-number">2.</span> <span class="nav-text">Relative Work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss类型"><span class="nav-number">2.1.</span> <span class="nav-text">Loss类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cGAN"><span class="nav-number">2.2.</span> <span class="nav-text">cGAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Objective"><span class="nav-number">3.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-architectures"><span class="nav-number">4.</span> <span class="nav-text">Network architectures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Skip-connection-of-G"><span class="nav-number">4.1.</span> <span class="nav-text">Skip connection of G</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markovian-D-PatchGAN"><span class="nav-number">4.2.</span> <span class="nav-text">Markovian D (PatchGAN)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimization-and-inference"><span class="nav-number">4.3.</span> <span class="nav-text">Optimization and inference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">5.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Contribution"><span class="nav-text">1. Contribution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Relative-Work"><span class="nav-text">2. Relative Work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Loss类型"><span class="nav-text">2.1. Loss类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-cGAN"><span class="nav-text">2.2. cGAN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Objective"><span class="nav-text">3. Objective</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Network-architectures"><span class="nav-text">4. Network architectures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Skip-connection-of-G"><span class="nav-text">4.1. Skip connection of G</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Markovian-D-PatchGAN"><span class="nav-text">4.2. Markovian D (PatchGAN)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Optimization-and-inference"><span class="nav-text">4.3. Optimization and inference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Experiments"><span class="nav-text">5. Experiments</span></a></li></ol></div>
             
 
           </div>

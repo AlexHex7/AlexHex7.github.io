@@ -483,14 +483,14 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposes a novel anomaly detection model (output anomaly score)</p>
 <ul>
 <li>Conditional GAN</li>
 <li><strong>jointly learn</strong> the generation of high-dimensional <strong>image space</strong> and the inference of <strong>latent space</strong></li>
 <li><strong>only trained on nromal samples</strong></li>
 </ul>
-<h2 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/1.jpg?raw=true" alt><br></div>
+<h2 id="1-1-Problem-Definition"><a href="#1-1-Problem-Definition" class="headerlink" title="1.1. Problem Definition"></a>1.1. Problem Definition</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>large training set</strong>. M normal samples</li>
@@ -508,31 +508,31 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/4.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/5.jpg?raw=true" alt><br></div>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-Model"><a href="#2-1-Model" class="headerlink" title="2.1. Model"></a>2.1. Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/4.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/5.jpg?raw=true" alt><br></div>
 
-<h3 id="For-Abnormal-Image"><a href="#For-Abnormal-Image" class="headerlink" title="For Abnormal Image"></a>For Abnormal Image</h3><ul>
+<h3 id="2-1-1-For-Abnormal-Image"><a href="#2-1-1-For-Abnormal-Image" class="headerlink" title="2.1.1. For Abnormal Image"></a>2.1.1. For Abnormal Image</h3><ul>
 <li>G_D is not able to reconstruct the abnormalities<ul>
 <li>the network is modeled only on normal samples during training and its <strong>parametrization is not suitable for generating abnormal samples</strong></li>
 <li>An output X^ that has missed abnormalities can lead to the encoder network R mapping X^ to a vector z^ that has also missed abnormal feature representation, <strong>causing dissimilarity between z and z^</strong></li>
 </ul>
 </li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/6.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Loss-Function"><a href="#2-2-Loss-Function" class="headerlink" title="2.2. Loss Function"></a>2.2. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/6.jpg?raw=true" alt><br></div>
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Dataset"><a href="#3-1-Dataset" class="headerlink" title="3.1. Dataset"></a>3.1. Dataset</h2><ul>
 <li><strong>MNIST (32x32)</strong>. treating one class being an anomaly, while other as normal class</li>
 <li><strong>CIFAR10</strong>. one as abnormal class</li>
 <li><strong>University Baggage Anomaly Dataset (UBA) (64x64</strong>). abnormal class: knife, gun and gun componen</li>
 </ul>
-<h2 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h2><ul>
+<h2 id="3-2-Setting"><a href="#3-2-Setting" class="headerlink" title="3.2. Setting"></a>3.2. Setting</h2><ul>
 <li>λ=50</li>
 <li>Metric. AUC, ROC and TPR (true positive rate), FPR</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/9.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Comparison"><a href="#3-3-Comparison" class="headerlink" title="3.3. Comparison"></a>3.3. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Table 1.</strong> all approaches show very <strong>poor performance for detecting digit 1 as abnormal</strong>. This is probably due to the linear shape simplicity of this class such that any model can easily overfit to the data</li>
@@ -541,7 +541,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/10.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Speed"><a href="#Speed" class="headerlink" title="Speed"></a>Speed</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/11.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Speed"><a href="#3-4-Speed" class="headerlink" title="3.4. Speed"></a>3.4. Speed</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/GANomaly: Semi-Supervised Anomaly Detection via Adversarial Training/11.jpg?raw=true" alt><br></div>
 
 
 
@@ -1380,7 +1380,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Definition"><span class="nav-number">1.1.</span> <span class="nav-text">Problem Definition</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">2.1.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#For-Abnormal-Image"><span class="nav-number">2.1.1.</span> <span class="nav-text">For Abnormal Image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.2.</span> <span class="nav-text">Loss Function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Setting"><span class="nav-number">3.2.</span> <span class="nav-text">Setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.3.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Speed"><span class="nav-number">3.4.</span> <span class="nav-text">Speed</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Problem-Definition"><span class="nav-text">1.1. Problem Definition</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Model"><span class="nav-text">2.1. Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-For-Abnormal-Image"><span class="nav-text">2.1.1. For Abnormal Image</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Loss-Function"><span class="nav-text">2.2. Loss Function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Dataset"><span class="nav-text">3.1. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Setting"><span class="nav-text">3.2. Setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Comparison"><span class="nav-text">3.3. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Speed"><span class="nav-text">3.4. Speed</span></a></li></ol></li></ol></div>
             
 
           </div>

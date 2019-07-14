@@ -473,32 +473,32 @@
 </blockquote>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it investigates a family of <strong>poisoning attacks</strong> against <strong>SVM</strong>. Such attacks <strong>inject specially crafted training data</strong> that <strong>increasing the SVM’s test error.</strong></p>
 <ul>
 <li>use a <strong>gradient ascent strategy</strong></li>
 <li>the gradient is computed <strong>based on</strong> properties of the <strong>SVM’s optimal solution</strong></li>
 </ul>
-<h2 id="Attack-Category"><a href="#Attack-Category" class="headerlink" title="Attack Category"></a>Attack Category</h2><h3 id="Causative"><a href="#Causative" class="headerlink" title="Causative"></a>Causative</h3><ul>
+<h2 id="1-1-Attack-Category"><a href="#1-1-Attack-Category" class="headerlink" title="1.1. Attack Category"></a>1.1. Attack Category</h2><h3 id="1-1-1-Causative"><a href="#1-1-1-Causative" class="headerlink" title="1.1.1. Causative"></a>1.1.1. Causative</h3><ul>
 <li>manipulation of <strong>training data</strong>. such as poisoning attack</li>
 </ul>
-<h3 id="Exploratory"><a href="#Exploratory" class="headerlink" title="Exploratory"></a>Exploratory</h3><ul>
+<h3 id="1-1-2-Exploratory"><a href="#1-1-2-Exploratory" class="headerlink" title="1.1.2. Exploratory"></a>1.1.2. Exploratory</h3><ul>
 <li>exploitation of the <strong>classifier</strong></li>
 </ul>
-<h2 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h2><ul>
+<h2 id="1-2-Discussion"><a href="#1-2-Discussion" class="headerlink" title="1.2. Discussion"></a>1.2. Discussion</h2><ul>
 <li>as an attacker usually cannot directly access an existing training databse but may <strong>provide new training data</strong></li>
 <li>poisoning attacks have been previously studied only for simple anomaly detection methods</li>
 <li>assume that the <strong>attacker knows</strong> the learning <strong>algorithm</strong> and <strong>can draw data</strong> from the underlying data distribution</li>
 <li>further assume that attacker knows the training data used by the learner</li>
 </ul>
-<h2 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h2><ul>
+<h2 id="1-3-Overview"><a href="#1-3-Overview" class="headerlink" title="1.3. Overview"></a>1.3. Overview</h2><ul>
 <li>the <strong>attacker’s goal</strong> is to find a <strong>point (x_c, y_c)</strong>, whose addition to training data D_tr maximally decreases the SVM’sclassification accuracy</li>
 <li><strong>y_c</strong>. attacking class</li>
 <li>the attacker proceeds by drawing a <strong>validation data</strong> set D_val and <strong>maximizing the hinge loss</strong> incurred on D_val by the <strong>SVM trained on D_tr ∪(x_c, y_c)</strong></li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Poisoning Attacks against Support Vector Machines/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Visualization"><a href="#Visualization" class="headerlink" title="Visualization"></a>Visualization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Poisoning Attacks against Support Vector Machines/2.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Visualization"><a href="#1-4-Visualization" class="headerlink" title="1.4. Visualization"></a>1.4. Visualization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Poisoning Attacks against Support Vector Machines/2.jpg?raw=true" alt><br></div>
 
 
 
@@ -1357,7 +1357,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Attack-Category"><span class="nav-number">1.1.</span> <span class="nav-text">Attack Category</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Causative"><span class="nav-number">1.1.1.</span> <span class="nav-text">Causative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exploratory"><span class="nav-number">1.1.2.</span> <span class="nav-text">Exploratory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Discussion"><span class="nav-number">1.2.</span> <span class="nav-text">Discussion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-1"><span class="nav-number">1.3.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualization"><span class="nav-number">1.4.</span> <span class="nav-text">Visualization</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Attack-Category"><span class="nav-text">1.1. Attack Category</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-Causative"><span class="nav-text">1.1.1. Causative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-Exploratory"><span class="nav-text">1.1.2. Exploratory</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Discussion"><span class="nav-text">1.2. Discussion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Overview"><span class="nav-text">1.3. Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Visualization"><span class="nav-text">1.4. Visualization</span></a></li></ol></li></ol></div>
             
 
           </div>

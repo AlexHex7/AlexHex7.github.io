@@ -484,7 +484,7 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>由于R-CNN和SPPnet存在一些缺陷，本篇论文在R-CNN的基础上进行改进，提出速度更快，准确度更高的Fast R-CNN结构(<strong>相对于R-CNN增加了一个RoI pooling层</strong>)。</p>
 <ul>
 <li>对于特定一张图像A，R-CNN模型利用selective search方法对其提取N个proposal (<strong>RoIs</strong>)，输入特征提取网络中进行后续运算。由于N个proposal中存在大量重叠的内容，特征提取网络的运算<strong>存在冗余</strong>。</li>
@@ -498,30 +498,30 @@
 </ul>
 </li>
 </ul>
-<h2 id="R-CNN缺点"><a href="#R-CNN缺点" class="headerlink" title="R-CNN缺点"></a>R-CNN缺点</h2><ul>
+<h2 id="1-1-R-CNN缺点"><a href="#1-1-R-CNN缺点" class="headerlink" title="1.1. R-CNN缺点"></a>1.1. R-CNN缺点</h2><ul>
 <li><strong>Multi state pipeline</strong>. 微调、SVM、bounding box回归</li>
 <li><strong>速度慢</strong>. 47s/image on GPU</li>
 <li><strong>Expensive in space and time</strong>. 在训练SVM之前，需要将提取特征存入硬盘</li>
 </ul>
-<h2 id="SPPnet缺点"><a href="#SPPnet缺点" class="headerlink" title="SPPnet缺点"></a>SPPnet缺点</h2><ul>
+<h2 id="1-2-SPPnet缺点"><a href="#1-2-SPPnet缺点" class="headerlink" title="1.2. SPPnet缺点"></a>1.2. SPPnet缺点</h2><ul>
 <li>Multi stage pipeline</li>
 <li>提取的特征需要存入硬盘</li>
 </ul>
-<h1 id="Fast-R-CNN贡献"><a href="#Fast-R-CNN贡献" class="headerlink" title="Fast R-CNN贡献"></a>Fast R-CNN贡献</h1><ul>
+<h2 id="1-3-Fast-R-CNN贡献"><a href="#1-3-Fast-R-CNN贡献" class="headerlink" title="1.3.  Fast R-CNN贡献"></a>1.3.  Fast R-CNN贡献</h2><ul>
 <li>更高mAP</li>
 <li><strong>Single stage</strong></li>
 <li><strong>能够更新所有网络层</strong></li>
 <li>不需硬盘存储</li>
 </ul>
 <hr>
-<h1 id="结构与训练"><a href="#结构与训练" class="headerlink" title="结构与训练"></a>结构与训练</h1><hr>
+<h1 id="2-结构与训练"><a href="#2-结构与训练" class="headerlink" title="2. 结构与训练"></a>2. 结构与训练</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/1.jpg?raw=true" alt><br></div>
 
-<h2 id="RoI-pooling"><a href="#RoI-pooling" class="headerlink" title="RoI pooling"></a>RoI pooling</h2><ul>
+<h2 id="2-1-RoI-pooling"><a href="#2-1-RoI-pooling" class="headerlink" title="2.1. RoI pooling"></a>2.1. RoI pooling</h2><ul>
 <li><strong>输入</strong>. 输入图像中的RoI在其特征图上对应的区域（RoI是相对于输入图像而言的，因此将RoI和共享特征图输入到RoI Pooling层的同时，还会输入一个scale参数，也称为feature_stride（表示共享特征图与输入图像的比例））。</li>
 <li>指定超参数<strong>H*W</strong>(论文设置为7<em>7)，即RoI pooling层的输出大小。对于h</em>w的输入特征图，RoI pooling层将其<strong>划分为H*W的网格，对每个网格进行max pool操作</strong></li>
 </ul>
-<h2 id="预训练权重初始化网络"><a href="#预训练权重初始化网络" class="headerlink" title="预训练权重初始化网络"></a>预训练权重初始化网络</h2><ul>
+<h2 id="2-2-预训练权重初始化网络"><a href="#2-2-预训练权重初始化网络" class="headerlink" title="2.2. 预训练权重初始化网络"></a>2.2. 预训练权重初始化网络</h2><ul>
 <li>使用ImageNet预训练权重，将<ul>
 <li><strong>最后一个max pooling层</strong>换成RoI pooling层</li>
 <li><strong>最后一个 (fc, softmax)</strong> 换成2个 (fc, softmax)分支</li>
@@ -533,11 +533,11 @@
 </ul>
 </li>
 </ul>
-<h2 id="Fine-tuning"><a href="#Fine-tuning" class="headerlink" title="Fine-tuning"></a>Fine-tuning</h2><ul>
+<h2 id="2-3-Fine-tuning"><a href="#2-3-Fine-tuning" class="headerlink" title="2.3. Fine-tuning"></a>2.3. Fine-tuning</h2><ul>
 <li>采样N张图片，每张图片采样R/N个RoIs. 论文将N设置为2，R设置为128，即对采样的两张图片，各采样64个RoIs</li>
 <li>由于所属某张图片的各RoI能够<strong>共享从该图片提取的特征图</strong>，因此相比与对128张图片各采样1个RoIs的方法<strong>快64倍</strong></li>
 </ul>
-<h2 id="Multi-task-loss"><a href="#Multi-task-loss" class="headerlink" title="Multi-task loss"></a>Multi-task loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/2.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Multi-task-loss"><a href="#2-4-Multi-task-loss" class="headerlink" title="2.4. Multi-task loss"></a>2.4. Multi-task loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>p</strong>由第一个分支输出，包含对k+1个类别的预测置信度，u为ground truth</li>
@@ -553,20 +553,20 @@
 </li>
 </ul>
 <p>上述为训练阶段的操作，在测试阶段，对N个RoI预测结果使用<strong>NMS算法</strong>进行过滤。</p>
-<h2 id="Mini-batch-sampling"><a href="#Mini-batch-sampling" class="headerlink" title="Mini-batch sampling"></a>Mini-batch sampling</h2><ul>
+<h2 id="2-5-Mini-batch-sampling"><a href="#2-5-Mini-batch-sampling" class="headerlink" title="2.5. Mini-batch sampling"></a>2.5. Mini-batch sampling</h2><ul>
 <li>Mini-batch大小为R=128，每张图片64个RoIs，25%为正样本（<strong>IoU≥0.5</strong>），其余为负样本（<strong>IoU∈[0.1,0.5)</strong>，忽略小于0.1的RoI）</li>
 <li>0.5概率水平翻转图像，扩大数据集</li>
 </ul>
-<h2 id="Scale-invariance"><a href="#Scale-invariance" class="headerlink" title="Scale invariance"></a>Scale invariance</h2><ul>
+<h2 id="2-6-Scale-invariance"><a href="#2-6-Scale-invariance" class="headerlink" title="2.6. Scale invariance"></a>2.6. Scale invariance</h2><ul>
 <li><strong>Brute force</strong>. 直接将图片resize 成固定大小</li>
 <li><strong>Image pyramid</strong>. 在训练阶段，每次随机采样一个特定的pyramid scale。</li>
 </ul>
 <p>论文在试验中证明image pyramid对mAP提升很小，但耗时明显增加。因此论文采用第一种方法。</p>
-<h2 id="测试阶段"><a href="#测试阶段" class="headerlink" title="测试阶段"></a>测试阶段</h2><ul>
+<h2 id="2-7-测试阶段"><a href="#2-7-测试阶段" class="headerlink" title="2.7. 测试阶段"></a>2.7. 测试阶段</h2><ul>
 <li>R设置为2000，计算得到每个RoI的预测和bounding box regression</li>
 <li>使用R-CNN中的NMS方法减少预测结果RoI的数量（<strong>NMS仅在测试阶段使用</strong>）</li>
 </ul>
-<h2 id="使用Truncated-SVD提速"><a href="#使用Truncated-SVD提速" class="headerlink" title="使用Truncated SVD提速"></a>使用Truncated SVD提速</h2><p>对于u*v的权重矩阵，将其分解为</p>
+<h2 id="2-8-使用Truncated-SVD提速"><a href="#2-8-使用Truncated-SVD提速" class="headerlink" title="2.8. 使用Truncated SVD提速"></a>2.8. 使用Truncated SVD提速</h2><p>对于u*v的权重矩阵，将其分解为</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/3.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -577,24 +577,24 @@
 <li><strong>U</strong> (包含原fc层中的bias)</li>
 </ul>
 <hr>
-<h1 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h1><hr>
-<h2 id="VOC数据集"><a href="#VOC数据集" class="headerlink" title="VOC数据集"></a>VOC数据集</h2><p>增大数据集能提高准确度.</p>
+<h1 id="3-实验结果"><a href="#3-实验结果" class="headerlink" title="3. 实验结果"></a>3. 实验结果</h1><hr>
+<h2 id="3-1-VOC数据集"><a href="#3-1-VOC数据集" class="headerlink" title="3.1. VOC数据集"></a>3.1. VOC数据集</h2><p>增大数据集能提高准确度.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/4.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/6.jpg?raw=true" alt><br></div>
 
-<h2 id="耗时"><a href="#耗时" class="headerlink" title="耗时"></a>耗时</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/8.jpg?raw=true" alt><br></div>
+<h2 id="3-2-耗时"><a href="#3-2-耗时" class="headerlink" title="3.2. 耗时"></a>3.2. 耗时</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Fine-tune"><a href="#Fine-tune" class="headerlink" title="Fine-tune"></a>Fine-tune</h2><p>对于较深的网络，只微调fc层的结果明显差于微调卷积层+fc层的结果。</p>
+<h2 id="3-3-Fine-tune"><a href="#3-3-Fine-tune" class="headerlink" title="3.3. Fine-tune"></a>3.3. Fine-tune</h2><p>对于较深的网络，只微调fc层的结果明显差于微调卷积层+fc层的结果。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/9.jpg?raw=true" alt><br></div>
 
 
-<h2 id="multi-task训练效果"><a href="#multi-task训练效果" class="headerlink" title="multi-task训练效果"></a>multi-task训练效果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/10.jpg?raw=true" alt><br></div>
+<h2 id="3-4-multi-task训练效果"><a href="#3-4-multi-task训练效果" class="headerlink" title="3.4. multi-task训练效果"></a>3.4. multi-task训练效果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/10.jpg?raw=true" alt><br></div>
 
-<h2 id="Scale-invariance-1"><a href="#Scale-invariance-1" class="headerlink" title="Scale invariance"></a>Scale invariance</h2><p>single scale和multi scale性能相差不大，但multi scale耗时增加明显。</p>
+<h2 id="3-5-Scale-invariance"><a href="#3-5-Scale-invariance" class="headerlink" title="3.5. Scale invariance"></a>3.5. Scale invariance</h2><p>single scale和multi scale性能相差不大，但multi scale耗时增加明显。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Softmax与SVM"><a href="#Softmax与SVM" class="headerlink" title="Softmax与SVM"></a>Softmax与SVM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/12.jpg?raw=true" alt><br></div>
+<h2 id="3-6-Softmax与SVM"><a href="#3-6-Softmax与SVM" class="headerlink" title="3.6. Softmax与SVM"></a>3.6. Softmax与SVM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/12.jpg?raw=true" alt><br></div>
 
-<h2 id="More-proposal-worse"><a href="#More-proposal-worse" class="headerlink" title="More proposal worse"></a>More proposal worse</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/13.jpg?raw=true" alt><br></div>
+<h2 id="3-7-More-proposal-worse"><a href="#3-7-More-proposal-worse" class="headerlink" title="3.7. More proposal worse"></a>3.7. More proposal worse</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fast r-cnn/13.jpg?raw=true" alt><br></div>
 
 
 
@@ -1432,7 +1432,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#R-CNN缺点"><span class="nav-number">1.1.</span> <span class="nav-text">R-CNN缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SPPnet缺点"><span class="nav-number">1.2.</span> <span class="nav-text">SPPnet缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fast-R-CNN贡献"><span class="nav-number">2.</span> <span class="nav-text">Fast R-CNN贡献</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结构与训练"><span class="nav-number">3.</span> <span class="nav-text">结构与训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RoI-pooling"><span class="nav-number">3.1.</span> <span class="nav-text">RoI pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预训练权重初始化网络"><span class="nav-number">3.2.</span> <span class="nav-text">预训练权重初始化网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fine-tuning"><span class="nav-number">3.3.</span> <span class="nav-text">Fine-tuning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-task-loss"><span class="nav-number">3.4.</span> <span class="nav-text">Multi-task loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mini-batch-sampling"><span class="nav-number">3.5.</span> <span class="nav-text">Mini-batch sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scale-invariance"><span class="nav-number">3.6.</span> <span class="nav-text">Scale invariance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试阶段"><span class="nav-number">3.7.</span> <span class="nav-text">测试阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Truncated-SVD提速"><span class="nav-number">3.8.</span> <span class="nav-text">使用Truncated SVD提速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实验结果"><span class="nav-number">4.</span> <span class="nav-text">实验结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VOC数据集"><span class="nav-number">4.1.</span> <span class="nav-text">VOC数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#耗时"><span class="nav-number">4.2.</span> <span class="nav-text">耗时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fine-tune"><span class="nav-number">4.3.</span> <span class="nav-text">Fine-tune</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multi-task训练效果"><span class="nav-number">4.4.</span> <span class="nav-text">multi-task训练效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scale-invariance-1"><span class="nav-number">4.5.</span> <span class="nav-text">Scale invariance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Softmax与SVM"><span class="nav-number">4.6.</span> <span class="nav-text">Softmax与SVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#More-proposal-worse"><span class="nav-number">4.7.</span> <span class="nav-text">More proposal worse</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-R-CNN缺点"><span class="nav-text">1.1. R-CNN缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-SPPnet缺点"><span class="nav-text">1.2. SPPnet缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Fast-R-CNN贡献"><span class="nav-text">1.3.  Fast R-CNN贡献</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-结构与训练"><span class="nav-text">2. 结构与训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-RoI-pooling"><span class="nav-text">2.1. RoI pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-预训练权重初始化网络"><span class="nav-text">2.2. 预训练权重初始化网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Fine-tuning"><span class="nav-text">2.3. Fine-tuning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Multi-task-loss"><span class="nav-text">2.4. Multi-task loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Mini-batch-sampling"><span class="nav-text">2.5. Mini-batch sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Scale-invariance"><span class="nav-text">2.6. Scale invariance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-测试阶段"><span class="nav-text">2.7. 测试阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-使用Truncated-SVD提速"><span class="nav-text">2.8. 使用Truncated SVD提速</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-实验结果"><span class="nav-text">3. 实验结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-VOC数据集"><span class="nav-text">3.1. VOC数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-耗时"><span class="nav-text">3.2. 耗时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Fine-tune"><span class="nav-text">3.3. Fine-tune</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-multi-task训练效果"><span class="nav-text">3.4. multi-task训练效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Scale-invariance"><span class="nav-text">3.5. Scale invariance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-Softmax与SVM"><span class="nav-text">3.6. Softmax与SVM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-More-proposal-worse"><span class="nav-text">3.7. More proposal worse</span></a></li></ol></li></ol></div>
             
 
           </div>

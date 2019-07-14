@@ -481,7 +481,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper</p>
 <ul>
 <li>present a simple tachnique that allows <strong>capsule</strong> models (DARCCC) to <strong>detect advertisarial images</strong></li>
@@ -494,40 +494,40 @@
 <li>explore a stronger <strong>white-box attack (R-BIM)</strong> that takes the reconstruction error into account. <strong>However</strong> the generated adversarial examples do not look like the original image but with a small amount of adder noise</li>
 <li>experiments on <strong>MNIST, Fashion-MNIST and SVHN</strong></li>
 </ul>
-<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><ul>
+<h2 id="1-1-Related-Works"><a href="#1-1-Related-Works" class="headerlink" title="1.1. Related Works"></a>1.1. Related Works</h2><ul>
 <li><strong>CapsuleNet</strong> has been proven to be more <strong>robust to white box</strong> attacks while being as <strong>weak</strong> as CNNs in defending black <strong>box attacks</strong> (this paper address this shortcoming)</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="Histogram-of-L2-Distance"><a href="#Histogram-of-L2-Distance" class="headerlink" title="Histogram of L2 Distance"></a>Histogram of L2 Distance</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/2.jpg?raw=true" alt><br></div>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-Histogram-of-L2-Distance"><a href="#2-1-Histogram-of-L2-Distance" class="headerlink" title="2.1. Histogram of L2 Distance"></a>2.1. Histogram of L2 Distance</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Network"><a href="#2-2-Network" class="headerlink" title="2.2. Network"></a>2.2. Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Threshold"><a href="#Threshold" class="headerlink" title="Threshold"></a>Threshold</h2><ul>
+<h2 id="2-3-Threshold"><a href="#2-3-Threshold" class="headerlink" title="2.3. Threshold"></a>2.3. Threshold</h2><ul>
 <li>set it as the 95th percentile of <strong>validation distances.</strong> That meas FPR on real validation is 5%</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Block-Box-Attack"><a href="#Block-Box-Attack" class="headerlink" title="Block Box Attack"></a>Block Box Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/4.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Block-Box-Attack"><a href="#3-1-Block-Box-Attack" class="headerlink" title="3.1. Block Box Attack"></a>3.1. Block Box Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>CapsuleNet is as weak as CNN</li>
 </ul>
-<h2 id="White-Box-Attack"><a href="#White-Box-Attack" class="headerlink" title="White Box Attack"></a>White Box Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/5.jpg?raw=true" alt><br></div>
+<h2 id="3-2-White-Box-Attack"><a href="#3-2-White-Box-Attack" class="headerlink" title="3.2. White Box Attack"></a>3.2. White Box Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>CapsuleNet is more robust to CNN</li>
 </ul>
-<h2 id="R-BIM"><a href="#R-BIM" class="headerlink" title="R-BIM"></a>R-BIM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/6.jpg?raw=true" alt><br></div>
+<h2 id="3-3-R-BIM"><a href="#3-3-R-BIM" class="headerlink" title="3.3. R-BIM"></a>3.3. R-BIM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/6.jpg?raw=true" alt><br></div>
 
 
 <ul>
 <li><strong>R-BIM</strong> is significantly <strong>less successful</strong> than a standard <strong>BIM</strong> attack in changing the classification</li>
 <li><strong>CapsuleNet</strong> in <strong>particular</strong> exhibits significant <strong>resilience</strong> to this attack</li>
 </ul>
-<h2 id="Visualize"><a href="#Visualize" class="headerlink" title="Visualize"></a>Visualize</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/7.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Visualize"><a href="#3-4-Visualize" class="headerlink" title="3.4. Visualize"></a>3.4. Visualize</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DARCCC: Detecting Adversaries by Reconstruction from Class Conditional Capsule/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>some <strong>generated adversarial examples</strong> look like ‘0’. These are <strong>not adversarial images at all</strong> since they resemble their predicted class to the human eye</li>
@@ -1370,7 +1370,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Works"><span class="nav-number">1.1.</span> <span class="nav-text">Related Works</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Histogram-of-L2-Distance"><span class="nav-number">2.1.</span> <span class="nav-text">Histogram of L2 Distance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">2.2.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Threshold"><span class="nav-number">2.3.</span> <span class="nav-text">Threshold</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-Box-Attack"><span class="nav-number">3.1.</span> <span class="nav-text">Block Box Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#White-Box-Attack"><span class="nav-number">3.2.</span> <span class="nav-text">White Box Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#R-BIM"><span class="nav-number">3.3.</span> <span class="nav-text">R-BIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualize"><span class="nav-number">3.4.</span> <span class="nav-text">Visualize</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Works"><span class="nav-text">1.1. Related Works</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Histogram-of-L2-Distance"><span class="nav-text">2.1. Histogram of L2 Distance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Network"><span class="nav-text">2.2. Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Threshold"><span class="nav-text">2.3. Threshold</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Block-Box-Attack"><span class="nav-text">3.1. Block Box Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-White-Box-Attack"><span class="nav-text">3.2. White Box Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-R-BIM"><span class="nav-text">3.3. R-BIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Visualize"><span class="nav-text">3.4. Visualize</span></a></li></ol></li></ol></div>
             
 
           </div>

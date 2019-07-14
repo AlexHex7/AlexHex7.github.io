@@ -487,8 +487,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>existing methods synthesize images <strong>based on global constraints</strong> (class label and caption), <strong>do not provide control over pose or object location</strong></li>
 </ul>
 <p>In this paper, it proposed Generative Adversarial What-WHere Network (<strong>GAWWN</strong>)</p>
@@ -501,47 +501,47 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-2-Contribution"><a href="#1-2-Contribution" class="headerlink" title="1.2. Contribution"></a>1.2. Contribution</h2><ul>
 <li>novel architecture for <strong>text- and location-controllable image synthesis</strong></li>
 <li>text-conditional object part completion model enabling a <strong>streamlined user interface</strong> for part locations</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><ul>
 <li>CNN (<strong>deterministic</strong>)</li>
 <li>VAE, convolutional VAE, recurrent VAE (<strong>probabilistic</strong>)</li>
 <li>GAN</li>
 <li>STN</li>
 </ul>
-<h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><ul>
+<h2 id="1-4-Future-Work"><a href="#1-4-Future-Work" class="headerlink" title="1.4. Future Work"></a>1.4. Future Work</h2><ul>
 <li>learn the obj and part location in an unsupervised or weakly supervised way</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="GAWWN"><a href="#GAWWN" class="headerlink" title="GAWWN"></a>GAWWN</h1><hr>
-<h2 id="Bounding-Box-Conditional-Text-to-Image-Model"><a href="#Bounding-Box-Conditional-Text-to-Image-Model" class="headerlink" title="Bounding-Box-Conditional Text-to-Image Model"></a>Bounding-Box-Conditional Text-to-Image Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/2.jpg?raw=true" alt><br></div>
+<h1 id="2-GAWWN"><a href="#2-GAWWN" class="headerlink" title="2. GAWWN"></a>2. GAWWN</h1><hr>
+<h2 id="2-1-Bounding-Box-Conditional-Text-to-Image-Model"><a href="#2-1-Bounding-Box-Conditional-Text-to-Image-Model" class="headerlink" title="2.1. Bounding-Box-Conditional Text-to-Image Model"></a>2.1. Bounding-Box-Conditional Text-to-Image Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>replicate text embedding spatially to form a MxMxT feature map</li>
 <li><strong>warp spatially to fit into the normalized bounding box coordinates</strong> (outside the box are all zeros)</li>
 </ul>
-<h2 id="Keypoint-Conditional-Text-to-Image-Model"><a href="#Keypoint-Conditional-Text-to-Image-Model" class="headerlink" title="Keypoint-Conditional Text-to-Image Model"></a>Keypoint-Conditional Text-to-Image Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Keypoint-Conditional-Text-to-Image-Model"><a href="#2-2-Keypoint-Conditional-Text-to-Image-Model" class="headerlink" title="2.2. Keypoint-Conditional Text-to-Image Model"></a>2.2. Keypoint-Conditional Text-to-Image Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>location key points are encoded into a MxMxK spatial feature map (channels correspond to the part)</li>
 <li><strong>max replicate depth</strong></li>
 </ul>
-<h2 id="Conditional-Keypoint-Generation-Model"><a href="#Conditional-Keypoint-Generation-Model" class="headerlink" title="Conditional Keypoint Generation Model"></a>Conditional Keypoint Generation Model</h2><p>Not optimal to require users to enter every single keypoint of the parts of object they wish to be drawn. it would be useful to <strong>have access to all of the conditional distributions of unobserved ketpoints given a subset of observed keypoints and the text description.</strong></p>
+<h2 id="2-3-Conditional-Keypoint-Generation-Model"><a href="#2-3-Conditional-Keypoint-Generation-Model" class="headerlink" title="2.3. Conditional Keypoint Generation Model"></a>2.3. Conditional Keypoint Generation Model</h2><p>Not optimal to require users to enter every single keypoint of the parts of object they wish to be drawn. it would be useful to <strong>have access to all of the conditional distributions of unobserved ketpoints given a subset of observed keypoints and the text description.</strong></p>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Details"><a href="#3-1-Details" class="headerlink" title="3.1. Details"></a>3.1. Details</h2><ul>
 <li><strong>text embedding</strong>. char-CNN-GRU</li>
 <li>0.0002 Adam, batch size 16</li>
 </ul>
-<h2 id="With-Bounding-Box"><a href="#With-Bounding-Box" class="headerlink" title="With Bounding Box"></a>With Bounding Box</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/4.jpg?raw=true" alt><br></div>
+<h2 id="3-2-With-Bounding-Box"><a href="#3-2-With-Bounding-Box" class="headerlink" title="3.2. With Bounding Box"></a>3.2. With Bounding Box</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Via-Keypoints"><a href="#Via-Keypoints" class="headerlink" title="Via Keypoints"></a>Via Keypoints</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/6.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Via-Keypoints"><a href="#3-3-Via-Keypoints" class="headerlink" title="3.3. Via Keypoints"></a>3.3. Via Keypoints</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/8.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Comparison"><a href="#3-4-Comparison" class="headerlink" title="3.4. Comparison"></a>3.4. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning what and where to draw/8.jpg?raw=true" alt><br></div>
 
 
 
@@ -1415,7 +1415,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.2.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Work"><span class="nav-number">1.4.</span> <span class="nav-text">Future Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GAWWN"><span class="nav-number">2.</span> <span class="nav-text">GAWWN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Bounding-Box-Conditional-Text-to-Image-Model"><span class="nav-number">2.1.</span> <span class="nav-text">Bounding-Box-Conditional Text-to-Image Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keypoint-Conditional-Text-to-Image-Model"><span class="nav-number">2.2.</span> <span class="nav-text">Keypoint-Conditional Text-to-Image Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-Keypoint-Generation-Model"><span class="nav-number">2.3.</span> <span class="nav-text">Conditional Keypoint Generation Model</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With-Bounding-Box"><span class="nav-number">3.2.</span> <span class="nav-text">With Bounding Box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Via-Keypoints"><span class="nav-number">3.3.</span> <span class="nav-text">Via Keypoints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.4.</span> <span class="nav-text">Comparison</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Contribution"><span class="nav-text">1.2. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Future-Work"><span class="nav-text">1.4. Future Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-GAWWN"><span class="nav-text">2. GAWWN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Bounding-Box-Conditional-Text-to-Image-Model"><span class="nav-text">2.1. Bounding-Box-Conditional Text-to-Image Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Keypoint-Conditional-Text-to-Image-Model"><span class="nav-text">2.2. Keypoint-Conditional Text-to-Image Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Conditional-Keypoint-Generation-Model"><span class="nav-text">2.3. Conditional Keypoint Generation Model</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Details"><span class="nav-text">3.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-With-Bounding-Box"><span class="nav-text">3.2. With Bounding Box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Via-Keypoints"><span class="nav-text">3.3. Via Keypoints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Comparison"><span class="nav-text">3.4. Comparison</span></a></li></ol></li></ol></div>
             
 
           </div>

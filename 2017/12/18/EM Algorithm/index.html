@@ -471,7 +471,7 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="凸函数"><a href="#凸函数" class="headerlink" title="凸函数"></a>凸函数</h1><hr>
+<h1 id="1-凸函数"><a href="#1-凸函数" class="headerlink" title="1. 凸函数"></a>1. 凸函数</h1><hr>
 <ul>
 <li>上凸函数 <ul>
 <li>f[(a+b)/2] ≥ [f(a)+f(b)]/2</li>
@@ -485,7 +485,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/EM Algorithm/1.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="Jensen不等式"><a href="#Jensen不等式" class="headerlink" title="Jensen不等式"></a>Jensen不等式</h1><hr>
+<h1 id="2-Jensen不等式"><a href="#2-Jensen不等式" class="headerlink" title="2. Jensen不等式"></a>2. Jensen不等式</h1><hr>
 <ul>
 <li>如果f是上凸函数，X是随机变量，那么<ul>
 <li>f(E[X]) ≥ E[f(X)]. </li>
@@ -498,8 +498,8 @@
 <li>当且仅当p(X=E[X])，也就是说X是常量。</li>
 </ul>
 <hr>
-<h1 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h1><hr>
-<h2 id="Problem-Definition"><a href="#Problem-Definition" class="headerlink" title="Problem Definition"></a>Problem Definition</h2><ul>
+<h1 id="3-EM算法"><a href="#3-EM算法" class="headerlink" title="3. EM算法"></a>3. EM算法</h1><hr>
+<h2 id="3-1-Problem-Definition"><a href="#3-1-Problem-Definition" class="headerlink" title="3.1. Problem Definition"></a>3.1. Problem Definition</h2><ul>
 <li><p>考虑一个<strong>参数估计问题</strong>，现有共n个训练样本，需有多个参数θ去拟合数据（<strong>高斯混合模型</strong>），那么这个log似然函数是<br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/EM Algorithm/2.jpg?raw=true" alt></p>
 </li>
 <li><p>由于Θ中多个参数的某种关系，导致上面的log似然函数无法直接或梯度下降法求最大值时的Θ值。<strong>引入隐变量z，并使用Jensen不等式得到下界</strong><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/EM Algorithm/3.jpg?raw=true" alt></p>
@@ -517,7 +517,7 @@
 </li>
 <li>即后验概率。</li>
 </ul>
-<h2 id="Algorithm-Step"><a href="#Algorithm-Step" class="headerlink" title="Algorithm Step"></a>Algorithm Step</h2><ul>
+<h2 id="3-2-Algorithm-Step"><a href="#3-2-Algorithm-Step" class="headerlink" title="3.2. Algorithm Step"></a>3.2. Algorithm Step</h2><ul>
 <li><strong>E步骤</strong> 已知（初始化）Θ和样本数据yi，计算Q(zi)。</li>
 <li><strong>M步骤</strong> 利用Q(zi)简化(9)中的多项式，从而可用梯度下降求偏导更新Θ值。</li>
 <li><strong>E步骤</strong> 根据Θ计算Q(zi).</li>
@@ -526,6 +526,7 @@
 <li>迭代直至收敛。 </li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/EM Algorithm/7.jpg?raw=true" alt><br></div>
+
       
     </div>
 
@@ -1355,7 +1356,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#凸函数"><span class="nav-number">1.</span> <span class="nav-text">凸函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jensen不等式"><span class="nav-number">2.</span> <span class="nav-text">Jensen不等式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EM算法"><span class="nav-number">3.</span> <span class="nav-text">EM算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Definition"><span class="nav-number">3.1.</span> <span class="nav-text">Problem Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm-Step"><span class="nav-number">3.2.</span> <span class="nav-text">Algorithm Step</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-凸函数"><span class="nav-text">1. 凸函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Jensen不等式"><span class="nav-text">2. Jensen不等式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-EM算法"><span class="nav-text">3. EM算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Problem-Definition"><span class="nav-text">3.1. Problem Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Algorithm-Step"><span class="nav-text">3.2. Algorithm Step</span></a></li></ol></li></ol></div>
             
 
           </div>

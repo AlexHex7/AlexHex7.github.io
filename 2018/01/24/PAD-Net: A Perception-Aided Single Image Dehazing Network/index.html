@@ -492,8 +492,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>L2 norm implicitly <strong>assumes a white Gaussian noise</strong>, which is an oversimplified case that is not valid in general dehazing cases</li>
 <li>L2 treats the impact of noise independently to the local characteristics</li>
 </ul>
@@ -505,13 +505,13 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h1><hr>
-<h2 id="L2-Loss"><a href="#L2-Loss" class="headerlink" title="L2 Loss"></a>L2 Loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/1.jpg?raw=true" alt><br></div>
+<h1 id="2-Loss-Function"><a href="#2-Loss-Function" class="headerlink" title="2. Loss Function"></a>2. Loss Function</h1><hr>
+<h2 id="2-1-L2-Loss"><a href="#2-1-L2-Loss" class="headerlink" title="2.1. L2 Loss"></a>2.1. L2 Loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/1.jpg?raw=true" alt><br></div>
 
-<h2 id="L1-Loss"><a href="#L1-Loss" class="headerlink" title="L1 Loss"></a>L1 Loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/2.jpg?raw=true" alt><br></div>
+<h2 id="2-2-L1-Loss"><a href="#2-2-L1-Loss" class="headerlink" title="2.2. L1 Loss"></a>2.2. L1 Loss</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/2.jpg?raw=true" alt><br></div>
 
 <p><strong>The derivative of L1 loss is not defined at 0</strong>. If the error is 0, do not need to update the weight. So use the convention that <strong>sign(0) = 0</strong></p>
-<h2 id="SSIM"><a href="#SSIM" class="headerlink" title="SSIM"></a>SSIM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/3.jpg?raw=true" alt><br></div>
+<h2 id="2-3-SSIM"><a href="#2-3-SSIM" class="headerlink" title="2.3. SSIM"></a>2.3. SSIM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>μ_x</strong>. view as estimates of the luminance of x</li>
@@ -527,9 +527,9 @@
 <ul>
 <li><strong>p’</strong>. center pixel of patch P</li>
 </ul>
-<h3 id="Derivation"><a href="#Derivation" class="headerlink" title="Derivation"></a>Derivation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/6.jpg?raw=true" alt><br></div>
+<h3 id="2-3-1-Derivation"><a href="#2-3-1-Derivation" class="headerlink" title="2.3.1. Derivation"></a>2.3.1. Derivation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/6.jpg?raw=true" alt><br></div>
 
-<h2 id="MS-SSIM"><a href="#MS-SSIM" class="headerlink" title="MS-SSIM"></a>MS-SSIM</h2><ul>
+<h2 id="2-4-MS-SSIM"><a href="#2-4-MS-SSIM" class="headerlink" title="2.4. MS-SSIM"></a>2.4. MS-SSIM</h2><ul>
 <li><strong>smaller σ_G</strong> loses the ability to preserve the local structure and reintroduce splotchy in flat region</li>
 <li><strong>larger σ_G</strong> tends to keep the noises in the proximity of edges</li>
 <li><strong>Multi-scale σ_G</strong></li>
@@ -545,8 +545,8 @@
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="System"><a href="#System" class="headerlink" title="System"></a>System</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-System"><a href="#3-1-System" class="headerlink" title="3.1. System"></a>3.1. System</h2><ul>
 <li><p>MS-SSIM + L2</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/9.jpg?raw=true" alt><br></div>
 </li>
@@ -555,16 +555,16 @@
 
 </li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="3-2-Dataset"><a href="#3-2-Dataset" class="headerlink" title="3.2. Dataset"></a>3.2. Dataset</h2><ul>
 <li><strong>ITS</strong>. indoor training set</li>
 <li><strong>OTS</strong>. outdoor training set</li>
 <li>random select 10,000 images from <strong>ITS + OTS</strong> (2,790 IST + 7,210 OST)</li>
 <li>random select 1,000 non-overlapping set as validation set</li>
 <li><strong>test on SOTS</strong> (500 indoor + 500 outdoor)</li>
 </ul>
-<h2 id="Directly-Train"><a href="#Directly-Train" class="headerlink" title="Directly Train"></a>Directly Train</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/11.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Directly-Train"><a href="#3-3-Directly-Train" class="headerlink" title="3.3. Directly Train"></a>3.3. Directly Train</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Fine-tuing-on-AOD-Net"><a href="#Fine-tuing-on-AOD-Net" class="headerlink" title="Fine-tuing on AOD-Net"></a>Fine-tuing on AOD-Net</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/12.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/13.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Fine-tuing-on-AOD-Net"><a href="#3-4-Fine-tuing-on-AOD-Net" class="headerlink" title="3.4. Fine-tuing on AOD-Net"></a>3.4. Fine-tuing on AOD-Net</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/12.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/PAD-Net: A Perception-Aided Single Image Dehazing Network/13.jpg?raw=true" alt><br></div>
 
 
 
@@ -1433,7 +1433,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.</span> <span class="nav-text">Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#L2-Loss"><span class="nav-number">2.1.</span> <span class="nav-text">L2 Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L1-Loss"><span class="nav-number">2.2.</span> <span class="nav-text">L1 Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSIM"><span class="nav-number">2.3.</span> <span class="nav-text">SSIM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Derivation"><span class="nav-number">2.3.1.</span> <span class="nav-text">Derivation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MS-SSIM"><span class="nav-number">2.4.</span> <span class="nav-text">MS-SSIM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#System"><span class="nav-number">3.1.</span> <span class="nav-text">System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.2.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directly-Train"><span class="nav-number">3.3.</span> <span class="nav-text">Directly Train</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fine-tuing-on-AOD-Net"><span class="nav-number">3.4.</span> <span class="nav-text">Fine-tuing on AOD-Net</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Loss-Function"><span class="nav-text">2. Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-L2-Loss"><span class="nav-text">2.1. L2 Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-L1-Loss"><span class="nav-text">2.2. L1 Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-SSIM"><span class="nav-text">2.3. SSIM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Derivation"><span class="nav-text">2.3.1. Derivation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-MS-SSIM"><span class="nav-text">2.4. MS-SSIM</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-System"><span class="nav-text">3.1. System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Dataset"><span class="nav-text">3.2. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Directly-Train"><span class="nav-text">3.3. Directly Train</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Fine-tuing-on-AOD-Net"><span class="nav-text">3.4. Fine-tuing on AOD-Net</span></a></li></ol></li></ol></div>
             
 
           </div>

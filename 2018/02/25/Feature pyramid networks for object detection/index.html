@@ -115,7 +115,7 @@
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/9.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/10.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/11.jpg?raw=true">
-<meta property="og:updated_time" content="2019-05-14T02:34:05.479Z">
+<meta property="og:updated_time" content="2019-06-08T02:18:05.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(CVPR 2017) Feature pyramid networks for object detection">
 <meta name="twitter:description" content="Lin T Y, Dollár P, Girshick R, et al. Feature pyramid networks for object detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2117-2125.">
@@ -427,7 +427,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-14 10:34:05" itemprop="dateModified" datetime="2019-05-14T10:34:05+08:00">2019-05-14</time>
+                <time title="Modified: 2019-06-08 10:18:05" itemprop="dateModified" datetime="2019-06-08T10:18:05+08:00">2019-06-08</time>
               
             
           </span>
@@ -506,18 +506,18 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>Feature pyramid are basic in detection, but  <strong>expensive</strong>.  In this paper, it proposed <strong>Feature Pyramid Network (FPN).</strong></p>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><p>Feature pyramid are basic in detection, but  <strong>expensive</strong>.  In this paper, it proposed <strong>Feature Pyramid Network (FPN).</strong></p>
 <ul>
 <li>fater-rcnn based on FPN run at 6 fps on GPU</li>
 </ul>
-<h2 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/1.jpg?raw=true" alt><br></div>
+<h2 id="1-2-Forms"><a href="#1-2-Forms" class="headerlink" title="1.2. Forms"></a>1.2. Forms</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/1.jpg?raw=true" alt><br></div>
 
-<h3 id="Pyramidal-Feature-Hierarchy"><a href="#Pyramidal-Feature-Hierarchy" class="headerlink" title="Pyramidal Feature Hierarchy"></a>Pyramidal Feature Hierarchy</h3><ul>
+<h3 id="1-2-1-Pyramidal-Feature-Hierarchy"><a href="#1-2-1-Pyramidal-Feature-Hierarchy" class="headerlink" title="1.2.1. Pyramidal Feature Hierarchy"></a>1.2.1. Pyramidal Feature Hierarchy</h3><ul>
 <li><strong>High-resolution maps have low-level feature</strong>. And it will harm representational capacity for detection.</li>
 <li>SDD build pyramid from <strong>high up in the network</strong></li>
 </ul>
-<h3 id="Feature-Pyramid-Network"><a href="#Feature-Pyramid-Network" class="headerlink" title="Feature Pyramid Network"></a>Feature Pyramid Network</h3><ul>
+<h3 id="1-2-2-Feature-Pyramid-Network"><a href="#1-2-2-Feature-Pyramid-Network" class="headerlink" title="1.2.2. Feature Pyramid Network"></a>1.2.2. Feature Pyramid Network</h3><ul>
 <li><strong>combine</strong><ul>
 <li>low-resolution (strong semantic)</li>
 <li>high-resolution (weak semantic)</li>
@@ -526,22 +526,22 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Hand-Engineered"><a href="#Hand-Engineered" class="headerlink" title="Hand-Engineered"></a>Hand-Engineered</h3><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><h3 id="1-3-1-Hand-Engineered"><a href="#1-3-1-Hand-Engineered" class="headerlink" title="1.3.1. Hand-Engineered"></a>1.3.1. Hand-Engineered</h3><ul>
 <li>SIFT</li>
 <li>HOG</li>
 </ul>
-<h3 id="Deep-ConvNet"><a href="#Deep-ConvNet" class="headerlink" title="Deep ConvNet"></a>Deep ConvNet</h3><ul>
+<h3 id="1-3-2-Deep-ConvNet"><a href="#1-3-2-Deep-ConvNet" class="headerlink" title="1.3.2. Deep ConvNet"></a>1.3.2. Deep ConvNet</h3><ul>
 <li>OverFeat</li>
 <li>R-CNN</li>
 <li>SPPnet</li>
 </ul>
-<h3 id="Using-Multiple-Layers"><a href="#Using-Multiple-Layers" class="headerlink" title="Using Multiple Layers"></a>Using Multiple Layers</h3><ul>
+<h3 id="1-3-3-Using-Multiple-Layers"><a href="#1-3-3-Using-Multiple-Layers" class="headerlink" title="1.3.3. Using Multiple Layers"></a>1.3.3. Using Multiple Layers</h3><ul>
 <li><strong>FCN</strong>. sum partial scores over multi-scale</li>
 <li><strong>Hypercolumns, HyperNet, ParseNet, ION</strong>. concat feature of multi-layers</li>
 <li><strong>SSD, MS-CNN</strong>. predict at multi-layers without combining</li>
 <li><strong>U-Net, Sharp-Mask. Recombinator, Hourglass, Laplacian pyramid.</strong> lateral/skip connection</li>
 </ul>
-<h2 id="FPN"><a href="#FPN" class="headerlink" title="FPN"></a>FPN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/3.jpg?raw=true" alt><br></div>
+<h2 id="1-4-FPN"><a href="#1-4-FPN" class="headerlink" title="1.4. FPN"></a>1.4. FPN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Two Pathway</strong><ul>
@@ -552,8 +552,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h1><hr>
-<h2 id="RPN"><a href="#RPN" class="headerlink" title="RPN"></a>RPN</h2><ul>
+<h1 id="2-Application"><a href="#2-Application" class="headerlink" title="2. Application"></a>2. Application</h1><hr>
+<h2 id="2-1-RPN"><a href="#2-1-RPN" class="headerlink" title="2.1. RPN"></a>2.1. RPN</h2><ul>
 <li>Head<ul>
 <li>binary classification</li>
 <li>bounding box regression</li>
@@ -565,7 +565,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Fast-R-CNN"><a href="#Fast-R-CNN" class="headerlink" title="Fast R-CNN"></a>Fast R-CNN</h2><p>No RPN, only RoI pooling.</p>
+<h2 id="2-2-Fast-R-CNN"><a href="#2-2-Fast-R-CNN" class="headerlink" title="2.2. Fast R-CNN"></a>2.2. Fast R-CNN</h2><p>No RPN, only RoI pooling.</p>
 <ul>
 <li>view <strong>feature pyramid</strong> as produced from <strong>image pyramid</strong></li>
 <li>assign RoI (w,h) to level Pk of FPN<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/4.jpg?raw=true" alt><br></div>
@@ -578,13 +578,13 @@
 </ol>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Ablation-Study"><a href="#Ablation-Study" class="headerlink" title="Ablation Study"></a>Ablation Study</h2><p>Using P2 have more proposal.</p>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Ablation-Study"><a href="#3-1-Ablation-Study" class="headerlink" title="3.1. Ablation Study"></a>3.1. Ablation Study</h2><p>Using P2 have more proposal.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/9.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Comparison"><a href="#3-2-Comparison" class="headerlink" title="3.2. Comparison"></a>3.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/9.jpg?raw=true" alt><br></div>
 
-<h2 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/11.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Extension"><a href="#3-3-Extension" class="headerlink" title="3.3. Extension"></a>3.3. Extension</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Feature pyramid networks for object detection/11.jpg?raw=true" alt><br></div>
 
 
 
@@ -1433,7 +1433,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Forms"><span class="nav-number">1.2.</span> <span class="nav-text">Forms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pyramidal-Feature-Hierarchy"><span class="nav-number">1.2.1.</span> <span class="nav-text">Pyramidal Feature Hierarchy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Pyramid-Network"><span class="nav-number">1.2.2.</span> <span class="nav-text">Feature Pyramid Network</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hand-Engineered"><span class="nav-number">1.3.1.</span> <span class="nav-text">Hand-Engineered</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-ConvNet"><span class="nav-number">1.3.2.</span> <span class="nav-text">Deep ConvNet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-Multiple-Layers"><span class="nav-number">1.3.3.</span> <span class="nav-text">Using Multiple Layers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FPN"><span class="nav-number">1.4.</span> <span class="nav-text">FPN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Application"><span class="nav-number">2.</span> <span class="nav-text">Application</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RPN"><span class="nav-number">2.1.</span> <span class="nav-text">RPN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fast-R-CNN"><span class="nav-number">2.2.</span> <span class="nav-text">Fast R-CNN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation-Study"><span class="nav-number">3.1.</span> <span class="nav-text">Ablation Study</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extension"><span class="nav-number">3.3.</span> <span class="nav-text">Extension</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Forms"><span class="nav-text">1.2. Forms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Pyramidal-Feature-Hierarchy"><span class="nav-text">1.2.1. Pyramidal Feature Hierarchy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Feature-Pyramid-Network"><span class="nav-text">1.2.2. Feature Pyramid Network</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Hand-Engineered"><span class="nav-text">1.3.1. Hand-Engineered</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Deep-ConvNet"><span class="nav-text">1.3.2. Deep ConvNet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-Using-Multiple-Layers"><span class="nav-text">1.3.3. Using Multiple Layers</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-FPN"><span class="nav-text">1.4. FPN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Application"><span class="nav-text">2. Application</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-RPN"><span class="nav-text">2.1. RPN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Fast-R-CNN"><span class="nav-text">2.2. Fast R-CNN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Ablation-Study"><span class="nav-text">3.1. Ablation Study</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Comparison"><span class="nav-text">3.2. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Extension"><span class="nav-text">3.3. Extension</span></a></li></ol></li></ol></div>
             
 
           </div>

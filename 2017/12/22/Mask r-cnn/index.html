@@ -482,7 +482,7 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>论文提出一个用于<strong>object instance segmentation</strong>的<strong>通用框架Mask R-CNN</strong>. 该框架在Faster R-CNN的基础上</p>
 <ul>
 <li>并行增加了一个预测<strong>对象mask</strong>的分支（全卷积网络，对每个RoI进行预测）</li>
@@ -491,13 +491,13 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/1.jpg?raw=true" alt><br></div>
 
 <p>Mask R-CNN 5fps on GPU，论文进行object detection、instance segmentation和human pose estimation实验。</p>
-<h2 id="分割任务"><a href="#分割任务" class="headerlink" title="分割任务"></a>分割任务</h2><ul>
+<h2 id="1-1-分割任务"><a href="#1-1-分割任务" class="headerlink" title="1.1. 分割任务"></a>1.1. 分割任务</h2><ul>
 <li><strong>Semantic segmentation(pixel labeling task)</strong>.对每个像素点进行类间分类，不区分类内实例（例如图像中两只狗的像素点都分类为狗，不区分两只狗的像素点）</li>
 <li><strong>Instance segmentation(object detection task)</strong>. 检测图像中每个对象，并对每个对象实例进行分割<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/2.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="RoI-Pooling的量化操作"><a href="#RoI-Pooling的量化操作" class="headerlink" title="RoI Pooling的量化操作"></a>RoI Pooling的量化操作</h2><ul>
+<h2 id="1-2-RoI-Pooling的量化操作"><a href="#1-2-RoI-Pooling的量化操作" class="headerlink" title="1.2. RoI Pooling的量化操作"></a>1.2. RoI Pooling的量化操作</h2><ul>
 <li>Faster R-CNN主要用于物体检测任务，其中的RoI Pooling过程存在<strong>两次量化</strong><ul>
 <li>浮点数RoI缩小feature_stride后，对应到共享特征图上的<strong>边界量化</strong></li>
 <li>RoI对应特征图进行RoI Pooling操作时，划分H*W区域的<strong>边界量化</strong></li>
@@ -505,7 +505,7 @@
 </li>
 <li>量化操作会导致共享特征图上的RoI与输入图像之间存在<strong>错位问题</strong>，对分类和检测任务的影响并不大，但是对像素级别mask预测的影响较大（输入与输出之间并没有<strong>pixel-to-pixel alignment</strong>）。</li>
 </ul>
-<h2 id="RoI-Align操作"><a href="#RoI-Align操作" class="headerlink" title="RoI Align操作"></a>RoI Align操作</h2><ul>
+<h2 id="1-3-RoI-Align操作"><a href="#1-3-RoI-Align操作" class="headerlink" title="1.3. RoI Align操作"></a>1.3. RoI Align操作</h2><ul>
 <li>将RoI Pooling中的量化操作改为双线性插值操作，RoI Align是提高准确度的关键操作。</li>
 <li>考虑<ul>
 <li>Scale (feature_stride)为16的共享特征图</li>
@@ -525,29 +525,29 @@
 </li>
 </ul>
 <hr>
-<h1 id="Mask-R-CNN"><a href="#Mask-R-CNN" class="headerlink" title="Mask R-CNN"></a>Mask R-CNN</h1><hr>
+<h1 id="2-Mask-R-CNN"><a href="#2-Mask-R-CNN" class="headerlink" title="2. Mask R-CNN"></a>2. Mask R-CNN</h1><hr>
 <p>Mask R-CNN分为两个阶段</p>
 <ul>
 <li><strong>RPN</strong>预测RoIs</li>
 <li><strong>并行</strong>预测每个RoI的<strong>box</strong> (class, box offset)和<strong>binary mask. 看做两个分支</strong></li>
 </ul>
-<h2 id="解耦mask与class"><a href="#解耦mask与class" class="headerlink" title="解耦mask与class"></a>解耦mask与class</h2><ul>
+<h2 id="2-1-解耦mask与class"><a href="#2-1-解耦mask与class" class="headerlink" title="2.1. 解耦mask与class"></a>2.1. 解耦mask与class</h2><ul>
 <li><strong>FCN</strong>. class预测包含在mask预测中，存在类间竞争问题（per-pixel softmax, 多类别交叉熵）。即mask中每个像素点是一个k维softmax向量（或理解为对每个RoI预测一张mask，像素点分为k类型）</li>
 <li><strong>Mask R-CNN</strong>. class预测从mask预测中分离出来，不存在类间竞争问题（per-pixel sigmoid, binary loss）。即mask中每个像素点是k个sigmoid值（或理解为对每个RoI预测k张mask，每张mask中的像素点分为background与foreground两种类型）</li>
 </ul>
-<h2 id="Multi-task-Loss"><a href="#Multi-task-Loss" class="headerlink" title="Multi-task Loss"></a>Multi-task Loss</h2><p>对于每个RoI，有3个loss</p>
+<h2 id="2-2-Multi-task-Loss"><a href="#2-2-Multi-task-Loss" class="headerlink" title="2.2. Multi-task Loss"></a>2.2. Multi-task Loss</h2><p>对于每个RoI，有3个loss</p>
 <ul>
 <li><strong>L_{cls}</strong>. log loss</li>
 <li><strong>L_{box}</strong>. smooth L1</li>
 <li><strong>L_{mask}</strong>. binary cross entropy loss, 只计算对应类别的mask loss.</li>
 </ul>
-<h2 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h2><ul>
+<h2 id="2-3-网络结构"><a href="#2-3-网络结构" class="headerlink" title="2.3. 网络结构"></a>2.3. 网络结构</h2><ul>
 <li><strong>Backbone</strong>. ResNet, ResNeXt, FPN</li>
 <li><strong>Head</strong>. cls, box, mask</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/3.jpg?raw=true" alt><br></div>
 
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><ul>
+<h2 id="2-4-细节"><a href="#2-4-细节" class="headerlink" title="2.4. 细节"></a>2.4. 细节</h2><ul>
 <li><p><strong>训练</strong></p>
 <ul>
 <li>RoI与gt box的IoU大于等于0.5为正例，其余为负例</li>
@@ -564,25 +564,25 @@
 </li>
 </ul>
 <hr>
-<h1 id="Instance-Segmentation"><a href="#Instance-Segmentation" class="headerlink" title="Instance Segmentation"></a>Instance Segmentation</h1><hr>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/4.jpg?raw=true" alt><br></div>
+<h1 id="3-Instance-Segmentation"><a href="#3-Instance-Segmentation" class="headerlink" title="3. Instance Segmentation"></a>3. Instance Segmentation</h1><hr>
+<h2 id="3-1-实验结果"><a href="#3-1-实验结果" class="headerlink" title="3.1. 实验结果"></a>3.1. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablations"><a href="#Ablations" class="headerlink" title="Ablations"></a>Ablations</h2><p>class-agnostic mask (29.7AP，<strong>m*m mask</strong>)与class-specific mask(30.3AP，<strong>m*m mask per class</strong>)效果相似。</p>
+<h2 id="3-2-Ablations"><a href="#3-2-Ablations" class="headerlink" title="3.2. Ablations"></a>3.2. Ablations</h2><p>class-agnostic mask (29.7AP，<strong>m*m mask</strong>)与class-specific mask(30.3AP，<strong>m*m mask per class</strong>)效果相似。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/5.jpg?raw=true" alt><br></div>
 
-<h2 id="边界框检测"><a href="#边界框检测" class="headerlink" title="边界框检测"></a>边界框检测</h2><p>使用mask分支的<strong>Mask R-CNN</strong>比没有使用mask分支的<strong>Faster R-CNN&amp;RoI Align</strong>效果好</p>
+<h2 id="3-3-边界框检测"><a href="#3-3-边界框检测" class="headerlink" title="3.3. 边界框检测"></a>3.3. 边界框检测</h2><p>使用mask分支的<strong>Mask R-CNN</strong>比没有使用mask分支的<strong>Faster R-CNN&amp;RoI Align</strong>效果好</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/6.jpg?raw=true" alt><br></div>
 
 
 <hr>
-<h1 id="Human-Pose-Estimation"><a href="#Human-Pose-Estimation" class="headerlink" title="Human Pose Estimation"></a>Human Pose Estimation</h1><hr>
+<h1 id="4-Human-Pose-Estimation"><a href="#4-Human-Pose-Estimation" class="headerlink" title="4. Human Pose Estimation"></a>4. Human Pose Estimation</h1><hr>
 <p>考虑身体部位共k个关键点（肩膀、肘等），则对每个RoI预测k张mask，每张mask中只有一个像素点为foreground，因此对m*m mask做<strong>softmax</strong>操作.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/7.jpg?raw=true" alt><br></div>
 
-<h2 id="实验结果-1"><a href="#实验结果-1" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/9.jpg?raw=true" alt><br></div>
+<h2 id="4-1-实验结果"><a href="#4-1-实验结果" class="headerlink" title="4.1. 实验结果"></a>4.1. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/9.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="Cityscape数据集扩展实验"><a href="#Cityscape数据集扩展实验" class="headerlink" title="Cityscape数据集扩展实验"></a>Cityscape数据集扩展实验</h1><hr>
+<h1 id="5-Cityscape数据集扩展实验"><a href="#5-Cityscape数据集扩展实验" class="headerlink" title="5. Cityscape数据集扩展实验"></a>5. Cityscape数据集扩展实验</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mask r-cnn/11.jpg?raw=true" alt><br></div>
 
 
@@ -1436,7 +1436,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分割任务"><span class="nav-number">1.1.</span> <span class="nav-text">分割任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RoI-Pooling的量化操作"><span class="nav-number">1.2.</span> <span class="nav-text">RoI Pooling的量化操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RoI-Align操作"><span class="nav-number">1.3.</span> <span class="nav-text">RoI Align操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mask-R-CNN"><span class="nav-number">2.</span> <span class="nav-text">Mask R-CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#解耦mask与class"><span class="nav-number">2.1.</span> <span class="nav-text">解耦mask与class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-task-Loss"><span class="nav-number">2.2.</span> <span class="nav-text">Multi-task Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络结构"><span class="nav-number">2.3.</span> <span class="nav-text">网络结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节"><span class="nav-number">2.4.</span> <span class="nav-text">细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Instance-Segmentation"><span class="nav-number">3.</span> <span class="nav-text">Instance Segmentation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">3.1.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablations"><span class="nav-number">3.2.</span> <span class="nav-text">Ablations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边界框检测"><span class="nav-number">3.3.</span> <span class="nav-text">边界框检测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Human-Pose-Estimation"><span class="nav-number">4.</span> <span class="nav-text">Human Pose Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果-1"><span class="nav-number">4.1.</span> <span class="nav-text">实验结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cityscape数据集扩展实验"><span class="nav-number">5.</span> <span class="nav-text">Cityscape数据集扩展实验</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-分割任务"><span class="nav-text">1.1. 分割任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-RoI-Pooling的量化操作"><span class="nav-text">1.2. RoI Pooling的量化操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-RoI-Align操作"><span class="nav-text">1.3. RoI Align操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Mask-R-CNN"><span class="nav-text">2. Mask R-CNN</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-解耦mask与class"><span class="nav-text">2.1. 解耦mask与class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Multi-task-Loss"><span class="nav-text">2.2. Multi-task Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-网络结构"><span class="nav-text">2.3. 网络结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-细节"><span class="nav-text">2.4. 细节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Instance-Segmentation"><span class="nav-text">3. Instance Segmentation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-实验结果"><span class="nav-text">3.1. 实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Ablations"><span class="nav-text">3.2. Ablations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-边界框检测"><span class="nav-text">3.3. 边界框检测</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Human-Pose-Estimation"><span class="nav-text">4. Human Pose Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-实验结果"><span class="nav-text">4.1. 实验结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Cityscape数据集扩展实验"><span class="nav-text">5. Cityscape数据集扩展实验</span></a></li></ol></div>
             
 
           </div>

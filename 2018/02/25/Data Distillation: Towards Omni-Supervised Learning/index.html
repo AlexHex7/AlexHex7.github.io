@@ -112,7 +112,7 @@
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/6.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/7.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/8.jpg?raw=true">
-<meta property="og:updated_time" content="2019-05-13T01:45:32.239Z">
+<meta property="og:updated_time" content="2019-06-08T01:46:45.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(CVPR 2018) Data Distillation:Towards Omni-Supervised Learning">
 <meta name="twitter:description" content="Radosavovic I, Dollár P, Girshick R, et al. Data distillation: Towards omni-supervised learning[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4119-4128.">
@@ -424,7 +424,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-13 09:45:32" itemprop="dateModified" datetime="2019-05-13T09:45:32+08:00">2019-05-13</time>
+                <time title="Modified: 2019-06-08 09:46:45" itemprop="dateModified" datetime="2019-06-08T09:46:45+08:00">2019-06-08</time>
               
             
           </span>
@@ -496,8 +496,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li><strong>Semi-supervised</strong> simulates labeled/unlabeled data (<strong>upper-bounded</strong> on full annotated data) </li>
 <li><strong>Omni-supervised</strong> exploits extra unlabeled data <strong>(lower-bounded</strong> on full annotated data)</li>
 <li><strong>Model distillation</strong> distills knowledge from the prediction of <strong>multiple model</strong></li>
@@ -509,7 +509,7 @@
 <li>it proposed <strong>data distillation</strong> which ensembles prediction from multiple transformations of unlabeled data, using <strong>single model</strong></li>
 <li>Do experiments on <strong>keypoint detection</strong> and <strong>object detection</strong></li>
 </ul>
-<h2 id="Knowledge-Distillation"><a href="#Knowledge-Distillation" class="headerlink" title="Knowledge Distillation"></a>Knowledge Distillation</h2><ol>
+<h2 id="1-2-Knowledge-Distillation"><a href="#1-2-Knowledge-Distillation" class="headerlink" title="1.2. Knowledge Distillation"></a>1.2. Knowledge Distillation</h2><ol>
 <li>Train <strong>teacher model</strong> on large amount of <strong>labeled data (A)</strong></li>
 <li>Generate annotation on <strong>unlabeled data (B)</strong> based on <strong>teacher model</strong></li>
 <li>Retrain <strong>student model</strong> on <strong>data (A+B)</strong></li>
@@ -518,7 +518,7 @@
 <li><strong>Problem</strong>. training model on its own prediction <strong>can not provide meaningful information</strong></li>
 <li><strong>Solution</strong>. <strong>ensembling</strong> the prediction of the <strong>different transformation</strong> of <strong>unlabeled data</strong> (flipping, scaling)</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><ul>
 <li>Ensemble multiple model, Model Compression</li>
 <li>FitNet</li>
 <li>Cross modal distillation</li>
@@ -531,61 +531,60 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Data-Distillation"><a href="#Data-Distillation" class="headerlink" title="Data Distillation"></a>Data Distillation</h1><hr>
+<h1 id="2-Data-Distillation"><a href="#2-Data-Distillation" class="headerlink" title="2. Data Distillation"></a>2. Data Distillation</h1><hr>
 <h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2><ol>
 <li>Train <strong>teacher model</strong> on <strong>labeled data (A)</strong></li>
 <li>Apply <strong>teacher model</strong> to <strong>multiple transformation</strong> of <strong>unlabeled data (B)</strong></li>
 <li>Ensemble the multiple prediction to <strong>get annotation</strong></li>
 <li><strong>Retrain student model</strong> on <strong>data (A+B)</strong></li>
 </ol>
-<h2 id="Multi-transform"><a href="#Multi-transform" class="headerlink" title="Multi-transform"></a>Multi-transform</h2><ul>
+<h2 id="2-1-Multi-transform"><a href="#2-1-Multi-transform" class="headerlink" title="2.1. Multi-transform"></a>2.1. Multi-transform</h2><ul>
 <li>multi-crop</li>
 <li>multi-scale<br>In the experiment of this paper, it used <strong>multi-scale and flipping.</strong></li>
 </ul>
-<h2 id="Ensemble"><a href="#Ensemble" class="headerlink" title="Ensemble"></a>Ensemble</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/2.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Ensemble"><a href="#2-2-Ensemble" class="headerlink" title="2.2. Ensemble"></a>2.2. Ensemble</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>Aggregated prediction <strong>generate new knowledge</strong></li>
 <li>Aggregated prediction <strong>outperform</strong> any single prediction</li>
 </ul>
-<h2 id="Ensemble-way"><a href="#Ensemble-way" class="headerlink" title="Ensemble way"></a>Ensemble way</h2><p>###Soft Label</p>
-<ul>
+<h2 id="2-3-Ensemble-way"><a href="#2-3-Ensemble-way" class="headerlink" title="2.3. Ensemble way"></a>2.3. Ensemble way</h2><h3 id="2-3-1-Soft-Label"><a href="#2-3-1-Soft-Label" class="headerlink" title="2.3.1. Soft Label"></a>2.3.1. Soft Label</h3><ul>
 <li>average class probability</li>
 <li>generate <strong>probability vector, not category label</strong></li>
 <li>not suitablefor structure output space (pose, detection)</li>
 </ul>
-<h3 id="Hard-Label"><a href="#Hard-Label" class="headerlink" title="Hard Label"></a>Hard Label</h3><ul>
+<h3 id="2-3-2-Hard-Label"><a href="#2-3-2-Hard-Label" class="headerlink" title="2.3.2. Hard Label"></a>2.3.2. Hard Label</h3><ul>
 <li>need task specific logic (NMS for merging multiple box)</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Detail-of-Pose-Estimation"><a href="#Detail-of-Pose-Estimation" class="headerlink" title="Detail of Pose Estimation"></a>Detail of Pose Estimation</h1><hr>
-<h2 id="Selecting-Prediction"><a href="#Selecting-Prediction" class="headerlink" title="Selecting Prediction"></a>Selecting Prediction</h2><p>Generate annotation only from the prediction that are <strong>above a certain score threshold</strong>. And found that</p>
+<h1 id="3-Detail-of-Pose-Estimation"><a href="#3-Detail-of-Pose-Estimation" class="headerlink" title="3. Detail of Pose Estimation"></a>3. Detail of Pose Estimation</h1><hr>
+<h2 id="3-1-Selecting-Prediction"><a href="#3-1-Selecting-Prediction" class="headerlink" title="3.1. Selecting Prediction"></a>3.1. Selecting Prediction</h2><p>Generate annotation only from the prediction that are <strong>above a certain score threshold</strong>. And found that</p>
 <ul>
 <li>the average number of annotated instances per unlabeled image equal to labeled image’s <strong>(similar distribution)</strong></li>
 <li>still work robust and well when <strong>not equal</strong></li>
 </ul>
-<h2 id="Retraining"><a href="#Retraining" class="headerlink" title="Retraining"></a>Retraining</h2><ul>
+<h2 id="3-2-Retraining"><a href="#3-2-Retraining" class="headerlink" title="3.2. Retraining"></a>3.2. Retraining</h2><ul>
 <li>retraining is better than fine-tuning (which is in a poor optimum).</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Data-split"><a href="#Data-split" class="headerlink" title="Data split"></a>Data split</h2><ul>
+<h1 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h1><hr>
+<h2 id="4-1-Data-split"><a href="#4-1-Data-split" class="headerlink" title="4.1. Data split"></a>4.1. Data split</h2><ul>
 <li><strong>co-80</strong>. labeled</li>
 <li><strong>co-35</strong>. labeled</li>
 <li><strong>co-115</strong>. co-80 + co-35</li>
 <li><strong>un-120</strong>. unlabeled</li>
 <li><strong>s1m-180 (sports-1M static frame).</strong> dissimilar distribution</li>
 </ul>
-<h2 id="Amount-of-Annotated-Data"><a href="#Amount-of-Annotated-Data" class="headerlink" title="Amount of Annotated Data"></a>Amount of Annotated Data</h2><ul>
+<h2 id="4-2-Amount-of-Annotated-Data"><a href="#4-2-Amount-of-Annotated-Data" class="headerlink" title="4.2. Amount of Annotated Data"></a>4.2. Amount of Annotated Data</h2><ul>
 <li>1:ρ in minibach.<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/3.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Accuracy-of-Teacher-Model"><a href="#Accuracy-of-Teacher-Model" class="headerlink" title="Accuracy of Teacher Model"></a>Accuracy of Teacher Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/4.jpg?raw=true" alt><br></div>
+<h2 id="4-3-Accuracy-of-Teacher-Model"><a href="#4-3-Accuracy-of-Teacher-Model" class="headerlink" title="4.3. Accuracy of Teacher Model"></a>4.3. Accuracy of Teacher Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/8.jpg?raw=true" alt><br></div>
+<h2 id="4-4-Result"><a href="#4-4-Result" class="headerlink" title="4.4. Result"></a>4.4. Result</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Data Distillation: Towards Omni-Supervised Learning/8.jpg?raw=true" alt><br></div>
 
       
     </div>
@@ -1422,7 +1421,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Knowledge-Distillation"><span class="nav-number">1.2.</span> <span class="nav-text">Knowledge Distillation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Distillation"><span class="nav-number">2.</span> <span class="nav-text">Data Distillation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step"><span class="nav-number">2.1.</span> <span class="nav-text">Step</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multi-transform"><span class="nav-number">2.2.</span> <span class="nav-text">Multi-transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensemble"><span class="nav-number">2.3.</span> <span class="nav-text">Ensemble</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensemble-way"><span class="nav-number">2.4.</span> <span class="nav-text">Ensemble way</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hard-Label"><span class="nav-number">2.4.1.</span> <span class="nav-text">Hard Label</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Detail-of-Pose-Estimation"><span class="nav-number">3.</span> <span class="nav-text">Detail of Pose Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Selecting-Prediction"><span class="nav-number">3.1.</span> <span class="nav-text">Selecting Prediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retraining"><span class="nav-number">3.2.</span> <span class="nav-text">Retraining</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">4.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-split"><span class="nav-number">4.1.</span> <span class="nav-text">Data split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Amount-of-Annotated-Data"><span class="nav-number">4.2.</span> <span class="nav-text">Amount of Annotated Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accuracy-of-Teacher-Model"><span class="nav-number">4.3.</span> <span class="nav-text">Accuracy of Teacher Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Result"><span class="nav-number">4.4.</span> <span class="nav-text">Result</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Knowledge-Distillation"><span class="nav-text">1.2. Knowledge Distillation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Data-Distillation"><span class="nav-text">2. Data Distillation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step"><span class="nav-text">Step</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Multi-transform"><span class="nav-text">2.1. Multi-transform</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Ensemble"><span class="nav-text">2.2. Ensemble</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Ensemble-way"><span class="nav-text">2.3. Ensemble way</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Soft-Label"><span class="nav-text">2.3.1. Soft Label</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-Hard-Label"><span class="nav-text">2.3.2. Hard Label</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Detail-of-Pose-Estimation"><span class="nav-text">3. Detail of Pose Estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Selecting-Prediction"><span class="nav-text">3.1. Selecting Prediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Retraining"><span class="nav-text">3.2. Retraining</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments"><span class="nav-text">4. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Data-split"><span class="nav-text">4.1. Data split</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Amount-of-Annotated-Data"><span class="nav-text">4.2. Amount of Annotated Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Accuracy-of-Teacher-Model"><span class="nav-text">4.3. Accuracy of Teacher Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-Result"><span class="nav-text">4.4. Result</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -479,7 +479,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <ul>
 <li>PointNet aggregates all individual point features to a global point cloud and d<strong>oes not capture local structures</strong></li>
 <li>Point sets are usually sampled with <strong>varying densities</strong></li>
@@ -489,17 +489,17 @@
 <li><strong>Hierarchical</strong>. learn local features with increasing contextual scales</li>
 <li>Adaptively <strong>combine features from multiple scales</strong></li>
 </ul>
-<h2 id="Two-Issues"><a href="#Two-Issues" class="headerlink" title="Two Issues"></a>Two Issues</h2><ul>
+<h2 id="1-1-Two-Issues"><a href="#1-1-Two-Issues" class="headerlink" title="1.1. Two Issues"></a>1.1. Two Issues</h2><ul>
 <li>how to generate the partitioning of the point set (<strong>neighbourhood ball with centroid, farthest point sampling,FPS</strong>)<br>small neighbourhood may consist of too few points due to sampling deficiency, which might be insufficient to allow PointNet to capture patterns robustly.</li>
 <li>how to abstract sets of points or local features through the local feature learner <strong>(recursively PointNet)</strong></li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li>Hierarchical Feature Learning</li>
 <li>Deep Learning of Unordered Sets</li>
 <li>Point Sampling</li>
 <li>3D representation. (<strong>volumetric grids and geometric graphs</strong>)</li>
 </ul>
-<h2 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h2><ul>
+<h2 id="1-3-Datasets"><a href="#1-3-Datasets" class="headerlink" title="1.3. Datasets"></a>1.3. Datasets</h2><ul>
 <li><strong>MNIST</strong> (2D objects)</li>
 <li><strong>ModelNet40</strong> (3D)</li>
 <li><strong>SHREC15</strong> (3D)</li>
@@ -507,15 +507,15 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h1><hr>
+<h1 id="2-Network"><a href="#2-Network" class="headerlink" title="2. Network"></a>2. Network</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet++: Deep hierarchical feature learning on point sets in a metric space/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Sampling-Layer"><a href="#Sampling-Layer" class="headerlink" title="Sampling Layer"></a>Sampling Layer</h2><p>Using farthest point sampling (<strong>FPS</strong>) to get the the <strong>coordinate of N’ centroids’</strong>.</p>
+<h2 id="2-1-Sampling-Layer"><a href="#2-1-Sampling-Layer" class="headerlink" title="2.1. Sampling Layer"></a>2.1. Sampling Layer</h2><p>Using farthest point sampling (<strong>FPS</strong>) to get the the <strong>coordinate of N’ centroids’</strong>.</p>
 <ul>
 <li>Input: <strong>[N x d]</strong>, the coordinates of point set </li>
 <li>Output: <strong>[N’ x d]</strong>, the coordinates of centroid points</li>
 </ul>
-<h2 id="Grouping-Layer"><a href="#Grouping-Layer" class="headerlink" title="Grouping Layer"></a>Grouping Layer</h2><p>Using <strong>ball query</strong> (or KNN) to group the point set based on <strong>centroid point set.</strong></p>
+<h2 id="2-2-Grouping-Layer"><a href="#2-2-Grouping-Layer" class="headerlink" title="2.2. Grouping Layer"></a>2.2. Grouping Layer</h2><p>Using <strong>ball query</strong> (or KNN) to group the point set based on <strong>centroid point set.</strong></p>
 <ul>
 <li>Input: <strong>[N’ x d]</strong>, centroid point set; <strong>[N x (d+C)]</strong>, point set</li>
 <li>Output: <strong>[N’ x K x (d+C)]</strong>, grouped point set </li>
@@ -526,12 +526,12 @@
 </ol>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet++: Deep hierarchical feature learning on point sets in a metric space/2.jpg?raw=true" alt><br></div>
 
-<h2 id="PointNet-Layer"><a href="#PointNet-Layer" class="headerlink" title="PointNet Layer"></a>PointNet Layer</h2><ul>
+<h2 id="2-3-PointNet-Layer"><a href="#2-3-PointNet-Layer" class="headerlink" title="2.3. PointNet Layer"></a>2.3. PointNet Layer</h2><ul>
 <li>Input: [N’ x K x (d+C)]</li>
 <li>Output: [N’ x (d+C’)]</li>
 </ul>
-<h2 id="Robust-under-Non-Uniform-Sampling-Density"><a href="#Robust-under-Non-Uniform-Sampling-Density" class="headerlink" title="Robust under Non-Uniform Sampling Density"></a>Robust under Non-Uniform Sampling Density</h2><p>Features learned in dense data may not generalize to sparsely sampled region. In contrast, the same.</p>
-<h3 id="Sample-Method-random-input-dropout"><a href="#Sample-Method-random-input-dropout" class="headerlink" title="Sample Method (random input dropout)"></a>Sample Method (random input dropout)</h3><p>[during training]</p>
+<h2 id="2-4-Robust-under-Non-Uniform-Sampling-Density"><a href="#2-4-Robust-under-Non-Uniform-Sampling-Density" class="headerlink" title="2.4. Robust under Non-Uniform Sampling Density"></a>2.4. Robust under Non-Uniform Sampling Density</h2><p>Features learned in dense data may not generalize to sparsely sampled region. In contrast, the same.</p>
+<h3 id="2-4-1-Sample-Method-random-input-dropout"><a href="#2-4-1-Sample-Method-random-input-dropout" class="headerlink" title="2.4.1. Sample Method (random input dropout)"></a>2.4.1. Sample Method (random input dropout)</h3><p>[during training]</p>
 <ul>
 <li>for each training <strong>point set</strong>, draw a <strong>dropout rate Θ</strong> uniformly sampled from [0, p], p≥1</li>
 <li>for each point, randomly <strong>drop a point</strong> with probability Θ</li>
@@ -545,7 +545,7 @@
 <ul>
 <li>keep all available points.</li>
 </ul>
-<h3 id="Solutions"><a href="#Solutions" class="headerlink" title="Solutions"></a>Solutions</h3><p>each abstraction level extracts <strong>multiple scales</strong> of local patterns and <strong>combine</strong> them <strong>intelligently</strong> according to local point densitie</p>
+<h3 id="2-4-2-Solutions"><a href="#2-4-2-Solutions" class="headerlink" title="2.4.2. Solutions"></a>2.4.2. Solutions</h3><p>each abstraction level extracts <strong>multiple scales</strong> of local patterns and <strong>combine</strong> them <strong>intelligently</strong> according to local point densitie</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet++: Deep hierarchical feature learning on point sets in a metric space/3.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -566,7 +566,7 @@
 <li><strong>high densities</strong>. (a) better</li>
 </ul>
 <p>(a) provides information of finer details sincepossesses the ability to inspect at higher resolutions recursively in lower levels.</p>
-<h2 id="Point-Feature-Propagation-for-Segmentation"><a href="#Point-Feature-Propagation-for-Segmentation" class="headerlink" title="Point Feature Propagation for Segmentation"></a>Point Feature Propagation for Segmentation</h2><p><strong>Set abstraction</strong> layer will <strong>subsampled the original point set</strong>, but the segmentation task need to obtain point features for <strong>all the original points</strong>.</p>
+<h2 id="2-5-Point-Feature-Propagation-for-Segmentation"><a href="#2-5-Point-Feature-Propagation-for-Segmentation" class="headerlink" title="2.5. Point Feature Propagation for Segmentation"></a>2.5. Point Feature Propagation for Segmentation</h2><p><strong>Set abstraction</strong> layer will <strong>subsampled the original point set</strong>, but the segmentation task need to obtain point features for <strong>all the original points</strong>.</p>
 <ul>
 <li>Using hierarchical <strong>propagation</strong> strategy with <strong>distance based interpolation</strong> (inverse distance weighted average based on KNN)<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet++: Deep hierarchical feature learning on point sets in a metric space/4.jpg?raw=true" alt><br></div>
 
@@ -574,8 +574,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Classification"><a href="#3-1-Classification" class="headerlink" title="3.1. Classification"></a>3.1. Classification</h2><ul>
 <li><p>Comparison</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet++: Deep hierarchical feature learning on point sets in a metric space/5.jpg?raw=true" alt><br></div>
 </li>
@@ -584,7 +584,7 @@
 
 </li>
 </ul>
-<h2 id="Segmentation"><a href="#Segmentation" class="headerlink" title="Segmentation"></a>Segmentation</h2><ul>
+<h2 id="3-2-Segmentation"><a href="#3-2-Segmentation" class="headerlink" title="3.2. Segmentation"></a>3.2. Segmentation</h2><ul>
 <li>Comparison<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet++: Deep hierarchical feature learning on point sets in a metric space/7.jpg?raw=true" alt><br></div>
 
 
@@ -1426,7 +1426,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-Issues"><span class="nav-number">1.1.</span> <span class="nav-text">Two Issues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Datasets"><span class="nav-number">1.3.</span> <span class="nav-text">Datasets</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network"><span class="nav-number">2.</span> <span class="nav-text">Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sampling-Layer"><span class="nav-number">2.1.</span> <span class="nav-text">Sampling Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Grouping-Layer"><span class="nav-number">2.2.</span> <span class="nav-text">Grouping Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PointNet-Layer"><span class="nav-number">2.3.</span> <span class="nav-text">PointNet Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robust-under-Non-Uniform-Sampling-Density"><span class="nav-number">2.4.</span> <span class="nav-text">Robust under Non-Uniform Sampling Density</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sample-Method-random-input-dropout"><span class="nav-number">2.4.1.</span> <span class="nav-text">Sample Method (random input dropout)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solutions"><span class="nav-number">2.4.2.</span> <span class="nav-text">Solutions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Point-Feature-Propagation-for-Segmentation"><span class="nav-number">2.5.</span> <span class="nav-text">Point Feature Propagation for Segmentation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification"><span class="nav-number">3.1.</span> <span class="nav-text">Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation"><span class="nav-number">3.2.</span> <span class="nav-text">Segmentation</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Two-Issues"><span class="nav-text">1.1. Two Issues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Datasets"><span class="nav-text">1.3. Datasets</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Network"><span class="nav-text">2. Network</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Sampling-Layer"><span class="nav-text">2.1. Sampling Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Grouping-Layer"><span class="nav-text">2.2. Grouping Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-PointNet-Layer"><span class="nav-text">2.3. PointNet Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Robust-under-Non-Uniform-Sampling-Density"><span class="nav-text">2.4. Robust under Non-Uniform Sampling Density</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-1-Sample-Method-random-input-dropout"><span class="nav-text">2.4.1. Sample Method (random input dropout)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-2-Solutions"><span class="nav-text">2.4.2. Solutions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Point-Feature-Propagation-for-Segmentation"><span class="nav-text">2.5. Point Feature Propagation for Segmentation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Classification"><span class="nav-text">3.1. Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Segmentation"><span class="nav-text">3.2. Segmentation</span></a></li></ol></li></ol></div>
             
 
           </div>

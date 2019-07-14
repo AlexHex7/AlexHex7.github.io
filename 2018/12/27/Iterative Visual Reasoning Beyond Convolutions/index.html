@@ -488,8 +488,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>current recognition systems <strong>lack the capability to reason</strong> beyond <strong>stack</strong> of Conv with large receptive fields</li>
 <li><strong>reasoning via top-down</strong> modules (UNet) or <strong>explicit memories</strong> <ul>
 <li>local pixel-level reasoning lacks a global reasoning power</li>
@@ -515,7 +515,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><ul>
+<h2 id="1-2-Related-Works"><a href="#1-2-Related-Works" class="headerlink" title="1.2. Related Works"></a>1.2. Related Works</h2><ul>
 <li><strong>Visual Knowledge Base</strong>. accumulate structured knowledge automatically from the web</li>
 <li><strong>Context Modeling</strong></li>
 <li><strong>Relational Reasoning. </strong><ul>
@@ -527,8 +527,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="Local-Module"><a href="#Local-Module" class="headerlink" title="Local Module"></a>Local Module</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/3.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/4.jpg?raw=true" alt><br></div>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-Local-Module"><a href="#2-1-Local-Module" class="headerlink" title="2.1. Local Module"></a>2.1. Local Module</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/3.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>S</strong>. 1 x 512 x h x w</li>
@@ -542,13 +542,13 @@
 </li>
 <li>memory S contains <strong>two-dimensional image structure</strong> and the <strong>location information</strong></li>
 </ul>
-<h2 id="Global-Graph-Reasoning-Module"><a href="#Global-Graph-Reasoning-Module" class="headerlink" title="Global Graph Reasoning Module"></a>Global Graph Reasoning Module</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/6.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Global-Graph-Reasoning-Module"><a href="#2-2-Global-Graph-Reasoning-Module" class="headerlink" title="2.2. Global Graph Reasoning Module"></a>2.2. Global Graph Reasoning Module</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>spatial</strong> path + <strong>semantic</strong> path</li>
 <li><strong>input feature</strong>. mid-level feature (Layer_4, after avg) + high-level feature (f)</li>
 </ul>
-<h3 id="Region-Region"><a href="#Region-Region" class="headerlink" title="Region-Region"></a>Region-Region</h3><ul>
+<h3 id="2-2-1-Region-Region"><a href="#2-2-1-Region-Region" class="headerlink" title="2.2.1. Region-Region"></a>2.2.1. Region-Region</h3><ul>
 <li><strong>relationship</strong> of edge. left/right and top/bottom (pixel-level distance and <strong>normalize</strong> to [0,1])<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/7.jpg?raw=true" alt><br>  △=50 bandwidth<br></div>
 
 
@@ -557,12 +557,12 @@
 <ul>
 <li>closer regions are more correlated</li>
 </ul>
-<h3 id="Region-Class"><a href="#Region-Class" class="headerlink" title="Region-Class"></a>Region-Class</h3><ul>
+<h3 id="2-2-2-Region-Class"><a href="#2-2-2-Region-Class" class="headerlink" title="2.2.2. Region-Class"></a>2.2.2. Region-Class</h3><ul>
 <li><strong>propagate</strong> beliefs from region to class</li>
 <li><strong>backward</strong> from class to region</li>
 <li>rather than only linking to the most confident class, it chooses <strong>full softmax score p</strong></li>
 </ul>
-<h3 id="Class-Class"><a href="#Class-Class" class="headerlink" title="Class-Class"></a>Class-Class</h3><ul>
+<h3 id="2-2-3-Class-Class"><a href="#2-2-3-Class-Class" class="headerlink" title="2.2.3. Class-Class"></a>2.2.3. Class-Class</h3><ul>
 <li><strong>commonsense knowledge</strong>. is-kind-of, is-part-of</li>
 <li><p><strong>other relationships</strong>. actions, prepositions</p>
 </li>
@@ -570,70 +570,70 @@
 </li>
 <li>Use <strong>three stacks</strong> of below operations with <strong>residual</strong> connections</li>
 </ul>
-<h3 id="Spatial-Path"><a href="#Spatial-Path" class="headerlink" title="Spatial Path"></a>Spatial Path</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/8.jpg?raw=true" alt><br></div>
+<h3 id="2-2-4-Spatial-Path"><a href="#2-2-4-Spatial-Path" class="headerlink" title="2.2.4. Spatial Path"></a>2.2.4. Spatial Path</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>M_r (R, D)</strong>. nodes of region </li>
 <li><strong>A_e (R, R)</strong>. adjacency matrix of edge type e</li>
 <li><strong>W_e.</strong> weight</li>
 </ul>
-<h3 id="Semantic-Path"><a href="#Semantic-Path" class="headerlink" title="Semantic Path"></a>Semantic Path</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/9.jpg?raw=true" alt><br></div>
+<h3 id="2-2-5-Semantic-Path"><a href="#2-2-5-Semantic-Path" class="headerlink" title="2.2.5. Semantic Path"></a>2.2.5. Semantic Path</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/9.jpg?raw=true" alt><br></div>
 
 <ol>
 <li>map regions to classes</li>
 <li>combine <strong>intermediate features</strong> AM_rW with <strong>class features</strong> M_c</li>
 <li><strong>aggregate features</strong> from <strong>multiple types</strong> of edges between classes</li>
 </ol>
-<h3 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/10.jpg?raw=true" alt><br></div>
+<h3 id="2-2-6-Merge"><a href="#2-2-6-Merge" class="headerlink" title="2.2.6. Merge"></a>2.2.6. Merge</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/10.jpg?raw=true" alt><br></div>
 
 <ol>
 <li>first to propagates semantic information back to regions</li>
 </ol>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Iterative-Reasoning-amp-Cross-feed"><a href="#Iterative-Reasoning-amp-Cross-feed" class="headerlink" title="Iterative Reasoning &amp; Cross-feed"></a>Iterative Reasoning &amp; Cross-feed</h2><ul>
+<h2 id="2-3-Iterative-Reasoning-amp-Cross-feed"><a href="#2-3-Iterative-Reasoning-amp-Cross-feed" class="headerlink" title="2.3. Iterative Reasoning &amp; Cross-feed"></a>2.3. Iterative Reasoning &amp; Cross-feed</h2><ul>
 <li>both the <strong>local</strong> and <strong>global features</strong> are <strong>concated</strong> together to update the memories <strong>S_{i+1} and M_{i+1} using GRU</strong></li>
 </ul>
-<h2 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/12.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Attention"><a href="#2-4-Attention" class="headerlink" title="2.4. Attention"></a>2.4. Attention</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/12.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>N = 2I + 1;</strong> I is iteration times</li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><ul>
+<h2 id="2-5-Loss-Function"><a href="#2-5-Loss-Function" class="headerlink" title="2.5. Loss Function"></a>2.5. Loss Function</h2><ul>
 <li><strong>plain</strong> ConvNet loss L_0</li>
 <li><strong>local</strong> module loss L^l</li>
 <li><strong>global</strong> module loss L^g</li>
 <li><strong>final</strong> prediction loss with attention L_f</li>
 </ul>
-<h2 id="Re-weight-for-Hard-Sample"><a href="#Re-weight-for-Hard-Sample" class="headerlink" title="Re-weight for Hard Sample"></a>Re-weight for Hard Sample</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/13.jpg?raw=true" alt><br></div>
+<h2 id="2-6-Re-weight-for-Hard-Sample"><a href="#2-6-Re-weight-for-Hard-Sample" class="headerlink" title="2.6. Re-weight for Hard Sample"></a>2.6. Re-weight for Hard Sample</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/13.jpg?raw=true" alt><br></div>
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Dataset"><a href="#3-1-Dataset" class="headerlink" title="3.1. Dataset"></a>3.1. Dataset</h2><ul>
 <li>ADE ( parts annotations)</li>
 <li>Visual Genome (relationship annotation)</li>
 <li>COCO</li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="3-2-Details"><a href="#3-2-Details" class="headerlink" title="3.2. Details"></a>3.2. Details</h2><ul>
 <li>use provided ground-truth location</li>
 <li><strong>evaluation</strong>. classification accuracy (<strong>AC</strong>) and average precision (<strong>**AP); </strong>per-class and per-instance**</li>
 <li>word vectors of fastText algorithm</li>
 <li>roll-out the reasoning modules <strong>3 times</strong> (more iterations do not offer more help)</li>
 </ul>
-<h2 id="Main-Results"><a href="#Main-Results" class="headerlink" title="Main Results"></a>Main Results</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/14.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Main-Results"><a href="#3-3-Main-Results" class="headerlink" title="3.3. Main Results"></a>3.3. Main Results</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/14.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>deeper</strong> network and <strong>larger</strong> image size can only help ~1%, less than ensembles</li>
 <li>proposed models achieve <strong>higher per-class metric</strong> gains than per-instance ones, indicating that <strong>rare classes get helped more</strong></li>
 </ul>
-<h2 id="Ablation"><a href="#Ablation" class="headerlink" title="Ablation"></a>Ablation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/15.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Ablation"><a href="#3-4-Ablation" class="headerlink" title="3.4. Ablation"></a>3.4. Ablation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/15.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>In the <strong>local</strong> module, <strong>spatial memory S is critical</strong></li>
 <li>In the <strong>global</strong> module, <strong>removing reasoning module R</strong> steeply drops performance, whereas further removing memory M dose not hurt much</li>
 </ul>
-<h2 id="Visualization"><a href="#Visualization" class="headerlink" title="Visualization"></a>Visualization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/16.jpg?raw=true" alt><br></div>
+<h2 id="3-5-Visualization"><a href="#3-5-Visualization" class="headerlink" title="3.5. Visualization"></a>3.5. Visualization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Iterative Visual Reasoning Beyond Convolutions/16.jpg?raw=true" alt><br></div>
 
 
 
@@ -1470,7 +1470,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Works"><span class="nav-number">1.2.</span> <span class="nav-text">Related Works</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Local-Module"><span class="nav-number">2.1.</span> <span class="nav-text">Local Module</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Global-Graph-Reasoning-Module"><span class="nav-number">2.2.</span> <span class="nav-text">Global Graph Reasoning Module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Region-Region"><span class="nav-number">2.2.1.</span> <span class="nav-text">Region-Region</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Region-Class"><span class="nav-number">2.2.2.</span> <span class="nav-text">Region-Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-Class"><span class="nav-number">2.2.3.</span> <span class="nav-text">Class-Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spatial-Path"><span class="nav-number">2.2.4.</span> <span class="nav-text">Spatial Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Semantic-Path"><span class="nav-number">2.2.5.</span> <span class="nav-text">Semantic Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge"><span class="nav-number">2.2.6.</span> <span class="nav-text">Merge</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-Reasoning-amp-Cross-feed"><span class="nav-number">2.3.</span> <span class="nav-text">Iterative Reasoning &amp; Cross-feed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attention"><span class="nav-number">2.4.</span> <span class="nav-text">Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">2.5.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Re-weight-for-Hard-Sample"><span class="nav-number">2.6.</span> <span class="nav-text">Re-weight for Hard Sample</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.2.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Main-Results"><span class="nav-number">3.3.</span> <span class="nav-text">Main Results</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation"><span class="nav-number">3.4.</span> <span class="nav-text">Ablation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualization"><span class="nav-number">3.5.</span> <span class="nav-text">Visualization</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Works"><span class="nav-text">1.2. Related Works</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Local-Module"><span class="nav-text">2.1. Local Module</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Global-Graph-Reasoning-Module"><span class="nav-text">2.2. Global Graph Reasoning Module</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Region-Region"><span class="nav-text">2.2.1. Region-Region</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Region-Class"><span class="nav-text">2.2.2. Region-Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-Class-Class"><span class="nav-text">2.2.3. Class-Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-Spatial-Path"><span class="nav-text">2.2.4. Spatial Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-5-Semantic-Path"><span class="nav-text">2.2.5. Semantic Path</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-6-Merge"><span class="nav-text">2.2.6. Merge</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Iterative-Reasoning-amp-Cross-feed"><span class="nav-text">2.3. Iterative Reasoning &amp; Cross-feed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Attention"><span class="nav-text">2.4. Attention</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Loss-Function"><span class="nav-text">2.5. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Re-weight-for-Hard-Sample"><span class="nav-text">2.6. Re-weight for Hard Sample</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Dataset"><span class="nav-text">3.1. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Details"><span class="nav-text">3.2. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Main-Results"><span class="nav-text">3.3. Main Results</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Ablation"><span class="nav-text">3.4. Ablation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Visualization"><span class="nav-text">3.5. Visualization</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -487,8 +487,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>relationships among different visual tasks</li>
 </ul>
 <p>In this paper</p>
@@ -496,7 +496,7 @@
 <li>proposes a fully computational approach for <strong>modeling the structure of space of visual task</strong></li>
 <li>exploit it to reduce the demand for labeled data</li>
 </ul>
-<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><ul>
+<h2 id="1-2-Related-Works"><a href="#1-2-Related-Works" class="headerlink" title="1.2. Related Works"></a>1.2. Related Works</h2><ul>
 <li>self-supervised learning</li>
 <li>unsupervised learning</li>
 <li>meta-learning</li>
@@ -505,8 +505,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h2><ul>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-Definitions"><a href="#2-1-Definitions" class="headerlink" title="2.1. Definitions"></a>2.1. Definitions</h2><ul>
 <li><strong>γ</strong>. limited supervision budget</li>
 <li><strong>T (target)</strong>. set of task want to solve</li>
 <li><strong>S (source)</strong>. set of task can be trained</li>
@@ -522,10 +522,10 @@
 </ul>
 <div align="center"><br>    <strong>Four Steps</strong><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Stage-I-Task-Specific-Modeling"><a href="#Stage-I-Task-Specific-Modeling" class="headerlink" title="Stage I: Task-Specific Modeling"></a>Stage I: Task-Specific Modeling</h2><ul>
+<h2 id="2-2-Stage-I-Task-Specific-Modeling"><a href="#2-2-Stage-I-Task-Specific-Modeling" class="headerlink" title="2.2. Stage I: Task-Specific Modeling"></a>2.2. Stage I: Task-Specific Modeling</h2><ul>
 <li>Encoder-Decoder</li>
 </ul>
-<h2 id="Stage-II-Transfer-Modeling"><a href="#Stage-II-Transfer-Modeling" class="headerlink" title="Stage II: Transfer Modeling"></a>Stage II: Transfer Modeling</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/2.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Stage-II-Transfer-Modeling"><a href="#2-3-Stage-II-Transfer-Modeling" class="headerlink" title="2.3. Stage II: Transfer Modeling"></a>2.3. Stage II: Transfer Modeling</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p>learn a readout function</p>
@@ -541,20 +541,20 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/4.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/5.jpg?raw=true" alt><br></div>
 
-<h2 id="Stage-III-Ordinal-Normalization-using-Analytic-Hierarchy-Process-AHP"><a href="#Stage-III-Ordinal-Normalization-using-Analytic-Hierarchy-Process-AHP" class="headerlink" title="Stage III: Ordinal Normalization using Analytic Hierarchy Process (AHP)"></a>Stage III: Ordinal Normalization using Analytic Hierarchy Process (AHP)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/6.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Stage-III-Ordinal-Normalization-using-Analytic-Hierarchy-Process-AHP"><a href="#2-4-Stage-III-Ordinal-Normalization-using-Analytic-Hierarchy-Process-AHP" class="headerlink" title="2.4. Stage III: Ordinal Normalization using Analytic Hierarchy Process (AHP)"></a>2.4. Stage III: Ordinal Normalization using Analytic Hierarchy Process (AHP)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>aggregating the raw losses/evaluations L_{s→ t} from transfer function into a matrix is problem. vastly different scale and live in different spaces</li>
 <li>naive solution of linearly rescale each fail</li>
 </ul>
-<h2 id="Step-IV-Computing-the-Global-Texonomy"><a href="#Step-IV-Computing-the-Global-Texonomy" class="headerlink" title="Step IV: Computing the Global Texonomy"></a>Step IV: Computing the Global Texonomy</h2><ul>
+<h2 id="2-5-Step-IV-Computing-the-Global-Texonomy"><a href="#2-5-Step-IV-Computing-the-Global-Texonomy" class="headerlink" title="2.5. Step IV: Computing the Global Texonomy"></a>2.5. Step IV: Computing the Global Texonomy</h2><ul>
 <li><p>edge (hypergraph)</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/7.jpg?raw=true" alt><br></div>
 </li>
 <li><p>Boolean Integer Programming (BIP) to find global policy</p>
 </li>
 </ul>
-<h2 id="Constrains"><a href="#Constrains" class="headerlink" title="Constrains"></a>Constrains</h2><ul>
+<h2 id="2-6-Constrains"><a href="#2-6-Constrains" class="headerlink" title="2.6. Constrains"></a>2.6. Constrains</h2><ul>
 <li>each target task has exactly one transfer in</li>
 <li>supervision budget is not exceeded<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Taskonomy: Disentangling Task Transfer Learning/8.jpg?raw=true" alt><br></div>
 
@@ -1399,7 +1399,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Works"><span class="nav-number">1.2.</span> <span class="nav-text">Related Works</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definitions"><span class="nav-number">2.1.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stage-I-Task-Specific-Modeling"><span class="nav-number">2.2.</span> <span class="nav-text">Stage I: Task-Specific Modeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stage-II-Transfer-Modeling"><span class="nav-number">2.3.</span> <span class="nav-text">Stage II: Transfer Modeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stage-III-Ordinal-Normalization-using-Analytic-Hierarchy-Process-AHP"><span class="nav-number">2.4.</span> <span class="nav-text">Stage III: Ordinal Normalization using Analytic Hierarchy Process (AHP)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step-IV-Computing-the-Global-Texonomy"><span class="nav-number">2.5.</span> <span class="nav-text">Step IV: Computing the Global Texonomy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constrains"><span class="nav-number">2.6.</span> <span class="nav-text">Constrains</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Works"><span class="nav-text">1.2. Related Works</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Definitions"><span class="nav-text">2.1. Definitions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Stage-I-Task-Specific-Modeling"><span class="nav-text">2.2. Stage I: Task-Specific Modeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Stage-II-Transfer-Modeling"><span class="nav-text">2.3. Stage II: Transfer Modeling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Stage-III-Ordinal-Normalization-using-Analytic-Hierarchy-Process-AHP"><span class="nav-text">2.4. Stage III: Ordinal Normalization using Analytic Hierarchy Process (AHP)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Step-IV-Computing-the-Global-Texonomy"><span class="nav-text">2.5. Step IV: Computing the Global Texonomy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Constrains"><span class="nav-text">2.6. Constrains</span></a></li></ol></li></ol></div>
             
 
           </div>

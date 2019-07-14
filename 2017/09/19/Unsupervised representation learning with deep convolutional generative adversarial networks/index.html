@@ -487,37 +487,37 @@
 
 
 
-<h1 id="提高训练稳定性的方法"><a href="#提高训练稳定性的方法" class="headerlink" title="提高训练稳定性的方法"></a>提高训练稳定性的方法</h1><hr>
+<h1 id="1-提高训练稳定性的方法"><a href="#1-提高训练稳定性的方法" class="headerlink" title="1. 提高训练稳定性的方法"></a>1. 提高训练稳定性的方法</h1><hr>
 <ul>
 <li><strong>Stride Conv</strong> 替代 Pooling</li>
 <li>Eliminate FC层（相对于GAN中的FC而言）</li>
 <li><strong>BN层</strong>，除G的输出层和D的输入层外，否则导致不稳定</li>
 <li><strong>G使用</strong>ReLU<strong>，输出层使用</strong>Tanh<strong>。D使用</strong>LeakyReLU**</li>
 </ul>
-<h1 id="验证D的性能"><a href="#验证D的性能" class="headerlink" title="验证D的性能"></a>验证D的性能</h1><hr>
+<h1 id="2-验证D的性能"><a href="#2-验证D的性能" class="headerlink" title="2. 验证D的性能"></a>2. 验证D的性能</h1><hr>
 <p>使用D作为Feature Extractor来classify CIFAR-10和SVHN。</p>
-<h1 id="D特征图可视化"><a href="#D特征图可视化" class="headerlink" title="D特征图可视化"></a>D特征图可视化</h1><hr>
+<h1 id="3-D特征图可视化"><a href="#3-D特征图可视化" class="headerlink" title="3. D特征图可视化"></a>3. D特征图可视化</h1><hr>
 <p>不同特征图activate on 不同objects <strong>(Figure 5)</strong> 。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/2.jpg?raw=true" alt><br></div>
 
-<h1 id="Walking-in-the-Latent-Space"><a href="#Walking-in-the-Latent-Space" class="headerlink" title="Walking in the Latent Space"></a>Walking in the Latent Space</h1><hr>
+<h1 id="4-Walking-in-the-Latent-Space"><a href="#4-Walking-in-the-Latent-Space" class="headerlink" title="4. Walking in the Latent Space"></a>4. Walking in the Latent Space</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/3.jpg?raw=true" alt><br></div>
 
-<h1 id="G的遗忘性"><a href="#G的遗忘性" class="headerlink" title="G的遗忘性"></a>G的遗忘性</h1><hr>
+<h1 id="5-G的遗忘性"><a href="#5-G的遗忘性" class="headerlink" title="5. G的遗忘性"></a>5. G的遗忘性</h1><hr>
 <p>G能学到不同object的表达,在second highest Conv层(倒数第二层)的特征上，利用logistic regression 预测activate窗户的filters，比较drop out窗户相关filters与否的生成结果。在drop out窗户filter的生成结果中，一些图片去掉了窗户,一些图片生成相似的其他object，如门、镜子 <strong>(Figure 6)</strong>。 </p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/4.jpg?raw=true" alt><br></div>
 
-<h1 id="Vector-Arithmetic-of-Z"><a href="#Vector-Arithmetic-of-Z" class="headerlink" title="Vector Arithmetic of Z"></a>Vector Arithmetic of Z</h1><hr>
+<h1 id="6-Vector-Arithmetic-of-Z"><a href="#6-Vector-Arithmetic-of-Z" class="headerlink" title="6. Vector Arithmetic of Z"></a>6. Vector Arithmetic of Z</h1><hr>
 <p>类似于Word2vec of Mikolov<strong> (Figure 7)</strong>。<br>Single sample per concept were unstable. Average $Z$ of 3 sample show consistence andstable.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/5.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Train-DCGAN-on-MNIST"><a href="#Train-DCGAN-on-MNIST" class="headerlink" title="Train DCGAN on MNIST"></a>Train DCGAN on MNIST</h1><hr>
+<h1 id="7-Train-DCGAN-on-MNIST"><a href="#7-Train-DCGAN-on-MNIST" class="headerlink" title="7. Train DCGAN on MNIST"></a>7. Train DCGAN on MNIST</h1><hr>
 <ul>
 <li>We found that <strong>removing the scale and bias parameters from batchnorm</strong> produced better results for both models.</li>
 <li><strong>Noise introduced</strong> by batchnorm helps the generative models to better explore and generate from the underlying data distribution.</li>
 </ul>
-<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><hr>
+<h1 id="8-Code"><a href="#8-Code" class="headerlink" title="8. Code"></a>8. Code</h1><hr>
 <p>Code comes from github <strong>AaronYALai/Generative_Adversarial_Networks_PyTorch</strong>.</p>
 <ul>
 <li><p><strong>Code of GAN</strong></p>
@@ -1368,7 +1368,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#提高训练稳定性的方法"><span class="nav-number">1.</span> <span class="nav-text">提高训练稳定性的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#验证D的性能"><span class="nav-number">2.</span> <span class="nav-text">验证D的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#D特征图可视化"><span class="nav-number">3.</span> <span class="nav-text">D特征图可视化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Walking-in-the-Latent-Space"><span class="nav-number">4.</span> <span class="nav-text">Walking in the Latent Space</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#G的遗忘性"><span class="nav-number">5.</span> <span class="nav-text">G的遗忘性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vector-Arithmetic-of-Z"><span class="nav-number">6.</span> <span class="nav-text">Vector Arithmetic of Z</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Train-DCGAN-on-MNIST"><span class="nav-number">7.</span> <span class="nav-text">Train DCGAN on MNIST</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">8.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-提高训练稳定性的方法"><span class="nav-text">1. 提高训练稳定性的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-验证D的性能"><span class="nav-text">2. 验证D的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-D特征图可视化"><span class="nav-text">3. D特征图可视化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Walking-in-the-Latent-Space"><span class="nav-text">4. Walking in the Latent Space</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-G的遗忘性"><span class="nav-text">5. G的遗忘性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Vector-Arithmetic-of-Z"><span class="nav-text">6. Vector Arithmetic of Z</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Train-DCGAN-on-MNIST"><span class="nav-text">7. Train DCGAN on MNIST</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Code"><span class="nav-text">8. Code</span></a></li></ol></div>
             
 
           </div>

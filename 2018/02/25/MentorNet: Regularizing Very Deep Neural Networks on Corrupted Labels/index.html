@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/12.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/13.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/14.jpg?raw=true">
-<meta property="og:updated_time" content="2019-05-14T02:33:53.899Z">
+<meta property="og:updated_time" content="2019-06-08T02:18:05.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(2017) MentorNet:Regularizing Very Deep Neural Networks on Corrupted Labels">
 <meta name="twitter:description" content="Jiang L, Zhou Z, Leung T, et al. MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels[J]. arXiv preprint arXiv:1712.05055, 2017.">
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-14 10:33:53" itemprop="dateModified" datetime="2019-05-14T10:33:53+08:00">2019-05-14</time>
+                <time title="Modified: 2019-06-08 10:18:05" itemprop="dateModified" datetime="2019-06-08T10:18:05+08:00">2019-06-08</time>
               
             
           </span>
@@ -509,8 +509,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>DNN can remember entire data which are <strong>labeled randomly</strong></li>
 <li>DNN has more <strong>parameters</strong> than the number of <strong>training example</strong></li>
 <li>Poor performance when <strong>overfit noise</strong></li>
@@ -528,30 +528,30 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/2.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2><ol>
+<h2 id="1-2-Step"><a href="#1-2-Step" class="headerlink" title="1.2. Step"></a>1.2. Step</h2><ol>
 <li><strong>pretrain MentorNet</strong> to approximate <strong>predefined weighting specified</strong> in labeled data</li>
 <li><strong>finetune MentorNet</strong> on the third <strong>clean label dataset</strong></li>
 <li><strong>train StudenNet using fixed MentorNet</strong></li>
 <li><strong>StudenNet</strong> make <strong>prediction without MentorNet</strong></li>
 </ol>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Model-Regularizer"><a href="#Model-Regularizer" class="headerlink" title="Model Regularizer"></a>Model Regularizer</h3><ul>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><h3 id="1-3-1-Model-Regularizer"><a href="#1-3-1-Model-Regularizer" class="headerlink" title="1.3.1. Model Regularizer"></a>1.3.1. Model Regularizer</h3><ul>
 <li>less effective on corrupted label.</li>
 <li>weight decay</li>
 <li>data augmentation</li>
 <li>dropout</li>
 </ul>
-<h3 id="Data-Regularizer"><a href="#Data-Regularizer" class="headerlink" title="Data Regularizer"></a>Data Regularizer</h3><p>tackle in the data dimension.</p>
+<h3 id="1-3-2-Data-Regularizer"><a href="#1-3-2-Data-Regularizer" class="headerlink" title="1.3.2. Data Regularizer"></a>1.3.2. Data Regularizer</h3><p>tackle in the data dimension.</p>
 <ul>
 <li>MentorNet.</li>
 <li>foucs on weighting example in corrupted labels.</li>
 <li>can understand and further analyzed existing weighting schemes (self-paced weighting, hard negative mining, focal loss).</li>
 </ul>
-<h3 id="Weight-Schemes"><a href="#Weight-Schemes" class="headerlink" title="Weight Schemes"></a>Weight Schemes</h3><ul>
+<h3 id="1-3-3-Weight-Schemes"><a href="#1-3-3-Weight-Schemes" class="headerlink" title="1.3.3. Weight Schemes"></a>1.3.3. Weight Schemes</h3><ul>
 <li>Curriculum Learning</li>
 <li>Mine hard-negative example</li>
 <li>Training a network using clean data, coupled with a <strong>knowledge graph</strong>, to distill soft logits to the noisy data </li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><p>Goal</p>
+<h2 id="1-4-Model"><a href="#1-4-Model" class="headerlink" title="1.4. Model"></a>1.4. Model</h2><p>Goal</p>
 <ul>
 <li>overcome overfitting by introducing a regularizer to weight example</li>
 <li>alternately minimize w and v (fix one, update another)<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/4.jpg?raw=true" alt><br></div>
@@ -571,7 +571,7 @@
 </li>
 <li><strong>Weight Decay</strong></li>
 </ol>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><ul>
+<h2 id="1-5-Algorithm"><a href="#1-5-Algorithm" class="headerlink" title="1.5. Algorithm"></a>1.5. Algorithm</h2><ul>
 <li>Problems<ul>
 <li><strong>fix v update w</strong>. <strong>wasteful</strong> when v is far away from optimal point</li>
 <li><strong>fix w update v</strong>. matrix v is too large for <strong>memory</strong></li>
@@ -588,36 +588,36 @@
 </ol>
 <p><br></p>
 <hr>
-<h1 id="MentorNet"><a href="#MentorNet" class="headerlink" title="MentorNet"></a>MentorNet</h1><hr>
-<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><ul>
+<h1 id="2-MentorNet"><a href="#2-MentorNet" class="headerlink" title="2. MentorNet"></a>2. MentorNet</h1><hr>
+<h2 id="2-1-Goal"><a href="#2-1-Goal" class="headerlink" title="2.1. Goal"></a>2.1. Goal</h2><ul>
 <li>learn optimal Θ to compute the weight of example</li>
 <li><strong>step</strong>. pretrain - finetune - fix and plug in <strong>Algorithm</strong></li>
 </ul>
-<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/7.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Architecture"><a href="#2-2-Architecture" class="headerlink" title="2.2. Architecture"></a>2.2. Architecture</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/7.jpg?raw=true" alt><br></div>
 
-<h3 id="Input-z"><a href="#Input-z" class="headerlink" title="Input z"></a>Input z</h3><ul>
+<h3 id="2-2-1-Input-z"><a href="#2-2-1-Input-z" class="headerlink" title="2.2.1. Input z"></a>2.2.1. Input z</h3><ul>
 <li>label</li>
 <li>epoch</li>
 <li>absolute loss</li>
 <li>moving average</li>
 </ul>
-<h3 id="Sampling-Layer"><a href="#Sampling-Layer" class="headerlink" title="Sampling Layer"></a>Sampling Layer</h3><ul>
+<h3 id="2-2-2-Sampling-Layer"><a href="#2-2-2-Sampling-Layer" class="headerlink" title="2.2.2. Sampling Layer"></a>2.2.2. Sampling Layer</h3><ul>
 <li>sample the weights v, without replacement, according to the normalized weight distribution</li>
 <li><strong>only perform on trained MentorNet</strong></li>
 <li><strong>sampling rate</strong>. hyperparameter</li>
 </ul>
-<h2 id="Pretraining"><a href="#Pretraining" class="headerlink" title="Pretraining"></a>Pretraining</h2><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul>
+<h2 id="2-3-Pretraining"><a href="#2-3-Pretraining" class="headerlink" title="2.3. Pretraining"></a>2.3. Pretraining</h2><h3 id="2-3-1-Dataset"><a href="#2-3-1-Dataset" class="headerlink" title="2.3.1. Dataset"></a>2.3.1. Dataset</h3><ul>
 <li>enumerate the input space of z, and annotate a weight for each data point</li>
 <li>weight can derived from any weight schemes</li>
 </ul>
-<h3 id="Objective-Function"><a href="#Objective-Function" class="headerlink" title="Objective Function"></a>Objective Function</h3><ul>
+<h3 id="2-3-2-Objective-Function"><a href="#2-3-2-Objective-Function" class="headerlink" title="2.3.2. Objective Function"></a>2.3.2. Objective Function</h3><ul>
 <li>(5). explicit</li>
 <li>(6). converge fast</li>
 <li>converge to the same solution<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/8.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Finetuning"><a href="#Finetuning" class="headerlink" title="Finetuning"></a>Finetuning</h2><p>The weighting schemes may change along with the learning process of StudenNet. </p>
+<h2 id="2-4-Finetuning"><a href="#2-4-Finetuning" class="headerlink" title="2.4. Finetuning"></a>2.4. Finetuning</h2><p>The weighting schemes may change along with the learning process of StudenNet. </p>
 <ul>
 <li><strong>Dataset</strong><ul>
 <li>sample from dataset D</li>
@@ -627,13 +627,13 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Other-network"><a href="#Other-network" class="headerlink" title="Other network"></a>Other network</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Other-network"><a href="#3-1-Other-network" class="headerlink" title="3.1. Other network"></a>3.1. Other network</h2><ul>
 <li>label weight according to different weighting schemes<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/9.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/10.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Other-regularizer"><a href="#Other-regularizer" class="headerlink" title="Other regularizer"></a>Other regularizer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/11.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/12.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Other-regularizer"><a href="#3-2-Other-regularizer" class="headerlink" title="3.2. Other regularizer"></a>3.2. Other regularizer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/11.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/12.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>(b). Weighted loss converge to zero<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/13.jpg?raw=true" alt><br></div>
@@ -641,7 +641,7 @@
 
 </li>
 </ul>
-<h2 id="Representation-of-MentorNet"><a href="#Representation-of-MentorNet" class="headerlink" title="Representation of MentorNet"></a>Representation of MentorNet</h2><ul>
+<h2 id="3-3-Representation-of-MentorNet"><a href="#3-3-Representation-of-MentorNet" class="headerlink" title="3.3. Representation of MentorNet"></a>3.3. Representation of MentorNet</h2><ul>
 <li>similar images have less distance.<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/MentorNet: Regularizing Very Deep Neural Networks on Corrupted Labels/14.jpg?raw=true" alt><br></div>
 
 
@@ -1485,7 +1485,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step"><span class="nav-number">1.2.</span> <span class="nav-text">Step</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Regularizer"><span class="nav-number">1.3.1.</span> <span class="nav-text">Model Regularizer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Regularizer"><span class="nav-number">1.3.2.</span> <span class="nav-text">Data Regularizer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Weight-Schemes"><span class="nav-number">1.3.3.</span> <span class="nav-text">Weight Schemes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.4.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">1.5.</span> <span class="nav-text">Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MentorNet"><span class="nav-number">2.</span> <span class="nav-text">MentorNet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Goal"><span class="nav-number">2.1.</span> <span class="nav-text">Goal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture"><span class="nav-number">2.2.</span> <span class="nav-text">Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Input-z"><span class="nav-number">2.2.1.</span> <span class="nav-text">Input z</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling-Layer"><span class="nav-number">2.2.2.</span> <span class="nav-text">Sampling Layer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pretraining"><span class="nav-number">2.3.</span> <span class="nav-text">Pretraining</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dataset"><span class="nav-number">2.3.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Objective-Function"><span class="nav-number">2.3.2.</span> <span class="nav-text">Objective Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Finetuning"><span class="nav-number">2.4.</span> <span class="nav-text">Finetuning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-network"><span class="nav-number">3.1.</span> <span class="nav-text">Other network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-regularizer"><span class="nav-number">3.2.</span> <span class="nav-text">Other regularizer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Representation-of-MentorNet"><span class="nav-number">3.3.</span> <span class="nav-text">Representation of MentorNet</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Step"><span class="nav-text">1.2. Step</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Model-Regularizer"><span class="nav-text">1.3.1. Model Regularizer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Data-Regularizer"><span class="nav-text">1.3.2. Data Regularizer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-3-Weight-Schemes"><span class="nav-text">1.3.3. Weight Schemes</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Model"><span class="nav-text">1.4. Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Algorithm"><span class="nav-text">1.5. Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-MentorNet"><span class="nav-text">2. MentorNet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Goal"><span class="nav-text">2.1. Goal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Architecture"><span class="nav-text">2.2. Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-Input-z"><span class="nav-text">2.2.1. Input z</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Sampling-Layer"><span class="nav-text">2.2.2. Sampling Layer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Pretraining"><span class="nav-text">2.3. Pretraining</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Dataset"><span class="nav-text">2.3.1. Dataset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-Objective-Function"><span class="nav-text">2.3.2. Objective Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Finetuning"><span class="nav-text">2.4. Finetuning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Other-network"><span class="nav-text">3.1. Other network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Other-regularizer"><span class="nav-text">3.2. Other regularizer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Representation-of-MentorNet"><span class="nav-text">3.3. Representation of MentorNet</span></a></li></ol></li></ol></div>
             
 
           </div>

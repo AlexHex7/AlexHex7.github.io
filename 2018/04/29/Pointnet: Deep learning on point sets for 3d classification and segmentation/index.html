@@ -485,7 +485,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <ul>
 <li>Most method based on 3<strong>D voxel grids</strong> or <strong>collections of images</strong>, unnecessary and computation cost</li>
 <li><strong>Point clounds</strong> are simple and unified structures, invariant to permutations.</li>
@@ -499,16 +499,16 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-1-Contribution"><a href="#1-1-Contribution" class="headerlink" title="1.1. Contribution"></a>1.1. Contribution</h2><ul>
 <li>design <strong>PointNet</strong> for 3D point set</li>
 <li>exploit to <strong>classification</strong>, <strong>segmentation</strong></li>
 <li><strong>empirical</strong> and <strong>theoretical</strong> analysis on <strong>stability and efficiency</strong></li>
 <li>illustrate <strong>3D features</strong> computed by the selected neurons</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Point-Cloud-Feature"><a href="#Point-Cloud-Feature" class="headerlink" title="Point Cloud Feature"></a>Point Cloud Feature</h3><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><h3 id="1-2-1-Point-Cloud-Feature"><a href="#1-2-1-Point-Cloud-Feature" class="headerlink" title="1.2.1. Point Cloud Feature"></a>1.2.1. Point Cloud Feature</h3><ul>
 <li>handcrafted</li>
 </ul>
-<h3 id="Deep-Learning-on-3D-Data"><a href="#Deep-Learning-on-3D-Data" class="headerlink" title="Deep Learning on 3D Data"></a>Deep Learning on 3D Data</h3><ul>
+<h3 id="1-2-2-Deep-Learning-on-3D-Data"><a href="#1-2-2-Deep-Learning-on-3D-Data" class="headerlink" title="1.2.2. Deep Learning on 3D Data"></a>1.2.2. Deep Learning on 3D Data</h3><ul>
 <li>Volumetric CNN</li>
 <li>FPNN</li>
 <li>Vote3D</li>
@@ -516,14 +516,14 @@
 <li>Spectral CNN</li>
 <li>Feature-based DNN</li>
 </ul>
-<h3 id="DL-on-Unordered-Set"><a href="#DL-on-Unordered-Set" class="headerlink" title="DL on Unordered Set"></a>DL on Unordered Set</h3><h2 id="Properties-of-Point-Sets"><a href="#Properties-of-Point-Sets" class="headerlink" title="Properties of Point Sets"></a>Properties of Point Sets</h2><ul>
+<h3 id="1-2-3-DL-on-Unordered-Set"><a href="#1-2-3-DL-on-Unordered-Set" class="headerlink" title="1.2.3. DL on Unordered Set"></a>1.2.3. DL on Unordered Set</h3><h2 id="1-3-Properties-of-Point-Sets"><a href="#1-3-Properties-of-Point-Sets" class="headerlink" title="1.3. Properties of Point Sets"></a>1.3. Properties of Point Sets</h2><ul>
 <li><strong>Unorderd</strong>. Invariant to permutation</li>
 <li><strong>Interaction among points</strong>.  neighbouring points form a meaningful subset</li>
 <li><strong>Invariant under transformation.</strong> not modify the global point cloud category and segmentation of the points.</li>
 </ul>
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/2.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Network"><a href="#1-4-Network" class="headerlink" title="1.4. Network"></a>1.4. Network</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/2.jpg?raw=true" alt><br></div>
 
-<h3 id="Three-key-modules"><a href="#Three-key-modules" class="headerlink" title="Three key modules"></a>Three key modules</h3><ul>
+<h3 id="1-4-1-Three-key-modules"><a href="#1-4-1-Three-key-modules" class="headerlink" title="1.4.1. Three key modules"></a>1.4.1. Three key modules</h3><ul>
 <li><strong>maxpooling –&gt; unordered</strong></li>
 <li><strong>a local and global information combination structure</strong><br>Segmentation requires a combination of local and global knowledge.</li>
 <li><strong>two joint alignment networks</strong><br>Transformation matrix in the feature space has much higher dimension (64*64) which greatly increase the difficulty of optimization.  So constrain it to be close to orthogonal matrix<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/3.jpg?raw=true" alt><br></div>
@@ -531,7 +531,7 @@
 
 </li>
 </ul>
-<h2 id="Formulation"><a href="#Formulation" class="headerlink" title="Formulation"></a>Formulation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/4.jpg?raw=true" alt><br></div>
+<h2 id="1-5-Formulation"><a href="#1-5-Formulation" class="headerlink" title="1.5. Formulation"></a>1.5. Formulation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>using <strong>g (maxpooling + single variable function)</strong> and <strong>h (MLP)</strong> to approximate <strong>f</strong>, so</li>
@@ -547,34 +547,34 @@
 </li>
 <li>critical point set only c<strong>ontains a bounded number of points</strong> (at most each K points contribute to one dimension of  K dimensions global feature)</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-6-Dataset"><a href="#1-6-Dataset" class="headerlink" title="1.6. Dataset"></a>1.6. Dataset</h2><ul>
 <li><strong>Classification</strong>. ModelNet40</li>
 <li><strong>Part Segmentation</strong>. ShapeNet part dataset</li>
 <li><strong>Semantic Segmentation</strong>. Stanford 3D semantic parsing dataset</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><ul>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Classification"><a href="#2-1-Classification" class="headerlink" title="2.1. Classification"></a>2.1. Classification</h2><ul>
 <li>uniformly <strong>sample 1024 points on mesh faces</strong> according to face area and <strong>normalize them into a unit sphere</strong><div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/7.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Part-Segmentation"><a href="#Part-Segmentation" class="headerlink" title="Part Segmentation"></a>Part Segmentation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/8.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Part-Segmentation"><a href="#2-2-Part-Segmentation" class="headerlink" title="2.2. Part Segmentation"></a>2.2. Part Segmentation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Semantic-Segmentation-amp-Detection"><a href="#Semantic-Segmentation-amp-Detection" class="headerlink" title="Semantic Segmentation &amp; Detection"></a>Semantic Segmentation &amp; Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/9.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Semantic-Segmentation-amp-Detection"><a href="#2-3-Semantic-Segmentation-amp-Detection" class="headerlink" title="2.3. Semantic Segmentation &amp; Detection"></a>2.3. Semantic Segmentation &amp; Detection</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>baseline</strong>. handcrafted point features</li>
 </ul>
-<h2 id="Order-Invariant-Methods"><a href="#Order-Invariant-Methods" class="headerlink" title="Order-Invariant Methods"></a>Order-Invariant Methods</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/10.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Order-Invariant-Methods"><a href="#2-4-Order-Invariant-Methods" class="headerlink" title="2.4. Order-Invariant Methods"></a>2.4. Order-Invariant Methods</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/10.jpg?raw=true" alt><br></div>
 
-<h2 id="Alignment"><a href="#Alignment" class="headerlink" title="Alignment"></a>Alignment</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/11.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Alignment"><a href="#2-5-Alignment" class="headerlink" title="2.5. Alignment"></a>2.5. Alignment</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/11.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Robust"><a href="#Robust" class="headerlink" title="Robust"></a>Robust</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/12.jpg?raw=true" alt><br></div>
+<h2 id="2-6-Robust"><a href="#2-6-Robust" class="headerlink" title="2.6. Robust"></a>2.6. Robust</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/12.jpg?raw=true" alt><br></div>
 
-<h2 id="Time-and-Space"><a href="#Time-and-Space" class="headerlink" title="Time and Space"></a>Time and Space</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/13.jpg?raw=true" alt><br></div>
+<h2 id="2-7-Time-and-Space"><a href="#2-7-Time-and-Space" class="headerlink" title="2.7. Time and Space"></a>2.7. Time and Space</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Pointnet: Deep learning on point sets for 3d classification and segmentation/13.jpg?raw=true" alt><br></div>
 
 
 
@@ -1417,7 +1417,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.1.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Point-Cloud-Feature"><span class="nav-number">1.2.1.</span> <span class="nav-text">Point Cloud Feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deep-Learning-on-3D-Data"><span class="nav-number">1.2.2.</span> <span class="nav-text">Deep Learning on 3D Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DL-on-Unordered-Set"><span class="nav-number">1.2.3.</span> <span class="nav-text">DL on Unordered Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties-of-Point-Sets"><span class="nav-number">1.3.</span> <span class="nav-text">Properties of Point Sets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">1.4.</span> <span class="nav-text">Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-key-modules"><span class="nav-number">1.4.1.</span> <span class="nav-text">Three key modules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formulation"><span class="nav-number">1.5.</span> <span class="nav-text">Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.6.</span> <span class="nav-text">Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification"><span class="nav-number">2.1.</span> <span class="nav-text">Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-Segmentation"><span class="nav-number">2.2.</span> <span class="nav-text">Part Segmentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Semantic-Segmentation-amp-Detection"><span class="nav-number">2.3.</span> <span class="nav-text">Semantic Segmentation &amp; Detection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Order-Invariant-Methods"><span class="nav-number">2.4.</span> <span class="nav-text">Order-Invariant Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alignment"><span class="nav-number">2.5.</span> <span class="nav-text">Alignment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robust"><span class="nav-number">2.6.</span> <span class="nav-text">Robust</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Time-and-Space"><span class="nav-number">2.7.</span> <span class="nav-text">Time and Space</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Contribution"><span class="nav-text">1.1. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Point-Cloud-Feature"><span class="nav-text">1.2.1. Point Cloud Feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Deep-Learning-on-3D-Data"><span class="nav-text">1.2.2. Deep Learning on 3D Data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-DL-on-Unordered-Set"><span class="nav-text">1.2.3. DL on Unordered Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Properties-of-Point-Sets"><span class="nav-text">1.3. Properties of Point Sets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Network"><span class="nav-text">1.4. Network</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-Three-key-modules"><span class="nav-text">1.4.1. Three key modules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Formulation"><span class="nav-text">1.5. Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Dataset"><span class="nav-text">1.6. Dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Classification"><span class="nav-text">2.1. Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Part-Segmentation"><span class="nav-text">2.2. Part Segmentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Semantic-Segmentation-amp-Detection"><span class="nav-text">2.3. Semantic Segmentation &amp; Detection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Order-Invariant-Methods"><span class="nav-text">2.4. Order-Invariant Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Alignment"><span class="nav-text">2.5. Alignment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Robust"><span class="nav-text">2.6. Robust</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Time-and-Space"><span class="nav-text">2.7. Time and Space</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -486,7 +486,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper,</p>
 <ul>
 <li>adaptive DenseNet</li>
@@ -495,28 +495,28 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
-<h2 id="Adaptive-DenseNet"><a href="#Adaptive-DenseNet" class="headerlink" title="Adaptive DenseNet"></a>Adaptive DenseNet</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/1.jpg?raw=true" alt><br></div>
+<h1 id="2-Architecture"><a href="#2-Architecture" class="headerlink" title="2. Architecture"></a>2. Architecture</h1><hr>
+<h2 id="2-1-Adaptive-DenseNet"><a href="#2-1-Adaptive-DenseNet" class="headerlink" title="2.1. Adaptive DenseNet"></a>2.1. Adaptive DenseNet</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>remove</strong> avg pooling from <strong>the third transition layer</strong></li>
 <li><strong>dilated</strong> all kernels in the <strong>fourth dense block</strong></li>
 <li>output 14x14</li>
 </ul>
-<h2 id="Bridging-Layer"><a href="#Bridging-Layer" class="headerlink" title="Bridging Layer"></a>Bridging Layer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/2.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Bridging-Layer"><a href="#2-2-Bridging-Layer" class="headerlink" title="2.2. Bridging Layer"></a>2.2. Bridging Layer</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>transform by 1x1 Conv</li>
 <li>(b, 1664, h, w) – (b, MxC, h, w)</li>
 </ul>
-<h2 id="WSL-Pooling"><a href="#WSL-Pooling" class="headerlink" title="WSL Pooling"></a>WSL Pooling</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/3.jpg?raw=true" alt><br></div>
+<h2 id="2-3-WSL-Pooling"><a href="#2-3-WSL-Pooling" class="headerlink" title="2.3. WSL Pooling"></a>2.3. WSL Pooling</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/3.jpg?raw=true" alt><br></div>
 
-<h3 id="Class-Wise-Pooling"><a href="#Class-Wise-Pooling" class="headerlink" title="Class-Wise Pooling"></a>Class-Wise Pooling</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/4.jpg?raw=true" alt><br></div>
+<h3 id="2-3-1-Class-Wise-Pooling"><a href="#2-3-1-Class-Wise-Pooling" class="headerlink" title="2.3.1. Class-Wise Pooling"></a>2.3.1. Class-Wise Pooling</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>C (b, M, h, w) – C (b, 1, h, w) – (b, C, h, w)</li>
 </ul>
-<h3 id="Spatial-Wise-Pooling"><a href="#Spatial-Wise-Pooling" class="headerlink" title="Spatial-Wise Pooling"></a>Spatial-Wise Pooling</h3><ul>
+<h3 id="2-3-2-Spatial-Wise-Pooling"><a href="#2-3-2-Spatial-Wise-Pooling" class="headerlink" title="2.3.2. Spatial-Wise Pooling"></a>2.3.2. Spatial-Wise Pooling</h3><ul>
 <li>(b, C, h, w) – (b, C, 1, 1)</li>
 <li>during training, <strong>randomly select</strong> from top-k m</li>
 </ul>
@@ -529,14 +529,14 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Dataset"><a href="#3-1-Dataset" class="headerlink" title="3.1. Dataset"></a>3.1. Dataset</h2><ul>
 <li>same as ChestX-ray14 split</li>
 <li>256x256, randomly crop 224x224</li>
 <li>normalize by ImageNet</li>
 <li>test. center crop</li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="3-2-Details"><a href="#3-2-Details" class="headerlink" title="3.2. Details"></a>3.2. Details</h2><ul>
 <li><strong>weighted</strong> BCE</li>
 <li>in each DenseBlock, add <strong>BN and dropout</strong> 0.1</li>
 <li>M = 14</li>
@@ -545,7 +545,7 @@
 <li>α = 1</li>
 <li>heatmap threshold. 0.8 for Cardiomegaly, 0.9 for others</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/7.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Comparison"><a href="#3-3-Comparison" class="headerlink" title="3.3. Comparison"></a>3.3. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/A Weakly Supervised Adaptive DenseNet for Classifying Thoracic Diseases and Identifying Abnormalities/7.jpg?raw=true" alt><br></div>
 
 
 
@@ -1400,7 +1400,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">2.</span> <span class="nav-text">Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaptive-DenseNet"><span class="nav-number">2.1.</span> <span class="nav-text">Adaptive DenseNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bridging-Layer"><span class="nav-number">2.2.</span> <span class="nav-text">Bridging Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSL-Pooling"><span class="nav-number">2.3.</span> <span class="nav-text">WSL Pooling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Class-Wise-Pooling"><span class="nav-number">2.3.1.</span> <span class="nav-text">Class-Wise Pooling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spatial-Wise-Pooling"><span class="nav-number">2.3.2.</span> <span class="nav-text">Spatial-Wise Pooling</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.2.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.3.</span> <span class="nav-text">Comparison</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Architecture"><span class="nav-text">2. Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Adaptive-DenseNet"><span class="nav-text">2.1. Adaptive DenseNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Bridging-Layer"><span class="nav-text">2.2. Bridging Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-WSL-Pooling"><span class="nav-text">2.3. WSL Pooling</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Class-Wise-Pooling"><span class="nav-text">2.3.1. Class-Wise Pooling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-Spatial-Wise-Pooling"><span class="nav-text">2.3.2. Spatial-Wise Pooling</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Dataset"><span class="nav-text">3.1. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Details"><span class="nav-text">3.2. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Comparison"><span class="nav-text">3.3. Comparison</span></a></li></ol></li></ol></div>
             
 
           </div>

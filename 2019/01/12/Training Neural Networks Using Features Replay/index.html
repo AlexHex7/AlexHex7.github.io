@@ -491,8 +491,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>the computational time of the <strong>backward pass</strong> is about <strong>twice</strong> of the computational time of the <strong>forward pass</strong></li>
 <li>existing methods removing backward locking work <strong>poorly when DNN is deep</strong></li>
 </ul>
@@ -505,10 +505,10 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><hr>
+<h1 id="2-Algorithm"><a href="#2-Algorithm" class="headerlink" title="2. Algorithm"></a>2. Algorithm</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Formulation"><a href="#Formulation" class="headerlink" title="Formulation"></a>Formulation</h2><ul>
+<h2 id="2-1-Formulation"><a href="#2-1-Formulation" class="headerlink" title="2.1. Formulation"></a>2.1. Formulation</h2><ul>
 <li><p>parallel-objective loss function</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/2.jpg?raw=true" alt><br></div>
 </li>
@@ -517,33 +517,33 @@
 
 </li>
 </ul>
-<h2 id="Breaking-Dependency"><a href="#Breaking-Dependency" class="headerlink" title="Breaking Dependency"></a>Breaking Dependency</h2><h3 id="New-Formulation"><a href="#New-Formulation" class="headerlink" title="New Formulation"></a>New Formulation</h3><ul>
+<h2 id="2-2-Breaking-Dependency"><a href="#2-2-Breaking-Dependency" class="headerlink" title="2.2. Breaking Dependency"></a>2.2. Breaking Dependency</h2><h3 id="2-2-1-New-Formulation"><a href="#2-2-1-New-Formulation" class="headerlink" title="2.2.1. New Formulation"></a>2.2.1. New Formulation</h3><ul>
 <li>each module is <strong>independent</strong> and <strong>updated at the same time</strong></li>
 <li>module k keeps a <strong>history</strong> of its input with <strong>size K-k+1</strong><div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/4.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h3 id="Approximation"><a href="#Approximation" class="headerlink" title="Approximation"></a>Approximation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/5.jpg?raw=true" alt><br></div>
+<h3 id="2-2-2-Approximation"><a href="#2-2-2-Approximation" class="headerlink" title="2.2.2. Approximation"></a>2.2.2. Approximation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/5.jpg?raw=true" alt><br></div>
 
-<h3 id="Gradient-inside-Each-Module"><a href="#Gradient-inside-Each-Module" class="headerlink" title="Gradient inside Each Module"></a>Gradient inside Each Module</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/6.jpg?raw=true" alt><br></div>
+<h3 id="2-2-3-Gradient-inside-Each-Module"><a href="#2-2-3-Gradient-inside-Each-Module" class="headerlink" title="2.2.3. Gradient inside Each Module"></a>2.2.3. Gradient inside Each Module</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/6.jpg?raw=true" alt><br></div>
 
-<h3 id="Pass-Gradient"><a href="#Pass-Gradient" class="headerlink" title="Pass Gradient"></a>Pass Gradient</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/7.jpg?raw=true" alt><br></div>
+<h3 id="2-2-4-Pass-Gradient"><a href="#2-2-4-Pass-Gradient" class="headerlink" title="2.2.4. Pass Gradient"></a>2.2.4. Pass Gradient</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>module k sends to the <strong>gradient below</strong> module k-1 for the computation of the next iteration</li>
 </ul>
-<h2 id="Procedure"><a href="#Procedure" class="headerlink" title="Procedure"></a>Procedure</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/9.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Procedure"><a href="#2-3-Procedure" class="headerlink" title="2.3. Procedure"></a>2.3. Procedure</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/9.jpg?raw=true" alt><br></div>
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Implementations"><a href="#Implementations" class="headerlink" title="Implementations"></a>Implementations</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Implementations"><a href="#3-1-Implementations" class="headerlink" title="3.1. Implementations"></a>3.1. Implementations</h2><ul>
 <li>CIFAR-10 and CIFAR-100</li>
 <li>ResNet</li>
 <li>random <strong>cropping</strong>, random horizontal <strong>flipping</strong> and normalizing</li>
 <li><strong>K modules is distributed across K GPUs</strong></li>
 </ul>
-<h2 id="Sufficient-Direction-Constant-σ"><a href="#Sufficient-Direction-Constant-σ" class="headerlink" title="Sufficient Direction Constant σ"></a>Sufficient Direction Constant σ</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/10.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Sufficient-Direction-Constant-σ"><a href="#3-2-Sufficient-Direction-Constant-σ" class="headerlink" title="3.2. Sufficient Direction Constant σ"></a>3.2. Sufficient Direction Constant σ</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/10.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>divide ResNet164 and ResNet101 into 4 modules<ul>
@@ -554,10 +554,10 @@
 <li><strong>small σ at early epochs</strong>. help method <strong>escape</strong> from <strong>saddle points</strong> and find better local minimum </li>
 <li><strong>large σ at final epochs</strong>. <strong>prevent</strong> method from <strong>diverging</strong></li>
 </ul>
-<h2 id="Memory-Consumption"><a href="#Memory-Consumption" class="headerlink" title="Memory Consumption"></a>Memory Consumption</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/11.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Memory-Consumption"><a href="#3-3-Memory-Consumption" class="headerlink" title="3.3. Memory Consumption"></a>3.3. Memory Consumption</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/11.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Generalization"><a href="#Generalization" class="headerlink" title="Generalization"></a>Generalization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/12.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Generalization"><a href="#3-4-Generalization" class="headerlink" title="3.4. Generalization"></a>3.4. Generalization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Training Neural Networks Using Features Replay/12.jpg?raw=true" alt><br></div>
 
 
 
@@ -1427,7 +1427,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Formulation"><span class="nav-number">2.1.</span> <span class="nav-text">Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Breaking-Dependency"><span class="nav-number">2.2.</span> <span class="nav-text">Breaking Dependency</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#New-Formulation"><span class="nav-number">2.2.1.</span> <span class="nav-text">New Formulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Approximation"><span class="nav-number">2.2.2.</span> <span class="nav-text">Approximation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradient-inside-Each-Module"><span class="nav-number">2.2.3.</span> <span class="nav-text">Gradient inside Each Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pass-Gradient"><span class="nav-number">2.2.4.</span> <span class="nav-text">Pass Gradient</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Procedure"><span class="nav-number">2.3.</span> <span class="nav-text">Procedure</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Implementations"><span class="nav-number">3.1.</span> <span class="nav-text">Implementations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sufficient-Direction-Constant-σ"><span class="nav-number">3.2.</span> <span class="nav-text">Sufficient Direction Constant σ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-Consumption"><span class="nav-number">3.3.</span> <span class="nav-text">Memory Consumption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generalization"><span class="nav-number">3.4.</span> <span class="nav-text">Generalization</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Algorithm"><span class="nav-text">2. Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Formulation"><span class="nav-text">2.1. Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Breaking-Dependency"><span class="nav-text">2.2. Breaking Dependency</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-1-New-Formulation"><span class="nav-text">2.2.1. New Formulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-2-Approximation"><span class="nav-text">2.2.2. Approximation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-3-Gradient-inside-Each-Module"><span class="nav-text">2.2.3. Gradient inside Each Module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-4-Pass-Gradient"><span class="nav-text">2.2.4. Pass Gradient</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Procedure"><span class="nav-text">2.3. Procedure</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Implementations"><span class="nav-text">3.1. Implementations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Sufficient-Direction-Constant-σ"><span class="nav-text">3.2. Sufficient Direction Constant σ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Memory-Consumption"><span class="nav-text">3.3. Memory Consumption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Generalization"><span class="nav-text">3.4. Generalization</span></a></li></ol></li></ol></div>
             
 
           </div>

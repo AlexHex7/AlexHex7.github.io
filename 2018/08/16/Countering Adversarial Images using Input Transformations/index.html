@@ -482,7 +482,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it investigates strategies that defend against adversarial-example attacks on <strong>image-classification</strong> system by <strong>transformation</strong></p>
 <ul>
 <li>bit-depth reduction</li>
@@ -493,10 +493,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><h3 id="Model-Specific-Strategy"><a href="#Model-Specific-Strategy" class="headerlink" title="Model-Specific Strategy"></a>Model-Specific Strategy</h3><ul>
+<h2 id="1-1-Related-Works"><a href="#1-1-Related-Works" class="headerlink" title="1.1. Related Works"></a>1.1. Related Works</h2><h3 id="1-1-1-Model-Specific-Strategy"><a href="#1-1-1-Model-Specific-Strategy" class="headerlink" title="1.1.1. Model-Specific Strategy"></a>1.1.1. Model-Specific Strategy</h3><ul>
 <li>enforce model properties. invariance and smoothness</li>
 </ul>
-<h3 id="Model-Agnostic"><a href="#Model-Agnostic" class="headerlink" title="Model-Agnostic"></a>Model-Agnostic</h3><ul>
+<h3 id="1-1-2-Model-Agnostic"><a href="#1-1-2-Model-Agnostic" class="headerlink" title="1.1.2. Model-Agnostic"></a>1.1.2. Model-Agnostic</h3><ul>
 <li>remove adversarial perturbation from input<ul>
 <li>JPEG compression</li>
 <li>image re-scaling</li>
@@ -511,7 +511,7 @@
 
 </li>
 </ul>
-<h2 id="Type-of-Attack"><a href="#Type-of-Attack" class="headerlink" title="Type of Attack"></a>Type of Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/3.jpg?raw=true" alt><br></div>
+<h2 id="1-2-Type-of-Attack"><a href="#1-2-Type-of-Attack" class="headerlink" title="1.2. Type of Attack"></a>1.2. Type of Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/3.jpg?raw=true" alt><br></div>
 
 <ol>
 <li><strong>Model A</strong>. trained on clean image</li>
@@ -523,19 +523,19 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Defence"><a href="#Defence" class="headerlink" title="Defence"></a>Defence</h1><hr>
+<h1 id="2-Defence"><a href="#2-Defence" class="headerlink" title="2. Defence"></a>2. Defence</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Image-Cropping-Rescaling"><a href="#Image-Cropping-Rescaling" class="headerlink" title="Image Cropping-Rescaling"></a>Image Cropping-Rescaling</h2><ul>
+<h2 id="2-1-Image-Cropping-Rescaling"><a href="#2-1-Image-Cropping-Rescaling" class="headerlink" title="2.1. Image Cropping-Rescaling"></a>2.1. Image Cropping-Rescaling</h2><ul>
 <li>alter the spatial positioning of adversarial perturbation</li>
 <li>crop and rescale images at training time</li>
 <li>average prediction over random image crops</li>
 </ul>
-<h2 id="Bit-Depth-Reduction"><a href="#Bit-Depth-Reduction" class="headerlink" title="Bit-Depth Reduction"></a>Bit-Depth Reduction</h2><ul>
+<h2 id="2-2-Bit-Depth-Reduction"><a href="#2-2-Bit-Depth-Reduction" class="headerlink" title="2.2. Bit-Depth Reduction"></a>2.2. Bit-Depth Reduction</h2><ul>
 <li>simple quantization to remove small perturbation</li>
 <li>perform compression at quality level 75</li>
 </ul>
-<h2 id="Total-Variance-Minimization"><a href="#Total-Variance-Minimization" class="headerlink" title="Total Variance Minimization"></a>Total Variance Minimization</h2><ul>
+<h2 id="2-3-Total-Variance-Minimization"><a href="#2-3-Total-Variance-Minimization" class="headerlink" title="2.3. Total Variance Minimization"></a>2.3. Total Variance Minimization</h2><ul>
 <li><p>combine with pixel dropout</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/5.jpg?raw=true" alt><br></div>
 </li>
@@ -545,38 +545,38 @@
 <li><p>use total variance minimization to construct image z</p>
 </li>
 </ul>
-<h2 id="Image-Quilting"><a href="#Image-Quilting" class="headerlink" title="Image Quilting"></a>Image Quilting</h2><ul>
+<h2 id="2-4-Image-Quilting"><a href="#2-4-Image-Quilting" class="headerlink" title="2.4. Image Quilting"></a>2.4. Image Quilting</h2><ul>
 <li>synthesize images by piecing together small patches that are taken from a database of image patches</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Setting"><a href="#3-1-Setting" class="headerlink" title="3.1. Setting"></a>3.1. Setting</h2><ul>
 <li>pixel dropout rate = 0.5</li>
 <li>λ_{TV} = 0.03</li>
 <li>quilting patch ize 5x5</li>
 </ul>
-<h2 id="Gray-Box"><a href="#Gray-Box" class="headerlink" title="Gray-Box"></a>Gray-Box</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/7.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Gray-Box"><a href="#3-2-Gray-Box" class="headerlink" title="3.2. Gray-Box"></a>3.2. Gray-Box</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>TV and quilting</strong> successful defend against adversarial examples from all four attacks</li>
 <li>quilting severely impact the model’s accuracy on non-adversarial images</li>
 </ul>
-<h3 id="Transformation-at-Training-and-Testing"><a href="#Transformation-at-Training-and-Testing" class="headerlink" title="Transformation at Training and Testing"></a>Transformation at Training and Testing</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/8.jpg?raw=true" alt><br></div>
+<h3 id="3-2-1-Transformation-at-Training-and-Testing"><a href="#3-2-1-Transformation-at-Training-and-Testing" class="headerlink" title="3.2.1. Transformation at Training and Testing"></a>3.2.1. Transformation at Training and Testing</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>bit-depth reduction and JPEG compression are weak defenses</li>
 </ul>
-<h2 id="Black-Box"><a href="#Black-Box" class="headerlink" title="Black-Box"></a>Black-Box</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/9.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Black-Box"><a href="#3-3-Black-Box" class="headerlink" title="3.3. Black-Box"></a>3.3. Black-Box</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/9.jpg?raw=true" alt><br></div>
 
-<h3 id="Ensemble-and-Model-Transfer"><a href="#Ensemble-and-Model-Transfer" class="headerlink" title="Ensemble and Model Transfer"></a>Ensemble and Model Transfer</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/10.jpg?raw=true" alt><br></div>
+<h3 id="3-3-1-Ensemble-and-Model-Transfer"><a href="#3-3-1-Ensemble-and-Model-Transfer" class="headerlink" title="3.3.1. Ensemble and Model Transfer"></a>3.3.1. Ensemble and Model Transfer</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Countering Adversarial Images using Input Transformations/10.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>gain 1~2% in classification accuracy by ensemble</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h1><hr>
+<h1 id="4-Discussion"><a href="#4-Discussion" class="headerlink" title="4. Discussion"></a>4. Discussion</h1><hr>
 <ul>
 <li>randomness is particularly crucial in developing strong defenses</li>
 <li>TV and quilting are stronger defenses than deterministic denoising procedures (bit-depth, JPEG, non-local mean)</li>
@@ -1414,7 +1414,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Works"><span class="nav-number">1.1.</span> <span class="nav-text">Related Works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Specific-Strategy"><span class="nav-number">1.1.1.</span> <span class="nav-text">Model-Specific Strategy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Agnostic"><span class="nav-number">1.1.2.</span> <span class="nav-text">Model-Agnostic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Type-of-Attack"><span class="nav-number">1.2.</span> <span class="nav-text">Type of Attack</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Defence"><span class="nav-number">2.</span> <span class="nav-text">Defence</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Cropping-Rescaling"><span class="nav-number">2.1.</span> <span class="nav-text">Image Cropping-Rescaling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bit-Depth-Reduction"><span class="nav-number">2.2.</span> <span class="nav-text">Bit-Depth Reduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Total-Variance-Minimization"><span class="nav-number">2.3.</span> <span class="nav-text">Total Variance Minimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-Quilting"><span class="nav-number">2.4.</span> <span class="nav-text">Image Quilting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Setting"><span class="nav-number">3.1.</span> <span class="nav-text">Setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gray-Box"><span class="nav-number">3.2.</span> <span class="nav-text">Gray-Box</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformation-at-Training-and-Testing"><span class="nav-number">3.2.1.</span> <span class="nav-text">Transformation at Training and Testing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Black-Box"><span class="nav-number">3.3.</span> <span class="nav-text">Black-Box</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ensemble-and-Model-Transfer"><span class="nav-number">3.3.1.</span> <span class="nav-text">Ensemble and Model Transfer</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discussion"><span class="nav-number">4.</span> <span class="nav-text">Discussion</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Works"><span class="nav-text">1.1. Related Works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-Model-Specific-Strategy"><span class="nav-text">1.1.1. Model-Specific Strategy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-Model-Agnostic"><span class="nav-text">1.1.2. Model-Agnostic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Type-of-Attack"><span class="nav-text">1.2. Type of Attack</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Defence"><span class="nav-text">2. Defence</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Image-Cropping-Rescaling"><span class="nav-text">2.1. Image Cropping-Rescaling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Bit-Depth-Reduction"><span class="nav-text">2.2. Bit-Depth Reduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Total-Variance-Minimization"><span class="nav-text">2.3. Total Variance Minimization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Image-Quilting"><span class="nav-text">2.4. Image Quilting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Setting"><span class="nav-text">3.1. Setting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Gray-Box"><span class="nav-text">3.2. Gray-Box</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-Transformation-at-Training-and-Testing"><span class="nav-text">3.2.1. Transformation at Training and Testing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Black-Box"><span class="nav-text">3.3. Black-Box</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-Ensemble-and-Model-Transfer"><span class="nav-text">3.3.1. Ensemble and Model Transfer</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Discussion"><span class="nav-text">4. Discussion</span></a></li></ol></div>
             
 
           </div>

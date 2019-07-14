@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Vinyals O, Blundell C, Lillicrap T, et al. Matching networks for one shot learning[C]//Advances in neural information processing systems. 2016: 3630-3638.">
-<meta name="keywords" content="Bi-LSTM,Attention LSTM,One-Shot Learning,Matching Net">
+<meta name="keywords" content="One-Shot Learning,Bi-LSTM,Attention LSTM,Matching Net">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(NIPS 2016) Matching Networks for One Shot Learning">
 <meta property="og:url" content="http://yoursite.com/2019/03/26/Matching Networks for One Shot Learning/index.html">
@@ -487,7 +487,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposes <strong>Matching Nets (MN)</strong></p>
 <ul>
 <li>maps a <strong>small</strong> labeled <strong>support set</strong> and an unlabeled example to its label</li>
@@ -495,20 +495,20 @@
 <li>experiments on <strong>vision</strong> (Omniglot, ImageNet) and <strong>language</strong> (Penn Treebank)</li>
 <li>devise new data set. <strong>miniImageNet (60,000 images, 84x84, 100 classes, 600 examples/class)</strong></li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><h3 id="Basic-Formulation"><a href="#Basic-Formulation" class="headerlink" title="Basic Formulation"></a>Basic Formulation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/1.jpg?raw=true" alt><br></div>
+<h2 id="1-1-Model"><a href="#1-1-Model" class="headerlink" title="1.1. Model"></a>1.1. Model</h2><h3 id="1-1-1-Basic-Formulation"><a href="#1-1-1-Basic-Formulation" class="headerlink" title="1.1.1. Basic Formulation"></a>1.1.1. Basic Formulation</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>x_i, y_i.</strong> labeled small support set</li>
 <li><strong>a.</strong> attention mechanism</li>
 </ul>
-<h3 id="Attention-Kernel"><a href="#Attention-Kernel" class="headerlink" title="Attention Kernel"></a>Attention Kernel</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/2.jpg?raw=true" alt><br></div>
+<h3 id="1-1-2-Attention-Kernel"><a href="#1-1-2-Attention-Kernel" class="headerlink" title="1.1.2. Attention Kernel"></a>1.1.2. Attention Kernel</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>g, f</strong>. embedded function</li>
 <li><strong>c</strong>. cosine similarly</li>
 <li><strong>x^</strong>. query image</li>
 </ul>
-<h3 id="Full-Context-Embeddings"><a href="#Full-Context-Embeddings" class="headerlink" title="Full Context Embeddings"></a>Full Context Embeddings</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/3.jpg?raw=true" alt><br></div>
+<h3 id="1-1-3-Full-Context-Embeddings"><a href="#1-1-3-Full-Context-Embeddings" class="headerlink" title="1.1.3. Full Context Embeddings"></a>1.1.3. Full Context Embeddings</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p>bi-LSTM</p>
@@ -520,21 +520,21 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/5.jpg?raw=true" alt><br></div>
 
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/6.jpg?raw=true" alt><br></div>
+<h2 id="1-2-Loss-Function"><a href="#1-2-Loss-Function" class="headerlink" title="1.2. Loss Function"></a>1.2. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/6.jpg?raw=true" alt><br></div>
 
-<h3 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h3><ul>
+<h3 id="1-2-1-Training"><a href="#1-2-1-Training" class="headerlink" title="1.2.1. Training"></a>1.2.1. Training</h3><ul>
 <li>for each <strong>episode</strong>, sample <strong>L labels</strong></li>
 <li>sample <strong>support set S</strong> and <strong>query set B</strong></li>
 </ul>
-<h3 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h3><ul>
+<h3 id="1-2-2-Testing"><a href="#1-2-2-Testing" class="headerlink" title="1.2.2. Testing"></a>1.2.2. Testing</h3><ul>
 <li><strong>know support set S’</strong></li>
 <li><strong>predict</strong> label of <strong>query set B’</strong></li>
 </ul>
-<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><ul>
+<h2 id="1-3-Network"><a href="#1-3-Network" class="headerlink" title="1.3. Network"></a>1.3. Network</h2><ul>
 <li>4 Conv</li>
 <li>[64, 3x3 Conv; BN; ReLU; Maxpool]</li>
 </ul>
-<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><ul>
+<h2 id="1-4-Experiments"><a href="#1-4-Experiments" class="headerlink" title="1.4. Experiments"></a>1.4. Experiments</h2><ul>
 <li><p>Omniglot</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Matching Networks for One Shot Learning/7.jpg?raw=true" alt><br></div>
 </li>
@@ -574,11 +574,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/One-Shot-Learning/" rel="tag"># One-Shot Learning</a>
+          
             <a href="/tags/Bi-LSTM/" rel="tag"># Bi-LSTM</a>
           
             <a href="/tags/Attention-LSTM/" rel="tag"># Attention LSTM</a>
-          
-            <a href="/tags/One-Shot-Learning/" rel="tag"># One-Shot Learning</a>
           
             <a href="/tags/Matching-Net/" rel="tag"># Matching Net</a>
           
@@ -1387,7 +1387,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.1.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Formulation"><span class="nav-number">1.1.1.</span> <span class="nav-text">Basic Formulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention-Kernel"><span class="nav-number">1.1.2.</span> <span class="nav-text">Attention Kernel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Full-Context-Embeddings"><span class="nav-number">1.1.3.</span> <span class="nav-text">Full Context Embeddings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">1.2.</span> <span class="nav-text">Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Training"><span class="nav-number">1.2.1.</span> <span class="nav-text">Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Testing"><span class="nav-number">1.2.2.</span> <span class="nav-text">Testing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">1.3.</span> <span class="nav-text">Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments"><span class="nav-number">1.4.</span> <span class="nav-text">Experiments</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Model"><span class="nav-text">1.1. Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-1-Basic-Formulation"><span class="nav-text">1.1.1. Basic Formulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-2-Attention-Kernel"><span class="nav-text">1.1.2. Attention Kernel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-3-Full-Context-Embeddings"><span class="nav-text">1.1.3. Full Context Embeddings</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Loss-Function"><span class="nav-text">1.2. Loss Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Training"><span class="nav-text">1.2.1. Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Testing"><span class="nav-text">1.2.2. Testing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Network"><span class="nav-text">1.3. Network</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Experiments"><span class="nav-text">1.4. Experiments</span></a></li></ol></li></ol></div>
             
 
           </div>

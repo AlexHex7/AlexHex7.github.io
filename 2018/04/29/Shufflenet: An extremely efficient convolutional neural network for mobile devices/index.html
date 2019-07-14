@@ -481,8 +481,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>the <strong>limitation</strong> of computing power on mobiledevices</li>
 <li><strong>costy dense 1x1 convolutions</strong></li>
 </ul>
@@ -495,38 +495,38 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/1.jpg?raw=true" alt><br></div>
 
 <p>(a) output from a certain channel are only derived from a small fraction of input channel. <strong>block information flow between channel group and weakens representation</strong></p>
-<h2 id="Channel-Shuffle"><a href="#Channel-Shuffle" class="headerlink" title="Channel Shuffle"></a>Channel Shuffle</h2><p>for a <strong>gn</strong> (group, number of each group) feature map</p>
+<h2 id="1-2-Channel-Shuffle"><a href="#1-2-Channel-Shuffle" class="headerlink" title="1.2. Channel Shuffle"></a>1.2. Channel Shuffle</h2><p>for a <strong>gn</strong> (group, number of each group) feature map</p>
 <ul>
 <li><strong>reshape</strong> to gxn</li>
 <li><strong>transpose</strong> nxg</li>
 <li><strong>reshape</strong> to ng</li>
 </ul>
-<h2 id="ShuffleNet-Unit"><a href="#ShuffleNet-Unit" class="headerlink" title="ShuffleNet Unit"></a>ShuffleNet Unit</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/2.jpg?raw=true" alt><br></div>
+<h2 id="1-3-ShuffleNet-Unit"><a href="#1-3-ShuffleNet-Unit" class="headerlink" title="1.3. ShuffleNet Unit"></a>1.3. ShuffleNet Unit</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/3.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Architecture"><a href="#1-4-Architecture" class="headerlink" title="1.4. Architecture"></a>1.4. Architecture</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/3.jpg?raw=true" alt><br></div>
 
-<h2 id="Unit-Comparison"><a href="#Unit-Comparison" class="headerlink" title="Unit Comparison"></a>Unit Comparison</h2><p>for <strong>a point of c channels</strong> feature map, m channels of bottleneck</p>
+<h2 id="1-5-Unit-Comparison"><a href="#1-5-Unit-Comparison" class="headerlink" title="1.5. Unit Comparison"></a>1.5. Unit Comparison</h2><p>for <strong>a point of c channels</strong> feature map, m channels of bottleneck</p>
 <ul>
 <li><strong>ResNet</strong>. 2cm + 9mm</li>
 <li><strong>ResNeXt</strong>. 2cm + 9mm/g</li>
 <li><strong>ShuffleNet</strong>. 2cm/g + 9m<br>ShuffleNet apply <strong>group convolution</strong> to two 1x1 <strong>pointwise convolution.</strong></li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h3><ul>
+<h2 id="1-6-Related-Work"><a href="#1-6-Related-Work" class="headerlink" title="1.6. Related Work"></a>1.6. Related Work</h2><h3 id="1-6-1-Model"><a href="#1-6-1-Model" class="headerlink" title="1.6.1. Model"></a>1.6.1. Model</h3><ul>
 <li>GoogleNet</li>
 <li>SqueezeNet</li>
 <li>SENet</li>
 <li>NASNet</li>
 </ul>
-<h3 id="Group-Convolution"><a href="#Group-Convolution" class="headerlink" title="Group Convolution"></a>Group Convolution</h3><ul>
+<h3 id="1-6-2-Group-Convolution"><a href="#1-6-2-Group-Convolution" class="headerlink" title="1.6.2. Group Convolution"></a>1.6.2. Group Convolution</h3><ul>
 <li><strong>AlexNet</strong>. 50% kernel on first GPU, 50% on second GPU</li>
 <li><strong>ResNeXt</strong></li>
 <li><strong>Xception</strong>. depthwise</li>
 <li>MobileNet. depthwise</li>
 </ul>
-<h3 id="Channel-Shuffle-Operation"><a href="#Channel-Shuffle-Operation" class="headerlink" title="Channel Shuffle Operation"></a>Channel Shuffle Operation</h3><ul>
+<h3 id="1-6-3-Channel-Shuffle-Operation"><a href="#1-6-3-Channel-Shuffle-Operation" class="headerlink" title="1.6.3. Channel Shuffle Operation"></a>1.6.3. Channel Shuffle Operation</h3><ul>
 <li><strong>cuda-convnet</strong>. random sparse convolution layer, equivalent to random channel shuffle + group Conv</li>
 </ul>
-<h3 id="Model-Acceleration"><a href="#Model-Acceleration" class="headerlink" title="Model Acceleration"></a>Model Acceleration</h3><ul>
+<h3 id="1-6-4-Model-Acceleration"><a href="#1-6-4-Model-Acceleration" class="headerlink" title="1.6.4. Model Acceleration"></a>1.6.4. Model Acceleration</h3><ul>
 <li>Pruning connection</li>
 <li>Channel reduction</li>
 <li>Quantization</li>
@@ -537,22 +537,22 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Hyperparameter"><a href="#Hyperparameter" class="headerlink" title="Hyperparameter"></a>Hyperparameter</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/4.jpg?raw=true" alt><br></div>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Hyperparameter"><a href="#2-1-Hyperparameter" class="headerlink" title="2.1. Hyperparameter"></a>2.1. Hyperparameter</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Shuffle-Channel"><a href="#Shuffle-Channel" class="headerlink" title="Shuffle Channel"></a>Shuffle Channel</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/5.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Shuffle-Channel"><a href="#2-2-Shuffle-Channel" class="headerlink" title="2.2. Shuffle Channel"></a>2.2. Shuffle Channel</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>sx</strong>. means the scale of channel, sxs times complexity of 1x.</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/7.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Comparison"><a href="#2-3-Comparison" class="headerlink" title="2.3. Comparison"></a>2.3. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>18 times faster than AlexNet<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/8.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Inference-Time-on-Mobile-Devices"><a href="#Inference-Time-on-Mobile-Devices" class="headerlink" title="Inference Time on Mobile Devices"></a>Inference Time on Mobile Devices</h2><ul>
+<h2 id="2-4-Inference-Time-on-Mobile-Devices"><a href="#2-4-Inference-Time-on-Mobile-Devices" class="headerlink" title="2.4. Inference Time on Mobile Devices"></a>2.4. Inference Time on Mobile Devices</h2><ul>
 <li>Empirically g=3 has a proper trade-off between accuracy and actual inference time<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Shufflenet: An extremely efficient convolutional neural network for mobile devices/9.jpg?raw=true" alt><br></div>
 
 
@@ -1393,7 +1393,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Channel-Shuffle"><span class="nav-number">1.2.</span> <span class="nav-text">Channel Shuffle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ShuffleNet-Unit"><span class="nav-number">1.3.</span> <span class="nav-text">ShuffleNet Unit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Architecture"><span class="nav-number">1.4.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unit-Comparison"><span class="nav-number">1.5.</span> <span class="nav-text">Unit Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.6.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">1.6.1.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Group-Convolution"><span class="nav-number">1.6.2.</span> <span class="nav-text">Group Convolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Channel-Shuffle-Operation"><span class="nav-number">1.6.3.</span> <span class="nav-text">Channel Shuffle Operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-Acceleration"><span class="nav-number">1.6.4.</span> <span class="nav-text">Model Acceleration</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hyperparameter"><span class="nav-number">2.1.</span> <span class="nav-text">Hyperparameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shuffle-Channel"><span class="nav-number">2.2.</span> <span class="nav-text">Shuffle Channel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">2.3.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inference-Time-on-Mobile-Devices"><span class="nav-number">2.4.</span> <span class="nav-text">Inference Time on Mobile Devices</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Channel-Shuffle"><span class="nav-text">1.2. Channel Shuffle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-ShuffleNet-Unit"><span class="nav-text">1.3. ShuffleNet Unit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Architecture"><span class="nav-text">1.4. Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Unit-Comparison"><span class="nav-text">1.5. Unit Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Related-Work"><span class="nav-text">1.6. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-1-Model"><span class="nav-text">1.6.1. Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-2-Group-Convolution"><span class="nav-text">1.6.2. Group Convolution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-3-Channel-Shuffle-Operation"><span class="nav-text">1.6.3. Channel Shuffle Operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-4-Model-Acceleration"><span class="nav-text">1.6.4. Model Acceleration</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Hyperparameter"><span class="nav-text">2.1. Hyperparameter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Shuffle-Channel"><span class="nav-text">2.2. Shuffle Channel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Comparison"><span class="nav-text">2.3. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Inference-Time-on-Mobile-Devices"><span class="nav-text">2.4. Inference Time on Mobile Devices</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -97,7 +97,7 @@
 
 
   <meta name="description" content="Sabour S, Frosst N, Hinton G E. Dynamic routing between capsules[C]//Advances in neural information processing systems. 2017: 3856-3866.">
-<meta name="keywords" content="Classification,Cognitive Neuroscience,CapsulesNet,Image Reconstruction">
+<meta name="keywords" content="Classification,CapsulesNet,Cognitive Neuroscience,Image Reconstruction">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(NIPS 2017) Dynamic Routing Between Capsules">
 <meta property="og:url" content="http://yoursite.com/2017/12/18/Dynamic Routing Between Capsules/index.html">
@@ -491,68 +491,68 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>基于<strong>认知神经科学</strong>领域中<strong>芒卡斯尔</strong>(V.B. Mountcastle)发现的<strong>大脑皮层功能柱结构(功能柱-微柱)</strong>，论文提出<strong>capsule</strong>概念。</p>
-<h2 id="Capsule定义"><a href="#Capsule定义" class="headerlink" title="Capsule定义"></a>Capsule定义</h2><ul>
+<h2 id="1-1-Capsule定义"><a href="#1-1-Capsule定义" class="headerlink" title="1.1. Capsule定义"></a>1.1. Capsule定义</h2><ul>
 <li>Capsule是<strong>一组神经元</strong>，其activity vector表示一个特定实体(entity)类型(object or object part)的实例化参数(instantiation parameters). </li>
 <li>Activity vector的<strong>长度</strong>表示entity存在的<strong>概率</strong>，<strong>方向</strong>表示<strong>instaniation parameters</strong>. </li>
 <li>Instantiation parameters includes pose (position, size, orientation), deformation, velocity (速度), albedo (反照率), hue, texture etc.</li>
 </ul>
-<h2 id="Capsule机制"><a href="#Capsule机制" class="headerlink" title="Capsule机制"></a>Capsule机制</h2><p>L level的activity $capsule_i$ 通过transformation matrices <strong>predict</strong> L+1 level $capsules_j$的<strong>instantiation parameters</strong>. </p>
+<h2 id="1-2-Capsule机制"><a href="#1-2-Capsule机制" class="headerlink" title="1.2. Capsule机制"></a>1.2. Capsule机制</h2><p>L level的activity $capsule_i$ 通过transformation matrices <strong>predict</strong> L+1 level $capsules_j$的<strong>instantiation parameters</strong>. </p>
 <p>当多个predictions agree, L+1层中某个$capsule_j$ become active. (即高层$capsule_j$代表了低层$capsule_i$的组合，如数字2的多个低层特征由多个$capsule_i$表示，同时满足这些特征时，某个代表这些特征组合的高层$capsule_j$被激活)</p>
 <p>在CapsNet中使用了<strong>iterative routing-by-agreement</strong>机制：对于L+1 level中某个$capsule_j$的 activity vectors ($v_j$)和L level中的一个$capsule_i$对其作出的prediction ($\hat{u_{j|i}}$)而言，两者scalar product ($\hat{u_{j|i}} · v_j$)越大, A越倾向于将其output发送给这个$capsule_j$. </p>
 <p>CapsNet在MNIST数据集上优于CNN，最高达到99.75%左右。</p>
 <hr>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><hr>
-<h2 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h2><ul>
+<h1 id="2-Introduction"><a href="#2-Introduction" class="headerlink" title="2. Introduction"></a>2. Introduction</h1><hr>
+<h2 id="2-1-假设"><a href="#2-1-假设" class="headerlink" title="2.1. 假设"></a>2.1. 假设</h2><ul>
 <li>假设，人类的多层视觉系统会在每个fixation上建立一个类似<strong>parse tree</strong>的东西。</li>
 <li>假设，对于一个fixation，parse tree可以通过对一个固定的<strong>多层神经网络</strong>carve (类似于<strong>剪枝</strong>)得到。</li>
 </ul>
 <p>每层会被划分为<strong>多个神经元组(capsule)</strong>, parse tree中每个node都会对应一个active capsule (即parse tree中每个node代表一层神经网络中的<strong>一组神经元</strong>，该组神经元可称为capsule). </p>
 <p>通过iterative routing机制，每个active capsule都会选择上一层中的某个capsule作为parent node. 对于higher level视觉系统，iterative routing机制将用于<strong>解决物体部分组合到整体的过程</strong>。</p>
-<h2 id="存在性表示方法"><a href="#存在性表示方法" class="headerlink" title="存在性表示方法"></a>存在性表示方法</h2><ol>
+<h2 id="2-2-存在性表示方法"><a href="#2-2-存在性表示方法" class="headerlink" title="2.2. 存在性表示方法"></a>2.2. 存在性表示方法</h2><ol>
 <li><strong>logistic</strong> unit.</li>
 <li><strong>length</strong> of the vector of instantiation parameters (squashing function, 论文采用).</li>
 </ol>
-<h2 id="Dynamic-Routing"><a href="#Dynamic-Routing" class="headerlink" title="Dynamic Routing"></a>Dynamic Routing</h2><ul>
+<h2 id="2-3-Dynamic-Routing"><a href="#2-3-Dynamic-Routing" class="headerlink" title="2.3. Dynamic Routing"></a>2.3. Dynamic Routing</h2><ul>
 <li>由于capsule输出的是<strong>向量</strong>，用<strong>dynamic routing机制能够确保capsule的输出send to合适的parent node</strong>. </li>
 <li>对于L level的capsule A和L+1 level的capsule B. A首先计算prediction vector (A的output乘以weight matrix), 然后计算prediction vector与B ouput的<strong>scalar product</strong>, 反馈给AB之间的<strong>coupling coefficient</strong>. </li>
 <li>scalar product越大，对AB之间coupling coefficient的反馈越大，即-AB之间的coupling coefficient增加，A与其他parents之间的coupling coefficients减小<strong>(softmax function).</strong></li>
 </ul>
-<h2 id="分割重叠数字"><a href="#分割重叠数字" class="headerlink" title="分割重叠数字"></a>分割重叠数字</h2><ul>
+<h2 id="2-4-分割重叠数字"><a href="#2-4-分割重叠数字" class="headerlink" title="2.4. 分割重叠数字"></a>2.4. 分割重叠数字</h2><ul>
 <li>由于<strong>max pooling</strong>的routing机制会<strong>忽略local pool中大部分active feature detectors</strong>. 而routing by agreement more effective不存在这样的问题，因此能够分割<strong>高度重叠的object</strong>.</li>
 <li>Max pooling <strong>throw away information about the precise position of the entity within the region.</strong></li>
 </ul>
-<h2 id="相比于CNN的改进"><a href="#相比于CNN的改进" class="headerlink" title="相比于CNN的改进"></a>相比于CNN的改进</h2><ul>
+<h2 id="2-5-相比于CNN的改进"><a href="#2-5-相比于CNN的改进" class="headerlink" title="2.5. 相比于CNN的改进"></a>2.5. 相比于CNN的改进</h2><ul>
 <li>使用<strong>vector output capsule</strong>代替CNN中的scalar output feature detectors.</li>
 <li>使用<strong>routing by agreement</strong>代替max pooling.</li>
 </ul>
-<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><ul>
+<h2 id="2-6-Coding"><a href="#2-6-Coding" class="headerlink" title="2.6. Coding"></a>2.6. Coding</h2><ul>
 <li>For <strong>low level</strong> capsules, location information is <strong>place coded</strong> by which capsule is active. </li>
 <li>As we ascend the hierarchy more and more of the positional information is <strong>rate coded</strong> in the real valued components of the output vector of a capsule.</li>
 <li>从place coding到rate coding表明higher level capsule用更高自由度represent更复杂的entities, 即capsule的<strong>维度随着层级的增加而增加</strong>。</li>
 </ul>
 <hr>
-<h1 id="Capsule计算"><a href="#Capsule计算" class="headerlink" title="Capsule计算"></a>Capsule计算</h1><hr>
-<h2 id="Squashing-function"><a href="#Squashing-function" class="headerlink" title="Squashing function"></a>Squashing function</h2><p>(L level $capsule_i$, L+1 level $capsule_j$)</p>
+<h1 id="3-Capsule计算"><a href="#3-Capsule计算" class="headerlink" title="3. Capsule计算"></a>3. Capsule计算</h1><hr>
+<h2 id="3-1-Squashing-function"><a href="#3-1-Squashing-function" class="headerlink" title="3.1. Squashing function"></a>3.1. Squashing function</h2><p>(L level $capsule_i$, L+1 level $capsule_j$)</p>
 <ul>
 <li>使得较短向量长度缩放为0，较长向量长度缩放为1.</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/1.jpg?raw=true" alt><br></div>
 
 <p><strong>$v_j$.</strong> capsule_j的输出向量。<br><strong>$s_j$.</strong> $capsule_j$的总输入向量。 即L level中所有$capsule_is$到L+1 level中特定一个$capsule_j$的<strong>prediction vector加权和。</strong></p>
-<h2 id="Total-input-amp-prediction-vectors"><a href="#Total-input-amp-prediction-vectors" class="headerlink" title="Total input &amp; prediction vectors"></a>Total input &amp; prediction vectors</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/2.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Total-input-amp-prediction-vectors"><a href="#3-2-Total-input-amp-prediction-vectors" class="headerlink" title="3.2. Total input &amp; prediction vectors"></a>3.2. Total input &amp; prediction vectors</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/2.jpg?raw=true" alt><br></div>
 
 <p><strong>$u_i$.</strong> capsule_i的输出向量。<br><strong>$w_{ij}$.</strong> weight matrix.<br><strong>$u_{j|i}$.</strong> prediction value from a $capsule_i$ to a $capsule_j$.<br><strong>$c_{ij}$.</strong> coupling coefficients between a $capsule_i$ and a $capsule_j$.</p>
-<h2 id="Coupling-coefficients"><a href="#Coupling-coefficients" class="headerlink" title="Coupling coefficients"></a>Coupling coefficients</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/3.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Coupling-coefficients"><a href="#3-3-Coupling-coefficients" class="headerlink" title="3.3. Coupling coefficients"></a>3.3. Coupling coefficients</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/3.jpg?raw=true" alt><br></div>
 
 <p><strong>$b_{ij}$.</strong> the log priors probabilities that $capsule_i$ should be coupled to $capsule_j$. 由两个capsule (i和j)的location和type决定，而非当前input image决定。</p>
 <p>通过测量$v_j$和$u_j|i$之间的agreement迭代refine $c_{ij}$.</p>
-<h2 id="Agreement"><a href="#Agreement" class="headerlink" title="Agreement"></a>Agreement</h2><p>This agreement is treated as if it were a log likelihood and is added to the initial logit, $b_{ij}$. </p>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/4.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Agreement"><a href="#3-4-Agreement" class="headerlink" title="3.4. Agreement"></a>3.4. Agreement</h2><p>This agreement is treated as if it were a log likelihood and is added to the initial logit, $b_{ij}$. </p>
+<h2 id="3-5-Algorithm"><a href="#3-5-Algorithm" class="headerlink" title="3.5. Algorithm"></a>3.5. Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/4.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="Margin-Loss"><a href="#Margin-Loss" class="headerlink" title="Margin Loss"></a>Margin Loss</h1><hr>
+<h1 id="4-Margin-Loss"><a href="#4-Margin-Loss" class="headerlink" title="4. Margin Loss"></a>4. Margin Loss</h1><hr>
 <p>SVM损失函数</p>
 <ul>
 <li>$m^{+}=0.9$, $m^{-}=0.1$</li>
@@ -562,15 +562,15 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/5.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="CapsNet结构-Figure-1"><a href="#CapsNet结构-Figure-1" class="headerlink" title="CapsNet结构 (Figure 1)"></a>CapsNet结构 (Figure 1)</h1><hr>
+<h1 id="5-CapsNet结构-Figure-1"><a href="#5-CapsNet结构-Figure-1" class="headerlink" title="5. CapsNet结构 (Figure 1)"></a>5. CapsNet结构 (Figure 1)</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Conv1"><a href="#Conv1" class="headerlink" title="Conv1"></a>Conv1</h2><p>256 kernels, 9x9, 1 stride, ReLu.</p>
+<h2 id="5-1-Conv1"><a href="#5-1-Conv1" class="headerlink" title="5.1. Conv1"></a>5.1. Conv1</h2><p>256 kernels, 9x9, 1 stride, ReLu.</p>
 <ul>
 <li><strong>输入维度</strong> . (batch_size, 1, 28, 28)</li>
 <li><strong>输出维度</strong>. (batch_size, 256, 20, 20)</li>
 </ul>
-<h2 id="PrimaryCapsules"><a href="#PrimaryCapsules" class="headerlink" title="PrimaryCapsules"></a>PrimaryCapsules</h2><ul>
+<h2 id="5-2-PrimaryCapsules"><a href="#5-2-PrimaryCapsules" class="headerlink" title="5.2. PrimaryCapsules"></a>5.2. PrimaryCapsules</h2><ul>
 <li><strong>输入维度</strong> . (batch_size, 256, 20, 20)</li>
 <li><strong>输出维度</strong>. (batch_size, 32, 6, 6, 8)</li>
 </ul>
@@ -579,7 +579,7 @@
 <li>PrimaryCapsules is a convolutional capsule layer, 包含<strong>32个通道</strong>，<strong>每个通道含有一个convolutional 8D capsules</strong>. 即<strong>每个primary capsule包含8个(9x9, 2 stride) conv unit</strong>. </li>
 <li>PrimaryCapsule共有<strong>(32, 6, 6)个capsule输出</strong>，每个输出是一个<strong>8维向量</strong>。 (6x6) grid中的capsule <strong>share weights</strong>，与CCN的卷积核原理相同。<strong>每个capsule输出a grid of vectors</strong>，而不是single vector output.</li>
 </ul>
-<h2 id="DigitCaps"><a href="#DigitCaps" class="headerlink" title="DigitCaps"></a>DigitCaps</h2><ul>
+<h2 id="5-3-DigitCaps"><a href="#5-3-DigitCaps" class="headerlink" title="5.3. DigitCaps"></a>5.3. DigitCaps</h2><ul>
 <li><strong>输入维度</strong>. (batch_size, 32<em>6</em>6,  8)</li>
 <li><p><strong>输出维度</strong>. (batch_size, 10, 16)</p>
 </li>
@@ -588,7 +588,7 @@
 <li>CapsNet中，只在PrimaryCapsules和DigitCaps层之间routing. 由于Conv1输出是1D, <strong>不存在orientation to agree on</strong>, 因此不在Conv1和PrimaryCapsules层之间routing.</li>
 </ul>
 <p>使用<strong>Adam</strong> optimizer, routing logit $b_ij$初始化为0.</p>
-<h2 id="Reconstruction-Figure-2"><a href="#Reconstruction-Figure-2" class="headerlink" title="Reconstruction (Figure 2)"></a>Reconstruction (Figure 2)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/7.jpg?raw=true" alt><br></div>
+<h2 id="5-4-Reconstruction-Figure-2"><a href="#5-4-Reconstruction-Figure-2" class="headerlink" title="5.4. Reconstruction (Figure 2)"></a>5.4. Reconstruction (Figure 2)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>输入维度</strong> . (batch_size, 10*16) 或 (batch_size, 16)</li>
@@ -608,58 +608,58 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/8.jpg?raw=true" alt><br></div>
 
 <hr>
-<h1 id="Capsules-on-MNIST"><a href="#Capsules-on-MNIST" class="headerlink" title="Capsules on MNIST"></a>Capsules on MNIST</h1><hr>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/9.jpg?raw=true" alt><br></div>
+<h1 id="6-Capsules-on-MNIST"><a href="#6-Capsules-on-MNIST" class="headerlink" title="6. Capsules on MNIST"></a>6. Capsules on MNIST</h1><hr>
+<h2 id="6-1-实验结果"><a href="#6-1-实验结果" class="headerlink" title="6.1. 实验结果"></a>6.1. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>使用routing和reconstruction regularizer能够<strong>提升性能</strong>。</li>
 <li>CNN: <strong>24.56M</strong> parameters.</li>
 <li>CapsNet: <strong>11.36M</strong> parameters.</li>
 </ul>
-<h2 id="Capsule单个维度代表的意义-Figure-4"><a href="#Capsule单个维度代表的意义-Figure-4" class="headerlink" title="Capsule单个维度代表的意义 (Figure 4)"></a>Capsule单个维度代表的意义 (Figure 4)</h2><p>variations包括厚度、斜度和宽度。16维中几乎总有一维代表数字的<strong>宽度</strong>，一些维度代表combinations of global variation, 其他一些代表localized part of digit.</p>
+<h2 id="6-2-Capsule单个维度代表的意义-Figure-4"><a href="#6-2-Capsule单个维度代表的意义-Figure-4" class="headerlink" title="6.2. Capsule单个维度代表的意义 (Figure 4)"></a>6.2. Capsule单个维度代表的意义 (Figure 4)</h2><p>variations包括厚度、斜度和宽度。16维中几乎总有一维代表数字的<strong>宽度</strong>，一些维度代表combinations of global variation, 其他一些代表localized part of digit.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/10.jpg?raw=true" alt><br></div>
 
-<h2 id="Robustness-to-Affine-Transformations"><a href="#Robustness-to-Affine-Transformations" class="headerlink" title="Robustness to Affine Transformations"></a>Robustness to Affine Transformations</h2><p>由于<strong>natural variance</strong> in skew, rotation, style, etc in hand written digits, 使用CapsNet具有<strong>健壮性</strong>。</p>
+<h2 id="6-3-Robustness-to-Affine-Transformations"><a href="#6-3-Robustness-to-Affine-Transformations" class="headerlink" title="6.3. Robustness to Affine Transformations"></a>6.3. Robustness to Affine Transformations</h2><p>由于<strong>natural variance</strong> in skew, rotation, style, etc in hand written digits, 使用CapsNet具有<strong>健壮性</strong>。</p>
 <ul>
 <li><strong>训练集 MNIST</strong><br>digit placed randomly on a black background <strong>(平移)</strong>.</li>
 <li><strong>测试集 affNIST</strong><br>MNIST digit with a random small <strong>affine transformation</strong></li>
 </ul>
 <p>CapsNet stop when $train_{acc}=99.23%$, $test_{acc}=79%$.<br>CNN stop when $train_{acc}=99.22%$, $test_{acc}=66%$.</p>
-<h1 id="Segmenting-Highly-Overlapping-Digit"><a href="#Segmenting-Highly-Overlapping-Digit" class="headerlink" title="Segmenting Highly Overlapping Digit"></a>Segmenting Highly Overlapping Digit</h1><hr>
-<h2 id="Routing可看做Attention机制"><a href="#Routing可看做Attention机制" class="headerlink" title="Routing可看做Attention机制"></a>Routing可看做Attention机制</h2><ul>
+<h1 id="7-Segmenting-Highly-Overlapping-Digit"><a href="#7-Segmenting-Highly-Overlapping-Digit" class="headerlink" title="7. Segmenting Highly Overlapping Digit"></a>7. Segmenting Highly Overlapping Digit</h1><hr>
+<h2 id="7-1-Routing可看做Attention机制"><a href="#7-1-Routing可看做Attention机制" class="headerlink" title="7.1. Routing可看做Attention机制"></a>7.1. Routing可看做Attention机制</h2><ul>
 <li>Dynamic routing可以看做是<strong>并行的attention机制</strong>，L+1 level的每个capsule都会attend一些L level的activive capsules，忽略其他的。因此，在<strong>对象重叠的情况下，也能识别多个对象</strong>。</li>
 <li>The <strong>routing by agreement</strong> should make it possible to use a <strong>prior about shape of objects</strong> to help segmentation. </li>
 <li>It should <strong>obviate</strong> the need to make higher level segmentation decisions in the <strong>domain of pixels</strong>.</li>
 </ul>
-<h2 id="MultiMNIST-dataset"><a href="#MultiMNIST-dataset" class="headerlink" title="MultiMNIST dataset"></a>MultiMNIST dataset</h2><ul>
+<h2 id="7-2-MultiMNIST-dataset"><a href="#7-2-MultiMNIST-dataset" class="headerlink" title="7.2. MultiMNIST dataset"></a>7.2. MultiMNIST dataset</h2><ul>
 <li>两张image<strong>各方向移动4个pixel</strong>，构成36x36 image.</li>
 <li>MultiMNIST result shows that <strong>each digit capsule</strong> can <strong>pick up the style and position</strong> from the votes it is receiving from PrimaryCapsules layer.</li>
 <li>选<strong>top 2 length</strong>的capsule分别输入decoder中，得到两张digit images.</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/11.jpg?raw=true" alt><br></div>
 
-<h1 id="Other-Datase"><a href="#Other-Datase" class="headerlink" title="Other Datase"></a>Other Datase</h1><hr>
-<h2 id="CIFAR10-3-channel"><a href="#CIFAR10-3-channel" class="headerlink" title="CIFAR10 (3 channel)"></a>CIFAR10 (3 channel)</h2><ul>
+<h1 id="8-Other-Datase"><a href="#8-Other-Datase" class="headerlink" title="8. Other Datase"></a>8. Other Datase</h1><hr>
+<h2 id="8-1-CIFAR10-3-channel"><a href="#8-1-CIFAR10-3-channel" class="headerlink" title="8.1. CIFAR10 (3 channel)"></a>8.1. CIFAR10 (3 channel)</h2><ul>
 <li>test_acc: 89.4%.</li>
 <li>drawback 由于CIFAR10 image的背景变化太大，很难model合理大小的网络，导致性能较差。</li>
 </ul>
-<h2 id="smallNORB"><a href="#smallNORB" class="headerlink" title="smallNORB"></a>smallNORB</h2><ul>
+<h2 id="8-2-smallNORB"><a href="#8-2-smallNORB" class="headerlink" title="8.2. smallNORB"></a>8.2. smallNORB</h2><ul>
 <li>test_acc: 97.3%.</li>
 </ul>
-<h2 id="SVHN"><a href="#SVHN" class="headerlink" title="SVHN"></a>SVHN</h2><ul>
+<h2 id="8-3-SVHN"><a href="#8-3-SVHN" class="headerlink" title="8.3. SVHN"></a>8.3. SVHN</h2><ul>
 <li>test_acc: 95.7%.</li>
 </ul>
-<h1 id="Discussion-and-previous-work"><a href="#Discussion-and-previous-work" class="headerlink" title="Discussion and previous work"></a>Discussion and previous work</h1><hr>
+<h1 id="9-Discussion-and-previous-work"><a href="#9-Discussion-and-previous-work" class="headerlink" title="9. Discussion and previous work"></a>9. Discussion and previous work</h1><hr>
 <p>Capsule将<strong>pixel intensities</strong>转化为<strong>vectors</strong> of instantiation parameters of <strong>recognized fragments</strong>, 然后对fragments作<strong>transformation matrices</strong>, 进而预测 the instantiation parameters of <strong>larger fragments</strong>.</p>
-<h2 id="CNN不足之处"><a href="#CNN不足之处" class="headerlink" title="CNN不足之处"></a>CNN不足之处</h2><ul>
+<h2 id="9-1-CNN不足之处"><a href="#9-1-CNN不足之处" class="headerlink" title="9.1. CNN不足之处"></a>9.1. CNN不足之处</h2><ul>
 <li>Convolutional nets have <strong>difficulty in generalizing to novel viewpoints</strong>.</li>
 <li>CNN具有<strong>translation (平移)不变性</strong>，但对于<strong>affine transformation</strong> (平移、旋转、缩放和斜切)<strong>不具有</strong>。因此，replicating feature detectors on a grid that grows exponentially with the number of dimensions, 或者指数级增加标注训练集。</li>
 </ul>
-<h2 id="Capsule"><a href="#Capsule" class="headerlink" title="Capsule"></a>Capsule</h2><ul>
+<h2 id="9-2-Capsule"><a href="#9-2-Capsule" class="headerlink" title="9.2. Capsule"></a>9.2. Capsule</h2><ul>
 <li>Capsule作了一个非常强的<strong>假设</strong>：对于image中的each location, a capsule表示至多一个entity的instance.</li>
 <li>Capsule的神经元活动，会<strong>随着viewpoint (视角)的变化而变化(同变性equivariance)</strong>，而不是消除viewpoint带来的影响(如STN网络)。能够同时处理不同object(或object part)上的不同affine transformation.</li>
 </ul>
-<h2 id="Routing-iteration-times"><a href="#Routing-iteration-times" class="headerlink" title="Routing iteration times"></a>Routing iteration times</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/12.jpg?raw=true" alt><br></div>
+<h2 id="9-3-Routing-iteration-times"><a href="#9-3-Routing-iteration-times" class="headerlink" title="9.3. Routing iteration times"></a>9.3. Routing iteration times</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/12.jpg?raw=true" alt><br></div>
 
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dynamic Routing Between Capsules/13.jpg?raw=true" alt><br></div>
 
@@ -687,9 +687,9 @@
           
             <a href="/tags/Classification/" rel="tag"># Classification</a>
           
-            <a href="/tags/Cognitive-Neuroscience/" rel="tag"># Cognitive Neuroscience</a>
-          
             <a href="/tags/CapsulesNet/" rel="tag"># CapsulesNet</a>
+          
+            <a href="/tags/Cognitive-Neuroscience/" rel="tag"># Cognitive Neuroscience</a>
           
             <a href="/tags/Image-Reconstruction/" rel="tag"># Image Reconstruction</a>
           
@@ -1498,7 +1498,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule定义"><span class="nav-number">1.1.</span> <span class="nav-text">Capsule定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule机制"><span class="nav-number">1.2.</span> <span class="nav-text">Capsule机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#假设"><span class="nav-number">2.1.</span> <span class="nav-text">假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存在性表示方法"><span class="nav-number">2.2.</span> <span class="nav-text">存在性表示方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dynamic-Routing"><span class="nav-number">2.3.</span> <span class="nav-text">Dynamic Routing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分割重叠数字"><span class="nav-number">2.4.</span> <span class="nav-text">分割重叠数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相比于CNN的改进"><span class="nav-number">2.5.</span> <span class="nav-text">相比于CNN的改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding"><span class="nav-number">2.6.</span> <span class="nav-text">Coding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capsule计算"><span class="nav-number">3.</span> <span class="nav-text">Capsule计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Squashing-function"><span class="nav-number">3.1.</span> <span class="nav-text">Squashing function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Total-input-amp-prediction-vectors"><span class="nav-number">3.2.</span> <span class="nav-text">Total input &amp; prediction vectors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coupling-coefficients"><span class="nav-number">3.3.</span> <span class="nav-text">Coupling coefficients</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Agreement"><span class="nav-number">3.4.</span> <span class="nav-text">Agreement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">3.5.</span> <span class="nav-text">Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Margin-Loss"><span class="nav-number">4.</span> <span class="nav-text">Margin Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CapsNet结构-Figure-1"><span class="nav-number">5.</span> <span class="nav-text">CapsNet结构 (Figure 1)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Conv1"><span class="nav-number">5.1.</span> <span class="nav-text">Conv1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PrimaryCapsules"><span class="nav-number">5.2.</span> <span class="nav-text">PrimaryCapsules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DigitCaps"><span class="nav-number">5.3.</span> <span class="nav-text">DigitCaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reconstruction-Figure-2"><span class="nav-number">5.4.</span> <span class="nav-text">Reconstruction (Figure 2)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Capsules-on-MNIST"><span class="nav-number">6.</span> <span class="nav-text">Capsules on MNIST</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">6.1.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule单个维度代表的意义-Figure-4"><span class="nav-number">6.2.</span> <span class="nav-text">Capsule单个维度代表的意义 (Figure 4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Robustness-to-Affine-Transformations"><span class="nav-number">6.3.</span> <span class="nav-text">Robustness to Affine Transformations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Segmenting-Highly-Overlapping-Digit"><span class="nav-number">7.</span> <span class="nav-text">Segmenting Highly Overlapping Digit</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Routing可看做Attention机制"><span class="nav-number">7.1.</span> <span class="nav-text">Routing可看做Attention机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MultiMNIST-dataset"><span class="nav-number">7.2.</span> <span class="nav-text">MultiMNIST dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-Datase"><span class="nav-number">8.</span> <span class="nav-text">Other Datase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CIFAR10-3-channel"><span class="nav-number">8.1.</span> <span class="nav-text">CIFAR10 (3 channel)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#smallNORB"><span class="nav-number">8.2.</span> <span class="nav-text">smallNORB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVHN"><span class="nav-number">8.3.</span> <span class="nav-text">SVHN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discussion-and-previous-work"><span class="nav-number">9.</span> <span class="nav-text">Discussion and previous work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN不足之处"><span class="nav-number">9.1.</span> <span class="nav-text">CNN不足之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capsule"><span class="nav-number">9.2.</span> <span class="nav-text">Capsule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Routing-iteration-times"><span class="nav-number">9.3.</span> <span class="nav-text">Routing iteration times</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Capsule定义"><span class="nav-text">1.1. Capsule定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Capsule机制"><span class="nav-text">1.2. Capsule机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Introduction"><span class="nav-text">2. Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-假设"><span class="nav-text">2.1. 假设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-存在性表示方法"><span class="nav-text">2.2. 存在性表示方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Dynamic-Routing"><span class="nav-text">2.3. Dynamic Routing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-分割重叠数字"><span class="nav-text">2.4. 分割重叠数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-相比于CNN的改进"><span class="nav-text">2.5. 相比于CNN的改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Coding"><span class="nav-text">2.6. Coding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Capsule计算"><span class="nav-text">3. Capsule计算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Squashing-function"><span class="nav-text">3.1. Squashing function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Total-input-amp-prediction-vectors"><span class="nav-text">3.2. Total input &amp; prediction vectors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Coupling-coefficients"><span class="nav-text">3.3. Coupling coefficients</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Agreement"><span class="nav-text">3.4. Agreement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Algorithm"><span class="nav-text">3.5. Algorithm</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Margin-Loss"><span class="nav-text">4. Margin Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-CapsNet结构-Figure-1"><span class="nav-text">5. CapsNet结构 (Figure 1)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-Conv1"><span class="nav-text">5.1. Conv1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-PrimaryCapsules"><span class="nav-text">5.2. PrimaryCapsules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-DigitCaps"><span class="nav-text">5.3. DigitCaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-Reconstruction-Figure-2"><span class="nav-text">5.4. Reconstruction (Figure 2)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Capsules-on-MNIST"><span class="nav-text">6. Capsules on MNIST</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-实验结果"><span class="nav-text">6.1. 实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-Capsule单个维度代表的意义-Figure-4"><span class="nav-text">6.2. Capsule单个维度代表的意义 (Figure 4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-Robustness-to-Affine-Transformations"><span class="nav-text">6.3. Robustness to Affine Transformations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Segmenting-Highly-Overlapping-Digit"><span class="nav-text">7. Segmenting Highly Overlapping Digit</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-Routing可看做Attention机制"><span class="nav-text">7.1. Routing可看做Attention机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-MultiMNIST-dataset"><span class="nav-text">7.2. MultiMNIST dataset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Other-Datase"><span class="nav-text">8. Other Datase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-CIFAR10-3-channel"><span class="nav-text">8.1. CIFAR10 (3 channel)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-smallNORB"><span class="nav-text">8.2. smallNORB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-SVHN"><span class="nav-text">8.3. SVHN</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-Discussion-and-previous-work"><span class="nav-text">9. Discussion and previous work</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-CNN不足之处"><span class="nav-text">9.1. CNN不足之处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-Capsule"><span class="nav-text">9.2. Capsule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-Routing-iteration-times"><span class="nav-text">9.3. Routing iteration times</span></a></li></ol></li></ol></div>
             
 
           </div>

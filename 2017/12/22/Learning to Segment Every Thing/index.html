@@ -488,7 +488,7 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <ul>
 <li>使用监督学习方式训练object instance segmentation任务，要求数据集有segmentation mask的标注。由于<strong>mask的标注成本非常高</strong>，现有数据集只有较少mask标注，而物体检测box的标注成本相对较低，现有数据集包含大量box标注。</li>
 <li>因此论文提出一种叫做<strong>partially supervised (transfer learning)</strong>的训练方法，在包含所有box标注和少量mask标注的数据集上训练能够<strong>分割所有box标注对象</strong>的instance segmentation模型。对maks预测和box预测解耦的<strong>Mask R-CNN</strong>结构非常适合用于这种训练方法，论文称网络结果为<strong>Maskx R-CNN</strong>。</li>
@@ -496,17 +496,17 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/1.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/2.jpg?raw=true" alt><br></div>
 
-<h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><ul>
+<h2 id="1-1-思想"><a href="#1-1-思想" class="headerlink" title="1.1. 思想"></a>1.1. 思想</h2><ul>
 <li>在视觉语义空间中，邻近的embedding向量在appearance或semantic上相近。可将box head（最后一层）权重参数和mask head（最后一层）权重参数看作<strong>embedding向量</strong>。同类别的两个向量在<strong>appearance上相似</strong>，因此可利用transfer从box head embedding向量学习出mask head embedding向量。</li>
 <li>利用weight transfer function<strong>基于box权重预测mask权重</strong>，weight transfer function通过<strong>少量mask标注数据</strong>进行学习。由于box权重是针对所有box标注对象而言的，因此transfer后的mask权重也能够针对所有box标注对象， 从而能够<strong>预测数据集中mask标注对象以外的对象</strong>。换而言之，<strong>将category specific信息从box detectors迁移到instance mask predictors.</strong></li>
 </ul>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul>
+<h2 id="1-2-数据集"><a href="#1-2-数据集" class="headerlink" title="1.2. 数据集"></a>1.2. 数据集</h2><ul>
 <li><strong>COCO</strong>. 为了模拟partially supervised instance segmentation, 将数据集分为两部分：使用box标注和mask标注、只使用box标注。</li>
 <li><strong>Visual Genome</strong>. 规模较大，只有box标注信息。</li>
 </ul>
 <hr>
-<h1 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h1><hr>
-<h2 id="训练数据划分"><a href="#训练数据划分" class="headerlink" title="训练数据划分"></a>训练数据划分</h2><ul>
+<h1 id="2-细节"><a href="#2-细节" class="headerlink" title="2. 细节"></a>2. 细节</h1><hr>
+<h2 id="2-1-训练数据划分"><a href="#2-1-训练数据划分" class="headerlink" title="2.1. 训练数据划分"></a>2.1. 训练数据划分</h2><ul>
 <li><strong>C=A∪B</strong><ul>
 <li><strong>C</strong>. 数据集中所有对象类别</li>
 <li><strong>A</strong>. 含有mask标注的对象类别</li>
@@ -514,7 +514,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Weight-Transfer-Function"><a href="#Weight-Transfer-Function" class="headerlink" title="Weight Transfer Function"></a>Weight Transfer Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/3.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Weight-Transfer-Function"><a href="#2-2-Weight-Transfer-Function" class="headerlink" title="2.2. Weight Transfer Function"></a>2.2. Weight Transfer Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/3.jpg?raw=true" alt><br></div>
 
 <ol>
 <li><strong>w_{det}</strong>. box head最后一层中的权重，可看作appearance-based visual embedding</li>
@@ -527,7 +527,7 @@
 <li><strong>w_{box}</strong></li>
 <li><strong>cat(w_{cls}, w_{box})</strong></li>
 </ul>
-<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><p>使用A∪B训练box head，使用A训练mask head和τ. 训练方式可分为两种</p>
+<h2 id="2-3-训练"><a href="#2-3-训练" class="headerlink" title="2.3. 训练"></a>2.3. 训练</h2><p>使用A∪B训练box head，使用A训练mask head和τ. 训练方式可分为两种</p>
 <ol>
 <li><strong>State-wise Training</strong><ul>
 <li>第一阶段只使用A∪B中的box标注训练模型。第二阶段固定conv和box head，使用A中的mask标注训练mask head和τ.</li>
@@ -541,8 +541,8 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/4.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h2><p>Mask R-CNN with class-agnostic FCN mask head.</p>
-<h2 id="扩展：融合FCN-MLP-Mask-Head"><a href="#扩展：融合FCN-MLP-Mask-Head" class="headerlink" title="扩展：融合FCN+MLP Mask Head"></a>扩展：融合FCN+MLP Mask Head</h2><ul>
+<h2 id="2-4-Baseline"><a href="#2-4-Baseline" class="headerlink" title="2.4. Baseline"></a>2.4. Baseline</h2><p>Mask R-CNN with class-agnostic FCN mask head.</p>
+<h2 id="2-5-扩展：融合FCN-MLP-Mask-Head"><a href="#2-5-扩展：融合FCN-MLP-Mask-Head" class="headerlink" title="2.5. 扩展：融合FCN+MLP Mask Head"></a>2.5. 扩展：融合FCN+MLP Mask Head</h2><ul>
 <li>两种mask head互补<ul>
 <li><strong>FCN</strong>. capture detail</li>
 <li><strong>MLP</strong>. capture gist</li>
@@ -551,14 +551,14 @@
 <li>对baseline的FCN和论文transfer模型的FCN进行MLP融合来提高效果</li>
 </ul>
 <hr>
-<h1 id="Experiments-on-COCO"><a href="#Experiments-on-COCO" class="headerlink" title="Experiments on COCO"></a>Experiments on COCO</h1><hr>
+<h1 id="3-Experiments-on-COCO"><a href="#3-Experiments-on-COCO" class="headerlink" title="3. Experiments on COCO"></a>3. Experiments on COCO</h1><hr>
 <ul>
 <li>为了模拟partially supervised训练，将COCO中80个类别分为A(20, 类别包含为VOC数据集中，voc)和B(60, non-voc)</li>
 <li><strong>Oracle Model</strong>. 同时利用A和B中的mask标注进行训练Mask R-CNN</li>
 </ul>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/6.jpg?raw=true" alt><br></div>
+<h2 id="3-1-实验结果"><a href="#3-1-实验结果" class="headerlink" title="3.1. 实验结果"></a>3.1. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablation-Experiments"><a href="#Ablation-Experiments" class="headerlink" title="Ablation Experiments"></a>Ablation Experiments</h2><ul>
+<h2 id="3-2-Ablation-Experiments"><a href="#3-2-Ablation-Experiments" class="headerlink" title="3.2. Ablation Experiments"></a>3.2. Ablation Experiments</h2><ul>
 <li><p><strong>τ的输入</strong></p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/7.jpg?raw=true" alt><br></div>
 </li>
@@ -571,7 +571,7 @@
 </li>
 </ul>
 <hr>
-<h1 id="Experiments-on-Visual-Genome"><a href="#Experiments-on-Visual-Genome" class="headerlink" title="Experiments on Visual Genome"></a>Experiments on Visual Genome</h1><hr>
+<h1 id="4-Experiments-on-Visual-Genome"><a href="#4-Experiments-on-Visual-Genome" class="headerlink" title="4. Experiments on Visual Genome"></a>4. Experiments on Visual Genome</h1><hr>
 <p>使用VG数据集的box标注，COCO数据集的mask标注，由于VG没有mask标注，无法计算AP，因为论文直接可视化结果</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to Segment Every Thing/10.jpg?raw=true" alt><br></div>
 
@@ -1433,7 +1433,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#思想"><span class="nav-number">1.1.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.2.</span> <span class="nav-text">数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#细节"><span class="nav-number">2.</span> <span class="nav-text">细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练数据划分"><span class="nav-number">2.1.</span> <span class="nav-text">训练数据划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Weight-Transfer-Function"><span class="nav-number">2.2.</span> <span class="nav-text">Weight Transfer Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练"><span class="nav-number">2.3.</span> <span class="nav-text">训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Baseline"><span class="nav-number">2.4.</span> <span class="nav-text">Baseline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展：融合FCN-MLP-Mask-Head"><span class="nav-number">2.5.</span> <span class="nav-text">扩展：融合FCN+MLP Mask Head</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments-on-COCO"><span class="nav-number">3.</span> <span class="nav-text">Experiments on COCO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">3.1.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation-Experiments"><span class="nav-number">3.2.</span> <span class="nav-text">Ablation Experiments</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments-on-Visual-Genome"><span class="nav-number">4.</span> <span class="nav-text">Experiments on Visual Genome</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-思想"><span class="nav-text">1.1. 思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-数据集"><span class="nav-text">1.2. 数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-细节"><span class="nav-text">2. 细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-训练数据划分"><span class="nav-text">2.1. 训练数据划分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Weight-Transfer-Function"><span class="nav-text">2.2. Weight Transfer Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-训练"><span class="nav-text">2.3. 训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Baseline"><span class="nav-text">2.4. Baseline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-扩展：融合FCN-MLP-Mask-Head"><span class="nav-text">2.5. 扩展：融合FCN+MLP Mask Head</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments-on-COCO"><span class="nav-text">3. Experiments on COCO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-实验结果"><span class="nav-text">3.1. 实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Ablation-Experiments"><span class="nav-text">3.2. Ablation Experiments</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments-on-Visual-Genome"><span class="nav-text">4. Experiments on Visual Genome</span></a></li></ol></div>
             
 
           </div>

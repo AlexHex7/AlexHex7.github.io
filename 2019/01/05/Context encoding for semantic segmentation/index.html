@@ -487,8 +487,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>recent works exploit <strong>FCN + dilated/atrous Conv</strong> and utilize multi-scale features and refining boundaries</li>
 <li>dilated/atrous Conv <strong>isolates the pixels from the global scene context</strong></li>
 </ul>
@@ -500,40 +500,40 @@
 <li>14 layers network</li>
 <li>extend the <strong>Encoding Layer</strong> to capture global feature statistics for understanding semantic context</li>
 </ul>
-<h2 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h2><p>Is capturing contextual information the same as increasing the receptive filed size?</p>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-2-Question"><a href="#1-2-Question" class="headerlink" title="1.2. Question"></a>1.2. Question</h2><p>Is capturing contextual information the same as increasing the receptive filed size?</p>
+<h2 id="1-3-Contribution"><a href="#1-3-Contribution" class="headerlink" title="1.3. Contribution"></a>1.3. Contribution</h2><ul>
 <li><strong>Context Encoding Module</strong> incorporating <strong>Semantic Encoding Loss</strong> (SE-loss). SE-loss can regularize training, enforce network learning of semantic context</li>
 <li><strong>EncNet</strong>. 3.5M parameters</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Context-Encoding"><a href="#Context-Encoding" class="headerlink" title="Context Encoding"></a>Context Encoding</h2><ul>
+<h2 id="2-1-Context-Encoding"><a href="#2-1-Context-Encoding" class="headerlink" title="2.1. Context Encoding"></a>2.1. Context Encoding</h2><ul>
 <li><strong>encoder semantics</strong>. output of encoding layer</li>
 <li><strong>apply aggregation</strong> instead of concatenation</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/2.jpg?raw=true" alt><br></div>
 
-<h3 id="Feature-Attention"><a href="#Feature-Attention" class="headerlink" title="Feature Attention"></a>Feature Attention</h3><ul>
+<h3 id="2-1-1-Feature-Attention"><a href="#2-1-1-Feature-Attention" class="headerlink" title="2.1.1. Feature Attention"></a>2.1.1. Feature Attention</h3><ul>
 <li>FC + Sigmoid<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/3.jpg?raw=true" alt><br></div>
 
 
 </li>
 </ul>
-<h3 id="SE-Loss"><a href="#SE-Loss" class="headerlink" title="SE-Loss"></a>SE-Loss</h3><ul>
+<h3 id="2-1-2-SE-Loss"><a href="#2-1-2-SE-Loss" class="headerlink" title="2.1.2. SE-Loss"></a>2.1.2. SE-Loss</h3><ul>
 <li>unlike per-pixel loss, SE-loss consider big and small objects equally</li>
 </ul>
-<h2 id="Context-Encoding-Network"><a href="#Context-Encoding-Network" class="headerlink" title="Context Encoding Network"></a>Context Encoding Network</h2><ul>
+<h2 id="2-2-Context-Encoding-Network"><a href="#2-2-Context-Encoding-Network" class="headerlink" title="2.2. Context Encoding Network"></a>2.2. Context Encoding Network</h2><ul>
 <li><strong>pretrained Dilated Residual Network</strong> (dilated strategy at stage 3 and 4)</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/4.jpg?raw=true" alt><br></div>
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Details"><a href="#3-1-Details" class="headerlink" title="3.1. Details"></a>3.1. Details</h2><ul>
 <li><strong>output size 1/8</strong></li>
 <li><strong>bilinear upsample 8 times of prediction</strong></li>
 <li>random shuffle training samples, <strong>discard last mini-batch</strong></li>
@@ -542,9 +542,9 @@
 <li>K = 32</li>
 <li>batchsize 16</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/6.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Comparison"><a href="#3-2-Comparison" class="headerlink" title="3.2. Comparison"></a>3.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablation-Study"><a href="#Ablation-Study" class="headerlink" title="Ablation Study"></a>Ablation Study</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/8.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Ablation-Study"><a href="#3-3-Ablation-Study" class="headerlink" title="3.3. Ablation Study"></a>3.3. Ablation Study</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/7.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Context encoding for semantic segmentation/8.jpg?raw=true" alt><br></div>
 
 
 
@@ -1381,7 +1381,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question"><span class="nav-number">1.2.</span> <span class="nav-text">Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.3.</span> <span class="nav-text">Contribution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Context-Encoding"><span class="nav-number">2.1.</span> <span class="nav-text">Context Encoding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Attention"><span class="nav-number">2.1.1.</span> <span class="nav-text">Feature Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SE-Loss"><span class="nav-number">2.1.2.</span> <span class="nav-text">SE-Loss</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Context-Encoding-Network"><span class="nav-number">2.2.</span> <span class="nav-text">Context Encoding Network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.1.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.2.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation-Study"><span class="nav-number">3.3.</span> <span class="nav-text">Ablation Study</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Question"><span class="nav-text">1.2. Question</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Contribution"><span class="nav-text">1.3. Contribution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Context-Encoding"><span class="nav-text">2.1. Context Encoding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Feature-Attention"><span class="nav-text">2.1.1. Feature Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-SE-Loss"><span class="nav-text">2.1.2. SE-Loss</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Context-Encoding-Network"><span class="nav-text">2.2. Context Encoding Network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Details"><span class="nav-text">3.1. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Comparison"><span class="nav-text">3.2. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Ablation-Study"><span class="nav-text">3.3. Ablation Study</span></a></li></ol></li></ol></div>
             
 
           </div>

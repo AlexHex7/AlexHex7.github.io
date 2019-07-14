@@ -490,27 +490,27 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>现有的去雾方法关注intermediate parameter (transmission map)，并没有将<strong>haze-free image quality</strong>考虑到optimization framework中。而intermediate parameter的估计误差会进一步影响haze-free image的质量。</p>
 <p>因此，论文提出<strong>CANDY</strong> (Conditional Adversarial Networks based Dehazing of hazY images)结构</p>
 <ul>
 <li>First work of <strong>end-to-end</strong> de-hazing to generate haze-free image</li>
 <li>First work of introducing <strong>GAN</strong> for de-hazing</li>
 </ul>
-<h2 id="速度"><a href="#速度" class="headerlink" title="速度"></a>速度</h2><p>On GPU.</p>
+<h2 id="1-1-速度"><a href="#1-1-速度" class="headerlink" title="1.1. 速度"></a>1.1. 速度</h2><p>On GPU.</p>
 <ul>
 <li>256x256. 35ms</li>
 <li>1024x1024. 53ms</li>
 <li>Model size 3MB</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p>估计intermediate parameter，没有将image quality考虑到optimization framework中。</p>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><p>估计intermediate parameter，没有将image quality考虑到optimization framework中。</p>
 <ul>
 <li>DehazeNet</li>
 <li>Multi-scale Net</li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/1.jpg?raw=true" alt><br></div>
+<h2 id="1-3-Model"><a href="#1-3-Model" class="headerlink" title="1.3. Model"></a>1.3. Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/1.jpg?raw=true" alt><br></div>
 
-<h3 id="Generator"><a href="#Generator" class="headerlink" title="Generator"></a>Generator</h3><ul>
+<h3 id="1-3-1-Generator"><a href="#1-3-1-Generator" class="headerlink" title="1.3.1. Generator"></a>1.3.1. Generator</h3><ul>
 <li>6 Conv + 6 Deconv. 3x3 kernel size, 64 channels, 1 stride, 1 padding</li>
 <li>Down-Sampling会导致图片特征丢失</li>
 <li>PReLU</li>
@@ -518,11 +518,11 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/2.jpg?raw=true" alt><br></div>
 
 
-<h3 id="Discriminator"><a href="#Discriminator" class="headerlink" title="Discriminator"></a>Discriminator</h3><ul>
+<h3 id="1-3-2-Discriminator"><a href="#1-3-2-Discriminator" class="headerlink" title="1.3.2. Discriminator"></a>1.3.2. Discriminator</h3><ul>
 <li><strong>7 Conv</strong>. 3x3, 2s, 1p, double channel</li>
 <li><strong>Leaky ReLU. λ=0.2</strong></li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/3.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Loss-Function"><a href="#1-4-Loss-Function" class="headerlink" title="1.4. Loss Function"></a>1.4. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/3.jpg?raw=true" alt><br></div>
 
 
 <ul>
@@ -543,7 +543,7 @@
 <li>16(relu3_3)</li>
 <li>23(relu4_3)</li>
 </ul>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ol>
+<h2 id="1-5-数据集"><a href="#1-5-数据集" class="headerlink" title="1.5. 数据集"></a>1.5. 数据集</h2><ol>
 <li>Make3D Depth</li>
 <li>BSDS500</li>
 <li>MeddleBury</li>
@@ -553,26 +553,26 @@
 <li>论文使用CVPR 2015的single image depth estimation方法<strong>估计图片的depth</strong></li>
 <li><strong>α = [k, k, k], k ∈ [0.7, 1], β ∈ [0.5, 1.5]</strong></li>
 </ul>
-<h3 id="Training-Set"><a href="#Training-Set" class="headerlink" title="Training Set"></a>Training Set</h3><ul>
+<h3 id="1-5-1-Training-Set"><a href="#1-5-1-Training-Set" class="headerlink" title="1.5.1. Training Set"></a>1.5.1. Training Set</h3><ul>
 <li><strong>700 x 3 images</strong>. 500 from <strong>Make3D</strong>, 200 from <strong>BSDS500</strong> </li>
 </ul>
-<h3 id="Validation-Set"><a href="#Validation-Set" class="headerlink" title="Validation Set"></a>Validation Set</h3><ul>
+<h3 id="1-5-2-Validation-Set"><a href="#1-5-2-Validation-Set" class="headerlink" title="1.5.2. Validation Set"></a>1.5.2. Validation Set</h3><ul>
 <li><strong>40 images</strong></li>
 </ul>
-<h3 id="Testing-Set"><a href="#Testing-Set" class="headerlink" title="Testing Set"></a>Testing Set</h3><ul>
+<h3 id="1-5-3-Testing-Set"><a href="#1-5-3-Testing-Set" class="headerlink" title="1.5.3. Testing Set"></a>1.5.3. Testing Set</h3><ul>
 <li><strong>Test-Synthetic-A</strong>. 90 from <strong>Make3D</strong> and <strong>BSDS500</strong></li>
 <li><strong>Test-Synthetic-B</strong>. 23 from <strong>Middlebury</strong></li>
 <li><strong>Test-Real-500</strong></li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h2><ul>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Baseline"><a href="#2-1-Baseline" class="headerlink" title="2.1. Baseline"></a>2.1. Baseline</h2><ul>
 <li>GEN. L2 loss + 9th L2 loss</li>
 <li>CANDY_L1_9P. 500 iteration GEN initialized</li>
 <li>…</li>
 </ul>
-<h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/7.jpg?raw=true" alt><br></div>
+<h2 id="2-2-模型选择"><a href="#2-2-模型选择" class="headerlink" title="2.2. 模型选择"></a>2.2. 模型选择</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/7.jpg?raw=true" alt><br></div>
 
 
 <ul>
@@ -580,10 +580,10 @@
 <li>Lower Layers feature reconstruction的结果更好。可能是因为higher layer preserve spatial structure，而忽略了texture and color</li>
 </ul>
 <p>最终选择CANDY_L1_9P。</p>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/10.jpg?raw=true" alt><br></div>
+<h2 id="2-3-实验结果"><a href="#2-3-实验结果" class="headerlink" title="2.3. 实验结果"></a>2.3. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/10.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Night-Hazy-Image"><a href="#Night-Hazy-Image" class="headerlink" title="Night Hazy Image"></a>Night Hazy Image</h2><p>Although train on daytime hazy image, it can work on night hazy image.</p>
+<h2 id="2-4-Night-Hazy-Image"><a href="#2-4-Night-Hazy-Image" class="headerlink" title="2.4. Night Hazy Image"></a>2.4. Night Hazy Image</h2><p>Although train on daytime hazy image, it can work on night hazy image.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/CANDY: Conditional Adversarial Networks based Fully End-to-End System for Single Image Haze Removal/11.jpg?raw=true" alt><br></div>
 
 
@@ -1422,7 +1422,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#速度"><span class="nav-number">1.1.</span> <span class="nav-text">速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.3.</span> <span class="nav-text">Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator"><span class="nav-number">1.3.1.</span> <span class="nav-text">Generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Discriminator"><span class="nav-number">1.3.2.</span> <span class="nav-text">Discriminator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">1.4.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.5.</span> <span class="nav-text">数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Training-Set"><span class="nav-number">1.5.1.</span> <span class="nav-text">Training Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Validation-Set"><span class="nav-number">1.5.2.</span> <span class="nav-text">Validation Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Testing-Set"><span class="nav-number">1.5.3.</span> <span class="nav-text">Testing Set</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Baseline"><span class="nav-number">2.1.</span> <span class="nav-text">Baseline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型选择"><span class="nav-number">2.2.</span> <span class="nav-text">模型选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">2.3.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Night-Hazy-Image"><span class="nav-number">2.4.</span> <span class="nav-text">Night Hazy Image</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-速度"><span class="nav-text">1.1. 速度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Model"><span class="nav-text">1.3. Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Generator"><span class="nav-text">1.3.1. Generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-Discriminator"><span class="nav-text">1.3.2. Discriminator</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Loss-Function"><span class="nav-text">1.4. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-数据集"><span class="nav-text">1.5. 数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-1-Training-Set"><span class="nav-text">1.5.1. Training Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-2-Validation-Set"><span class="nav-text">1.5.2. Validation Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-3-Testing-Set"><span class="nav-text">1.5.3. Testing Set</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Baseline"><span class="nav-text">2.1. Baseline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-模型选择"><span class="nav-text">2.2. 模型选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-实验结果"><span class="nav-text">2.3. 实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Night-Hazy-Image"><span class="nav-text">2.4. Night Hazy Image</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -486,14 +486,14 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/1.jpg?raw=true" alt><br></div>
 
-<h1 id="贡献点"><a href="#贡献点" class="headerlink" title="贡献点"></a>贡献点</h1><hr>
+<h1 id="1-贡献点"><a href="#1-贡献点" class="headerlink" title="1. 贡献点"></a>1. 贡献点</h1><hr>
 <ul>
 <li>使用unlabeled real data来refine synthetic images.</li>
 <li>结合adversarial loss和self-regularization loss训练Refiner Network (R).</li>
 <li>使用一些key modification来稳定train以及防止R产生artifacts.</li>
 <li>分别使用synthetic和refined images训练CNN进行gaze estimation任务，并在MPIIGaze Dataset上测试，进行比较。</li>
 </ul>
-<h1 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h1><hr>
+<h1 id="2-训练过程"><a href="#2-训练过程" class="headerlink" title="2. 训练过程"></a>2. 训练过程</h1><hr>
 <ul>
 <li>SimGAN模型包含Refiner Network(R)和Discriminator Network(D) <strong>(Figure 2)</strong>.</li>
 </ul>
@@ -506,7 +506,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/3.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h1><hr>
+<h1 id="3-Loss-Function"><a href="#3-Loss-Function" class="headerlink" title="3. Loss Function"></a>3. Loss Function</h1><hr>
 <p>D包含两部分loss <strong>(Formula 2)</strong>：</p>
 <ul>
 <li>Refined images输入D判别为False的loss（输入与Ground-truth的cross entropy loss）。</li>
@@ -524,11 +524,11 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/6.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Self-regularazition-loss"><a href="#Self-regularazition-loss" class="headerlink" title="Self-regularazition loss"></a>Self-regularazition loss</h1><hr>
+<h1 id="4-Self-regularazition-loss"><a href="#4-Self-regularazition-loss" class="headerlink" title="4. Self-regularazition loss"></a>4. Self-regularazition loss</h1><hr>
 <ul>
 <li>Preserve the annoation information of the synthetic images.</li>
 </ul>
-<h1 id="Local-Adversarial-Loss"><a href="#Local-Adversarial-Loss" class="headerlink" title="Local Adversarial Loss"></a>Local Adversarial Loss</h1><hr>
+<h1 id="5-Local-Adversarial-Loss"><a href="#5-Local-Adversarial-Loss" class="headerlink" title="5. Local Adversarial Loss"></a>5. Local Adversarial Loss</h1><hr>
 <ul>
 <li>Output a <strong>probability map (Figure 3)</strong> instead of a vertor.</li>
 <li>Prevent R from over-emphasizing certain image features to fool the current discriminator network, leading to drifting and producing artifacts.</li>
@@ -536,7 +536,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/7.jpg?raw=true" alt><br></div>
 
 
-<h1 id="History-Buffer-of-Refined-Images-Figure-4"><a href="#History-Buffer-of-Refined-Images-Figure-4" class="headerlink" title="History Buffer of Refined Images (Figure 4)"></a>History Buffer of Refined Images (Figure 4)</h1><hr>
+<h1 id="6-History-Buffer-of-Refined-Images-Figure-4"><a href="#6-History-Buffer-of-Refined-Images-Figure-4" class="headerlink" title="6. History Buffer of Refined Images (Figure 4)"></a>6. History Buffer of Refined Images (Figure 4)</h1><hr>
 <ul>
 <li>Prevent D from only focusing on the latest refined images.</li>
 <li>将refined images输入D之前，首先随机选择一半refined images放入Buffer中，再从Buffer中随机选择同样数目的refined images放回。</li>
@@ -549,7 +549,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/9.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Gaze-Estimation-Task"><a href="#Gaze-Estimation-Task" class="headerlink" title="Gaze Estimation Task"></a>Gaze Estimation Task</h1><hr>
+<h1 id="7-Gaze-Estimation-Task"><a href="#7-Gaze-Estimation-Task" class="headerlink" title="7. Gaze Estimation Task"></a>7. Gaze Estimation Task</h1><hr>
 <ul>
 <li>分别使用synthetic images和refined images训练简单的CNN(输出vector(x,y,z))，并在MPIIGaze Dataset上进行测试。</li>
 <li>从实验结果 <strong>(Table 2)</strong> 能够看出，经过R增强的refined images的distribution更接近real images的distribution.</li>
@@ -557,14 +557,14 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/10.jpg?raw=true" alt><br></div>
 
 
-<h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><hr>
+<h1 id="8-Details"><a href="#8-Details" class="headerlink" title="8. Details"></a>8. Details</h1><hr>
 <ul>
 <li>R is a ResNet.</li>
 <li>λ=0.001, kd=1, kg=50.</li>
 <li>1.2M synthetic images, 214K real images.</li>
 <li>More in <a href="https://machinelearning.apple.com/2017/07/07/GAN.html" target="_blank" rel="noopener">here</a></li>
 </ul>
-<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><hr>
+<h1 id="9-Github"><a href="#9-Github" class="headerlink" title="9. Github"></a>9. Github</h1><hr>
 <ul>
 <li>Tensorflow&amp;Keras：<a href="https://github.com/mjdietzx/SimGAN" target="_blank" rel="noopener">wayaai/SimGAN</a></li>
 <li>Pytorch：<a href="https://github.com/AlexHex7/SimGAN_pytorch" target="_blank" rel="noopener">AlexHex7/SimGAN_pytorch</a></li>
@@ -1407,7 +1407,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#贡献点"><span class="nav-number">1.</span> <span class="nav-text">贡献点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#训练过程"><span class="nav-number">2.</span> <span class="nav-text">训练过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loss-Function"><span class="nav-number">3.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Self-regularazition-loss"><span class="nav-number">4.</span> <span class="nav-text">Self-regularazition loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Local-Adversarial-Loss"><span class="nav-number">5.</span> <span class="nav-text">Local Adversarial Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#History-Buffer-of-Refined-Images-Figure-4"><span class="nav-number">6.</span> <span class="nav-text">History Buffer of Refined Images (Figure 4)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gaze-Estimation-Task"><span class="nav-number">7.</span> <span class="nav-text">Gaze Estimation Task</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Details"><span class="nav-number">8.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Github"><span class="nav-number">9.</span> <span class="nav-text">Github</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-贡献点"><span class="nav-text">1. 贡献点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-训练过程"><span class="nav-text">2. 训练过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Loss-Function"><span class="nav-text">3. Loss Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Self-regularazition-loss"><span class="nav-text">4. Self-regularazition loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Local-Adversarial-Loss"><span class="nav-text">5. Local Adversarial Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-History-Buffer-of-Refined-Images-Figure-4"><span class="nav-text">6. History Buffer of Refined Images (Figure 4)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Gaze-Estimation-Task"><span class="nav-text">7. Gaze Estimation Task</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Details"><span class="nav-text">8. Details</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-Github"><span class="nav-text">9. Github</span></a></li></ol></div>
             
 
           </div>

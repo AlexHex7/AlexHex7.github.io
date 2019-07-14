@@ -487,8 +487,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>existing methods use <strong>global image</strong> as input</li>
 <li>data limitation<ul>
 <li>small localized areas</li>
@@ -505,7 +505,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li>JSRT dataset</li>
 <li>Shenzhen chest X-ray set</li>
 <li>Montgomery County chest X-ray set</li>
@@ -513,15 +513,15 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
-<h2 id="AG-CNN"><a href="#AG-CNN" class="headerlink" title="AG-CNN"></a>AG-CNN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/1.jpg?raw=true" alt><br></div>
+<h1 id="2-Architecture"><a href="#2-Architecture" class="headerlink" title="2. Architecture"></a>2. Architecture</h1><hr>
+<h2 id="2-1-AG-CNN"><a href="#2-1-AG-CNN" class="headerlink" title="2.1. AG-CNN"></a>2.1. AG-CNN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>output. [l1, l2, …, l15]. 14 disease + 1 No Finding</li>
 </ul>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/2.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Algorithm"><a href="#2-2-Algorithm" class="headerlink" title="2.2. Algorithm"></a>2.2. Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Attention-Guided-Mask-Inference"><a href="#Attention-Guided-Mask-Inference" class="headerlink" title="Attention Guided Mask Inference"></a>Attention Guided Mask Inference</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/3.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Attention-Guided-Mask-Inference"><a href="#2-3-Attention-Guided-Mask-Inference" class="headerlink" title="2.3. Attention Guided Mask Inference"></a>2.3. Attention Guided Mask Inference</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>absolute value</li>
@@ -533,30 +533,30 @@
 <li><strong>binary mask</strong>. threshhold=0.7</li>
 <li>crop based on [x_min, y_min, x_max, y_max]</li>
 </ul>
-<h2 id="Training-Strategy"><a href="#Training-Strategy" class="headerlink" title="Training Strategy"></a>Training Strategy</h2><ul>
+<h2 id="2-4-Training-Strategy"><a href="#2-4-Training-Strategy" class="headerlink" title="2.4. Training Strategy"></a>2.4. Training Strategy</h2><ul>
 <li>fine-tune <strong>global</strong> branch</li>
 <li>fine-tune <strong>local</strong> branch, fi<strong>x global branch</strong></li>
 <li>fine-tune <strong>fusion</strong> branch, <strong>fix local and global branch</strong></li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Dataset"><a href="#3-1-Dataset" class="headerlink" title="3.1. Dataset"></a>3.1. Dataset</h2><ul>
 <li>randomly shuffle 70-10-20</li>
 </ul>
-<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<h2 id="3-2-Details"><a href="#3-2-Details" class="headerlink" title="3.2. Details"></a>3.2. Details</h2><ul>
 <li>256x256, <strong>randomly crop</strong> 224x224</li>
 <li>random <strong>horizontal</strong> flipping</li>
 <li>normalize by ImageNet <strong>mean value</strong></li>
 <li>test. center crop</li>
 </ul>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/5.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Comparison"><a href="#3-3-Comparison" class="headerlink" title="3.3. Comparison"></a>3.3. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/5.jpg?raw=true" alt><br></div>
 
-<h2 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h2><h3 id="Threshold"><a href="#Threshold" class="headerlink" title="Threshold"></a>Threshold</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/6.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Others"><a href="#3-4-Others" class="headerlink" title="3.4. Others"></a>3.4. Others</h2><h3 id="3-4-1-Threshold"><a href="#3-4-1-Threshold" class="headerlink" title="3.4.1. Threshold"></a>3.4.1. Threshold</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/6.jpg?raw=true" alt><br></div>
 
-<h3 id="Training-Strategy-1"><a href="#Training-Strategy-1" class="headerlink" title="Training Strategy"></a>Training Strategy</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/7.jpg?raw=true" alt><br></div>
+<h3 id="3-4-2-Training-Strategy"><a href="#3-4-2-Training-Strategy" class="headerlink" title="3.4.2. Training Strategy"></a>3.4.2. Training Strategy</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/7.jpg?raw=true" alt><br></div>
 
-<h3 id="Heat-Map-Analysis"><a href="#Heat-Map-Analysis" class="headerlink" title="Heat Map Analysis"></a>Heat Map Analysis</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/8.jpg?raw=true" alt><br></div>
+<h3 id="3-4-3-Heat-Map-Analysis"><a href="#3-4-3-Heat-Map-Analysis" class="headerlink" title="3.4.3. Heat Map Analysis"></a>3.4.3. Heat Map Analysis</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Diagnose like a Radiologist: Attention Guided Convolutional Neural Network for Thorax Disease Classification/8.jpg?raw=true" alt><br></div>
 
 
 
@@ -1404,7 +1404,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">2.</span> <span class="nav-text">Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AG-CNN"><span class="nav-number">2.1.</span> <span class="nav-text">AG-CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.2.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attention-Guided-Mask-Inference"><span class="nav-number">2.3.</span> <span class="nav-text">Attention Guided Mask Inference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-Strategy"><span class="nav-number">2.4.</span> <span class="nav-text">Training Strategy</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">3.1.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Details"><span class="nav-number">3.2.</span> <span class="nav-text">Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.3.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Others"><span class="nav-number">3.4.</span> <span class="nav-text">Others</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Threshold"><span class="nav-number">3.4.1.</span> <span class="nav-text">Threshold</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Training-Strategy-1"><span class="nav-number">3.4.2.</span> <span class="nav-text">Training Strategy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Heat-Map-Analysis"><span class="nav-number">3.4.3.</span> <span class="nav-text">Heat Map Analysis</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Architecture"><span class="nav-text">2. Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-AG-CNN"><span class="nav-text">2.1. AG-CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Algorithm"><span class="nav-text">2.2. Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Attention-Guided-Mask-Inference"><span class="nav-text">2.3. Attention Guided Mask Inference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Training-Strategy"><span class="nav-text">2.4. Training Strategy</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Dataset"><span class="nav-text">3.1. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Details"><span class="nav-text">3.2. Details</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Comparison"><span class="nav-text">3.3. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Others"><span class="nav-text">3.4. Others</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-1-Threshold"><span class="nav-text">3.4.1. Threshold</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2-Training-Strategy"><span class="nav-text">3.4.2. Training Strategy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-3-Heat-Map-Analysis"><span class="nav-text">3.4.3. Heat Map Analysis</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

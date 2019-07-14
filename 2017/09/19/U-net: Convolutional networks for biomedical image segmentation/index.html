@@ -492,27 +492,25 @@
 <p>结合两者能够trained end-to-end from very few images and outperforms <strong>sliding-window CNN</strong>.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/U-net:%20Convolutional%20networks%20for%20biomedical%20image%20segmentation/1.jpg?raw=true" alt><br></div>
 
-<ol>
-<li>Localization: a class label is supposed to be assigned to each pixel.</li>
-</ol>
-<h1 id="Sliding-window-drawbacks"><a href="#Sliding-window-drawbacks" class="headerlink" title="Sliding-window drawbacks"></a>Sliding-window drawbacks</h1><hr>
+<p>Localization: a class label is supposed to be assigned to each pixel.</p>
+<h1 id="1-Sliding-window-drawbacks"><a href="#1-Sliding-window-drawbacks" class="headerlink" title="1. Sliding-window drawbacks"></a>1. Sliding-window drawbacks</h1><hr>
 <ul>
 <li>Network需要对每个patch单独处理，<strong>重叠</strong>的patch产生大量冗余，因此非常<strong>慢</strong>。</li>
 <li>Tradeoff between<strong> localization accuracy</strong> and <strong>the use of context</strong>. Large patches需要更多pooling层，导致localization accuracy下降，而small patches allow network see only little context.</li>
 </ul>
-<h1 id="Overlap-tile-Strategy-Figure-2"><a href="#Overlap-tile-Strategy-Figure-2" class="headerlink" title="Overlap-tile Strategy (Figure 2)"></a>Overlap-tile Strategy (Figure 2)</h1><hr>
+<h1 id="2-Overlap-tile-Strategy-Figure-2"><a href="#2-Overlap-tile-Strategy-Figure-2" class="headerlink" title="2. Overlap-tile Strategy (Figure 2)"></a>2. Overlap-tile Strategy (Figure 2)</h1><hr>
 <ul>
 <li>该策略支持任意大小图片的无缝分割(seamless segmentation)，蓝色区域为输入patch，黄色区域为输出patch(输入图片进行镜像处理).</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/U-net:%20Convolutional%20networks%20for%20biomedical%20image%20segmentation/2.jpg?raw=true" alt><br></div>
 
-<h1 id="Data-Augmentation"><a href="#Data-Augmentation" class="headerlink" title="Data Augmentation"></a>Data Augmentation</h1><hr>
+<h1 id="3-Data-Augmentation"><a href="#3-Data-Augmentation" class="headerlink" title="3. Data Augmentation"></a>3. Data Augmentation</h1><hr>
 <ul>
 <li>Shift and rotation invariance.</li>
 <li>Deformations and gray value invariance.</li>
 <li><strong>Elastic deformation</strong>非常重要，能够有效模拟组织(<strong>tissue)</strong>最常见的形变方式。</li>
 </ul>
-<h1 id="Touching-Object-Challenge-Figure-3"><a href="#Touching-Object-Challenge-Figure-3" class="headerlink" title="Touching Object Challenge (Figure 3)"></a>Touching Object Challenge (Figure 3)</h1><hr>
+<h1 id="4-Touching-Object-Challenge-Figure-3"><a href="#4-Touching-Object-Challenge-Figure-3" class="headerlink" title="4. Touching Object Challenge (Figure 3)"></a>4. Touching Object Challenge (Figure 3)</h1><hr>
 <ul>
 <li>分离同种类型接触的细胞。</li>
 <li>Propose the use of a<strong> weighted loss,</strong> where the separating background labels between touching cells <strong>obtain a large weight</strong> in the loss function.</li>
@@ -528,12 +526,12 @@
 
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/U-net:%20Convolutional%20networks%20for%20biomedical%20image%20segmentation/5.jpg?raw=true" alt><br></div>
 
-<h1 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h1><hr>
+<h1 id="5-Initialization"><a href="#5-Initialization" class="headerlink" title="5. Initialization"></a>5. Initialization</h1><hr>
 <ul>
 <li>Ideally the initial weights should be adapted such that each feature map in the network has approximately unit variance. </li>
 <li>论文采用Gaussian 方差srqt(2/$N$), $N$为输入Node数。例如3x3 Conv层64 kernels, 则$N$ = 9 * 64 = 576.</li>
 </ul>
-<h1 id="Experiment-Results"><a href="#Experiment-Results" class="headerlink" title="Experiment Results"></a>Experiment Results</h1><hr>
+<h1 id="6-Experiment-Results"><a href="#6-Experiment-Results" class="headerlink" title="6. Experiment Results"></a>6. Experiment Results</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/U-net:%20Convolutional%20networks%20for%20biomedical%20image%20segmentation/6.jpg?raw=true" alt><br></div>
 
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/U-net:%20Convolutional%20networks%20for%20biomedical%20image%20segmentation/7.jpg?raw=true" alt><br></div>
@@ -1380,7 +1378,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sliding-window-drawbacks"><span class="nav-number">1.</span> <span class="nav-text">Sliding-window drawbacks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Overlap-tile-Strategy-Figure-2"><span class="nav-number">2.</span> <span class="nav-text">Overlap-tile Strategy (Figure 2)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Augmentation"><span class="nav-number">3.</span> <span class="nav-text">Data Augmentation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Touching-Object-Challenge-Figure-3"><span class="nav-number">4.</span> <span class="nav-text">Touching Object Challenge (Figure 3)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Initialization"><span class="nav-number">5.</span> <span class="nav-text">Initialization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiment-Results"><span class="nav-number">6.</span> <span class="nav-text">Experiment Results</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Sliding-window-drawbacks"><span class="nav-text">1. Sliding-window drawbacks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Overlap-tile-Strategy-Figure-2"><span class="nav-text">2. Overlap-tile Strategy (Figure 2)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Data-Augmentation"><span class="nav-text">3. Data Augmentation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Touching-Object-Challenge-Figure-3"><span class="nav-text">4. Touching Object Challenge (Figure 3)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Initialization"><span class="nav-text">5. Initialization</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-Experiment-Results"><span class="nav-text">6. Experiment Results</span></a></li></ol></div>
             
 
           </div>

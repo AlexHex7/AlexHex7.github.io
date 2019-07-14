@@ -485,8 +485,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>most of existing adversarial attacks can only <strong>fool a black-box model with low success rate</strong></li>
 </ul>
 <p>In this paper, it proposed a broad class of <strong>momentum-based iterative</strong> algorithm</p>
@@ -497,35 +497,35 @@
 <li>alleviate the trade-off between the <strong>white-box attacks and the transferability</strong></li>
 <li>apply momentum iterative algorithms to an <strong>ensemble of models</strong> (further improve the success rate for black-box attacks)</li>
 </ul>
-<h2 id="Generally"><a href="#Generally" class="headerlink" title="Generally"></a>Generally</h2><ul>
+<h2 id="1-2-Generally"><a href="#1-2-Generally" class="headerlink" title="1.2. Generally"></a>1.2. Generally</h2><ul>
 <li><strong>Transferability</strong>. different machine learning models learn similar decision boundaries around a data point.</li>
 <li><strong>one-step</strong> gradient-based methods more <strong>transferable</strong></li>
 </ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<h2 id="1-3-Contribution"><a href="#1-3-Contribution" class="headerlink" title="1.3. Contribution"></a>1.3. Contribution</h2><ul>
 <li>momentum iterative gradient-based methods</li>
 <li>study several <strong>ensemble</strong> approaches</li>
 <li>first to show models obtained by <strong>ensemble</strong> adversarial training with a powerful defense ability are also <strong>vulnerable to the black-box attacks</strong></li>
 </ul>
-<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><h3 id="Attack-Methods"><a href="#Attack-Methods" class="headerlink" title="Attack Methods"></a>Attack Methods</h3><ul>
+<h2 id="1-4-Related-Works"><a href="#1-4-Related-Works" class="headerlink" title="1.4. Related Works"></a>1.4. Related Works</h2><h3 id="1-4-1-Attack-Methods"><a href="#1-4-1-Attack-Methods" class="headerlink" title="1.4.1. Attack Methods"></a>1.4.1. Attack Methods</h3><ul>
 <li>one-step</li>
 <li>iterative</li>
 <li><strong>optimization-based methods</strong>. lack the efficacy in black-box attacks just like iterative methods<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/1.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h3 id="Defense-Methods"><a href="#Defense-Methods" class="headerlink" title="Defense Methods"></a>Defense Methods</h3><ul>
+<h3 id="1-4-2-Defense-Methods"><a href="#1-4-2-Defense-Methods" class="headerlink" title="1.4.2. Defense Methods"></a>1.4.2. Defense Methods</h3><ul>
 <li>inject adversarial examples into training procedure</li>
 <li>ensemble adversarial training</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
 <p>the <strong>assumption</strong> of linearity of the decision boundary around the data point <strong>may not hold when the distortion is large.</strong></p>
 <ul>
 <li>FGSM. underfit</li>
 <li>iterative FGSM. overfit</li>
 </ul>
-<h2 id="MI-FGSM"><a href="#MI-FGSM" class="headerlink" title="MI-FGSM"></a>MI-FGSM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/2.jpg?raw=true" alt><br></div>
+<h2 id="2-1-MI-FGSM"><a href="#2-1-MI-FGSM" class="headerlink" title="2.1. MI-FGSM"></a>2.1. MI-FGSM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/2.jpg?raw=true" alt><br></div>
 
 
 <ul>
@@ -533,7 +533,7 @@
 <li><strong>μ=0.</strong> MI-FGSM→ iterative FGSM</li>
 <li><strong>gradient normalized by L1 distance</strong>, the scale of the gradients in different iterations varies in magnitude</li>
 </ul>
-<h2 id="MI-FGSM-for-Ensemble-Model"><a href="#MI-FGSM-for-Ensemble-Model" class="headerlink" title="MI-FGSM for Ensemble Model"></a>MI-FGSM for Ensemble Model</h2><ul>
+<h2 id="2-2-MI-FGSM-for-Ensemble-Model"><a href="#2-2-MI-FGSM-for-Ensemble-Model" class="headerlink" title="2.2. MI-FGSM for Ensemble Model"></a>2.2. MI-FGSM for Ensemble Model</h2><ul>
 <li>ensemble in logits (input values to softmax). perform better</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/3.jpg?raw=true" alt><br></div>
@@ -550,7 +550,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/6.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h2><ul>
+<h2 id="2-3-Extension"><a href="#2-3-Extension" class="headerlink" title="2.3. Extension"></a>2.3. Extension</h2><ul>
 <li>L2 distance<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/7.jpg?raw=true" alt><br></div>
 
 
@@ -561,40 +561,40 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Single-Model"><a href="#Single-Model" class="headerlink" title="Single Model"></a>Single Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/8.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Single-Model"><a href="#3-1-Single-Model" class="headerlink" title="3.1. Single Model"></a>3.1. Single Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/8.jpg?raw=true" alt><br></div>
 
 
 <ul>
 <li>maximum perturbation = 16</li>
 <li>μ = 1</li>
 </ul>
-<h3 id="Decay-Factor-μ"><a href="#Decay-Factor-μ" class="headerlink" title="Decay Factor μ"></a>Decay Factor μ</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/9.jpg?raw=true" alt><br></div>
+<h3 id="3-1-1-Decay-Factor-μ"><a href="#3-1-1-Decay-Factor-μ" class="headerlink" title="3.1.1. Decay Factor μ"></a>3.1.1. Decay Factor μ</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/9.jpg?raw=true" alt><br></div>
 
 
 <ul>
 <li><strong>μ=1</strong>. adds up all previous gradients to perform the current update</li>
 </ul>
-<h3 id="The-Number-of-Iteration"><a href="#The-Number-of-Iteration" class="headerlink" title="The Number of Iteration"></a>The Number of Iteration</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/10.jpg?raw=true" alt><br></div>
+<h3 id="3-1-2-The-Number-of-Iteration"><a href="#3-1-2-The-Number-of-Iteration" class="headerlink" title="3.1.2. The Number of Iteration"></a>3.1.2. The Number of Iteration</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/10.jpg?raw=true" alt><br></div>
 
 
 <ul>
 <li>when increasing the number of iterations, the success rate of I-FGSM against a black-box model gradually decreases</li>
 </ul>
-<h3 id="Update-Direction"><a href="#Update-Direction" class="headerlink" title="Update Direction"></a>Update Direction</h3><ul>
+<h3 id="3-1-3-Update-Direction"><a href="#3-1-3-Update-Direction" class="headerlink" title="3.1.3. Update Direction"></a>3.1.3. Update Direction</h3><ul>
 <li>update direction of MI-FGSM is more stable than I-FGSM (larger cosine similarity)</li>
 <li>stabilized updated directions make <strong>L2 norm of the perturbation lager</strong>, which helpful for transferability</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/11.jpg?raw=true" alt><br></div>
 
 
-<h3 id="The-Size-of-Perturbation"><a href="#The-Size-of-Perturbation" class="headerlink" title="The Size of Perturbation"></a>The Size of Perturbation</h3><ul>
+<h3 id="3-1-4-The-Size-of-Perturbation"><a href="#3-1-4-The-Size-of-Perturbation" class="headerlink" title="3.1.4. The Size of Perturbation"></a>3.1.4. The Size of Perturbation</h3><ul>
 <li>α = 1</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/12.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Ensemble"><a href="#Ensemble" class="headerlink" title="Ensemble"></a>Ensemble</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/13.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Ensemble"><a href="#3-2-Ensemble" class="headerlink" title="3.2. Ensemble"></a>3.2. Ensemble</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Boosting Adversarial Attacks with Momentum/13.jpg?raw=true" alt><br></div>
 
 
 <ul>
@@ -1435,7 +1435,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generally"><span class="nav-number">1.2.</span> <span class="nav-text">Generally</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contribution"><span class="nav-number">1.3.</span> <span class="nav-text">Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Works"><span class="nav-number">1.4.</span> <span class="nav-text">Related Works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Attack-Methods"><span class="nav-number">1.4.1.</span> <span class="nav-text">Attack Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Defense-Methods"><span class="nav-number">1.4.2.</span> <span class="nav-text">Defense Methods</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MI-FGSM"><span class="nav-number">2.1.</span> <span class="nav-text">MI-FGSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MI-FGSM-for-Ensemble-Model"><span class="nav-number">2.2.</span> <span class="nav-text">MI-FGSM for Ensemble Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extension"><span class="nav-number">2.3.</span> <span class="nav-text">Extension</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Single-Model"><span class="nav-number">3.1.</span> <span class="nav-text">Single Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Decay-Factor-μ"><span class="nav-number">3.1.1.</span> <span class="nav-text">Decay Factor μ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Number-of-Iteration"><span class="nav-number">3.1.2.</span> <span class="nav-text">The Number of Iteration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-Direction"><span class="nav-number">3.1.3.</span> <span class="nav-text">Update Direction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Size-of-Perturbation"><span class="nav-number">3.1.4.</span> <span class="nav-text">The Size of Perturbation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ensemble"><span class="nav-number">3.2.</span> <span class="nav-text">Ensemble</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Generally"><span class="nav-text">1.2. Generally</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Contribution"><span class="nav-text">1.3. Contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Related-Works"><span class="nav-text">1.4. Related Works</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-Attack-Methods"><span class="nav-text">1.4.1. Attack Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-Defense-Methods"><span class="nav-text">1.4.2. Defense Methods</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-MI-FGSM"><span class="nav-text">2.1. MI-FGSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-MI-FGSM-for-Ensemble-Model"><span class="nav-text">2.2. MI-FGSM for Ensemble Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Extension"><span class="nav-text">2.3. Extension</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Single-Model"><span class="nav-text">3.1. Single Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-Decay-Factor-μ"><span class="nav-text">3.1.1. Decay Factor μ</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-The-Number-of-Iteration"><span class="nav-text">3.1.2. The Number of Iteration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-3-Update-Direction"><span class="nav-text">3.1.3. Update Direction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-4-The-Size-of-Perturbation"><span class="nav-text">3.1.4. The Size of Perturbation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Ensemble"><span class="nav-text">3.2. Ensemble</span></a></li></ol></li></ol></div>
             
 
           </div>

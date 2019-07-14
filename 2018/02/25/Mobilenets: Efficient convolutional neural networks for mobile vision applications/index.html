@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/14.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/15.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/16.jpg?raw=true">
-<meta property="og:updated_time" content="2019-05-13T06:08:29.956Z">
+<meta property="og:updated_time" content="2019-06-08T01:47:46.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="(2017) Mobilenets:Efficient convolutional neural networks for mobile vision applications">
 <meta name="twitter:description" content="Howard A G, Zhu M, Chen B, et al. Mobilenets: Efficient convolutional neural networks for mobile vision applications[J]. arXiv preprint arXiv:1704.04861, 2017.">
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-13 14:08:29" itemprop="dateModified" datetime="2019-05-13T14:08:29+08:00">2019-05-13</time>
+                <time title="Modified: 2019-06-08 09:47:46" itemprop="dateModified" datetime="2019-06-08T09:47:46+08:00">2019-06-08</time>
               
             
           </span>
@@ -504,8 +504,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>DNN become deeper and more complicated to achieve higher accuracy</li>
 <li><strong>computational limited platform</strong> in reality</li>
 </ul>
@@ -515,11 +515,11 @@
 <li>introduce <strong>two hyperparameter</strong> to trade off <strong>between latency and accuracy</strong></li>
 <li><strong>experiment</strong> on object detection, finegrain classification, face attributes and large scale geo-localization</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-2-Dataset"><a href="#1-2-Dataset" class="headerlink" title="1.2. Dataset"></a>1.2. Dataset</h2><ul>
 <li><strong>Stanford Dogs</strong></li>
 <li><strong>YFCC100M</strong> (Yahoo Flickr Creative Commons 100 Million)</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p>most work</p>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><p>most work</p>
 <ol>
 <li>compress pretrained networks</li>
 <li>train small networks directly</li>
@@ -548,8 +548,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><hr>
-<h2 id="Depthwise-Separable-Conv"><a href="#Depthwise-Separable-Conv" class="headerlink" title="Depthwise Separable Conv"></a>Depthwise Separable Conv</h2><h3 id="Standard-Conv"><a href="#Standard-Conv" class="headerlink" title="Standard Conv"></a>Standard Conv</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/2.jpg?raw=true" alt><br></div>
+<h1 id="2-Architecture"><a href="#2-Architecture" class="headerlink" title="2. Architecture"></a>2. Architecture</h1><hr>
+<h2 id="2-1-Depthwise-Separable-Conv"><a href="#2-1-Depthwise-Separable-Conv" class="headerlink" title="2.1. Depthwise Separable Conv"></a>2.1. Depthwise Separable Conv</h2><h3 id="2-1-1-Standard-Conv"><a href="#2-1-1-Standard-Conv" class="headerlink" title="2.1.1. Standard Conv"></a>2.1.1. Standard Conv</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>There exists the interaction between N and K.</li>
@@ -558,7 +558,7 @@
 <li><strong>M.</strong> input channel</li>
 <li><strong>N.</strong> output channel</li>
 </ul>
-<h3 id="Depthwise-Separable"><a href="#Depthwise-Separable" class="headerlink" title="Depthwise Separable"></a>Depthwise Separable</h3><ul>
+<h3 id="2-1-2-Depthwise-Separable"><a href="#2-1-2-Depthwise-Separable" class="headerlink" title="2.1.2. Depthwise Separable"></a>2.1.2. Depthwise Separable</h3><ul>
 <li><strong>Depthwise Conv</strong> (KxKxM -&gt; FxFxM). one kernel for one feature map.</li>
 <li><strong>Pointwise Conv</strong> (1x1xMxN * FxFxM). the whole pointwise kernel for the whole output feature map of depthwise conv.<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/3.jpg?raw=true" alt><br></div>
 
@@ -567,12 +567,12 @@
 <p><strong>It breaks the interaction between the number of output channel and the size of the kernel.</strong></p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/4.jpg?raw=true" alt><br></div>
 
-<h3 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/5.jpg?raw=true" alt><br></div>
+<h3 id="2-1-3-Comparison"><a href="#2-1-3-Comparison" class="headerlink" title="2.1.3. Comparison"></a>2.1.3. Comparison</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/5.jpg?raw=true" alt><br></div>
 
 <p>for 3x3 kernel, 8~9 time less.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/6.jpg?raw=true" alt><br></div>
 
-<h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a>Structure</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/7.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Structure"><a href="#2-2-Structure" class="headerlink" title="2.2. Structure"></a>2.2. Structure</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><p><strong>Mose computation time are in 1x1 Conv</strong></p>
@@ -581,7 +581,7 @@
 <li><p><strong>Small model has less trouble with overfitting</strong>. It is important to put very little or no weight decay on depthwise filter.</p>
 </li>
 </ul>
-<h2 id="Hyperparameter"><a href="#Hyperparameter" class="headerlink" title="Hyperparameter"></a>Hyperparameter</h2><ul>
+<h2 id="2-3-Hyperparameter"><a href="#2-3-Hyperparameter" class="headerlink" title="2.3. Hyperparameter"></a>2.3. Hyperparameter</h2><ul>
 <li><strong>Width Multiplier (α)</strong>. Thinner Model (channel number)</li>
 <li><strong>Resolution Multiplier (ρ)</strong>. Reduced Representation (input size)<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/10.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/11.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/12.jpg?raw=true" alt><br></div>
 
@@ -589,17 +589,17 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Thinner-or-Shallow"><a href="#Thinner-or-Shallow" class="headerlink" title="Thinner or Shallow"></a>Thinner or Shallow</h2><p>Thinner is better than Shallow.</p>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Thinner-or-Shallow"><a href="#3-1-Thinner-or-Shallow" class="headerlink" title="3.1. Thinner or Shallow"></a>3.1. Thinner or Shallow</h2><p>Thinner is better than Shallow.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/13.jpg?raw=true" alt><br></div>
 
-<h2 id="Comparison-1"><a href="#Comparison-1" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/14.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Comparison"><a href="#3-2-Comparison" class="headerlink" title="3.2. Comparison"></a>3.2. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/14.jpg?raw=true" alt><br></div>
 
-<h2 id="Stanford-Dogs"><a href="#Stanford-Dogs" class="headerlink" title="Stanford Dogs"></a>Stanford Dogs</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/15.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Stanford-Dogs"><a href="#3-3-Stanford-Dogs" class="headerlink" title="3.3. Stanford Dogs"></a>3.3. Stanford Dogs</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/15.jpg?raw=true" alt><br></div>
 
-<h2 id="Geolocalization"><a href="#Geolocalization" class="headerlink" title="Geolocalization"></a>Geolocalization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/16.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Geolocalization"><a href="#3-4-Geolocalization" class="headerlink" title="3.4. Geolocalization"></a>3.4. Geolocalization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Mobilenets: Efficient convolutional neural networks for mobile vision applications/16.jpg?raw=true" alt><br></div>
 
-<h2 id="Face-Attribute"><a href="#Face-Attribute" class="headerlink" title="Face Attribute"></a>Face Attribute</h2><h2 id="Detection"><a href="#Detection" class="headerlink" title="Detection"></a>Detection</h2>
+<h2 id="3-5-Face-Attribute"><a href="#3-5-Face-Attribute" class="headerlink" title="3.5. Face Attribute"></a>3.5. Face Attribute</h2><h2 id="3-6-Detection"><a href="#3-6-Detection" class="headerlink" title="3.6. Detection"></a>3.6. Detection</h2>
       
     </div>
 
@@ -1433,7 +1433,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.2.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">2.</span> <span class="nav-text">Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Depthwise-Separable-Conv"><span class="nav-number">2.1.</span> <span class="nav-text">Depthwise Separable Conv</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Standard-Conv"><span class="nav-number">2.1.1.</span> <span class="nav-text">Standard Conv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Depthwise-Separable"><span class="nav-number">2.1.2.</span> <span class="nav-text">Depthwise Separable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparison"><span class="nav-number">2.1.3.</span> <span class="nav-text">Comparison</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure"><span class="nav-number">2.2.</span> <span class="nav-text">Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hyperparameter"><span class="nav-number">2.3.</span> <span class="nav-text">Hyperparameter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Thinner-or-Shallow"><span class="nav-number">3.1.</span> <span class="nav-text">Thinner or Shallow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison-1"><span class="nav-number">3.2.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stanford-Dogs"><span class="nav-number">3.3.</span> <span class="nav-text">Stanford Dogs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Geolocalization"><span class="nav-number">3.4.</span> <span class="nav-text">Geolocalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Face-Attribute"><span class="nav-number">3.5.</span> <span class="nav-text">Face Attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Detection"><span class="nav-number">3.6.</span> <span class="nav-text">Detection</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dataset"><span class="nav-text">1.2. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Architecture"><span class="nav-text">2. Architecture</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Depthwise-Separable-Conv"><span class="nav-text">2.1. Depthwise Separable Conv</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Standard-Conv"><span class="nav-text">2.1.1. Standard Conv</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-2-Depthwise-Separable"><span class="nav-text">2.1.2. Depthwise Separable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-3-Comparison"><span class="nav-text">2.1.3. Comparison</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Structure"><span class="nav-text">2.2. Structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Hyperparameter"><span class="nav-text">2.3. Hyperparameter</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Thinner-or-Shallow"><span class="nav-text">3.1. Thinner or Shallow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Comparison"><span class="nav-text">3.2. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Stanford-Dogs"><span class="nav-text">3.3. Stanford Dogs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Geolocalization"><span class="nav-text">3.4. Geolocalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-Face-Attribute"><span class="nav-text">3.5. Face Attribute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-Detection"><span class="nav-text">3.6. Detection</span></a></li></ol></li></ol></div>
             
 
           </div>

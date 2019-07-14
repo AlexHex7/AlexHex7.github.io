@@ -486,7 +486,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>目前prostate MRI segmentation存在一些挑战</p>
 <ul>
 <li>不同MR扫描协议导致<strong>MRI存在差别</strong></li>
@@ -497,7 +497,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/1.jpg?raw=true" alt><br></div>
 
 <p>因此，论文提出一种<strong>end-to-end train</strong>, volume-to-volume predict, 适用于limited training data的模型，并在<strong>MICCAI PROMISE12数据集</strong>上达到state-of-art结果。</p>
-<h2 id="模型特点"><a href="#模型特点" class="headerlink" title="模型特点"></a>模型特点</h2><ul>
+<h2 id="1-1-模型特点"><a href="#1-1-模型特点" class="headerlink" title="1.1. 模型特点"></a>1.1. 模型特点</h2><ul>
 <li>3D CNN</li>
 <li>存在<strong>down sampling和up sampling</strong>两个阶段</li>
 <li><strong>residual block和connection</strong>. block内部存在<strong>short connection, block</strong>之间存在<strong>long connection</strong>（<strong>恢复down sampling造成的空间信息丢失</strong>）. 能够增强<strong>局部信息</strong>和<strong>全局信息</strong>在整个网格中的传递，以及加快收敛，避免梯度问题</li>
@@ -505,11 +505,11 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/2.jpg?raw=true" alt><br></div>
 
-<h2 id="Dig-the-Potential-of-limited-data"><a href="#Dig-the-Potential-of-limited-data" class="headerlink" title="Dig the Potential of limited data"></a>Dig the Potential of limited data</h2><ul>
+<h2 id="1-2-Dig-the-Potential-of-limited-data"><a href="#1-2-Dig-the-Potential-of-limited-data" class="headerlink" title="1.2. Dig the Potential of limited data"></a>1.2. Dig the Potential of limited data</h2><ul>
 <li><strong>Data augmentation</strong>. 但增加的信息量有限</li>
 <li><strong>使用skip connection</strong>. 提升网络内信息的propagation</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p><strong>Multi-altas</strong> based method</p>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><p><strong>Multi-altas</strong> based method</p>
 <ul>
 <li>Deformable method</li>
 <li>Graph cut based mathod</li>
@@ -517,20 +517,20 @@
 <li>使用2D CNN aggregate 3D contextual feature. <strong>adjacent slices, orthogonal planes, multi-view planes</strong>. 但没有充分利用3D空间信息</li>
 <li>3D CNN. with residual block</li>
 </ul>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><p><strong>MICCAI PROMISE12</strong></p>
+<h2 id="1-4-数据集"><a href="#1-4-数据集" class="headerlink" title="1.4. 数据集"></a>1.4. 数据集</h2><p><strong>MICCAI PROMISE12</strong></p>
 <ul>
 <li><strong>训练集.</strong> 50 transversal T2-weighted MRI and segmentation gt</li>
 <li><strong>测试集.</strong> 30 MRI, 未提供gt<br>图像来自不同医院、设备、协议以及存在<strong>maximum variation in clinical setting</strong> (voxel size, dynamic range,position, field of view and anatomic appearance.).</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><ul>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-数据预处理"><a href="#2-1-数据预处理" class="headerlink" title="2.1. 数据预处理"></a>2.1. 数据预处理</h2><ul>
 <li><strong>resize</strong> MR volumes into 0.625x0.625x1.5 mm</li>
 <li>归一化</li>
 <li><strong>rotation</strong> (90°, 180°, 270°) , <strong>x-flip</strong></li>
 </ul>
-<h2 id="训练细节"><a href="#训练细节" class="headerlink" title="训练细节"></a>训练细节</h2><ul>
+<h2 id="2-2-训练细节"><a href="#2-2-训练细节" class="headerlink" title="2.2. 训练细节"></a>2.2. 训练细节</h2><ul>
 <li>batch size 8</li>
 <li>lr 0.001 divided by 10 every 3000 iteration</li>
 <li>weight decay 0.0005</li>
@@ -539,7 +539,7 @@
 <li>训练（4小时）. random crop 64x64x16 sub-volume</li>
 <li>测试（12 s/MRI, 320x320x60）. overlap sliding window (64x64x16), stride (50x50x12), average probability map</li>
 </ul>
-<h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><ul>
+<h2 id="2-3-评价指标"><a href="#2-3-评价指标" class="headerlink" title="2.3. 评价指标"></a>2.3. 评价指标</h2><ul>
 <li>Dice coefficient (DSC). <a href="http://blog.csdn.net/gjk0223/article/details/2314844" target="_blank" rel="noopener">链接</a></li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/3.png?raw=true" alt><br></div>
@@ -551,10 +551,10 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Ablation"><a href="#Ablation" class="headerlink" title="Ablation"></a>Ablation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/5.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Ablation"><a href="#2-4-Ablation" class="headerlink" title="2.4. Ablation"></a>2.4. Ablation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/5.jpg?raw=true" alt><br></div>
 
 
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/7.jpg?raw=true" alt><br></div>
+<h2 id="2-5-实验结果"><a href="#2-5-实验结果" class="headerlink" title="2.5. 实验结果"></a>2.5. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Volumetric ConvNets with Mixed Residual Connections for Automated Prostate Segmentation from 3D MR Images/7.jpg?raw=true" alt><br></div>
 
 
 
@@ -1398,7 +1398,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型特点"><span class="nav-number">1.1.</span> <span class="nav-text">模型特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dig-the-Potential-of-limited-data"><span class="nav-number">1.2.</span> <span class="nav-text">Dig the Potential of limited data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.4.</span> <span class="nav-text">数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-number">2.1.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#训练细节"><span class="nav-number">2.2.</span> <span class="nav-text">训练细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标"><span class="nav-number">2.3.</span> <span class="nav-text">评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ablation"><span class="nav-number">2.4.</span> <span class="nav-text">Ablation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">2.5.</span> <span class="nav-text">实验结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-模型特点"><span class="nav-text">1.1. 模型特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dig-the-Potential-of-limited-data"><span class="nav-text">1.2. Dig the Potential of limited data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-数据集"><span class="nav-text">1.4. 数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-数据预处理"><span class="nav-text">2.1. 数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-训练细节"><span class="nav-text">2.2. 训练细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-评价指标"><span class="nav-text">2.3. 评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Ablation"><span class="nav-text">2.4. Ablation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-实验结果"><span class="nav-text">2.5. 实验结果</span></a></li></ol></li></ol></div>
             
 
           </div>

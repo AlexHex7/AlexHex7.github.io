@@ -482,8 +482,8 @@
 </blockquote>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>image classifier tend to be <strong>robust to natural noise</strong></li>
 <li>adversarial attacks tend to be <strong>agnostic to object location</strong></li>
 <li>most attacks <strong>search the entire image plane</strong> for adversarial perturbation without regard for the lacation of the image content</li>
@@ -495,7 +495,7 @@
 <li>locally corrupts the image by <strong>redistributing pixel values</strong> via a process we term pixel deflection</li>
 <li>then <strong>waelet-based denoising</strong> operation to softens the corruption</li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><h3 id="Attack"><a href="#Attack" class="headerlink" title="Attack"></a>Attack</h3><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><h3 id="1-2-1-Attack"><a href="#1-2-1-Attack" class="headerlink" title="1.2.1. Attack"></a>1.2.1. Attack</h3><ul>
 <li>FGSM</li>
 <li>IGSM</li>
 <li><strong>L-BFGS</strong>. minimize L2 distance between the image and adversarial example</li>
@@ -505,7 +505,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/1.jpg?raw=true" alt><br></div>
 
-<h3 id="Defense"><a href="#Defense" class="headerlink" title="Defense"></a>Defense</h3><ul>
+<h3 id="1-2-2-Defense"><a href="#1-2-2-Defense" class="headerlink" title="1.2.2. Defense"></a>1.2.2. Defense</h3><ul>
 <li>ensemble</li>
 <li>distillation</li>
 <li>transformation</li>
@@ -515,11 +515,11 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Pixel-Deflection"><a href="#Pixel-Deflection" class="headerlink" title="Pixel Deflection"></a>Pixel Deflection</h1><hr>
+<h1 id="2-Pixel-Deflection"><a href="#2-Pixel-Deflection" class="headerlink" title="2. Pixel Deflection"></a>2. Pixel Deflection</h1><hr>
 <ul>
 <li>most deep classifiers are robust to the presence of natural noise, such as sensor noise</li>
 </ul>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/2.jpg?raw=true" alt><br></div>
+<h2 id="2-1-Algorithm"><a href="#2-1-Algorithm" class="headerlink" title="2.1. Algorithm"></a>2.1. Algorithm</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>random sample a pixel</li>
@@ -530,12 +530,12 @@
 <ul>
 <li>even changing as much as 1% of the original pixels does notalter the classification of a clean image</li>
 </ul>
-<h2 id="Distribution-of-Attacks"><a href="#Distribution-of-Attacks" class="headerlink" title="Distribution of Attacks"></a>Distribution of Attacks</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/4.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Distribution-of-Attacks"><a href="#2-2-Distribution-of-Attacks" class="headerlink" title="2.2. Distribution of Attacks"></a>2.2. Distribution of Attacks</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/4.jpg?raw=true" alt><br></div>
 
-<h2 id="Targeted-Pixel-Deflection"><a href="#Targeted-Pixel-Deflection" class="headerlink" title="Targeted Pixel Deflection"></a>Targeted Pixel Deflection</h2><ul>
+<h2 id="2-3-Targeted-Pixel-Deflection"><a href="#2-3-Targeted-Pixel-Deflection" class="headerlink" title="2.3. Targeted Pixel Deflection"></a>2.3. Targeted Pixel Deflection</h2><ul>
 <li>In natural image, many pixels do not correspond to a relevant semantic object and are therefore not salient to classification</li>
 </ul>
-<h3 id="Robust-Activation-Map"><a href="#Robust-Activation-Map" class="headerlink" title="Robust Activation Map"></a>Robust Activation Map</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/7.jpg?raw=true" alt><br></div>
+<h3 id="2-3-1-Robust-Activation-Map"><a href="#2-3-1-Robust-Activation-Map" class="headerlink" title="2.3.1. Robust Activation Map"></a>2.3.1. Robust Activation Map</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>an adversary which successfully changes the most likely class tends to leave the rest of the top-k classes unchanged</li>
@@ -543,13 +543,13 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Wavelet-Denoising"><a href="#Wavelet-Denoising" class="headerlink" title="Wavelet Denoising"></a>Wavelet Denoising</h1><hr>
-<h2 id="Hard-Thresholding"><a href="#Hard-Thresholding" class="headerlink" title="Hard Thresholding"></a>Hard Thresholding</h2><ul>
+<h1 id="3-Wavelet-Denoising"><a href="#3-Wavelet-Denoising" class="headerlink" title="3. Wavelet Denoising"></a>3. Wavelet Denoising</h1><hr>
+<h2 id="3-1-Hard-Thresholding"><a href="#3-1-Hard-Thresholding" class="headerlink" title="3.1. Hard Thresholding"></a>3.1. Hard Thresholding</h2><ul>
 <li>all coefficients with magnitude below the threshold are set to zero</li>
 </ul>
-<h2 id="Soft-Thresholding"><a href="#Soft-Thresholding" class="headerlink" title="Soft Thresholding"></a>Soft Thresholding</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/8.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Soft-Thresholding"><a href="#3-2-Soft-Thresholding" class="headerlink" title="3.2. Soft Thresholding"></a>3.2. Soft Thresholding</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Adaptive-Thresholding"><a href="#Adaptive-Thresholding" class="headerlink" title="Adaptive Thresholding"></a>Adaptive Thresholding</h2><ul>
+<h2 id="3-3-Adaptive-Thresholding"><a href="#3-3-Adaptive-Thresholding" class="headerlink" title="3.3. Adaptive Thresholding"></a>3.3. Adaptive Thresholding</h2><ul>
 <li><p><strong>VisuShrink</strong>. N pixels and σ of noise</p>
 <div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/9.jpg?raw=true" alt><br></div>
 </li>
@@ -561,7 +561,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
+<h1 id="4-Methods"><a href="#4-Methods" class="headerlink" title="4. Methods"></a>4. Methods</h1><hr>
 <ol>
 <li>corrupt the image with pixel deflection</li>
 <li>soften the impact of pixel deflection</li>
@@ -574,7 +574,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="5-Experiments"><a href="#5-Experiments" class="headerlink" title="5. Experiments"></a>5. Experiments</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Deflecting adversarial attacks with pixel deflection/11.jpg?raw=true" alt><br></div>
 
 
@@ -1412,7 +1412,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Attack"><span class="nav-number">1.2.1.</span> <span class="nav-text">Attack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Defense"><span class="nav-number">1.2.2.</span> <span class="nav-text">Defense</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pixel-Deflection"><span class="nav-number">2.</span> <span class="nav-text">Pixel Deflection</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.1.</span> <span class="nav-text">Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distribution-of-Attacks"><span class="nav-number">2.2.</span> <span class="nav-text">Distribution of Attacks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Targeted-Pixel-Deflection"><span class="nav-number">2.3.</span> <span class="nav-text">Targeted Pixel Deflection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Robust-Activation-Map"><span class="nav-number">2.3.1.</span> <span class="nav-text">Robust Activation Map</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Wavelet-Denoising"><span class="nav-number">3.</span> <span class="nav-text">Wavelet Denoising</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hard-Thresholding"><span class="nav-number">3.1.</span> <span class="nav-text">Hard Thresholding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Soft-Thresholding"><span class="nav-number">3.2.</span> <span class="nav-text">Soft Thresholding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adaptive-Thresholding"><span class="nav-number">3.3.</span> <span class="nav-text">Adaptive Thresholding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">4.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">5.</span> <span class="nav-text">Experiments</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-Attack"><span class="nav-text">1.2.1. Attack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-Defense"><span class="nav-text">1.2.2. Defense</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Pixel-Deflection"><span class="nav-text">2. Pixel Deflection</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Algorithm"><span class="nav-text">2.1. Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Distribution-of-Attacks"><span class="nav-text">2.2. Distribution of Attacks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Targeted-Pixel-Deflection"><span class="nav-text">2.3. Targeted Pixel Deflection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-Robust-Activation-Map"><span class="nav-text">2.3.1. Robust Activation Map</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Wavelet-Denoising"><span class="nav-text">3. Wavelet Denoising</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Hard-Thresholding"><span class="nav-text">3.1. Hard Thresholding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Soft-Thresholding"><span class="nav-text">3.2. Soft Thresholding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Adaptive-Thresholding"><span class="nav-text">3.3. Adaptive Thresholding</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Methods"><span class="nav-text">4. Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Experiments"><span class="nav-text">5. Experiments</span></a></li></ol></div>
             
 
           </div>

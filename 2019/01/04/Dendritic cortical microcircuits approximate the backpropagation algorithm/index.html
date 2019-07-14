@@ -485,7 +485,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposed <strong>dendritic cortical microcircuits</strong> to approximate the <strong>backpropagation</strong> algorithm</p>
 <ul>
 <li>introduce a <strong>multilayer neuronal network</strong> model with <strong>simplified dendritic compartments</strong> in which <strong>error-driven synaptic plasticty</strong> adapts the network towards a global desired output</li>
@@ -493,24 +493,24 @@
 <li>demonstrates the learning capabilities in <strong>regression</strong> and <strong>classification</strong> task</li>
 <li>show analytically that it <strong>approximates</strong> the error BP algorithm</li>
 </ul>
-<h2 id="In-Neuroscience"><a href="#In-Neuroscience" class="headerlink" title="In Neuroscience"></a>In Neuroscience</h2><ul>
+<h2 id="1-1-In-Neuroscience"><a href="#1-1-In-Neuroscience" class="headerlink" title="1.1. In Neuroscience"></a>1.1. In Neuroscience</h2><ul>
 <li>growing evidence demonstrates that <strong>deep neural networks outperform</strong> alternative frameworks in accurately <strong>reproducing activity patterns</strong> observed in the cortex</li>
 <li>although recent developments have started to <strong>bridge the gap</strong> between <strong>neuroscience and AI</strong>, h<strong>ow the brain could implement a BP-like algorithm</strong> remains an open question</li>
 <li>understanding <strong>how the brain learns to associate different areas to successfully drive behavior</strong> is of fundamental importance. However, how to correctly <strong>modify synapses</strong> to achieve this has puzzled neuroscientists for decades (<strong>synaptic credit problem</strong>)</li>
 </ul>
-<h2 id="Structure-of-Pyramidal-Cells"><a href="#Structure-of-Pyramidal-Cells" class="headerlink" title="Structure of Pyramidal Cells"></a>Structure of Pyramidal Cells</h2><ul>
+<h2 id="1-2-Structure-of-Pyramidal-Cells"><a href="#1-2-Structure-of-Pyramidal-Cells" class="headerlink" title="1.2. Structure of Pyramidal Cells"></a>1.2. Structure of Pyramidal Cells</h2><ul>
 <li><strong>neocortical pyramidal cells</strong> can be defined as <strong>somatic, basal and apical</strong> integration zones</li>
 </ul>
-<h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><ul>
+<h2 id="1-3-Future-Work"><a href="#1-3-Future-Work" class="headerlink" title="1.3. Future Work"></a>1.3. Future Work</h2><ul>
 <li>this paper only focus on a specific interneurons type (SST) as a feedback-specific interneurons. There are many <strong>other type interneurons</strong>, such as <strong>PV (parvalbumin-positive)</strong> mediate a somatic excitation-inhibition balance and competition</li>
 <li>consider multiple <strong>subsystems</strong> (neocortex and <strong>hippocampus</strong>) that <strong>transfer knowledge to each other</strong> and learn at different rates</li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h1><hr>
+<h1 id="2-Algorithm"><a href="#2-Algorithm" class="headerlink" title="2. Algorithm"></a>2. Algorithm</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/1.jpg?raw=true" alt><br></div>
 
-<h2 id="General-Methods"><a href="#General-Methods" class="headerlink" title="General Methods"></a>General Methods</h2><ul>
+<h2 id="2-1-General-Methods"><a href="#2-1-General-Methods" class="headerlink" title="2.1. General Methods"></a>2.1. General Methods</h2><ul>
 <li>interpret a <strong>brain area</strong> as being equivalent to a <strong>layer</strong></li>
 <li>propose that <strong>prediction errors</strong> that drive learning in BP are encoded at <strong>distal dendrites</strong> of pyramidal neurons, which receive top-down input from downstream brain areas</li>
 <li><p><strong>errors arise from</strong> the inability via lateral input from local interneurons (somatostatin-expressing; <strong>SST</strong>) to exactly match the top-down feedback from downstream cortical areas</p>
@@ -523,7 +523,7 @@
 </li>
 <li><strong>feedforward</strong>. ignore the lateral and top-down weights from the model</li>
 </ul>
-<h2 id="Interneurons"><a href="#Interneurons" class="headerlink" title="Interneurons"></a>Interneurons</h2><ol>
+<h2 id="2-2-Interneurons"><a href="#2-2-Interneurons" class="headerlink" title="2.2. Interneurons"></a>2.2. Interneurons</h2><ol>
 <li><strong>receive</strong> input from lateral pyramidal cells onto their own basal dendrites</li>
 <li><strong>integrate</strong> this input on their soma</li>
 <li><strong>project back</strong> to the apical compartments of same-layer pyramidal cells</li>
@@ -531,7 +531,7 @@
 <ul>
 <li><strong>predominantly driven</strong> by pyramidal cells within the same layer</li>
 </ul>
-<h2 id="Somatic-Membrane-Potentials-Evolve-in-Time"><a href="#Somatic-Membrane-Potentials-Evolve-in-Time" class="headerlink" title="Somatic Membrane Potentials Evolve in Time"></a>Somatic Membrane Potentials Evolve in Time</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/2.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Somatic-Membrane-Potentials-Evolve-in-Time"><a href="#2-3-Somatic-Membrane-Potentials-Evolve-in-Time" class="headerlink" title="2.3. Somatic Membrane Potentials Evolve in Time"></a>2.3. Somatic Membrane Potentials Evolve in Time</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>k</strong>. layer index</li>
@@ -540,20 +540,20 @@
 <li><strong>lk</strong>. leak</li>
 <li><strong>ξ</strong>. background activity is modelled as Gaussian White Noise </li>
 </ul>
-<h2 id="Dendritic-Compartmental-Potentials"><a href="#Dendritic-Compartmental-Potentials" class="headerlink" title="Dendritic Compartmental Potentials"></a>Dendritic Compartmental Potentials</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/3.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Dendritic-Compartmental-Potentials"><a href="#2-4-Dendritic-Compartmental-Potentials" class="headerlink" title="2.4. Dendritic Compartmental Potentials"></a>2.4. Dendritic Compartmental Potentials</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>phi</strong>. neuronal transfer function</li>
 <li><strong>B</strong>. basal dendrite</li>
 <li><strong>A</strong>. apical dendrite</li>
 </ul>
-<h2 id="Teaching-Current"><a href="#Teaching-Current" class="headerlink" title="Teaching Current"></a>Teaching Current</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/4.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Teaching-Current"><a href="#2-5-Teaching-Current" class="headerlink" title="2.5. Teaching Current"></a>2.5. Teaching Current</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>an <strong>interneuron at layer k</strong> permanently receives balanced somatic teaching excitatory and inhibitory input from a pyramidal neuron at <strong>layer k+1</strong> on a one-to-one basis (u_{k+1}^P as target)</li>
 <li>the interneuron is nudged to follow the corresponding next layer pyramidal neuron</li>
 </ul>
-<h2 id="Synaptic-Learning-Rules"><a href="#Synaptic-Learning-Rules" class="headerlink" title="Synaptic Learning Rules"></a>Synaptic Learning Rules</h2><h3 id="In-Previous-Works"><a href="#In-Previous-Works" class="headerlink" title="In Previous Works"></a>In Previous Works</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/5.jpg?raw=true" alt><br></div>
+<h2 id="2-6-Synaptic-Learning-Rules"><a href="#2-6-Synaptic-Learning-Rules" class="headerlink" title="2.6. Synaptic Learning Rules"></a>2.6. Synaptic Learning Rules</h2><h3 id="2-6-1-In-Previous-Works"><a href="#2-6-1-In-Previous-Works" class="headerlink" title="2.6.1. In Previous Works"></a>2.6.1. In Previous Works</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>w</strong>. individual synaptic weight</li>
@@ -563,13 +563,13 @@
 <li><strong>phi</strong>. rate function</li>
 <li><strong>r</strong>. presynaptic input</li>
 </ul>
-<h3 id="In-this-Paper"><a href="#In-this-Paper" class="headerlink" title="In this Paper"></a>In this Paper</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/6.jpg?raw=true" alt><br></div>
+<h3 id="2-6-2-In-this-Paper"><a href="#2-6-2-In-this-Paper" class="headerlink" title="2.6.2. In this Paper"></a>2.6.2. In this Paper</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>v_rest = 0</strong>. resting potential</li>
 <li><strong>^</strong>. take into acount dendritic attenuation factors of different compartment</li>
 </ul>
-<h2 id="Self-predicting"><a href="#Self-predicting" class="headerlink" title="Self-predicting"></a>Self-predicting</h2><ul>
+<h2 id="2-7-Self-predicting"><a href="#2-7-Self-predicting" class="headerlink" title="2.7. Self-predicting"></a>2.7. Self-predicting</h2><ul>
 <li><strong>no external target</strong> is provided to output layer neurons</li>
 <li>the lateral input from interneurons <strong>cancels</strong> the internally generated top-down feedback and r<strong>enders apical dendrites silent</strong></li>
 <li>this paper demonstrate that <strong>synaptic plasticity in self-predicting nets</strong> approximates the weight changes prescribed by BP</li>
@@ -580,14 +580,14 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Self-predicting-amp-Training"><a href="#Self-predicting-amp-Training" class="headerlink" title="Self-predicting &amp; Training"></a>Self-predicting &amp; Training</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/7.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Self-predicting-amp-Training"><a href="#3-1-Self-predicting-amp-Training" class="headerlink" title="3.1. Self-predicting &amp; Training"></a>3.1. Self-predicting &amp; Training</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>A</strong>. top-down weight = - i-to-p weight</li>
 <li><strong>C</strong>. aligned 45°</li>
 </ul>
-<h2 id="Regression-Task"><a href="#Regression-Task" class="headerlink" title="Regression Task"></a>Regression Task</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/8.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Regression-Task"><a href="#3-2-Regression-Task" class="headerlink" title="3.2. Regression Task"></a>3.2. Regression Task</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Network</strong>. 30-50-10 (with 10 hidden layer interneurons)</li>
@@ -596,7 +596,7 @@
 <li><strong>top-down weight matrix is kept fixed</strong> (top-down and interneurons-to-pyramidal synapses need not to be changed)</li>
 <li>relax the bottom-up vs top-down weight symmetry</li>
 </ul>
-<h2 id="Classification"><a href="#Classification" class="headerlink" title="Classification"></a>Classification</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/9.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Classification"><a href="#3-3-Classification" class="headerlink" title="3.3. Classification"></a>3.3. Classification</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Dendritic cortical microcircuits approximate the backpropagation algorithm/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>Network. 784-500-500-10, <strong>initialized to a random but self-predicting state</strong></li>
@@ -1453,7 +1453,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#In-Neuroscience"><span class="nav-number">1.1.</span> <span class="nav-text">In Neuroscience</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structure-of-Pyramidal-Cells"><span class="nav-number">1.2.</span> <span class="nav-text">Structure of Pyramidal Cells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Future Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Algorithm"><span class="nav-number">2.</span> <span class="nav-text">Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#General-Methods"><span class="nav-number">2.1.</span> <span class="nav-text">General Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interneurons"><span class="nav-number">2.2.</span> <span class="nav-text">Interneurons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Somatic-Membrane-Potentials-Evolve-in-Time"><span class="nav-number">2.3.</span> <span class="nav-text">Somatic Membrane Potentials Evolve in Time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dendritic-Compartmental-Potentials"><span class="nav-number">2.4.</span> <span class="nav-text">Dendritic Compartmental Potentials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Teaching-Current"><span class="nav-number">2.5.</span> <span class="nav-text">Teaching Current</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Synaptic-Learning-Rules"><span class="nav-number">2.6.</span> <span class="nav-text">Synaptic Learning Rules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#In-Previous-Works"><span class="nav-number">2.6.1.</span> <span class="nav-text">In Previous Works</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#In-this-Paper"><span class="nav-number">2.6.2.</span> <span class="nav-text">In this Paper</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Self-predicting"><span class="nav-number">2.7.</span> <span class="nav-text">Self-predicting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Self-predicting-amp-Training"><span class="nav-number">3.1.</span> <span class="nav-text">Self-predicting &amp; Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression-Task"><span class="nav-number">3.2.</span> <span class="nav-text">Regression Task</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Classification"><span class="nav-number">3.3.</span> <span class="nav-text">Classification</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-In-Neuroscience"><span class="nav-text">1.1. In Neuroscience</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Structure-of-Pyramidal-Cells"><span class="nav-text">1.2. Structure of Pyramidal Cells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Future-Work"><span class="nav-text">1.3. Future Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Algorithm"><span class="nav-text">2. Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-General-Methods"><span class="nav-text">2.1. General Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Interneurons"><span class="nav-text">2.2. Interneurons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Somatic-Membrane-Potentials-Evolve-in-Time"><span class="nav-text">2.3. Somatic Membrane Potentials Evolve in Time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Dendritic-Compartmental-Potentials"><span class="nav-text">2.4. Dendritic Compartmental Potentials</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Teaching-Current"><span class="nav-text">2.5. Teaching Current</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Synaptic-Learning-Rules"><span class="nav-text">2.6. Synaptic Learning Rules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-1-In-Previous-Works"><span class="nav-text">2.6.1. In Previous Works</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-2-In-this-Paper"><span class="nav-text">2.6.2. In this Paper</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Self-predicting"><span class="nav-text">2.7. Self-predicting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Self-predicting-amp-Training"><span class="nav-text">3.1. Self-predicting &amp; Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Regression-Task"><span class="nav-text">3.2. Regression Task</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Classification"><span class="nav-text">3.3. Classification</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -486,15 +486,15 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>adversarial examples has not been extensively studied on multiple, large-scale dataset and structureed prediction task</li>
 </ul>
 <p>In this paper</p>
 <ul>
 <li>evaluate adversarial attacks on model semantic segmentation models, using two large-scale datasets</li>
 </ul>
-<h2 id="Observation"><a href="#Observation" class="headerlink" title="Observation"></a>Observation</h2><ul>
+<h2 id="1-2-Observation"><a href="#1-2-Observation" class="headerlink" title="1.2. Observation"></a>1.2. Observation</h2><ul>
 <li><strong>DeeplabV2</strong> more robust than other approach</li>
 <li><strong>multiscale</strong> networks more robust to multiple different attacks and white-box attacks</li>
 <li>adversarial examples are less effective when processed at <strong>different scales</strong></li>
@@ -503,33 +503,33 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Adversarial-Examples"><a href="#Adversarial-Examples" class="headerlink" title="Adversarial Examples"></a>Adversarial Examples</h1><hr>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/1.jpg?raw=true" alt><br></div>
+<h1 id="2-Adversarial-Examples"><a href="#2-Adversarial-Examples" class="headerlink" title="2. Adversarial Examples"></a>2. Adversarial Examples</h1><hr>
+<h2 id="2-1-Solution"><a href="#2-1-Solution" class="headerlink" title="2.1. Solution"></a>2.1. Solution</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>y_t</strong>. target label</li>
 <li><strong>c.</strong> positive scalar</li>
 <li><strong>L-BFGS</strong>. expensive, require several minutes to produce a single attack</li>
 </ul>
-<h2 id="FGSM"><a href="#FGSM" class="headerlink" title="FGSM"></a>FGSM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/2.jpg?raw=true" alt><br></div>
+<h2 id="2-2-FGSM"><a href="#2-2-FGSM" class="headerlink" title="2.2. FGSM"></a>2.2. FGSM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>single-step, untargeted attack</li>
 <li>minimise the l_oo norm of the perturbation bounded by the parameter ε</li>
 </ul>
-<h2 id="FGSM-II"><a href="#FGSM-II" class="headerlink" title="FGSM II"></a>FGSM II</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/3.jpg?raw=true" alt><br></div>
+<h2 id="2-3-FGSM-II"><a href="#2-3-FGSM-II" class="headerlink" title="2.3. FGSM II"></a>2.3. FGSM II</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>single-step, choose the target class as the least likely class predicted by network</li>
 </ul>
-<h2 id="Iterative-FGSM"><a href="#Iterative-FGSM" class="headerlink" title="Iterative FGSM"></a>Iterative FGSM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/4.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Iterative-FGSM"><a href="#2-4-Iterative-FGSM" class="headerlink" title="2.4. Iterative FGSM"></a>2.4. Iterative FGSM</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>iterative manner, untargeted</li>
 <li><strong>clip(a,ε)</strong>. make sure each element a_i of a in range [a_i -ε, a_i+ε]</li>
 <li><strong>α</strong>. step-size</li>
 </ul>
-<h2 id="Iterative-FGSM-II"><a href="#Iterative-FGSM-II" class="headerlink" title="Iterative FGSM II"></a>Iterative FGSM II</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/5.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Iterative-FGSM-II"><a href="#2-5-Iterative-FGSM-II" class="headerlink" title="2.5. Iterative FGSM II"></a>2.5. Iterative FGSM II</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/5.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>iterative manner, targeted</li>
@@ -537,7 +537,7 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Adversarial-Defenses-and-Evaluation"><a href="#Adversarial-Defenses-and-Evaluation" class="headerlink" title="Adversarial Defenses and Evaluation"></a>Adversarial Defenses and Evaluation</h1><hr>
+<h1 id="3-Adversarial-Defenses-and-Evaluation"><a href="#3-Adversarial-Defenses-and-Evaluation" class="headerlink" title="3. Adversarial Defenses and Evaluation"></a>3. Adversarial Defenses and Evaluation</h1><hr>
 <ul>
 <li>training with adversarial examples generated by <strong>single-step</strong> methods conferred <strong>robustness to other single-step attacks</strong> with negligible performance difference to normally trained networks on clean inputs</li>
 <li>however, the adversarially trained network was <strong>still as vulnerable to iterative attacks</strong> as standard models</li>
@@ -546,27 +546,27 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments-Set-up"><a href="#Experiments-Set-up" class="headerlink" title="Experiments Set-up"></a>Experiments Set-up</h1><hr>
+<h1 id="4-Experiments-Set-up"><a href="#4-Experiments-Set-up" class="headerlink" title="4. Experiments Set-up"></a>4. Experiments Set-up</h1><hr>
 <ul>
 <li>number of iteration. <strong>min(ε+4, ceil(1.25ε))</strong></li>
 <li>step-size <strong>α=1</strong></li>
 <li><strong>l_oo of ε</strong>. {0.25, 0.5, 1, 2, 4, 8, 16, 32}</li>
 </ul>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="The-Robustness-of-Different-Networks"><a href="#The-Robustness-of-Different-Networks" class="headerlink" title="The Robustness of Different Networks"></a>The Robustness of Different Networks</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/6.jpg?raw=true" alt><br></div>
+<h1 id="5-Experiments"><a href="#5-Experiments" class="headerlink" title="5. Experiments"></a>5. Experiments</h1><hr>
+<h2 id="5-1-The-Robustness-of-Different-Networks"><a href="#5-1-The-Robustness-of-Different-Networks" class="headerlink" title="5.1. The Robustness of Different Networks"></a>5.1. The Robustness of Different Networks</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>resnet-based (skip-connection) more robust to single-step attack</li>
 <li>none perform well on iterative FGSM II attack, but tend not to transfer to other models, less useful in practical black-box attacks</li>
 </ul>
-<h2 id="Model-Capacity-and-Residual-Connections"><a href="#Model-Capacity-and-Residual-Connections" class="headerlink" title="Model Capacity and Residual Connections"></a>Model Capacity and Residual Connections</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/7.jpg?raw=true" alt><br></div>
+<h2 id="5-2-Model-Capacity-and-Residual-Connections"><a href="#5-2-Model-Capacity-and-Residual-Connections" class="headerlink" title="5.2. Model Capacity and Residual Connections"></a>5.2. Model Capacity and Residual Connections</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/7.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>lightweight</strong> models are affected <strong>similarly</strong> as <strong>heavyweight</strong> models</li>
 <li>adding <strong>context module</strong> of Dilated-Net onto the Front-end slightly <strong>reducdce robustness</strong> across all ε values on Cityscapes</li>
 </ul>
-<h2 id="Multiscale-Processing"><a href="#Multiscale-Processing" class="headerlink" title="Multiscale Processing"></a>Multiscale Processing</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/8.jpg?raw=true" alt><br></div>
+<h2 id="5-3-Multiscale-Processing"><a href="#5-3-Multiscale-Processing" class="headerlink" title="5.3. Multiscale Processing"></a>5.3. Multiscale Processing</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>perturbations generated from the multiscale and 100% resolutions of Deeplabv2 transfer the best</li>
@@ -575,7 +575,7 @@
 <li>adversarial attacks <strong>generated at a single scale, are no longer as malignant when processed at another</strong></li>
 <li>network process images at multiple scales more robust</li>
 </ul>
-<h2 id="Input-Transformation"><a href="#Input-Transformation" class="headerlink" title="Input Transformation"></a>Input Transformation</h2><ul>
+<h2 id="5-4-Input-Transformation"><a href="#5-4-Input-Transformation" class="headerlink" title="5.4. Input Transformation"></a>5.4. Input Transformation</h2><ul>
 <li>JPEG recompression</li>
 <li>Gaussian Blur</li>
 <li>HSV Jitter</li>
@@ -586,14 +586,14 @@
 <ul>
 <li><strong>JPEG</strong> and <strong>Gaussian Blur</strong> providing substantial benefits</li>
 </ul>
-<h2 id="Expectation-over-Transformation-EOT-Attack"><a href="#Expectation-over-Transformation-EOT-Attack" class="headerlink" title="Expectation over Transformation (EOT) Attack"></a>Expectation over Transformation (EOT) Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/11.jpg?raw=true" alt><br></div>
+<h2 id="5-5-Expectation-over-Transformation-EOT-Attack"><a href="#5-5-Expectation-over-Transformation-EOT-Attack" class="headerlink" title="5.5. Expectation over Transformation (EOT) Attack"></a>5.5. Expectation over Transformation (EOT) Attack</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/11.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>T.</strong> the distribution of transformation functions t<div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/12.jpg?raw=true" alt><br></div>
 
 </li>
 </ul>
-<h2 id="Transferability-of-Input-Transformation"><a href="#Transferability-of-Input-Transformation" class="headerlink" title="Transferability of Input Transformation"></a>Transferability of Input Transformation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/14.jpg?raw=true" alt><br></div>
+<h2 id="5-6-Transferability-of-Input-Transformation"><a href="#5-6-Transferability-of-Input-Transformation" class="headerlink" title="5.6. Transferability of Input Transformation"></a>5.6. Transferability of Input Transformation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/On the Robustness of Semantic Segmentation Models to Adversarial Attacks/14.jpg?raw=true" alt><br></div>
 
 
 
@@ -1429,7 +1429,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observation"><span class="nav-number">1.2.</span> <span class="nav-text">Observation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adversarial-Examples"><span class="nav-number">2.</span> <span class="nav-text">Adversarial Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.1.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FGSM"><span class="nav-number">2.2.</span> <span class="nav-text">FGSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FGSM-II"><span class="nav-number">2.3.</span> <span class="nav-text">FGSM II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-FGSM"><span class="nav-number">2.4.</span> <span class="nav-text">Iterative FGSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-FGSM-II"><span class="nav-number">2.5.</span> <span class="nav-text">Iterative FGSM II</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Adversarial-Defenses-and-Evaluation"><span class="nav-number">3.</span> <span class="nav-text">Adversarial Defenses and Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments-Set-up"><span class="nav-number">4.</span> <span class="nav-text">Experiments Set-up</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">5.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Robustness-of-Different-Networks"><span class="nav-number">5.1.</span> <span class="nav-text">The Robustness of Different Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-Capacity-and-Residual-Connections"><span class="nav-number">5.2.</span> <span class="nav-text">Model Capacity and Residual Connections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Multiscale-Processing"><span class="nav-number">5.3.</span> <span class="nav-text">Multiscale Processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Transformation"><span class="nav-number">5.4.</span> <span class="nav-text">Input Transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Expectation-over-Transformation-EOT-Attack"><span class="nav-number">5.5.</span> <span class="nav-text">Expectation over Transformation (EOT) Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transferability-of-Input-Transformation"><span class="nav-number">5.6.</span> <span class="nav-text">Transferability of Input Transformation</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Observation"><span class="nav-text">1.2. Observation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Adversarial-Examples"><span class="nav-text">2. Adversarial Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Solution"><span class="nav-text">2.1. Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-FGSM"><span class="nav-text">2.2. FGSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-FGSM-II"><span class="nav-text">2.3. FGSM II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Iterative-FGSM"><span class="nav-text">2.4. Iterative FGSM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Iterative-FGSM-II"><span class="nav-text">2.5. Iterative FGSM II</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Adversarial-Defenses-and-Evaluation"><span class="nav-text">3. Adversarial Defenses and Evaluation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments-Set-up"><span class="nav-text">4. Experiments Set-up</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Experiments"><span class="nav-text">5. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-The-Robustness-of-Different-Networks"><span class="nav-text">5.1. The Robustness of Different Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Model-Capacity-and-Residual-Connections"><span class="nav-text">5.2. Model Capacity and Residual Connections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-Multiscale-Processing"><span class="nav-text">5.3. Multiscale Processing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-Input-Transformation"><span class="nav-text">5.4. Input Transformation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-Expectation-over-Transformation-EOT-Attack"><span class="nav-text">5.5. Expectation over Transformation (EOT) Attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-Transferability-of-Input-Transformation"><span class="nav-text">5.6. Transferability of Input Transformation</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -123,7 +123,7 @@
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/17.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/18.jpg?raw=true">
 <meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/19.jpg?raw=true">
-<meta property="og:updated_time" content="2019-05-07T07:50:34.262Z">
+<meta property="og:updated_time" content="2019-06-08T01:29:09.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Transformation">
 <meta name="twitter:description" content="仿射变换与投影变换数值方法——薄板样条插值（Thin-Plate Spline）薄板样条函数(Thin plate splines)的讨论与分析关于Thin Plate Spline （薄板样条函数）">
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-07 15:50:34" itemprop="dateModified" datetime="2019-05-07T15:50:34+08:00">2019-05-07</time>
+                <time title="Modified: 2019-06-08 09:29:09" itemprop="dateModified" datetime="2019-06-08T09:29:09+08:00">2019-06-08</time>
               
             
           </span>
@@ -499,18 +499,18 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="仿射变换"><a href="#仿射变换" class="headerlink" title="仿射变换"></a>仿射变换</h1><hr>
+<h1 id="1-仿射变换"><a href="#1-仿射变换" class="headerlink" title="1. 仿射变换"></a>1. 仿射变换</h1><hr>
 <ul>
 <li>6个参数<br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/1.jpg?raw=true" alt><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/2.jpg?raw=true" alt></li>
 </ul>
 <hr>
-<h1 id="投影变换"><a href="#投影变换" class="headerlink" title="投影变换"></a>投影变换</h1><hr>
+<h1 id="2-投影变换"><a href="#2-投影变换" class="headerlink" title="2. 投影变换"></a>2. 投影变换</h1><hr>
 <ul>
 <li>8个参数. 通常采用z=1时的平面。<br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/3.jpg?raw=true" alt></li>
 </ul>
 <hr>
-<h1 id="薄板样条函数"><a href="#薄板样条函数" class="headerlink" title="薄板样条函数"></a>薄板样条函数</h1><hr>
-<h2 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h2><ul>
+<h1 id="3-薄板样条函数"><a href="#3-薄板样条函数" class="headerlink" title="3. 薄板样条函数"></a>3. 薄板样条函数</h1><hr>
+<h2 id="3-1-插值"><a href="#3-1-插值" class="headerlink" title="3.1. 插值"></a>3.1. 插值</h2><ul>
 <li><p>已知函数y=f(x)在N+1个点x1, x2, x3, …上的函数值y1, y2, …，但是未知函数f(x). 可通过插值函数p(x)来逼近f(x).<br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/4.jpg?raw=true" alt></p>
 </li>
 <li><p>常用的插值函数有</p>
@@ -520,7 +520,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="TPS-Thin-plate-splines"><a href="#TPS-Thin-plate-splines" class="headerlink" title="TPS (Thin plate splines)"></a>TPS (Thin plate splines)</h2><ul>
+<h2 id="3-2-TPS-Thin-plate-splines"><a href="#3-2-TPS-Thin-plate-splines" class="headerlink" title="3.2. TPS (Thin plate splines)"></a>3.2. TPS (Thin plate splines)</h2><ul>
 <li>寻找一个通过所有控制点的弯曲最小的光滑曲面</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/5.jpg?raw=true" alt><br></div>
@@ -555,7 +555,7 @@
 <li><p>该逆矩阵称为弯曲能量矩阵<br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/17.jpg?raw=true" alt></p>
 </li>
 </ul>
-<h2 id="TPS应用在STN网络上"><a href="#TPS应用在STN网络上" class="headerlink" title="TPS应用在STN网络上"></a>TPS应用在STN网络上</h2><p><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/18.jpg?raw=true" alt></p>
+<h2 id="3-3-TPS应用在STN网络上"><a href="#3-3-TPS应用在STN网络上" class="headerlink" title="3.3. TPS应用在STN网络上"></a>3.3. TPS应用在STN网络上</h2><p><img src="https://github.com/AlexHex7/blogstore_1/blob/master/Transformation/18.jpg?raw=true" alt></p>
 <ul>
 <li><p>对于STN而言，已知</p>
 <ul>
@@ -1404,7 +1404,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#仿射变换"><span class="nav-number">1.</span> <span class="nav-text">仿射变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#投影变换"><span class="nav-number">2.</span> <span class="nav-text">投影变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#薄板样条函数"><span class="nav-number">3.</span> <span class="nav-text">薄板样条函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插值"><span class="nav-number">3.1.</span> <span class="nav-text">插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TPS-Thin-plate-splines"><span class="nav-number">3.2.</span> <span class="nav-text">TPS (Thin plate splines)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TPS应用在STN网络上"><span class="nav-number">3.3.</span> <span class="nav-text">TPS应用在STN网络上</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-仿射变换"><span class="nav-text">1. 仿射变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-投影变换"><span class="nav-text">2. 投影变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-薄板样条函数"><span class="nav-text">3. 薄板样条函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-插值"><span class="nav-text">3.1. 插值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-TPS-Thin-plate-splines"><span class="nav-text">3.2. TPS (Thin plate splines)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-TPS应用在STN网络上"><span class="nav-text">3.3. TPS应用在STN网络上</span></a></li></ol></li></ol></div>
             
 
           </div>

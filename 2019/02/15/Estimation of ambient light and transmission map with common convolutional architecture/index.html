@@ -485,33 +485,33 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>the scattering of light from water particles along with the <strong>attenuation</strong> and <strong>change</strong> in the color of <strong>different wavelengths of ambient light</strong></li>
 </ul>
 <p>In this paper, it proposes a method for effective <strong>ambient light</strong> and <strong>transmission estimation in underwater image.</strong></p>
 <ul>
 <li><strong>balance scene recovery</strong> model</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><ul>
+<h2 id="1-2-Dataset"><a href="#1-2-Dataset" class="headerlink" title="1.2. Dataset"></a>1.2. Dataset</h2><ul>
 <li>synthetic based on ICL-NUIM and SUM database</li>
 <li>1 million patches</li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/1.jpg?raw=true" alt><br></div>
+<h2 id="1-3-Model"><a href="#1-3-Model" class="headerlink" title="1.3. Model"></a>1.3. Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>multi-scale fusion</strong></li>
 <li><strong>element-wise summation</strong> (reduce computation)</li>
 <li>Maxout</li>
 </ul>
-<h2 id="Balance-Scene-Recovery-Model"><a href="#Balance-Scene-Recovery-Model" class="headerlink" title="Balance Scene Recovery Model"></a>Balance Scene Recovery Model</h2><h3 id="Haze-Model"><a href="#Haze-Model" class="headerlink" title="Haze Model"></a>Haze Model</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/2.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Balance-Scene-Recovery-Model"><a href="#1-4-Balance-Scene-Recovery-Model" class="headerlink" title="1.4. Balance Scene Recovery Model"></a>1.4. Balance Scene Recovery Model</h2><h3 id="1-4-1-Haze-Model"><a href="#1-4-1-Haze-Model" class="headerlink" title="1.4.1. Haze Model"></a>1.4.1. Haze Model</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>can not achieve the recovery of the original scene radiance in an <strong>underwater environment</strong></li>
 <li>the attenuation of ambient light in an underwater environment is not only dependent upon the distance travelled and density of particles in the path of the light but also depends on the color/wavelength of the light</li>
 <li>For instance, the light intensity of <strong>red</strong> channel rapidly decreases whereas <strong>green</strong> channel decreases slowly</li>
 </ul>
-<h3 id="Proposed-Model"><a href="#Proposed-Model" class="headerlink" title="Proposed Model"></a>Proposed Model</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/3.jpg?raw=true" alt><br></div>
+<h3 id="1-4-2-Proposed-Model"><a href="#1-4-2-Proposed-Model" class="headerlink" title="1.4.2. Proposed Model"></a>1.4.2. Proposed Model</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>A_b</strong>. balanced ambient light</li>
@@ -519,7 +519,7 @@
 
 </li>
 </ul>
-<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/6.jpg?raw=true" alt><br></div>
+<h2 id="1-5-Experiments"><a href="#1-5-Experiments" class="headerlink" title="1.5. Experiments"></a>1.5. Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Estimation of ambient light and transmission map with common convolutional architecture/6.jpg?raw=true" alt><br></div>
 
 
 
@@ -1371,7 +1371,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.2.</span> <span class="nav-text">Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.3.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Balance-Scene-Recovery-Model"><span class="nav-number">1.4.</span> <span class="nav-text">Balance Scene Recovery Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Haze-Model"><span class="nav-number">1.4.1.</span> <span class="nav-text">Haze Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proposed-Model"><span class="nav-number">1.4.2.</span> <span class="nav-text">Proposed Model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments"><span class="nav-number">1.5.</span> <span class="nav-text">Experiments</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Dataset"><span class="nav-text">1.2. Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Model"><span class="nav-text">1.3. Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Balance-Scene-Recovery-Model"><span class="nav-text">1.4. Balance Scene Recovery Model</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-1-Haze-Model"><span class="nav-text">1.4.1. Haze Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-2-Proposed-Model"><span class="nav-text">1.4.2. Proposed Model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Experiments"><span class="nav-text">1.5. Experiments</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -494,7 +494,7 @@
 </blockquote>
 <a id="more"></a>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>此前提出的full bilinear模型存在一些问题(channel=512, k=1000时)</p>
 <ul>
 <li>输出512<em>512(260000)维度，导致后续的分类器参数很大(1000</em>512*512≈250 million)</li>
@@ -515,10 +515,10 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/1.jpg?raw=true" alt><br></div>
 
 <p>实际上，full bilinear方法在只使用2%特征维度情况下，与论文提出方法的性能相似。因此，<strong>98%的特征都是冗余的</strong>。</p>
-<h2 id="与其他方法比较"><a href="#与其他方法比较" class="headerlink" title="与其他方法比较"></a>与其他方法比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/2.jpg?raw=true" alt><br></div>
+<h2 id="1-1-与其他方法比较"><a href="#1-1-与其他方法比较" class="headerlink" title="1.1. 与其他方法比较"></a>1.1. 与其他方法比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/2.jpg?raw=true" alt><br></div>
 
 
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul>
+<h2 id="1-2-数据集"><a href="#1-2-数据集" class="headerlink" title="1.2. 数据集"></a>1.2. 数据集</h2><ul>
 <li>CUB（鸟类）</li>
 <li>MIT（室内场景）</li>
 <li>DTD（结构）</li>
@@ -528,11 +528,11 @@
 
 
 <hr>
-<h1 id="Pooling方法"><a href="#Pooling方法" class="headerlink" title="Pooling方法"></a>Pooling方法</h1><hr>
+<h1 id="2-Pooling方法"><a href="#2-Pooling方法" class="headerlink" title="2. Pooling方法"></a>2. Pooling方法</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/5.jpg?raw=true" alt><br></div>
 
 
-<h2 id="circular-convolution（循环卷积）"><a href="#circular-convolution（循环卷积）" class="headerlink" title="circular convolution（循环卷积）"></a>circular convolution（循环卷积）</h2><p>a=[1,2,3,4], b=[5,6,7,8], a*b计算过程</p>
+<h2 id="2-1-circular-convolution（循环卷积）"><a href="#2-1-circular-convolution（循环卷积）" class="headerlink" title="2.1. circular convolution（循环卷积）"></a>2.1. circular convolution（循环卷积）</h2><p>a=[1,2,3,4], b=[5,6,7,8], a*b计算过程</p>
 <ul>
 <li><strong>a逆时针固定在圆上</strong>，<strong>b顺时针固定在圆上</strong>。对应相乘求和结果y(0)=66.</li>
 </ul>
@@ -546,17 +546,17 @@
 </li>
 </ul>
 <p>最终y的维度与a,b相同</p>
-<h2 id="Bilinear-Sum-Pooling"><a href="#Bilinear-Sum-Pooling" class="headerlink" title="Bilinear Sum Pooling"></a>Bilinear Sum Pooling</h2><p>(h, w, c)-&gt;(h,w, c<em>c)-&gt;(c</em>c)</p>
+<h2 id="2-2-Bilinear-Sum-Pooling"><a href="#2-2-Bilinear-Sum-Pooling" class="headerlink" title="2.2. Bilinear Sum Pooling"></a>2.2. Bilinear Sum Pooling</h2><p>(h, w, c)-&gt;(h,w, c<em>c)-&gt;(c</em>c)</p>
 <hr>
-<h1 id="Compact-Bilinear-Models"><a href="#Compact-Bilinear-Models" class="headerlink" title="Compact Bilinear Models"></a>Compact Bilinear Models</h1><hr>
-<h2 id="Full-Bilinear-Pooling"><a href="#Full-Bilinear-Pooling" class="headerlink" title="Full Bilinear Pooling"></a>Full Bilinear Pooling</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/8.jpg?raw=true" alt><br></div>
+<h1 id="3-Compact-Bilinear-Models"><a href="#3-Compact-Bilinear-Models" class="headerlink" title="3. Compact Bilinear Models"></a>3. Compact Bilinear Models</h1><hr>
+<h2 id="3-1-Full-Bilinear-Pooling"><a href="#3-1-Full-Bilinear-Pooling" class="headerlink" title="3.1. Full Bilinear Pooling"></a>3.1. Full Bilinear Pooling</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/8.jpg?raw=true" alt><br></div>
 
 
 <ul>
 <li><strong>S.</strong> set of location, 数量为height*width</li>
 <li><strong>X.</strong> local descriptors, 输入特征图每个点的值(长度为channel数c)<br>维度变化(h, w, c)-&gt;(h, w, c<em>c)-&gt;(c</em>c)</li>
 </ul>
-<h2 id="Compact-Bilinear-Pooling"><a href="#Compact-Bilinear-Pooling" class="headerlink" title="Compact Bilinear Pooling"></a>Compact Bilinear Pooling</h2><p>找到Φ(x)∈R^d使得 $Φ(x) ≈ xx^T$</p>
+<h2 id="3-2-Compact-Bilinear-Pooling"><a href="#3-2-Compact-Bilinear-Pooling" class="headerlink" title="3.2. Compact Bilinear Pooling"></a>3.2. Compact Bilinear Pooling</h2><p>找到Φ(x)∈R^d使得 $Φ(x) ≈ xx^T$</p>
 <ul>
 <li><strong>Random Maclaurin</strong><div align="center"><br>  <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/9.jpg?raw=true" alt><br></div>
 
@@ -583,7 +583,7 @@
 <li>reshape <strong>(b, h, w, 8000)</strong></li>
 <li>sum pooling; <strong>(b, 8000)</strong></li>
 </ul>
-<h2 id="计算时间"><a href="#计算时间" class="headerlink" title="计算时间"></a>计算时间</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/12.jpg?raw=true" alt><br></div>
+<h2 id="3-3-计算时间"><a href="#3-3-计算时间" class="headerlink" title="3.3. 计算时间"></a>3.3. 计算时间</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/12.jpg?raw=true" alt><br></div>
 
 
 <p>在Caffe K40c GPU下</p>
@@ -593,28 +593,28 @@
 <li>TS(d=4096) 5.03ms，<strong>FFT计算量比矩阵运算大</strong></li>
 </ul>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Pooling-Methods"><a href="#Pooling-Methods" class="headerlink" title="Pooling Methods"></a>Pooling Methods</h2><ul>
+<h1 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h1><hr>
+<h2 id="4-1-Pooling-Methods"><a href="#4-1-Pooling-Methods" class="headerlink" title="4.1. Pooling Methods"></a>4.1. Pooling Methods</h2><ul>
 <li><strong>Full Bilinear Pooling</strong></li>
 <li><strong>Compact Bilinear Pooling.</strong> 相对于512*512（≈260000）特征维度，8000维度足够表示特征。fine tuning能够提高效果，但提升很小。</li>
 <li><strong>Fully Connected Pooling</strong></li>
 <li><strong>Improved Fisher Encoding. 对输出进行64 GMM编码</strong></li>
 </ul>
-<h2 id="维数-amp-方式比较"><a href="#维数-amp-方式比较" class="headerlink" title="维数&amp;方式比较"></a>维数&amp;方式比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/13.jpg?raw=true" alt><br></div>
+<h2 id="4-2-维数-amp-方式比较"><a href="#4-2-维数-amp-方式比较" class="headerlink" title="4.2. 维数&amp;方式比较"></a>4.2. 维数&amp;方式比较</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/13.jpg?raw=true" alt><br></div>
 
 
 <ul>
 <li>在维度很小时，fine tune能够显著提升效果</li>
 <li>维度在2000～8000合适</li>
 </ul>
-<h2 id="与PCA比较"><a href="#与PCA比较" class="headerlink" title="与PCA比较"></a>与PCA比较</h2><p>PCA Bilinear通过在bilinear layer前插入1*1Conv实现，初始化为PCA权重。</p>
+<h2 id="4-3-与PCA比较"><a href="#4-3-与PCA比较" class="headerlink" title="4.3. 与PCA比较"></a>4.3. 与PCA比较</h2><p>PCA Bilinear通过在bilinear layer前插入1*1Conv实现，初始化为PCA权重。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/14.jpg?raw=true" alt><br></div>
 
 
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/15.jpg?raw=true" alt><br></div>
+<h2 id="4-4-实验结果"><a href="#4-4-实验结果" class="headerlink" title="4.4. 实验结果"></a>4.4. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Compact Bilinear Pooling/15.jpg?raw=true" alt><br></div>
 
 
-<h2 id="Few-Shot-Learning"><a href="#Few-Shot-Learning" class="headerlink" title="Few Shot Learning"></a>Few Shot Learning</h2><ul>
+<h2 id="4-5-Few-Shot-Learning"><a href="#4-5-Few-Shot-Learning" class="headerlink" title="4.5. Few Shot Learning"></a>4.5. Few Shot Learning</h2><ul>
 <li><strong>训练样本数量与分类器假设空间（hypothesis space）大小相关</strong></li>
 <li><strong>实验证明低维度表示更适合few-shot learning</strong></li>
 </ul>
@@ -1456,7 +1456,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与其他方法比较"><span class="nav-number">1.1.</span> <span class="nav-text">与其他方法比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.2.</span> <span class="nav-text">数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pooling方法"><span class="nav-number">2.</span> <span class="nav-text">Pooling方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#circular-convolution（循环卷积）"><span class="nav-number">2.1.</span> <span class="nav-text">circular convolution（循环卷积）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bilinear-Sum-Pooling"><span class="nav-number">2.2.</span> <span class="nav-text">Bilinear Sum Pooling</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Compact-Bilinear-Models"><span class="nav-number">3.</span> <span class="nav-text">Compact Bilinear Models</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Full-Bilinear-Pooling"><span class="nav-number">3.1.</span> <span class="nav-text">Full Bilinear Pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compact-Bilinear-Pooling"><span class="nav-number">3.2.</span> <span class="nav-text">Compact Bilinear Pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算时间"><span class="nav-number">3.3.</span> <span class="nav-text">计算时间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">4.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pooling-Methods"><span class="nav-number">4.1.</span> <span class="nav-text">Pooling Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#维数-amp-方式比较"><span class="nav-number">4.2.</span> <span class="nav-text">维数&amp;方式比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与PCA比较"><span class="nav-number">4.3.</span> <span class="nav-text">与PCA比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">4.4.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Few-Shot-Learning"><span class="nav-number">4.5.</span> <span class="nav-text">Few Shot Learning</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-与其他方法比较"><span class="nav-text">1.1. 与其他方法比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-数据集"><span class="nav-text">1.2. 数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Pooling方法"><span class="nav-text">2. Pooling方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-circular-convolution（循环卷积）"><span class="nav-text">2.1. circular convolution（循环卷积）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Bilinear-Sum-Pooling"><span class="nav-text">2.2. Bilinear Sum Pooling</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Compact-Bilinear-Models"><span class="nav-text">3. Compact Bilinear Models</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Full-Bilinear-Pooling"><span class="nav-text">3.1. Full Bilinear Pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Compact-Bilinear-Pooling"><span class="nav-text">3.2. Compact Bilinear Pooling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-计算时间"><span class="nav-text">3.3. 计算时间</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments"><span class="nav-text">4. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Pooling-Methods"><span class="nav-text">4.1. Pooling Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-维数-amp-方式比较"><span class="nav-text">4.2. 维数&amp;方式比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-与PCA比较"><span class="nav-text">4.3. 与PCA比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-实验结果"><span class="nav-text">4.4. 实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-Few-Shot-Learning"><span class="nav-text">4.5. Few Shot Learning</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -490,7 +490,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>现有的<strong>hand-designed feature</strong></p>
 <ul>
 <li>dark channel</li>
@@ -503,7 +503,7 @@
 <li><strong>coarse-scale net</strong>. predict holistic transmission map</li>
 <li><strong>fine-scale net</strong>. refine result locally</li>
 </ul>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/1.jpg?raw=true" alt><br></div>
+<h2 id="1-1-模型"><a href="#1-1-模型" class="headerlink" title="1.1. 模型"></a>1.1. 模型</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/1.jpg?raw=true" alt><br></div>
 
 <p>网络使用max-pooling增加模型的非线性能力，而输出的t需要与hazy image尺寸一样，因此使用bilinear interpolation.</p>
 <ul>
@@ -515,10 +515,10 @@
 
 </li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/4.jpg?raw=true" alt><br></div>
+<h2 id="1-2-Loss-Function"><a href="#1-2-Loss-Function" class="headerlink" title="1.2. Loss Function"></a>1.2. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/4.jpg?raw=true" alt><br></div>
 
 <p>同时用在coarse-scale和fine-scale的网络输出上.</p>
-<h2 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h2><ul>
+<h2 id="1-3-数据集"><a href="#1-3-数据集" class="headerlink" title="1.3. 数据集"></a>1.3. 数据集</h2><ul>
 <li>A = [k, k, k], k ∈ [0.7, 1.0]</li>
 <li><p>β ∈ [0.5, 1.5]</p>
 </li>
@@ -538,7 +538,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-4-Related-Work"><a href="#1-4-Related-Work" class="headerlink" title="1.4. Related Work"></a>1.4. Related Work</h2><ul>
 <li>Multiple images</li>
 <li>Albedo</li>
 <li>Maximizing local contrast</li>
@@ -548,36 +548,36 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/5.jpg?raw=true" alt><br></div>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-实验结果"><a href="#2-1-实验结果" class="headerlink" title="2.1. 实验结果"></a>2.1. 实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/5.jpg?raw=true" alt><br></div>
 
 <p>He.估计的透射矩阵是均匀分布的，一些区域中的hazy thickness overestimated.</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/6.jpg?raw=true" alt><br></div>
 
-<h2 id="运行时间"><a href="#运行时间" class="headerlink" title="运行时间"></a>运行时间</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/7.jpg?raw=true" alt><br></div>
+<h2 id="2-2-运行时间"><a href="#2-2-运行时间" class="headerlink" title="2.2. 运行时间"></a>2.2. 运行时间</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/7.jpg?raw=true" alt><br></div>
 
 
-<h2 id="泛化性"><a href="#泛化性" class="headerlink" title="泛化性"></a>泛化性</h2><p>虽然real image depth通常很大，而训练集中的depth较小。但是可以通过调整介质的消光系数（medium extinction coefficient）来增加雾的浓度。这种方案独立于depth，能够包含real transmission map的范围。</p>
-<h2 id="Fine-Scale的作用"><a href="#Fine-Scale的作用" class="headerlink" title="Fine-Scale的作用"></a>Fine-Scale的作用</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/8.jpg?raw=true" alt><br></div>
+<h2 id="2-3-泛化性"><a href="#2-3-泛化性" class="headerlink" title="2.3. 泛化性"></a>2.3. 泛化性</h2><p>虽然real image depth通常很大，而训练集中的depth较小。但是可以通过调整介质的消光系数（medium extinction coefficient）来增加雾的浓度。这种方案独立于depth，能够包含real transmission map的范围。</p>
+<h2 id="2-4-Fine-Scale的作用"><a href="#2-4-Fine-Scale的作用" class="headerlink" title="2.4. Fine-Scale的作用"></a>2.4. Fine-Scale的作用</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>3-scale网络性能并没有提升</li>
 <li>single-deep-scale网络性能降低</li>
 </ul>
 <p>得出结论：相比于high-level task，deep structure对low-level task并不明显。</p>
-<h2 id="Up-Sampling的作用"><a href="#Up-Sampling的作用" class="headerlink" title="Up-Sampling的作用"></a>Up-Sampling的作用</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/9.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Up-Sampling的作用"><a href="#2-5-Up-Sampling的作用" class="headerlink" title="2.5. Up-Sampling的作用"></a>2.5. Up-Sampling的作用</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/9.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>(c)不使用pooling，效果较差</li>
 <li>虽然(d)与(b)相似，但(b)计算量较大</li>
 </ul>
-<h2 id="特征提取方法对比"><a href="#特征提取方法对比" class="headerlink" title="特征提取方法对比"></a>特征提取方法对比</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/10.jpg?raw=true" alt><br></div>
+<h2 id="2-6-特征提取方法对比"><a href="#2-6-特征提取方法对比" class="headerlink" title="2.6. 特征提取方法对比"></a>2.6. 特征提取方法对比</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/10.jpg?raw=true" alt><br></div>
 
 <p>CNN提取的特征类似于dark channel, local max contrast.</p>
-<h2 id="Failure-Case"><a href="#Failure-Case" class="headerlink" title="Failure Case"></a>Failure Case</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/11.jpg?raw=true" alt><br></div>
+<h2 id="2-7-Failure-Case"><a href="#2-7-Failure-Case" class="headerlink" title="2.7. Failure Case"></a>2.7. Failure Case</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Single image dehazing via multi-scale convolutional neural networks/11.jpg?raw=true" alt><br></div>
 
 <p>由于缺少相应数据，对夜间hazy image效果并不好</p>
-<h2 id="Future-Work"><a href="#Future-Work" class="headerlink" title="Future Work"></a>Future Work</h2><ul>
+<h2 id="2-8-Future-Work"><a href="#2-8-Future-Work" class="headerlink" title="2.8. Future Work"></a>2.8. Future Work</h2><ul>
 <li>处理上述缺陷</li>
 <li>End-to-end同时估计transmission map, atmosphere light</li>
 </ul>
@@ -1415,7 +1415,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">1.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">1.2.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集"><span class="nav-number">1.3.</span> <span class="nav-text">数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.4.</span> <span class="nav-text">Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">2.1.</span> <span class="nav-text">实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时间"><span class="nav-number">2.2.</span> <span class="nav-text">运行时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#泛化性"><span class="nav-number">2.3.</span> <span class="nav-text">泛化性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fine-Scale的作用"><span class="nav-number">2.4.</span> <span class="nav-text">Fine-Scale的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Up-Sampling的作用"><span class="nav-number">2.5.</span> <span class="nav-text">Up-Sampling的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征提取方法对比"><span class="nav-number">2.6.</span> <span class="nav-text">特征提取方法对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Failure-Case"><span class="nav-number">2.7.</span> <span class="nav-text">Failure Case</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future-Work"><span class="nav-number">2.8.</span> <span class="nav-text">Future Work</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-模型"><span class="nav-text">1.1. 模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Loss-Function"><span class="nav-text">1.2. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-数据集"><span class="nav-text">1.3. 数据集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Related-Work"><span class="nav-text">1.4. Related Work</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-实验结果"><span class="nav-text">2.1. 实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-运行时间"><span class="nav-text">2.2. 运行时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-泛化性"><span class="nav-text">2.3. 泛化性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Fine-Scale的作用"><span class="nav-text">2.4. Fine-Scale的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Up-Sampling的作用"><span class="nav-text">2.5. Up-Sampling的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-特征提取方法对比"><span class="nav-text">2.6. 特征提取方法对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-Failure-Case"><span class="nav-text">2.7. Failure Case</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-Future-Work"><span class="nav-text">2.8. Future Work</span></a></li></ol></li></ol></div>
             
 
           </div>

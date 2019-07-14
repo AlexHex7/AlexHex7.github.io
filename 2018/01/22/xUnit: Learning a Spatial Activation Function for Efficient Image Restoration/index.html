@@ -493,7 +493,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>目前</p>
 <ul>
 <li>0% parameters in Activation unit (<strong>nonlinearities</strong>), Conv (<strong>spatial processing</strong>)</li>
@@ -507,7 +507,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-1-Related-Work"><a href="#1-1-Related-Work" class="headerlink" title="1.1. Related Work"></a>1.1. Related Work</h2><ul>
 <li>ELUs</li>
 <li>SRCNN</li>
 <li>VDSR</li>
@@ -519,17 +519,17 @@
 <li>DehazeNet</li>
 <li>MobileNet</li>
 </ul>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/2.jpg?raw=true" alt><br></div>
+<h2 id="1-2-模型"><a href="#1-2-模型" class="headerlink" title="1.2. 模型"></a>1.2. 模型</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/2.jpg?raw=true" alt><br></div>
 
 <p>Conv+Activation形式如下：</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/3.jpg?raw=true" alt><br></div>
 
-<h3 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/4.jpg?raw=true" alt><br></div>
+<h3 id="1-2-1-ReLU"><a href="#1-2-1-ReLU" class="headerlink" title="1.2.1. ReLU"></a>1.2.1. ReLU</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/4.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>o表示点乘，定义0/0=0.</li>
 </ul>
-<h3 id="xUnit"><a href="#xUnit" class="headerlink" title="xUnit"></a>xUnit</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/5.jpg?raw=true" alt><br></div>
+<h3 id="1-2-2-xUnit"><a href="#1-2-2-xUnit" class="headerlink" title="1.2.2. xUnit"></a>1.2.2. xUnit</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/5.jpg?raw=true" alt><br></div>
 
 <p><strong>H_k为depth-wise convolution.</strong><br>对于d-channel输入，d-channel输出而言，计算复杂度为</p>
 <ul>
@@ -538,18 +538,18 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Compare"><a href="#Compare" class="headerlink" title="Compare"></a>Compare</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/7.jpg?raw=true" alt><br></div>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Compare"><a href="#2-1-Compare" class="headerlink" title="2.1. Compare"></a>2.1. Compare</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/7.jpg?raw=true" alt><br></div>
 
-<h2 id="特征图可视化"><a href="#特征图可视化" class="headerlink" title="特征图可视化"></a>特征图可视化</h2><p>ReLU丢弃了大部分特征图（黑色），而xUnit大部分特征图都参与后续计算（白色）。</p>
+<h2 id="2-2-特征图可视化"><a href="#2-2-特征图可视化" class="headerlink" title="2.2. 特征图可视化"></a>2.2. 特征图可视化</h2><p>ReLU丢弃了大部分特征图（黑色），而xUnit大部分特征图都参与后续计算（白色）。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Denoising"><a href="#Denoising" class="headerlink" title="Denoising"></a>Denoising</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/10.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Denoising"><a href="#2-3-Denoising" class="headerlink" title="2.3. Denoising"></a>2.3. Denoising</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/9.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/10.jpg?raw=true" alt><br></div>
 
-<h2 id="De-raining"><a href="#De-raining" class="headerlink" title="De-raining"></a>De-raining</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/11.jpg?raw=true" alt><br></div>
+<h2 id="2-4-De-raining"><a href="#2-4-De-raining" class="headerlink" title="2.4. De-raining"></a>2.4. De-raining</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/11.jpg?raw=true" alt><br></div>
 
 <p>(PSNR) 28.94 VS 31.17.</p>
-<h2 id="Super-Resolution"><a href="#Super-Resolution" class="headerlink" title="Super Resolution"></a>Super Resolution</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/12.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/14.jpg?raw=true" alt><br></div>
+<h2 id="2-5-Super-Resolution"><a href="#2-5-Super-Resolution" class="headerlink" title="2.5. Super Resolution"></a>2.5. Super Resolution</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/12.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/xUnit: Learning a Spatial Activation Function for Efficient Image Restoration/14.jpg?raw=true" alt><br></div>
 
 
       
@@ -1391,7 +1391,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.1.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型"><span class="nav-number">1.2.</span> <span class="nav-text">模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ReLU"><span class="nav-number">1.2.1.</span> <span class="nav-text">ReLU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xUnit"><span class="nav-number">1.2.2.</span> <span class="nav-text">xUnit</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Compare"><span class="nav-number">2.1.</span> <span class="nav-text">Compare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征图可视化"><span class="nav-number">2.2.</span> <span class="nav-text">特征图可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Denoising"><span class="nav-number">2.3.</span> <span class="nav-text">Denoising</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#De-raining"><span class="nav-number">2.4.</span> <span class="nav-text">De-raining</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Super-Resolution"><span class="nav-number">2.5.</span> <span class="nav-text">Super Resolution</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Related-Work"><span class="nav-text">1.1. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-模型"><span class="nav-text">1.2. 模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-ReLU"><span class="nav-text">1.2.1. ReLU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-xUnit"><span class="nav-text">1.2.2. xUnit</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Compare"><span class="nav-text">2.1. Compare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-特征图可视化"><span class="nav-text">2.2. 特征图可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Denoising"><span class="nav-text">2.3. Denoising</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-De-raining"><span class="nav-text">2.4. De-raining</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Super-Resolution"><span class="nav-text">2.5. Super Resolution</span></a></li></ol></li></ol></div>
             
 
           </div>

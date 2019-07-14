@@ -483,8 +483,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>most methods report performance based on <strong>random image splitting, ignore</strong> the high probability of the <strong>same patient</strong> appearing <strong>in both training and test test</strong></li>
 <li>most methods <strong>fails</strong> to explicitly <strong>incorporate</strong> the <strong>spatial information</strong> of abnormalities or <strong>utilize the high resolution images</strong></li>
 </ul>
@@ -493,24 +493,24 @@
 <li>incorporate <strong>spatial information</strong> and <strong>high resolution</strong> for classification</li>
 <li>provide new reference <strong>patient-wise splits</strong> for <strong>ChestX-ray14</strong> and <strong>PLCO</strong></li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li><strong>Wang</strong>. proposes <strong>ChestX-ray14</strong> dataset</li>
 <li><strong>Chexnet</strong>. slightlymodify DenseNet</li>
 <li><strong>Yao</strong>. DenseNet + LSTM (randomly split dataset)</li>
 <li><strong>Guan</strong>. attention guided CNN (randomly split dataset)</li>
 </ul>
-<h2 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h2><h3 id="ChestX-Ray14"><a href="#ChestX-Ray14" class="headerlink" title="ChestX-Ray14"></a>ChestX-Ray14</h3><ul>
+<h2 id="1-3-Dataset"><a href="#1-3-Dataset" class="headerlink" title="1.3. Dataset"></a>1.3. Dataset</h2><h3 id="1-3-1-ChestX-Ray14"><a href="#1-3-1-ChestX-Ray14" class="headerlink" title="1.3.1. ChestX-Ray14"></a>1.3.1. ChestX-Ray14</h3><ul>
 <li>1024x1024, 8 bits gray-scale</li>
 <li>112,120 images</li>
 </ul>
-<h3 id="PLCO"><a href="#PLCO" class="headerlink" title="PLCO"></a>PLCO</h3><ul>
+<h3 id="1-3-2-PLCO"><a href="#1-3-2-PLCO" class="headerlink" title="1.3.2. PLCO"></a>1.3.2. PLCO</h3><ul>
 <li>2500x2100, 16 bits gray-scale</li>
 <li>choose 12 most prevalent pathology labels, among which 5 labels contains spatial information</li>
 </ul>
 <p>Across both data sets, there are <strong>6 labels</strong> which <strong>share the same name</strong>, but not combing them</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to recognize Abnormalities in Chest X-Rays with Location-Aware Dense Networks/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h2><ul>
+<h2 id="1-4-Method"><a href="#1-4-Method" class="headerlink" title="1.4. Method"></a>1.4. Method</h2><ul>
 <li>loss function</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to recognize Abnormalities in Chest X-Rays with Location-Aware Dense Networks/2.jpg?raw=true" alt><br></div>
@@ -523,7 +523,7 @@
 <ul>
 <li>35 lable where 21 from PLCO</li>
 </ul>
-<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to recognize Abnormalities in Chest X-Rays with Location-Aware Dense Networks/4.jpg?raw=true" alt><br></div>
+<h2 id="1-5-Experiments"><a href="#1-5-Experiments" class="headerlink" title="1.5. Experiments"></a>1.5. Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning to recognize Abnormalities in Chest X-Rays with Location-Aware Dense Networks/4.jpg?raw=true" alt><br></div>
 
 
 
@@ -1371,7 +1371,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dataset"><span class="nav-number">1.3.</span> <span class="nav-text">Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ChestX-Ray14"><span class="nav-number">1.3.1.</span> <span class="nav-text">ChestX-Ray14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PLCO"><span class="nav-number">1.3.2.</span> <span class="nav-text">PLCO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method"><span class="nav-number">1.4.</span> <span class="nav-text">Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments"><span class="nav-number">1.5.</span> <span class="nav-text">Experiments</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Dataset"><span class="nav-text">1.3. Dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-ChestX-Ray14"><span class="nav-text">1.3.1. ChestX-Ray14</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-PLCO"><span class="nav-text">1.3.2. PLCO</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Method"><span class="nav-text">1.4. Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Experiments"><span class="nav-text">1.5. Experiments</span></a></li></ol></li></ol></div>
             
 
           </div>

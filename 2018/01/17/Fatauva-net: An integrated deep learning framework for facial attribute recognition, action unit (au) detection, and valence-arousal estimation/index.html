@@ -488,7 +488,7 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>目前人脸表情识别的两种主流方式为</p>
 <ul>
 <li><strong>Action Units</strong> (AUs)</li>
@@ -507,15 +507,15 @@
 <li>将Attribute层的输出作为中间特征，用于后续AU检测</li>
 <li>将AU层的输出作为中间特征，用于后续V-A估计</li>
 </ul>
-<h2 id="训练过程"><a href="#训练过程" class="headerlink" title="训练过程"></a>训练过程</h2><ul>
+<h2 id="1-1-训练过程"><a href="#1-1-训练过程" class="headerlink" title="1.1. 训练过程"></a>1.1. 训练过程</h2><ul>
 <li>利用<strong>CelebA</strong>数据集训练<strong>Core Layer和Attribute Layer</strong></li>
 <li>固定Core Layer和Attribute Layer权重, 利用<strong>FERA2015</strong>数据集训练<strong>AU Layer</strong></li>
 <li>固定Core Layer, Attribute Layer和AU Layer权重，利用<strong>AFF-Wild Challenge</strong>训练<strong>V-A Layer</strong></li>
 </ul>
-<h2 id="V-A-space"><a href="#V-A-space" class="headerlink" title="V-A space"></a>V-A space</h2><p>分为两个维度</p>
+<h2 id="1-2-V-A-space"><a href="#1-2-V-A-space" class="headerlink" title="1.2. V-A space"></a>1.2. V-A space</h2><p>分为两个维度</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/2.jpg?raw=true" alt><br></div>
 
-<h2 id="相关数据集"><a href="#相关数据集" class="headerlink" title="相关数据集"></a>相关数据集</h2><ul>
+<h2 id="1-3-相关数据集"><a href="#1-3-相关数据集" class="headerlink" title="1.3. 相关数据集"></a>1.3. 相关数据集</h2><ul>
 <li><strong>cross-age celebrity dataset </strong>(CADA)</li>
 <li>[Attribute] <strong>CelebA</strong></li>
 <li>[AU] <strong>FERA2015</strong>,</li>
@@ -527,20 +527,20 @@
 
 <p><br></p>
 <hr>
-<h1 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h1><hr>
-<h2 id="Attribute-Layer"><a href="#Attribute-Layer" class="headerlink" title="Attribute Layer"></a>Attribute Layer</h2><p>分为四个子层：Face、Eye、Eyebrow、Mouth</p>
+<h1 id="2-网络结构"><a href="#2-网络结构" class="headerlink" title="2. 网络结构"></a>2. 网络结构</h1><hr>
+<h2 id="2-1-Attribute-Layer"><a href="#2-1-Attribute-Layer" class="headerlink" title="2.1. Attribute Layer"></a>2.1. Attribute Layer</h2><p>分为四个子层：Face、Eye、Eyebrow、Mouth</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/4.jpg?raw=true" alt><br></div>
 
 <p>论文从<strong>CelebA数据集</strong>中选出10种人脸属性，并将这10种属性归属到最相关子层代表的区域中（通过在子层后连接相应的2-way FC层进行预测，每种属性对应一个FC层）。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/5.jpg?raw=true" alt><br></div>
 
-<h2 id="AU-Layer"><a href="#AU-Layer" class="headerlink" title="AU Layer"></a>AU Layer</h2><p>将AUs归属到最相关的Attribute子层代表的区域中（通过在子层后连接相应的AU Conv层，并连接2-way FC层进行预测）。</p>
+<h2 id="2-2-AU-Layer"><a href="#2-2-AU-Layer" class="headerlink" title="2.2. AU Layer"></a>2.2. AU Layer</h2><p>将AUs归属到最相关的Attribute子层代表的区域中（通过在子层后连接相应的AU Conv层，并连接2-way FC层进行预测）。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/7.jpg?raw=true" alt><br></div>
 
-<h2 id="V-A-Layer"><a href="#V-A-Layer" class="headerlink" title="V-A Layer"></a>V-A Layer</h2><p>将AU分为两组（Valence和Arousal），每组AU concat在一起，输入后续Conv层以及FC层。</p>
+<h2 id="2-3-V-A-Layer"><a href="#2-3-V-A-Layer" class="headerlink" title="2.3. V-A Layer"></a>2.3. V-A Layer</h2><p>将AU分为两组（Valence和Arousal），每组AU concat在一起，输入后续Conv层以及FC层。</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/8.jpg?raw=true" alt><br></div>
 
-<h2 id="Convolutional-Block"><a href="#Convolutional-Block" class="headerlink" title="Convolutional Block"></a>Convolutional Block</h2><p>使用PolyNet中的块结构</p>
+<h2 id="2-4-Convolutional-Block"><a href="#2-4-Convolutional-Block" class="headerlink" title="2.4. Convolutional Block"></a>2.4. Convolutional Block</h2><p>使用PolyNet中的块结构</p>
 <ul>
 <li><strong>Core Layer</strong>  8 rPoly-2 blocks </li>
 <li><strong>Attribute Layer</strong>  2 rPoly-2 blocks </li>
@@ -552,8 +552,8 @@
 
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><ul>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-数据预处理"><a href="#3-1-数据预处理" class="headerlink" title="3.1. 数据预处理"></a>3.1. 数据预处理</h2><ul>
 <li><strong>Attribute和AU数据集</strong> 使用MTCNN截取人脸区域</li>
 <li><strong>V-A数据集</strong>  使用数据集给定的bounding box截取人脸区域</li>
 </ul>
@@ -562,7 +562,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/10.jpg?raw=true" alt><br></div>
 
 <p>由于样本分布不平衡，实验同样进行over sampling和down sampling.</p>
-<h2 id="Loss-Layer"><a href="#Loss-Layer" class="headerlink" title="Loss Layer"></a>Loss Layer</h2><p>在Attribute Layer和AU Layer后连接3层FC，最后对<strong>2维输出</strong>做softmax操作。</p>
+<h2 id="3-2-Loss-Layer"><a href="#3-2-Loss-Layer" class="headerlink" title="3.2. Loss Layer"></a>3.2. Loss Layer</h2><p>在Attribute Layer和AU Layer后连接3层FC，最后对<strong>2维输出</strong>做softmax操作。</p>
 <p>在V-A Layer后连接3层FC，并使用了两种loss</p>
 <ul>
 <li><strong>class-based</strong> 将[-5, 5]范围的得分离散化为11种类别。选择top 3得分：（1）如果得分连续（1,2,3或1,3,2），进行加权求和得到最终得分。（2）如果得分不连续，取top 1得分作为最终得分。</li>
@@ -580,11 +580,11 @@
 <li><strong>y^{~}</strong> ground truth</li>
 <li><strong>t</strong> L1与L2之间的转折点</li>
 </ol>
-<h2 id="Attribute-Recognition实验结果"><a href="#Attribute-Recognition实验结果" class="headerlink" title="Attribute Recognition实验结果"></a>Attribute Recognition实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/13.jpg?raw=true" alt><br></div>
+<h2 id="3-3-Attribute-Recognition实验结果"><a href="#3-3-Attribute-Recognition实验结果" class="headerlink" title="3.3. Attribute Recognition实验结果"></a>3.3. Attribute Recognition实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/13.jpg?raw=true" alt><br></div>
 
-<h2 id="AU-Detection实验结果"><a href="#AU-Detection实验结果" class="headerlink" title="AU Detection实验结果"></a>AU Detection实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/14.jpg?raw=true" alt><br></div>
+<h2 id="3-4-AU-Detection实验结果"><a href="#3-4-AU-Detection实验结果" class="headerlink" title="3.4. AU Detection实验结果"></a>3.4. AU Detection实验结果</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Fatauva-net/14.jpg?raw=true" alt><br></div>
 
-<h2 id="V-A-Estimation实验结果"><a href="#V-A-Estimation实验结果" class="headerlink" title="V-A Estimation实验结果"></a>V-A Estimation实验结果</h2><ul>
+<h2 id="3-5-V-A-Estimation实验结果"><a href="#3-5-V-A-Estimation实验结果" class="headerlink" title="3.5. V-A Estimation实验结果"></a>3.5. V-A Estimation实验结果</h2><ul>
 <li>使用<strong>AU</strong>能够提高V-Aestimation结果</li>
 <li>使用<strong>regression-based loss</strong>优于class-based loss</li>
 </ul>
@@ -1431,7 +1431,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#训练过程"><span class="nav-number">1.1.</span> <span class="nav-text">训练过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-A-space"><span class="nav-number">1.2.</span> <span class="nav-text">V-A space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关数据集"><span class="nav-number">1.3.</span> <span class="nav-text">相关数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络结构"><span class="nav-number">2.</span> <span class="nav-text">网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Attribute-Layer"><span class="nav-number">2.1.</span> <span class="nav-text">Attribute Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AU-Layer"><span class="nav-number">2.2.</span> <span class="nav-text">AU Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-A-Layer"><span class="nav-number">2.3.</span> <span class="nav-text">V-A Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Convolutional-Block"><span class="nav-number">2.4.</span> <span class="nav-text">Convolutional Block</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-number">3.1.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Layer"><span class="nav-number">3.2.</span> <span class="nav-text">Loss Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attribute-Recognition实验结果"><span class="nav-number">3.3.</span> <span class="nav-text">Attribute Recognition实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AU-Detection实验结果"><span class="nav-number">3.4.</span> <span class="nav-text">AU Detection实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-A-Estimation实验结果"><span class="nav-number">3.5.</span> <span class="nav-text">V-A Estimation实验结果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-训练过程"><span class="nav-text">1.1. 训练过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-V-A-space"><span class="nav-text">1.2. V-A space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-相关数据集"><span class="nav-text">1.3. 相关数据集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-网络结构"><span class="nav-text">2. 网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Attribute-Layer"><span class="nav-text">2.1. Attribute Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-AU-Layer"><span class="nav-text">2.2. AU Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-V-A-Layer"><span class="nav-text">2.3. V-A Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Convolutional-Block"><span class="nav-text">2.4. Convolutional Block</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-数据预处理"><span class="nav-text">3.1. 数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Loss-Layer"><span class="nav-text">3.2. Loss Layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Attribute-Recognition实验结果"><span class="nav-text">3.3. Attribute Recognition实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-AU-Detection实验结果"><span class="nav-text">3.4. AU Detection实验结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-V-A-Estimation实验结果"><span class="nav-text">3.5. V-A Estimation实验结果</span></a></li></ol></li></ol></div>
             
 
           </div>

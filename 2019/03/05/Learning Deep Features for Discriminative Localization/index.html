@@ -480,8 +480,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>recent work find that <strong>various layers</strong> of CNN behave as <strong>object detectors despite on supervision on the location</strong> of the object was provided. This ability is lost when FC are used for classification</li>
 </ul>
 <p>In this paper</p>
@@ -490,7 +490,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning Deep Features for Discriminative Localization/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><ul>
+<h2 id="1-2-Related-Work"><a href="#1-2-Related-Work" class="headerlink" title="1.2. Related Work"></a>1.2. Related Work</h2><ul>
 <li>Weakly-supervised Object Localization<ul>
 <li>global max pooling</li>
 </ul>
@@ -500,14 +500,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="Class-Activation-Mapping-CAM"><a href="#Class-Activation-Mapping-CAM" class="headerlink" title="Class Activation Mapping (CAM)"></a>Class Activation Mapping (CAM)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning Deep Features for Discriminative Localization/2.jpg?raw=true" alt><br></div>
+<h2 id="1-3-Class-Activation-Mapping-CAM"><a href="#1-3-Class-Activation-Mapping-CAM" class="headerlink" title="1.3. Class Activation Mapping (CAM)"></a>1.3. Class Activation Mapping (CAM)</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning Deep Features for Discriminative Localization/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>before final ouput layer, perform <strong>global average pooling on CNN feature</strong></li>
 <li>then FC layer to produce the desired output</li>
 <li>finally, project back the weights of the output layer on CNN features</li>
 </ul>
-<h3 id="Formulation"><a href="#Formulation" class="headerlink" title="Formulation"></a>Formulation</h3><p>For feature maps (K, h, w)</p>
+<h3 id="1-3-1-Formulation"><a href="#1-3-1-Formulation" class="headerlink" title="1.3.1. Formulation"></a>1.3.1. Formulation</h3><p>For feature maps (K, h, w)</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning Deep Features for Discriminative Localization/3.jpg?raw=true" alt><br></div>
 
 <ul>
@@ -526,23 +526,23 @@
 <ul>
 <li>simply upsample the class activation map to the size of the input image</li>
 </ul>
-<h3 id="GAP-vs-GMP"><a href="#GAP-vs-GMP" class="headerlink" title="GAP vs GMP"></a>GAP vs GMP</h3><ul>
+<h3 id="1-3-2-GAP-vs-GMP"><a href="#1-3-2-GAP-vs-GMP" class="headerlink" title="1.3.2. GAP vs GMP"></a>1.3.2. GAP vs GMP</h3><ul>
 <li><strong>GMP</strong>. encourages to identify <strong>one discriminative part</strong></li>
 <li><strong>GMP</strong>. <strong>low scores for all image regions</strong> except the most discriminative one <strong>do not impact the score</strong></li>
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Weakly-supervised-Object-Localization"><a href="#Weakly-supervised-Object-Localization" class="headerlink" title="Weakly-supervised Object Localization"></a>Weakly-supervised Object Localization</h2><ul>
+<h1 id="2-Experiments"><a href="#2-Experiments" class="headerlink" title="2. Experiments"></a>2. Experiments</h1><hr>
+<h2 id="2-1-Weakly-supervised-Object-Localization"><a href="#2-1-Weakly-supervised-Object-Localization" class="headerlink" title="2.1. Weakly-supervised Object Localization"></a>2.1. Weakly-supervised Object Localization</h2><ul>
 <li>find that the <strong>localization ability</strong> of the networks <strong>improved</strong> when the last Conv before GAP had a <strong>higher spatial resolution</strong> (13x13 for AlexNet, 14x14 for VGG, 14x14 for GooLeNet)</li>
 </ul>
-<h3 id="Localization"><a href="#Localization" class="headerlink" title="Localization"></a>Localization</h3><ul>
+<h3 id="2-1-1-Localization"><a href="#2-1-1-Localization" class="headerlink" title="2.1.1. Localization"></a>2.1.1. Localization</h3><ul>
 <li>value above <strong>20% of the max value</strong> of CAM</li>
 <li>take the BBox covers the largest connected component in the segmentation map (<strong>top-5 predicted classes</strong>)</li>
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning Deep Features for Discriminative Localization/6.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning Deep Features for Discriminative Localization/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Visualize-Class-Specific-Units"><a href="#Visualize-Class-Specific-Units" class="headerlink" title="Visualize Class-Specific Units"></a>Visualize Class-Specific Units</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning Deep Features for Discriminative Localization/8.jpg?raw=true" alt><br></div>
+<h2 id="2-2-Visualize-Class-Specific-Units"><a href="#2-2-Visualize-Class-Specific-Units" class="headerlink" title="2.2. Visualize Class-Specific Units"></a>2.2. Visualize Class-Specific Units</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Learning Deep Features for Discriminative Localization/8.jpg?raw=true" alt><br></div>
 
 
 
@@ -1381,7 +1381,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.2.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-Activation-Mapping-CAM"><span class="nav-number">1.3.</span> <span class="nav-text">Class Activation Mapping (CAM)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Formulation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Formulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GAP-vs-GMP"><span class="nav-number">1.3.2.</span> <span class="nav-text">GAP vs GMP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">2.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Weakly-supervised-Object-Localization"><span class="nav-number">2.1.</span> <span class="nav-text">Weakly-supervised Object Localization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Localization"><span class="nav-number">2.1.1.</span> <span class="nav-text">Localization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visualize-Class-Specific-Units"><span class="nav-number">2.2.</span> <span class="nav-text">Visualize Class-Specific Units</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Related-Work"><span class="nav-text">1.2. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Class-Activation-Mapping-CAM"><span class="nav-text">1.3. Class Activation Mapping (CAM)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-1-Formulation"><span class="nav-text">1.3.1. Formulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-2-GAP-vs-GMP"><span class="nav-text">1.3.2. GAP vs GMP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Experiments"><span class="nav-text">2. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Weakly-supervised-Object-Localization"><span class="nav-text">2.1. Weakly-supervised Object Localization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-1-Localization"><span class="nav-text">2.1.1. Localization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Visualize-Class-Specific-Units"><span class="nav-text">2.2. Visualize Class-Specific Units</span></a></li></ol></li></ol></div>
             
 
           </div>

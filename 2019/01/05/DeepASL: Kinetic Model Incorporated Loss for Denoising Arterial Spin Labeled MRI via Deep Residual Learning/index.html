@@ -483,21 +483,21 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><p>Arterial spin labeling (ASL) allows to quantify the cerebral blood flow (CBF) by magnetic labeling of the arterial blood water, but suffers from an inherently low-signal-to-noise ratio (SNR).</p>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><p>Arterial spin labeling (ASL) allows to quantify the cerebral blood flow (CBF) by magnetic labeling of the arterial blood water, but suffers from an inherently low-signal-to-noise ratio (SNR).</p>
 <p>In this paper</p>
 <ul>
 <li><strong>FCN</strong> to learn <strong>residual</strong> from noisy perfusion-weighted image</li>
 <li>incorporate the <strong>CBF estimation</strong> model in the <strong>loss function</strong> during training</li>
 </ul>
-<h2 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning/1.jpg?raw=true" alt><br></div>
+<h2 id="1-2-Model"><a href="#1-2-Model" class="headerlink" title="1.2. Model"></a>1.2. Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning/1.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>Input</strong>. 2D noisy gray image patches</li>
 <li>8 Conv2D (48 channels, 3x3, following <strong>pReLU</strong>) + 1 Conv2D (no activation)</li>
 <li><strong>training</strong>. 18000 patch pairs of 40x40, batch size 500, 200 epoch, LR 0.0001</li>
 </ul>
-<h2 id="CBF-Estimation-Model"><a href="#CBF-Estimation-Model" class="headerlink" title="CBF Estimation Model"></a>CBF Estimation Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning/2.jpg?raw=true" alt><br></div>
+<h2 id="1-3-CBF-Estimation-Model"><a href="#1-3-CBF-Estimation-Model" class="headerlink" title="1.3. CBF Estimation Model"></a>1.3. CBF Estimation Model</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>β</strong>. brain-blood partition coefficient</li>
@@ -508,13 +508,13 @@
 <li><strong>SI_{PD}</strong>. proton density weighted image</li>
 <li><strong>ΔM</strong>. perfusion-weighted images</li>
 </ul>
-<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning/3.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Loss-Function"><a href="#1-4-Loss-Function" class="headerlink" title="1.4. Loss Function"></a>1.4. Loss Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning/3.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>N</strong>. noisy</li>
 <li><strong>f_t</strong>. reference CBF value for each voxel</li>
 </ul>
-<h2 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning/4.jpg?raw=true" alt><br></div>
+<h2 id="1-5-Experiments"><a href="#1-5-Experiments" class="headerlink" title="1.5. Experiments"></a>1.5. Experiments</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/DeepASL: Kinetic Model Incorporated Loss for Denoising Arterial Spin Labeled MRI via Deep Residual Learning/4.jpg?raw=true" alt><br></div>
 
 
 
@@ -1352,7 +1352,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Model"><span class="nav-number">1.2.</span> <span class="nav-text">Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CBF-Estimation-Model"><span class="nav-number">1.3.</span> <span class="nav-text">CBF Estimation Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loss-Function"><span class="nav-number">1.4.</span> <span class="nav-text">Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiments"><span class="nav-number">1.5.</span> <span class="nav-text">Experiments</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Model"><span class="nav-text">1.2. Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-CBF-Estimation-Model"><span class="nav-text">1.3. CBF Estimation Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Loss-Function"><span class="nav-text">1.4. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Experiments"><span class="nav-text">1.5. Experiments</span></a></li></ol></li></ol></div>
             
 
           </div>

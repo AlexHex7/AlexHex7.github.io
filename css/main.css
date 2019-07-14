@@ -1768,7 +1768,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #033e54;
+  background: #d7b326;
 }
 .feed-link,
 .chat {
@@ -2712,48 +2712,6 @@ hr {
     width: auto;
     text-align: center;
   }
-}
-body {
-  counter-reset: h1;
-}
-h1 {
-  counter-reset: h2;
-}
-h2 {
-  counter-reset: h3;
-}
-h3 {
-  counter-reset: h4;
-}
-h4 {
-  counter-reset: h5;
-}
-h5 {
-  counter-reset: h6;
-}
-h3:before {
-  counter-increment: h3;
-  content: counter(h3) ") ";
-}
-h4:before {
-  counter-increment: h4;
-  content: counter(h2) "." counter(h3) "." counter(h4) ") ";
-}
-h5:before {
-  counter-increment: h5;
-  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ") ";
-}
-h6:before {
-  counter-increment: h6;
-  content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ") ";
-}
-h2.nocount:before,
-h3.nocount:before,
-h4.nocount:before,
-h5.nocount:before,
-h6.nocount:before {
-  content: "";
-  counter-increment: none;
 }
 div.main {
   display: flex;

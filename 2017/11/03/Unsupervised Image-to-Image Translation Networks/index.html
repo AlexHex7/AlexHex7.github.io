@@ -495,7 +495,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised Image-to-Image Translation Networks/1.jpg?raw=true" alt><br></div>
 
-<h1 id="Assumptions"><a href="#Assumptions" class="headerlink" title="Assumptions"></a>Assumptions</h1><hr>
+<h1 id="1-Assumptions"><a href="#1-Assumptions" class="headerlink" title="1. Assumptions"></a>1. Assumptions</h1><hr>
 <ul>
 <li><strong>Unsupervised</strong><ul>
 <li>Marginal $p_{X1}(x1), p_{X2}(x2)$</li>
@@ -524,12 +524,12 @@
 </ul>
 </li>
 </ol>
-<h1 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h1><hr>
+<h1 id="2-Framework"><a href="#2-Framework" class="headerlink" title="2. Framework"></a>2. Framework</h1><hr>
 <p>6 subnetworks (Table 1)</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised Image-to-Image Translation Networks/3.jpg?raw=true" alt><br></div>
 
 
-<h1 id="VAE"><a href="#VAE" class="headerlink" title="VAE"></a>VAE</h1><hr>
+<h1 id="3-VAE"><a href="#3-VAE" class="headerlink" title="3. VAE"></a>3. VAE</h1><hr>
 <ul>
 <li>Reparameterization</li>
 </ul>
@@ -537,13 +537,13 @@
 
 
 
-<h1 id="Weight-sharing"><a href="#Weight-sharing" class="headerlink" title="Weight-sharing"></a>Weight-sharing</h1><hr>
+<h1 id="4-Weight-sharing"><a href="#4-Weight-sharing" class="headerlink" title="4. Weight-sharing"></a>4. Weight-sharing</h1><hr>
 <ul>
 <li>基于shared-latent space假设，<strong>enforce weight-sharing约束</strong>到两个VAE上：<strong>last few</strong> layers of E, <strong>first few</strong> layers of G.</li>
 <li>但<strong>weight-sharing约束</strong>并不能确保两个domain中对应的图片能得到相同的latent code. 因为对于unsupervised方式而言，两个domian中<strong>不存在对应的pair</strong>能够训练网络输出<strong>同样的latent code</strong>.</li>
 <li>然而，能够通过<strong>对抗训练</strong>将两个domain中的pair映射到同样的latent code上。</li>
 </ul>
-<h1 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h1><hr>
+<h1 id="5-Stream"><a href="#5-Stream" class="headerlink" title="5. Stream"></a>5. Stream</h1><hr>
 <ul>
 <li>Translation stream<ul>
 <li>$X1-&gt;z1-&gt;X2$</li>
@@ -556,9 +556,9 @@
 </ul>
 </li>
 </ul>
-<h1 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h1><hr>
+<h1 id="6-GAN"><a href="#6-GAN" class="headerlink" title="6. GAN"></a>6. GAN</h1><hr>
 <p>只将对抗训练应用到translation stream上。</p>
-<h1 id="Cycle-consistent"><a href="#Cycle-consistent" class="headerlink" title="Cycle-consistent"></a>Cycle-consistent</h1><hr>
+<h1 id="7-Cycle-consistent"><a href="#7-Cycle-consistent" class="headerlink" title="7. Cycle-consistent"></a>7. Cycle-consistent</h1><hr>
 <ul>
 <li><strong>Cycle-reconstruction stream</strong><ul>
 <li>$X1-&gt;z1-&gt;X2’-&gt;z2-&gt;X1’$</li>
@@ -567,7 +567,7 @@
 </li>
 <li>To further regularize the ill-posed unsupervised image-to-image translation problem.</li>
 </ul>
-<h1 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h1><hr>
+<h1 id="8-Loss"><a href="#8-Loss" class="headerlink" title="8. Loss"></a>8. Loss</h1><hr>
 <ul>
 <li><strong>交替update</strong><ol>
 <li>更新D1, D2 (adversarial loss)</li>
@@ -578,7 +578,7 @@
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised Image-to-Image Translation Networks/5.jpg?raw=true" alt><br></div>
 
 
-<h1 id="VAE-loss"><a href="#VAE-loss" class="headerlink" title="VAE loss"></a>VAE loss</h1><hr>
+<h1 id="9-VAE-loss"><a href="#9-VAE-loss" class="headerlink" title="9. VAE loss"></a>9. VAE loss</h1><hr>
 <ul>
 <li>用Laplacian分布model pG1,pG2.</li>
 <li>最小化<strong>Negative log-likelihood等价于</strong>最小化image和reconstructed image绝对距离。</li>
@@ -587,18 +587,18 @@
 
 
 
-<h1 id="GAN-loss"><a href="#GAN-loss" class="headerlink" title="GAN loss"></a>GAN loss</h1><hr>
+<h1 id="10-GAN-loss"><a href="#10-GAN-loss" class="headerlink" title="10. GAN loss"></a>10. GAN loss</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised Image-to-Image Translation Networks/7.jpg?raw=true" alt><br></div>
 
 
 
-<h1 id="CC-loss"><a href="#CC-loss" class="headerlink" title="CC loss"></a>CC loss</h1><hr>
+<h1 id="11-CC-loss"><a href="#11-CC-loss" class="headerlink" title="11. CC loss"></a>11. CC loss</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised Image-to-Image Translation Networks/8.jpg?raw=true" alt><br></div>
 
 
 
 
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
+<h1 id="12-Experiments"><a href="#12-Experiments" class="headerlink" title="12. Experiments"></a>12. Experiments</h1><hr>
 <ul>
 <li>Shallow D导致较差性能 <strong>(Figure 2b)</strong></li>
 <li>Weight-sharing层数影响小 <strong>(Figure 2c)</strong></li>
@@ -631,7 +631,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised Image-to-Image Translation Networks/13.jpg?raw=true" alt><br></div>
 
-<h1 id="Domain-Adaption"><a href="#Domain-Adaption" class="headerlink" title="Domain Adaption"></a>Domain Adaption</h1><hr>
+<h1 id="13-Domain-Adaption"><a href="#13-Domain-Adaption" class="headerlink" title="13. Domain Adaption"></a>13. Domain Adaption</h1><hr>
 <ul>
 <li>用一个domian中的labeled数据训练分类器，并用将该分类器应用到另一个domain数据集上，该数据的labeled在训练中没有使用到。</li>
 <li>利用UNIT进行<strong>多任务学习</strong>:<ol>
@@ -647,7 +647,7 @@
 <p>实验发现<strong>spatial context information</strong> useful (RGB+<strong>normalized xy coordinates</strong>).</p>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised Image-to-Image Translation Networks/15.jpg?raw=true" alt><br></div>
 
-<h1 id="Network-Architecture"><a href="#Network-Architecture" class="headerlink" title="Network Architecture"></a>Network Architecture</h1><hr>
+<h1 id="14-Network-Architecture"><a href="#14-Network-Architecture" class="headerlink" title="14. Network Architecture"></a>14. Network Architecture</h1><hr>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Unsupervised Image-to-Image Translation Networks/16.jpg?raw=true" alt><br></div>
 
 
@@ -1497,7 +1497,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Assumptions"><span class="nav-number">1.</span> <span class="nav-text">Assumptions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Framework"><span class="nav-number">2.</span> <span class="nav-text">Framework</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VAE"><span class="nav-number">3.</span> <span class="nav-text">VAE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Weight-sharing"><span class="nav-number">4.</span> <span class="nav-text">Weight-sharing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stream"><span class="nav-number">5.</span> <span class="nav-text">Stream</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GAN"><span class="nav-number">6.</span> <span class="nav-text">GAN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cycle-consistent"><span class="nav-number">7.</span> <span class="nav-text">Cycle-consistent</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loss"><span class="nav-number">8.</span> <span class="nav-text">Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#VAE-loss"><span class="nav-number">9.</span> <span class="nav-text">VAE loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GAN-loss"><span class="nav-number">10.</span> <span class="nav-text">GAN loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CC-loss"><span class="nav-number">11.</span> <span class="nav-text">CC loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">12.</span> <span class="nav-text">Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Domain-Adaption"><span class="nav-number">13.</span> <span class="nav-text">Domain Adaption</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Network-Architecture"><span class="nav-number">14.</span> <span class="nav-text">Network Architecture</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Assumptions"><span class="nav-text">1. Assumptions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Framework"><span class="nav-text">2. Framework</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-VAE"><span class="nav-text">3. VAE</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Weight-sharing"><span class="nav-text">4. Weight-sharing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Stream"><span class="nav-text">5. Stream</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-GAN"><span class="nav-text">6. GAN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-Cycle-consistent"><span class="nav-text">7. Cycle-consistent</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Loss"><span class="nav-text">8. Loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-VAE-loss"><span class="nav-text">9. VAE loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-GAN-loss"><span class="nav-text">10. GAN loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-CC-loss"><span class="nav-text">11. CC loss</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-Experiments"><span class="nav-text">12. Experiments</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-Domain-Adaption"><span class="nav-text">13. Domain Adaption</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-Network-Architecture"><span class="nav-text">14. Network Architecture</span></a></li></ol></div>
             
 
           </div>

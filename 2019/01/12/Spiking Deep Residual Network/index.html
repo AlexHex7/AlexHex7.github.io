@@ -491,8 +491,8 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
-<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><ul>
 <li>big challenge to train a very deep SNN</li>
 </ul>
 <p>In this paper, it proposed an <strong>efficient approach to build a spiking version of ResNet</strong></p>
@@ -504,7 +504,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/1.jpg?raw=true" alt><br></div>
 
-<h2 id="SNN"><a href="#SNN" class="headerlink" title="SNN"></a>SNN</h2><ul>
+<h2 id="1-2-SNN"><a href="#1-2-SNN" class="headerlink" title="1.2. SNN"></a>1.2. SNN</h2><ul>
 <li>solution to bridge the gap between <strong>performance and computational costs</strong> and theoretically</li>
 <li>can <strong>approximate</strong> any function as ANNs</li>
 <li>communicate each other <strong>via discrete events (spikes)</strong> instead of continuous-valued activations</li>
@@ -514,7 +514,7 @@
 <li><p>main challenge. find an efficient training algorithm that <strong>overcome the discontinuity of spiking</strong> and achieve comparable performance to ANN</p>
 </li>
 </ul>
-<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p>the <strong>indifferentiability</strong> of SNN, it is hard to direclty apply classic learning methods of ANN.</p>
+<h2 id="1-3-Related-Work"><a href="#1-3-Related-Work" class="headerlink" title="1.3. Related Work"></a>1.3. Related Work</h2><p>the <strong>indifferentiability</strong> of SNN, it is hard to direclty apply classic learning methods of ANN.</p>
 <ul>
 <li>directly learn from spikes with BP-like algorithm by <strong>approximating the threshold function with linearity</strong></li>
 <li><strong>STDP</strong> (spiking-timing-dependent plasticity), rectangular STDP, exponential STDP</li>
@@ -525,7 +525,7 @@
 <li><strong>conver common operations</strong> in ANNs such as max-pooling, softmax, BN and Inception-Modules to spiking equivalents</li>
 <li>usually focus on shallow network</li>
 </ul>
-<h2 id="Residual"><a href="#Residual" class="headerlink" title="Residual"></a>Residual</h2><ul>
+<h2 id="1-4-Residual"><a href="#1-4-Residual" class="headerlink" title="1.4. Residual"></a>1.4. Residual</h2><ul>
 <li>residual networks are equivalent to RNNs and RNNs are biologically plausible models of vision cortex</li>
 <li>biological finding indicate that <strong>it takes much less time to alter the weights of synapse than creating a new synaptic connection</strong></li>
 <li>with residual learning, we can <strong>re-train falsely learned knowledge by simply suppressing synaptic weights in stacked layers, without introducing new synaptic connection</strong></li>
@@ -533,8 +533,8 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><hr>
-<h2 id="Overview-1"><a href="#Overview-1" class="headerlink" title="Overview"></a>Overview</h2><ul>
+<h1 id="2-Methods"><a href="#2-Methods" class="headerlink" title="2. Methods"></a>2. Methods</h1><hr>
+<h2 id="2-1-Overview"><a href="#2-1-Overview" class="headerlink" title="2.1. Overview"></a>2.1. Overview</h2><ul>
 <li><strong>ReLU</strong> can approximate the firing rate of spiking <strong>IF neuron</strong></li>
 <li>Batch Normalization</li>
 </ul>
@@ -549,11 +549,11 @@
 </li>
 </ul>
 <p><strong>λ^l</strong>. max 99.9% activation at layer l instead of the actual max activation as using the actual max activation is more prone to be susceptible to outliers</p>
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><ul>
+<h2 id="2-2-Problem"><a href="#2-2-Problem" class="headerlink" title="2.2. Problem"></a>2.2. Problem</h2><ul>
 <li>spiking residual network is a <strong>directed acyclic graph</strong>. In order to <strong>scale the activation appropriately</strong>, we must also take its input from the shortcut connection into consideration as the conversion <strong>introduces new synaptic weights in shortcuts</strong></li>
 <li><strong>sampling error caused by discretisation</strong> is the major factor for degradation</li>
 </ul>
-<h2 id="Shorcut-Normalization"><a href="#Shorcut-Normalization" class="headerlink" title="Shorcut Normalization"></a>Shorcut Normalization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/6.jpg?raw=true" alt><br></div>
+<h2 id="2-3-Shorcut-Normalization"><a href="#2-3-Shorcut-Normalization" class="headerlink" title="2.3. Shorcut Normalization"></a>2.3. Shorcut Normalization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li>max_1, max_2, max_3 denote max activations in ReLU1, ReLU2, ReLU3</li>
@@ -561,7 +561,7 @@
 </ul>
 <div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/7.jpg?raw=true" alt><br></div>
 
-<h2 id="Compensation-of-Sampling-Error"><a href="#Compensation-of-Sampling-Error" class="headerlink" title="Compensation of Sampling Error"></a>Compensation of Sampling Error</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/8.jpg?raw=true" alt><br></div>
+<h2 id="2-4-Compensation-of-Sampling-Error"><a href="#2-4-Compensation-of-Sampling-Error" class="headerlink" title="2.4. Compensation of Sampling Error"></a>2.4. Compensation of Sampling Error</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/8.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>shallow network.</strong> sampling error has no significant impact on performance</li>
@@ -572,14 +572,14 @@
 </ul>
 <p><br></p>
 <hr>
-<h1 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h1><hr>
-<h2 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/9.jpg?raw=true" alt><br></div>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Comparison"><a href="#3-1-Comparison" class="headerlink" title="3.1. Comparison"></a>3.1. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/9.jpg?raw=true" alt><br></div>
 
-<h2 id="Shortcut-Normalization"><a href="#Shortcut-Normalization" class="headerlink" title="Shortcut Normalization"></a>Shortcut Normalization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/10.jpg?raw=true" alt><br></div>
+<h2 id="3-2-Shortcut-Normalization"><a href="#3-2-Shortcut-Normalization" class="headerlink" title="3.2. Shortcut Normalization"></a>3.2. Shortcut Normalization</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/10.jpg?raw=true" alt><br></div>
 
-<h2 id="ResNet-vs-CNN"><a href="#ResNet-vs-CNN" class="headerlink" title="ResNet vs CNN"></a>ResNet vs CNN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/11.jpg?raw=true" alt><br></div>
+<h2 id="3-3-ResNet-vs-CNN"><a href="#3-3-ResNet-vs-CNN" class="headerlink" title="3.3. ResNet vs CNN"></a>3.3. ResNet vs CNN</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Error-Compensation"><a href="#Error-Compensation" class="headerlink" title="Error Compensation"></a>Error Compensation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/12.jpg?raw=true" alt><br></div>
+<h2 id="3-4-Error-Compensation"><a href="#3-4-Error-Compensation" class="headerlink" title="3.4. Error Compensation"></a>3.4. Error Compensation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Spiking Deep Residual Network/12.jpg?raw=true" alt><br></div>
 
 
 
@@ -1418,7 +1418,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Motivation"><span class="nav-number">1.1.</span> <span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SNN"><span class="nav-number">1.2.</span> <span class="nav-text">SNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Related-Work"><span class="nav-number">1.3.</span> <span class="nav-text">Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Residual"><span class="nav-number">1.4.</span> <span class="nav-text">Residual</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-1"><span class="nav-number">2.1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">2.2.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shorcut-Normalization"><span class="nav-number">2.3.</span> <span class="nav-text">Shorcut Normalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compensation-of-Sampling-Error"><span class="nav-number">2.4.</span> <span class="nav-text">Compensation of Sampling Error</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Experiments"><span class="nav-number">3.</span> <span class="nav-text">Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison"><span class="nav-number">3.1.</span> <span class="nav-text">Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shortcut-Normalization"><span class="nav-number">3.2.</span> <span class="nav-text">Shortcut Normalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ResNet-vs-CNN"><span class="nav-number">3.3.</span> <span class="nav-text">ResNet vs CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-Compensation"><span class="nav-number">3.4.</span> <span class="nav-text">Error Compensation</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-SNN"><span class="nav-text">1.2. SNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Related-Work"><span class="nav-text">1.3. Related Work</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Residual"><span class="nav-text">1.4. Residual</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Methods"><span class="nav-text">2. Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Overview"><span class="nav-text">2.1. Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Problem"><span class="nav-text">2.2. Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Shorcut-Normalization"><span class="nav-text">2.3. Shorcut Normalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Compensation-of-Sampling-Error"><span class="nav-text">2.4. Compensation of Sampling Error</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Comparison"><span class="nav-text">3.1. Comparison</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Shortcut-Normalization"><span class="nav-text">3.2. Shortcut Normalization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-ResNet-vs-CNN"><span class="nav-text">3.3. ResNet vs CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Error-Compensation"><span class="nav-text">3.4. Error Compensation</span></a></li></ol></li></ol></div>
             
 
           </div>

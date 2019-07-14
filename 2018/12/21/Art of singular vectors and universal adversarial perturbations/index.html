@@ -486,16 +486,16 @@
 <a id="more"></a>
 <p><br></p>
 <hr>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
 <p>In this paper, it proposed a <strong>algorithm</strong> for constructing <strong>universal perturbation</strong></p>
 <ul>
 <li>compute the <strong>(p,q)-singular vectors</strong> of the <strong>Jacobian matrices</strong> of hidden layers </li>
 <li><strong>based on 64 images</strong>, the perturbation with more than 60% fooling rate on 50000 images dataset</li>
 <li>investigate a <strong>correlation</strong> between <strong>maximum singular value and fooling rate</strong></li>
 </ul>
-<h2 id="p-q-singular-gector"><a href="#p-q-singular-gector" class="headerlink" title="(p-q)-singular gector"></a>(p-q)-singular gector</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/1.jpg?raw=true" alt><br></div>
+<h2 id="1-1-p-q-singular-gector"><a href="#1-1-p-q-singular-gector" class="headerlink" title="1.1. (p-q)-singular gector"></a>1.1. (p-q)-singular gector</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/1.jpg?raw=true" alt><br></div>
 
-<h2 id="Jacobian"><a href="#Jacobian" class="headerlink" title="Jacobian"></a>Jacobian</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/2.jpg?raw=true" alt><br></div>
+<h2 id="1-2-Jacobian"><a href="#1-2-Jacobian" class="headerlink" title="1.2. Jacobian"></a>1.2. Jacobian</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/2.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>f_i</strong>. the i-th hidden layer</li>
@@ -508,11 +508,11 @@
 
 </li>
 </ul>
-<h2 id="Iterative-Methods"><a href="#Iterative-Methods" class="headerlink" title="Iterative Methods"></a>Iterative Methods</h2><ul>
+<h2 id="1-3-Iterative-Methods"><a href="#1-3-Iterative-Methods" class="headerlink" title="1.3. Iterative Methods"></a>1.3. Iterative Methods</h2><ul>
 <li>Instead of evaluating and storing the full matrix A, we use only the <strong>macvec function of A</strong> (given an <strong>input vector v</strong>, computes an <strong>ordinary product Av</strong> without forming the full matrix A, <strong>O(n) complexity</strong>)</li>
 <li><strong>Power Methods algorithm</strong> to compute (p,q)-singular vectors</li>
 </ul>
-<h2 id="Generalized-Power-Method"><a href="#Generalized-Power-Method" class="headerlink" title="Generalized Power Method"></a>Generalized Power Method</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/6.jpg?raw=true" alt><br></div>
+<h2 id="1-4-Generalized-Power-Method"><a href="#1-4-Generalized-Power-Method" class="headerlink" title="1.4. Generalized Power Method"></a>1.4. Generalized Power Method</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/6.jpg?raw=true" alt><br></div>
 
 <ul>
 <li><strong>x.</strong> ε</li>
@@ -528,11 +528,11 @@
 
 </li>
 </ul>
-<h2 id="Stochastic-Power-Methods"><a href="#Stochastic-Power-Methods" class="headerlink" title="Stochastic Power Methods"></a>Stochastic Power Methods</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/11.jpg?raw=true" alt><br></div>
+<h2 id="1-5-Stochastic-Power-Methods"><a href="#1-5-Stochastic-Power-Methods" class="headerlink" title="1.5. Stochastic Power Methods"></a>1.5. Stochastic Power Methods</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/10.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/11.jpg?raw=true" alt><br></div>
 
-<h2 id="Efficient-Implementation-of-the-Matvec-Function"><a href="#Efficient-Implementation-of-the-Matvec-Function" class="headerlink" title="Efficient Implementation of the Matvec Function"></a>Efficient Implementation of the Matvec Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/12.jpg?raw=true" alt><br></div>
+<h2 id="1-6-Efficient-Implementation-of-the-Matvec-Function"><a href="#1-6-Efficient-Implementation-of-the-Matvec-Function" class="headerlink" title="1.6. Efficient Implementation of the Matvec Function"></a>1.6. Efficient Implementation of the Matvec Function</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/12.jpg?raw=true" alt><br></div>
 
-<h2 id="Perturbation"><a href="#Perturbation" class="headerlink" title="Perturbation"></a>Perturbation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/14.jpg?raw=true" alt><br></div>
+<h2 id="1-7-Perturbation"><a href="#1-7-Perturbation" class="headerlink" title="1.7. Perturbation"></a>1.7. Perturbation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/13.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Art of singular vectors and universal adversarial perturbations/14.jpg?raw=true" alt><br></div>
 
 
 
@@ -1368,7 +1368,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#p-q-singular-gector"><span class="nav-number">1.1.</span> <span class="nav-text">(p-q)-singular gector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jacobian"><span class="nav-number">1.2.</span> <span class="nav-text">Jacobian</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterative-Methods"><span class="nav-number">1.3.</span> <span class="nav-text">Iterative Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generalized-Power-Method"><span class="nav-number">1.4.</span> <span class="nav-text">Generalized Power Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stochastic-Power-Methods"><span class="nav-number">1.5.</span> <span class="nav-text">Stochastic Power Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Efficient-Implementation-of-the-Matvec-Function"><span class="nav-number">1.6.</span> <span class="nav-text">Efficient Implementation of the Matvec Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Perturbation"><span class="nav-number">1.7.</span> <span class="nav-text">Perturbation</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-p-q-singular-gector"><span class="nav-text">1.1. (p-q)-singular gector</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Jacobian"><span class="nav-text">1.2. Jacobian</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Iterative-Methods"><span class="nav-text">1.3. Iterative Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-Generalized-Power-Method"><span class="nav-text">1.4. Generalized Power Method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5-Stochastic-Power-Methods"><span class="nav-text">1.5. Stochastic Power Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6-Efficient-Implementation-of-the-Matvec-Function"><span class="nav-text">1.6. Efficient Implementation of the Matvec Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7-Perturbation"><span class="nav-text">1.7. Perturbation</span></a></li></ol></li></ol></div>
             
 
           </div>
