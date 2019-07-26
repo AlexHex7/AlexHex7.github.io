@@ -256,11 +256,11 @@
       <category term="Caption" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Caption/"/>
     
     
+      <category term="Caption" scheme="http://yoursite.com/tags/Caption/"/>
+    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Caption" scheme="http://yoursite.com/tags/Caption/"/>
     
       <category term="Multi-task Learning" scheme="http://yoursite.com/tags/Multi-task-Learning/"/>
     

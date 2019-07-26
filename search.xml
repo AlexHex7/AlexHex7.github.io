@@ -119,9 +119,9 @@
         <category>Caption</category>
       </categories>
       <tags>
+        <tag>Caption</tag>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
-        <tag>Caption</tag>
         <tag>Multi-task Learning</tag>
       </tags>
   </entry>
@@ -523,8 +523,8 @@
         <category>Multiple Hypotheses</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
+        <tag>Medical</tag>
         <tag>Segmentation</tag>
         <tag>Multiple Hypotheses</tag>
         <tag>UNet</tag>
@@ -555,8 +555,8 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
+        <tag>Medical</tag>
         <tag>Segmentation</tag>
       </tags>
   </entry>
@@ -983,9 +983,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
         <tag>Classification</tag>
         <tag>GAN</tag>
-        <tag>Cross-Modality</tag>
         <tag>Zero-Shot Learning</tag>
         <tag>Feature Generation</tag>
       </tags>
@@ -1000,9 +1000,9 @@
         <category>Network</category>
       </categories>
       <tags>
+        <tag>NLP</tag>
         <tag>Network</tag>
         <tag>TCN</tag>
-        <tag>NLP</tag>
       </tags>
   </entry>
   <entry>
@@ -1015,8 +1015,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>NLP</tag>
+        <tag>Network</tag>
         <tag>Transformer</tag>
       </tags>
   </entry>
@@ -1046,9 +1046,9 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
+        <tag>Network</tag>
         <tag>Word-CNN-RNN</tag>
         <tag>Character-CNN-RNN</tag>
       </tags>
@@ -1064,10 +1064,10 @@
       </categories>
       <tags>
         <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
         <tag>Face</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Cross-Modality</tag>
         <tag>Attribute to Face</tag>
       </tags>
   </entry>
@@ -1082,9 +1082,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Cross-Modality</tag>
         <tag>Semantic Image Synthesis</tag>
       </tags>
   </entry>
@@ -1099,9 +1099,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Cross-Modality</tag>
         <tag>Text to Image</tag>
         <tag>Location-Controllable</tag>
       </tags>
@@ -1117,9 +1117,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Cross-Modality</tag>
         <tag>Text to Image</tag>
         <tag>StackGAN</tag>
       </tags>
@@ -1135,9 +1135,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
-        <tag>Cross-Modality</tag>
         <tag>Text to Image</tag>
       </tags>
   </entry>
@@ -1152,8 +1152,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>GAN</tag>
         <tag>Cross-Modality</tag>
+        <tag>GAN</tag>
         <tag>Text to Image</tag>
       </tags>
   </entry>
@@ -1198,8 +1198,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Image-Text</tag>
         <tag>Cross-Modality</tag>
+        <tag>Image-Text</tag>
       </tags>
   </entry>
   <entry>
@@ -1213,8 +1213,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Body</tag>
         <tag>Cross-Modality</tag>
+        <tag>Body</tag>
         <tag>Person Search</tag>
       </tags>
   </entry>
@@ -1229,8 +1229,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Body</tag>
         <tag>Cross-Modality</tag>
+        <tag>Body</tag>
         <tag>Person Search</tag>
       </tags>
   </entry>
@@ -1496,14 +1496,14 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
+        <tag>NLP</tag>
+        <tag>Cross-Modality</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
-        <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
       </tags>
   </entry>
   <entry>
@@ -1516,9 +1516,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1534,9 +1534,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>MIMIC-CXR</tag>
         <tag>Lateral X-ray</tag>
@@ -1553,9 +1553,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1569,9 +1569,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1588,9 +1588,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Attention</tag>
@@ -1606,9 +1606,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>SE Block</tag>
@@ -1624,9 +1624,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>LSTM</tag>
@@ -1642,9 +1642,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1661,9 +1661,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1679,9 +1679,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>PLCO</tag>
@@ -1697,9 +1697,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1713,9 +1713,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
       </tags>
@@ -1730,9 +1730,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
+        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Dataset</tag>
@@ -1885,8 +1885,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Overview</tag>
         <tag>Medical</tag>
+        <tag>Overview</tag>
       </tags>
   </entry>
   <entry>
@@ -1899,8 +1899,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Overview</tag>
         <tag>Medical</tag>
+        <tag>Overview</tag>
       </tags>
   </entry>
   <entry>
@@ -2030,21 +2030,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[(CVPR 2018) Density-aware Single Image De-raining using a Multi-stream Dense Network]]></title>
-    <url>%2F2018%2F01%2F23%2FDensity-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network%2F</url>
-    <content type="text"><![CDATA[Zhang H, Patel V M. Density-aware single image de-raining using a multi-stream dense network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 695-704. 1. Overview 1.1. Motivation Non-uniform rain densities Existing method do not consider the density of rain drops (lead to over de-rain or under de-rain) [6]. Deep Detail Network. CVPR 2017 [33]. Deep Joint Rain Detection and Removal. CVPR 2017 In this paper, it proposed DID-MDN joint (two stage) rain density estimation and de-raining (guided by the estimated rain-density label) multi-stream (different scale feature) use residual to represent rain-density feature create a dataset containing rain-density label (heavy, medium, light) 1.2. Related Work video-based prior-based (over-smooth details) Multi-scale feature (U-Net, FCN, skip-connection) 1.3. Dataset 12,000 for training 1, 200 for testing use PS to get different level rain density (noise level [5%, 35%], [35%, 65%], [65%, 95%]) link 2. Architecture 2.1. Residual-Aware Rain-Density Classifiersingle network may not be sufficient enough to learn different rain-densities occurring in practice. used for guiding the de-raining process residual can better represent the rain feature observe that fine-tune pre-trained model is not an efficient solution. high-level feature focus on localizing the discriminative object (not small rain-streak), so it’s not good for density classify. 2.1.1. step estimate residual (residual feature extraction network) train classifier with residual (classifier) 2.1.2. Loss firstly train residual network then train classifier finally joint optimized 2.1.3. Classifier (low, medium, high) 2.2. Multi-Stream Dense Network Concat multi-stream feature and density label Refinement 2.3. Multi-Stream smaller rain-streak can be capture by small-scale feature longer rain-streak can be capture by larger-scale feature For each stream six dense blocks + six transition layer short path better for convergence Dense1. 3-down + 3-up (7x7) Dense2. 2-down + 2-no + 2-up (5x5) Dense3. 1-down + 4-no + 1-up (3x3) 2.4. Total Loss 3. Experiments 4. Dataset Train1. 12,000 Test1. 1,200 Test2. 1,000 (from Deep Detail Network) 4.1. Detail random crop, horizontal flip batch size 1 λF = 1 4.2. Ablation Study VGG vs Residual classifier Modules Single. single stream without label fusion Yang-Multi. multi-stream (dilated) Multi-no-label. multi stream without label fusion DID-MDN. multi-stream with label fusion Over de-rain with blur. Single and Yang-Multi Leave some rain-streak. Muti-no-label 4.3. Comparison Synthetic [33, 41] leave some rain-streak. [6] remove some details. Real long-thin rain-streak heavy rain small round rain medium reain 4.4. Inference Time]]></content>
-      <categories>
-        <category>Paper Note</category>
-        <category>Image Processing</category>
-        <category>De-raining</category>
-      </categories>
-      <tags>
-        <tag>Image Processing</tag>
-        <tag>Image Enhancement</tag>
-        <tag>De-raining</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[(AAAI 2018) End-to-End United Video Dehazing and Detection]]></title>
     <url>%2F2018%2F01%2F23%2FEnd-to-End%20United%20Video%20Dehazing%20and%20Detection%2F</url>
     <content type="text"><![CDATA[Li B, Peng X, Wang Z, et al. End-to-end united video dehazing and detection[C]//Thirty-Second AAAI Conference on Artificial Intelligence. 2018. 1. Overview 1.1. Motivation end-to-end video dehazing has not been explored temporal consistency In this paper, it proposed EVD-Net (End-to-End Video Dehazing Network) EVDD-Net (End-to-End United Video Dehazing and Detection Network) 1.2. Related Work Classical Atmosphere Scattering Model DehazeNet MSCNN AOD-Net. re-formulationVideo Dehazing 1.3. Dataset1.3.1. Dehazing Synthetic Hazy Video Dataset from TUM RGB-D Dataset refined depth infomation TestSet. video from city road when PM2.5 is 223 1.3.2. Dehazing + Detection ILSVRC2015 VID estimated depth by paper 2016 1.4. Start Pointbased on AOD-Net architecture. 1.5. EVD-Net Multi-framethe global atmosphere light A should be hardly or slowly changed over a moderate number of consecutive frame. 1.6. EVDD-Net Multi-Frame Faster RCNN EVD-Net 2. Experiments 2.1. Details MSE loss well aligned with SSIM and visual quality 2.2. Fusion Strategy 2.3. Comparison of Dehaze 2.4. Comparison of Detection naive concatenation of low-level and high-level models often can not sufficiently boost the high-level task performance JAOD-Faster RCNN. flickering and inconsistent detection Only EVDD-Net detection 4 cars in all frames]]></content>
@@ -2058,6 +2043,21 @@
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
         <tag>Video</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Density-aware Single Image De-raining using a Multi-stream Dense Network]]></title>
+    <url>%2F2018%2F01%2F23%2FDensity-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network%2F</url>
+    <content type="text"><![CDATA[Zhang H, Patel V M. Density-aware single image de-raining using a multi-stream dense network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 695-704. 1. Overview 1.1. Motivation Non-uniform rain densities Existing method do not consider the density of rain drops (lead to over de-rain or under de-rain) [6]. Deep Detail Network. CVPR 2017 [33]. Deep Joint Rain Detection and Removal. CVPR 2017 In this paper, it proposed DID-MDN joint (two stage) rain density estimation and de-raining (guided by the estimated rain-density label) multi-stream (different scale feature) use residual to represent rain-density feature create a dataset containing rain-density label (heavy, medium, light) 1.2. Related Work video-based prior-based (over-smooth details) Multi-scale feature (U-Net, FCN, skip-connection) 1.3. Dataset 12,000 for training 1, 200 for testing use PS to get different level rain density (noise level [5%, 35%], [35%, 65%], [65%, 95%]) link 2. Architecture 2.1. Residual-Aware Rain-Density Classifiersingle network may not be sufficient enough to learn different rain-densities occurring in practice. used for guiding the de-raining process residual can better represent the rain feature observe that fine-tune pre-trained model is not an efficient solution. high-level feature focus on localizing the discriminative object (not small rain-streak), so it’s not good for density classify. 2.1.1. step estimate residual (residual feature extraction network) train classifier with residual (classifier) 2.1.2. Loss firstly train residual network then train classifier finally joint optimized 2.1.3. Classifier (low, medium, high) 2.2. Multi-Stream Dense Network Concat multi-stream feature and density label Refinement 2.3. Multi-Stream smaller rain-streak can be capture by small-scale feature longer rain-streak can be capture by larger-scale feature For each stream six dense blocks + six transition layer short path better for convergence Dense1. 3-down + 3-up (7x7) Dense2. 2-down + 2-no + 2-up (5x5) Dense3. 1-down + 4-no + 1-up (3x3) 2.4. Total Loss 3. Experiments 4. Dataset Train1. 12,000 Test1. 1,200 Test2. 1,000 (from Deep Detail Network) 4.1. Detail random crop, horizontal flip batch size 1 λF = 1 4.2. Ablation Study VGG vs Residual classifier Modules Single. single stream without label fusion Yang-Multi. multi-stream (dilated) Multi-no-label. multi stream without label fusion DID-MDN. multi-stream with label fusion Over de-rain with blur. Single and Yang-Multi Leave some rain-streak. Muti-no-label 4.3. Comparison Synthetic [33, 41] leave some rain-streak. [6] remove some details. Real long-thin rain-streak heavy rain small round rain medium reain 4.4. Inference Time]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>De-raining</tag>
       </tags>
   </entry>
   <entry>
@@ -2640,8 +2640,8 @@
         <category>Component</category>
       </categories>
       <tags>
-        <tag>Classification</tag>
         <tag>Component</tag>
+        <tag>Classification</tag>
         <tag>Attention</tag>
         <tag>Non-local</tag>
         <tag>Video Classification</tag>
@@ -2658,9 +2658,9 @@
       </categories>
       <tags>
         <tag>Localization</tag>
-        <tag>Classification</tag>
         <tag>Fine-Grained Classification</tag>
         <tag>Component</tag>
+        <tag>Classification</tag>
         <tag>Attention</tag>
         <tag>STN</tag>
       </tags>
@@ -2728,9 +2728,9 @@
         <category>Knowledge Note</category>
       </categories>
       <tags>
+        <tag>Cognitive Neuroscience</tag>
         <tag>Capsule</tag>
         <tag>Cerebral Cortex</tag>
-        <tag>Cognitive Neuroscience</tag>
         <tag>CNN Limitation</tag>
       </tags>
   </entry>

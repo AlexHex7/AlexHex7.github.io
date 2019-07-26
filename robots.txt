@@ -12,3 +12,6 @@ Allow: /css/
 Allow: /images/
 Allow: /js/
 Allow: /lib/
+
+Sitemap: https://alexhex7.github.io/sitemap.xml
+Sitemap: https://alexhex7.github.io/baidusitemap.xml
