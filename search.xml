@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(ICLR 2019) DARTS:Differentiable Architecture Search]]></title>
+    <url>%2F2019%2F07%2F14%2FDARTS%3ADifferentiable%20Architecture%20Search%2F</url>
+    <content type="text"><![CDATA[Liu H, Simonyan K, Yang Y. Darts: Differentiable architecture search[J]. arXiv preprint arXiv:1806.09055, 2018. 1. Overview 1.1. Motivation1) existing methods are based on a discrete and non-differentiable search space2) existing methods apply evolution, RL, MCTS, SMBO or Bayesian optimization In this paper, it proposes DARTS1) using gradient descent2) continuous relaxation3) remarkable efficiency improvement 1.2. Dataset1) CIRFAR-102) ImageNet3) Penn Treebank4) WikiText-2 2. Differentiable Architecture Search 2.1. Cell1) Directed acyclic graph with an ordered sequence of N nodes $x^{(i)}$, which means feature maps2) Directed edge $(i, j)$. $o^{(i, j)}$3) Edge type set $O$: ‘none’, ‘max_pool_3x3’, ‘avg_pool_3x3’, ‘skip_connect’, ‘sep_conv_3x3’, ‘sep_conv_5x5’, ‘dil_conv_3x3’, ‘dil_conv_5x5’4) Mixed Operation. aggregate all edges of each node by learned weights $α^{i,j}$ 5) At the end of search, replace mixed operation with most likely operation 2.2. Network1) Network based on Cells. $Input_k = (Input_{k-1}, Input_{k-2})$2) Parameter $step$ in Cell.Input: $(s1, s0) = (Input_{k-1}, Input_{k-2})$,when $step=0$, $(s0, s1)→s2$ (2 edges)when $step=1$, $(s0, s1, s2)→s3$ (3 edges), select top-2 2dges when trainedwhen $step=2$, $(s0, s1, s2, s3)→s4$ (4 edges), select top-2 2dges when trainedOutput: $Concat(s_k, s_{k-1}, …, s_{k-N})$3) Code Link 2.3 Optimization1) jointly learn $α$ (validation set, Adam) and $w$ (training set, momentum SGD) 2) Approximate Architecture Gradient (hessian-vector product) $ξ$. learning rate ($\theta$ is a copy from $w$)update Copy Network $\theta$ → update $α$ → update Network $w$(a) $\theta^* = \theta - η(momentum + d\theta + WeightDecay \times \theta)$ based on $(input_{train}, target_{train})$, $momentum$ from momentum SGD of network parameter $\theta$(b) Based on $\theta^*$ and $(valid{train}, valid{train})$, $dα$ and $vector$ (grad of $\theta$)(c) Get implicity grad based on $vector$ and $(input_{train}, target_{train})$(d) $dα$ -= implicity grad(e) update Network $w$ based on $(input_{train}, target_{train})$ 3. Experiments 3.1. Details During searching, all BN’s affine is False]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Auto-ML</category>
+        <category>Gradient</category>
+      </categories>
+      <tags>
+        <tag>Auto-ML</tag>
+        <tag>Gradient</tag>
+        <tag>Darts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2019) Improving Referring Expression Grounding with Cross-modal Attention-guided Erasing]]></title>
+    <url>%2F2019%2F06%2F07%2FImproving%20Referring%20Expression%20Grounding%20with%20Cross-modal%20Attention-guided%20Erasing%2F</url>
+    <content type="text"><![CDATA[Liu X, Wang Z, Shao J, et al. Improving Referring Expression Grounding with Cross-modal Attention-guided Erasing[J]. arXiv preprint arXiv:1903.00839, 2019. 1. Overview 1.1. Motivation previous attention models focus on only the most dominant features of both modalities In this paper, it designs a novel cross-modal attention-guided erasing approach generate difficult training samples online make full use of latent correspondences between training paris avoid overly rely on specific words or visual concepts Three types of erasing Image-aware query sentence erasing. replace word with unknown token Sentence-aware subject region erasing. erase the spatial features Sentence-aware context object erasing. erase a dominant context region 1.2. Dataset RefCOCO RefCOCO+ RefCOCOg 2. Cross-modal Attention-guided Erasing 2.1. Overview of Attention-guided ErasingQuery Sentence Erasing ($Q^*$).Visual Erasing ($O^*$). sample a module based on $Multinominal(3, [w_{subj}, w_{loc}, w_{rel}])$ subject region erasing on feature maps context object erasing to discard features of a context object Loss Function 2.2. Image-aware Query Sentence Erasing encode the whole img, then feed into LSTM. sample a word from Multinomial(T, [α_1, …, α_T]) 2.3. Sentence-aware Subject Region Erasing v_j. a feature point erase a continuous region of size kxk (k=3) 2.4. Sentence-aware Context Object Erasing c_k. context region features m = {loc, rel} Different from MAttNet In relationship module, MAttNet assume only one contect object contributes to recognizing the subject In this paper, it deals with all context objects and attend to important ones. Finally, sample a context object based on Multinomial(K, [α_1, …, αK]) and replace its feature to zero.(already choose which module based on Multinominal(3, [w{subj}, w_{loc}, w_{rel}])) 2.5. Details Faster R-CNN with ResNet-101 as backbone to extract image features For each candidate object proposal, 7x7 feature maps are fed into subject module]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Referring Expression</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Referring Expression</tag>
+        <tag>MAttNet</tag>
+        <tag>Erasing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) MAttNet:Modular Attention Network for Referring Expression Comprehension]]></title>
+    <url>%2F2019%2F06%2F07%2FMAttNet%3A%20Modular%20Attention%20Network%20for%20Referring%20Expression%20Comprehension%2F</url>
+    <content type="text"><![CDATA[Yu L, Lin Z, Shen X, et al. Mattnet: Modular attention network for referring expression comprehension[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 1307-1315. 1. Overview 1.1. Motivation Most recent work treats expressions as a single unit external parser could raise parsing errors In this paper, it proposes MAttNet decompose expression into three components. subject appearance location relationship two types of attention language-based attention. module weights word/phrase attention. each module should focus on Different visual processing modules are triggered based on what information is present in the referring expression. 1.2. Problem DefinitionSelect the best region from a set of proposals/objects {$o_i$} in image $I$, given an input expression $r$. 1.3. Novelty MAttNet is designed for general referring expression. subject, location, relationship. MAttNet learns to parse expression automatically through a soft attention. Different visual attention techniques. subject: in-box. relationship:out-of-box. And the only supervision is object proposal, referring pair $(o_i, r_i)$. 1.4. Dataset RefCOCO RefCOCO+ RefCOCOg 2. Model Given a candidate $o_i$ and referring expression $r$. 2.1 Language Attention Network $u_t$. each word$e_t$. one-hot embedding$f_m$. trainable vectors, m=subj, loc, rel Output language attention embedding q_m of each module. attention weight of each module。 2.2 Visual Modules forward the whole image into Faster R-CNN crop C3 feature for each o_i further compute C4 fueature C3. lower-level cues including colors and shapesC4. higher-level cues for category prediction 2.2.1 Subject ModuleGiven C3 and C4 features of o_i. Attribute Predictionrun a parser to get color and generic attribute words. Phrase-guided Attentional Pooling in-box attention. G=14x14 Matching FunctionMLP: FC-ReLU-FC-ReLU 2.2.2 Location Module up to five surrounding objects of the same category relative position 2.2.3 Relationship Module 2.3 Loss Function For each given positive pair of $(o_i, r_i)$, randomly sample two negative pairs $(o_i, r_j)$ and $(o_k, r_i)$.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Referring Expression</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Referring Expression</tag>
+        <tag>MAttNet</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(CVPR 2018) Low-Shot Learning from Imaginary Data]]></title>
     <url>%2F2019%2F03%2F26%2FLow-Shot%20Learning%20from%20Imaginary%20Data%2F</url>
     <content type="text"><![CDATA[Snell J, Swersky K, Zemel R. Prototypical networks for few-shot learning[C]//Advances in Neural Information Processing Systems. 2017: 4077-4087. 1. Overview 1.1. Motivation human can visualize or imagine what novel objects look like from different views In this paper, it proposes a novel approach to low-shot learning (learning concept from few examples) build on recent progress in meta-learning (learning to learn) combine a meta-learner with a hallucinator producing additional training examples optimize both model jointly proposed hallucinator can be incorporated into a variety of meta-learners 1.2. Low-shot Learning build generative models that can share priors across categories build feature representation that are invariant to intra-class variation triplet loss, contrastIve loss 1.3. Meta Learning try to frame low-shot learning as a ‘learning to learn’ task train a parametrized mapping from training sets to classifiers learner embeds examples into a feature space accumulate statistics over training set using RNN, MAN, MLP 1.3.1. Definition x. test sample S_train. training set p. prediction h. classification algorithm meta-learning is an umbrella term estimate w can be construed as meta-learning 1.3.2. Stage-1. Meta Training estimate w meta-learner has access to a large labeled dataset S_meta in each iteration, sample a classification problem out of S_meta m. the number of class in each iteration n. maximum number of training examples per clas 1.3.3. Stage-2. Meta Testing the labeled training set and unlabeled test examples are given to the algorithm h then algorithm h output class probabilities 1.3.4. Prototypical Networks (PN) d. distance metric w_phi. learned feature extractor 1.3.5. Matching Network (MN) embed all training and test points independently using feature extractor create a contextual embedding of training and test examples using bi-LSTM and attention-LSTM three parameters. w_phi, w_g and w_f 1.3.6. Prototype Matching Networks (PMN) in MN, attention LSTM might find it harder to attend to rare classes combine contextual embedding in MN with the resilience to class imbalance in PN collapse every class to its class mean 1.4. Meta-Learning with Learned Hallucination 1.4.1. Meta-Training BP final loss and update h and G jointly 1.4.2. Meta-Testing hallucinator (G) keeps fixed 1.4.3. Tradeoffs between Base and Novel Classes normal. prior knowledge. overall accuracy remains fairly stable, even as novel class accuracy rises and base class accuracy falls 1.4.4. New Evaluation test examples from novel classes. μ=1 from base classes from both 2. Experiments 2.1. Details train extractor on C_base, then save all feature to disk ResNet-10 and ResNet-50 2.1.1. Meta-learner Architecture PN. 2 MLP + ReLU MN. 1 bi-LSTM for training examples, 1 attention LSTM for test samples PMN same as MN 2.1.2. Hallucinator Architecture 3 MLP + ReLU all hidden layers. 512 for ResNet-10, 2048 for ResNet-50 initialization. block diagonal identity matrices to copy seed example 2.2. Comparison]]></content>
@@ -10,11 +56,11 @@
         <category>Low-Shot Learning</category>
       </categories>
       <tags>
-        <tag>Bi-LSTM</tag>
-        <tag>Attention LSTM</tag>
         <tag>Low-Shot Learning</tag>
         <tag>Meta Learning</tag>
         <tag>Prototypical Network</tag>
+        <tag>Bi-LSTM</tag>
+        <tag>Attention LSTM</tag>
       </tags>
   </entry>
   <entry>
@@ -41,9 +87,9 @@
         <category>One-Shot Learning</category>
       </categories>
       <tags>
-        <tag>One-Shot Learning</tag>
         <tag>Bi-LSTM</tag>
         <tag>Attention LSTM</tag>
+        <tag>One-Shot Learning</tag>
         <tag>Matching Net</tag>
       </tags>
   </entry>
@@ -73,9 +119,9 @@
         <category>Caption</category>
       </categories>
       <tags>
-        <tag>Caption</tag>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
+        <tag>Caption</tag>
         <tag>Multi-task Learning</tag>
       </tags>
   </entry>
@@ -477,8 +523,8 @@
         <category>Multiple Hypotheses</category>
       </categories>
       <tags>
-        <tag>Lung</tag>
         <tag>Medical</tag>
+        <tag>Lung</tag>
         <tag>Segmentation</tag>
         <tag>Multiple Hypotheses</tag>
         <tag>UNet</tag>
@@ -509,8 +555,8 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Lung</tag>
         <tag>Medical</tag>
+        <tag>Lung</tag>
         <tag>Segmentation</tag>
       </tags>
   </entry>
@@ -937,9 +983,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Classification</tag>
         <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
         <tag>Zero-Shot Learning</tag>
         <tag>Feature Generation</tag>
       </tags>
@@ -954,9 +1000,9 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>NLP</tag>
         <tag>Network</tag>
         <tag>TCN</tag>
+        <tag>NLP</tag>
       </tags>
   </entry>
   <entry>
@@ -969,8 +1015,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>NLP</tag>
         <tag>Network</tag>
+        <tag>NLP</tag>
         <tag>Transformer</tag>
       </tags>
   </entry>
@@ -1000,9 +1046,9 @@
         <category>Network</category>
       </categories>
       <tags>
+        <tag>Network</tag>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
-        <tag>Network</tag>
         <tag>Word-CNN-RNN</tag>
         <tag>Character-CNN-RNN</tag>
       </tags>
@@ -1018,10 +1064,10 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Face</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
         <tag>Attribute to Face</tag>
       </tags>
   </entry>
@@ -1036,9 +1082,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
         <tag>Semantic Image Synthesis</tag>
       </tags>
   </entry>
@@ -1053,9 +1099,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
         <tag>Text to Image</tag>
         <tag>Location-Controllable</tag>
       </tags>
@@ -1071,9 +1117,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
         <tag>Text to Image</tag>
         <tag>StackGAN</tag>
       </tags>
@@ -1089,9 +1135,9 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
         <tag>Text to Image</tag>
       </tags>
   </entry>
@@ -1106,8 +1152,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>GAN</tag>
+        <tag>Cross-Modality</tag>
         <tag>Text to Image</tag>
       </tags>
   </entry>
@@ -1152,8 +1198,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Image-Text</tag>
+        <tag>Cross-Modality</tag>
       </tags>
   </entry>
   <entry>
@@ -1167,8 +1213,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Body</tag>
+        <tag>Cross-Modality</tag>
         <tag>Person Search</tag>
       </tags>
   </entry>
@@ -1183,8 +1229,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Cross-Modality</tag>
         <tag>Body</tag>
+        <tag>Cross-Modality</tag>
         <tag>Person Search</tag>
       </tags>
   </entry>
@@ -1450,9 +1496,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1470,9 +1516,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1488,9 +1534,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>MIMIC-CXR</tag>
         <tag>Lateral X-ray</tag>
@@ -1507,9 +1553,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1523,9 +1569,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1542,9 +1588,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Attention</tag>
@@ -1560,9 +1606,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>SE Block</tag>
@@ -1578,9 +1624,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>LSTM</tag>
@@ -1596,9 +1642,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1615,9 +1661,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1633,9 +1679,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>PLCO</tag>
@@ -1651,9 +1697,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1667,9 +1713,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
       </tags>
@@ -1684,9 +1730,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Dataset</tag>
@@ -1839,8 +1885,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Overview</tag>
+        <tag>Medical</tag>
       </tags>
   </entry>
   <entry>
@@ -1853,8 +1899,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Overview</tag>
+        <tag>Medical</tag>
       </tags>
   </entry>
   <entry>
@@ -2417,8 +2463,8 @@
       </categories>
       <tags>
         <tag>Multi-label Classification</tag>
-        <tag>Face</tag>
         <tag>VAE</tag>
+        <tag>Face</tag>
         <tag>Facial Action Units</tag>
       </tags>
   </entry>
@@ -2594,8 +2640,8 @@
         <category>Component</category>
       </categories>
       <tags>
-        <tag>Component</tag>
         <tag>Classification</tag>
+        <tag>Component</tag>
         <tag>Attention</tag>
         <tag>Non-local</tag>
         <tag>Video Classification</tag>
@@ -2612,9 +2658,9 @@
       </categories>
       <tags>
         <tag>Localization</tag>
+        <tag>Classification</tag>
         <tag>Fine-Grained Classification</tag>
         <tag>Component</tag>
-        <tag>Classification</tag>
         <tag>Attention</tag>
         <tag>STN</tag>
       </tags>
@@ -2682,9 +2728,9 @@
         <category>Knowledge Note</category>
       </categories>
       <tags>
-        <tag>Cognitive Neuroscience</tag>
         <tag>Capsule</tag>
         <tag>Cerebral Cortex</tag>
+        <tag>Cognitive Neuroscience</tag>
         <tag>CNN Limitation</tag>
       </tags>
   </entry>

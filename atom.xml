@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-03-25T22:25:04.000Z</updated>
+  <updated>2019-07-13T22:25:01.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,98 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(ICLR 2019) DARTS:Differentiable Architecture Search</title>
+    <link href="http://yoursite.com/2019/07/14/DARTS:Differentiable%20Architecture%20Search/"/>
+    <id>http://yoursite.com/2019/07/14/DARTS:Differentiable Architecture Search/</id>
+    <published>2019-07-13T22:25:01.000Z</published>
+    <updated>2019-07-13T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Liu H, Simonyan K, Yang Y. Darts: Differentiable architecture search[J]. arXiv preprint arXiv:1806.09055, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
+    
+      <category term="Gradient" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/Gradient/"/>
+    
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
+    
+      <category term="Gradient" scheme="http://yoursite.com/tags/Gradient/"/>
+    
+      <category term="Darts" scheme="http://yoursite.com/tags/Darts/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2019) Improving Referring Expression Grounding with Cross-modal Attention-guided Erasing</title>
+    <link href="http://yoursite.com/2019/06/07/Improving%20Referring%20Expression%20Grounding%20with%20Cross-modal%20Attention-guided%20Erasing/"/>
+    <id>http://yoursite.com/2019/06/07/Improving Referring Expression Grounding with Cross-modal Attention-guided Erasing/</id>
+    <published>2019-06-06T22:25:02.000Z</published>
+    <updated>2019-06-06T22:25:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Liu X, Wang Z, Shao J, et al. Improving Referring Expression Grounding with Cross-modal Attention-guided Erasing[J]. arXiv preprint arXiv:1903.00839, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
+    
+      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
+    
+    
+      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
+    
+      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
+    
+      <category term="MAttNet" scheme="http://yoursite.com/tags/MAttNet/"/>
+    
+      <category term="Erasing" scheme="http://yoursite.com/tags/Erasing/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) MAttNet:Modular Attention Network for Referring Expression Comprehension</title>
+    <link href="http://yoursite.com/2019/06/07/MAttNet:%20Modular%20Attention%20Network%20for%20Referring%20Expression%20Comprehension/"/>
+    <id>http://yoursite.com/2019/06/07/MAttNet: Modular Attention Network for Referring Expression Comprehension/</id>
+    <published>2019-06-06T22:25:01.000Z</published>
+    <updated>2019-06-06T22:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Yu L, Lin Z, Shen X, et al. Mattnet: Modular attention network for referring expression comprehension[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 1307-1315.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
+    
+      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
+    
+    
+      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
+    
+      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
+    
+      <category term="MAttNet" scheme="http://yoursite.com/tags/MAttNet/"/>
+    
+  </entry>
   
   <entry>
     <title>(CVPR 2018) Low-Shot Learning from Imaginary Data</title>
@@ -38,15 +130,15 @@
       <category term="Low-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Low-Shot-Learning/"/>
     
     
-      <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
-    
-      <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
-    
       <category term="Low-Shot Learning" scheme="http://yoursite.com/tags/Low-Shot-Learning/"/>
     
       <category term="Meta Learning" scheme="http://yoursite.com/tags/Meta-Learning/"/>
     
       <category term="Prototypical Network" scheme="http://yoursite.com/tags/Prototypical-Network/"/>
+    
+      <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
+    
+      <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
     
   </entry>
   
@@ -100,11 +192,11 @@
       <category term="One-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/One-Shot-Learning/"/>
     
     
-      <category term="One-Shot Learning" scheme="http://yoursite.com/tags/One-Shot-Learning/"/>
-    
       <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
     
       <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
+    
+      <category term="One-Shot Learning" scheme="http://yoursite.com/tags/One-Shot-Learning/"/>
     
       <category term="Matching Net" scheme="http://yoursite.com/tags/Matching-Net/"/>
     
@@ -164,11 +256,11 @@
       <category term="Caption" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Caption/"/>
     
     
-      <category term="Caption" scheme="http://yoursite.com/tags/Caption/"/>
-    
       <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
     
       <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
+    
+      <category term="Caption" scheme="http://yoursite.com/tags/Caption/"/>
     
       <category term="Multi-task Learning" scheme="http://yoursite.com/tags/Multi-task-Learning/"/>
     
@@ -498,92 +590,6 @@
       <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
     
       <category term="Inverting" scheme="http://yoursite.com/tags/Inverting/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2015) Understanding Deep Image Representations by Inverting Them</title>
-    <link href="http://yoursite.com/2019/02/15/Understanding%20Deep%20Image%20Representations%20by%20Inverting%20Them/"/>
-    <id>http://yoursite.com/2019/02/15/Understanding Deep Image Representations by Inverting Them/</id>
-    <published>2019-02-14T22:25:06.000Z</published>
-    <updated>2019-02-14T22:25:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Mahendran A, Vedaldi A. Understanding deep image representations by inverting them[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2015: 5188-5196.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-      <category term="Inverting" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/Inverting/"/>
-    
-    
-      <category term="Image Generation" scheme="http://yoursite.com/tags/Image-Generation/"/>
-    
-      <category term="Inverting" scheme="http://yoursite.com/tags/Inverting/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2016) Estimation of ambient light and transmission map with common convolutional architecture</title>
-    <link href="http://yoursite.com/2019/02/15/Estimation%20of%20ambient%20light%20and%20transmission%20map%20with%20common%20convolutional%20architecture/"/>
-    <id>http://yoursite.com/2019/02/15/Estimation of ambient light and transmission map with common convolutional architecture/</id>
-    <published>2019-02-14T22:25:05.000Z</published>
-    <updated>2019-02-14T22:25:05.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Shin Y S , Cho Y , Pandey G , et al. [IEEE OCEANS 2016 MTS/IEEE Monterey - Monterey, CA, USA (2016.9.19-2016.9.23)] OCEANS 2016 MTS/IEEE Monterey - Estimation of ambient light and transmission map with common convolutional architecture[J]. 2016:1-7.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-      <category term="Dehazing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/Dehazing/"/>
-    
-    
-      <category term="Dehazing" scheme="http://yoursite.com/tags/Dehazing/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) Image Super-Resolution via Deep Recursive Residual Network</title>
-    <link href="http://yoursite.com/2019/02/15/Image%20Super-Resolution%20via%20Deep%20Recursive%20Residual%20Network/"/>
-    <id>http://yoursite.com/2019/02/15/Image Super-Resolution via Deep Recursive Residual Network/</id>
-    <published>2019-02-14T22:25:04.000Z</published>
-    <updated>2019-02-14T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Tai Y , Yang J , Liu X . Image Super-Resolution via Deep Recursive Residual Network[C]// 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE Computer Society, 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-      <category term="Super Resolution" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/Super-Resolution/"/>
-    
-    
-      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
-    
-      <category term="Super Resolution" scheme="http://yoursite.com/tags/Super-Resolution/"/>
-    
-      <category term="Recursive Residual Network" scheme="http://yoursite.com/tags/Recursive-Residual-Network/"/>
     
   </entry>
   

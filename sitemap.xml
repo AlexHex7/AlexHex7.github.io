@@ -1,0 +1,1376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://alexhex7.github.io/about/index.html</loc>
+    
+    <lastmod>2019-07-14T01:37:23.638Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/07/14/DARTS:Differentiable%20Architecture%20Search/</loc>
+    
+    <lastmod>2019-07-13T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Segnet:%20A%20deep%20convolutional%20encoder-decoder%20architecture%20for%20image%20segmentation/</loc>
+    
+    <lastmod>2019-06-08T02:18:05.725Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Focal%20Loss%20for%20Dense%20Object%20Detection/</loc>
+    
+    <lastmod>2019-06-08T02:18:05.709Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Feature%20pyramid%20networks%20for%20object%20detection/</loc>
+    
+    <lastmod>2019-06-08T02:18:05.649Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/MentorNet:%20Regularizing%20Very%20Deep%20Neural%20Networks%20on%20Corrupted%20Labels/</loc>
+    
+    <lastmod>2019-06-08T02:18:05.637Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Multi-scale%20dense%20convolutional%20networks%20for%20efficient%20prediction/</loc>
+    
+    <lastmod>2019-06-08T02:18:05.585Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Mobilenets:%20Efficient%20convolutional%20neural%20networks%20for%20mobile%20vision%20applications/</loc>
+    
+    <lastmod>2019-06-08T01:47:46.672Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Data%20Distillation:%20Towards%20Omni-Supervised%20Learning/</loc>
+    
+    <lastmod>2019-06-08T01:46:45.019Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Coupled%20generative%20adversarial%20networks/</loc>
+    
+    <lastmod>2019-06-08T01:45:29.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/19/%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BA&%E9%9D%9E%E5%B1%80%E9%83%A8%E5%9D%87%E5%80%BC%E5%8E%BB%E5%99%AA&%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2/</loc>
+    
+    <lastmod>2019-06-08T01:30:25.467Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/19/Transformation/</loc>
+    
+    <lastmod>2019-06-08T01:29:09.141Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/06/07/Improving%20Referring%20Expression%20Grounding%20with%20Cross-modal%20Attention-guided%20Erasing/</loc>
+    
+    <lastmod>2019-06-06T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/06/07/MAttNet:%20Modular%20Attention%20Network%20for%20Referring%20Expression%20Comprehension/</loc>
+    
+    <lastmod>2019-06-06T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/tags/index.html</loc>
+    
+    <lastmod>2019-05-05T07:45:07.964Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/categories/index.html</loc>
+    
+    <lastmod>2019-05-05T07:43:52.270Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/26/Low-Shot%20Learning%20from%20Imaginary%20Data/</loc>
+    
+    <lastmod>2019-03-25T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/26/Prototypical%20Networks%20for%20Few-shot%20Learning/</loc>
+    
+    <lastmod>2019-03-25T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/26/Matching%20Networks%20for%20One%20Shot%20Learning/</loc>
+    
+    <lastmod>2019-03-25T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/26/Meta-learning%20with%20memory-augmented%20neural%20networks/</loc>
+    
+    <lastmod>2019-03-25T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/12/A%20Multi-task%20Learning%20Approach%20for%20Image%20Captioning/</loc>
+    
+    <lastmod>2019-03-11T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/05/WILDCAT:%20Weakly%20Supervised%20Learning%20of%20Deep%20ConvNets%20for%20Image%20Classification,%20Pointwise%20Localization%20and%20Segmentation/</loc>
+    
+    <lastmod>2019-03-04T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/05/Maxmin%20convolutional%20neural%20networks%20for%20image%20classification/</loc>
+    
+    <lastmod>2019-03-04T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/05/Learning%20Deep%20Features%20for%20Discriminative%20Localization/</loc>
+    
+    <lastmod>2019-03-04T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/05/Recurrent%20convolutional%20neural%20network%20for%20object%20recognition/</loc>
+    
+    <lastmod>2019-03-04T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/05/Recurrent%20convolutional%20neural%20networks%20for%20scene%20labeling/</loc>
+    
+    <lastmod>2019-03-04T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/03/05/Uncertainty%20Estimates%20and%20Multi-Hypotheses%20Networks%20for%20Optical%20Flow/</loc>
+    
+    <lastmod>2019-03-04T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/26/Ensemble%20Adversarial%20Training:%20Attacks%20and%20Defenses/</loc>
+    
+    <lastmod>2019-02-25T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/26/Poisoning%20Attacks%20against%20Support%20Vector%20Machines/</loc>
+    
+    <lastmod>2019-02-25T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/26/DARCCC:%20Detecting%20Adversaries%20by%20Reconstruction%20from%20Class%20Conditional%20Capsule/</loc>
+    
+    <lastmod>2019-02-25T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/26/LaVAN:%20Localized%20and%20Visible%20Adversarial%20Noise/</loc>
+    
+    <lastmod>2019-02-25T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/26/Adversarial%20patch/</loc>
+    
+    <lastmod>2019-02-25T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/15/Inverting%20Visual%20Representations%20with%20Convolutional%20Networks/</loc>
+    
+    <lastmod>2019-02-14T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/15/Understanding%20Deep%20Image%20Representations%20by%20Inverting%20Them/</loc>
+    
+    <lastmod>2019-02-14T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/15/Estimation%20of%20ambient%20light%20and%20transmission%20map%20with%20common%20convolutional%20architecture/</loc>
+    
+    <lastmod>2019-02-14T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/15/Image%20Super-Resolution%20via%20Deep%20Recursive%20Residual%20Network/</loc>
+    
+    <lastmod>2019-02-14T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/15/Pixel%20recurrent%20neural%20networks/</loc>
+    
+    <lastmod>2019-02-14T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/15/Recurrent%20Squeeze-and-Excitation%20Context%20Aggregation%20Net%20for%20Single%20Image%20Deraining/</loc>
+    
+    <lastmod>2019-02-14T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/02/15/Non-Local%20Recurrent%20Network%20for%20Image%20Restoration/</loc>
+    
+    <lastmod>2019-02-14T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/25/Future%20Frame%20Prediction%20for%20Anomaly%20Detection%20--%20A%20New%20Baseline/</loc>
+    
+    <lastmod>2019-01-24T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/25/GANomaly:%20Semi-Supervised%20Anomaly%20Detection%20via%20Adversarial%20Training/</loc>
+    
+    <lastmod>2019-01-24T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/12/Learning%20in%20an%20Uncertain%20World:%20Representing%20Ambiguity%20Through%20Multiple%20Hypotheses/</loc>
+    
+    <lastmod>2019-01-11T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/12/Training%20Neural%20Networks%20Using%20Features%20Replay/</loc>
+    
+    <lastmod>2019-01-11T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/12/Taskonomy:%20Disentangling%20Task%20Transfer%20Learning/</loc>
+    
+    <lastmod>2019-01-11T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/12/Identity%20mappings%20in%20deep%20residual%20networks/</loc>
+    
+    <lastmod>2019-01-11T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/12/Convolutional%20Neural%20Networks%20with%20Alternately%20Updated%20Clique/</loc>
+    
+    <lastmod>2019-01-11T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/12/Learning%20feature%20pyramids%20for%20human%20pose%20estimation/</loc>
+    
+    <lastmod>2019-01-11T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/12/Spiking%20Deep%20Residual%20Network/</loc>
+    
+    <lastmod>2019-01-11T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/12/Aggregated%20residual%20transformations%20for%20deep%20neural%20networks/</loc>
+    
+    <lastmod>2019-01-11T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/05/Probabilistic%20U-Net%20for%20Segmentation%20of%20Ambiguous%20Images/</loc>
+    
+    <lastmod>2019-01-04T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/05/DeepASL:%20Kinetic%20Model%20Incorporated%20Loss%20for%20Denoising%20Arterial%20Spin%20Labeled%20MRI%20via%20Deep%20Residual%20Learning/</loc>
+    
+    <lastmod>2019-01-04T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/05/Accurate%20Lung%20Segmentation%20via%20Network-Wise%20Training%20of%20Convolutional%20Networks/</loc>
+    
+    <lastmod>2019-01-04T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/05/Squeeze-and-excitation%20networks/</loc>
+    
+    <lastmod>2019-01-04T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/05/Dilated%20Residual%20Networks/</loc>
+    
+    <lastmod>2019-01-04T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/05/Context%20encoding%20for%20semantic%20segmentation/</loc>
+    
+    <lastmod>2019-01-04T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/05/Deep%20TEN:%20Texture%20Encoding%20Network/</loc>
+    
+    <lastmod>2019-01-04T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/05/SLSDeep:%20Skin%20Lesion%20Segmentation%20Based%20on%20Dilated%20Residual%20and%20Pyramid%20Pooling%20Networks/</loc>
+    
+    <lastmod>2019-01-04T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/04/Generalisation%20of%20structural%20knowledge%20in%20the%20Hippocampal-Entorhinal%20system/</loc>
+    
+    <lastmod>2019-01-03T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2019/01/04/Dendritic%20cortical%20microcircuits%20approximate%20the%20backpropagation%20algorithm/</loc>
+    
+    <lastmod>2019-01-03T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/27/Iterative%20Visual%20Reasoning%20Beyond%20Convolutions/</loc>
+    
+    <lastmod>2018-12-26T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/27/GLoMo:%20Unsupervisedly%20Learned%20Relational%20Graphs%20as%20Transferable%20Representations/</loc>
+    
+    <lastmod>2018-12-26T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/27/The%20more%20you%20know:%20Using%20knowledge%20graphs%20for%20image%20classification/</loc>
+    
+    <lastmod>2018-12-26T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/27/Relational%20inductive%20biases,%20deep%20learning,%20and%20graph%20networks/</loc>
+    
+    <lastmod>2018-12-26T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/27/Zero-shot%20Recognition%20via%20Semantic%20Embeddings%20and%20Knowledge%20Graphs/</loc>
+    
+    <lastmod>2018-12-26T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/21/Defense-GAN:%20Protecting%20classifiers%20against%20adversarial%20attacks%20using%20generative%20models/</loc>
+    
+    <lastmod>2018-12-20T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/21/Thermometer%20encoding:%20One%20hot%20way%20to%20resist%20adversarial%20examples/</loc>
+    
+    <lastmod>2018-12-20T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/21/PixelDefend:%20Leveraging%20Generative%20Models%20to%20Understand%20and%20Defend%20against%20Adversarial%20Examples/</loc>
+    
+    <lastmod>2018-12-20T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/21/Obfuscated%20Gradients%20Give%20a%20False%20Sense%20of%20Security:%20Circumventing%20Defenses%20to%20Adversarial%20Examples/</loc>
+    
+    <lastmod>2018-12-20T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/21/The%20robust%20manifold%20defense:%20Adversarial%20training%20using%20generative%20models/</loc>
+    
+    <lastmod>2018-12-20T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/21/Art%20of%20singular%20vectors%20and%20universal%20adversarial%20perturbations/</loc>
+    
+    <lastmod>2018-12-20T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/21/Generative%20Adversarial%20Perturbations/</loc>
+    
+    <lastmod>2018-12-20T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/12/21/Defense%20against%20Universal%20Adversarial%20Perturbations/</loc>
+    
+    <lastmod>2018-12-20T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/09/13/Hierarchical%20Object%20Detection%20with%20Deep%20Reinforcement%20Learning/</loc>
+    
+    <lastmod>2018-09-12T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/08/16/Mitigating%20adversarial%20effects%20through%20randomization/</loc>
+    
+    <lastmod>2018-08-15T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/08/16/Deflecting%20adversarial%20attacks%20with%20pixel%20deflection/</loc>
+    
+    <lastmod>2018-08-15T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/08/16/Adversarial%20Transformation%20Networks:%20Learning%20to%20Generate%20Adversarial%20Examples/</loc>
+    
+    <lastmod>2018-08-15T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/08/16/Defense%20against%20Adversarial%20Attacks%20Using%20High-Level%20Representation%20Guided%20Denoiser/</loc>
+    
+    <lastmod>2018-08-15T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/08/16/Countering%20Adversarial%20Images%20using%20Input%20Transformations/</loc>
+    
+    <lastmod>2018-08-15T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/08/16/Boosting%20Adversarial%20Attacks%20with%20Momentum/</loc>
+    
+    <lastmod>2018-08-15T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/08/16/Adversarial%20Examples%20for%20Semantic%20Segmentation%20and%20Object%20Detection/</loc>
+    
+    <lastmod>2018-08-15T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/08/16/On%20the%20Robustness%20of%20Semantic%20Segmentation%20Models%20to%20Adversarial%20Attacks/</loc>
+    
+    <lastmod>2018-08-15T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/06/22/Feature%20Generating%20Networks%20for%20Zero-Shot%20Learning/</loc>
+    
+    <lastmod>2018-06-21T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/06/22/An%20empirical%20evaluation%20of%20generic%20convolutional%20and%20recurrent%20networks%20for%20sequence%20modeling/</loc>
+    
+    <lastmod>2018-06-21T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/06/22/Attention%20is%20all%20you%20need/</loc>
+    
+    <lastmod>2018-06-21T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/06/22/Visual%20Question%20Reasoning%20on%20General%20Dependency%20Tree/</loc>
+    
+    <lastmod>2018-06-21T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/06/22/Learning%20deep%20representations%20of%20fine-grained%20visual%20descriptions/</loc>
+    
+    <lastmod>2018-06-21T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/06/22/Face%20Synthesis%20from%20Visual%20Attributes%20via%20Sketch%20using%20Conditional%20VAEs%20and%20GANs/</loc>
+    
+    <lastmod>2018-06-21T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/06/22/Semantic%20image%20synthesis%20via%20adversarial%20learning/</loc>
+    
+    <lastmod>2018-06-21T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/06/22/Learning%20what%20and%20where%20to%20draw/</loc>
+    
+    <lastmod>2018-06-21T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/30/Stackgan:%20Text%20to%20photo-realistic%20image%20synthesis%20with%20stacked%20generative%20adversarial%20networks/</loc>
+    
+    <lastmod>2018-05-29T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/30/Generative%20adversarial%20text%20to%20image%20synthesis/</loc>
+    
+    <lastmod>2018-05-29T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/30/Photographic%20Text-to-Image%20Synthesis%20with%20a%20Hierarchically-nested%20Adversarial%20Network/</loc>
+    
+    <lastmod>2018-05-29T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/30/Diversity%20Regularized%20Spatiotemporal%20Attention%20for%20Video-based%20Person%20Re-identification/</loc>
+    
+    <lastmod>2018-05-29T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/30/Joint%20detection%20and%20identification%20feature%20learning%20for%20person%20search/</loc>
+    
+    <lastmod>2018-05-29T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/30/Dual-Path%20Convolutional%20Image-Text%20Embedding/</loc>
+    
+    <lastmod>2018-05-29T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/30/Identity-aware%20textual-visual%20matching%20with%20latent%20co-attention/</loc>
+    
+    <lastmod>2018-05-29T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/30/Person%20search%20with%20natural%20language%20description/</loc>
+    
+    <lastmod>2018-05-29T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/11/Exploring%20the%20Limits%20of%20Weakly%20Supervised%20Pretraining/</loc>
+    
+    <lastmod>2018-05-10T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/11/Two-stream%20convolutional%20networks%20for%20dynamic%20texture%20synthesis/</loc>
+    
+    <lastmod>2018-05-10T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/11/Who%20Let%20The%20Dogs%20Out%20Modeling%20Dog%20Behavior%20From%20Visual%20Data/</loc>
+    
+    <lastmod>2018-05-10T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/11/Explaining%20and%20harnessing%20adversarial%20examples/</loc>
+    
+    <lastmod>2018-05-10T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/11/Deep%20neural%20networks%20are%20easily%20fooled:%20High%20confidence%20predictions%20for%20unrecognizable%20images/</loc>
+    
+    <lastmod>2018-05-10T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/11/Group%20normalization/</loc>
+    
+    <lastmod>2018-05-10T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/11/Paying%20more%20attention%20to%20attention:%20Improving%20the%20performance%20of%20convolutional%20neural%20networks%20via%20attention%20transfer/</loc>
+    
+    <lastmod>2018-05-10T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/05/11/Visualizing%20and%20understanding%20convolutional%20networks/</loc>
+    
+    <lastmod>2018-05-10T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/04/29/SO-Net:%20Self-Organizing%20Network%20for%20Point%20Cloud%20Analysis/</loc>
+    
+    <lastmod>2018-04-28T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/04/29/Escape%20from%20cells:%20Deep%20kd-networks%20for%20the%20recognition%20of%203d%20point%20cloud%20models/</loc>
+    
+    <lastmod>2018-04-28T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/04/29/Frustum%20PointNets%20for%203D%20Object%20Detection%20from%20RGB-D%20Data/</loc>
+    
+    <lastmod>2018-04-28T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/04/29/Pointnet++:%20Deep%20hierarchical%20feature%20learning%20on%20point%20sets%20in%20a%20metric%20space/</loc>
+    
+    <lastmod>2018-04-28T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/04/29/Pointnet:%20Deep%20learning%20on%20point%20sets%20for%203d%20classification%20and%20segmentation/</loc>
+    
+    <lastmod>2018-04-28T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/04/29/Cascaded%20Pyramid%20Network%20for%20Multi-Person%20Pose%20Estimation/</loc>
+    
+    <lastmod>2018-04-28T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/04/29/Annotating%20object%20instances%20with%20a%20polygon-rnn/</loc>
+    
+    <lastmod>2018-04-28T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/04/29/Shufflenet:%20An%20extremely%20efficient%20convolutional%20neural%20network%20for%20mobile%20devices/</loc>
+    
+    <lastmod>2018-04-28T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/12/Multi-scale%20and%20Discriminative%20Part%20Detectors%20Based%20Features%20for%20Multi-label%20Image%20Classification/</loc>
+    
+    <lastmod>2018-03-11T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/12/Improving%20pairwise%20ranking%20for%20multi-label%20image%20classification/</loc>
+    
+    <lastmod>2018-03-11T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/02/Tienet:%20Text-image%20embedding%20network%20for%20common%20thorax%20disease%20classification%20and%20reporting%20in%20chest%20x-rays/</loc>
+    
+    <lastmod>2018-03-01T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/02/Deep%20multiscale%20convolutional%20feature%20learning%20for%20weakly%20supervised%20localization%20of%20chest%20pathologies%20in%20X-ray%20images/</loc>
+    
+    <lastmod>2018-03-01T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/02/Large%20scale%20automated%20reading%20of%20frontal%20and%20lateral%20chest%20X-rays%20using%20dual%20convolutional%20neural%20networks/</loc>
+    
+    <lastmod>2018-03-01T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/02/Boosted%20cascaded%20convnets%20for%20multilabel%20classification%20of%20thoracic%20diseases%20in%20chest%20radiographs/</loc>
+    
+    <lastmod>2018-03-01T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/02/A%20Weakly%20Supervised%20Adaptive%20DenseNet%20for%20Classifying%20Thoracic%20Diseases%20and%20Identifying%20Abnormalities/</loc>
+    
+    <lastmod>2018-03-01T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/02/Diagnose%20like%20a%20Radiologist:%20Attention%20Guided%20Convolutional%20Neural%20Network%20for%20Thorax%20Disease%20Classification/</loc>
+    
+    <lastmod>2018-03-01T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/01/Weakly%20Supervised%20Deep%20Learning%20for%20Thoracic%20Disease%20Classification%20and%20Localization%20on%20Chest%20X-rays/</loc>
+    
+    <lastmod>2018-02-28T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/01/Learning%20to%20diagnose%20from%20scratch%20by%20exploiting%20dependencies%20among%20labels/</loc>
+    
+    <lastmod>2018-02-28T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/01/CheXNet:%20Radiologist-Level%20Pneumonia%20Detection%20on%20Chest%20X-Rays%20with%20Deep%20Learning/</loc>
+    
+    <lastmod>2018-02-28T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/01/Weakly%20Supervised%20Medical%20Diagnosis%20and%20Localization%20from%20Multiple%20Resolutions/</loc>
+    
+    <lastmod>2018-02-28T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/01/Learning%20to%20recognize%20Abnormalities%20in%20Chest%20X-Rays%20with%20Location-Aware%20Dense%20Networks/</loc>
+    
+    <lastmod>2018-02-28T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/01/ChestNet:%20A%20Deep%20Neural%20Network%20for%20Classification%20of%20Thoracic%20Diseases%20on%20Chest%20Radiography/</loc>
+    
+    <lastmod>2018-02-28T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/01/Thoracic%20Disease%20Identification%20and%20Localization%20with%20Limited%20Supervision/</loc>
+    
+    <lastmod>2018-02-28T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/03/01/ChestX-ray8:%20Hospital-scale%20Chest%20X-ray%20Database%20and%20Benchmarks%20on%20Weakly-Supervised%20Classification%20and%20Localization%20of%20Common%20Thorax%20Diseases/</loc>
+    
+    <lastmod>2018-02-28T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/02/Volumetric%20ConvNets%20with%20Mixed%20Residual%20Connections%20for%20Automated%20Prostate%20Segmentation%20from%203D%20MR%20Images/</loc>
+    
+    <lastmod>2018-02-01T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/02/A%20Survey%20On%20Deep%20Learning%20in%20Medical%20Image%20Analysis/</loc>
+    
+    <lastmod>2018-02-01T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/02/02/Deep%20Learning%20in%20Medical%20Imaging:%20General%20Overview/</loc>
+    
+    <lastmod>2018-02-01T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/24/Deeply-recursive%20convolutional%20network%20for%20image%20super-resolution/</loc>
+    
+    <lastmod>2018-01-23T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/24/Residual-Guide%20Feature%20Fusion%20Network%20for%20Single%20Image%20Deraining/</loc>
+    
+    <lastmod>2018-01-23T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/24/Learning%20a%20single%20convolutional%20super-resolution%20network%20for%20multiple%20degradations/</loc>
+    
+    <lastmod>2018-01-23T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/24/Formresnet:%20Formatted%20residual%20learning%20for%20image%20restoration/</loc>
+    
+    <lastmod>2018-01-23T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/24/PAD-Net:%20A%20Perception-Aided%20Single%20Image%20Dehazing%20Network/</loc>
+    
+    <lastmod>2018-01-23T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/24/Image%20Inpainting%20for%20Irregular%20Holes%20Using%20Partial%20Convolutions/</loc>
+    
+    <lastmod>2018-01-23T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/24/Gated%20fusion%20network%20for%20single%20image%20dehazing/</loc>
+    
+    <lastmod>2018-01-23T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/24/Densely%20Connected%20Pyramid%20Dehazing%20Network/</loc>
+    
+    <lastmod>2018-01-23T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/23/Density-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network/</loc>
+    
+    <lastmod>2018-01-22T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/23/End-to-End%20United%20Video%20Dehazing%20and%20Detection/</loc>
+    
+    <lastmod>2018-01-22T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/23/Locally%20Adaptive%20Learning%20Loss%20for%20Semantic%20Image%20Segmentation/</loc>
+    
+    <lastmod>2018-01-22T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/23/Residual%20Dense%20Network%20for%20Image%20Super-Resolution/</loc>
+    
+    <lastmod>2018-01-22T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/23/Deep%20joint%20rain%20and%20haze%20removal%20from%20single%20images/</loc>
+    
+    <lastmod>2018-01-22T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/23/Zero-Shot%20Super-Resolution%20using%20Deep%20Internal%20Learning/</loc>
+    
+    <lastmod>2018-01-22T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/23/Deep%20Image%20Prior/</loc>
+    
+    <lastmod>2018-01-22T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/23/Discriminative%20Region%20Proposal%20Adversarial%20Networks%20for%20High-Quality%20Image-to-Image%20Translation/</loc>
+    
+    <lastmod>2018-01-22T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/22/xUnit:%20Learning%20a%20Spatial%20Activation%20Function%20for%20Efficient%20Image%20Restoration/</loc>
+    
+    <lastmod>2018-01-21T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/22/WaterGAN:%20unsupervised%20generative%20network%20to%20enable%20real-time%20color%20correction%20of%20monocular%20underwater%20images/</loc>
+    
+    <lastmod>2018-01-21T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/22/Towards%20Perceptual%20Image%20Dehazing%20by%20Physics-based%20Disentanglement%20and%20Adversarial%20Training/</loc>
+    
+    <lastmod>2018-01-21T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/22/Single%20Image%20Deraining%20using%20Scale-Aware%20Multi-Stage%20Recurrent%20Network/</loc>
+    
+    <lastmod>2018-01-21T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/22/Joint%20Transmission%20Map%20Estimation%20and%20Dehazing%20using%20Deep%20Networks/</loc>
+    
+    <lastmod>2018-01-21T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/22/CANDY:%20Conditional%20Adversarial%20Networks%20based%20Fully%20End-to-End%20System%20for%20Single%20Image%20Haze%20Removal/</loc>
+    
+    <lastmod>2018-01-21T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/22/Dehazenet:%20An%20end-to-end%20system%20for%20single%20image%20haze%20removal/</loc>
+    
+    <lastmod>2018-01-21T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/22/Single%20image%20dehazing%20via%20multi-scale%20convolutional%20neural%20networks/</loc>
+    
+    <lastmod>2018-01-21T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/21/Aod-net:%20All-in-one%20dehazing%20network/</loc>
+    
+    <lastmod>2018-01-20T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/21/Deep%20joint%20rain%20detection%20and%20removal%20from%20a%20single%20image/</loc>
+    
+    <lastmod>2018-01-20T22:25:07.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/21/Image%20super-resolution%20using%20deep%20convolutional%20networks/</loc>
+    
+    <lastmod>2018-01-20T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/21/Real-Time%20Video%20Super-Resolution%20with%20Spatio-Temporal%20Networks%20and%20Motion%20Compensation/</loc>
+    
+    <lastmod>2018-01-20T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/21/Frame-Recurrent%20Video%20Super-Resolution/</loc>
+    
+    <lastmod>2018-01-20T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/21/Real-time%20single%20image%20and%20video%20super-resolution%20using%20an%20efficient%20sub-pixel%20convolutional%20neural%20network/</loc>
+    
+    <lastmod>2018-01-20T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/21/Removing%20rain%20from%20single%20images%20via%20a%20deep%20detail%20network/</loc>
+    
+    <lastmod>2018-01-20T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/21/Image%20De-raining%20Using%20a%20Conditional%20Generative%20Adversarial%20Network/</loc>
+    
+    <lastmod>2018-01-20T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/17/Deep%20region%20and%20multi-label%20learning%20for%20facial%20action%20unit%20detection/</loc>
+    
+    <lastmod>2018-01-16T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/17/Fatauva-net:%20An%20integrated%20deep%20learning%20framework%20for%20facial%20attribute%20recognition,%20action%20unit%20(au)%20detection,%20and%20valence-arousal%20estimation/</loc>
+    
+    <lastmod>2018-01-16T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/17/DeepCoder:%20Semi-Parametric%20Variational%20Autoencoders%20for%20Automatic%20Facial%20Action%20Coding/</loc>
+    
+    <lastmod>2018-01-16T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/03/Stacked%20hourglass%20networks%20for%20human%20pose%20estimation/</loc>
+    
+    <lastmod>2018-01-02T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/03/Convolutional%20pose%20machines/</loc>
+    
+    <lastmod>2018-01-02T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2018/01/03/Going%20deeper%20into%20action%20recognition:%20A%20survey/</loc>
+    
+    <lastmod>2018-01-02T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/30/Compact%20Bilinear%20Pooling/</loc>
+    
+    <lastmod>2017-12-29T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/30/Bilinear%20CNN%20Models%20for%20Fine-grained/</loc>
+    
+    <lastmod>2017-12-29T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/22/Learning%20to%20Segment%20Every%20Thing/</loc>
+    
+    <lastmod>2017-12-21T22:25:06.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/22/Mask%20r-cnn/</loc>
+    
+    <lastmod>2017-12-21T22:25:05.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/22/Faster%20R-CNN:%20Towards%20real-time%20object%20detection%20with%20region%20proposal%20networks/</loc>
+    
+    <lastmod>2017-12-21T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/22/Fast%20r-cnn/</loc>
+    
+    <lastmod>2017-12-21T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/22/Rich%20Feature%20Hierarchies%20for%20Accurate%20Object%20Detection%20and%20Semantic%20Segmentation/</loc>
+    
+    <lastmod>2017-12-21T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/19/Non-local%20Neural%20Networks/</loc>
+    
+    <lastmod>2017-12-18T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/19/Spatial%20transformer%20networks/</loc>
+    
+    <lastmod>2017-12-18T22:25:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/18/Understanding%20Matrix%20capsules%20with%20EM%20Routing/</loc>
+    
+    <lastmod>2017-12-17T22:25:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/18/EM%20Algorithm/</loc>
+    
+    <lastmod>2017-12-17T22:25:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/18/Dynamic%20Routing%20Between%20Capsules/</loc>
+    
+    <lastmod>2017-12-17T22:25:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/12/18/Capsule%20Extension/</loc>
+    
+    <lastmod>2017-12-17T22:25:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/11/03/Image-to-Image%20Translation%20with%20Conditional%20Adversarial%20Networks/</loc>
+    
+    <lastmod>2017-11-02T22:25:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/11/03/Unsupervised%20Image-to-Image%20Translation%20Networks/</loc>
+    
+    <lastmod>2017-11-02T22:25:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/11/03/Unpaired%20Image-to-Image%20Translation%20using%20Cycle-Consistent%20Adversarial%20Networks/</loc>
+    
+    <lastmod>2017-11-02T22:25:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/11/03/Auto-Encoding%20Variational%20Bayes/</loc>
+    
+    <lastmod>2017-11-02T22:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/10/05/Deep%20Spatio-Temporal%20Residual%20Networks%20for%20Citywide%20Crowd%20Flows%20Prediction/</loc>
+    
+    <lastmod>2017-10-04T22:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/10/03/Automated%20Inference%20on%20Criminality%20using%20Face%20Images/</loc>
+    
+    <lastmod>2017-10-02T22:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/09/29/ImageNet%20classification%20with%20deep%20convolutional%20neural%20networks/</loc>
+    
+    <lastmod>2017-09-29T00:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/09/19/Learning%20from%20simulated%20and%20unsupervised%20images%20through%20adversarial%20training/</loc>
+    
+    <lastmod>2017-09-18T22:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/09/19/Densely%20connected%20convolutional%20networks/</loc>
+    
+    <lastmod>2017-09-18T21:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/09/19/Deep%20feature%20flow%20for%20video%20recognition/</loc>
+    
+    <lastmod>2017-09-18T20:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/09/19/U-net:%20Convolutional%20networks%20for%20biomedical%20image%20segmentation/</loc>
+    
+    <lastmod>2017-09-18T19:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/09/19/Unsupervised%20representation%20learning%20with%20deep%20convolutional%20generative%20adversarial%20networks/</loc>
+    
+    <lastmod>2017-09-18T18:25:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://alexhex7.github.io/2017/09/19/Convolutional%20neural%20network%20architecture%20for%20geometric%20matching/</loc>
+    
+    <lastmod>2017-09-18T17:25:23.000Z</lastmod>
+    
+  </url>
+  
+</urlset>
