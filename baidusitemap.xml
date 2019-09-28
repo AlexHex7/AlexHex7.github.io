@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://alexhex7.github.io/2019/08/20/Progressive%20Differentiable%20Architecture%20Search:Bridging%20the%20Depth%20Gap%20between%20Search%20and%20Evaluation/</loc>
+    <lastmod>2019-08-19</lastmod>
+  </url>  <url>
     <loc>https://alexhex7.github.io/2019/07/14/DARTS:Differentiable%20Architecture%20Search/</loc>
     <lastmod>2019-07-13</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/06/25/Cross-Modal%20Self-Attention%20Network%20for%20Referring%20Image%20Segmentation/</loc>
+    <lastmod>2019-06-24</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/06/25/Cross-Modal%20Relationship%20Inference%20for%20Grounding%20Referring%20Expressions/</loc>
+    <lastmod>2019-06-24</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/06/21/Dynamic%20Graph%20Attention%20for%20Referring%20Expression%20Comprehension/</loc>
+    <lastmod>2019-06-20</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/06/20/Neighbourhood%20Watch:Referring%20Expression%20Comprehension%20via%20Language-guided%20Graph%20Attention%20Networks/</loc>
+    <lastmod>2019-06-19</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/06/13/CLEVR-Ref+:Diagnosing%20Visual%20Reasoning%20with%20Referring%20Expressions/</loc>
+    <lastmod>2019-06-12</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/06/13/Inferring%20and%20executing%20programs%20for%20visual%20reasoning/</loc>
+    <lastmod>2019-06-12</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/06/13/Deep%20Compositional%20Question%20Answering%20with%20Neural%20Module%20Networks/</loc>
+    <lastmod>2019-06-12</lastmod>
   </url>  <url>
     <loc>https://alexhex7.github.io/2018/02/25/Segnet:%20A%20deep%20convolutional%20encoder-decoder%20architecture%20for%20image%20segmentation/</loc>
     <lastmod>2019-06-08</lastmod>
@@ -412,10 +436,10 @@
     <loc>https://alexhex7.github.io/2018/01/24/Densely%20Connected%20Pyramid%20Dehazing%20Network/</loc>
     <lastmod>2018-01-23</lastmod>
   </url>  <url>
-    <loc>https://alexhex7.github.io/2018/01/23/End-to-End%20United%20Video%20Dehazing%20and%20Detection/</loc>
+    <loc>https://alexhex7.github.io/2018/01/23/Density-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network/</loc>
     <lastmod>2018-01-22</lastmod>
   </url>  <url>
-    <loc>https://alexhex7.github.io/2018/01/23/Density-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network/</loc>
+    <loc>https://alexhex7.github.io/2018/01/23/End-to-End%20United%20Video%20Dehazing%20and%20Detection/</loc>
     <lastmod>2018-01-22</lastmod>
   </url>  <url>
     <loc>https://alexhex7.github.io/2018/01/23/Locally%20Adaptive%20Learning%20Loss%20for%20Semantic%20Image%20Segmentation/</loc>

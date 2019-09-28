@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(ICCV 2019) Progressive Differentiable Architecture Search:Bridging the Depth Gap between Search and Evaluation]]></title>
+    <url>%2F2019%2F08%2F20%2FProgressive%20Differentiable%20Architecture%20Search%3ABridging%20the%20Depth%20Gap%20between%20Search%20and%20Evaluation%2F</url>
+    <content type="text"><![CDATA[Chen X, Xie L, Wu J, et al. Progressive Differentiable Architecture Search: Bridging the Depth Gap between Search and Evaluation[J]. arXiv preprint arXiv:1904.12760, 2019. 1. Overview 1.1. Motivation1) There is a large gap between the architecture depths in search and evaluation scenarios.2) Darts searchs in a shallow network and evaluates in a deeper one.3) Darts lacks of stability and can be biased heavily towards skip-connect. In this paper, it proposes P-Darts1) the depth of searched architectures to grow gradually during the training procedure.2) multiple search stages. 3 stages5) reduced searching time (~7 hours on a single GPU) 1.2. Technique1.2.1 Search Space Approximation depth increases with candidate operations decreases solve the problem of exponentially increasing 1.2.2 Search Space Regularization operation (skip-connect) level dropout &amp; control the appearance of skip-connection solve the problem of instability 1.3. Dataset1) CIFAR102) CIFAR100 2. P-Darts 2.1. Search Space Approximation In final stage, keep two top-weighted non-zero operations 2.2. Search Space Regularizationobserve that information prefers to flow through skip-connect instead of other1) insert operation level dropout after each skip-connectgradually decay the Dropout rate during the training process in each search stage2) control the number of skip-connect to be M in final stageif searched number of skip-connect is not M, choose top-M operation and set other to 0, redo cell construction. And repeate. 3. Experiments 3.1. Details 3 stages. 5,11,17 cells; 8,5,3 operation; 0.0, 0.4, 0.7 on CIFAR10; 0.1, 0.2, 0.3 on CIFAR100 M = 2 at most 3.2. Search Results 3.3. Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Auto-ML</category>
+        <category>Gradient</category>
+      </categories>
+      <tags>
+        <tag>Auto-ML</tag>
+        <tag>Gradient</tag>
+        <tag>P-Darts</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(ICLR 2019) DARTS:Differentiable Architecture Search]]></title>
     <url>%2F2019%2F07%2F14%2FDARTS%3ADifferentiable%20Architecture%20Search%2F</url>
     <content type="text"><![CDATA[Liu H, Simonyan K, Yang Y. Darts: Differentiable architecture search[J]. arXiv preprint arXiv:1806.09055, 2018. 1. Overview 1.1. Motivation1) existing methods are based on a discrete and non-differentiable search space2) existing methods apply evolution, RL, MCTS, SMBO or Bayesian optimization In this paper, it proposes DARTS1) using gradient descent2) continuous relaxation3) remarkable efficiency improvement 1.2. Dataset1) CIRFAR-102) ImageNet3) Penn Treebank4) WikiText-2 2. Differentiable Architecture Search 2.1. Cell1) Directed acyclic graph with an ordered sequence of N nodes $x^{(i)}$, which means feature maps2) Directed edge $(i, j)$. $o^{(i, j)}$3) Edge type set $O$: ‘none’, ‘max_pool_3x3’, ‘avg_pool_3x3’, ‘skip_connect’, ‘sep_conv_3x3’, ‘sep_conv_5x5’, ‘dil_conv_3x3’, ‘dil_conv_5x5’4) Mixed Operation. aggregate all edges of each node by learned weights $α^{i,j}$ 5) At the end of search, replace mixed operation with most likely operation 2.2. Network1) Network based on Cells. $Input_k = (Input_{k-1}, Input_{k-2})$2) Parameter $step$ in Cell.Input: $(s1, s0) = (Input_{k-1}, Input_{k-2})$,when $step=0$, $(s0, s1)→s2$ (2 edges)when $step=1$, $(s0, s1, s2)→s3$ (3 edges), select top-2 2dges when trainedwhen $step=2$, $(s0, s1, s2, s3)→s4$ (4 edges), select top-2 2dges when trainedOutput: $Concat(s_k, s_{k-1}, …, s_{k-N})$3) Code Link 2.3 Optimization1) jointly learn $α$ (validation set, Adam) and $w$ (training set, momentum SGD) 2) Approximate Architecture Gradient (hessian-vector product) $ξ$. learning rate ($\theta$ is a copy from $w$)update Copy Network $\theta$ → update $α$ → update Network $w$(a) $\theta^* = \theta - η(momentum + d\theta + WeightDecay \times \theta)$ based on $(input_{train}, target_{train})$, $momentum$ from momentum SGD of network parameter $\theta$(b) Based on $\theta^*$ and $(valid{train}, valid{train})$, $dα$ and $vector$ (grad of $\theta$)(c) Get implicity grad based on $vector$ and $(input_{train}, target_{train})$(d) $dα$ -= implicity grad(e) update Network $w$ based on $(input_{train}, target_{train})$ 3. Experiments 3.1. Details During searching, all BN’s affine is False]]></content>
@@ -13,6 +28,117 @@
         <tag>Auto-ML</tag>
         <tag>Gradient</tag>
         <tag>Darts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2019) Cross-Modal Self-Attention Network for Referring Image Segmentation]]></title>
+    <url>%2F2019%2F06%2F25%2FCross-Modal%20Self-Attention%20Network%20for%20Referring%20Image%20Segmentation%2F</url>
+    <content type="text"><![CDATA[Ye L, Rochan M, Liu Z, et al. Cross-Modal Self-Attention Network for Referring Image Segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 10502-10511. 1. Overview 1.1. Motivation1) existing methods treat language expression and image separately2) not sufficiently capture long-range correlations between these two modalities In this paper, it proposes1) cross-modal self-attention (CMSA)2) gated multi-level fusion module 1.2. Dataset UNC UNC+ G-Ref ReferIt 2. Model 2.1. Multimodal Features Concate visual feature, spatial feature and word feature. $N×H×W×(C_v+C_l+8)$ 1) $p$. $p$-th visual point2) $n$, $n$-th word3) $s_p$. 8-D spatial feature: (3 normalized horizontal positions, 3 vertical, height, width) 2.2. Cross-Modal Self-Attention 1) $a_{p,n,p’, n’}$. attention weight between feature $f_{pn}$ and $f_{p’n’}$2) $q_{pn}=W_qf_{pn}$, $k_{pn}=W_kf_{pn}$, $v_{pn}=W_vf_{pn}$3) $W_q, W_k, W_v∈R^{512×(C_v+C_l+8)}$ 2.3. Gated Multi-Level FusionFusing features at multiple scales can improve the performance of referring image segmentation. 1) memory gate $m^i$2) reset gate $r^i$3) $m^i, r^i∈R^{H_i×W_i}$ 3. Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Referring Expression</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Segmentation</tag>
+        <tag>Referring Expression</tag>
+        <tag>Non-local</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2019) Cross-Modal Relationship Inference for Grounding Referring Expressions]]></title>
+    <url>%2F2019%2F06%2F25%2FCross-Modal%20Relationship%20Inference%20for%20Grounding%20Referring%20Expressions%2F</url>
+    <content type="text"><![CDATA[Yang S, Li G, Yu Y. Cross-Modal Relationship Inference for Grounding Referring Expressions[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 4145-4154. 1. Overview 1.1. Motivation existing work can not extract multi-order relationships In this paper, it proposes1) Cross-Modal Relationship Extractor (CMRE)2) Gated Graph Convolutional Network (GGCN) Graph Construct:1) spatial relation graph $G^s=(V, E, X^s)$2) language-guided visual relation graph $G^v=(V, E, X, P^v, P^e)$3) multimodal (language, visual and spatial information) relation graph $G^m=(V, E, X^m, P^v, P^e)$4) propagate with gated operation 1.2. Dataset RefCOCO RefCOCO+ RefCOCOg 2. Cross-Modal Relationship Inference Network 2.1. CMRE2.1.1. Spatial Relation Graph$G^s$.1) Node. visual feature $v_i$ from pretrained CNN model2) Edge. $e_{ij}$ from 1 to $N_e=11$ 2.1.2. Language Context1) softly classify the words in the expression into four types (entity words, relation, absolute location and unnecessary words)2) $m_t = [m_t^{(0)}, m_t^{(1)}, m_t^{(2)}, m_t^{(3)}]$ 2.1.3. Language-Guided Visual Relation Graphhighlight the vertices and edges of $G^s$, that have connections with the referring expression, to generate $G^v$.1) gate for $v_i$ according to the expression2) gate $p_j^e$ for edge with type $j=1, 2, …, N^e$ $P^v=p_i^v, i=1,…,K$$P^e=p_j^e, j=1,…,N_e$ 2.2. Multimodal Context Modelinggenerate $G^m$. 2.2.1. Language-Vision Feature$x_i^m = [x_i^s, c_i]$ 2.2.2. Semantic Context ModelingGGCN. 1) →,←. encoded feature for out- and in- relationships respectively2) finally get semantic contexts $X^c=x_i^c, i=1,…,K$3) for each $v_i$, $x_i=[W_p p_i, x_i^c]$, encode spatial feature $p_i$. 2.3. Loss Function]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Referring Expression</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Referring Expression</tag>
+        <tag>Graph Model</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(to ICCV 2019) Dynamic Graph Attention for Referring Expression Comprehension]]></title>
+    <url>%2F2019%2F06%2F21%2FDynamic%20Graph%20Attention%20for%20Referring%20Expression%20Comprehension%2F</url>
+    <content type="text"><![CDATA[to ICCV 2019 1. Overview 1.1. Motivation existing methods treat the objects in isolation or only explore the direct relationships between objects without being aligned with the expression In this paper, it proposes Dynamic Graph Attention Network (DGA)1) muti-step reasoning2) differential analyzer module3) static graph attention module4) dynamic graph attention module5) matching module 1.2. Dataset RefCOCO RefCOCO+ RefCOCOg 2. DGA 2.1. Reasoning Structure AnalyzerOutput the weight of each word $r_l^{(t)}$ at each time step $t$. $q$. expression feature 2.2. Static Graph Attention ModuleOutput:1) $α_{k,l}$. weight between node $k$ and word $l$2) $c_k$. expression feature for node $k$3) $β_{n,l}$. weight between edge $n$ and word $l$ 1) edge $e_{ij}$ = [0, 1, …, 11]0=’no relation’; 1=’inside’; …; 11=’bottom right’ 2) $x_k^I = [x_k^o; p_k]$. node of $G_I$. visual feature + spatial feature3) node of $G_M$. node of $G_I$ + $c_k$ 2.3. Dynamic Graph Attention ModuleOutput the feature $m_k^{(t)}$ of node $k$ at each time step $t$. 1) update $α{k,l}$ and $β{n,l}$ based on $r_l^{(t)}$2) update node feature $m_k^{(t)}$ based on $m_k^{(t-1)}$ and other connected node feature $m_j^{(t-1)}$ 2.4. Matching ModuleBased on final update node feature $m_k^{(T)}$ and expression feature $q$ 3. Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Referring Expression</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Referring Expression</tag>
+        <tag>DGA</tag>
+        <tag>Graph</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2019) Neighbourhood Watch:Referring Expression Comprehension via Language-guided Graph Attention Networks]]></title>
+    <url>%2F2019%2F06%2F20%2FNeighbourhood%20Watch%3AReferring%20Expression%20Comprehension%20via%20Language-guided%20Graph%20Attention%20Networks%2F</url>
+    <content type="text"><![CDATA[Wang P, Wu Q, Cao J, et al. Neighbourhood watch: Referring expression comprehension via language-guided graph attention networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 1960-1968. 1. Overview 1.1. Motivation Mattnet. language and region features are learned or designed independently without being informed by each other. In this paper, it proposes Language-guided Graph Attention Network (LGRAN)1) Language Self-attention Module2) Language-guided Graph Attention (node attention &amp; edge attention) Make referring expression decision both visualisable and explainable. directed graph node. object set of proposals or GTs edge intra-class edge. spatial relationship inter-class edge. spatial relationship + other objects’ visual feature 1.2. Dataset RefCOCO RefCOCO+ RefCOCOg 2. LGRAN 2.1. Problem1) Given an image $I$, localise the object $o’$ referred to by r from the object set $O={o_i}, i=1,…,N$ of $I$.2) $O$ is given as GT or obtained by an proposal generation method. 2.2. Language Self-Attention Module Output1) $s_{sub}$, $w_{sub}$2) $s_{intra}$, $w_{intra}$3) $s_{inter}$, $w_{inter}$ 2.3. Language-guided Graph Attention Module2.3.1. Graph Construction1) Node set. $V={v_i}, i=1,…,N$2) Edge set. $E^{intra}$, $E^{inter}$ 3) intra-class edge set. top $k$ objs based on distance.4) inter-class edge set. top $k$ other objs based on distance.5) $k=5$ 6) Node $v_i$. img feature $v_i$ (512) + $l_i$ (5) 7) $e_{ij}$ 8) $x_c$. centre coordinate 2.3.2. Language-guided Graph attention the Node Attention the Intra-class Edge Attention the Inter-class Edge Attention 2.3.3 The Attended Graph Representation 2.3.4 Matching Module CrossEntropy 3. Experiments IOU &gt; 0.5. prediction is true]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Referring Expression</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Referring Expression</tag>
+        <tag>LGRAN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2019) CLEVR-Ref+:Diagnosing Visual Reasoning with Referring Expressions]]></title>
+    <url>%2F2019%2F06%2F13%2FCLEVR-Ref%2B%3ADiagnosing%20Visual%20Reasoning%20with%20Referring%20Expressions%2F</url>
+    <content type="text"><![CDATA[Liu R , Liu C , Bai Y , et al. CLEVR-Ref+: Diagnosing Visual Reasoning with Referring Expressions[J]. 2019. 1. Overview 1.1. Motivation1) Current benchmark datasets suffer from bias2) Current SOTA models can not be easily evaluated on their intermediate reasoning process In this paper, it builds CLEVR-Ref+ (convert from CLEVR in VQA)and propose IEP-Ref control over dataset bias the segmentation module in the end of IEP-Ref can be attached to any intermedia module to reveal the entire reasoning process IEP-Ref can correctly predict no-foreground, even if all training data has at least one object referred 1.2. Contribution1) construct CLEVR-Ref+ dataset2) test several SOTA on CLEVR-Ref+, including IEP-Ref3) segmentation module trained in IEP-Ref can be trivially plugged in all intermediate steps 2. CLEVR-Ref+ 3. Experiments 3.1. Step-By-Step Inspection of Visual ReasoningWhen testing, simply attach the trained Segment module to the output of all intermediate modules. 3.2. False-Premise Referring ExpressionsRobust enough to return zero foreground. 4. IEP-Ref 1) Preprocess. Its output is the input to the Scene module.2) Unary. Transform one feature to another (Scene, Filter X, Unique, Relate, Same X modules)3) Binary. Transform two feature to one (And and Or)4) Postprocess. segmentation module]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>Referring Expression</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Referring Expression</tag>
+        <tag>Nerual Module Networks</tag>
+        <tag>IEP</tag>
+        <tag>IEP-Ref</tag>
+        <tag>CLEVR-Ref+</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Inferring and executing programs for visual reasoning]]></title>
+    <url>%2F2019%2F06%2F13%2FInferring%20and%20executing%20programs%20for%20visual%20reasoning%2F</url>
+    <content type="text"><![CDATA[Johnson J, Hariharan B, van der Maaten L, et al. Inferring and executing programs for visual reasoning[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 2989-2998. 1. Overview 1.1. Motivation1) Existing methods use black-box architecture without explicitly modeling the underlying reasoning process2) Black-box models often learn to exploit biases in the data rather than reasoning In this paper, it proposes a model for visual reasoning Program generatorread questions and produces a plan or program for answering the question by composing functions from a function dictionary Execution engineimplements each function using a small neural module, and executes the resulting module network to produce answers. Trained using a combination of BP and REINFORCE With only small amount of supervision GT programs (semi-supervision), outperform SOTA. 1) NMN: hand-tuned program generator based on syntactic parsing.2) This paper: only define the function vocabulary and the universal module architecture by hand. 1.2. Dataset1) CLEVR. all questions are quipped with GT programs.2) New dataset of human-posed free-form natural languge questions about CLEVR images finetuned on this dataset without additional program supervision 2. Method Training sample (x, q, a, z) x. img q. question a. answer z. program(with or without) Program generator. $z = \pi(q)$Execution engine. $a=\phi(x,z)$ 2.1. Programs1) pre-specify a set of function $f$, each of which has a fixed arity {1, 2}2) add special constant Scene into function vocabulary3) represent valid programs $z$ as syntax trees, each node contaisn a function $f$. 2.2. Program Generator1) use prefix traversal to serialize the syntax tree2) at test time, we simply take the argmax function at each time step3) if the sequence is too short, pad with Scene constants4) if the sequence is too long, then the unused functions are discarded 5) encoder and decoder6) at each timestep, compute a distribution over all possible functions. 2.3. Execution Engine1) implement using NMN2) $z$ is to assemble a question-specific network3) leaves of the tree are Scene functions4) root of the tree is a function corresponding to one of the question types from the CLEVR dataset 2.4. Training1) at training time, argmax can not BP. Instead replace with sampling and use REINFORCE2) semi-supervision Stepsa) small set of GT programs to train program generatorb) fix program generator and train execution engine on large datasetc) use REINFORCE to jointly finetune]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>VQA</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Nerual Module Networks</tag>
+        <tag>IEP</tag>
+        <tag>VQA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) Deep Compositional Question Answering with Neural Module Networks]]></title>
+    <url>%2F2019%2F06%2F13%2FDeep%20Compositional%20Question%20Answering%20with%20Neural%20Module%20Networks%2F</url>
+    <content type="text"><![CDATA[Andreas J, Rohrbach M, Darrell T, et al. Neural module networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 39-48. 1. Overview 1.1. Motivation1) no single best network for all tasks2) a prefix of a network trained for classification used in many vision tasksSo while network structures are not universal, they are at least empirically modular. In this paper, it seeks exploit the representational capacity of DNN and the compositional linguistic strucuture of questions. decompose questions into linguistic sub-structure use sub-strucutures to dynamically instantiate modular networks jointly trained propose a new dataset of complex questions about abstract shapes 1) different kinds of modules are shown in different colors attention module (like dogs), labeling modules (like where) 2) all modules in NMN are independent and composable 1.2. Dataset VQA. natural images SHAPES. new dataset 2. NMN 2.1. Overviewtraining sample (w, x, y) w. question x. image y. answer 1) the model instantiates a network based on $P(w)$.2) pass x (possibly w again) as inputs, and obtains a distribution over labels3) model $p(y | w, x,; \theta)$ 2.2. ModulesThree basic types: images unnormalized attentions labels Typeset: TYPE[INSTANCE](ARG_1, …). example. attend[red] TYPE. high-level module type (attention, classification, …) weights may be shared at both the type and instance level modules with on arguments implicitly take the image as input higher-level arguments may also inspect the image 2.3. String to NetworksTwo steps: map questions to layouts (set of module and connections)standard tools pre-trained. (Future work might focus on learning (or at least fine-tuning) this prediction process jointly with the rest of thesystem) assemble network based on layouts 2.3.1. Parsing Stanford Parser perform basic lemmatization to reduce sparsitykites into kite; were into be; Exmaples: what is standing in the field → what(stand) what color is the truck → color(truck) is there a circle next to a square → is(circle, next-to(square)) what type of cakes were they? (what type of cake is it?) → type(cake)strip away function words 2.3.2. Layout Leaf. attend module Root. measure module or classify module Other. re-attend module or combine module Networks which have the same high-level structure but different instantiations of individual modules can be processed in the same batch, resulting in efficient computation.For example: classify[color](attend[cat]) and classify[where](attend[truck]) 2.3.3. GeneralizationsSQL-like queries: IS(cat) AND NOT(IS(dog)) IS(cat) and date &gt; 2014-11-5 2.4. Answeringgeometric average of two distribution, dynamically reweighted using both text and image features prediction from NMN prediction from LSTM (1024 hidden unit). Reason aggressive simplification in the parser. (need more information from original questions)both what is flying? and what are flying? → what(fly) capture semantic regularities with missing or low-qaulity image datareasonable to guess that what color is the bear? brown instead of green 2.5. Answering dynamicl network strucuture results in some weight update more frequently than others. adaptive per-weight learning rates performed substantially better than simple gradient descent 3. Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Cross-Modality</category>
+        <category>VQA</category>
+      </categories>
+      <tags>
+        <tag>Cross-Modality</tag>
+        <tag>Nerual Module Networks</tag>
+        <tag>VQA</tag>
       </tags>
   </entry>
   <entry>
@@ -373,8 +499,8 @@
       </categories>
       <tags>
         <tag>Image Processing</tag>
-        <tag>Image Restoration</tag>
         <tag>Non-local</tag>
+        <tag>Image Restoration</tag>
       </tags>
   </entry>
   <entry>
@@ -510,8 +636,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>ResNeXt</tag>
         <tag>Network</tag>
+        <tag>ResNeXt</tag>
       </tags>
   </entry>
   <entry>
@@ -523,8 +649,8 @@
         <category>Multiple Hypotheses</category>
       </categories>
       <tags>
-        <tag>Lung</tag>
         <tag>Medical</tag>
+        <tag>Lung</tag>
         <tag>Segmentation</tag>
         <tag>Multiple Hypotheses</tag>
         <tag>UNet</tag>
@@ -555,8 +681,8 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Lung</tag>
         <tag>Medical</tag>
+        <tag>Lung</tag>
         <tag>Segmentation</tag>
       </tags>
   </entry>
@@ -690,8 +816,8 @@
         <category>Transfer Learning</category>
       </categories>
       <tags>
-        <tag>Transfer Learning</tag>
         <tag>Graph</tag>
+        <tag>Transfer Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -1001,8 +1127,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Network</tag>
         <tag>TCN</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>
@@ -1032,8 +1158,8 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
-        <tag>Reasoning</tag>
         <tag>VQA</tag>
+        <tag>Reasoning</tag>
       </tags>
   </entry>
   <entry>
@@ -1498,9 +1624,9 @@
       <tags>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1516,9 +1642,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1534,9 +1660,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>MIMIC-CXR</tag>
         <tag>Lateral X-ray</tag>
@@ -1553,9 +1679,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1569,9 +1695,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1588,9 +1714,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Attention</tag>
@@ -1606,9 +1732,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>SE Block</tag>
@@ -1624,9 +1750,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>LSTM</tag>
@@ -1642,9 +1768,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1661,9 +1787,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
@@ -1679,9 +1805,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>DenseNet</tag>
         <tag>ChestX-ray14</tag>
         <tag>PLCO</tag>
@@ -1697,9 +1823,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
       </tags>
   </entry>
@@ -1713,9 +1839,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
       </tags>
@@ -1730,9 +1856,9 @@
         <category>Lung</category>
       </categories>
       <tags>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
-        <tag>Medical</tag>
         <tag>ChestX-ray14</tag>
         <tag>Localization</tag>
         <tag>Dataset</tag>
@@ -1885,8 +2011,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Overview</tag>
+        <tag>Medical</tag>
       </tags>
   </entry>
   <entry>
@@ -1899,8 +2025,8 @@
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>Overview</tag>
+        <tag>Medical</tag>
       </tags>
   </entry>
   <entry>
@@ -2642,8 +2768,8 @@
       <tags>
         <tag>Component</tag>
         <tag>Classification</tag>
-        <tag>Attention</tag>
         <tag>Non-local</tag>
+        <tag>Attention</tag>
         <tag>Video Classification</tag>
       </tags>
   </entry>
