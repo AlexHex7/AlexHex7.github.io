@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Yang T J, Howard A, Chen B, et al. Netadapt: Platform-aware neural network adaptation for mobile applications[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 285-300.">
+<meta name="keywords" content="Auto-ML,LightWeight,NetAdapt,Platform-aware">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(ECCV 2018) Netadapt:Platform-aware neural network adaptation for mobile applications">
+<meta property="og:url" content="http://yoursite.com/2019/10/26/Netadapt: Platform-aware neural network adaptation for mobile applications/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Yang T J, Howard A, Chen B, et al. Netadapt: Platform-aware neural network adaptation for mobile applications[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 285-300.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/11.jpg?raw=true">
+<meta property="og:updated_time" content="2019-10-26T12:25:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(ECCV 2018) Netadapt:Platform-aware neural network adaptation for mobile applications">
+<meta name="twitter:description" content="Yang T J, Howard A, Chen B, et al. Netadapt: Platform-aware neural network adaptation for mobile applications[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 285-300.">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/1.jpg?raw=true">
+  <link rel="canonical" href="http://yoursite.com/2019/10/26/Netadapt: Platform-aware neural network adaptation for mobile applications/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>(ECCV 2018) Netadapt:Platform-aware neural network adaptation for mobile applications | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-aboutme">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>AboutMe</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>Search</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Searching..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/26/Netadapt: Platform-aware neural network adaptation for mobile applications/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">(ECCV 2018) Netadapt:Platform-aware neural network adaptation for mobile applications
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-10-26 20:25:07" itemprop="dateCreated datePublished" datetime="2019-10-26T20:25:07+08:00">2019-10-26</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/LightWeight/" itemprop="url" rel="index"><span itemprop="name">LightWeight</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Yang T J, Howard A, Chen B, et al. Netadapt: Platform-aware neural network adaptation for mobile applications[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 285-300.</p>
+</blockquote>
+<a id="more"></a>
+<p><br></p>
+<hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><p>Existing methods simplify networks based on <strong>indirect metrics</strong>, such as MACs or weights, instead pf latency and energy consumption.</p>
+<p>In this paper, it proposes <strong>NetAdapt</strong> to automatically adapts a pre-trained network to <strong>mobile platform</strong> given a resource budget.<br><strong>1)</strong> Incorporate <strong>direct metrics</strong> into algorithm, evaluated using <strong>empirical measurements</strong> (<strong>eliminates</strong> the requirement of <strong>platform-specific</strong> knowledge).<br><strong>2)</strong> Trade-offs on both mobile CPU and mobile GPU.<br><strong>3)</strong> For the K-layer network: Get K network proposals (remove filters from a single <strong>Conv or FC</strong>)→Choose best proposal→Iteration.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/1.jpg?raw=true" alt><br></div>
+
+<h2 id="1-2-Metrics"><a href="#1-2-Metrics" class="headerlink" title="1.2. Metrics"></a>1.2. Metrics</h2><p>The relationship between an indirect metric and the corresponding direct metric can be highly <strong>non-linear</strong> and <strong>platform-dependent</strong>.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/2.jpg?raw=true" alt><br></div>
+
+<h2 id="1-3-Contribution"><a href="#1-3-Contribution" class="headerlink" title="1.3. Contribution"></a>1.3. Contribution</h2><p><strong>1)</strong> Framework with <strong>direct metrics</strong>, <strong>empirical measurement</strong> (don’t need platform-specific knowledge).<br><strong>2)</strong> <strong>Automated</strong> constrained network optimization algorithm.</p>
+<hr>
+<h1 id="2-Related-Works"><a href="#2-Related-Works" class="headerlink" title="2. Related Works"></a>2. Related Works</h1><hr>
+<p><strong>1)</strong> pruning-based methods (energy-aware pruning).<br><strong>2)</strong> Decomposition.<br><strong>3)</strong> Quantization.</p>
+<hr>
+<h1 id="3-Algorithm"><a href="#3-Algorithm" class="headerlink" title="3. Algorithm"></a>3. Algorithm</h1><hr>
+<h2 id="3-1-Problem-Formulation"><a href="#3-1-Problem-Formulation" class="headerlink" title="3.1. Problem Formulation"></a>3.1. Problem Formulation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/3.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> $Res_j$. evaluates the direct metric for source consumption of the $j^{th}$ resource.<br><strong>2)</strong> $Bud_j$. the budget of the $j^{th}$ resource<br>The <strong>resource</strong> can be latency, energy, memory footprint or a combination of them.</p>
+<p>Then break the problem into a series of <strong>easier problems</strong>, solves it <strong>iteratively</strong>.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/4.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> $i$. the $i^{th}$ iteration.<br><strong>2)</strong> $Net_0$. initial pre-trained network.<br><strong>3)</strong> $\Delta R_{i,j}$. the constraint tightens for the $j^{th}$ resource in the $i^{th}$ iteration, can <strong>vary</strong> from iteration to iteration. (<strong>Resource Reduction Schedule</strong>).</p>
+<p>Algorithm terminates when $Res_j (Net_i - 1) - \Delta R_{i,j} \le 0$ for every resource type.</p>
+<h2 id="3-2-Details"><a href="#3-2-Details" class="headerlink" title="3.2. Details"></a>3.2. Details</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/6.jpg?raw=true" alt><br></div>
+
+<h3 id="3-2-1-Choose-Number-of-Filters"><a href="#3-2-1-Choose-Number-of-Filters" class="headerlink" title="3.2.1. Choose Number of Filters"></a>3.2.1. Choose Number of Filters</h3><p><strong>1)</strong> Determine how many filters to preserve in a specific layers based on <strong>empirical measurements</strong>.<br><strong>2)</strong> The <strong>maximum</strong> number of filters that can <strong>satisfy the current resource constraint</strong> will be chosen.<br><strong>3)</strong> When removing operation applys to a layers, the <strong>associated layers also need to be change</strong>.</p>
+<h3 id="3-2-2-Choose-Which-Filters"><a href="#3-2-2-Choose-Which-Filters" class="headerlink" title="3.2.2. Choose Which Filters"></a>3.2.2. Choose Which Filters</h3><p><strong>1)</strong> use <strong>magnitude-based method</strong>. $N$ filters that have the <strong>largest L2-norm magnitude</strong> will be kept.</p>
+<h3 id="3-2-3-Short-Long-Term-Fine-Tune"><a href="#3-2-3-Short-Long-Term-Fine-Tune" class="headerlink" title="3.2.3 Short-/Long-Term Fine-Tune"></a>3.2.3 Short-/Long-Term Fine-Tune</h3><p><strong>1)</strong> Short-term fine-tune has fewer iterations than long-term fine-tune<br><strong>2)</strong> Short-term fine-tune is especially important while adapting small networks with a large resource reduction. Otherwise acc will drop to 0.<br><strong>3)</strong> Fine-tune until qual to acc.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/7.jpg?raw=true" alt><br></div>
+
+<h2 id="3-3-Fast-Resource-Consumption-Estimation"><a href="#3-3-Fast-Resource-Consumption-Estimation" class="headerlink" title="3.3. Fast Resource Consumption Estimation"></a>3.3. Fast Resource Consumption Estimation</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/8.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/9.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> <strong>Measuring</strong> the resource consumption proposal network is <strong>slow</strong> and <strong>hard to parallelize</strong>.<br><strong>2)</strong> Solve this problem by building <strong>layer-wise look-up tables</strong> with <strong>pre-measured resource consumption of each layer</strong>.<br><strong>3)</strong> The size of <strong>network-wise table</strong> will grow exponentially with the number of layers.</p>
+<hr>
+<h1 id="4-Experiments"><a href="#4-Experiments" class="headerlink" title="4. Experiments"></a>4. Experiments</h1><hr>
+<h2 id="4-1-Details-for-MobileNetv1"><a href="#4-1-Details-for-MobileNetv1" class="headerlink" title="4.1. Details for MobileNetv1"></a>4.1. Details for MobileNetv1</h2><p><strong>1)</strong> Adapt each depthwise layer with the corresponding pointwise layers.<br><strong>2)</strong> When adapting the small MobileNetV1, $\Delta R_{i,j}$ starts at <strong>0.5</strong> and d<strong>ecays at the rate of 0.96 per iteration.</strong><br><strong>3)</strong> Training set of ImageNet (long-term fine-tune) is split into <strong>New_training Set</strong> (short-term fine-tune). and <strong>Holdout Set</strong> (pick best-acc network) .<br><strong>4)</strong> Long-term fine-tune LR is <strong>0.045</strong>. shot-term fine-tune is <strong>0.0045</strong>.</p>
+<h2 id="4-2-Ablation-Study"><a href="#4-2-Ablation-Study" class="headerlink" title="4.2. Ablation Study"></a>4.2. Ablation Study</h2><h3 id="4-2-1-The-Impact-of-Resource-Reduction-Schedules"><a href="#4-2-1-The-Impact-of-Resource-Reduction-Schedules" class="headerlink" title="4.2.1 The Impact of Resource Reduction Schedules"></a>4.2.1 The Impact of Resource Reduction Schedules</h3><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/10.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> Using <strong>larger resource reduction</strong> at each itertation <strong>increases the adaption speed</strong> (less adpation iterations)<br><strong>2)</strong> With the same number of total iterations, the results suggests that a <strong>smaller initial resource reduction</strong> with a <strong>slower decay</strong> is preferable.</p>
+<h2 id="4-3-Architecture-Analysis"><a href="#4-3-Architecture-Analysis" class="headerlink" title="4.3. Architecture Analysis"></a>4.3. Architecture Analysis</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Netadapt: Platform-aware neural network adaptation for mobile applications/11.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> NetAdapt removes more filters in layers 7 to 10, but fewer in layer 6. Since feature size is reduced in layer 6, hypothesize that when the <strong>feature size is reduced</strong>, more filters are needed to avoid creating an information bottleneck.<br><strong>2)</strong> NetAdapt <strong>keeps more filters in layer 13</strong> (last Conv). More features are needed by the last FC to do classification.</p>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Auto-ML/" rel="tag"># Auto-ML</a>
+            
+              <a href="/tags/LightWeight/" rel="tag"># LightWeight</a>
+            
+              <a href="/tags/NetAdapt/" rel="tag"># NetAdapt</a>
+            
+              <a href="/tags/Platform-aware/" rel="tag"># Platform-aware</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/13/Searching for MobileNetV3/" rel="next" title="(2019) Searching for MobileNetV3">
+                  <i class="fa fa-chevron-left"></i> (2019) Searching for MobileNetV3
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/10/26/MnasNet: Platform-Aware Neural Architecture Search for Mobile/" rel="prev" title="(CVPR 2019) MnasNet:Platform-Aware Neural Architecture Search for Mobile">
+                  (CVPR 2019) MnasNet:Platform-Aware Neural Architecture Search for Mobile <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-Metrics"><span class="nav-text">1.2. Metrics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-Contribution"><span class="nav-text">1.3. Contribution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Related-Works"><span class="nav-text">2. Related Works</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Algorithm"><span class="nav-text">3. Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Problem-Formulation"><span class="nav-text">3.1. Problem Formulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Details"><span class="nav-text">3.2. Details</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-Choose-Number-of-Filters"><span class="nav-text">3.2.1. Choose Number of Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-Choose-Which-Filters"><span class="nav-text">3.2.2. Choose Which Filters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-Short-Long-Term-Fine-Tune"><span class="nav-text">3.2.3 Short-/Long-Term Fine-Tune</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Fast-Resource-Consumption-Estimation"><span class="nav-text">3.3. Fast Resource Consumption Estimation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-Experiments"><span class="nav-text">4. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Details-for-MobileNetv1"><span class="nav-text">4.1. Details for MobileNetv1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-Ablation-Study"><span class="nav-text">4.2. Ablation Study</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-The-Impact-of-Resource-Reduction-Schedules"><span class="nav-text">4.2.1 The Impact of Resource Reduction Schedules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-Architecture-Analysis"><span class="nav-text">4.3. Architecture Analysis</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+  <p class="site-author-name" itemprop="name">Alex Hex</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:alexhex7@foxmail.com" title="E-Mail &rarr; mailto:alexhex7@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+</body>
+</html>

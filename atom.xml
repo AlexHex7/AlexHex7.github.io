@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-19T22:25:01.000Z</updated>
+  <updated>2019-10-27T13:25:07.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,292 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing</title>
+    <link href="http://yoursite.com/2019/10/27/Efficient%20Neural%20Architecture%20Search%20via%20Parameter%20Sharing/"/>
+    <id>http://yoursite.com/2019/10/27/Efficient Neural Architecture Search via Parameter Sharing/</id>
+    <published>2019-10-27T13:25:07.000Z</published>
+    <updated>2019-10-27T13:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Pham H, Guan M Y, Zoph B, et al. Efficient neural architecture search via parameter sharing[J]. arXiv preprint arXiv:1802.03268, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
+    
+      <category term="RL" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/RL/"/>
+    
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
+    
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+    
+      <category term="Policy Gradient" scheme="http://yoursite.com/tags/Policy-Gradient/"/>
+    
+      <category term="ENAS" scheme="http://yoursite.com/tags/ENAS/"/>
+    
+      <category term="Parameter Share" scheme="http://yoursite.com/tags/Parameter-Share/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2017) Neural architecture search with reinforcement learning</title>
+    <link href="http://yoursite.com/2019/10/26/Neural%20architecture%20search%20with%20reinforcement%20learning/"/>
+    <id>http://yoursite.com/2019/10/26/Neural architecture search with reinforcement learning/</id>
+    <published>2019-10-26T14:25:07.000Z</published>
+    <updated>2019-10-26T14:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zoph B, Le Q V. Neural architecture search with reinforcement learning[J]. arXiv preprint arXiv:1611.01578, 2016.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
+    
+      <category term="RL" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/RL/"/>
+    
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
+    
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+    
+      <category term="Policy Gradient" scheme="http://yoursite.com/tags/Policy-Gradient/"/>
+    
+      <category term="NAS" scheme="http://yoursite.com/tags/NAS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2019) MnasNet:Platform-Aware Neural Architecture Search for Mobile</title>
+    <link href="http://yoursite.com/2019/10/26/MnasNet:%20Platform-Aware%20Neural%20Architecture%20Search%20for%20Mobile/"/>
+    <id>http://yoursite.com/2019/10/26/MnasNet: Platform-Aware Neural Architecture Search for Mobile/</id>
+    <published>2019-10-26T13:25:07.000Z</published>
+    <updated>2019-10-26T13:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Tan M, Chen B, Pang R, et al. Mnasnet: Platform-aware neural architecture search for mobile[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 2820-2828.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
+    
+      <category term="RL" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/RL/"/>
+    
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
+    
+      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+    
+      <category term="MNASNet" scheme="http://yoursite.com/tags/MNASNet/"/>
+    
+      <category term="Mobile Device" scheme="http://yoursite.com/tags/Mobile-Device/"/>
+    
+      <category term="Policy Gradient" scheme="http://yoursite.com/tags/Policy-Gradient/"/>
+    
+      <category term="NAS" scheme="http://yoursite.com/tags/NAS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ECCV 2018) Netadapt:Platform-aware neural network adaptation for mobile applications</title>
+    <link href="http://yoursite.com/2019/10/26/Netadapt:%20Platform-aware%20neural%20network%20adaptation%20for%20mobile%20applications/"/>
+    <id>http://yoursite.com/2019/10/26/Netadapt: Platform-aware neural network adaptation for mobile applications/</id>
+    <published>2019-10-26T12:25:07.000Z</published>
+    <updated>2019-10-26T12:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Yang T J, Howard A, Chen B, et al. Netadapt: Platform-aware neural network adaptation for mobile applications[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 285-300.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
+    
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
+    
+      <category term="NetAdapt" scheme="http://yoursite.com/tags/NetAdapt/"/>
+    
+      <category term="Platform-aware" scheme="http://yoursite.com/tags/Platform-aware/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2019) Searching for MobileNetV3</title>
+    <link href="http://yoursite.com/2019/10/13/Searching%20for%20MobileNetV3/"/>
+    <id>http://yoursite.com/2019/10/13/Searching for MobileNetV3/</id>
+    <published>2019-10-13T15:25:07.000Z</published>
+    <updated>2019-10-13T15:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Howard A, Sandler M, Chu G, et al. Searching for mobilenetv3[J]. arXiv preprint arXiv:1905.02244, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
+    
+      <category term="NetAdapt" scheme="http://yoursite.com/tags/NetAdapt/"/>
+    
+      <category term="MobileNetV3" scheme="http://yoursite.com/tags/MobileNetV3/"/>
+    
+      <category term="Handware-aware NAS" scheme="http://yoursite.com/tags/Handware-aware-NAS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ECCV 2018) ShuffleNet V2:Practical Guidelines for Efficient CNN Architecture Design</title>
+    <link href="http://yoursite.com/2019/10/13/ShuffleNet%20V2:%20Practical%20Guidelines%20for%20Efficient%20CNN%20Architecture%20Design/"/>
+    <id>http://yoursite.com/2019/10/13/ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design/</id>
+    <published>2019-10-13T14:25:03.000Z</published>
+    <updated>2019-10-13T14:25:03.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Ma N, Zhang X, Zheng H T, et al. Shufflenet v2: Practical guidelines for efficient cnn architecture design[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 116-131.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
+    
+      <category term="SE Block" scheme="http://yoursite.com/tags/SE-Block/"/>
+    
+      <category term="ShuffleNet V2" scheme="http://yoursite.com/tags/ShuffleNet-V2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) MobileNetV2:Inverted Residuals and Linear Bottlenecks</title>
+    <link href="http://yoursite.com/2019/10/13/MobileNetV2:%20Inverted%20Residuals%20and%20Linear%20Bottlenecks/"/>
+    <id>http://yoursite.com/2019/10/13/MobileNetV2: Inverted Residuals and Linear Bottlenecks/</id>
+    <published>2019-10-13T13:25:07.000Z</published>
+    <updated>2019-10-13T13:25:07.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Sandler M, Howard A, Zhu M, et al. Mobilenetv2: Inverted residuals and linear bottlenecks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4510-4520.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
+    
+      <category term="MobileNetV2" scheme="http://yoursite.com/tags/MobileNetV2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) FlowNet 2.0:Evolution of Optical Flow Estimation with Deep Networks</title>
+    <link href="http://yoursite.com/2019/10/13/FlowNet%202.0:%20Evolution%20of%20Optical%20Flow%20Estimation%20with%20Deep%20Networks/"/>
+    <id>http://yoursite.com/2019/10/13/FlowNet 2.0: Evolution of Optical Flow Estimation with Deep Networks/</id>
+    <published>2019-10-13T01:25:01.000Z</published>
+    <updated>2019-10-13T01:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Ilg E, Mayer N, Saikia T, et al. Flownet 2.0: Evolution of optical flow estimation with deep networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 2462-2470.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Netwrok" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Netwrok/"/>
+    
+    
+      <category term="FlowNet2.0" scheme="http://yoursite.com/tags/FlowNet2-0/"/>
+    
+      <category term="Flying Chairs Dataset" scheme="http://yoursite.com/tags/Flying-Chairs-Dataset/"/>
+    
+      <category term="FlyingThings3D" scheme="http://yoursite.com/tags/FlyingThings3D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2015) FlowNet:Learning optical flow with convolutional networks</title>
+    <link href="http://yoursite.com/2019/10/01/FlowNet:%20Learning%20optical%20flow%20with%20convolutional%20networks/"/>
+    <id>http://yoursite.com/2019/10/01/FlowNet: Learning optical flow with convolutional networks/</id>
+    <published>2019-10-01T01:25:01.000Z</published>
+    <updated>2019-10-01T01:25:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Dosovitskiy A, Fischer P, Ilg E, et al. Flownet: Learning optical flow with convolutional networks[C]//Proceedings of the IEEE international conference on computer vision. 2015: 2758-2766.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Netwrok" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Netwrok/"/>
+    
+    
+      <category term="FlowNet" scheme="http://yoursite.com/tags/FlowNet/"/>
+    
+      <category term="Flying Chairs Dataset" scheme="http://yoursite.com/tags/Flying-Chairs-Dataset/"/>
+    
+      <category term="Correlation Layer" scheme="http://yoursite.com/tags/Correlation-Layer/"/>
+    
+  </entry>
   
   <entry>
     <title>(ICCV 2019) Progressive Differentiable Architecture Search:Bridging the Depth Gap between Search and Evaluation</title>
@@ -357,278 +643,6 @@
       <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
     
       <category term="MAttNet" scheme="http://yoursite.com/tags/MAttNet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) Low-Shot Learning from Imaginary Data</title>
-    <link href="http://yoursite.com/2019/03/26/Low-Shot%20Learning%20from%20Imaginary%20Data/"/>
-    <id>http://yoursite.com/2019/03/26/Low-Shot Learning from Imaginary Data/</id>
-    <published>2019-03-25T22:25:04.000Z</published>
-    <updated>2019-03-25T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Snell J, Swersky K, Zemel R. Prototypical networks for few-shot learning[C]//Advances in Neural Information Processing Systems. 2017: 4077-4087.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
-    
-      <category term="Low-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Low-Shot-Learning/"/>
-    
-    
-      <category term="Low-Shot Learning" scheme="http://yoursite.com/tags/Low-Shot-Learning/"/>
-    
-      <category term="Meta Learning" scheme="http://yoursite.com/tags/Meta-Learning/"/>
-    
-      <category term="Prototypical Network" scheme="http://yoursite.com/tags/Prototypical-Network/"/>
-    
-      <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
-    
-      <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2017) Prototypical Networks for Few-shot Learning</title>
-    <link href="http://yoursite.com/2019/03/26/Prototypical%20Networks%20for%20Few-shot%20Learning/"/>
-    <id>http://yoursite.com/2019/03/26/Prototypical Networks for Few-shot Learning/</id>
-    <published>2019-03-25T22:25:03.000Z</published>
-    <updated>2019-03-25T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Snell J, Swersky K, Zemel R. Prototypical networks for few-shot learning[C]//Advances in Neural Information Processing Systems. 2017: 4077-4087.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
-    
-      <category term="Few-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Few-Shot-Learning/"/>
-    
-    
-      <category term="Prototypical Network" scheme="http://yoursite.com/tags/Prototypical-Network/"/>
-    
-      <category term="Few-Shot Learning" scheme="http://yoursite.com/tags/Few-Shot-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(NIPS 2016) Matching Networks for One Shot Learning</title>
-    <link href="http://yoursite.com/2019/03/26/Matching%20Networks%20for%20One%20Shot%20Learning/"/>
-    <id>http://yoursite.com/2019/03/26/Matching Networks for One Shot Learning/</id>
-    <published>2019-03-25T22:25:02.000Z</published>
-    <updated>2019-03-25T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Vinyals O, Blundell C, Lillicrap T, et al. Matching networks for one shot learning[C]//Advances in neural information processing systems. 2016: 3630-3638.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
-    
-      <category term="One-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/One-Shot-Learning/"/>
-    
-    
-      <category term="Bi-LSTM" scheme="http://yoursite.com/tags/Bi-LSTM/"/>
-    
-      <category term="Attention LSTM" scheme="http://yoursite.com/tags/Attention-LSTM/"/>
-    
-      <category term="One-Shot Learning" scheme="http://yoursite.com/tags/One-Shot-Learning/"/>
-    
-      <category term="Matching Net" scheme="http://yoursite.com/tags/Matching-Net/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICML 2016) Meta-learning with memory-augmented neural networks</title>
-    <link href="http://yoursite.com/2019/03/26/Meta-learning%20with%20memory-augmented%20neural%20networks/"/>
-    <id>http://yoursite.com/2019/03/26/Meta-learning with memory-augmented neural networks/</id>
-    <published>2019-03-25T22:25:01.000Z</published>
-    <updated>2019-03-25T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Santoro, Adam, Bartunov, Sergey, Botvinick, Matthew, Wierstra, Daan, and Lillicrap, Timothy. Meta-learning with memory-augmented neural networks. In Proceedings of The 33rd International Conference on Machine Learning, pp. 1842–1850, 2016.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
-    
-      <category term="Meta Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Meta-Learning/"/>
-    
-    
-      <category term="Meta Learning" scheme="http://yoursite.com/tags/Meta-Learning/"/>
-    
-      <category term="MANN (Memory-Augmented Neural Network)" scheme="http://yoursite.com/tags/MANN-Memory-Augmented-Neural-Network/"/>
-    
-      <category term="Memory" scheme="http://yoursite.com/tags/Memory/"/>
-    
-      <category term="NTM (Neural Turing Machines)" scheme="http://yoursite.com/tags/NTM-Neural-Turing-Machines/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(IJCAI 2018) A Multi-task Learning Approach for Image Captioning</title>
-    <link href="http://yoursite.com/2019/03/12/A%20Multi-task%20Learning%20Approach%20for%20Image%20Captioning/"/>
-    <id>http://yoursite.com/2019/03/12/A Multi-task Learning Approach for Image Captioning/</id>
-    <published>2019-03-11T22:25:01.000Z</published>
-    <updated>2019-03-11T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhao W, Wang B, Ye J, et al. A Multi-task Learning Approach for Image Captioning[C]//IJCAI. 2018: 1205-1211.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Caption" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Caption/"/>
-    
-    
-      <category term="Caption" scheme="http://yoursite.com/tags/Caption/"/>
-    
-      <category term="NLP" scheme="http://yoursite.com/tags/NLP/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Multi-task Learning" scheme="http://yoursite.com/tags/Multi-task-Learning/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) WILDCAT:Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation</title>
-    <link href="http://yoursite.com/2019/03/05/WILDCAT:%20Weakly%20Supervised%20Learning%20of%20Deep%20ConvNets%20for%20Image%20Classification,%20Pointwise%20Localization%20and%20Segmentation/"/>
-    <id>http://yoursite.com/2019/03/05/WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation/</id>
-    <published>2019-03-04T22:25:06.000Z</published>
-    <updated>2019-03-04T22:25:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Durand T , Mordan T , Thome N , et al. WILDCAT: Weakly Supervised Learning of Deep ConvNets for Image Classification, Pointwise Localization and Segmentation[C]// 2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE, 2017.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
-    
-    
-      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
-    
-      <category term="Weakly Supervised Learning" scheme="http://yoursite.com/tags/Weakly-Supervised-Learning/"/>
-    
-      <category term="Classwise Pooling" scheme="http://yoursite.com/tags/Classwise-Pooling/"/>
-    
-      <category term="Spatial Pooling" scheme="http://yoursite.com/tags/Spatial-Pooling/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICIP 2016) Maxmin convolutional neural networks for image classification</title>
-    <link href="http://yoursite.com/2019/03/05/Maxmin%20convolutional%20neural%20networks%20for%20image%20classification/"/>
-    <id>http://yoursite.com/2019/03/05/Maxmin convolutional neural networks for image classification/</id>
-    <published>2019-03-04T22:25:05.000Z</published>
-    <updated>2019-03-04T22:25:05.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Blot M, Cord M, Thome N. Max-min convolutional neural networks for image classification[C]//2016 IEEE International Conference on Image Processing (ICIP). IEEE, 2016: 3678-3682.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
-    
-    
-      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
-    
-      <category term="Max-Min Pooling" scheme="http://yoursite.com/tags/Max-Min-Pooling/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2016) Learning Deep Features for Discriminative Localization</title>
-    <link href="http://yoursite.com/2019/03/05/Learning%20Deep%20Features%20for%20Discriminative%20Localization/"/>
-    <id>http://yoursite.com/2019/03/05/Learning Deep Features for Discriminative Localization/</id>
-    <published>2019-03-04T22:25:04.000Z</published>
-    <updated>2019-03-04T22:25:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhou B, Khosla A, Lapedriza A, et al. Learning deep features for discriminative localization[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 2921-2929.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Visualization" scheme="http://yoursite.com/categories/Paper-Note/Visualization/"/>
-    
-    
-      <category term="Visualization" scheme="http://yoursite.com/tags/Visualization/"/>
-    
-      <category term="Global Average Pooling" scheme="http://yoursite.com/tags/Global-Average-Pooling/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2015) Recurrent convolutional neural network for object recognition</title>
-    <link href="http://yoursite.com/2019/03/05/Recurrent%20convolutional%20neural%20network%20for%20object%20recognition/"/>
-    <id>http://yoursite.com/2019/03/05/Recurrent convolutional neural network for object recognition/</id>
-    <published>2019-03-04T22:25:03.000Z</published>
-    <updated>2019-03-04T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liang N M , Hu N X . Recurrent convolutional neural network for object recognition[C]// 2015 IEEE Conference on Computer Vision and Pattern Recognition (CVPR). IEEE Computer Society, 2015.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Recurrent CNN" scheme="http://yoursite.com/tags/Recurrent-CNN/"/>
     
   </entry>
   

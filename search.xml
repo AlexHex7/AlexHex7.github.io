@@ -1,6 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing]]></title>
+    <url>%2F2019%2F10%2F27%2FEfficient%20Neural%20Architecture%20Search%20via%20Parameter%20Sharing%2F</url>
+    <content type="text"><![CDATA[Pham H, Guan M Y, Zoph B, et al. Efficient neural architecture search via parameter sharing[J]. arXiv preprint arXiv:1802.03268, 2018. 1. Overview 1.1. MotivationNAS use 450 GPUs for 3-4 days (32,400-43,200 hours). In this paper, it proposes Efficient Neural Architecture Search (ENAS) algorithm.1) Define the search space as a Graph.2) Share parameters among child models.3) 1000 times speed up (GPU hours), only need single GPU 2. ENAS 2.1. Design Recurrent Cells 1) $x_t$. the input signal.2) In $Node$ $2$, Controller decides previous node index and activation function.3) In each pair of node, there is an independent parameter matrix $W_{l,j}^{(h)}$. Therefore, all recurrent cells in a search space (graph) share the same set of parameters.4) The search space has $4^N \times N!$ configurations (4 means tanh, ReLU, identity and Sigmoid. And node number $N=12$). 2.2. Design ConvNet 1) In $Node$ $2$, Controller decides previous node index and computation operation.2) Computation Operation. Conv $3 \times 3$ and $5 \times 5$, DSConv $3 \times 3$ and $5 \times 5$, MaxPool $3 \times 3$ and AvgPool $3 \times 3$.3) Make decisions $L$ times to sample a network of $L$ layers. Total $6^L \times 2^{L(L-1)/2}$ networks ($L=12$). 2.3. Design Conv Cells 1) $Node$ $1$ and $Node$ $2$ are cell’s inputs (Node number $B=7$).2) In $Node$ $3$, Controller decides two previous node index and two computation operation.3) Computation Operation. Identity, DSConv $3 \times 3$ and $5 \times 5$, MaxPool $3 \times 3$ and AvgPool $3 \times 3$.4) Node index which never been sampled will be Concat to form the cell’s output.5) Reduction Cell. change the step to 2. 2.4. Traning Procedure1) Controller LSTM parameters $\theta$ and shared parameters of the child models $\omega$.2) At the first step, Controller’s input is an empty embedding.3) Alternate training $\theta$ and $\omega$. 2.4.1 Training $\omega$ 1) Fix Controller $\pi (m;\theta)$, perform SGD on $\omega$.2) Find that $M=1$ works just fine, which means ENAS can update $\omega$ from any single model $m$ sampled from $\pi(m;\theta)$.3) For language model, train for about 400 steps, batch_size 64.4) For CIRFAR-10, train on 45,000 training images, batch_size 128. 2.4.2 Training $\theta$1) Fix $\omega$, update $\theta$ with Adam &amp; Policy Gradient.2) $R(m, $\omega$)$ is computed on a batch of valid set.3) Train for 2000 steps. 2.5. Deriving Architectures1) Sample several models from $\pi (m;\theta)$.2) For each sampled model, compute $R$ on a single batch from valid set.3) Take the best model to retrain.It also can train all the sampled models from scratch, then select the best on a separated validation set. But above method gets similar performance with much economical. 3. Experiments 3.1. RNN Cell Searching 3.2. ConvNet Searching 3.3. Conv Cell Searching 3.4. Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Auto-ML</category>
+        <category>RL</category>
+      </categories>
+      <tags>
+        <tag>Auto-ML</tag>
+        <tag>RL</tag>
+        <tag>Policy Gradient</tag>
+        <tag>ENAS</tag>
+        <tag>Parameter Share</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICLR 2017) Neural architecture search with reinforcement learning]]></title>
+    <url>%2F2019%2F10%2F26%2FNeural%20architecture%20search%20with%20reinforcement%20learning%2F</url>
+    <content type="text"><![CDATA[Zoph B, Le Q V. Neural architecture search with reinforcement learning[J]. arXiv preprint arXiv:1611.01578, 2016. 1. Overview In this paper, it proposes Neural Architecture Search algorithm1) Controller-RNN.2) RL with Policy Gradient.3) Define search space of Skip Connection.4) Training with Parallelism and Asynchronous Updates. 2. Algorithm Assume architecture only contains Conv. 2.1. Basic Controller 1) Filter height in [1, 3, 5, 7].2) Filter width in [1, 3, 5, 7].3) Filter num in [24, 36, 48, 64].4) strides. fix to be 1 or [1, 2, 3]. 2.2. Policy Gradient 1) $m$. the number of network that Controller samples in one batch.2) Baselien $b$ is an exponential moving average of the previous architecture accuracy. 2.3. Accelerate Training with Parallelism and Asynchronous Updates 1) Server shards. $S=20$.2) Controller replicas $K=100$.3) Child replicas $m=8$.Which means 800 networks can be trained on 800 GPUs. 2.4. Search Space with Skip Connections At layer $N$, add an anchor point with has $N-1$ content-based sigmoids to indicate the previous layers that need to be connected. Deal with Compilation Error:1) If a layer is not connected to any input layer, then image is used as the input layer.2) At the final layer, take all layer outputs that have not been connected, concat and send to classifier.3) If input layers to be concatenated have different sizes, pad 0. 2.5. Generate Recurrent Cell Architecture 3. Experiments 3.1. Comparison 3.2. Architecture]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Auto-ML</category>
+        <category>RL</category>
+      </categories>
+      <tags>
+        <tag>Auto-ML</tag>
+        <tag>RL</tag>
+        <tag>Policy Gradient</tag>
+        <tag>NAS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2019) MnasNet:Platform-Aware Neural Architecture Search for Mobile]]></title>
+    <url>%2F2019%2F10%2F26%2FMnasNet%3A%20Platform-Aware%20Neural%20Architecture%20Search%20for%20Mobile%2F</url>
+    <content type="text"><![CDATA[Tan M, Chen B, Pang R, et al. Mnasnet: Platform-aware neural architecture search for mobile[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 2820-2828. 1. Overview 1.1. Motivation1) Existing methods mainly search for a few types of cells and then repeatedly stack.2) Existing methods process on small tasks, CIFAR. In this paper, it proposes MNASNet (Automated Mobile Neural Architecture Search) 1) Incorporate model latency into the main objective.2) Measure latency by executing on mobile phone.3) Novel search space. For each block, search layer then stack. 1.2. Contribution1) Multi-objective neural architecture search.2) Factorized hierarchical search space. 2. Related Work 1) Quantization.2) Pruning.3) Hand-craft.4) NAS. RL, evolutionary search, differentiable search 3. Formulation Pareto Optimal Solutions.1) Has the highest ACC without increasing LAT.2) Has the lowest LAT without decreasing ACC. To ensure Pareto-optimal solutions have similar reward under different accuracy-latency trade-offs. set $\alpha=\beta=-0.07$ 4. MNAS 4.1. Factorized Hierarchical Search Space 1) Partition a CNN model into a sequence of pre-defined blocks.2) Each block has a list of identical layers, whose operation and connections are determined by a per-block sub search space.3) Choices ConvOP: Conv, DWConv, Mobile Inverted Bottleneck Conv. Kernel Size: $3\times 3$, $5 \times 5$. SkipOp: Pooling, Indentity Residual, no skip. Filter Num: $F_i$. {0.75, 1.0, 1.25} based on MobileNetV2. Layer Num: $N_i$. {0, 1, -1} based on MobileNetV2. 4.2. Search Algorithm 1) $m$. a sample model determined by action $a_{1:T}$.2) $R$. reward value.3) Controller sample a batch of models, by predicting a sequence of tokens.4) Controller are updated by maximizing the expected reward using Proximal Policy Optimization (PPO). 5. MNASNet 1) Same RNN Controller as NASNet.2) Each architecture search takes 4.5 days on 64 TPUv2 devices.3) Set $T=75ms$. 6. Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Auto-ML</category>
+        <category>RL</category>
+      </categories>
+      <tags>
+        <tag>Auto-ML</tag>
+        <tag>LightWeight</tag>
+        <tag>RL</tag>
+        <tag>MNASNet</tag>
+        <tag>Mobile Device</tag>
+        <tag>Policy Gradient</tag>
+        <tag>NAS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2018) Netadapt:Platform-aware neural network adaptation for mobile applications]]></title>
+    <url>%2F2019%2F10%2F26%2FNetadapt%3A%20Platform-aware%20neural%20network%20adaptation%20for%20mobile%20applications%2F</url>
+    <content type="text"><![CDATA[Yang T J, Howard A, Chen B, et al. Netadapt: Platform-aware neural network adaptation for mobile applications[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 285-300. 1. Overview 1.1. MotivationExisting methods simplify networks based on indirect metrics, such as MACs or weights, instead pf latency and energy consumption. In this paper, it proposes NetAdapt to automatically adapts a pre-trained network to mobile platform given a resource budget.1) Incorporate direct metrics into algorithm, evaluated using empirical measurements (eliminates the requirement of platform-specific knowledge).2) Trade-offs on both mobile CPU and mobile GPU.3) For the K-layer network: Get K network proposals (remove filters from a single Conv or FC)→Choose best proposal→Iteration. 1.2. MetricsThe relationship between an indirect metric and the corresponding direct metric can be highly non-linear and platform-dependent. 1.3. Contribution1) Framework with direct metrics, empirical measurement (don’t need platform-specific knowledge).2) Automated constrained network optimization algorithm. 2. Related Works 1) pruning-based methods (energy-aware pruning).2) Decomposition.3) Quantization. 3. Algorithm 3.1. Problem Formulation 1) $Res_j$. evaluates the direct metric for source consumption of the $j^{th}$ resource.2) $Bud_j$. the budget of the $j^{th}$ resourceThe resource can be latency, energy, memory footprint or a combination of them. Then break the problem into a series of easier problems, solves it iteratively. 1) $i$. the $i^{th}$ iteration.2) $Net_0$. initial pre-trained network.3) $\Delta R_{i,j}$. the constraint tightens for the $j^{th}$ resource in the $i^{th}$ iteration, can vary from iteration to iteration. (Resource Reduction Schedule). Algorithm terminates when $Res_j (Net_i - 1) - \Delta R_{i,j} \le 0$ for every resource type. 3.2. Details 3.2.1. Choose Number of Filters1) Determine how many filters to preserve in a specific layers based on empirical measurements.2) The maximum number of filters that can satisfy the current resource constraint will be chosen.3) When removing operation applys to a layers, the associated layers also need to be change. 3.2.2. Choose Which Filters1) use magnitude-based method. $N$ filters that have the largest L2-norm magnitude will be kept. 3.2.3 Short-/Long-Term Fine-Tune1) Short-term fine-tune has fewer iterations than long-term fine-tune2) Short-term fine-tune is especially important while adapting small networks with a large resource reduction. Otherwise acc will drop to 0.3) Fine-tune until qual to acc. 3.3. Fast Resource Consumption Estimation 1) Measuring the resource consumption proposal network is slow and hard to parallelize.2) Solve this problem by building layer-wise look-up tables with pre-measured resource consumption of each layer.3) The size of network-wise table will grow exponentially with the number of layers. 4. Experiments 4.1. Details for MobileNetv11) Adapt each depthwise layer with the corresponding pointwise layers.2) When adapting the small MobileNetV1, $\Delta R_{i,j}$ starts at 0.5 and decays at the rate of 0.96 per iteration.3) Training set of ImageNet (long-term fine-tune) is split into New_training Set (short-term fine-tune). and Holdout Set (pick best-acc network) .4) Long-term fine-tune LR is 0.045. shot-term fine-tune is 0.0045. 4.2. Ablation Study4.2.1 The Impact of Resource Reduction Schedules 1) Using larger resource reduction at each itertation increases the adaption speed (less adpation iterations)2) With the same number of total iterations, the results suggests that a smaller initial resource reduction with a slower decay is preferable. 4.3. Architecture Analysis 1) NetAdapt removes more filters in layers 7 to 10, but fewer in layer 6. Since feature size is reduced in layer 6, hypothesize that when the feature size is reduced, more filters are needed to avoid creating an information bottleneck.2) NetAdapt keeps more filters in layer 13 (last Conv). More features are needed by the last FC to do classification.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>LightWeight</category>
+      </categories>
+      <tags>
+        <tag>Auto-ML</tag>
+        <tag>LightWeight</tag>
+        <tag>NetAdapt</tag>
+        <tag>Platform-aware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2019) Searching for MobileNetV3]]></title>
+    <url>%2F2019%2F10%2F13%2FSearching%20for%20MobileNetV3%2F</url>
+    <content type="text"><![CDATA[Howard A, Sandler M, Chu G, et al. Searching for mobilenetv3[J]. arXiv preprint arXiv:1905.02244, 2019. 1. Overview In this paper, it proposes MobileNetV3 (Larger and Small)1) Handware-aware NAS for Block-wise Search2) NetAdapt for Layer-wise Search (filter numbuer)3) Hard-Swish. Nonlinearities4) New efficient network design5) Net efficient segmentation decoder Lite Ruduced Atrous Spatial Pyramid Pooling (LR-ASPP) 2. Network Search 2.1. Handware-aware NAS for Block-wise SearchReward $ACC(m) \times [LAT(m)/TAR]^w$. Accuracy $ACC(m)$ Latency $LAT(m)$ each model $m$ 1) Find that accuracy changes much more dramatically with latency for small model, so change $w$ from -0.07 to -0.15.2) After find the initial seed model, then apply NetAdapt and other optimizations to obtain final MobileNetV3-Small model. 2.2. NetAdapt for Layer-wise SearchTwo Type of Proposal: Reduce size of any expansion layer. Reduce bottleneck in all blocks that share the same bottleneck size - to maintain residual connections. In NetAdapt, $T=10000$, $\delta = 0.01|L|$. $|L|$ is the latency of the seed model. 3. Network Improvements 3.1. Redesign Expensive Layers 1) Redesign last few layers to reduce 7 ms.2) Reduce filter of early layer to save 2ms. 3.2. Nonlinearities $swish(x) = x \dot \sigma (x)$ $h$-$swish(x)=x\frac{ReLU6(x+3)}{6}$ 1) As sigmoid is much more expensive to computeon mobiledevices, replace it with piece-wise linear hard analog.2) Find that most of the benifits swish are realized by using them only in deeper layers. So only use in the second half of the model. 3.3. SE BlockSet all to $1/4$. 4. MobileNet V3 4.1. Block 4.2. MobileNetV3-Large 4.3. MobileNetV3-Small 4.4. LR-ASPP]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>LightWeight</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>Auto-ML</tag>
+        <tag>LightWeight</tag>
+        <tag>NetAdapt</tag>
+        <tag>MobileNetV3</tag>
+        <tag>Handware-aware NAS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2018) ShuffleNet V2:Practical Guidelines for Efficient CNN Architecture Design]]></title>
+    <url>%2F2019%2F10%2F13%2FShuffleNet%20V2%3A%20Practical%20Guidelines%20for%20Efficient%20CNN%20Architecture%20Design%2F</url>
+    <content type="text"><![CDATA[Ma N, Zhang X, Zheng H T, et al. Shufflenet v2: Practical guidelines for efficient cnn architecture design[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 116-131. 1. Overview 1.1. Motivation1) Architecture design is mostly guided by the indirect metric of computation complexity, such as FLOPs.2) Direct metric (such as speed) also depends on other factors, such as memory access cost and platform characterics. In this paper, it proposed ShuffleNet V21) Evaluate the direct metric on target platform, beyond FLOPs.2) Four practical guidelines for efficient network design.3) ShuffleNet V2 is much faster and more accuracy 2. FLOPs vs Speed 1) MobileNetV2 is much faster than NASNET-A, but they have comparable FLOPs.2) FLOPs metric only account for Conv part. The other operations include: Data I/O Data shuffle Element-wise operations, such as AddTensor, ReLU Two reasons1) Several factors affecting speed are not taken into account by FLOPs. Memory Access Cost (MAC). Such as group conv. Degree of Parallelism. A model with higher degree of parallelism is faster than lower one, under the same FLOPs. 2) Operations with the same FLOPs could have different running time. Decomposition in GoogleNet is slower on GPU, although it reduces FLOPs by 75%. As the lastest CUDNN library is specially optimized for $3 \times 3$ conv. It can not think that $3 \times 3$ conv is 9 times slower thab $1 \times 1$ conv. 3. Practical Guidelines for Efficient Network Design Environment1) GPU. A single NVIDIA GeForce GTX 1080Ti with CUDNN 7.0.2) ARM. A Qualcomm Snapdragon 810. 3.1. Equal Channel Width Minimizes Memory Access Cost (MAC) A benchmark network is built by stacking 10 blocks. Each block contains two Conv (c1→c2, c2→c1). Against1) Inverted Bottleneck structure of MobileNet V2.2) Bottleneck-like buiding blocks of ShuffleNet V1. 3.2. Excessive Group Conv Incrases MAC 1) MAX increases with the growth of $g$.2) Group number should be carefully chosen based on the target platform and task. Against1) Group Conv of ShuffleNet V1. 3.3. Network Fragment Reduces Degree of Parallelism Fragment. The number of individual Conv or pooling operations in one building block Against1) Auto-generated structures 3.4. Element-wise Operations are Non-negligible ReLU, AddTensor and AddBias have small FLOPs but relatively heavy MAC Against1) Depthwise Conv and ReLu on thick feature maps of MobileNet V2 4. ShuffleNet V2 4.1. Block 1) Channel Split. $c-c^’$ and $c$. In this papaer, $c^’ = c/2$2) Two $1 \times 1$ Conv are no longer group-wise. As split operation already produces two groups3) One single element-wise operation. (Concat + Channel Shuffle + Channel Split) 4.2. Architecture 4.3. Larger Architecture]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>LightWeight</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>LightWeight</tag>
+        <tag>SE Block</tag>
+        <tag>ShuffleNet V2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) MobileNetV2:Inverted Residuals and Linear Bottlenecks]]></title>
+    <url>%2F2019%2F10%2F13%2FMobileNetV2%3A%20Inverted%20Residuals%20and%20Linear%20Bottlenecks%2F</url>
+    <content type="text"><![CDATA[Sandler M, Howard A, Zhu M, et al. Mobilenetv2: Inverted residuals and linear bottlenecks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4510-4520. 1. Overview In this paper, it proposes MobileNetV21) Inverted Residuals (expand→depthwise→compress)2) Linear Bottlenecks (remove last ReLu) 2. Details 2.1. Depthwise Separable Conv (DSC) 1) Conv. $k \times k \times c_{in} \times c_{out}$2) DSC. $k \times k \times c_{in} + 1 \times 1 \times c_{in} \times c_{out}$Almost $k^2$ times. 2.2. Inverted Residuals and Linear Bottlenecks 1) expansion rates between 5 and 10. set $t=6$ in this paper2) remove ReLu behind final $1\times 1$ Conv 2.3. MobileNetV2 3. Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>LightWeight</category>
+      </categories>
+      <tags>
+        <tag>Network</tag>
+        <tag>LightWeight</tag>
+        <tag>MobileNetV2</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) FlowNet 2.0:Evolution of Optical Flow Estimation with Deep Networks]]></title>
+    <url>%2F2019%2F10%2F13%2FFlowNet%202.0%3A%20Evolution%20of%20Optical%20Flow%20Estimation%20with%20Deep%20Networks%2F</url>
+    <content type="text"><![CDATA[Ilg E, Mayer N, Saikia T, et al. Flownet 2.0: Evolution of optical flow estimation with deep networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 2462-2470. 1. Overview In this paper, it proposes FlowNet2.01) Marginal slower than FlowNet2) Decreases the estimation error by more than 50%3) Faster variants. 140 fps with accuracy matching FlowNet 1.1. Contribution1) Show that the schedule of presenting data during training is very important2) Stacked architecture with warping operation3) Subnetwork specializing on small motions and create a special dataset ChairsSDHom. 1.2. Dataset1) FlyingThings3D2) FlyingChairs 2. Dataset Schedules 1) Best performance is trained on Chairs, then fine-tuned on Things3D2) FlowNetC outperforms FlowNetS 3. Architecture 3.1. Stacking Two Networks for Flow Refinement 1) Stacking without warping yields better results on Chairs, but worse on Sintel. (over-fitting)2) Stacking with warping always improve results.3) adding intermediate loss is helpful, when training the stacked network end-to-end.4) Best performance is training network one-by-one. 3.2. Stacking Multiple Diverse NetworksApplying a network with the same weights multiple times and also fine-tuning this recurrent part does not improve results. 3.3. Small Displacement Network and Fusion1) fine-tune the whole FlowNet2-CSS for smaller displacement on a mixture of Things3D and ChairSDHom, denote as FlowNet2-CSS-ft-sd.2) FlowNet2-SD. modify FlowNetS (remove stride 2 in first layer, …)3) small network to fuse FlowNet2-CSS-ft-sd and FlowNet2-SD, with full resolution output.The final network is denoted as FLowNet2 4. Experiments 4.1. Runtime 4.2. Visualization]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Netwrok</category>
+      </categories>
+      <tags>
+        <tag>FlowNet2.0</tag>
+        <tag>Flying Chairs Dataset</tag>
+        <tag>FlyingThings3D</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2015) FlowNet:Learning optical flow with convolutional networks]]></title>
+    <url>%2F2019%2F10%2F01%2FFlowNet%3A%20Learning%20optical%20flow%20with%20convolutional%20networks%2F</url>
+    <content type="text"><![CDATA[Dosovitskiy A, Fischer P, Ilg E, et al. Flownet: Learning optical flow with convolutional networks[C]//Proceedings of the IEEE international conference on computer vision. 2015: 2758-2766. 1. Overview In this paper, it proposes1) FlownetSimple2) FlowNetCorr (Correlation Layer)3) Flying Chairs Dataset And experiments on Sintel and KITTI. 2. Architecture 2.1. FlowNet 2.2. Correlation Layer1) Top Branch. patch size $k\times k$, global stride $s_1$2) Bottem Branch. patch size $d\times d$, stride in patch $s_2$ In this paper, $k=0$, $d=20$, $s_1=1$, $s_2=2$.1) Top Branch. vector $1\times 1 \times c$, total $h \times w$ vectors.2) Bottem Branch. patch $20 \times 20$ with stride 2. For each point of A, there will be $21 \times 21$ values. ($21 = 2 * (d / s_2) + 1$)So output $h \times w \ times 441$. 2.3. Refinement Replace bilinear upsampling1) compute image boundaries2) replace smoothness coefficient 3. Flying Chairs 1) Randomly sample 2D affine transformation parameters for the background and the chairs2) use parameters to generate the second image, GT optical flow and occlusion regions. 4. Data Augmentation 1) translation, rotation, scaling and Gaussian noise2) brightness, contrast, gamma and color]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Netwrok</category>
+      </categories>
+      <tags>
+        <tag>FlowNet</tag>
+        <tag>Flying Chairs Dataset</tag>
+        <tag>Correlation Layer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(ICCV 2019) Progressive Differentiable Architecture Search:Bridging the Depth Gap between Search and Evaluation]]></title>
     <url>%2F2019%2F08%2F20%2FProgressive%20Differentiable%20Architecture%20Search%3ABridging%20the%20Depth%20Gap%20between%20Search%20and%20Evaluation%2F</url>
     <content type="text"><![CDATA[Chen X, Xie L, Wu J, et al. Progressive Differentiable Architecture Search: Bridging the Depth Gap between Search and Evaluation[J]. arXiv preprint arXiv:1904.12760, 2019. 1. Overview 1.1. Motivation1) There is a large gap between the architecture depths in search and evaluation scenarios.2) Darts searchs in a shallow network and evaluates in a deeper one.3) Darts lacks of stability and can be biased heavily towards skip-connect. In this paper, it proposes P-Darts1) the depth of searched architectures to grow gradually during the training procedure.2) multiple search stages. 3 stages3) reduced searching time (~7 hours on a single GPU) 1.2. Technique1.2.1 Search Space Approximation depth increases with candidate operations decreases solve the problem of exponentially increasing 1.2.2 Search Space Regularization operation (skip-connect) level dropout &amp; control the appearance of skip-connection solve the problem of instability 1.3. Dataset1) CIFAR102) CIFAR100 2. P-Darts 2.1. Search Space Approximation In final stage, keep two top-weighted non-zero operations 2.2. Search Space Regularizationobserve that information prefers to flow through skip-connect instead of other1) insert operation level dropout after each skip-connectgradually decay the Dropout rate during the training process in each search stage2) control the number of skip-connect to be M in final stageif searched number of skip-connect is not M, choose top-M operation and set other to 0, redo cell construction. And repeate. 3. Experiments 3.1. Details 3 stages. 5,11,17 cells; 8,5,3 operation; 0.0, 0.4, 0.7 on CIFAR10; 0.1, 0.2, 0.3 on CIFAR100 M = 2 at most 3.2. Search Results 3.3. Comparison]]></content>
@@ -1622,9 +1765,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Medical</tag>
         <tag>NLP</tag>
         <tag>Cross-Modality</tag>
+        <tag>Medical</tag>
         <tag>Lung</tag>
         <tag>Multi-label Classification</tag>
         <tag>DenseNet</tag>
@@ -1890,8 +2033,8 @@
       </categories>
       <tags>
         <tag>Network</tag>
-        <tag>Mobilenets</tag>
         <tag>LightWeight</tag>
+        <tag>Mobilenets</tag>
       </tags>
   </entry>
   <entry>
@@ -1919,8 +2062,8 @@
         <category>Data Distillation</category>
       </categories>
       <tags>
-        <tag>Pose</tag>
         <tag>Detection</tag>
+        <tag>Pose</tag>
         <tag>Data Distillation</tag>
         <tag>Omni-supervised Learning</tag>
       </tags>
@@ -1935,8 +2078,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>Network</tag>
         <tag>Detection</tag>
+        <tag>Network</tag>
         <tag>FPN</tag>
       </tags>
   </entry>
@@ -2156,21 +2299,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[(CVPR 2018) Density-aware Single Image De-raining using a Multi-stream Dense Network]]></title>
-    <url>%2F2018%2F01%2F23%2FDensity-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network%2F</url>
-    <content type="text"><![CDATA[Zhang H, Patel V M. Density-aware single image de-raining using a multi-stream dense network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 695-704. 1. Overview 1.1. Motivation Non-uniform rain densities Existing method do not consider the density of rain drops (lead to over de-rain or under de-rain) [6]. Deep Detail Network. CVPR 2017 [33]. Deep Joint Rain Detection and Removal. CVPR 2017 In this paper, it proposed DID-MDN joint (two stage) rain density estimation and de-raining (guided by the estimated rain-density label) multi-stream (different scale feature) use residual to represent rain-density feature create a dataset containing rain-density label (heavy, medium, light) 1.2. Related Work video-based prior-based (over-smooth details) Multi-scale feature (U-Net, FCN, skip-connection) 1.3. Dataset 12,000 for training 1, 200 for testing use PS to get different level rain density (noise level [5%, 35%], [35%, 65%], [65%, 95%]) link 2. Architecture 2.1. Residual-Aware Rain-Density Classifiersingle network may not be sufficient enough to learn different rain-densities occurring in practice. used for guiding the de-raining process residual can better represent the rain feature observe that fine-tune pre-trained model is not an efficient solution. high-level feature focus on localizing the discriminative object (not small rain-streak), so it’s not good for density classify. 2.1.1. step estimate residual (residual feature extraction network) train classifier with residual (classifier) 2.1.2. Loss firstly train residual network then train classifier finally joint optimized 2.1.3. Classifier (low, medium, high) 2.2. Multi-Stream Dense Network Concat multi-stream feature and density label Refinement 2.3. Multi-Stream smaller rain-streak can be capture by small-scale feature longer rain-streak can be capture by larger-scale feature For each stream six dense blocks + six transition layer short path better for convergence Dense1. 3-down + 3-up (7x7) Dense2. 2-down + 2-no + 2-up (5x5) Dense3. 1-down + 4-no + 1-up (3x3) 2.4. Total Loss 3. Experiments 4. Dataset Train1. 12,000 Test1. 1,200 Test2. 1,000 (from Deep Detail Network) 4.1. Detail random crop, horizontal flip batch size 1 λF = 1 4.2. Ablation Study VGG vs Residual classifier Modules Single. single stream without label fusion Yang-Multi. multi-stream (dilated) Multi-no-label. multi stream without label fusion DID-MDN. multi-stream with label fusion Over de-rain with blur. Single and Yang-Multi Leave some rain-streak. Muti-no-label 4.3. Comparison Synthetic [33, 41] leave some rain-streak. [6] remove some details. Real long-thin rain-streak heavy rain small round rain medium reain 4.4. Inference Time]]></content>
-      <categories>
-        <category>Paper Note</category>
-        <category>Image Processing</category>
-        <category>De-raining</category>
-      </categories>
-      <tags>
-        <tag>Image Processing</tag>
-        <tag>Image Enhancement</tag>
-        <tag>De-raining</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[(AAAI 2018) End-to-End United Video Dehazing and Detection]]></title>
     <url>%2F2018%2F01%2F23%2FEnd-to-End%20United%20Video%20Dehazing%20and%20Detection%2F</url>
     <content type="text"><![CDATA[Li B, Peng X, Wang Z, et al. End-to-end united video dehazing and detection[C]//Thirty-Second AAAI Conference on Artificial Intelligence. 2018. 1. Overview 1.1. Motivation end-to-end video dehazing has not been explored temporal consistency In this paper, it proposed EVD-Net (End-to-End Video Dehazing Network) EVDD-Net (End-to-End United Video Dehazing and Detection Network) 1.2. Related Work Classical Atmosphere Scattering Model DehazeNet MSCNN AOD-Net. re-formulationVideo Dehazing 1.3. Dataset1.3.1. Dehazing Synthetic Hazy Video Dataset from TUM RGB-D Dataset refined depth infomation TestSet. video from city road when PM2.5 is 223 1.3.2. Dehazing + Detection ILSVRC2015 VID estimated depth by paper 2016 1.4. Start Pointbased on AOD-Net architecture. 1.5. EVD-Net Multi-framethe global atmosphere light A should be hardly or slowly changed over a moderate number of consecutive frame. 1.6. EVDD-Net Multi-Frame Faster RCNN EVD-Net 2. Experiments 2.1. Details MSE loss well aligned with SSIM and visual quality 2.2. Fusion Strategy 2.3. Comparison of Dehaze 2.4. Comparison of Detection naive concatenation of low-level and high-level models often can not sufficiently boost the high-level task performance JAOD-Faster RCNN. flickering and inconsistent detection Only EVDD-Net detection 4 cars in all frames]]></content>
@@ -2184,6 +2312,21 @@
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
         <tag>Video</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Density-aware Single Image De-raining using a Multi-stream Dense Network]]></title>
+    <url>%2F2018%2F01%2F23%2FDensity-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network%2F</url>
+    <content type="text"><![CDATA[Zhang H, Patel V M. Density-aware single image de-raining using a multi-stream dense network[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 695-704. 1. Overview 1.1. Motivation Non-uniform rain densities Existing method do not consider the density of rain drops (lead to over de-rain or under de-rain) [6]. Deep Detail Network. CVPR 2017 [33]. Deep Joint Rain Detection and Removal. CVPR 2017 In this paper, it proposed DID-MDN joint (two stage) rain density estimation and de-raining (guided by the estimated rain-density label) multi-stream (different scale feature) use residual to represent rain-density feature create a dataset containing rain-density label (heavy, medium, light) 1.2. Related Work video-based prior-based (over-smooth details) Multi-scale feature (U-Net, FCN, skip-connection) 1.3. Dataset 12,000 for training 1, 200 for testing use PS to get different level rain density (noise level [5%, 35%], [35%, 65%], [65%, 95%]) link 2. Architecture 2.1. Residual-Aware Rain-Density Classifiersingle network may not be sufficient enough to learn different rain-densities occurring in practice. used for guiding the de-raining process residual can better represent the rain feature observe that fine-tune pre-trained model is not an efficient solution. high-level feature focus on localizing the discriminative object (not small rain-streak), so it’s not good for density classify. 2.1.1. step estimate residual (residual feature extraction network) train classifier with residual (classifier) 2.1.2. Loss firstly train residual network then train classifier finally joint optimized 2.1.3. Classifier (low, medium, high) 2.2. Multi-Stream Dense Network Concat multi-stream feature and density label Refinement 2.3. Multi-Stream smaller rain-streak can be capture by small-scale feature longer rain-streak can be capture by larger-scale feature For each stream six dense blocks + six transition layer short path better for convergence Dense1. 3-down + 3-up (7x7) Dense2. 2-down + 2-no + 2-up (5x5) Dense3. 1-down + 4-no + 1-up (3x3) 2.4. Total Loss 3. Experiments 4. Dataset Train1. 12,000 Test1. 1,200 Test2. 1,000 (from Deep Detail Network) 4.1. Detail random crop, horizontal flip batch size 1 λF = 1 4.2. Ablation Study VGG vs Residual classifier Modules Single. single stream without label fusion Yang-Multi. multi-stream (dilated) Multi-no-label. multi stream without label fusion DID-MDN. multi-stream with label fusion Over de-rain with blur. Single and Yang-Multi Leave some rain-streak. Muti-no-label 4.3. Comparison Synthetic [33, 41] leave some rain-streak. [6] remove some details. Real long-thin rain-streak heavy rain small round rain medium reain 4.4. Inference Time]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+        <category>De-raining</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>De-raining</tag>
       </tags>
   </entry>
   <entry>
@@ -2766,8 +2909,8 @@
         <category>Component</category>
       </categories>
       <tags>
-        <tag>Classification</tag>
         <tag>Component</tag>
+        <tag>Classification</tag>
         <tag>Non-local</tag>
         <tag>Attention</tag>
         <tag>Video Classification</tag>
@@ -2784,9 +2927,9 @@
       </categories>
       <tags>
         <tag>Localization</tag>
-        <tag>Classification</tag>
         <tag>Fine-Grained Classification</tag>
         <tag>Component</tag>
+        <tag>Classification</tag>
         <tag>Attention</tag>
         <tag>STN</tag>
       </tags>
@@ -2814,9 +2957,9 @@
       </categories>
       <tags>
         <tag>Classification</tag>
-        <tag>Cognitive Neuroscience</tag>
         <tag>CapsulesNet</tag>
         <tag>EM Algorithm</tag>
+        <tag>Cognitive Neuroscience</tag>
       </tags>
   </entry>
   <entry>
@@ -2841,8 +2984,8 @@
       </categories>
       <tags>
         <tag>Classification</tag>
-        <tag>Cognitive Neuroscience</tag>
         <tag>CapsulesNet</tag>
+        <tag>Cognitive Neuroscience</tag>
         <tag>Image Reconstruction</tag>
       </tags>
   </entry>
@@ -2854,9 +2997,9 @@
         <category>Knowledge Note</category>
       </categories>
       <tags>
+        <tag>Cognitive Neuroscience</tag>
         <tag>Capsule</tag>
         <tag>Cerebral Cortex</tag>
-        <tag>Cognitive Neuroscience</tag>
         <tag>CNN Limitation</tag>
       </tags>
   </entry>
@@ -2887,8 +3030,8 @@
         <category>Image Processing</category>
       </categories>
       <tags>
-        <tag>Face</tag>
         <tag>Image Enhancement</tag>
+        <tag>Face</tag>
         <tag>Image Generation</tag>
         <tag>GAN</tag>
         <tag>Map to Aerial</tag>

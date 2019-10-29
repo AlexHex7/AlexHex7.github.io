@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Pham H, Guan M Y, Zoph B, et al. Efficient neural architecture search via parameter sharing[J]. arXiv preprint arXiv:1802.03268, 2018.">
+<meta name="keywords" content="Auto-ML,RL,Policy Gradient,ENAS,Parameter Share">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing">
+<meta property="og:url" content="http://yoursite.com/2019/10/27/Efficient Neural Architecture Search via Parameter Sharing/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Pham H, Guan M Y, Zoph B, et al. Efficient neural architecture search via parameter sharing[J]. arXiv preprint arXiv:1802.03268, 2018.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/4.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/7.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/8.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/9.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/10.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/11.jpg?raw=true">
+<meta property="og:updated_time" content="2019-10-27T13:25:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing">
+<meta name="twitter:description" content="Pham H, Guan M Y, Zoph B, et al. Efficient neural architecture search via parameter sharing[J]. arXiv preprint arXiv:1802.03268, 2018.">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/1.jpg?raw=true">
+  <link rel="canonical" href="http://yoursite.com/2019/10/27/Efficient Neural Architecture Search via Parameter Sharing/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-aboutme">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>AboutMe</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>Search</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Searching..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/27/Efficient Neural Architecture Search via Parameter Sharing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-10-27 21:25:07" itemprop="dateCreated datePublished" datetime="2019-10-27T21:25:07+08:00">2019-10-27</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Auto-ML/" itemprop="url" rel="index"><span itemprop="name">Auto-ML</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Auto-ML/RL/" itemprop="url" rel="index"><span itemprop="name">RL</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Pham H, Guan M Y, Zoph B, et al. Efficient neural architecture search via parameter sharing[J]. arXiv preprint arXiv:1802.03268, 2018.</p>
+</blockquote>
+<a id="more"></a>
+<p><br></p>
+<hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><p><strong>NAS</strong> use 450 GPUs for 3-4 days (32,400-43,200 hours).</p>
+<p>In this paper, it proposes <strong>Efficient Neural Architecture Search</strong> (ENAS) algorithm.<br><strong>1)</strong> Define the search space as a <strong>Graph</strong>.<br><strong>2)</strong> <strong>Share parameters</strong> among child models.<br><strong>3)</strong> 1000 times speed up (GPU hours), only need single GPU</p>
+<hr>
+<h1 id="2-ENAS"><a href="#2-ENAS" class="headerlink" title="2. ENAS"></a>2. ENAS</h1><hr>
+<h2 id="2-1-Design-Recurrent-Cells"><a href="#2-1-Design-Recurrent-Cells" class="headerlink" title="2.1. Design Recurrent Cells"></a>2.1. Design Recurrent Cells</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/1.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/2.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/3.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> $x_t$. the input signal.<br><strong>2)</strong> In $Node$ $2$, Controller decides <strong>previous node index</strong> and <strong>activation function</strong>.<br><strong>3)</strong> In each <strong>pair of node</strong>, there is an <strong>independent parameter matrix</strong> $W_{l,j}^{(h)}$. Therefore, all recurrent cells in a search space (graph) share the same set of parameters.<br><strong>4)</strong> The <strong>search space</strong> has $4^N \times N!$ configurations (<strong>4</strong> means tanh, ReLU, identity and Sigmoid. And node number $N=12$).</p>
+<h2 id="2-2-Design-ConvNet"><a href="#2-2-Design-ConvNet" class="headerlink" title="2.2. Design ConvNet"></a>2.2. Design ConvNet</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/4.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> In $Node$ $2$, Controller decides <strong>previous node index</strong> and <strong>computation operation</strong>.<br><strong>2)</strong> <strong>Computation Operation</strong>. Conv $3 \times 3$ and $5 \times 5$, DSConv $3 \times 3$ and $5 \times 5$, MaxPool $3 \times 3$ and AvgPool $3 \times 3$.<br><strong>3)</strong> Make decisions $L$ times to sample a network of $L$ layers. Total $6^L \times 2^{L(L-1)/2}$ networks ($L=12$).</p>
+<h2 id="2-3-Design-Conv-Cells"><a href="#2-3-Design-Conv-Cells" class="headerlink" title="2.3. Design Conv Cells"></a>2.3. Design Conv Cells</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/5.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/6.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> $Node$ $1$ and $Node$ $2$ are cell’s <strong>inputs</strong> (Node number $B=7$).<br><strong>2)</strong> In $Node$ $3$, Controller decides <strong>two previous node index</strong> and <strong>two computation operation</strong>.<br><strong>3)</strong> <strong>Computation Operation</strong>. Identity, DSConv $3 \times 3$ and $5 \times 5$, MaxPool $3 \times 3$ and AvgPool $3 \times 3$.<br><strong>4)</strong> Node index which never been sampled will be <strong>Concat</strong> to form the cell’s <strong>output</strong>.<br><strong>5)</strong> <strong>Reduction Cell</strong>. change the step to 2.</p>
+<h2 id="2-4-Traning-Procedure"><a href="#2-4-Traning-Procedure" class="headerlink" title="2.4. Traning Procedure"></a>2.4. Traning Procedure</h2><p><strong>1)</strong> <strong>Controller</strong> LSTM parameters $\theta$ and <strong>shared parameters</strong> of the child models $\omega$.<br><strong>2)</strong> At the first step, Controller’s input is an <strong>empty embedding</strong>.<br><strong>3)</strong> <strong>Alternate training</strong> $\theta$ and $\omega$.</p>
+<h2 id="2-4-1-Training-omega"><a href="#2-4-1-Training-omega" class="headerlink" title="2.4.1 Training $\omega$"></a>2.4.1 Training $\omega$</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/7.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> <strong>Fix Controller</strong> $\pi (m;\theta)$, perform <strong>SGD</strong> on $\omega$.<br><strong>2)</strong> Find that $M=1$ works just fine, which means ENAS can update $\omega$ <strong>from any single model</strong> $m$ sampled from $\pi(m;\theta)$.<br><strong>3)</strong> For <strong>language model</strong>, train for about 400 steps, batch_size 64.<br><strong>4)</strong> For <strong>CIRFAR-10</strong>, train on 45,000 training images, batch_size 128.</p>
+<h2 id="2-4-2-Training-theta"><a href="#2-4-2-Training-theta" class="headerlink" title="2.4.2 Training $\theta$"></a>2.4.2 Training $\theta$</h2><p><strong>1)</strong> Fix $\omega$, update $\theta$ with <strong>Adam &amp; Policy Gradient</strong>.<br><strong>2)</strong> $R(m, $\omega$)$ is computed on a batch of <strong>valid set</strong>.<br><strong>3)</strong> Train for 2000 steps.</p>
+<h2 id="2-5-Deriving-Architectures"><a href="#2-5-Deriving-Architectures" class="headerlink" title="2.5. Deriving Architectures"></a>2.5. Deriving Architectures</h2><p><strong>1)</strong> Sample several models from $\pi (m;\theta)$.<br><strong>2)</strong> For each sampled model, compute $R$ on a single batch from valid set.<br><strong>3)</strong> Take the best model to retrain.<br>It also can <strong>train all the sampled models</strong> from scratch, then <strong>select the best</strong> on a separated validation set. But above method gets <strong>similar performance with much economical</strong>.</p>
+<hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-RNN-Cell-Searching"><a href="#3-1-RNN-Cell-Searching" class="headerlink" title="3.1. RNN Cell Searching"></a>3.1. RNN Cell Searching</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/8.jpg?raw=true" alt><br></div>
+
+<h2 id="3-2-ConvNet-Searching"><a href="#3-2-ConvNet-Searching" class="headerlink" title="3.2. ConvNet Searching"></a>3.2. ConvNet Searching</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/9.jpg?raw=true" alt><br></div>
+
+<h2 id="3-3-Conv-Cell-Searching"><a href="#3-3-Conv-Cell-Searching" class="headerlink" title="3.3. Conv Cell Searching"></a>3.3. Conv Cell Searching</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/10.jpg?raw=true" alt><br></div>
+
+<h2 id="3-4-Comparison"><a href="#3-4-Comparison" class="headerlink" title="3.4. Comparison"></a>3.4. Comparison</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Efficient Neural Architecture Search via Parameter Sharing/11.jpg?raw=true" alt><br></div>
+
+
+
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Auto-ML/" rel="tag"># Auto-ML</a>
+            
+              <a href="/tags/RL/" rel="tag"># RL</a>
+            
+              <a href="/tags/Policy-Gradient/" rel="tag"># Policy Gradient</a>
+            
+              <a href="/tags/ENAS/" rel="tag"># ENAS</a>
+            
+              <a href="/tags/Parameter-Share/" rel="tag"># Parameter Share</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/26/Neural architecture search with reinforcement learning/" rel="next" title="(ICLR 2017) Neural architecture search with reinforcement learning">
+                  <i class="fa fa-chevron-left"></i> (ICLR 2017) Neural architecture search with reinforcement learning
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-ENAS"><span class="nav-text">2. ENAS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Design-Recurrent-Cells"><span class="nav-text">2.1. Design Recurrent Cells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Design-ConvNet"><span class="nav-text">2.2. Design ConvNet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Design-Conv-Cells"><span class="nav-text">2.3. Design Conv Cells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Traning-Procedure"><span class="nav-text">2.4. Traning Procedure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-1-Training-omega"><span class="nav-text">2.4.1 Training $\omega$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-2-Training-theta"><span class="nav-text">2.4.2 Training $\theta$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Deriving-Architectures"><span class="nav-text">2.5. Deriving Architectures</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-RNN-Cell-Searching"><span class="nav-text">3.1. RNN Cell Searching</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-ConvNet-Searching"><span class="nav-text">3.2. ConvNet Searching</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Conv-Cell-Searching"><span class="nav-text">3.3. Conv Cell Searching</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-Comparison"><span class="nav-text">3.4. Comparison</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+  <p class="site-author-name" itemprop="name">Alex Hex</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:alexhex7@foxmail.com" title="E-Mail &rarr; mailto:alexhex7@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+
+</body>
+</html>
