@@ -266,6 +266,98 @@
   
     
     <div class="collection-year">
+      <h1 class="collection-header">2019</h1>
+    </div>
+  
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2019-11-09T19:32:02+08:00"
+              content="2019-11-09">
+          11-09
+        </time>
+      </div>
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/11/09/YOLOv3: An Incremental Improvement/" itemprop="url">
+            <span itemprop="name">(2018) YOLOv3:An Incremental Improvement</span>
+          </a>
+        
+      </h2>
+
+    </header>
+  </article>
+
+
+
+  
+  
+
+  
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2019-11-08T20:02:02+08:00"
+              content="2019-11-08">
+          11-08
+        </time>
+      </div>
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/11/08/YOLO9000: Better, Faster, Stronger/" itemprop="url">
+            <span itemprop="name">(CVPR 2017) YOLO9000:Better, Faster, Stronger</span>
+          </a>
+        
+      </h2>
+
+    </header>
+  </article>
+
+
+
+  
+  
+
+  
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2019-11-08T19:12:02+08:00"
+              content="2019-11-08">
+          11-08
+        </time>
+      </div>
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/11/08/You Only Look Once: Unified, Real-Time Object Detection/" itemprop="url">
+            <span itemprop="name">(CVPR 2016) You Only Look Once:Unified, Real-Time Object Detection</span>
+          </a>
+        
+      </h2>
+
+    </header>
+  </article>
+
+
+
+  
+  
+
+  
+    
+    <div class="collection-year">
       <h1 class="collection-header">2017</h1>
     </div>
   
@@ -432,7 +524,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -458,7 +550,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">292</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -501,7 +593,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
     </div>
@@ -607,6 +702,23 @@
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>

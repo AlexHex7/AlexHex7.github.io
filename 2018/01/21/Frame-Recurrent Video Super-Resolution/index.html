@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="Sajjadi M S M, Vemulapalli R, Brown M. Frame-recurrent video super-resolution[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 6626-6634.">
-<meta name="keywords" content="Image Processing,Image Enhancement,Super Resolution,Video,Optical Flow,FlowNet,ESPCN,Pixel Shuffle">
+<meta name="keywords" content="Image Processing,Image Enhancement,Video,Super Resolution,Optical Flow,FlowNet,ESPCN,Pixel Shuffle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(CVPR 2018) Frame-Recurrent Video Super-Resolution">
 <meta property="og:url" content="http://yoursite.com/2018/01/21/Frame-Recurrent Video Super-Resolution/index.html">
@@ -425,9 +425,9 @@
             
               <a href="/tags/Image-Enhancement/" rel="tag"># Image Enhancement</a>
             
-              <a href="/tags/Super-Resolution/" rel="tag"># Super Resolution</a>
-            
               <a href="/tags/Video/" rel="tag"># Video</a>
+            
+              <a href="/tags/Super-Resolution/" rel="tag"># Super Resolution</a>
             
               <a href="/tags/Optical-Flow/" rel="tag"># Optical Flow</a>
             
@@ -520,7 +520,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -546,7 +546,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">292</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -589,7 +589,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
     </div>
@@ -745,6 +748,23 @@
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>

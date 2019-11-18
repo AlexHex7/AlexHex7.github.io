@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="Liu Y, Zhao G. PAD-Net: A Perception-Aided Single Image Dehazing Network[J]. arXiv preprint arXiv:1805.03146, 2018.">
-<meta name="keywords" content="Dehazing,Image Processing,Image Enhancement,AOD-Net,Loss Function,MS-SSIM,SSIM">
+<meta name="keywords" content="Image Processing,Image Enhancement,Dehazing,AOD-Net,Loss Function,MS-SSIM,SSIM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(2018) PAD-Net:A Perception-Aided Single Image Dehazing Network">
 <meta property="og:url" content="http://yoursite.com/2018/01/24/PAD-Net: A Perception-Aided Single Image Dehazing Network/index.html">
@@ -455,11 +455,11 @@
           
           <div class="post-tags">
             
-              <a href="/tags/Dehazing/" rel="tag"># Dehazing</a>
-            
               <a href="/tags/Image-Processing/" rel="tag"># Image Processing</a>
             
               <a href="/tags/Image-Enhancement/" rel="tag"># Image Enhancement</a>
+            
+              <a href="/tags/Dehazing/" rel="tag"># Dehazing</a>
             
               <a href="/tags/AOD-Net/" rel="tag"># AOD-Net</a>
             
@@ -552,7 +552,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -578,7 +578,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">292</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -621,7 +621,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
     </div>
@@ -777,6 +780,23 @@
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>

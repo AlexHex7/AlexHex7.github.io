@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="Ulyanov D, Vedaldi A, Lempitsky V. Deep image prior[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 9446-9454.">
-<meta name="keywords" content="Image Processing,Image Enhancement,Super Resolution,Inpainting,Inverting">
+<meta name="keywords" content="Image Processing,Image Enhancement,Inpainting,Deep Image Prior,Super Resolution,Inverting">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(CVPR 2018) Deep Image Prior">
 <meta property="og:url" content="http://yoursite.com/2018/01/23/Deep Image Prior/index.html">
@@ -421,9 +421,11 @@
             
               <a href="/tags/Image-Enhancement/" rel="tag"># Image Enhancement</a>
             
-              <a href="/tags/Super-Resolution/" rel="tag"># Super Resolution</a>
-            
               <a href="/tags/Inpainting/" rel="tag"># Inpainting</a>
+            
+              <a href="/tags/Deep-Image-Prior/" rel="tag"># Deep Image Prior</a>
+            
+              <a href="/tags/Super-Resolution/" rel="tag"># Super Resolution</a>
             
               <a href="/tags/Inverting/" rel="tag"># Inverting</a>
             
@@ -510,7 +512,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -536,7 +538,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">292</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -579,7 +581,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
     </div>
@@ -735,6 +740,23 @@
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>

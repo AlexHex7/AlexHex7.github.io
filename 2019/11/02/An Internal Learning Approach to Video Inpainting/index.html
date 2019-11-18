@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Zhang H, Mai L, Xu N, et al. An Internal Learning Approach to Video Inpainting[J]. arXiv preprint arXiv:1909.07957, 2019.">
+<meta name="keywords" content="Image Processing,Image Enhancement,Inpainting,Deep Image Prior,Video">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(ICCV 2019) An Internal Learning Approach to Video Inpainting">
+<meta property="og:url" content="http://yoursite.com/2019/11/02/An Internal Learning Approach to Video Inpainting/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Zhang H, Mai L, Xu N, et al. An Internal Learning Approach to Video Inpainting[J]. arXiv preprint arXiv:1909.07957, 2019.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/4.jpg?raw=true">
+<meta property="og:updated_time" content="2019-11-02T14:12:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(ICCV 2019) An Internal Learning Approach to Video Inpainting">
+<meta name="twitter:description" content="Zhang H, Mai L, Xu N, et al. An Internal Learning Approach to Video Inpainting[J]. arXiv preprint arXiv:1909.07957, 2019.">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/1.jpg?raw=true">
+  <link rel="canonical" href="http://yoursite.com/2019/11/02/An Internal Learning Approach to Video Inpainting/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>(ICCV 2019) An Internal Learning Approach to Video Inpainting | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-aboutme">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>AboutMe</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>Search</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Searching..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/02/An Internal Learning Approach to Video Inpainting/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">(ICCV 2019) An Internal Learning Approach to Video Inpainting
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-11-02 22:12:02" itemprop="dateCreated datePublished" datetime="2019-11-02T22:12:02+08:00">2019-11-02</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Image-Processing/" itemprop="url" rel="index"><span itemprop="name">Image Processing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Zhang H, Mai L, Xu N, et al. An Internal Learning Approach to Video Inpainting[J]. arXiv preprint arXiv:1909.07957, 2019.</p>
+</blockquote>
+<a id="more"></a>
+<p><br></p>
+<hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<p>In this paper, it proposes a <strong>video inpainting method (DIP-Vid-FLow)</strong><br><strong>1)</strong> Based on <strong>Deep Image Prior</strong>.<br><strong>2)</strong> Based on <strong>Internal Learning</strong> (some loss funcitions).</p>
+<hr>
+<h1 id="2-Algorithm"><a href="#2-Algorithm" class="headerlink" title="2. Algorithm"></a>2. Algorithm</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/1.jpg?raw=true" alt><br></div>
+
+<h2 id="2-1-Loss-Function"><a href="#2-1-Loss-Function" class="headerlink" title="2.1. Loss Function"></a>2.1. Loss Function</h2><p>$L=\omega_r L_r + \omega_f L_f + \omega_c L_c + \omega_p L_p$</p>
+<p><strong>1)</strong> $\omega_r=1$. weight of <strong>image</strong> generation loss.<br><strong>2)</strong> $\omega_f=0.1$. weight of <strong>flow</strong> generation loss.<br><strong>3)</strong> $ \omega_c=1$. weight of <strong>consistency</strong> loss.<br><strong>4)</strong> $\omega_p=0.01$. weight of <strong>perceptual</strong> loss.</p>
+<h2 id="2-2-Image-Generation-Loss"><a href="#2-2-Image-Generation-Loss" class="headerlink" title="2.2. Image Generation Loss"></a>2.2. Image Generation Loss</h2><p>$L_r(\hat{I}_i)=||M_i \odot (\hat{I}_i - I_i)||_2^2$</p>
+<p><strong>1)</strong> $M_i$. Binary mask of knowing regions</p>
+<h2 id="2-3-Flow-Generation-Loss"><a href="#2-3-Flow-Generation-Loss" class="headerlink" title="2.3. Flow Generation Loss"></a>2.3. Flow Generation Loss</h2><p>$L_f(\hat{F_{i,j}})=||O_{i,j}\odot M^f_{i,j}\odot (\hat{F_{i,j}}- F_{i,j}) ||_2^2$</p>
+<p><strong>1)</strong> $F_{i,j}$. from frame $I_i$ to frame $I_j$.<br><strong>2)</strong> $M^f_{i,j} = M_i \cap M_j (F_{i,j})$. The reliable flow estimation computed as te intersection of aligned masks of frame $i$ to $j$.<br><strong>3)</strong> 6 adjacent frames $j \in {i \pm 1, i \pm 3, i \pm 5}$.<br><strong>4)</strong> $O_{i,j}, \hat{F_{i,j}}$. estimated occlusion map and flow from PWC-Net.</p>
+<h2 id="2-4-Consistency-Loss"><a href="#2-4-Consistency-Loss" class="headerlink" title="2.4. Consistency Loss"></a>2.4. Consistency Loss</h2><p>$L_c(\hat{I_j}, \hat{F_{i,j}}) = || (1-M_{i,j}^f) \odot ( \hat{I_j}(\hat{F_{i,j}}) - \hat{I_i}) ||_2^2$</p>
+<p><strong>1)</strong> $I(F)$. warp.<br><strong>2)</strong> $1 - M_{i,j}^f$. encourage the training to foucs on propagating information inside the hole.</p>
+<h2 id="2-5-Perceptual-Loss"><a href="#2-5-Perceptual-Loss" class="headerlink" title="2.5. Perceptual Loss"></a>2.5. Perceptual Loss</h2><p>$L_p(\hat{I_i}) = \sum_{k \in K} || \psi_k (M_i) \odot (\phi_k (\hat{I_i}) - \phi_k(I_i)) ||_2^2$<br>.<br><strong>1)</strong> 3 layers {relu1_2, relu2_2, relu3_3} of VGG16 pre-trained.</p>
+<h2 id="2-6-Details"><a href="#2-6-Details" class="headerlink" title="2.6. Details"></a>2.6. Details</h2><p><strong>1)</strong> Pick $N$ frames which are consecutive with a fixed frame interval of $t$ <strong>as a batch</strong>. Find that this helps propagate the information more consistently across the frames in the batch.<br><strong>2)</strong> Find that 50-100 updates per batch is best.</p>
+<hr>
+<h1 id="3-Experiments"><a href="#3-Experiments" class="headerlink" title="3. Experiments"></a>3. Experiments</h1><hr>
+<h2 id="3-1-Ablation-Study"><a href="#3-1-Ablation-Study" class="headerlink" title="3.1. Ablation Study"></a>3.1. Ablation Study</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/2.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/3.jpg?raw=true" alt><br></div>
+
+<h2 id="3-2-Window-Length"><a href="#3-2-Window-Length" class="headerlink" title="3.2. Window Length"></a>3.2. Window Length</h2><div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/An Internal Learning Approach to Video Inpainting/4.jpg?raw=true" alt><br></div>
+
+
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Image-Processing/" rel="tag"># Image Processing</a>
+            
+              <a href="/tags/Image-Enhancement/" rel="tag"># Image Enhancement</a>
+            
+              <a href="/tags/Inpainting/" rel="tag"># Inpainting</a>
+            
+              <a href="/tags/Deep-Image-Prior/" rel="tag"># Deep Image Prior</a>
+            
+              <a href="/tags/Video/" rel="tag"># Video</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/11/02/Low-shot visual recognition by shrinking and hallucinating features/" rel="next" title="(ICCV 2017) Low-shot visual recognition by shrinking and hallucinating features">
+                  <i class="fa fa-chevron-left"></i> (ICCV 2017) Low-shot visual recognition by shrinking and hallucinating features
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/2019/11/08/You Only Look Once: Unified, Real-Time Object Detection/" rel="prev" title="(CVPR 2016) You Only Look Once:Unified, Real-Time Object Detection">
+                  (CVPR 2016) You Only Look Once:Unified, Real-Time Object Detection <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Algorithm"><span class="nav-text">2. Algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-Loss-Function"><span class="nav-text">2.1. Loss Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-Image-Generation-Loss"><span class="nav-text">2.2. Image Generation Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-Flow-Generation-Loss"><span class="nav-text">2.3. Flow Generation Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-Consistency-Loss"><span class="nav-text">2.4. Consistency Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-Perceptual-Loss"><span class="nav-text">2.5. Perceptual Loss</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-Details"><span class="nav-text">2.6. Details</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Experiments"><span class="nav-text">3. Experiments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Ablation-Study"><span class="nav-text">3.1. Ablation Study</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Window-Length"><span class="nav-text">3.2. Window Length</span></a></li></ol></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+  <p class="site-author-name" itemprop="name">Alex Hex</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">220</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">292</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:alexhex7@foxmail.com" title="E-Mail &rarr; mailto:alexhex7@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
+</body>
+</html>

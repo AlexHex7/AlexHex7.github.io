@@ -275,6 +275,35 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
+              datetime="2019-11-02T22:12:02+08:00"
+              content="2019-11-02">
+          11-02
+        </time>
+      </div>
+
+      <h2 class="post-title">
+        
+          <a class="post-title-link" href="/2019/11/02/An Internal Learning Approach to Video Inpainting/" itemprop="url">
+            <span itemprop="name">(ICCV 2019) An Internal Learning Approach to Video Inpainting</span>
+          </a>
+        
+      </h2>
+
+    </header>
+  </article>
+
+
+
+  
+  
+
+  
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
               datetime="2019-02-15T06:25:07+08:00"
               content="2019-02-15">
           02-15
@@ -531,35 +560,6 @@
 
 
 
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-01-24T06:25:08+08:00"
-              content="2018-01-24">
-          01-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2018/01/24/Deeply-recursive convolutional network for image super-resolution/" itemprop="url">
-            <span itemprop="name">(CVPR 2016) Deeply-recursive convolutional network for image super-resolution</span>
-          </a>
-        
-      </h2>
-
-    </header>
-  </article>
-
-
-
     </div>
   </div>
   
@@ -614,7 +614,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -640,7 +640,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">292</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -683,7 +683,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
     </div>
@@ -789,6 +792,23 @@
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>

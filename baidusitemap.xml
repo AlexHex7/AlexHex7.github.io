@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://alexhex7.github.io/2019/11/17/Self-training%20with%20Noisy%20Student%20improves%20ImageNet%20classification/</loc>
+    <lastmod>2019-11-17</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/17/Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation/</loc>
+    <lastmod>2019-11-17</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/17/Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation/</loc>
+    <lastmod>2019-11-17</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/16/DeepLab:%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets,%20Atrous%20Convolution,%20and%20Fully%20Connected%20CRFs/</loc>
+    <lastmod>2019-11-16</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/16/Semantic%20image%20segmentation%20with%20deep%20convolutional%20nets%20and%20fully%20connected%20CRFs/</loc>
+    <lastmod>2019-11-16</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/09/YOLOv3:%20An%20Incremental%20Improvement/</loc>
+    <lastmod>2019-11-09</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/08/YOLO9000:%20Better,%20Faster,%20Stronger/</loc>
+    <lastmod>2019-11-08</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/08/You%20Only%20Look%20Once:%20Unified,%20Real-Time%20Object%20Detection/</loc>
+    <lastmod>2019-11-08</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/02/An%20Internal%20Learning%20Approach%20to%20Video%20Inpainting/</loc>
+    <lastmod>2019-11-02</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/02/Low-shot%20visual%20recognition%20by%20shrinking%20and%20hallucinating%20features/</loc>
+    <lastmod>2019-11-02</lastmod>
+  </url>  <url>
     <loc>https://alexhex7.github.io/2019/10/27/Efficient%20Neural%20Architecture%20Search%20via%20Parameter%20Sharing/</loc>
     <lastmod>2019-10-27</lastmod>
   </url>  <url>
@@ -463,10 +493,10 @@
     <loc>https://alexhex7.github.io/2018/01/24/Densely%20Connected%20Pyramid%20Dehazing%20Network/</loc>
     <lastmod>2018-01-23</lastmod>
   </url>  <url>
-    <loc>https://alexhex7.github.io/2018/01/23/End-to-End%20United%20Video%20Dehazing%20and%20Detection/</loc>
+    <loc>https://alexhex7.github.io/2018/01/23/Density-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network/</loc>
     <lastmod>2018-01-22</lastmod>
   </url>  <url>
-    <loc>https://alexhex7.github.io/2018/01/23/Density-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network/</loc>
+    <loc>https://alexhex7.github.io/2018/01/23/End-to-End%20United%20Video%20Dehazing%20and%20Detection/</loc>
     <lastmod>2018-01-22</lastmod>
   </url>  <url>
     <loc>https://alexhex7.github.io/2018/01/23/Locally%20Adaptive%20Learning%20Loss%20for%20Semantic%20Image%20Segmentation/</loc>

@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="Zhang H, Patel V M. Densely connected pyramid dehazing network[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2018: 3194-3203.">
-<meta name="keywords" content="DenseNet,Dehazing,Image Processing,Image Enhancement">
+<meta name="keywords" content="DenseNet,Image Processing,Image Enhancement,Dehazing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(AAAI 2018) Densely connected pyramid dehazing network">
 <meta property="og:url" content="http://yoursite.com/2018/01/24/Densely Connected Pyramid Dehazing Network/index.html">
@@ -467,11 +467,11 @@
             
               <a href="/tags/DenseNet/" rel="tag"># DenseNet</a>
             
-              <a href="/tags/Dehazing/" rel="tag"># Dehazing</a>
-            
               <a href="/tags/Image-Processing/" rel="tag"># Image Processing</a>
             
               <a href="/tags/Image-Enhancement/" rel="tag"># Image Enhancement</a>
+            
+              <a href="/tags/Dehazing/" rel="tag"># Dehazing</a>
             
           </div>
         
@@ -556,7 +556,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -582,7 +582,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">292</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -625,7 +625,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
     </div>
@@ -781,6 +784,23 @@
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>

@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="Ren W, Liu S, Zhang H, et al. Single image dehazing via multi-scale convolutional neural networks[C]//European Conference on Computer Vision. Springer International Publishing, 2016: 154-169.">
-<meta name="keywords" content="Dehazing,Image Processing,Image Enhancement">
+<meta name="keywords" content="Image Processing,Image Enhancement,Dehazing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="(ECCV 2016) Single image dehazing via multi-scale convolutional neural networks">
 <meta property="og:url" content="http://yoursite.com/2018/01/22/Single image dehazing via multi-scale convolutional neural networks/index.html">
@@ -445,11 +445,11 @@
           
           <div class="post-tags">
             
-              <a href="/tags/Dehazing/" rel="tag"># Dehazing</a>
-            
               <a href="/tags/Image-Processing/" rel="tag"># Image Processing</a>
             
               <a href="/tags/Image-Enhancement/" rel="tag"># Image Enhancement</a>
+            
+              <a href="/tags/Dehazing/" rel="tag"># Dehazing</a>
             
           </div>
         
@@ -534,7 +534,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -560,7 +560,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">292</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -603,7 +603,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
     </div>
@@ -759,6 +762,23 @@
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>

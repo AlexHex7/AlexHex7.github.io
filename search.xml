@@ -1,6 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(2019) Self-training with Noisy Student improves ImageNet classification]]></title>
+    <url>%2F2019%2F11%2F17%2FSelf-training%20with%20Noisy%20Student%20improves%20ImageNet%20classification%2F</url>
+    <content type="text"><![CDATA[Xie Q, Hovy E, Luong M T, et al. Self-training with Noisy Student improves ImageNet classification[J]. arXiv preprint arXiv:1911.04252, 2019. 1. Overview In this paper, it proposes a self-training methods to improve 1% top-1 accuracy on ImageNet. Teacher-Student based on EfficientNet. Noise Student during training, while not noise Teacher during generation of pseudo labels. To noise Student, use dropout, data augmentation and stochastic dropout. 2. Algorithm 1) Noise Student is trained to be consistent to the more powerful teacher model that is not noised when it generates pseudo labels.2) When dropout and stochastic depth are used, Teacher (no drop when generate pseudo labels) behaves like an ensemble models.3) Student needs to be sufficiently large to fit more data.4) Data Balanced of Unlabeled data (duplicate and highest confidence)5) Soft pseudo labels are more stable and faster convergence than hard (one-hot). 3. Experiments 3.1. Details1) Use JFT dataset as unlabeled data.2) Stochastic Depth. Set survival probability to 0.8 for the final layer and follow the linear decau rule for other layers.3) Dropout. 0.5 for final cls layer.4) RandAugment. two random operations with the magnitude set to 27 3.2. Noise Student 1) larger model +0.5%.2) Noise Student + 1.9%. 3.3. Adversarial Attack 3.4. Ablation Study]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>Self-training</category>
+      </categories>
+      <tags>
+        <tag>Self-training</tag>
+        <tag>Teacher-Student</tag>
+        <tag>Data Augmentation</tag>
+        <tag>Stochastic Depth</tag>
+        <tag>EfficientNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2018) Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation]]></title>
+    <url>%2F2019%2F11%2F17%2FEncoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation%2F</url>
+    <content type="text"><![CDATA[Chen L, Zhu Y, Papandreou G, et al. Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation[J]. arXiv: Computer Vision and Pattern Recognition, 2018. 1. Overview In this paper, it proposes DeepLabv3+ by extending DeepLabv3. Encoder-Decoder structure. Adapt Xception model. Apply Depthwise Separable Conv. 1.1. Architecture 1) Encoder output: last feature map before logits in the DeepLabv3.2) Apply $1 \times 1$ Conv on low-level features to reduce the number of channels, since large channels may ignore encoder output. 1.2. Xception Make a few changes:1) Deeper Xception.2) Replace all MaxPool with Depthwise Separable Conv (with strides), which enables to apply Atrous Separable Conv.3) After each $3 \times 3$ Depthwise Conv, add BN-ReLU. 1.3. Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Segmentation</category>
+      </categories>
+      <tags>
+        <tag>DeepLabv3+</tag>
+        <tag>Encoder-Decoder</tag>
+        <tag>Xception</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) Rethinking Atrous Convolution for Semantic Image Segmentation]]></title>
+    <url>%2F2019%2F11%2F17%2FRethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation%2F</url>
+    <content type="text"><![CDATA[Chen L, Papandreou G, Schroff F, et al. Rethinking Atrous Convolution for Semantic Image Segmentation[J]. arXiv: Computer Vision and Pattern Recognition, 2017. 1. Overview In this paper, it proposes DeepLabv3 for segmentation. Design modules which employ Atrous Conv in cascade or in parallel to capture multi-scale context by adopting multiple atrous rates (multi-grid). Augment Atrous Spatial Pyramid Pooling (ASPP) module. Remove CRF. 1.1. Multi-scale Methods 2. Details 2.1. Cascaded Modules 2.2. Parallel Modules 2.3. Multi-graid Method1) Apply different atrous rates to 3 Convs within $block4$ to $block7$.2) If $MultiGrid=(1,2,4)$ and $rates=2$, then $MultiGrid=2 \cdot (1,2,4)$. 2.4. ASPP1) Contains:3 Dilated Conv, 1 $1 \times 1$ Conv and Global AVGPool.2) When rate is too large, Dilated Conv degrades to $1 \times 1$ Conv. 3. Experiments 3.1. Cascaded Modules3.1.1 Output Stride 3.1.2. Deeper 3.1.3. Multi-Grid 3.1.4 Inference Strategy 3.2. Parallel Modules 3.3. Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Segmentation</category>
+      </categories>
+      <tags>
+        <tag>Dilated Conv</tag>
+        <tag>ASPP</tag>
+        <tag>DeepLabv3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(PAMI 2017) DeepLab:Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs]]></title>
+    <url>%2F2019%2F11%2F16%2FDeepLab%3A%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets%2C%20Atrous%20Convolution%2C%20and%20Fully%20Connected%20CRFs%2F</url>
+    <content type="text"><![CDATA[Chen L C, Papandreou G, Kokkinos I, et al. Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs[J]. IEEE transactions on pattern analysis and machine intelligence, 2017, 40(4): 834-848. 1. Overview In this paper, it proposes DeepLabv2 for segmentation. Dilated Conv (solve challenge: reduced feature resolution). Astrous Spatial Pyramid Pooling (solve challenge: multiple scales). CRF (sovel challenge: reduced localization accuracy) 1.1. Dilated Conv 1.2. Astrous Spatial Pyramid Pooling (ASPP) 1.3. Details]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Segmentation</category>
+      </categories>
+      <tags>
+        <tag>DeepLabv2</tag>
+        <tag>CRF</tag>
+        <tag>Dilated Conv</tag>
+        <tag>ASPP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICLR 2015) Semantic image segmentation with deep convolutional nets and fully connected CRFs]]></title>
+    <url>%2F2019%2F11%2F16%2FSemantic%20image%20segmentation%20with%20deep%20convolutional%20nets%20and%20fully%20connected%20CRFs%2F</url>
+    <content type="text"><![CDATA[Chen L C, Papandreou G, Kokkinos I, et al. Semantic image segmentation with deep convolutional nets and fully connected crfs[J]. arXiv preprint arXiv:1412.7062, 2014. 1. Overview In this paper, it proposes DeepLabv1 for segmentation. Dilated Conv. CRF. Multi-scale Prediction. 1.1. Details in Conv1) Skip subsampling after the last two max-pooling layers of VGG16.2) Exploit Dilated Conv.3) Reduce $7 \times 7$ Conv to $4 \times 4$ or $3 \times 3$ for saving computation time. 1.2. Conditional Random Fileds Energy Function: $E(x) = \sum_i \theta_i (x_i) + \sum_{ij} \theta_{ij}(x_i, x_j)$.1) x. label assignment for pixels.2) $\theta_i (x_i) = -\log P(x_i)$. [$P(x_i)$ is the label assignment probability at pixel $i$].3) $\theta_{ij}(x_i, x_j)=\mu (x_i, x_j) \sum_{m=1}^{K} w_m \cdot k^m (f_i, f_j)$. [$\mu (x_i, x_j)=1$ if $x_i \ne x_j$ ]4) $k^m$ is the Gaussian kernel depends on feature of pixel $i,j$, weighted by $w_m$:$w_1 \exp (-\frac{|| p_i - p_j ||^2}{2 \sigma_{\alpha}^2} - \frac{|| I_i - I_j ||^2}{2\sigma_{\beta}^2}) + w_2 \exp (- \frac{|| p_i - p_j ||^2}{2\sigma_{\gamma}^2})$5) The first kernel depends on both pixel positions ($p$) and pixel color intensities ($I$). The second kernel only depends on pixel positions. The hyper parameter $\sigma_x$ controls the scale of the Gaussian kernels.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Segmentation</category>
+      </categories>
+      <tags>
+        <tag>CRF</tag>
+        <tag>Dilated Conv</tag>
+        <tag>DeepLabv1</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(2018) YOLOv3:An Incremental Improvement]]></title>
+    <url>%2F2019%2F11%2F09%2FYOLOv3%3A%20An%20Incremental%20Improvement%2F</url>
+    <content type="text"><![CDATA[Redmon J, Farhadi A. Yolov3: An incremental improvement[J]. arXiv preprint arXiv:1804.02767, 2018. 1. Overview In this paper, it proposes YOLOv3 for detection. Chnage hierarchical classification into multi-label classification. Predict boxes at 3 different scales. (3 boxes each scale). Based on DarkNet-53. Still multi-scale training, data augmentation, BN. 2. BBox Prediction 1) Predict 3 boxes at each scale $N \times N x [3 * (4 + 1+ 80)]$.2) Scale means feature comes from different layers. (Shallow layer is good for small obj)3) Use k-means find 9 clusters, then divide up the clusters evenly across scales. The 9 clusters On COCO are:$(10 \times 13),(16 \times 30),(33 \times 23),(30 \times 61),(62 \times 45),$$(59 \times 119),(116 \times 90),(156 \times 198),(373 \times 326)$ 3. DarkNet-53 3.1. Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Object Detection</category>
+      </categories>
+      <tags>
+        <tag>Detection</tag>
+        <tag>YOLOv3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2017) YOLO9000:Better, Faster, Stronger]]></title>
+    <url>%2F2019%2F11%2F08%2FYOLO9000%3A%20Better%2C%20Faster%2C%20Stronger%2F</url>
+    <content type="text"><![CDATA[Redmon J, Farhadi A. YOLO9000: better, faster, stronger[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 7263-7271. 1. Overview In this paper, it proposes YOLO9000 (YOLOv2) for detection. Better: BN, High Resolution Classifier, Conv with anchor box (instead of grid cell), Multi-Scale Training. Faster: Darknet-19. Stronger: Jointly training on classification (ImageNet) and detection (COCO) data. 2. Better 2.1. Batch NormalizationAdd BN on all of Conv in YOLO, then can remove dropout. (+2% in mAP) 2.2. High Resolution Classifier1) Fine-tune classification network at $448\times 448$.2) Fine-tune on detection. (+4% mAP) 2.3. Conv with Anchor Box1) remove FC and one pooling layer from YOLO (downsample by a factor of 32).2) Use anchor box to predict bounding box.3) Change the input size from $448 \times 448$ to $416 \times 416$, then can get $13 \times 13$ feature map.4) Predict class (Pr(class_i|obj)) and obj ($IOU_{pred}^{truth}$) for every anchor box. Solve two issues:1) Run k-means clustering on the training set bounding boxes to select good prior of box dimension.2) Using anchor box leads to instability, especially in early epoch. So predict relative location of grid cell (constrain in cell to prevent offset to any location in images). 1) $\sigma$ is $Sigmoid$.2) Predict 5 (decided by K-means cluster) BBox at each cell. (+5% mAP)3) Each BBox contains 5 coordinates and 20 classes.4) So each cell contains $5 \times (5 + 20) = 125$ filters. 2.4. Multi-Scale Training1) Every 10 batches, randomly choose a new image dimension size from {320,352,…,608}.2) It’s easy to tradeoff between speed and accuracy, As it can predict well across a variety of input dimension, 2.5. Comparison 3. Faster Darknet has 19 Conv and 5 Maxpool.—# 4. Stronger—1) Jointly training on classification and detection data.2) Hierarchical Classification to solve category exclusive problem. 3) For classification purposes, assume that the image contains an obj $Pr(obj)=1$. And simply find the BBox that predicts highest probability for that class and we compute the loss on just its predicted tree.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Object Detection</category>
+      </categories>
+      <tags>
+        <tag>Detection</tag>
+        <tag>YOLOv2</tag>
+        <tag>YOLO9000</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2016) You Only Look Once:Unified, Real-Time Object Detection]]></title>
+    <url>%2F2019%2F11%2F08%2FYou%20Only%20Look%20Once%3A%20Unified%2C%20Real-Time%20Object%20Detection%2F</url>
+    <content type="text"><![CDATA[Redmon J, Divvala S, Girshick R, et al. You only look once: Unified, real-time object detection[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 779-788. 1. Overview In this paper, it proposes YOLO for detection. 1.1. Network 1) Input: $448 \times 448$.2) Output: $7 \times 7 \times (B \times 5 + CLS)$. ($B$=2, $S$=7, $CLS=20$).3) First, pretrained on ImageNet, then add 4 Conv + 2 FC with randomly initialization.4) Fast YOLO only has 9 Convs and fewer filters. 1.2. Definition 1) Split images into $S \times S$ Grid Cells.2) Each Grid Cell contains $B$ Bounding Boxes.3) Each Bounding Box needs to predict $(x, y, w, h, C)$. $C$. Confidence: $Pr(obj)*IOU_{pred}^{truth}$. (If no obj exists in cell, $C=0$, otherwise $C=IOU$, directly predict) $(x, y)$. Center of box relative to Grid Cell ($\in [0, 1]$). $(w, h)$. relative to the whole image ($\in [0, 1]$). 4) Each Grid Cell needs to predict $CLS$ $Pr(Class_i|obj)$5) At test time, the class-specific confidence scores for each box $Pr(Class_i|obj)*Pr(obj)*IOU_{pred}^{truth}=Pr(Class_i)*IOU_{pred}^{truth}$ 1.3. Loss Function 1) Increase the loss of BBox prediction ($\lambda_{coord}=5$). (Not ideal to treat localization and classification loss as equal)2) Decrease the loss of Confidence prediction when no obj exists in boxes ($\lambda_{noobj}=0.5$). (Many grid cells do not contain obj, leading to gradient problem)3) Square root of $(h, w)$. (Small deviations in large boxes matter less than in small boxes)4) At training time, assign one predictor to be ‘responsible’ for predicting an object based on which prediction has the highest current IOU with the GT. 1.4. Limitations of YOLO1) Each cell can only have one class, struggle with small obj that appear in groups, such as flocks of birds.2) Use relatively coarse features for predicting BBox (multiple downsampling).3) Loss function treats errors the same in small BBox versus large BBox.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Object Detection</category>
+      </categories>
+      <tags>
+        <tag>Detection</tag>
+        <tag>YOLO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2019) An Internal Learning Approach to Video Inpainting]]></title>
+    <url>%2F2019%2F11%2F02%2FAn%20Internal%20Learning%20Approach%20to%20Video%20Inpainting%2F</url>
+    <content type="text"><![CDATA[Zhang H, Mai L, Xu N, et al. An Internal Learning Approach to Video Inpainting[J]. arXiv preprint arXiv:1909.07957, 2019. 1. Overview In this paper, it proposes a video inpainting method (DIP-Vid-FLow)1) Based on Deep Image Prior.2) Based on Internal Learning (some loss funcitions). 2. Algorithm 2.1. Loss Function$L=\omega_r L_r + \omega_f L_f + \omega_c L_c + \omega_p L_p$ 1) $\omega_r=1$. weight of image generation loss.2) $\omega_f=0.1$. weight of flow generation loss.3) $ \omega_c=1$. weight of consistency loss.4) $\omega_p=0.01$. weight of perceptual loss. 2.2. Image Generation Loss$L_r(\hat{I}_i)=||M_i \odot (\hat{I}_i - I_i)||_2^2$ 1) $M_i$. Binary mask of knowing regions 2.3. Flow Generation Loss$L_f(\hat{F_{i,j}})=||O_{i,j}\odot M^f_{i,j}\odot (\hat{F_{i,j}}- F_{i,j}) ||_2^2$ 1) $F_{i,j}$. from frame $I_i$ to frame $I_j$.2) $M^f_{i,j} = M_i \cap M_j (F_{i,j})$. The reliable flow estimation computed as te intersection of aligned masks of frame $i$ to $j$.3) 6 adjacent frames $j \in {i \pm 1, i \pm 3, i \pm 5}$.4) $O_{i,j}, \hat{F_{i,j}}$. estimated occlusion map and flow from PWC-Net. 2.4. Consistency Loss$L_c(\hat{I_j}, \hat{F_{i,j}}) = || (1-M_{i,j}^f) \odot ( \hat{I_j}(\hat{F_{i,j}}) - \hat{I_i}) ||_2^2$ 1) $I(F)$. warp.2) $1 - M_{i,j}^f$. encourage the training to foucs on propagating information inside the hole. 2.5. Perceptual Loss$L_p(\hat{I_i}) = \sum_{k \in K} || \psi_k (M_i) \odot (\phi_k (\hat{I_i}) - \phi_k(I_i)) ||_2^2$.1) 3 layers {relu1_2, relu2_2, relu3_3} of VGG16 pre-trained. 2.6. Details1) Pick $N$ frames which are consecutive with a fixed frame interval of $t$ as a batch. Find that this helps propagate the information more consistently across the frames in the batch.2) Find that 50-100 updates per batch is best. 3. Experiments 3.1. Ablation Study 3.2. Window Length]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Processing</category>
+      </categories>
+      <tags>
+        <tag>Image Processing</tag>
+        <tag>Image Enhancement</tag>
+        <tag>Inpainting</tag>
+        <tag>Deep Image Prior</tag>
+        <tag>Video</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICCV 2017) Low-shot visual recognition by shrinking and hallucinating features]]></title>
+    <url>%2F2019%2F11%2F02%2FLow-shot%20visual%20recognition%20by%20shrinking%20and%20hallucinating%20features%2F</url>
+    <content type="text"><![CDATA[Hariharan B, Girshick R. Low-shot visual recognition by shrinking and hallucinating features[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 3018-3027. 1. Overview 1.1. Motivation The transformation between two samples among the same category (base class), can be apply to few samples among the same category (novel class) to hallucinate more samples. In this paper, it proposes Feature representation regularization techniques. Hallucinate additional training exmaples for data-starved classes. 1.2. Procedure1) Representation Learning (training phase one)2) Low-shot learning (training phase two)3) Testing 2. Details 2.1. Hallucination1) Any two exmaplses $z_1$ and $z_2$ belonging to the same category represent a plausible transformation.2) Given a novel category example $x$, apply to $x$ the transformation that sent $z_1$ to $z_2$.3) By doing this, train function $G([\phi (x), \phi (z_1), \phi (z_2)])$ which output hallucinated feature vertor. ($\phi$ is feature extractor. And use MLP with 3 FC for $G$) Steps1) Cluster feature vectors ($\phi (z)$) of exmaples in each base category into a fixed number of cluster (100).2) For each pair of centroids $c_1^a, c_2^a$ in one category $a$, search for another pair of centroids $c_1^b, c_2^b$ form another category $b$. Such that the cosine distance between $c_1^a-c_2^a$ and $c_1^b-c_2^b$ is minimized.3) Collect all such quadruplets $(c_1^a, c_2^a, c_1^b, c_2^b)$ with cosine similarity greater than zero into a dataset $D_G$.4) To train $G$, feed $(c_1^a, c_1^b, c_2^b)$ to $G$, then $\hat{c}_2^a=G([c_1^a, c_1^b, c_2^b])$. And minimize $\lambda L_{mse}(\hat{c}_2^a, c_2^a) + L_{cls}(W, \hat{c}_2^a, a)$ 2.2. Feature Representaion Regularization 1) When learning classifier and feature extractor jointly, the feature extractor choose to encode less discriminative information in the feature vector, because the classifier can learn to ignore this information.2) When learning new classifier in the low-show space, the learner will not have enough data to identify discriminative features for the unseen classes form its representation.3) Minimizing the norm of the feature activations might limit what the learner can encode into the features, and thus force it to only encode useful information.]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Learning</category>
+        <category>Low-Shot Learning</category>
+      </categories>
+      <tags>
+        <tag>Low-Shot Learning</tag>
+        <tag>Meta Learning</tag>
+        <tag>Batch SGM</tag>
+        <tag>Feature Regularization</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing]]></title>
     <url>%2F2019%2F10%2F27%2FEfficient%20Neural%20Architecture%20Search%20via%20Parameter%20Sharing%2F</url>
     <content type="text"><![CDATA[Pham H, Guan M Y, Zoph B, et al. Efficient neural architecture search via parameter sharing[J]. arXiv preprint arXiv:1802.03268, 2018. 1. Overview 1.1. MotivationNAS use 450 GPUs for 3-4 days (32,400-43,200 hours). In this paper, it proposes Efficient Neural Architecture Search (ENAS) algorithm.1) Define the search space as a Graph.2) Share parameters among child models.3) 1000 times speed up (GPU hours), only need single GPU 2. ENAS 2.1. Design Recurrent Cells 1) $x_t$. the input signal.2) In $Node$ $2$, Controller decides previous node index and activation function.3) In each pair of node, there is an independent parameter matrix $W_{l,j}^{(h)}$. Therefore, all recurrent cells in a search space (graph) share the same set of parameters.4) The search space has $4^N \times N!$ configurations (4 means tanh, ReLU, identity and Sigmoid. And node number $N=12$). 2.2. Design ConvNet 1) In $Node$ $2$, Controller decides previous node index and computation operation.2) Computation Operation. Conv $3 \times 3$ and $5 \times 5$, DSConv $3 \times 3$ and $5 \times 5$, MaxPool $3 \times 3$ and AvgPool $3 \times 3$.3) Make decisions $L$ times to sample a network of $L$ layers. Total $6^L \times 2^{L(L-1)/2}$ networks ($L=12$). 2.3. Design Conv Cells 1) $Node$ $1$ and $Node$ $2$ are cell’s inputs (Node number $B=7$).2) In $Node$ $3$, Controller decides two previous node index and two computation operation.3) Computation Operation. Identity, DSConv $3 \times 3$ and $5 \times 5$, MaxPool $3 \times 3$ and AvgPool $3 \times 3$.4) Node index which never been sampled will be Concat to form the cell’s output.5) Reduction Cell. change the step to 2. 2.4. Traning Procedure1) Controller LSTM parameters $\theta$ and shared parameters of the child models $\omega$.2) At the first step, Controller’s input is an empty embedding.3) Alternate training $\theta$ and $\omega$. 2.4.1 Training $\omega$ 1) Fix Controller $\pi (m;\theta)$, perform SGD on $\omega$.2) Find that $M=1$ works just fine, which means ENAS can update $\omega$ from any single model $m$ sampled from $\pi(m;\theta)$.3) For language model, train for about 400 steps, batch_size 64.4) For CIRFAR-10, train on 45,000 training images, batch_size 128. 2.4.2 Training $\theta$1) Fix $\omega$, update $\theta$ with Adam &amp; Policy Gradient.2) $R(m, $\omega$)$ is computed on a batch of valid set.3) Train for 2000 steps. 2.5. Deriving Architectures1) Sample several models from $\pi (m;\theta)$.2) For each sampled model, compute $R$ on a single batch from valid set.3) Take the best model to retrain.It also can train all the sampled models from scratch, then select the best on a separated validation set. But above method gets similar performance with much economical. 3. Experiments 3.1. RNN Cell Searching 3.2. ConvNet Searching 3.3. Conv Cell Searching 3.4. Comparison]]></content>
@@ -44,11 +190,11 @@
       </categories>
       <tags>
         <tag>Auto-ML</tag>
-        <tag>LightWeight</tag>
         <tag>RL</tag>
+        <tag>Policy Gradient</tag>
+        <tag>LightWeight</tag>
         <tag>MNASNet</tag>
         <tag>Mobile Device</tag>
-        <tag>Policy Gradient</tag>
         <tag>NAS</tag>
       </tags>
   </entry>
@@ -120,7 +266,7 @@
       <categories>
         <category>Paper Note</category>
         <category>Architecture</category>
-        <category>Netwrok</category>
+        <category>Network</category>
       </categories>
       <tags>
         <tag>FlowNet2.0</tag>
@@ -135,7 +281,7 @@
       <categories>
         <category>Paper Note</category>
         <category>Architecture</category>
-        <category>Netwrok</category>
+        <category>Network</category>
       </categories>
       <tags>
         <tag>FlowNet</tag>
@@ -582,8 +728,8 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -1072,8 +1218,8 @@
       </categories>
       <tags>
         <tag>Adversarial Attack</tag>
-        <tag>Defense</tag>
         <tag>Deep Image Prior</tag>
+        <tag>Defense</tag>
       </tags>
   </entry>
   <entry>
@@ -2242,9 +2388,9 @@
         <category>Loss Function</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>AOD-Net</tag>
         <tag>Loss Function</tag>
         <tag>MS-SSIM</tag>
@@ -2277,9 +2423,9 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2293,9 +2439,9 @@
       </categories>
       <tags>
         <tag>DenseNet</tag>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2308,10 +2454,10 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
         <tag>Video</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2371,9 +2517,9 @@
         <category>De-raining</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>De-raining</tag>
       </tags>
   </entry>
@@ -2404,8 +2550,9 @@
       <tags>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
-        <tag>Super Resolution</tag>
         <tag>Inpainting</tag>
+        <tag>Deep Image Prior</tag>
+        <tag>Super Resolution</tag>
         <tag>Inverting</tag>
       </tags>
   </entry>
@@ -2472,9 +2619,9 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>GAN</tag>
         <tag>Unsupervised</tag>
       </tags>
@@ -2504,9 +2651,9 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2519,9 +2666,9 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2534,9 +2681,9 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>Dehazenet</tag>
       </tags>
   </entry>
@@ -2550,9 +2697,9 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2565,9 +2712,9 @@
         <category>Dehazing</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>AOD-Net</tag>
       </tags>
   </entry>
@@ -2581,9 +2728,9 @@
         <category>De-raining</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>De-raining</tag>
         <tag>Rain Model</tag>
       </tags>
@@ -2616,8 +2763,8 @@
       <tags>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
-        <tag>Super Resolution</tag>
         <tag>Video</tag>
+        <tag>Super Resolution</tag>
         <tag>Optical Flow</tag>
         <tag>FlowNet</tag>
         <tag>Pixel Shuffle</tag>
@@ -2636,8 +2783,8 @@
       <tags>
         <tag>Image Processing</tag>
         <tag>Image Enhancement</tag>
-        <tag>Super Resolution</tag>
         <tag>Video</tag>
+        <tag>Super Resolution</tag>
         <tag>Optical Flow</tag>
         <tag>FlowNet</tag>
         <tag>ESPCN</tag>
@@ -2894,8 +3041,8 @@
         <category>Knowledge Note</category>
       </categories>
       <tags>
-        <tag>Non-local Means</tag>
         <tag>CRF</tag>
+        <tag>Non-local Means</tag>
         <tag>Bilateral Filtering</tag>
       </tags>
   </entry>

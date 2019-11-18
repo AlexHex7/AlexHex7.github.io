@@ -57,7 +57,7 @@
 </script>
 
   <meta name="description" content="如何轻松愉快地理解条件随机场（CRF）非局部均值去噪（NL-means）图像非局部均值滤波的原理Bilateral Filtering(双边滤波) for SSAO">
-<meta name="keywords" content="Non-local Means,CRF,Bilateral Filtering">
+<meta name="keywords" content="CRF,Non-local Means,Bilateral Filtering">
 <meta property="og:type" content="article">
 <meta property="og:title" content="条件随机场&amp;非局部均值去噪&amp;双边滤波">
 <meta property="og:url" content="http://yoursite.com/2017/12/19/条件随机场&非局部均值去噪&双边滤波/index.html">
@@ -556,9 +556,9 @@
           
           <div class="post-tags">
             
-              <a href="/tags/Non-local-Means/" rel="tag"># Non-local Means</a>
-            
               <a href="/tags/CRF/" rel="tag"># CRF</a>
+            
+              <a href="/tags/Non-local-Means/" rel="tag"># Non-local Means</a>
             
               <a href="/tags/Bilateral-Filtering/" rel="tag"># Bilateral Filtering</a>
             
@@ -645,7 +645,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">210</span>
+          <span class="site-state-item-count">220</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -671,7 +671,7 @@
             <a href="/tags/">
           
         
-        <span class="site-state-item-count">273</span>
+        <span class="site-state-item-count">292</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>
@@ -714,7 +714,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
     </div>
@@ -870,6 +873,23 @@
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 </body>
 </html>

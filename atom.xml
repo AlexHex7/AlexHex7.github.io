@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-27T13:25:07.000Z</updated>
+  <updated>2019-11-17T15:49:02.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,298 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(2019) Self-training with Noisy Student improves ImageNet classification</title>
+    <link href="http://yoursite.com/2019/11/17/Self-training%20with%20Noisy%20Student%20improves%20ImageNet%20classification/"/>
+    <id>http://yoursite.com/2019/11/17/Self-training with Noisy Student improves ImageNet classification/</id>
+    <published>2019-11-17T15:49:02.000Z</published>
+    <updated>2019-11-17T15:49:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Xie Q, Hovy E, Luong M T, et al. Self-training with Noisy Student improves ImageNet classification[J]. arXiv preprint arXiv:1911.04252, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="Self-training" scheme="http://yoursite.com/categories/Paper-Note/Learning/Self-training/"/>
+    
+    
+      <category term="Self-training" scheme="http://yoursite.com/tags/Self-training/"/>
+    
+      <category term="Teacher-Student" scheme="http://yoursite.com/tags/Teacher-Student/"/>
+    
+      <category term="Data Augmentation" scheme="http://yoursite.com/tags/Data-Augmentation/"/>
+    
+      <category term="Stochastic Depth" scheme="http://yoursite.com/tags/Stochastic-Depth/"/>
+    
+      <category term="EfficientNet" scheme="http://yoursite.com/tags/EfficientNet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2018) Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation</title>
+    <link href="http://yoursite.com/2019/11/17/Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation/"/>
+    <id>http://yoursite.com/2019/11/17/Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation/</id>
+    <published>2019-11-17T15:01:02.000Z</published>
+    <updated>2019-11-17T15:01:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Chen L, Zhu Y, Papandreou G, et al. Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation[J]. arXiv: Computer Vision and Pattern Recognition, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+    
+    
+      <category term="DeepLabv3+" scheme="http://yoursite.com/tags/DeepLabv3/"/>
+    
+      <category term="Encoder-Decoder" scheme="http://yoursite.com/tags/Encoder-Decoder/"/>
+    
+      <category term="Xception" scheme="http://yoursite.com/tags/Xception/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) Rethinking Atrous Convolution for Semantic Image Segmentation</title>
+    <link href="http://yoursite.com/2019/11/17/Rethinking%20Atrous%20Convolution%20for%20Semantic%20Image%20Segmentation/"/>
+    <id>http://yoursite.com/2019/11/17/Rethinking Atrous Convolution for Semantic Image Segmentation/</id>
+    <published>2019-11-17T11:41:02.000Z</published>
+    <updated>2019-11-17T11:41:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Chen L, Papandreou G, Schroff F, et al. Rethinking Atrous Convolution for Semantic Image Segmentation[J]. arXiv: Computer Vision and Pattern Recognition, 2017.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+    
+    
+      <category term="Dilated Conv" scheme="http://yoursite.com/tags/Dilated-Conv/"/>
+    
+      <category term="ASPP" scheme="http://yoursite.com/tags/ASPP/"/>
+    
+      <category term="DeepLabv3" scheme="http://yoursite.com/tags/DeepLabv3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(PAMI 2017) DeepLab:Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs</title>
+    <link href="http://yoursite.com/2019/11/16/DeepLab:%20Semantic%20Image%20Segmentation%20with%20Deep%20Convolutional%20Nets,%20Atrous%20Convolution,%20and%20Fully%20Connected%20CRFs/"/>
+    <id>http://yoursite.com/2019/11/16/DeepLab: Semantic Image Segmentation with Deep Convolutional Nets, Atrous Convolution, and Fully Connected CRFs/</id>
+    <published>2019-11-16T14:13:02.000Z</published>
+    <updated>2019-11-16T14:13:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Chen L C, Papandreou G, Kokkinos I, et al. Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs[J]. IEEE transactions on pattern analysis and machine intelligence, 2017, 40(4): 834-848.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+    
+    
+      <category term="DeepLabv2" scheme="http://yoursite.com/tags/DeepLabv2/"/>
+    
+      <category term="CRF" scheme="http://yoursite.com/tags/CRF/"/>
+    
+      <category term="Dilated Conv" scheme="http://yoursite.com/tags/Dilated-Conv/"/>
+    
+      <category term="ASPP" scheme="http://yoursite.com/tags/ASPP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2015) Semantic image segmentation with deep convolutional nets and fully connected CRFs</title>
+    <link href="http://yoursite.com/2019/11/16/Semantic%20image%20segmentation%20with%20deep%20convolutional%20nets%20and%20fully%20connected%20CRFs/"/>
+    <id>http://yoursite.com/2019/11/16/Semantic image segmentation with deep convolutional nets and fully connected CRFs/</id>
+    <published>2019-11-16T12:13:02.000Z</published>
+    <updated>2019-11-16T12:13:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Chen L C, Papandreou G, Kokkinos I, et al. Semantic image segmentation with deep convolutional nets and fully connected crfs[J]. arXiv preprint arXiv:1412.7062, 2014.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+    
+    
+      <category term="CRF" scheme="http://yoursite.com/tags/CRF/"/>
+    
+      <category term="Dilated Conv" scheme="http://yoursite.com/tags/Dilated-Conv/"/>
+    
+      <category term="DeepLabv1" scheme="http://yoursite.com/tags/DeepLabv1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2018) YOLOv3:An Incremental Improvement</title>
+    <link href="http://yoursite.com/2019/11/09/YOLOv3:%20An%20Incremental%20Improvement/"/>
+    <id>http://yoursite.com/2019/11/09/YOLOv3: An Incremental Improvement/</id>
+    <published>2019-11-09T11:32:02.000Z</published>
+    <updated>2019-11-09T11:32:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Redmon J, Farhadi A. Yolov3: An incremental improvement[J]. arXiv preprint arXiv:1804.02767, 2018.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="YOLOv3" scheme="http://yoursite.com/tags/YOLOv3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2017) YOLO9000:Better, Faster, Stronger</title>
+    <link href="http://yoursite.com/2019/11/08/YOLO9000:%20Better,%20Faster,%20Stronger/"/>
+    <id>http://yoursite.com/2019/11/08/YOLO9000: Better, Faster, Stronger/</id>
+    <published>2019-11-08T12:02:02.000Z</published>
+    <updated>2019-11-08T12:02:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Redmon J, Farhadi A. YOLO9000: better, faster, stronger[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 7263-7271.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="YOLOv2" scheme="http://yoursite.com/tags/YOLOv2/"/>
+    
+      <category term="YOLO9000" scheme="http://yoursite.com/tags/YOLO9000/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2016) You Only Look Once:Unified, Real-Time Object Detection</title>
+    <link href="http://yoursite.com/2019/11/08/You%20Only%20Look%20Once:%20Unified,%20Real-Time%20Object%20Detection/"/>
+    <id>http://yoursite.com/2019/11/08/You Only Look Once: Unified, Real-Time Object Detection/</id>
+    <published>2019-11-08T11:12:02.000Z</published>
+    <updated>2019-11-08T11:12:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Redmon J, Divvala S, Girshick R, et al. You only look once: Unified, real-time object detection[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 779-788.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
+    
+    
+      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
+    
+      <category term="YOLO" scheme="http://yoursite.com/tags/YOLO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2019) An Internal Learning Approach to Video Inpainting</title>
+    <link href="http://yoursite.com/2019/11/02/An%20Internal%20Learning%20Approach%20to%20Video%20Inpainting/"/>
+    <id>http://yoursite.com/2019/11/02/An Internal Learning Approach to Video Inpainting/</id>
+    <published>2019-11-02T14:12:02.000Z</published>
+    <updated>2019-11-02T14:12:02.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Zhang H, Mai L, Xu N, et al. An Internal Learning Approach to Video Inpainting[J]. arXiv preprint arXiv:1909.07957, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
+    
+    
+      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+      <category term="Inpainting" scheme="http://yoursite.com/tags/Inpainting/"/>
+    
+      <category term="Deep Image Prior" scheme="http://yoursite.com/tags/Deep-Image-Prior/"/>
+    
+      <category term="Video" scheme="http://yoursite.com/tags/Video/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2017) Low-shot visual recognition by shrinking and hallucinating features</title>
+    <link href="http://yoursite.com/2019/11/02/Low-shot%20visual%20recognition%20by%20shrinking%20and%20hallucinating%20features/"/>
+    <id>http://yoursite.com/2019/11/02/Low-shot visual recognition by shrinking and hallucinating features/</id>
+    <published>2019-11-02T12:23:04.000Z</published>
+    <updated>2019-11-02T12:23:04.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Hariharan B, Girshick R. Low-shot visual recognition by shrinking and hallucinating features[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 3018-3027.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="Low-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Low-Shot-Learning/"/>
+    
+    
+      <category term="Low-Shot Learning" scheme="http://yoursite.com/tags/Low-Shot-Learning/"/>
+    
+      <category term="Meta Learning" scheme="http://yoursite.com/tags/Meta-Learning/"/>
+    
+      <category term="Batch SGM" scheme="http://yoursite.com/tags/Batch-SGM/"/>
+    
+      <category term="Feature Regularization" scheme="http://yoursite.com/tags/Feature-Regularization/"/>
+    
+  </entry>
   
   <entry>
     <title>(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing</title>
@@ -106,15 +398,15 @@
     
       <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
     
-      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
-    
       <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
+    
+      <category term="Policy Gradient" scheme="http://yoursite.com/tags/Policy-Gradient/"/>
+    
+      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
     
       <category term="MNASNet" scheme="http://yoursite.com/tags/MNASNet/"/>
     
       <category term="Mobile Device" scheme="http://yoursite.com/tags/Mobile-Device/"/>
-    
-      <category term="Policy Gradient" scheme="http://yoursite.com/tags/Policy-Gradient/"/>
     
       <category term="NAS" scheme="http://yoursite.com/tags/NAS/"/>
     
@@ -261,7 +553,7 @@
     
       <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
     
-      <category term="Netwrok" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Netwrok/"/>
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
     
     
       <category term="FlowNet2.0" scheme="http://yoursite.com/tags/FlowNet2-0/"/>
@@ -291,7 +583,7 @@
     
       <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
     
-      <category term="Netwrok" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Netwrok/"/>
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
     
     
       <category term="FlowNet" scheme="http://yoursite.com/tags/FlowNet/"/>
@@ -329,320 +621,6 @@
       <category term="Gradient" scheme="http://yoursite.com/tags/Gradient/"/>
     
       <category term="P-Darts" scheme="http://yoursite.com/tags/P-Darts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICLR 2019) DARTS:Differentiable Architecture Search</title>
-    <link href="http://yoursite.com/2019/07/14/DARTS:Differentiable%20Architecture%20Search/"/>
-    <id>http://yoursite.com/2019/07/14/DARTS:Differentiable Architecture Search/</id>
-    <published>2019-07-13T22:25:01.000Z</published>
-    <updated>2019-07-13T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liu H, Simonyan K, Yang Y. Darts: Differentiable architecture search[J]. arXiv preprint arXiv:1806.09055, 2018.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
-    
-      <category term="Gradient" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/Gradient/"/>
-    
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
-    
-      <category term="Gradient" scheme="http://yoursite.com/tags/Gradient/"/>
-    
-      <category term="Darts" scheme="http://yoursite.com/tags/Darts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2019) Cross-Modal Self-Attention Network for Referring Image Segmentation</title>
-    <link href="http://yoursite.com/2019/06/25/Cross-Modal%20Self-Attention%20Network%20for%20Referring%20Image%20Segmentation/"/>
-    <id>http://yoursite.com/2019/06/25/Cross-Modal Self-Attention Network for Referring Image Segmentation/</id>
-    <published>2019-06-24T22:25:02.000Z</published>
-    <updated>2019-06-24T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Ye L, Rochan M, Liu Z, et al. Cross-Modal Self-Attention Network for Referring Image Segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 10502-10511.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
-    
-      <category term="Non-local" scheme="http://yoursite.com/tags/Non-local/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2019) Cross-Modal Relationship Inference for Grounding Referring Expressions</title>
-    <link href="http://yoursite.com/2019/06/25/Cross-Modal%20Relationship%20Inference%20for%20Grounding%20Referring%20Expressions/"/>
-    <id>http://yoursite.com/2019/06/25/Cross-Modal Relationship Inference for Grounding Referring Expressions/</id>
-    <published>2019-06-24T22:25:01.000Z</published>
-    <updated>2019-06-24T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Yang S, Li G, Yu Y. Cross-Modal Relationship Inference for Grounding Referring Expressions[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 4145-4154.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
-    
-      <category term="Graph Model" scheme="http://yoursite.com/tags/Graph-Model/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2019) Dynamic Graph Attention for Referring Expression Comprehension</title>
-    <link href="http://yoursite.com/2019/06/21/Dynamic%20Graph%20Attention%20for%20Referring%20Expression%20Comprehension/"/>
-    <id>http://yoursite.com/2019/06/21/Dynamic Graph Attention for Referring Expression Comprehension/</id>
-    <published>2019-06-20T22:25:01.000Z</published>
-    <updated>2019-06-20T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Yang S, Li G, Yu Y. Dynamic Graph Attention for Referring Expression Comprehension[J]. arXiv preprint arXiv:1909.08164, 2019.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
-    
-      <category term="DGA" scheme="http://yoursite.com/tags/DGA/"/>
-    
-      <category term="Graph" scheme="http://yoursite.com/tags/Graph/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2019) Neighbourhood Watch:Referring Expression Comprehension via Language-guided Graph Attention Networks</title>
-    <link href="http://yoursite.com/2019/06/20/Neighbourhood%20Watch:Referring%20Expression%20Comprehension%20via%20Language-guided%20Graph%20Attention%20Networks/"/>
-    <id>http://yoursite.com/2019/06/20/Neighbourhood Watch:Referring Expression Comprehension via Language-guided Graph Attention Networks/</id>
-    <published>2019-06-19T22:25:01.000Z</published>
-    <updated>2019-06-19T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Wang P, Wu Q, Cao J, et al. Neighbourhood watch: Referring expression comprehension via language-guided graph attention networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 1960-1968.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
-    
-      <category term="LGRAN" scheme="http://yoursite.com/tags/LGRAN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2019) CLEVR-Ref+:Diagnosing Visual Reasoning with Referring Expressions</title>
-    <link href="http://yoursite.com/2019/06/13/CLEVR-Ref+:Diagnosing%20Visual%20Reasoning%20with%20Referring%20Expressions/"/>
-    <id>http://yoursite.com/2019/06/13/CLEVR-Ref+:Diagnosing Visual Reasoning with Referring Expressions/</id>
-    <published>2019-06-12T22:25:03.000Z</published>
-    <updated>2019-06-12T22:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liu R , Liu C , Bai Y , et al. CLEVR-Ref+: Diagnosing Visual Reasoning with Referring Expressions[J]. 2019.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
-    
-      <category term="Nerual Module Networks" scheme="http://yoursite.com/tags/Nerual-Module-Networks/"/>
-    
-      <category term="IEP" scheme="http://yoursite.com/tags/IEP/"/>
-    
-      <category term="IEP-Ref" scheme="http://yoursite.com/tags/IEP-Ref/"/>
-    
-      <category term="CLEVR-Ref+" scheme="http://yoursite.com/tags/CLEVR-Ref/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Inferring and executing programs for visual reasoning</title>
-    <link href="http://yoursite.com/2019/06/13/Inferring%20and%20executing%20programs%20for%20visual%20reasoning/"/>
-    <id>http://yoursite.com/2019/06/13/Inferring and executing programs for visual reasoning/</id>
-    <published>2019-06-12T22:25:02.000Z</published>
-    <updated>2019-06-12T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Johnson J, Hariharan B, van der Maaten L, et al. Inferring and executing programs for visual reasoning[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 2989-2998.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="VQA" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/VQA/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Nerual Module Networks" scheme="http://yoursite.com/tags/Nerual-Module-Networks/"/>
-    
-      <category term="IEP" scheme="http://yoursite.com/tags/IEP/"/>
-    
-      <category term="VQA" scheme="http://yoursite.com/tags/VQA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2016) Deep Compositional Question Answering with Neural Module Networks</title>
-    <link href="http://yoursite.com/2019/06/13/Deep%20Compositional%20Question%20Answering%20with%20Neural%20Module%20Networks/"/>
-    <id>http://yoursite.com/2019/06/13/Deep Compositional Question Answering with Neural Module Networks/</id>
-    <published>2019-06-12T22:25:01.000Z</published>
-    <updated>2019-06-12T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Andreas J, Rohrbach M, Darrell T, et al. Neural module networks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 39-48.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="VQA" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/VQA/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Nerual Module Networks" scheme="http://yoursite.com/tags/Nerual-Module-Networks/"/>
-    
-      <category term="VQA" scheme="http://yoursite.com/tags/VQA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2019) Improving Referring Expression Grounding with Cross-modal Attention-guided Erasing</title>
-    <link href="http://yoursite.com/2019/06/07/Improving%20Referring%20Expression%20Grounding%20with%20Cross-modal%20Attention-guided%20Erasing/"/>
-    <id>http://yoursite.com/2019/06/07/Improving Referring Expression Grounding with Cross-modal Attention-guided Erasing/</id>
-    <published>2019-06-06T22:25:02.000Z</published>
-    <updated>2019-06-06T22:25:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Liu X, Wang Z, Shao J, et al. Improving Referring Expression Grounding with Cross-modal Attention-guided Erasing[J]. arXiv preprint arXiv:1903.00839, 2019.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
-    
-      <category term="MAttNet" scheme="http://yoursite.com/tags/MAttNet/"/>
-    
-      <category term="Erasing" scheme="http://yoursite.com/tags/Erasing/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) MAttNet:Modular Attention Network for Referring Expression Comprehension</title>
-    <link href="http://yoursite.com/2019/06/07/MAttNet:%20Modular%20Attention%20Network%20for%20Referring%20Expression%20Comprehension/"/>
-    <id>http://yoursite.com/2019/06/07/MAttNet: Modular Attention Network for Referring Expression Comprehension/</id>
-    <published>2019-06-06T22:25:01.000Z</published>
-    <updated>2019-06-06T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Yu L, Lin Z, Shen X, et al. Mattnet: Modular attention network for referring expression comprehension[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 1307-1315.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/categories/Paper-Note/Cross-Modality/Referring-Expression/"/>
-    
-    
-      <category term="Cross-Modality" scheme="http://yoursite.com/tags/Cross-Modality/"/>
-    
-      <category term="Referring Expression" scheme="http://yoursite.com/tags/Referring-Expression/"/>
-    
-      <category term="MAttNet" scheme="http://yoursite.com/tags/MAttNet/"/>
     
   </entry>
   
