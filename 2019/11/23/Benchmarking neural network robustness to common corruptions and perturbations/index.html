@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.8.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.1">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.1" color="#222">
+  <link rel="alternate" href="/atom.xml" title="Alex Hex" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.1">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.4.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Geirhos R, Rubisch P, Michaelis C, et al. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness[C]. international conference on learning representat">
+<meta name="keywords" content="ImageNet-C,ImageNet-P,Image Corruption,Dataset">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(ICLR 2019) Benchmarking neural network robustness to common corruptions and perturbations">
+<meta property="og:url" content="http://yoursite.com/2019/11/23/Benchmarking neural network robustness to common corruptions and perturbations/index.html">
+<meta property="og:site_name" content="Alex Hex">
+<meta property="og:description" content="Geirhos R, Rubisch P, Michaelis C, et al. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness[C]. international conference on learning representat">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/1.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/5.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/6.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/2.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/3.jpg?raw=true">
+<meta property="og:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/4.jpg?raw=true">
+<meta property="og:updated_time" content="2019-11-23T08:37:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="(ICLR 2019) Benchmarking neural network robustness to common corruptions and perturbations">
+<meta name="twitter:description" content="Geirhos R, Rubisch P, Michaelis C, et al. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness[C]. international conference on learning representat">
+<meta name="twitter:image" content="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/1.jpg?raw=true">
+  <link rel="canonical" href="http://yoursite.com/2019/11/23/Benchmarking neural network robustness to common corruptions and perturbations/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>(ICLR 2019) Benchmarking neural network robustness to common corruptions and perturbations | Alex Hex</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alex Hex</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-categories">
+      
+    
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-tags">
+      
+    
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-aboutme">
+      
+    
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>AboutMe</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger">
+        
+          <i class="fa fa-search fa-fw"></i>Search</a>
+      </li>
+    
+  </ul>
+
+    
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none" placeholder="Searching..." spellcheck="false" type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="default">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/23/Benchmarking neural network robustness to common corruptions and perturbations/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alex Hex">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alex Hex">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">(ICLR 2019) Benchmarking neural network robustness to common corruptions and perturbations
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-11-23 16:37:01" itemprop="dateCreated datePublished" datetime="2019-11-23T16:37:01+08:00">2019-11-23</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/" itemprop="url" rel="index"><span itemprop="name">Paper Note</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Paper-Note/Dataset/" itemprop="url" rel="index"><span itemprop="name">Dataset</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>Geirhos R, Rubisch P, Michaelis C, et al. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness[C]. international conference on learning representations, 2019.</p>
+</blockquote>
+<a id="more"></a>
+<p><br></p>
+<hr>
+<h1 id="1-Overview"><a href="#1-Overview" class="headerlink" title="1. Overview"></a>1. Overview</h1><hr>
+<h2 id="1-1-Motivation"><a href="#1-1-Motivation" class="headerlink" title="1.1. Motivation"></a>1.1. Motivation</h2><p>In this paper, it proposes two <strong>Benchmark Dataset</strong><br><strong>1)</strong> <strong>ImageNet-C</strong> (Different Corruption).<br><strong>2)</strong> <strong>ImageNet-P</strong> (Perturbation Sequence).<br><strong>3)</strong> Evaluation Metric.<br><strong>4)</strong> Protocal: Allow <strong>train</strong> with <strong>other distortions</strong> (e.g., uniform noise), <strong>standard data augmentation</strong> (cropping, flipping)</p>
+<hr>
+<h1 id="2-Definition"><a href="#2-Definition" class="headerlink" title="2. Definition"></a>2. Definition</h1><hr>
+<p><strong>1)</strong> <strong>Corruption Robustness</strong> ($E_{c \sim C}[P_{(x,y) \sim D} (f(c(x) = y))]$).<br><strong>2)</strong> <strong>Perturbation Robustness</strong> ($E_{\mathcal{e} \sim \mathcal{E}}[ P_{(x,y) \sim D}(f(\epsilon (x)) = f(x)) ]$)</p>
+<hr>
+<h1 id="3-ImageNet-C"><a href="#3-ImageNet-C" class="headerlink" title="3. ImageNet-C"></a>3. ImageNet-C</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/1.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> <strong>Four</strong> main categories Corruptions: <strong>Noise, Blur, Weather, Digital</strong>.<br><strong>2)</strong> Each corruption type has <strong>five levels</strong> of severity. (Total 75 ($15 \times 5$) corruptions)</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/5.jpg?raw=true" alt><br></div>
+
+<h2 id="3-1-Common-Corruption"><a href="#3-1-Common-Corruption" class="headerlink" title="3.1. Common Corruption"></a>3.1. Common Corruption</h2><p><strong>1)</strong> Gaussian Noise. Appear in <strong>low-lighting conditions</strong><br><strong>2)</strong> Shot Noise (Poisson Noise). Electronic noise caused by discrete <strong>nature of light</strong><br><strong>3)</strong> Impulse Noise. Color analogue of <strong>salt-and-pepper</strong> noise caused by <strong>bit error</strong>.<br><strong>4)</strong> Defocus Blur. Out of focus<br><strong>5)</strong> Frosted Glass Blur. Appear with “frosted glass” windows or panels.<br><strong>6)</strong> Motion Blur. Camera moves quickly<br><strong>7)</strong> Zoom Blur. Camera moves toward an object rapidly<br><strong>8)</strong> Snow.<br><strong>9)</strong> Frost. lenses or windows are coated with ice crystals.<br><strong>10)</strong> Fog.<br><strong>11)</strong> Brightness.<br><strong>12)</strong> Contrast.<br><strong>13)</strong> Elastic.<br><strong>14)</strong> Pixelation. upsample low-resolution images<br><strong>15)</strong> JPEG.</p>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/6.jpg?raw=true" alt><br></div>
+
+<h2 id="3-2-Mean-Corruption-Error-mCE"><a href="#3-2-Mean-Corruption-Error-mCE" class="headerlink" title="3.2. Mean Corruption Error (mCE)"></a>3.2. Mean Corruption Error (mCE)</h2><p>$CE_c^f = ( \Sigma_{s=1}^5 E_{s,c}^f - E_{clean}^f ) / ( \Sigma_{s=1}^5 E_{s,c}^{AlexNet} - E_{clean}^{AlexNet} )$</p>
+<p><strong>1)</strong> $c$. Corruption type<br><strong>2)</strong> $s$. Level of severity<br><strong>3)</strong> $f$. Network</p>
+<hr>
+<h1 id="4-ImageNet-P"><a href="#4-ImageNet-P" class="headerlink" title="4. ImageNet-P"></a>4. ImageNet-P</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/2.jpg?raw=true" alt><br></div>
+
+<p><strong>1)</strong> Like ImageNet-C, consists of noise, blur, weather and digital distortions.<br><strong>2)</strong> Departs from ImageNet-C, ImageNet-P having perturbation sequences (more than 30 frames).<br><strong>3)</strong> Apart from <strong>Gaussian Noise</strong>, the remaining perturbation sequences have temporality. Each frame is a perturbation of the previous frame.<br><strong>4)</strong> The perturbation sequences with <strong>temporality</strong> are created with <strong>motion blur, zoom blur, snow, brightness, translate, rotate, tilt and scale perturbations.</strong></p>
+<h2 id="4-1-Mean-Top-5-Distance-mT5D"><a href="#4-1-Mean-Top-5-Distance-mT5D" class="headerlink" title="4.1. Mean Top-5 Distance (mT5D)"></a>4.1. Mean Top-5 Distance (mT5D)</h2><p>$S = {( x_1^{(i)}, x_2^{(i)}, …, x_n^{(i)}, )}_{i=1}^m$</p>
+<h3 id="4-1-1-Top-1"><a href="#4-1-1-Top-1" class="headerlink" title="4.1.1 Top-1"></a>4.1.1 Top-1</h3><p><strong>1)</strong> For <strong>other perturbation sequences</strong>:<br>$FP_p^f = \frac{1}{m(n-1)} \sum_{i=1}^m \sum_{j=2}^n \mathbf{1} (f(x_j^{(i)} \ne f(x_{j-1}^{(i)})) = \mathbf{P}_{x \sim S} (f(x_j) \ne f(x_{j-1})).$</p>
+<p><strong>2)</strong> For <strong>noise perturbation sequences</strong>:<br>$FP_p^f = \frac{1}{m(n-1)} \sum_{i=1}^m \sum_{j=2}^n \mathbf{1} (f(x_j^{(i)} \ne f(x_{1}^{(i)})) = \mathbf{P}_{x \sim S} (f(x_j) \ne f(x_{1}) | j \gt 1) .$</p>
+<p><strong>3)</strong> <strong>Flip Rate</strong>: $FR_p^f = FP_p^f / FP_p^{AlexNet}$.</p>
+<h3 id="4-1-2-Top-5"><a href="#4-1-2-Top-5" class="headerlink" title="4.1.2 Top-5"></a>4.1.2 Top-5</h3><p><strong>1)</strong> For <strong>other perturbation sequences</strong>:<br>$uT5D_p^f = \frac{1}{m(n-1)} \sum_{i=1}^m \sum_{j=2}^n d(\tau(x_j), \tau(x_{j-1})) = \mathbf{P}_{x \sim S} (d(\tau (x_j), \tau (x_{j-1})))$</p>
+<p>(a) $\tau$. Permutation of prediction rank.<br>(b) $d$. L1 distance.</p>
+<p><strong>2)</strong> For <strong>noise perturbation sequences</strong>:<br>$uT5D_p^f = \mathbf{E}_{x \sim S} [d(\tau (x_j), \tau (x_1)) | j \gt 1 ]$.</p>
+<p><strong>3)</strong> $T5D_p^f = uT5D_p^f / uT5D_p^{AlexNet}$</p>
+<hr>
+<h1 id="5-Experiments"><a href="#5-Experiments" class="headerlink" title="5. Experiments"></a>5. Experiments</h1><hr>
+<div align="center"><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/3.jpg?raw=true" alt><br>    <img src="https://github.com/AlexHex7/blogstore_1/blob/master/Benchmarking neural network robustness to common corruptions and perturbations/4.jpg?raw=true" alt><br></div>
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/ImageNet-C/" rel="tag"># ImageNet-C</a>
+            
+              <a href="/tags/ImageNet-P/" rel="tag"># ImageNet-P</a>
+            
+              <a href="/tags/Image-Corruption/" rel="tag"># Image Corruption</a>
+            
+              <a href="/tags/Dataset/" rel="tag"># Dataset</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/11/23/Deep networks with stochastic depth/" rel="next" title="(ECCV 2016) Deep networks with stochastic depth">
+                  <i class="fa fa-chevron-left"></i> (ECCV 2016) Deep networks with stochastic depth
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Overview"><span class="nav-text">1. Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-Motivation"><span class="nav-text">1.1. Motivation</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-Definition"><span class="nav-text">2. Definition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-ImageNet-C"><span class="nav-text">3. ImageNet-C</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-Common-Corruption"><span class="nav-text">3.1. Common Corruption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-Mean-Corruption-Error-mCE"><span class="nav-text">3.2. Mean Corruption Error (mCE)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-ImageNet-P"><span class="nav-text">4. ImageNet-P</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-Mean-Top-5-Distance-mT5D"><span class="nav-text">4.1. Mean Top-5 Distance (mT5D)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-1-Top-1"><span class="nav-text">4.1.1 Top-1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-2-Top-5"><span class="nav-text">4.1.2 Top-5</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-Experiments"><span class="nav-text">5. Experiments</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" src="https://avatars2.githubusercontent.com/u/30361851?s=460&v=4" alt="Alex Hex">
+  <p class="site-author-name" itemprop="name">Alex Hex</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">224</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">categories</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        <span class="site-state-item-count">296</span>
+        <span class="site-state-item-name">tags</span>
+        </a>
+      </div>
+    
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/AlexHex7" title="GitHub &rarr; https://github.com/AlexHex7" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:alexhex7@foxmail.com" title="E-Mail &rarr; mailto:alexhex7@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    
+  
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alex Hex</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.4.1</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+  
+    <span class="post-meta-divider">|</span>
+  
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.1"></script><script src="/js/motion.js?v=7.4.1"></script>
+<script src="/js/schemes/muse.js?v=7.4.1"></script>
+
+<script src="/js/next-boot.js?v=7.4.1"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="/js/local-search.js?v=7.4.1"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
+  
+
+  
+
+  
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
+</body>
+</html>

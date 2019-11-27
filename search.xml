@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[(ICLR 2019) Benchmarking neural network robustness to common corruptions and perturbations]]></title>
+    <url>%2F2019%2F11%2F23%2FBenchmarking%20neural%20network%20robustness%20to%20common%20corruptions%20and%20perturbations%2F</url>
+    <content type="text"><![CDATA[Geirhos R, Rubisch P, Michaelis C, et al. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness[C]. international conference on learning representations, 2019. 1. Overview 1.1. MotivationIn this paper, it proposes two Benchmark Dataset1) ImageNet-C (Different Corruption).2) ImageNet-P (Perturbation Sequence).3) Evaluation Metric.4) Protocal: Allow train with other distortions (e.g., uniform noise), standard data augmentation (cropping, flipping) 2. Definition 1) Corruption Robustness ($E_{c \sim C}[P_{(x,y) \sim D} (f(c(x) = y))]$).2) Perturbation Robustness ($E_{\mathcal{e} \sim \mathcal{E}}[ P_{(x,y) \sim D}(f(\epsilon (x)) = f(x)) ]$) 3. ImageNet-C 1) Four main categories Corruptions: Noise, Blur, Weather, Digital.2) Each corruption type has five levels of severity. (Total 75 ($15 \times 5$) corruptions) 3.1. Common Corruption1) Gaussian Noise. Appear in low-lighting conditions2) Shot Noise (Poisson Noise). Electronic noise caused by discrete nature of light3) Impulse Noise. Color analogue of salt-and-pepper noise caused by bit error.4) Defocus Blur. Out of focus5) Frosted Glass Blur. Appear with “frosted glass” windows or panels.6) Motion Blur. Camera moves quickly7) Zoom Blur. Camera moves toward an object rapidly8) Snow.9) Frost. lenses or windows are coated with ice crystals.10) Fog.11) Brightness.12) Contrast.13) Elastic.14) Pixelation. upsample low-resolution images15) JPEG. 3.2. Mean Corruption Error (mCE)$CE_c^f = ( \Sigma_{s=1}^5 E_{s,c}^f - E_{clean}^f ) / ( \Sigma_{s=1}^5 E_{s,c}^{AlexNet} - E_{clean}^{AlexNet} )$ 1) $c$. Corruption type2) $s$. Level of severity3) $f$. Network 4. ImageNet-P 1) Like ImageNet-C, consists of noise, blur, weather and digital distortions.2) Departs from ImageNet-C, ImageNet-P having perturbation sequences (more than 30 frames).3) Apart from Gaussian Noise, the remaining perturbation sequences have temporality. Each frame is a perturbation of the previous frame.4) The perturbation sequences with temporality are created with motion blur, zoom blur, snow, brightness, translate, rotate, tilt and scale perturbations. 4.1. Mean Top-5 Distance (mT5D)$S = {( x_1^{(i)}, x_2^{(i)}, …, x_n^{(i)}, )}_{i=1}^m$ 4.1.1 Top-11) For other perturbation sequences:$FP_p^f = \frac{1}{m(n-1)} \sum_{i=1}^m \sum_{j=2}^n \mathbf{1} (f(x_j^{(i)} \ne f(x_{j-1}^{(i)})) = \mathbf{P}_{x \sim S} (f(x_j) \ne f(x_{j-1})).$ 2) For noise perturbation sequences:$FP_p^f = \frac{1}{m(n-1)} \sum_{i=1}^m \sum_{j=2}^n \mathbf{1} (f(x_j^{(i)} \ne f(x_{1}^{(i)})) = \mathbf{P}_{x \sim S} (f(x_j) \ne f(x_{1}) | j \gt 1) .$ 3) Flip Rate: $FR_p^f = FP_p^f / FP_p^{AlexNet}$. 4.1.2 Top-51) For other perturbation sequences:$uT5D_p^f = \frac{1}{m(n-1)} \sum_{i=1}^m \sum_{j=2}^n d(\tau(x_j), \tau(x_{j-1})) = \mathbf{P}_{x \sim S} (d(\tau (x_j), \tau (x_{j-1})))$ (a) $\tau$. Permutation of prediction rank.(b) $d$. L1 distance. 2) For noise perturbation sequences:$uT5D_p^f = \mathbf{E}_{x \sim S} [d(\tau (x_j), \tau (x_1)) | j \gt 1 ]$. 3) $T5D_p^f = uT5D_p^f / uT5D_p^{AlexNet}$ 5. Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Dataset</category>
+      </categories>
+      <tags>
+        <tag>ImageNet-C</tag>
+        <tag>ImageNet-P</tag>
+        <tag>Image Corruption</tag>
+        <tag>Dataset</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ECCV 2016) Deep networks with stochastic depth]]></title>
+    <url>%2F2019%2F11%2F23%2FDeep%20networks%20with%20stochastic%20depth%2F</url>
+    <content type="text"><![CDATA[Huang G, Sun Y, Liu Z, et al. Deep networks with stochastic depth[C]//European conference on computer vision. Springer, Cham, 2016: 646-661. 1. Overview 1.1. MotivationDropout makes the network thinner instead of shorter. In this paper, it proposes Stochastic Depth1) For each batch, randomly drop a subset of layers and bypass them with identify function.2) Deep network during testing, while short network during training.3) Stochastic Depth during training can be regarded as implicit ensemble of networks with different depth.4) Speed up training. 2. Stochastic Depth 2.1. Mechanism $H_l = ReLU(b_l f_l (H_{l-1} + id(H_{l-1})))$. 1) $b_l = 1$. $H_l = ReLU(f_l (H_{l-1} + id(H_{l-1})))$.2) $b_l=0$. $H_l = id(H_{l-1})$. ($H_{l-1}$ is always non-negative) 2.2. Survival Probability1) linear decay rule. $p_l = 1 - \frac{l}{L}(1-P_L)$.2) In this paper, $P_0.5$. 2.3. Expected Network Depth$E(\widetilde{L})=\Sigma_{l=1}^L p_l$. 1) When $P_L = 0.5$, $E(\widetilde{L})= (3L - 1) / 4 \approx 3L/4$ 2.4. Testing$H_l^{Test} = ReLU(p_l f_l(H_{l-1}^{Test}; W_l) + H_{l-1}^{Test})$ 1) Can be interpreted as combining all possible networks into a single test architecture, in which each layer is weighted by its survival probability. 3. Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Optimization</category>
+      </categories>
+      <tags>
+        <tag>Stochastic Depth</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(ICLR 2019) EfficientNet:Rethinking model scaling for convolutional neural networks]]></title>
+    <url>%2F2019%2F11%2F23%2FEfficientNet%3A%20Rethinking%20model%20scaling%20for%20convolutional%20neural%20networks%2F</url>
+    <content type="text"><![CDATA[Tan M, Le Q V. EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks[C]. international conference on machine learning, 2019: 6105-6114. 1. Overview 1.1. MotivationExisting methods only scale one dimension (depth, width, resolution) to design network. In this paper, it proposes EfficientNet1) Compound Scaling Methods (depth $d$, width $w$, resolution $r$)2) Search a baseline EfficientNet-B0→Fix $\phi$, small grid search for $d, w, r$.→Fix $d, w, r$, scale $\phi$ to get EfficientNet-B1 to B7. 2. Compound Model Scaling 1) $N$. ConvNet2) $i$. stage3) $\hat{\mathcal{F}}_i^{d \cdot \hat{L_i}}$. repeated $d \cdot L_i$ times of layer $\mathcal{F}_i$ in stage $i$. 2.1. Observation 1) Scaling up any dimension of network width, depth, or resolution improves accuracy, but the accuracy gain diminishes for bigger models.2) It is critical to balance all dimensions of network width, depth, and resolution during ConvNet scaling. 2.2. Compound Scaling Method 1) $\alpha, \beta, \gamma$ are constants, determined by small grid search.2) $\phi$ is a user-specified coefficient, controling how many more resources are available for model scaling. 3. EfficientNet Architecture 3.1. Search for Baseline 1) Optimization Goal: $ACC(m) \times [ \frac{FLOPS(m)}{T} ]^w, w=-0.07$. $T$ is the target FLOPS2) Produce EfficientNet-B0. 3.2. Adjust Parameters1) Step 1. Fix $\phi=1$, do small grid search. $\alpha=1.2, \beta=1.1, \gamma=1.15$, under constraint of $\alpha \cdot \beta^2 \cdot \gamma^2 \approx 2$.2) Step 2. Fix $\alpha, \beta, \gamma$, scale up Baseline with different $\phi$. 4. Experiments]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Architecture</category>
+        <category>Network</category>
+      </categories>
+      <tags>
+        <tag>Auto-ML</tag>
+        <tag>EfficientNet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(CVPR 2019) Auto-deeplab:Hierarchical neural architecture search for semantic image segmentation]]></title>
+    <url>%2F2019%2F11%2F23%2FAuto-deeplab%3A%20Hierarchical%20neural%20architecture%20search%20for%20semantic%20image%20segmentation%2F</url>
+    <content type="text"><![CDATA[Liu C, Chen L C, Schroff F, et al. Auto-deeplab: Hierarchical neural architecture search for semantic image segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 82-92. 1. Overview 1.1. MotivationExisting methods focus on searching repeatable cell, while hand-designing the outer network strucuture which is not suitable for dense image prediction. In this paper, it proposes Auto-DeepLab1) Jointly search both inner cell level $\alpha$ and outer network level $beta$ based on gradient method (like darts)2) Achieve same performance as DeepLabv3+ while 2.23 times faster.3) 3 GPU days. 2. Methods 2.1. Cell Level Searching1) $B$ blocks (two-branch strucuture) per cell.2) The input set of $cell^l$ ($I^l$): {$H_l, H_{l-1}$}3) The possible input set of $block_i$ in $cell^l$ ($I^l_i$): {$H_l, H_{l-1}, H^l_1, …, H^l_{i-1}$}, where $H^l_{i}$ is the output of $block_i$ in $cell^l$.4) Each block contains $(I_1, I_2, O_1, O_2, C)$. Where $I_1, I_2 \in I^l_i$, $O_1, O_2 \in O$ means operators, $C \in \mathcal{C}$ means combination operator and simply use $\oplus$ in the paper. 2.1.1 Formulation 2.2. Network Level Searching Two principles:1) The spatial resolution of the next layer is either twice as large $\frac{s}{2} \to s$, or twice as small $2s \to s$, or remains the same $s \to s$.2) The smallest spatial resolution is downsampled by 32. 1) Network begins with two-layer “stem”, each downsample by a factor of 2.2) ASPP are attached to each spatial resolution at L-th layer. (simplify to 3-branch) 2.2.1. Formulation 1) Within a cell, all tensor are of the same spatial size.2) Each layer $l$ will have at most 4 hidden states {$^4H^l, ^8H^l, ^16H^l, ^32H^l$}.3) $\beta$ controls the outer network level.4) Each $\beta$ governs an entire set of $\alpha$. 2.3. OptimizationSplit the training data into $trainA$ and $TrainB$.1) Update network weights $w$ by $\nabla_w L_{trainA}(w, \alpha, \beta)$.2) Update architecture $\alpha, \beta$ by $\nabla_{\alpha, \beta} L_{trainB}(w, \alpha, \beta)$ 2.4. Decoding1) For cell level, retain 2 strongest predecessors for each block ($max_{k, O^k \ne_{zero}} \alpha^k_{j \to i}$). And “zero” means “no connection”.2) For network level, choose the max $\beta$. 3. Experiments 3.1. Details1)$L=12, B=5$.2) $Filters=B \times F \times \frac{s}{4}$. $F=8$ is the filter multiplier.3) Double the filter when half the resolution.4) $\frac{s}{2} \to s$. stride 2 Conv of “double-half”.5) $2s \to s$. Bilinear followed by $1 \times 1$ Conv.6) 3-branch ASPP: only $3 \times 3$ Conv with atrous rate $\frac{96}{s}$. output filters of ASPP is still $B \times F \times \frac{s}{4}$.7) Input image: random crop $321 \times 321$8) $Batchsize=2, Epoch=40$.9) SGD for $w$, Adam for $\alpha, \beta$10) Find that if $\alpha, \beta$ are optimized from the beginning when $w$ are not well trained, the architecture tends to fall into bad local optima. So tart optimize $\alpha, \beta$ after 20 epochs. 3.2. Comparison]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Auto-ML</category>
+        <category>Gradient</category>
+      </categories>
+      <tags>
+        <tag>Segmentation</tag>
+        <tag>Auto-ML</tag>
+        <tag>Gradient</tag>
+        <tag>DeepLab</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[(2019) Self-training with Noisy Student improves ImageNet classification]]></title>
     <url>%2F2019%2F11%2F17%2FSelf-training%20with%20Noisy%20Student%20improves%20ImageNet%20classification%2F</url>
     <content type="text"><![CDATA[Xie Q, Hovy E, Luong M T, et al. Self-training with Noisy Student improves ImageNet classification[J]. arXiv preprint arXiv:1911.04252, 2019. 1. Overview In this paper, it proposes a self-training methods to improve 1% top-1 accuracy on ImageNet. Teacher-Student based on EfficientNet. Noise Student during training, while not noise Teacher during generation of pseudo labels. To noise Student, use dropout, data augmentation and stochastic dropout. 2. Algorithm 1) Noise Student is trained to be consistent to the more powerful teacher model that is not noised when it generates pseudo labels.2) When dropout and stochastic depth are used, Teacher (no drop when generate pseudo labels) behaves like an ensemble models.3) Student needs to be sufficiently large to fit more data.4) Data Balanced of Unlabeled data (duplicate and highest confidence)5) Soft pseudo labels are more stable and faster convergence than hard (one-hot). 3. Experiments 3.1. Details1) Use JFT dataset as unlabeled data.2) Stochastic Depth. Set survival probability to 0.8 for the final layer and follow the linear decau rule for other layers.3) Dropout. 0.5 for final cls layer.4) RandAugment. two random operations with the magnitude set to 27 3.2. Noise Student 1) larger model +0.5%.2) Noise Student + 1.9%. 3.3. Adversarial Attack 3.4. Ablation Study]]></content>
@@ -10,17 +68,17 @@
         <category>Self-training</category>
       </categories>
       <tags>
+        <tag>Stochastic Depth</tag>
+        <tag>EfficientNet</tag>
         <tag>Self-training</tag>
         <tag>Teacher-Student</tag>
         <tag>Data Augmentation</tag>
-        <tag>Stochastic Depth</tag>
-        <tag>EfficientNet</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[(CVPR 2018) Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation]]></title>
+    <title><![CDATA[(ECCV 2018) Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation]]></title>
     <url>%2F2019%2F11%2F17%2FEncoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation%2F</url>
-    <content type="text"><![CDATA[Chen L, Zhu Y, Papandreou G, et al. Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation[J]. arXiv: Computer Vision and Pattern Recognition, 2018. 1. Overview In this paper, it proposes DeepLabv3+ by extending DeepLabv3. Encoder-Decoder structure. Adapt Xception model. Apply Depthwise Separable Conv. 1.1. Architecture 1) Encoder output: last feature map before logits in the DeepLabv3.2) Apply $1 \times 1$ Conv on low-level features to reduce the number of channels, since large channels may ignore encoder output. 1.2. Xception Make a few changes:1) Deeper Xception.2) Replace all MaxPool with Depthwise Separable Conv (with strides), which enables to apply Atrous Separable Conv.3) After each $3 \times 3$ Depthwise Conv, add BN-ReLU. 1.3. Comparison]]></content>
+    <content type="text"><![CDATA[Chen L C, Zhu Y, Papandreou G, et al. Encoder-decoder with atrous separable convolution for semantic image segmentation[C]//Proceedings of the European conference on computer vision (ECCV). 2018: 801-818. 1. Overview In this paper, it proposes DeepLabv3+ by extending DeepLabv3. Encoder-Decoder structure. Adapt Xception model. Apply Depthwise Separable Conv. 1.1. Architecture 1) Encoder output: last feature map before logits in the DeepLabv3.2) Apply $1 \times 1$ Conv on low-level features to reduce the number of channels, since large channels may ignore encoder output. 1.2. Xception Make a few changes:1) Deeper Xception.2) Replace all MaxPool with Depthwise Separable Conv (with strides), which enables to apply Atrous Separable Conv.3) After each $3 \times 3$ Depthwise Conv, add BN-ReLU. 1.3. Comparison]]></content>
       <categories>
         <category>Paper Note</category>
         <category>Segmentation</category>
@@ -925,8 +983,8 @@
         <category>Network</category>
       </categories>
       <tags>
-        <tag>ResNeXt</tag>
         <tag>Network</tag>
+        <tag>ResNeXt</tag>
       </tags>
   </entry>
   <entry>
@@ -1416,8 +1474,8 @@
       </categories>
       <tags>
         <tag>NLP</tag>
-        <tag>Network</tag>
         <tag>TCN</tag>
+        <tag>Network</tag>
       </tags>
   </entry>
   <entry>

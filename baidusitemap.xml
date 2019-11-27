@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://alexhex7.github.io/2019/11/23/Benchmarking%20neural%20network%20robustness%20to%20common%20corruptions%20and%20perturbations/</loc>
+    <lastmod>2019-11-23</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/23/Deep%20networks%20with%20stochastic%20depth/</loc>
+    <lastmod>2019-11-23</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/23/EfficientNet:%20Rethinking%20model%20scaling%20for%20convolutional%20neural%20networks/</loc>
+    <lastmod>2019-11-23</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/23/Auto-deeplab:%20Hierarchical%20neural%20architecture%20search%20for%20semantic%20image%20segmentation/</loc>
+    <lastmod>2019-11-23</lastmod>
+  </url>  <url>
     <loc>https://alexhex7.github.io/2019/11/17/Self-training%20with%20Noisy%20Student%20improves%20ImageNet%20classification/</loc>
     <lastmod>2019-11-17</lastmod>
   </url>  <url>

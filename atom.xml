@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-17T15:49:02.000Z</updated>
+  <updated>2019-11-23T08:37:01.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,122 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(ICLR 2019) Benchmarking neural network robustness to common corruptions and perturbations</title>
+    <link href="http://yoursite.com/2019/11/23/Benchmarking%20neural%20network%20robustness%20to%20common%20corruptions%20and%20perturbations/"/>
+    <id>http://yoursite.com/2019/11/23/Benchmarking neural network robustness to common corruptions and perturbations/</id>
+    <published>2019-11-23T08:37:01.000Z</published>
+    <updated>2019-11-23T08:37:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Geirhos R, Rubisch P, Michaelis C, et al. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness[C]. international conference on learning representations, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Dataset" scheme="http://yoursite.com/categories/Paper-Note/Dataset/"/>
+    
+    
+      <category term="ImageNet-C" scheme="http://yoursite.com/tags/ImageNet-C/"/>
+    
+      <category term="ImageNet-P" scheme="http://yoursite.com/tags/ImageNet-P/"/>
+    
+      <category term="Image Corruption" scheme="http://yoursite.com/tags/Image-Corruption/"/>
+    
+      <category term="Dataset" scheme="http://yoursite.com/tags/Dataset/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ECCV 2016) Deep networks with stochastic depth</title>
+    <link href="http://yoursite.com/2019/11/23/Deep%20networks%20with%20stochastic%20depth/"/>
+    <id>http://yoursite.com/2019/11/23/Deep networks with stochastic depth/</id>
+    <published>2019-11-23T06:03:01.000Z</published>
+    <updated>2019-11-23T06:03:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Huang G, Sun Y, Liu Z, et al. Deep networks with stochastic depth[C]//European conference on computer vision. Springer, Cham, 2016: 646-661.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Optimization" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Optimization/"/>
+    
+    
+      <category term="Stochastic Depth" scheme="http://yoursite.com/tags/Stochastic-Depth/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2019) EfficientNet:Rethinking model scaling for convolutional neural networks</title>
+    <link href="http://yoursite.com/2019/11/23/EfficientNet:%20Rethinking%20model%20scaling%20for%20convolutional%20neural%20networks/"/>
+    <id>http://yoursite.com/2019/11/23/EfficientNet: Rethinking model scaling for convolutional neural networks/</id>
+    <published>2019-11-23T05:12:01.000Z</published>
+    <updated>2019-11-23T05:15:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Tan M, Le Q V. EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks[C]. international conference on machine learning, 2019: 6105-6114.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
+    
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
+    
+      <category term="EfficientNet" scheme="http://yoursite.com/tags/EfficientNet/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(CVPR 2019) Auto-deeplab:Hierarchical neural architecture search for semantic image segmentation</title>
+    <link href="http://yoursite.com/2019/11/23/Auto-deeplab:%20Hierarchical%20neural%20architecture%20search%20for%20semantic%20image%20segmentation/"/>
+    <id>http://yoursite.com/2019/11/23/Auto-deeplab: Hierarchical neural architecture search for semantic image segmentation/</id>
+    <published>2019-11-23T02:04:01.000Z</published>
+    <updated>2019-11-23T02:04:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Liu C, Chen L C, Schroff F, et al. Auto-deeplab: Hierarchical neural architecture search for semantic image segmentation[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 82-92.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
+    
+      <category term="Gradient" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/Gradient/"/>
+    
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
+    
+      <category term="Gradient" scheme="http://yoursite.com/tags/Gradient/"/>
+    
+      <category term="DeepLab" scheme="http://yoursite.com/tags/DeepLab/"/>
+    
+  </entry>
   
   <entry>
     <title>(2019) Self-training with Noisy Student improves ImageNet classification</title>
@@ -38,20 +154,20 @@
       <category term="Self-training" scheme="http://yoursite.com/categories/Paper-Note/Learning/Self-training/"/>
     
     
+      <category term="Stochastic Depth" scheme="http://yoursite.com/tags/Stochastic-Depth/"/>
+    
+      <category term="EfficientNet" scheme="http://yoursite.com/tags/EfficientNet/"/>
+    
       <category term="Self-training" scheme="http://yoursite.com/tags/Self-training/"/>
     
       <category term="Teacher-Student" scheme="http://yoursite.com/tags/Teacher-Student/"/>
     
       <category term="Data Augmentation" scheme="http://yoursite.com/tags/Data-Augmentation/"/>
     
-      <category term="Stochastic Depth" scheme="http://yoursite.com/tags/Stochastic-Depth/"/>
-    
-      <category term="EfficientNet" scheme="http://yoursite.com/tags/EfficientNet/"/>
-    
   </entry>
   
   <entry>
-    <title>(CVPR 2018) Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation</title>
+    <title>(ECCV 2018) Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation</title>
     <link href="http://yoursite.com/2019/11/17/Encoder-Decoder%20with%20Atrous%20Separable%20Convolution%20for%20Semantic%20Image%20Segmentation/"/>
     <id>http://yoursite.com/2019/11/17/Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation/</id>
     <published>2019-11-17T15:01:02.000Z</published>
@@ -60,7 +176,7 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;Chen L, Zhu Y, Papandreou G, et al. Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation[J]. arXiv: Computer Vision and Pattern Recognition, 2018.&lt;/p&gt;
+&lt;p&gt;Chen L C, Zhu Y, Papandreou G, et al. Encoder-decoder with atrous separable convolution for semantic image segmentation[C]//Proceedings of the European conference on computer vision (ECCV). 2018: 801-818.&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
@@ -503,124 +619,6 @@
       <category term="SE Block" scheme="http://yoursite.com/tags/SE-Block/"/>
     
       <category term="ShuffleNet V2" scheme="http://yoursite.com/tags/ShuffleNet-V2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2018) MobileNetV2:Inverted Residuals and Linear Bottlenecks</title>
-    <link href="http://yoursite.com/2019/10/13/MobileNetV2:%20Inverted%20Residuals%20and%20Linear%20Bottlenecks/"/>
-    <id>http://yoursite.com/2019/10/13/MobileNetV2: Inverted Residuals and Linear Bottlenecks/</id>
-    <published>2019-10-13T13:25:07.000Z</published>
-    <updated>2019-10-13T13:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Sandler M, Howard A, Zhu M, et al. Mobilenetv2: Inverted residuals and linear bottlenecks[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2018: 4510-4520.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
-    
-      <category term="MobileNetV2" scheme="http://yoursite.com/tags/MobileNetV2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) FlowNet 2.0:Evolution of Optical Flow Estimation with Deep Networks</title>
-    <link href="http://yoursite.com/2019/10/13/FlowNet%202.0:%20Evolution%20of%20Optical%20Flow%20Estimation%20with%20Deep%20Networks/"/>
-    <id>http://yoursite.com/2019/10/13/FlowNet 2.0: Evolution of Optical Flow Estimation with Deep Networks/</id>
-    <published>2019-10-13T01:25:01.000Z</published>
-    <updated>2019-10-13T01:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Ilg E, Mayer N, Saikia T, et al. Flownet 2.0: Evolution of optical flow estimation with deep networks[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 2462-2470.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
-    
-    
-      <category term="FlowNet2.0" scheme="http://yoursite.com/tags/FlowNet2-0/"/>
-    
-      <category term="Flying Chairs Dataset" scheme="http://yoursite.com/tags/Flying-Chairs-Dataset/"/>
-    
-      <category term="FlyingThings3D" scheme="http://yoursite.com/tags/FlyingThings3D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2015) FlowNet:Learning optical flow with convolutional networks</title>
-    <link href="http://yoursite.com/2019/10/01/FlowNet:%20Learning%20optical%20flow%20with%20convolutional%20networks/"/>
-    <id>http://yoursite.com/2019/10/01/FlowNet: Learning optical flow with convolutional networks/</id>
-    <published>2019-10-01T01:25:01.000Z</published>
-    <updated>2019-10-01T01:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Dosovitskiy A, Fischer P, Ilg E, et al. Flownet: Learning optical flow with convolutional networks[C]//Proceedings of the IEEE international conference on computer vision. 2015: 2758-2766.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
-    
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
-    
-    
-      <category term="FlowNet" scheme="http://yoursite.com/tags/FlowNet/"/>
-    
-      <category term="Flying Chairs Dataset" scheme="http://yoursite.com/tags/Flying-Chairs-Dataset/"/>
-    
-      <category term="Correlation Layer" scheme="http://yoursite.com/tags/Correlation-Layer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2019) Progressive Differentiable Architecture Search:Bridging the Depth Gap between Search and Evaluation</title>
-    <link href="http://yoursite.com/2019/08/20/Progressive%20Differentiable%20Architecture%20Search:Bridging%20the%20Depth%20Gap%20between%20Search%20and%20Evaluation/"/>
-    <id>http://yoursite.com/2019/08/20/Progressive Differentiable Architecture Search:Bridging the Depth Gap between Search and Evaluation/</id>
-    <published>2019-08-19T22:25:01.000Z</published>
-    <updated>2019-08-19T22:25:01.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Chen X, Xie L, Wu J, et al. Progressive Differentiable Architecture Search: Bridging the Depth Gap between Search and Evaluation[J]. arXiv preprint arXiv:1904.12760, 2019.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
-    
-      <category term="Gradient" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/Gradient/"/>
-    
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
-    
-      <category term="Gradient" scheme="http://yoursite.com/tags/Gradient/"/>
-    
-      <category term="P-Darts" scheme="http://yoursite.com/tags/P-Darts/"/>
     
   </entry>
   
