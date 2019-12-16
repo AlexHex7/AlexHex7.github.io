@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://alexhex7.github.io/2019/12/13/Multimodal%20unsupervised%20image-to-image%20translation/</loc>
+    <lastmod>2019-12-13</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2017/12/19/Transformation/</loc>
+    <lastmod>2019-12-09</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/12/08/Arbitrary%20style%20transfer%20in%20real-time%20with%20adaptive%20instance%20normalization/</loc>
+    <lastmod>2019-12-08</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/12/08/Few-Shot%20Unsupervised%20Image-to-Image%20Translation/</loc>
+    <lastmod>2019-12-08</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/12/07/SinGAN:%20Learning%20a%20Generative%20Model%20from%20a%20Single%20Natural%20Image/</loc>
+    <lastmod>2019-12-07</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/12/07/PSGAN:%20Pose-Robust%20Spatial-Aware%20GAN%20for%20Customizable%20Makeup%20Transfer/</loc>
+    <lastmod>2019-12-07</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/12/07/Ccnet:%20Criss-cross%20attention%20for%20semantic%20segmentation/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/12/06/GCNet:%20Non-local%20Networks%20Meet%20Squeeze-Excitation%20Networks%20and%20Beyond/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2017/12/19/%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BA&%E9%9D%9E%E5%B1%80%E9%83%A8%E5%9D%87%E5%80%BC%E5%8E%BB%E5%99%AA&%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/MentorNet:%20Regularizing%20Very%20Deep%20Neural%20Networks%20on%20Corrupted%20Labels/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Data%20Distillation:%20Towards%20Omni-Supervised%20Learning/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Coupled%20generative%20adversarial%20networks/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Mobilenets:%20Efficient%20convolutional%20neural%20networks%20for%20mobile%20vision%20applications/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Focal%20Loss%20for%20Dense%20Object%20Detection/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Multi-scale%20dense%20convolutional%20networks%20for%20efficient%20prediction/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Feature%20pyramid%20networks%20for%20object%20detection/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2018/02/25/Segnet:%20A%20deep%20convolutional%20encoder-decoder%20architecture%20for%20image%20segmentation/</loc>
+    <lastmod>2019-12-06</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/30/Compact%20Generalized%20Non-local%20Network/</loc>
+    <lastmod>2019-11-30</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/30/Randaugment:%20Practical%20data%20augmentation%20with%20no%20separate%20search/</loc>
+    <lastmod>2019-11-30</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/30/Imagenet-trained%20cnns%20are%20biased%20towards%20texture;%20increasing%20shape%20bias%20improves%20accuracy%20and%20robustness/</loc>
+    <lastmod>2019-11-30</lastmod>
+  </url>  <url>
+    <loc>https://alexhex7.github.io/2019/11/30/Fixing%20the%20train-test%20resolution%20discrepancy/</loc>
+    <lastmod>2019-11-29</lastmod>
+  </url>  <url>
     <loc>https://alexhex7.github.io/2019/11/23/Benchmarking%20neural%20network%20robustness%20to%20common%20corruptions%20and%20perturbations/</loc>
     <lastmod>2019-11-23</lastmod>
   </url>  <url>
@@ -96,36 +159,6 @@
   </url>  <url>
     <loc>https://alexhex7.github.io/2019/06/13/Deep%20Compositional%20Question%20Answering%20with%20Neural%20Module%20Networks/</loc>
     <lastmod>2019-06-12</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2018/02/25/Segnet:%20A%20deep%20convolutional%20encoder-decoder%20architecture%20for%20image%20segmentation/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2018/02/25/Focal%20Loss%20for%20Dense%20Object%20Detection/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2018/02/25/Feature%20pyramid%20networks%20for%20object%20detection/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2018/02/25/MentorNet:%20Regularizing%20Very%20Deep%20Neural%20Networks%20on%20Corrupted%20Labels/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2018/02/25/Multi-scale%20dense%20convolutional%20networks%20for%20efficient%20prediction/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2018/02/25/Mobilenets:%20Efficient%20convolutional%20neural%20networks%20for%20mobile%20vision%20applications/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2018/02/25/Data%20Distillation:%20Towards%20Omni-Supervised%20Learning/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2018/02/25/Coupled%20generative%20adversarial%20networks/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2017/12/19/%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BA&%E9%9D%9E%E5%B1%80%E9%83%A8%E5%9D%87%E5%80%BC%E5%8E%BB%E5%99%AA&%E5%8F%8C%E8%BE%B9%E6%BB%A4%E6%B3%A2/</loc>
-    <lastmod>2019-06-08</lastmod>
-  </url>  <url>
-    <loc>https://alexhex7.github.io/2017/12/19/Transformation/</loc>
-    <lastmod>2019-06-08</lastmod>
   </url>  <url>
     <loc>https://alexhex7.github.io/2019/06/07/Improving%20Referring%20Expression%20Grounding%20with%20Cross-modal%20Attention-guided%20Erasing/</loc>
     <lastmod>2019-06-06</lastmod>

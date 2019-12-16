@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-23T08:37:01.000Z</updated>
+  <updated>2019-12-13T13:58:49.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,6 +17,346 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>(ECCV 2018) Multimodal unsupervised image-to-image translation</title>
+    <link href="http://yoursite.com/2019/12/13/Multimodal%20unsupervised%20image-to-image%20translation/"/>
+    <id>http://yoursite.com/2019/12/13/Multimodal unsupervised image-to-image translation/</id>
+    <published>2019-12-13T13:58:49.000Z</published>
+    <updated>2019-12-13T13:58:49.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Huang X, Liu M Y, Belongie S, et al. Multimodal unsupervised image-to-image translation[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 172-189.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/categories/Paper-Note/Image-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/categories/Paper-Note/Image-Enhancement/Style-Transfer/"/>
+    
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Unsupervised" scheme="http://yoursite.com/tags/Unsupervised/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2017) Arbitrary style transfer in real-time with adaptive instance normalization</title>
+    <link href="http://yoursite.com/2019/12/08/Arbitrary%20style%20transfer%20in%20real-time%20with%20adaptive%20instance%20normalization/"/>
+    <id>http://yoursite.com/2019/12/08/Arbitrary style transfer in real-time with adaptive instance normalization/</id>
+    <published>2019-12-08T15:19:16.000Z</published>
+    <updated>2019-12-08T15:19:16.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Huang X, Belongie S. Arbitrary style transfer in real-time with adaptive instance normalization[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 1501-1510.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/categories/Paper-Note/Image-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/categories/Paper-Note/Image-Enhancement/Style-Transfer/"/>
+    
+    
+      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2019) Few-Shot Unsupervised Image-to-Image Translation</title>
+    <link href="http://yoursite.com/2019/12/08/Few-Shot%20Unsupervised%20Image-to-Image%20Translation/"/>
+    <id>http://yoursite.com/2019/12/08/Few-Shot Unsupervised Image-to-Image Translation/</id>
+    <published>2019-12-08T12:43:31.000Z</published>
+    <updated>2019-12-08T12:43:31.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Liu M Y, Huang X, Mallya A, et al. Few-shot unsupervised image-to-image translation[J]. arXiv preprint arXiv:1905.01723, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
+    
+      <category term="N-Shot" scheme="http://yoursite.com/categories/Paper-Note/Learning/N-Shot/"/>
+    
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+      <category term="Few-Shot" scheme="http://yoursite.com/tags/Few-Shot/"/>
+    
+      <category term="N-Shot" scheme="http://yoursite.com/tags/N-Shot/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Unsupervised" scheme="http://yoursite.com/tags/Unsupervised/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2019 Best Paper) SinGAN:Learning a Generative Model from a Single Natural Image</title>
+    <link href="http://yoursite.com/2019/12/07/SinGAN:%20Learning%20a%20Generative%20Model%20from%20a%20Single%20Natural%20Image/"/>
+    <id>http://yoursite.com/2019/12/07/SinGAN: Learning a Generative Model from a Single Natural Image/</id>
+    <published>2019-12-07T07:03:01.000Z</published>
+    <updated>2019-12-07T07:03:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Shaham T R, Dekel T, Michaeli T. Singan: Learning a generative model from a single natural image[C]//Proceedings of the IEEE International Conference on Computer Vision. 2019: 4570-4580.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/categories/Paper-Note/GAN/"/>
+    
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+      <category term="Super-Resolution" scheme="http://yoursite.com/tags/Super-Resolution/"/>
+    
+      <category term="One-Shot" scheme="http://yoursite.com/tags/One-Shot/"/>
+    
+      <category term="Harmonization" scheme="http://yoursite.com/tags/Harmonization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2019) PSGAN:Pose-Robust Spatial-Aware GAN for Customizable Makeup Transfer</title>
+    <link href="http://yoursite.com/2019/12/07/PSGAN:%20Pose-Robust%20Spatial-Aware%20GAN%20for%20Customizable%20Makeup%20Transfer/"/>
+    <id>http://yoursite.com/2019/12/07/PSGAN: Pose-Robust Spatial-Aware GAN for Customizable Makeup Transfer/</id>
+    <published>2019-12-07T03:29:57.000Z</published>
+    <updated>2019-12-07T03:29:57.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Keyword [Facial Landmarks] [Makeup Transfer]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Jiang W, Liu S, Gao C, et al. PSGAN: Pose-Robust Spatial-Aware GAN for Customizable Makeup Transfer[J]. arXiv preprint arXiv:1909.06956, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/categories/Paper-Note/Image-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/categories/Paper-Note/Image-Enhancement/Style-Transfer/"/>
+    
+    
+      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+      <category term="GAN" scheme="http://yoursite.com/tags/GAN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICCV 2018) Ccnet:Criss-cross attention for semantic segmentation</title>
+    <link href="http://yoursite.com/2019/12/07/Ccnet:%20Criss-cross%20attention%20for%20semantic%20segmentation/"/>
+    <id>http://yoursite.com/2019/12/07/Ccnet: Criss-cross attention for semantic segmentation/</id>
+    <published>2019-12-06T22:46:15.000Z</published>
+    <updated>2019-12-06T22:46:15.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Keyword [Segmentation] [Recurrent Criss-cross Attention Module]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Huang Z, Wang X, Huang L, et al. Ccnet: Criss-cross attention for semantic segmentation[C]//Proceedings of the IEEE International Conference on Computer Vision. 2019: 603-612.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
+    
+    
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
+    
+      <category term="Non-Local" scheme="http://yoursite.com/tags/Non-Local/"/>
+    
+      <category term="Recurrent" scheme="http://yoursite.com/tags/Recurrent/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2019) GCNet:Non-local Networks Meet Squeeze-Excitation Networks and Beyond</title>
+    <link href="http://yoursite.com/2019/12/06/GCNet:%20Non-local%20Networks%20Meet%20Squeeze-Excitation%20Networks%20and%20Beyond/"/>
+    <id>http://yoursite.com/2019/12/06/GCNet: Non-local Networks Meet Squeeze-Excitation Networks and Beyond/</id>
+    <published>2019-12-06T13:10:54.000Z</published>
+    <updated>2019-12-06T13:10:54.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Keyword [Global Context Block]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Cao Y, Xu J, Lin S, et al. GCNet: Non-local Networks Meet Squeeze-Excitation Networks and Beyond[J]. arXiv preprint arXiv:1904.11492, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
+    
+    
+      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
+    
+      <category term="Non-Local" scheme="http://yoursite.com/tags/Non-Local/"/>
+    
+      <category term="SE Block" scheme="http://yoursite.com/tags/SE-Block/"/>
+    
+      <category term="Deformable Conv" scheme="http://yoursite.com/tags/Deformable-Conv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(NIPS 2018) Compact Generalized Non-local Network</title>
+    <link href="http://yoursite.com/2019/11/30/Compact%20Generalized%20Non-local%20Network/"/>
+    <id>http://yoursite.com/2019/11/30/Compact Generalized Non-local Network/</id>
+    <published>2019-11-30T07:23:15.000Z</published>
+    <updated>2019-11-30T07:23:15.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Keyword [Compact Generalized Non-local]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Yue K, Sun M, Yuan Y, et al. Compact Generalized Non-local Network[C]. neural information processing systems, 2018: 6510-6519.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
+    
+    
+      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
+    
+      <category term="Non-Local" scheme="http://yoursite.com/tags/Non-Local/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2019) Randaugment:Practical data augmentation with no separate search</title>
+    <link href="http://yoursite.com/2019/11/30/Randaugment:%20Practical%20data%20augmentation%20with%20no%20separate%20search/"/>
+    <id>http://yoursite.com/2019/11/30/Randaugment: Practical data augmentation with no separate search/</id>
+    <published>2019-11-30T04:58:41.000Z</published>
+    <updated>2019-11-30T04:58:41.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Cubuk E D, Zoph B, Shlens J, et al. RandAugment: Practical data augmentation with no separate search[J]. arXiv preprint arXiv:1909.13719, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Optimization" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Optimization/"/>
+    
+    
+      <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
+    
+      <category term="Augmentation" scheme="http://yoursite.com/tags/Augmentation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(ICLR 2019) Imagenet-trained cnns are biased towards texture; increasing shape bias improves accuracy and robustness</title>
+    <link href="http://yoursite.com/2019/11/30/Imagenet-trained%20cnns%20are%20biased%20towards%20texture;%20increasing%20shape%20bias%20improves%20accuracy%20and%20robustness/"/>
+    <id>http://yoursite.com/2019/11/30/Imagenet-trained cnns are biased towards texture; increasing shape bias improves accuracy and robustness/</id>
+    <published>2019-11-30T00:01:13.000Z</published>
+    <updated>2019-11-30T00:01:13.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Keyword [Stylized-ImageNet]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Geirhos R, Rubisch P, Michaelis C, et al. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness[C]. international conference on learning representations, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Optimization" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Optimization/"/>
+    
+    
+      <category term="Style Transfer" scheme="http://yoursite.com/tags/Style-Transfer/"/>
+    
+      <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(2019) Fixing the train-test resolution discrepancy</title>
+    <link href="http://yoursite.com/2019/11/30/Fixing%20the%20train-test%20resolution%20discrepancy/"/>
+    <id>http://yoursite.com/2019/11/30/Fixing the train-test resolution discrepancy/</id>
+    <published>2019-11-29T22:51:01.000Z</published>
+    <updated>2019-11-29T22:51:01.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Keyword [Resolution Discrepancy]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Touvron H, Vedaldi A, Douze M, et al. Fixing the train-test resolution discrepancy[J]. arXiv preprint arXiv:1906.06423, 2019.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
+    
+      <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
+    
+      <category term="Optimization" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Optimization/"/>
+    
+    
+      <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
+    
+  </entry>
+  
+  <entry>
     <title>(ICLR 2019) Benchmarking neural network robustness to common corruptions and perturbations</title>
     <link href="http://yoursite.com/2019/11/23/Benchmarking%20neural%20network%20robustness%20to%20common%20corruptions%20and%20perturbations/"/>
     <id>http://yoursite.com/2019/11/23/Benchmarking neural network robustness to common corruptions and perturbations/</id>
@@ -25,7 +365,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Keyword [ImageNet-C] [ImageNet-P] [Image Corruption]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Geirhos R, Rubisch P, Michaelis C, et al. ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness[C]. international conference on learning representations, 2019.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -33,14 +374,8 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Dataset" scheme="http://yoursite.com/categories/Paper-Note/Dataset/"/>
+      <category term="Others" scheme="http://yoursite.com/categories/Paper-Note/Others/"/>
     
-    
-      <category term="ImageNet-C" scheme="http://yoursite.com/tags/ImageNet-C/"/>
-    
-      <category term="ImageNet-P" scheme="http://yoursite.com/tags/ImageNet-P/"/>
-    
-      <category term="Image Corruption" scheme="http://yoursite.com/tags/Image-Corruption/"/>
     
       <category term="Dataset" scheme="http://yoursite.com/tags/Dataset/"/>
     
@@ -55,7 +390,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Keyword [Stochastic Depth]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Huang G, Sun Y, Liu Z, et al. Deep networks with stochastic depth[C]//European conference on computer vision. Springer, Cham, 2016: 646-661.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -68,7 +404,7 @@
       <category term="Optimization" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Optimization/"/>
     
     
-      <category term="Stochastic Depth" scheme="http://yoursite.com/tags/Stochastic-Depth/"/>
+      <category term="Optimization" scheme="http://yoursite.com/tags/Optimization/"/>
     
   </entry>
   
@@ -81,7 +417,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Keyword [EfficientNet]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Tan M, Le Q V. EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks[C]. international conference on machine learning, 2019: 6105-6114.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -91,12 +428,12 @@
     
       <category term="Architecture" scheme="http://yoursite.com/categories/Paper-Note/Architecture/"/>
     
-      <category term="Network" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Network/"/>
+      <category term="Component" scheme="http://yoursite.com/categories/Paper-Note/Architecture/Component/"/>
     
+    
+      <category term="Component" scheme="http://yoursite.com/tags/Component/"/>
     
       <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
-    
-      <category term="EfficientNet" scheme="http://yoursite.com/tags/EfficientNet/"/>
     
   </entry>
   
@@ -126,10 +463,6 @@
     
       <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
     
-      <category term="Gradient" scheme="http://yoursite.com/tags/Gradient/"/>
-    
-      <category term="DeepLab" scheme="http://yoursite.com/tags/DeepLab/"/>
-    
   </entry>
   
   <entry>
@@ -141,7 +474,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Keyword [Stochastic Depth] [EfficientNet]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Xie Q, Hovy E, Luong M T, et al. Self-training with Noisy Student improves ImageNet classification[J]. arXiv preprint arXiv:1911.04252, 2019.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -151,18 +485,14 @@
     
       <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
     
-      <category term="Self-training" scheme="http://yoursite.com/categories/Paper-Note/Learning/Self-training/"/>
+      <category term="Self-Training" scheme="http://yoursite.com/categories/Paper-Note/Learning/Self-Training/"/>
     
     
-      <category term="Stochastic Depth" scheme="http://yoursite.com/tags/Stochastic-Depth/"/>
-    
-      <category term="EfficientNet" scheme="http://yoursite.com/tags/EfficientNet/"/>
-    
-      <category term="Self-training" scheme="http://yoursite.com/tags/Self-training/"/>
+      <category term="Self-Training" scheme="http://yoursite.com/tags/Self-Training/"/>
     
       <category term="Teacher-Student" scheme="http://yoursite.com/tags/Teacher-Student/"/>
     
-      <category term="Data Augmentation" scheme="http://yoursite.com/tags/Data-Augmentation/"/>
+      <category term="Augmentation" scheme="http://yoursite.com/tags/Augmentation/"/>
     
   </entry>
   
@@ -175,7 +505,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Keyword [DeepLabv3+] [Encoder-Decoder] [Xception]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Chen L C, Zhu Y, Papandreou G, et al. Encoder-decoder with atrous separable convolution for semantic image segmentation[C]//Proceedings of the European conference on computer vision (ECCV). 2018: 801-818.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -183,14 +514,10 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+      <category term="Basic Tasks" scheme="http://yoursite.com/categories/Paper-Note/Basic-Tasks/"/>
     
     
-      <category term="DeepLabv3+" scheme="http://yoursite.com/tags/DeepLabv3/"/>
-    
-      <category term="Encoder-Decoder" scheme="http://yoursite.com/tags/Encoder-Decoder/"/>
-    
-      <category term="Xception" scheme="http://yoursite.com/tags/Xception/"/>
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
     
   </entry>
   
@@ -203,7 +530,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Keyword [DeepLabv3] [Dilated Conv] [ASPP]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Chen L, Papandreou G, Schroff F, et al. Rethinking Atrous Convolution for Semantic Image Segmentation[J]. arXiv: Computer Vision and Pattern Recognition, 2017.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -211,14 +539,10 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+      <category term="Basic Tasks" scheme="http://yoursite.com/categories/Paper-Note/Basic-Tasks/"/>
     
     
-      <category term="Dilated Conv" scheme="http://yoursite.com/tags/Dilated-Conv/"/>
-    
-      <category term="ASPP" scheme="http://yoursite.com/tags/ASPP/"/>
-    
-      <category term="DeepLabv3" scheme="http://yoursite.com/tags/DeepLabv3/"/>
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
     
   </entry>
   
@@ -231,7 +555,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Keyword [DeepLabv2] [Dilated Conv] [ASPP] [CRF]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Chen L C, Papandreou G, Kokkinos I, et al. Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs[J]. IEEE transactions on pattern analysis and machine intelligence, 2017, 40(4): 834-848.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -239,16 +564,10 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+      <category term="Basic Tasks" scheme="http://yoursite.com/categories/Paper-Note/Basic-Tasks/"/>
     
     
-      <category term="DeepLabv2" scheme="http://yoursite.com/tags/DeepLabv2/"/>
-    
-      <category term="CRF" scheme="http://yoursite.com/tags/CRF/"/>
-    
-      <category term="Dilated Conv" scheme="http://yoursite.com/tags/Dilated-Conv/"/>
-    
-      <category term="ASPP" scheme="http://yoursite.com/tags/ASPP/"/>
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
     
   </entry>
   
@@ -261,7 +580,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Keyword [DeepLabv1] [Dilated Conv] [CRF]&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;Chen L C, Papandreou G, Kokkinos I, et al. Semantic image segmentation with deep convolutional nets and fully connected crfs[J]. arXiv preprint arXiv:1412.7062, 2014.&lt;/p&gt;
 &lt;/blockquote&gt;
     
@@ -269,356 +589,10 @@
     
       <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
     
-      <category term="Segmentation" scheme="http://yoursite.com/categories/Paper-Note/Segmentation/"/>
+      <category term="Basic Tasks" scheme="http://yoursite.com/categories/Paper-Note/Basic-Tasks/"/>
     
     
-      <category term="CRF" scheme="http://yoursite.com/tags/CRF/"/>
-    
-      <category term="Dilated Conv" scheme="http://yoursite.com/tags/Dilated-Conv/"/>
-    
-      <category term="DeepLabv1" scheme="http://yoursite.com/tags/DeepLabv1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2018) YOLOv3:An Incremental Improvement</title>
-    <link href="http://yoursite.com/2019/11/09/YOLOv3:%20An%20Incremental%20Improvement/"/>
-    <id>http://yoursite.com/2019/11/09/YOLOv3: An Incremental Improvement/</id>
-    <published>2019-11-09T11:32:02.000Z</published>
-    <updated>2019-11-09T11:32:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Redmon J, Farhadi A. Yolov3: An incremental improvement[J]. arXiv preprint arXiv:1804.02767, 2018.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
-    
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="YOLOv3" scheme="http://yoursite.com/tags/YOLOv3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2017) YOLO9000:Better, Faster, Stronger</title>
-    <link href="http://yoursite.com/2019/11/08/YOLO9000:%20Better,%20Faster,%20Stronger/"/>
-    <id>http://yoursite.com/2019/11/08/YOLO9000: Better, Faster, Stronger/</id>
-    <published>2019-11-08T12:02:02.000Z</published>
-    <updated>2019-11-08T12:02:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Redmon J, Farhadi A. YOLO9000: better, faster, stronger[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2017: 7263-7271.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
-    
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="YOLOv2" scheme="http://yoursite.com/tags/YOLOv2/"/>
-    
-      <category term="YOLO9000" scheme="http://yoursite.com/tags/YOLO9000/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2016) You Only Look Once:Unified, Real-Time Object Detection</title>
-    <link href="http://yoursite.com/2019/11/08/You%20Only%20Look%20Once:%20Unified,%20Real-Time%20Object%20Detection/"/>
-    <id>http://yoursite.com/2019/11/08/You Only Look Once: Unified, Real-Time Object Detection/</id>
-    <published>2019-11-08T11:12:02.000Z</published>
-    <updated>2019-11-08T11:12:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Redmon J, Divvala S, Girshick R, et al. You only look once: Unified, real-time object detection[C]//Proceedings of the IEEE conference on computer vision and pattern recognition. 2016: 779-788.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Object Detection" scheme="http://yoursite.com/categories/Paper-Note/Object-Detection/"/>
-    
-    
-      <category term="Detection" scheme="http://yoursite.com/tags/Detection/"/>
-    
-      <category term="YOLO" scheme="http://yoursite.com/tags/YOLO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2019) An Internal Learning Approach to Video Inpainting</title>
-    <link href="http://yoursite.com/2019/11/02/An%20Internal%20Learning%20Approach%20to%20Video%20Inpainting/"/>
-    <id>http://yoursite.com/2019/11/02/An Internal Learning Approach to Video Inpainting/</id>
-    <published>2019-11-02T14:12:02.000Z</published>
-    <updated>2019-11-02T14:12:02.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zhang H, Mai L, Xu N, et al. An Internal Learning Approach to Video Inpainting[J]. arXiv preprint arXiv:1909.07957, 2019.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Image Processing" scheme="http://yoursite.com/categories/Paper-Note/Image-Processing/"/>
-    
-    
-      <category term="Image Processing" scheme="http://yoursite.com/tags/Image-Processing/"/>
-    
-      <category term="Image Enhancement" scheme="http://yoursite.com/tags/Image-Enhancement/"/>
-    
-      <category term="Inpainting" scheme="http://yoursite.com/tags/Inpainting/"/>
-    
-      <category term="Deep Image Prior" scheme="http://yoursite.com/tags/Deep-Image-Prior/"/>
-    
-      <category term="Video" scheme="http://yoursite.com/tags/Video/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICCV 2017) Low-shot visual recognition by shrinking and hallucinating features</title>
-    <link href="http://yoursite.com/2019/11/02/Low-shot%20visual%20recognition%20by%20shrinking%20and%20hallucinating%20features/"/>
-    <id>http://yoursite.com/2019/11/02/Low-shot visual recognition by shrinking and hallucinating features/</id>
-    <published>2019-11-02T12:23:04.000Z</published>
-    <updated>2019-11-02T12:23:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Hariharan B, Girshick R. Low-shot visual recognition by shrinking and hallucinating features[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 3018-3027.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/"/>
-    
-      <category term="Low-Shot Learning" scheme="http://yoursite.com/categories/Paper-Note/Learning/Low-Shot-Learning/"/>
-    
-    
-      <category term="Low-Shot Learning" scheme="http://yoursite.com/tags/Low-Shot-Learning/"/>
-    
-      <category term="Meta Learning" scheme="http://yoursite.com/tags/Meta-Learning/"/>
-    
-      <category term="Batch SGM" scheme="http://yoursite.com/tags/Batch-SGM/"/>
-    
-      <category term="Feature Regularization" scheme="http://yoursite.com/tags/Feature-Regularization/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICML 2018) Efficient Neural Architecture Search via Parameter Sharing</title>
-    <link href="http://yoursite.com/2019/10/27/Efficient%20Neural%20Architecture%20Search%20via%20Parameter%20Sharing/"/>
-    <id>http://yoursite.com/2019/10/27/Efficient Neural Architecture Search via Parameter Sharing/</id>
-    <published>2019-10-27T13:25:07.000Z</published>
-    <updated>2019-10-27T13:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Pham H, Guan M Y, Zoph B, et al. Efficient neural architecture search via parameter sharing[J]. arXiv preprint arXiv:1802.03268, 2018.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
-    
-      <category term="RL" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/RL/"/>
-    
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
-    
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
-    
-      <category term="Policy Gradient" scheme="http://yoursite.com/tags/Policy-Gradient/"/>
-    
-      <category term="ENAS" scheme="http://yoursite.com/tags/ENAS/"/>
-    
-      <category term="Parameter Share" scheme="http://yoursite.com/tags/Parameter-Share/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ICLR 2017) Neural architecture search with reinforcement learning</title>
-    <link href="http://yoursite.com/2019/10/26/Neural%20architecture%20search%20with%20reinforcement%20learning/"/>
-    <id>http://yoursite.com/2019/10/26/Neural architecture search with reinforcement learning/</id>
-    <published>2019-10-26T14:25:07.000Z</published>
-    <updated>2019-10-26T14:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Zoph B, Le Q V. Neural architecture search with reinforcement learning[J]. arXiv preprint arXiv:1611.01578, 2016.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
-    
-      <category term="RL" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/RL/"/>
-    
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
-    
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
-    
-      <category term="Policy Gradient" scheme="http://yoursite.com/tags/Policy-Gradient/"/>
-    
-      <category term="NAS" scheme="http://yoursite.com/tags/NAS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(CVPR 2019) MnasNet:Platform-Aware Neural Architecture Search for Mobile</title>
-    <link href="http://yoursite.com/2019/10/26/MnasNet:%20Platform-Aware%20Neural%20Architecture%20Search%20for%20Mobile/"/>
-    <id>http://yoursite.com/2019/10/26/MnasNet: Platform-Aware Neural Architecture Search for Mobile/</id>
-    <published>2019-10-26T13:25:07.000Z</published>
-    <updated>2019-10-26T13:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Tan M, Chen B, Pang R, et al. Mnasnet: Platform-aware neural architecture search for mobile[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019: 2820-2828.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/"/>
-    
-      <category term="RL" scheme="http://yoursite.com/categories/Paper-Note/Auto-ML/RL/"/>
-    
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
-    
-      <category term="RL" scheme="http://yoursite.com/tags/RL/"/>
-    
-      <category term="Policy Gradient" scheme="http://yoursite.com/tags/Policy-Gradient/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
-    
-      <category term="MNASNet" scheme="http://yoursite.com/tags/MNASNet/"/>
-    
-      <category term="Mobile Device" scheme="http://yoursite.com/tags/Mobile-Device/"/>
-    
-      <category term="NAS" scheme="http://yoursite.com/tags/NAS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ECCV 2018) Netadapt:Platform-aware neural network adaptation for mobile applications</title>
-    <link href="http://yoursite.com/2019/10/26/Netadapt:%20Platform-aware%20neural%20network%20adaptation%20for%20mobile%20applications/"/>
-    <id>http://yoursite.com/2019/10/26/Netadapt: Platform-aware neural network adaptation for mobile applications/</id>
-    <published>2019-10-26T12:25:07.000Z</published>
-    <updated>2019-10-26T12:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Yang T J, Howard A, Chen B, et al. Netadapt: Platform-aware neural network adaptation for mobile applications[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 285-300.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
-    
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
-    
-      <category term="NetAdapt" scheme="http://yoursite.com/tags/NetAdapt/"/>
-    
-      <category term="Platform-aware" scheme="http://yoursite.com/tags/Platform-aware/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(2019) Searching for MobileNetV3</title>
-    <link href="http://yoursite.com/2019/10/13/Searching%20for%20MobileNetV3/"/>
-    <id>http://yoursite.com/2019/10/13/Searching for MobileNetV3/</id>
-    <published>2019-10-13T15:25:07.000Z</published>
-    <updated>2019-10-13T15:25:07.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Howard A, Sandler M, Chu G, et al. Searching for mobilenetv3[J]. arXiv preprint arXiv:1905.02244, 2019.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="Auto-ML" scheme="http://yoursite.com/tags/Auto-ML/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
-    
-      <category term="NetAdapt" scheme="http://yoursite.com/tags/NetAdapt/"/>
-    
-      <category term="MobileNetV3" scheme="http://yoursite.com/tags/MobileNetV3/"/>
-    
-      <category term="Handware-aware NAS" scheme="http://yoursite.com/tags/Handware-aware-NAS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(ECCV 2018) ShuffleNet V2:Practical Guidelines for Efficient CNN Architecture Design</title>
-    <link href="http://yoursite.com/2019/10/13/ShuffleNet%20V2:%20Practical%20Guidelines%20for%20Efficient%20CNN%20Architecture%20Design/"/>
-    <id>http://yoursite.com/2019/10/13/ShuffleNet V2: Practical Guidelines for Efficient CNN Architecture Design/</id>
-    <published>2019-10-13T14:25:03.000Z</published>
-    <updated>2019-10-13T14:25:03.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Ma N, Zhang X, Zheng H T, et al. Shufflenet v2: Practical guidelines for efficient cnn architecture design[C]//Proceedings of the European Conference on Computer Vision (ECCV). 2018: 116-131.&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Paper Note" scheme="http://yoursite.com/categories/Paper-Note/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/categories/Paper-Note/LightWeight/"/>
-    
-    
-      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
-    
-      <category term="LightWeight" scheme="http://yoursite.com/tags/LightWeight/"/>
-    
-      <category term="SE Block" scheme="http://yoursite.com/tags/SE-Block/"/>
-    
-      <category term="ShuffleNet V2" scheme="http://yoursite.com/tags/ShuffleNet-V2/"/>
+      <category term="Segmentation" scheme="http://yoursite.com/tags/Segmentation/"/>
     
   </entry>
   
