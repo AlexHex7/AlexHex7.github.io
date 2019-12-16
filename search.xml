@@ -887,8 +887,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -1090,9 +1090,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Segmentation</tag>
         <tag>Medical</tag>
         <tag>Lung</tag>
+        <tag>Segmentation</tag>
         <tag>Multiple Hypotheses</tag>
       </tags>
   </entry>
@@ -1106,8 +1106,8 @@
         <category>Others</category>
       </categories>
       <tags>
-        <tag>Segmentation</tag>
         <tag>Medical</tag>
+        <tag>Segmentation</tag>
         <tag>Cerebral</tag>
       </tags>
   </entry>
@@ -1121,9 +1121,9 @@
         <category>Lung</category>
       </categories>
       <tags>
-        <tag>Segmentation</tag>
         <tag>Medical</tag>
         <tag>Lung</tag>
+        <tag>Segmentation</tag>
       </tags>
   </entry>
   <entry>
@@ -1193,8 +1193,8 @@
         <category>Others</category>
       </categories>
       <tags>
-        <tag>Segmentation</tag>
         <tag>Medical</tag>
+        <tag>Segmentation</tag>
         <tag>Skin Lesion</tag>
       </tags>
   </entry>
@@ -1488,8 +1488,8 @@
         <category>Adversarial Attack</category>
       </categories>
       <tags>
-        <tag>Adversarial Attack</tag>
         <tag>Segmentation</tag>
+        <tag>Adversarial Attack</tag>
         <tag>Detection</tag>
       </tags>
   </entry>
@@ -1502,8 +1502,8 @@
         <category>Adversarial Attack</category>
       </categories>
       <tags>
-        <tag>Adversarial Attack</tag>
         <tag>Segmentation</tag>
+        <tag>Adversarial Attack</tag>
       </tags>
   </entry>
   <entry>
@@ -1887,9 +1887,9 @@
         <category>Point Cloud</category>
       </categories>
       <tags>
+        <tag>Localization</tag>
         <tag>Segmentation</tag>
         <tag>Detection</tag>
-        <tag>Localization</tag>
         <tag>Point Cloud</tag>
       </tags>
   </entry>
@@ -2328,8 +2328,8 @@
         <category>Others</category>
       </categories>
       <tags>
-        <tag>Segmentation</tag>
         <tag>Medical</tag>
+        <tag>Segmentation</tag>
         <tag>Prostate</tag>
         <tag>3D</tag>
       </tags>
@@ -2429,8 +2429,8 @@
         <category>Loss Function</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>Loss Function</tag>
       </tags>
   </entry>
@@ -2458,8 +2458,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2472,8 +2472,23 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[(AAAI 2018) End-to-End United Video Dehazing and Detection]]></title>
+    <url>%2F2018%2F01%2F23%2FEnd-to-End%20United%20Video%20Dehazing%20and%20Detection%2F</url>
+    <content type="text"><![CDATA[Li B, Peng X, Wang Z, et al. End-to-end united video dehazing and detection[C]//Thirty-Second AAAI Conference on Artificial Intelligence. 2018. 1. Overview 1.1. Motivation end-to-end video dehazing has not been explored temporal consistency In this paper, it proposed EVD-Net (End-to-End Video Dehazing Network) EVDD-Net (End-to-End United Video Dehazing and Detection Network) 1.2. Related Work Classical Atmosphere Scattering Model DehazeNet MSCNN AOD-Net. re-formulationVideo Dehazing 1.3. Dataset1.3.1. Dehazing Synthetic Hazy Video Dataset from TUM RGB-D Dataset refined depth infomation TestSet. video from city road when PM2.5 is 223 1.3.2. Dehazing + Detection ILSVRC2015 VID estimated depth by paper 2016 1.4. Start Pointbased on AOD-Net architecture. 1.5. EVD-Net Multi-framethe global atmosphere light A should be hardly or slowly changed over a moderate number of consecutive frame. 1.6. EVDD-Net Multi-Frame Faster RCNN EVD-Net 2. Experiments 2.1. Details MSE loss well aligned with SSIM and visual quality 2.2. Fusion Strategy 2.3. Comparison of Dehaze 2.4. Comparison of Detection naive concatenation of low-level and high-level models often can not sufficiently boost the high-level task performance JAOD-Faster RCNN. flickering and inconsistent detection Only EVDD-Net detection 4 cars in all frames]]></content>
+      <categories>
+        <category>Paper Note</category>
+        <category>Image Enhancement</category>
+        <category>others</category>
+      </categories>
+      <tags>
+        <tag>Image Enhancement</tag>
+        <tag>Video</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2488,21 +2503,6 @@
       <tags>
         <tag>Image Enhancement</tag>
         <tag>De-raining</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[(AAAI 2018) End-to-End United Video Dehazing and Detection]]></title>
-    <url>%2F2018%2F01%2F23%2FEnd-to-End%20United%20Video%20Dehazing%20and%20Detection%2F</url>
-    <content type="text"><![CDATA[Li B, Peng X, Wang Z, et al. End-to-end united video dehazing and detection[C]//Thirty-Second AAAI Conference on Artificial Intelligence. 2018. 1. Overview 1.1. Motivation end-to-end video dehazing has not been explored temporal consistency In this paper, it proposed EVD-Net (End-to-End Video Dehazing Network) EVDD-Net (End-to-End United Video Dehazing and Detection Network) 1.2. Related Work Classical Atmosphere Scattering Model DehazeNet MSCNN AOD-Net. re-formulationVideo Dehazing 1.3. Dataset1.3.1. Dehazing Synthetic Hazy Video Dataset from TUM RGB-D Dataset refined depth infomation TestSet. video from city road when PM2.5 is 223 1.3.2. Dehazing + Detection ILSVRC2015 VID estimated depth by paper 2016 1.4. Start Pointbased on AOD-Net architecture. 1.5. EVD-Net Multi-framethe global atmosphere light A should be hardly or slowly changed over a moderate number of consecutive frame. 1.6. EVDD-Net Multi-Frame Faster RCNN EVD-Net 2. Experiments 2.1. Details MSE loss well aligned with SSIM and visual quality 2.2. Fusion Strategy 2.3. Comparison of Dehaze 2.4. Comparison of Detection naive concatenation of low-level and high-level models often can not sufficiently boost the high-level task performance JAOD-Faster RCNN. flickering and inconsistent detection Only EVDD-Net detection 4 cars in all frames]]></content>
-      <categories>
-        <category>Paper Note</category>
-        <category>Image Enhancement</category>
-        <category>others</category>
-      </categories>
-      <tags>
-        <tag>Dehazing</tag>
-        <tag>Image Enhancement</tag>
-        <tag>Video</tag>
       </tags>
   </entry>
   <entry>
@@ -2543,8 +2543,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>De-raining</tag>
       </tags>
   </entry>
@@ -2637,8 +2637,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>GAN</tag>
         <tag>Unsupervised</tag>
       </tags>
@@ -2667,8 +2667,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2681,8 +2681,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2695,8 +2695,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2709,8 +2709,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2723,8 +2723,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
       </tags>
   </entry>
   <entry>
@@ -2737,8 +2737,8 @@
         <category>others</category>
       </categories>
       <tags>
-        <tag>Dehazing</tag>
         <tag>Image Enhancement</tag>
+        <tag>Dehazing</tag>
         <tag>De-raining</tag>
       </tags>
   </entry>

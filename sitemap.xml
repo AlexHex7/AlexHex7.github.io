@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://alexhex7.github.io/about/index.html</loc>
+    
+    <lastmod>2019-12-16T07:06:40.146Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://alexhex7.github.io/2019/12/13/Multimodal%20unsupervised%20image-to-image%20translation/</loc>
     
     <lastmod>2019-12-13T13:58:49.000Z</lastmod>
@@ -145,13 +152,6 @@
     <loc>https://alexhex7.github.io/2019/11/30/Fixing%20the%20train-test%20resolution%20discrepancy/</loc>
     
     <lastmod>2019-11-29T22:51:01.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://alexhex7.github.io/about/index.html</loc>
-    
-    <lastmod>2019-11-27T06:21:54.458Z</lastmod>
     
   </url>
   
@@ -1276,14 +1276,14 @@
   </url>
   
   <url>
-    <loc>https://alexhex7.github.io/2018/01/23/Density-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network/</loc>
+    <loc>https://alexhex7.github.io/2018/01/23/End-to-End%20United%20Video%20Dehazing%20and%20Detection/</loc>
     
     <lastmod>2018-01-22T22:25:07.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://alexhex7.github.io/2018/01/23/End-to-End%20United%20Video%20Dehazing%20and%20Detection/</loc>
+    <loc>https://alexhex7.github.io/2018/01/23/Density-aware%20Single%20Image%20De-raining%20using%20a%20Multi-stream%20Dense%20Network/</loc>
     
     <lastmod>2018-01-22T22:25:07.000Z</lastmod>
     
